@@ -56,8 +56,4 @@ void orbital::SetTLEname(std::string name)
     m_tle_name = name;
 };
 
-// Date member function
-std::string orbital::getTLEname()
-{
-    return m_tle_name;
-};
+

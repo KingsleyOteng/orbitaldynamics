@@ -18,7 +18,7 @@ class orbital{
 
 private:
     std::string m_tle_name;
-    int m_satellite_number;
+    int         m_satellite_number;
     std::string m_classification;
     int         m_designator_launch_year;
     int         m_designator_launch_number_of_year;
@@ -58,17 +58,17 @@ public:
     std::string getTLEname() { return m_tle_name; }
     int getSATnumber() { return m_satellite_number; }
     std::string getCLASSIFIERfield() { return m_classification; }
-    int getLAUNCHERyearfield() { return m_classification; }
-    int getLAUNCHERnumberfield();
-    char getLAUNCHpiencedesignator();
-    int getEPOCHyear();
-    double getJULIANdatefraction();
-    double getBALLISTICcoefficient();
-    double getSECONDderivativemotion();
-    int getDRAGRADIATIONcoefficient();
-    int getEPHEMERIStype();
-    int getELEMENTnumber();
-    int getCHECKsum();
+    int getLAUNCHERyearfield() { return m_designator_launch_year; }
+    int getLAUNCHERnumberfield() { return m_designator_launch_number_of_year; }
+    char getLAUNCHpiencedesignator() { return m_designator_piece_of_launch; }
+    int getEPOCHyear() { return m_epoch_year; }
+    double getJULIANdatefraction() { return m_julian_date_fraction; }
+    double getBALLISTICcoefficient() { return m_ballistic_coefficient; }
+    double getSECONDderivativemotion() { return m_second_derivative_of_motion; }
+    int getDRAGRADIATIONcoefficient() { return m_designator_launch_number_of_year; }
+    int getEPHEMERIStype() { return m_ephemeris_type; }
+    int getELEMENTnumber() { return m_element_number; }
+    int getCHECKsum() { return m_check_sum; }
     
     int getYear() { return m_year; }
     int getMonth() { return m_month; }
