@@ -10,13 +10,17 @@
 #define orbital_hpp
 
 #include <stdio.h>
-
+#include <string>
 
 
 class orbital{
     
 
 private:
+    std::string m_tle_name;
+    std::string m_satellite_number;
+    std::string m_classification;
+    
     int m_year;
     int m_month;
     int m_day;
@@ -24,7 +28,9 @@ private:
 public:
     orbital(int year, int month, int day);
     void getDataFile();
+    void SetTLEname(std::string name);
     void SetDate(int year, int month, int day);
+    std::string getTLEname();
     int getYear() { return m_year; }
     int getMonth() { return m_month; }
     int getDay()  { return m_day; }

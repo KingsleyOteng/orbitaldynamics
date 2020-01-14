@@ -29,7 +29,7 @@ void orbital::SetDate(int year, int month, int day)
 // Date member function
 void orbital::getDataFile()
 {
-    std::string filename = "/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/HelloWorld/TLE_File.rtf";
+    std::string filename = "/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/HelloWorld/TLE_File.txt";
     std::ifstream in(filename, std::ios::out);
     std::string line;
     
@@ -37,10 +37,27 @@ void orbital::getDataFile()
         std::cerr << "Error: Unable to open settings file \"" << filename << "\" for reading!" << std::endl;
         
     }
-    
+    int x = 0;
     while (std::getline(in, line)) {
-           std::cout << line;
+           std::cout << line << "\n";
+        if (x == 0)
+        {
+            orbital::SetTLEname(line);
+        }
+        x++;
        }
     
     in.close();
 }
+
+// Date member function
+void orbital::SetTLEname(std::string name)
+{
+    m_tle_name = name;
+};
+
+// Date member function
+std::string orbital::getTLEname()
+{
+    return m_tle_name;
+};
