@@ -45,7 +45,7 @@ public:
     void SetCLASSIFIERfield(std::string field);
     void SetLAUNCHERyearfield(int field);
     void SetLAUNCHERnumberfield(int field);
-    void SetLAUNCHpiencedesignator(char designator);
+    void SetLAUNCHpiecedesignator(char designator);
     void SetEPOCHyear(int year);
     void SetJULIANdatefraction(double fraction);
     void SetBALLISTICcoefficient(double coefficient);

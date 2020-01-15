@@ -56,82 +56,82 @@ void orbital::SetTLEname(std::string name)
     m_tle_name = name;
 };
 
-
-std::string m_tle_name;
-int         m_satellite_number;
-std::string m_classification;
-int         m_designator_launch_year;
-int         m_designator_launch_number_of_year;
-char        m_designator_piece_of_launch;
-int         m_epoch_year;
-double      m_julian_date_fraction;
-double      m_ballistic_coefficient;
-double      m_second_derivative_of_motion;
-std::string m_drag_term_or_radition_coefficient;
-int         m_ephemeris_type;
-int         m_element_number;
-int         m_check_sum;
-
-void SetSATnumber(int number)
+// sets the statellite number
+void orbital::SetSATnumber(int number)
 {
     m_satellite_number = number;
 };
 
-void SetCLASSIFIERfield(std::string field)
+// sets the classifier field
+void orbital::SetCLASSIFIERfield(std::string field)
 {
     m_classification = field;
 };
 
-void SetLAUNCHERyearfield(int field)
+// sets the laumncher year field
+void orbital::SetLAUNCHERyearfield(int field)
 {
     m_designator_launch_year = field;
 };
 
-void SetLAUNCHERnumberfield(int field)
+// sets the launcher number field
+void orbital::SetLAUNCHERnumberfield(int field)
 {
     m_designator_launch_number_of_year = field;
 };
 
-void SetLAUNCHpiencedesignator(char designator)
+
+// sets the piece designator
+void orbital::SetLAUNCHpiecedesignator(char designator)
 {
     m_designator_piece_of_launch = designator;
 };
 
-void SetEPOCHyear(int year)
+// set the epoch year
+void orbital::SetEPOCHyear(int year)
 {
     m_epoch_year = year;
 };
 
-void SetJULIANdatefraction(double fraction)
+// set the julian date fraction
+void orbital::SetJULIANdatefraction(double fraction)
 {
     m_julian_date_fraction = fraction;
 };
 
-void SetBALLISTICcoefficient(double coefficient)
+// set the ballistic coefficient
+void orbital::SetBALLISTICcoefficient(double coefficient)
 {
     m_ballistic_coefficient = coefficient;
 };
 
-void SetSECONDderivativemotion(double motion)
+// extract and store the second derivative
+void orbital::SetSECONDderivativemotion(double motion)
 {
     m_second_derivative_of_motion = motion;
 };
 
-void SetDRAGRADIATIONcoefficient(int coefficient)
+// extract and store the degradation coefficient
+void orbital::SetDRAGRADIATIONcoefficient(int coefficient)
 {
     m_drag_term_or_radition_coefficient = coefficient;
 };
 
-void SetEPHEMERIStype(int type)
+
+// set the ephemeris details
+void orbital::SetEPHEMERIStype(int type)
 {
     m_ephemeris_type = type;
 };
-void SetELEMENTnumber(int number)
+
+// set the element number
+void orbital::SetELEMENTnumber(int number)
 {
     m_element_number = number;
 };
 
-void SetCHECKsum(int sum)
+// set the checksum
+void orbital::SetCHECKsum(int sum)
 {
     m_check_sum = sum;
 };
