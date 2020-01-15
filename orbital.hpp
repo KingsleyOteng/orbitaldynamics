@@ -38,7 +38,7 @@ private:
  
 public:
     orbital(int year, int month, int day);
-    void getDataFile();
+    
     void SetDate(int year, int month, int day);
     void SetTLEname(std::string name);
     void SetSATnumber(int number);
@@ -55,6 +55,7 @@ public:
     void SetELEMENTnumber(int number);
     void SetCHECKsum(int sum);
     
+    void getDataFile();
     std::string getTLEname() { return m_tle_name; }
     int getSATnumber() { return m_satellite_number; }
     std::string getCLASSIFIERfield() { return m_classification; }

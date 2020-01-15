@@ -57,3 +57,82 @@ void orbital::SetTLEname(std::string name)
 };
 
 
+std::string m_tle_name;
+int         m_satellite_number;
+std::string m_classification;
+int         m_designator_launch_year;
+int         m_designator_launch_number_of_year;
+char        m_designator_piece_of_launch;
+int         m_epoch_year;
+double      m_julian_date_fraction;
+double      m_ballistic_coefficient;
+double      m_second_derivative_of_motion;
+std::string m_drag_term_or_radition_coefficient;
+int         m_ephemeris_type;
+int         m_element_number;
+int         m_check_sum;
+
+void SetSATnumber(int number)
+{
+    m_satellite_number = number;
+};
+
+void SetCLASSIFIERfield(std::string field)
+{
+    m_classification = field;
+};
+
+void SetLAUNCHERyearfield(int field)
+{
+    m_designator_launch_year = field;
+};
+
+void SetLAUNCHERnumberfield(int field)
+{
+    m_designator_launch_number_of_year = field;
+};
+
+void SetLAUNCHpiencedesignator(char designator)
+{
+    m_designator_piece_of_launch = designator;
+};
+
+void SetEPOCHyear(int year)
+{
+    m_epoch_year = year;
+};
+
+void SetJULIANdatefraction(double fraction)
+{
+    m_julian_date_fraction = fraction;
+};
+
+void SetBALLISTICcoefficient(double coefficient)
+{
+    m_ballistic_coefficient = coefficient;
+};
+
+void SetSECONDderivativemotion(double motion)
+{
+    m_second_derivative_of_motion = motion;
+};
+
+void SetDRAGRADIATIONcoefficient(int coefficient)
+{
+    m_drag_term_or_radition_coefficient = coefficient;
+};
+
+void SetEPHEMERIStype(int type)
+{
+    m_ephemeris_type = type;
+};
+void SetELEMENTnumber(int number)
+{
+    m_element_number = number;
+};
+
+void SetCHECKsum(int sum)
+{
+    m_check_sum = sum;
+};
+
