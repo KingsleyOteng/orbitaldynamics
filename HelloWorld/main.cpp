@@ -20,7 +20,4 @@ int main() {
     std::cout << "\nsatellite name: " << orb->getTLEname() << "\n";
     return 0;
     
-    
- 
-    
 }
