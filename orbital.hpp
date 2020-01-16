@@ -32,6 +32,15 @@ private:
     int         m_element_number;
     int         m_check_sum;
     
+    int         m_satellite_number_2;
+    double      m_satellite_inclination;
+    double      m_satellite_ascension_node;
+    double      m_satellite_eccentricity_coefficient;
+    double      m_argument_perigree;
+    double      m_mean_anomaly;
+    double      m_mean_motion;
+    double      m_epoch_checksum;
+    
     int m_year;
     int m_month;
     int m_day;
@@ -79,6 +88,15 @@ public:
     int getEPHEMERIStype() { return m_ephemeris_type; }
     int getELEMENTnumber() { return m_element_number; }
     int getCHECKsum() { return m_check_sum; }
+    
+    int SetSATNUMBERline2(int number) { return m_satellite_number_2; }
+    double SetINCLINATIONfield(double field) { return m_satellite_inclination; }
+    double SetRIGHTASCENTIONnode(double node) { return m_satellite_ascension_node; }
+    double SetECCENTRICITYcoefficient(double coefficient) { return m_satellite_eccentricity_coefficient; }
+    double SetARGUMENTperigree(double perigree) { return m_argument_perigree; }
+    double SetMEANanomlay(double anomaly) { return m_mean_anomaly; }
+    double SetMEANmotion(double motion) { return m_mean_motion; }
+    double SetREVOLUTIONepochchecksum(double checksum) { return m_epoch_checksum; }
     
     int getYear() { return m_year; }
     int getMonth() { return m_month; }
