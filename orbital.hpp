@@ -55,6 +55,15 @@ public:
     void SetELEMENTnumber(int number);
     void SetCHECKsum(int sum);
     
+    void SetSATNUMBERline2(int number);
+    void SetINCLINATIONfield(double number);
+    void SetRIGHTASCENTIONnode(double number);
+    void SetECCENTRICITY(double number);
+    void SetARGUMENTperigree(double number);
+    void SetMEANanomlay(double number);
+    void SetMEANmotion(double number);
+    void SetREVOLUTIONepochchecksum(double number);
+    
     void getDataFile();
     std::string getTLEname() { return m_tle_name; }
     int getSATnumber() { return m_satellite_number; }
