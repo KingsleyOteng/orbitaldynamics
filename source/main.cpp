@@ -20,5 +20,4 @@ int main()
     orb->getDataFile();
     std::cout << "\nsatellite name: " << orb->getTLEname() << "\n";
     return 0;
-    
 }

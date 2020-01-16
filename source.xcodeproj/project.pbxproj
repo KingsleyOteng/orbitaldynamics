@@ -28,7 +28,7 @@
 		D8221FFB23CE10B600AFBC4F /* orbital.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = orbital.hpp; sourceTree = "<group>"; };
 		D8221FFD23CE17BE00AFBC4F /* TLE_File.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TLE_File.rtf; sourceTree = "<group>"; };
 		D8221FFE23CE1C7700AFBC4F /* TLE_File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TLE_File.txt; sourceTree = "<group>"; };
-		D8BEF51A23CE0C3500C746DF /* HelloWorld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloWorld; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8BEF51A23CE0C3500C746DF /* source */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = source; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BEF51D23CE0C3500C746DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +46,7 @@
 		D8BEF51123CE0C3500C746DF = {
 			isa = PBXGroup;
 			children = (
-				D8BEF51C23CE0C3500C746DF /* HelloWorld */,
+				D8BEF51C23CE0C3500C746DF /* source */,
 				D8BEF51B23CE0C3500C746DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		D8BEF51B23CE0C3500C746DF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8BEF51A23CE0C3500C746DF /* HelloWorld */,
+				D8BEF51A23CE0C3500C746DF /* source */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D8BEF51C23CE0C3500C746DF /* HelloWorld */ = {
+		D8BEF51C23CE0C3500C746DF /* source */ = {
 			isa = PBXGroup;
 			children = (
 				D8221FFE23CE1C7700AFBC4F /* TLE_File.txt */,
@@ -68,15 +68,15 @@
 				D8221FFB23CE10B600AFBC4F /* orbital.hpp */,
 				D8221FFD23CE17BE00AFBC4F /* TLE_File.rtf */,
 			);
-			path = HelloWorld;
+			path = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8BEF51923CE0C3500C746DF /* HelloWorld */ = {
+		D8BEF51923CE0C3500C746DF /* source */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8BEF52123CE0C3500C746DF /* Build configuration list for PBXNativeTarget "HelloWorld" */;
+			buildConfigurationList = D8BEF52123CE0C3500C746DF /* Build configuration list for PBXNativeTarget "source" */;
 			buildPhases = (
 				D8BEF51623CE0C3500C746DF /* Sources */,
 				D8BEF51723CE0C3500C746DF /* Frameworks */,
@@ -86,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = HelloWorld;
+			name = source;
 			productName = HelloWorld;
-			productReference = D8BEF51A23CE0C3500C746DF /* HelloWorld */;
+			productReference = D8BEF51A23CE0C3500C746DF /* source */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D8BEF51523CE0C3500C746DF /* Build configuration list for PBXProject "HelloWorld" */;
+			buildConfigurationList = D8BEF51523CE0C3500C746DF /* Build configuration list for PBXProject "source" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8BEF51923CE0C3500C746DF /* HelloWorld */,
+				D8BEF51923CE0C3500C746DF /* source */,
 			);
 		};
 /* End PBXProject section */
@@ -264,7 +264,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8BEF51523CE0C3500C746DF /* Build configuration list for PBXProject "HelloWorld" */ = {
+		D8BEF51523CE0C3500C746DF /* Build configuration list for PBXProject "source" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8BEF51F23CE0C3500C746DF /* Debug */,
@@ -273,7 +273,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8BEF52123CE0C3500C746DF /* Build configuration list for PBXNativeTarget "HelloWorld" */ = {
+		D8BEF52123CE0C3500C746DF /* Build configuration list for PBXNativeTarget "source" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8BEF52223CE0C3500C746DF /* Debug */,
