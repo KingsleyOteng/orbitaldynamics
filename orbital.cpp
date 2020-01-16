@@ -136,3 +136,61 @@ void orbital::SetCHECKsum(int sum)
     m_check_sum = sum;
 };
 
+
+void        orbital::SetSATNUMBERline2(int number)
+{
+    m_satellite_number_2 = number;
+};
+
+
+
+void        orbital::SetINCLINATIONfield(double field)
+{
+    m_satellite_inclination = field;
+};
+
+
+
+void        orbital::SetRIGHTASCENTIONnode(double node)
+{
+    m_satellite_ascension_node = node;
+};
+
+
+
+void        orbital::SetECCENTRICITYcoefficient(double coefficient)
+{
+    m_satellite_eccentricity_coefficient = coefficient;
+};
+
+
+
+void        orbital::SetARGUMENTperigree(double perigree)
+{
+    m_argument_perigree = perigree;
+};
+
+
+
+void        orbital::SetMEANanomlay(double anomaly)
+{
+    m_mean_anomaly = anomaly;
+};
+
+
+
+void        orbital::SetMEANmotion(double motion)
+{
+    m_mean_motion = motion;
+};
+
+
+
+void        orbital::SetREVOLUTIONepochchecksum(double checksum)
+{
+    m_epoch_checksum = checksum;
+};
+
+
+
+
