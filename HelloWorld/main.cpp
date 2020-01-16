@@ -7,9 +7,20 @@
 //
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
+#include "orbital.hpp"
 
-int main(int argc, const char * argv[]) {
+int main() {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    std::cout << "Hello, Kwadwo!\n";
+    std::vector<int> v{1,2,3};
+    orbital *orb = new orbital(12,13,14);
+    orb->getDataFile();
+    std::cout << "\nsatellite name: " << orb->getTLEname() << "\n";
     return 0;
+    
+    
+ 
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8221FFC23CE10B600AFBC4F /* orbital.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8221FFA23CE10B600AFBC4F /* orbital.cpp */; };
 		D8BEF51E23CE0C3500C746DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8BEF51D23CE0C3500C746DF /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D8221FFA23CE10B600AFBC4F /* orbital.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = orbital.cpp; sourceTree = "<group>"; };
+		D8221FFB23CE10B600AFBC4F /* orbital.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = orbital.hpp; sourceTree = "<group>"; };
+		D8221FFD23CE17BE00AFBC4F /* TLE_File.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TLE_File.rtf; sourceTree = "<group>"; };
+		D8221FFE23CE1C7700AFBC4F /* TLE_File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TLE_File.txt; sourceTree = "<group>"; };
 		D8BEF51A23CE0C3500C746DF /* HelloWorld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloWorld; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BEF51D23CE0C3500C746DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,7 +62,11 @@
 		D8BEF51C23CE0C3500C746DF /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				D8221FFE23CE1C7700AFBC4F /* TLE_File.txt */,
 				D8BEF51D23CE0C3500C746DF /* main.cpp */,
+				D8221FFA23CE10B600AFBC4F /* orbital.cpp */,
+				D8221FFB23CE10B600AFBC4F /* orbital.hpp */,
+				D8221FFD23CE17BE00AFBC4F /* TLE_File.rtf */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -120,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8BEF51E23CE0C3500C746DF /* main.cpp in Sources */,
+				D8221FFC23CE10B600AFBC4F /* orbital.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
