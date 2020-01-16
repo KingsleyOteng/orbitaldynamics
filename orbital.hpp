@@ -56,13 +56,13 @@ public:
     void SetCHECKsum(int sum);
     
     void SetSATNUMBERline2(int number);
-    void SetINCLINATIONfield(double number);
-    void SetRIGHTASCENTIONnode(double number);
-    void SetECCENTRICITY(double number);
-    void SetARGUMENTperigree(double number);
-    void SetMEANanomlay(double number);
-    void SetMEANmotion(double number);
-    void SetREVOLUTIONepochchecksum(double number);
+    void SetINCLINATIONfield(double field);
+    void SetRIGHTASCENTIONnode(double node);
+    void SetECCENTRICITYcoefficient(double coefficient);
+    void SetARGUMENTperigree(double perigree);
+    void SetMEANanomlay(double anomaly);
+    void SetMEANmotion(double motion);
+    void SetREVOLUTIONepochchecksum(double checksum);
     
     void getDataFile();
     std::string getTLEname() { return m_tle_name; }
