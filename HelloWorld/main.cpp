@@ -11,8 +11,9 @@
 #include <algorithm>
 #include "orbital.hpp"
 
-int main() {
-    // insert code here...
+int main()
+{
+    // main file with some dummy code
     std::cout << "Hello, Kwadwo!\n";
     std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
