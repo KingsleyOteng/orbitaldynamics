@@ -44,6 +44,17 @@ void orbital::getDataFile()
         {
             orbital::SetTLEname(line);
         }
+        
+        if (x == 1)
+        {
+            orbital::SetTLElineone(line);
+        }
+        
+        if (x == 2)
+               {
+                   orbital::SetTLElinetwoline);
+               }
+        
         x++;
        }
     
