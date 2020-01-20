@@ -200,6 +200,7 @@ void  orbital::SetTLElineone(std::string phrase)
     m_tle_line_one = phrase;
 };
 
+
 // set the data from the second line of the tle
 void  orbital::SetTLElinetwo(std::string phrase)
 {
