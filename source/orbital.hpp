@@ -18,6 +18,11 @@ class orbital{
 
 private:
     std::string m_tle_name;
+    std::string m_tle_line_one;
+    std::string m_tle_line_two;
+    std::string m1;
+    std::string m2;
+    
     int         m_satellite_number;
     std::string m_classification;
     int         m_designator_launch_year;
@@ -47,6 +52,7 @@ private:
  
 public:
     orbital(int year, int month, int day);
+
     
     void        SetDate(int year, int month, int day);
     void        SetTLEname(std::string name);
@@ -65,8 +71,8 @@ public:
     void        SetCHECKsum(int sum);
     
     void        SetSATNUMBERline2(int number);
-    void        SetTLElineone(string phrase);
-    void        SetTLElinetwo(string phrase);
+    void        SetTLElineone(std::string phrase);
+    void        SetTLElinetwo(std::string phrase);
     void        SetINCLINATIONfield(double field);
     void        SetRIGHTASCENTIONnode(double node);
     void        SetECCENTRICITYcoefficient(double coefficient);
