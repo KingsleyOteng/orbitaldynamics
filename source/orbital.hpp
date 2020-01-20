@@ -65,6 +65,8 @@ public:
     void        SetCHECKsum(int sum);
     
     void        SetSATNUMBERline2(int number);
+    void        SetTLElineone(string phrase);
+    void        SetTLElinetwo(string phrase);
     void        SetINCLINATIONfield(double field);
     void        SetRIGHTASCENTIONnode(double node);
     void        SetECCENTRICITYcoefficient(double coefficient);

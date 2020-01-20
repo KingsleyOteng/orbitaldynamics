@@ -51,9 +51,9 @@ void orbital::getDataFile()
         }
         
         if (x == 2)
-               {
-                   orbital::SetTLElinetwoline);
-               }
+        {
+            orbital::SetTLElinetwo(line);
+        }
         
         x++;
        }
@@ -195,5 +195,14 @@ void  orbital::SetREVOLUTIONepochchecksum(double checksum)
 };
 
 
+// set the data from the first line of the tle
+void        SetTLElineone(string phrase)
+{
+    
+};
 
-
+// set the data from the second line of the tle
+void        SetTLElinetwo(string phrase)
+{
+    
+};
