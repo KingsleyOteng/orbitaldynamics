@@ -19,6 +19,10 @@ int main()
     std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     orb->getDataFile();
+    
     std::cout << "\nsatellite name: " << orb -> getTLEname() << "\n";
+    std::cout << "\ntle line one: " << orb -> getTLElineone() << "\n";
+    std::cout << "\ntle line two: " << orb -> getTLElinetwo() << "\n";
+    
     return 0;
 }
