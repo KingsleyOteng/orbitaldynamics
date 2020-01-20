@@ -29,7 +29,7 @@ void orbital::SetDate(int year, int month, int day)
 // Date member function
 void orbital::getDataFile()
 {
-    std::string filename = "/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/HelloWorld/TLE_File.txt";
+    std::string filename = "/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/TLE_File.txt";
     std::ifstream in(filename, std::ios::out);
     std::string line;
     
@@ -194,15 +194,17 @@ void  orbital::SetREVOLUTIONepochchecksum(double checksum)
     m_epoch_checksum = checksum;
 };
 
-
 // set the data from the first line of the tle
-void        SetTLElineone(std::string phrase)
+void  orbital::SetTLElineone(std::string phrase)
 {
-    m1 = phrase;
+    m_tle_line_one = phrase;
 };
+
 
 // set the data from the second line of the tle
-void        SetTLElinetwo(std::string phrase)
+void  orbital::SetTLElinetwo(std::string phrase)
 {
-    m2 = phrase;
+    m_tle_line_two = phrase;
 };
+
+

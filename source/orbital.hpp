@@ -17,11 +17,10 @@ class orbital{
     
 
 private:
+    
     std::string m_tle_name;
     std::string m_tle_line_one;
     std::string m_tle_line_two;
-    std::string m1;
-    std::string m2;
     
     int         m_satellite_number;
     std::string m_classification;
@@ -50,7 +49,9 @@ private:
     int m_month;
     int m_day;
  
+    
 public:
+    
     orbital(int year, int month, int day);
 
     
@@ -83,6 +84,10 @@ public:
     
     void        getDataFile();
     std::string getTLEname() { return m_tle_name; }
+    // set the data from the second line of the tle
+    std::string getTLElinetwo() { return m_tle_line_one; }
+    std::string  getTLElineone() { return m_tle_line_two; }
+
     int         getSATnumber() { return m_satellite_number; }
     std::string getCLASSIFIERfield() { return m_classification; }
     int         getLAUNCHERyearfield() { return m_designator_launch_year; }
@@ -105,6 +110,7 @@ public:
     double      getMEANanomlay(double anomaly) { return m_mean_anomaly; }
     double      getMEANmotion(double motion) { return m_mean_motion; }
     double      getREVOLUTIONepochchecksum(double checksum) { return m_epoch_checksum; }
+
     
     int         getYear() { return m_year; }
     int         getMonth() { return m_month; }
