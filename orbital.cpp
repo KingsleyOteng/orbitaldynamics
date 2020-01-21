@@ -13,12 +13,14 @@
 using namespace std;
 
 // Date constructor
+// store the data
 orbital::orbital(int year, int month, int day)
 {
     SetDate(year, month, day);
 }
  
 // Date member function
+// store the data
 void orbital::SetDate(int year, int month, int day)
 {
     m_month = month;
@@ -27,6 +29,7 @@ void orbital::SetDate(int year, int month, int day)
 }
 
 // Date member function
+// store the data
 void orbital::getDataFile()
 {
     std::string filename = "/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/TLE_File.txt";
@@ -37,55 +40,57 @@ void orbital::getDataFile()
         std::cerr << "Error: Unable to open settings file \"" << filename << "\" for reading!" << std::endl;
         
     }
+    
     int x = 0;
-    while (std::getline(in, line)) {
+    while (std::getline(in, line))
+    {
            std::cout << line << "\n";
+        
         if (x == 0)
-        {
-            orbital::SetTLEname(line);
-        }
+        { orbital::SetTLEname(line); }
         
         if (x == 1)
-        {
-            orbital::SetTLElineone(line);
-        }
+        { orbital::SetTLElineone(line); }
         
         if (x == 2)
-        {
-            orbital::SetTLElinetwo(line);
-        }
+        { orbital::SetTLElinetwo(line); }
         
         x++;
-       }
+    }
     
     in.close();
 }
 
 // Date member function
+// store the data
 void orbital::SetTLEname(std::string name)
 {
     m_tle_name = name;
 };
 
 // sets the statellite number
+// store the data
 void orbital::SetSATnumber(int number)
 {
     m_satellite_number = number;
 };
 
 // sets the classifier field
+// store the data
 void orbital::SetCLASSIFIERfield(std::string field)
 {
     m_classification = field;
 };
 
 // sets the laumncher year field
+// store the data
 void orbital::SetLAUNCHERyearfield(int field)
 {
     m_designator_launch_year = field;
 };
 
 // sets the launcher number field
+// store the data
 void orbital::SetLAUNCHERnumberfield(int field)
 {
     m_designator_launch_number_of_year = field;
@@ -93,114 +98,134 @@ void orbital::SetLAUNCHERnumberfield(int field)
 
 
 // sets the piece designator
+// store the data
 void orbital::SetLAUNCHpiecedesignator(char designator)
 {
     m_designator_piece_of_launch = designator;
 };
 
 // set the epoch year
+// store the data
 void orbital::SetEPOCHyear(int year)
 {
     m_epoch_year = year;
 };
 
 // set the julian date fraction
+// store the data
 void orbital::SetJULIANdatefraction(double fraction)
 {
     m_julian_date_fraction = fraction;
 };
 
 // set the ballistic coefficient
+// store the data
 void orbital::SetBALLISTICcoefficient(double coefficient)
 {
     m_ballistic_coefficient = coefficient;
 };
 
 // extract and store the second derivative
+// store the data
 void orbital::SetSECONDderivativemotion(double motion)
 {
     m_second_derivative_of_motion = motion;
 };
 
 // extract and store the degradation coefficient
+// store the data
 void orbital::SetDRAGRADIATIONcoefficient(int coefficient)
 {
     m_drag_term_or_radition_coefficient = coefficient;
 };
 
 // set the ephemeris details
+// store the data
 void orbital::SetEPHEMERIStype(int type)
 {
     m_ephemeris_type = type;
 };
 
 // set the element number
+// store the data
 void orbital::SetELEMENTnumber(int number)
 {
     m_element_number = number;
 };
 
 // set the checksum
+// store the data
 void orbital::SetCHECKsum(int sum)
 {
     m_check_sum = sum;
 };
 
 // set the satellite number obtained from line 2
+// store the data
 void orbital::SetSATNUMBERline2(int number)
 {
     m_satellite_number_2 = number;
 };
 
 // set the inclination of the field
+// store the data
 void orbital::SetINCLINATIONfield(double field)
 {
     m_satellite_inclination = field;
 };
 
 // set the ascension node
+// store the data
 void orbital::SetRIGHTASCENTIONnode(double node)
 {
     m_satellite_ascension_node = node;
 };
 
 // set the eccentricity coefficient
+// store the data
 void  orbital::SetECCENTRICITYcoefficient(double coefficient)
 {
     m_satellite_eccentricity_coefficient = coefficient;
 };
 
 // set the argument perigree
+// store the data
 void  orbital::SetARGUMENTperigree(double perigree)
 {
     m_argument_perigree = perigree;
 };
 
 // set the mean anomaly
+// store the data
 void  orbital::SetMEANanomlay(double anomaly)
 {
     m_mean_anomaly = anomaly;
 };
 
 // set the mean motion
+// store the data
 void  orbital::SetMEANmotion(double motion)
 {
     m_mean_motion = motion;
 };
 
 // set the epoch and the corresponding checksum
+// store the data
 void  orbital::SetREVOLUTIONepochchecksum(double checksum)
 {
     m_epoch_checksum = checksum;
 };
 
 // set the data from the first line of the tle
+// store the data
 void  orbital::SetTLElineone(std::string phrase)
 {
     m_tle_line_one = phrase;
 };
 
+
 // set the data from the second line of the tle
+// store the data
 void  orbital::SetTLElinetwo(std::string phrase)
 {
     m_tle_line_two = phrase;
