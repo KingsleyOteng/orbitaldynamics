@@ -195,12 +195,15 @@ void  orbital::SetREVOLUTIONepochchecksum(double checksum)
 };
 
 // set the data from the first line of the tle
+// store the data
 void  orbital::SetTLElineone(std::string phrase)
 {
     m_tle_line_one = phrase;
 };
 
+
 // set the data from the second line of the tle
+// store the data
 void  orbital::SetTLElinetwo(std::string phrase)
 {
     m_tle_line_two = phrase;
