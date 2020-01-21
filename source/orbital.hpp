@@ -45,9 +45,9 @@ private:
     double      m_mean_motion;
     double      m_epoch_checksum;
     
-    int m_year;
-    int m_month;
-    int m_day;
+    int         m_year;
+    int         m_month;
+    int         m_day;
  
     
 public:
@@ -85,8 +85,8 @@ public:
     void        getDataFile();
     std::string getTLEname() { return m_tle_name; }
     // set the data from the second line of the tle
-    std::string getTLElinetwo() { return m_tle_line_one; }
-    std::string  getTLElineone() { return m_tle_line_two; }
+    std::string getTLElinetwo() { return m_tle_line_two; }
+    std::string getTLElineone() { return m_tle_line_one; }
 
     int         getSATnumber() { return m_satellite_number; }
     std::string getCLASSIFIERfield() { return m_classification; }
