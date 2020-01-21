@@ -29,7 +29,7 @@ void orbital::SetDate(int year, int month, int day)
 // Date member function
 void orbital::getDataFile()
 {
-    std::string filename = "/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/HelloWorld/TLE_File.txt";
+    std::string filename = "/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/TLE_File.txt";
     std::ifstream in(filename, std::ios::out);
     std::string line;
     
@@ -44,6 +44,17 @@ void orbital::getDataFile()
         {
             orbital::SetTLEname(line);
         }
+        
+        if (x == 1)
+        {
+            orbital::SetTLElineone(line);
+        }
+        
+        if (x == 2)
+        {
+            orbital::SetTLElinetwo(line);
+        }
+        
         x++;
        }
     
@@ -117,7 +128,6 @@ void orbital::SetDRAGRADIATIONcoefficient(int coefficient)
     m_drag_term_or_radition_coefficient = coefficient;
 };
 
-
 // set the ephemeris details
 void orbital::SetEPHEMERIStype(int type)
 {
@@ -136,61 +146,64 @@ void orbital::SetCHECKsum(int sum)
     m_check_sum = sum;
 };
 
-
-void        orbital::SetSATNUMBERline2(int number)
+// set the satellite number obtained from line 2
+void orbital::SetSATNUMBERline2(int number)
 {
     m_satellite_number_2 = number;
 };
 
-
-
-void        orbital::SetINCLINATIONfield(double field)
+// set the inclination of the field
+void orbital::SetINCLINATIONfield(double field)
 {
     m_satellite_inclination = field;
 };
 
-
-
-void        orbital::SetRIGHTASCENTIONnode(double node)
+// set the ascension node
+void orbital::SetRIGHTASCENTIONnode(double node)
 {
     m_satellite_ascension_node = node;
 };
 
-
-
-void        orbital::SetECCENTRICITYcoefficient(double coefficient)
+// set the eccentricity coefficient
+void  orbital::SetECCENTRICITYcoefficient(double coefficient)
 {
     m_satellite_eccentricity_coefficient = coefficient;
 };
 
-
-
-void        orbital::SetARGUMENTperigree(double perigree)
+// set the argument perigree
+void  orbital::SetARGUMENTperigree(double perigree)
 {
     m_argument_perigree = perigree;
 };
 
-
-
-void        orbital::SetMEANanomlay(double anomaly)
+// set the mean anomaly
+void  orbital::SetMEANanomlay(double anomaly)
 {
     m_mean_anomaly = anomaly;
 };
 
-
-
-void        orbital::SetMEANmotion(double motion)
+// set the mean motion
+void  orbital::SetMEANmotion(double motion)
 {
     m_mean_motion = motion;
 };
 
-
-
-void        orbital::SetREVOLUTIONepochchecksum(double checksum)
+// set the epoch and the corresponding checksum
+void  orbital::SetREVOLUTIONepochchecksum(double checksum)
 {
     m_epoch_checksum = checksum;
 };
 
+// set the data from the first line of the tle
+void  orbital::SetTLElineone(std::string phrase)
+{
+    m_tle_line_one = phrase;
+};
 
+// set the data from the second line of the tle
+void  orbital::SetTLElinetwo(std::string phrase)
+{
+    m_tle_line_two = phrase;
+};
 
 
