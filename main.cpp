@@ -11,6 +11,7 @@
 #include <vector>
 #include <algorithm>
 #include "orbital.hpp"
+#include "utilities.hpp"
 
 int main()
 {
@@ -20,9 +21,11 @@ int main()
     orbital *orb = new orbital(12,13,14);
     orb->getDataFile();
     
-    std::cout << "\nsatellite name: " << orb -> getTLEname() << "\n";
-    std::cout << "\ntle line one: " << orb -> getTLElineone() << "\n";
-    std::cout << "\ntle line two: " << orb -> getTLElinetwo() << "\n";
+    std::cout << "\nsatellite name: \n \n" << orb -> getTLEname() << "\n";
+    std::cout << "\ntle line one: \n \n" << orb -> getTLElineone() << "\n";
+    std::cout << "\ntle line two: \n \n" << orb -> getTLElinetwo() << "\n";
+    
+    std::cout << "parse " << stringparser("one two three");
     
     return 0;
 }

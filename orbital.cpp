@@ -36,9 +36,9 @@ void orbital::getDataFile()
     std::ifstream in(filename, std::ios::out);
     std::string line;
     
-    if (!in.is_open()) {
+    if (!in.is_open())
+    {
         std::cerr << "Error: Unable to open settings file \"" << filename << "\" for reading!" << std::endl;
-        
     }
     
     int x = 0;
@@ -50,10 +50,20 @@ void orbital::getDataFile()
         { orbital::SetTLEname(line); }
         
         if (x == 1)
-        { orbital::SetTLElineone(line); }
+        {
+            cout << "hello 1 :" << line << "\n";
+            orbital::SetTLElineone(line);
+            
+            
+        }
         
         if (x == 2)
-        { orbital::SetTLElinetwo(line); }
+        {
+            cout << "hello 2 :" << line << "\n";
+            orbital::SetTLElinetwo(line);
+            
+            
+        }
         
         x++;
     }
