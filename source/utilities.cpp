@@ -10,11 +10,12 @@
 
 using namespace std;
 
-std::string stringparser(std::string str)
+std::string utilities::getStringParser(std::string str)
 {
     // Used to split string around spaces.
     std::istringstream ss(str);
     string final;
+    
     // Traverse through all words
     do
         {
@@ -25,6 +26,7 @@ std::string stringparser(std::string str)
             // Print the read word
             cout << word << endl;
             final = final + "\n" + word;
+            
       
         }
     while (ss); // While there is more to read
@@ -32,3 +34,34 @@ std::string stringparser(std::string str)
     return final;
 }
   
+
+std::vector<string> utilities::getStringParser()
+{
+    // Used to split string around spaces.
+    std::istringstream ss(parse_input_phrase);
+    string final;
+    vector<string> detokenized_strings;
+    // Traverse through all words
+    do
+        {
+            // Read a word
+            string word;
+            ss >> word;
+      
+            // Print the read word
+            cout << "><><<" << word << endl;
+            //final = final + "\n" + word;
+            
+            detokenized_strings.push_back(word);
+      
+        }
+    while (ss); // While there is more to read
+    
+    return detokenized_strings;
+}
+
+void        utilities::setStringParser(std::string str)
+{
+    parse_input_phrase = str;
+}
+

@@ -14,7 +14,20 @@
 #include <string>
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
+#include <vector>
 
-std::string stringparser(std::string str);
+class utilities
+{
+    
+private:
+    
+    std::string                     parse_input_phrase;
 
+public:
+
+    std::string                     getStringParser(std::string str);
+    std::vector<std::string>        getStringParser();
+    void                            setStringParser(std::string str);
+
+};
 #endif /* utilities_hpp */

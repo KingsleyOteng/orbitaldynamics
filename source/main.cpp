@@ -13,19 +13,27 @@
 #include "orbital.hpp"
 #include "utilities.hpp"
 
+using namespace std;
+
 int main()
 {
     // main file with some dummy code
     std::cout << "Hello, Kwadwo!\n";
     std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
+    utilities *util = new utilities();
     orb->getDataFile();
     
     std::cout << "\nsatellite name: \n \n" << orb -> getTLEname() << "\n";
     std::cout << "\ntle line one: \n \n" << orb -> getTLElineone() << "\n";
     std::cout << "\ntle line two: \n \n" << orb -> getTLElinetwo() << "\n";
     
-    std::cout << "parse " << stringparser("one two three");
+    util -> setStringParser(orb -> getTLElinetwo ());
+    vector<string> parsed_line = util -> getStringParser();
+    
+    cout << parsed_line[3] << "\n";
+    
+    //std::cout << "parses " << "\n" << util -> getStringParser(orb -> getTLElinetwo ());
     
     return 0;
 }
