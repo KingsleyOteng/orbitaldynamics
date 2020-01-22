@@ -9,6 +9,7 @@
 #include "orbital.hpp"
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -85,9 +86,9 @@ void orbital::SetSATnumber(int number)
     m_satellite_number = number;
 };
 
-// sets the classifier field
+// sets the classifier field (1 digits)
 // store the data
-void orbital::SetCLASSIFIERfield(std::string field)
+void orbital::SetCLASSIFIERfield(char field)
 {
     m_classification = field;
 };
@@ -241,4 +242,11 @@ void  orbital::SetTLElinetwo(std::string phrase)
     m_tle_line_two = phrase;
 };
 
-
+// set all TLE parameters
+void orbital::SetTLEparameters(std::vector<std::string> parsed_line_one, std::vector<std::string>parsed_line_twos)
+{
+    orbital::SetTLEname(parsed_line_one[0]);
+    orbital::SetSATnumber(stoi(parsed_line_one[1]));
+    //orbital::SetCLASSIFIERfield(parsed_line_one[1]);
+    //orbital::SetCLASSIFIERfield(<#std::string field#>);
+};
