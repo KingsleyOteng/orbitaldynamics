@@ -28,10 +28,17 @@ int main()
     std::cout << "\ntle line one: \n \n" << orb -> getTLElineone() << "\n";
     std::cout << "\ntle line two: \n \n" << orb -> getTLElinetwo() << "\n";
     
-    util -> setStringParser(orb -> getTLElinetwo ());
-    vector<string> parsed_line = util -> getStringParser();
     
-    cout << parsed_line[3] << "\n";
+    // back out TLE parametersxs
+    util -> setStringParser(orb -> getTLElineone ());
+    vector<string> parsed_line_one = util -> getStringParser();
+    util -> setStringParser(orb -> getTLElinetwo ());
+    vector<string> parsed_line_twos = util -> getStringParser();
+    
+    // set TLE parameters
+    //setTLEparameters(parsed_line_one, parsed_line_twos);
+    
+    cout << parsed_line_one[0] << "\n";
     
     //std::cout << "parses " << "\n" << util -> getStringParser(orb -> getTLElinetwo ());
     

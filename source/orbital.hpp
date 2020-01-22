@@ -58,7 +58,7 @@ public:
     void        SetDate(int year, int month, int day);
     void        SetTLEname(std::string name);
     void        SetSATnumber(int number);
-    void        SetCLASSIFIERfield(std::string field);
+    void        SetCLASSIFIERfield(char field);
     void        SetLAUNCHERyearfield(int field);
     void        SetLAUNCHERnumberfield(int field);
     void        SetLAUNCHpiecedesignator(char designator);
@@ -81,6 +81,8 @@ public:
     void        SetMEANanomlay(double anomaly);
     void        SetMEANmotion(double motion);
     void        SetREVOLUTIONepochchecksum(double checksum);
+    void        SetTLEparameters(std::string parsed_line_one, std::string parsed_line_twos);
+    void        SetTLEparameters(std::vector<std::string> parsed_line_one, std::vector<std::string>parsed_line_twos);
     
     void        getDataFile();
     std::string getTLEname() { return m_tle_name; }
