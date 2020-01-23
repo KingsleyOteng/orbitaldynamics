@@ -245,8 +245,43 @@ void  orbital::SetTLElinetwo(std::string phrase)
 // set all TLE parameters
 void orbital::SetTLEparameters(std::vector<std::string> parsed_line_one, std::vector<std::string>parsed_line_twos)
 {
+    std::string phrase;
     orbital::SetTLEname(parsed_line_one[0]);
+    
+    phrase = parsed_line_one[1];
+    phrase = phrase.substr(0, 4);
     orbital::SetSATnumber(stoi(parsed_line_one[1]));
-    //orbital::SetCLASSIFIERfield(parsed_line_one[1]);
-    //orbital::SetCLASSIFIERfield(<#std::string field#>);
+    
+    phrase = parsed_line_one[1];
+    phrase = phrase.substr(4, 5);
+    orbital::SetCLASSIFIERfield(stoi(phrase));
+    
+    phrase = parsed_line_one[2];
+    phrase = phrase.substr(0, 1);
+    orbital::SetCLASSIFIERfield(stoi(phrase));
+    
+ 
+    phrase = parsed_line_one[2];
+    phrase = phrase.substr(2, 3);
+    orbital::SetLAUNCHERyearfield(stoi(phrase));
+    
+    phrase = parsed_line_one[2];
+    phrase = phrase.substr(4, 5);
+    orbital::SetLAUNCHERnumberfield(stoi(phrase));
+    
+    phrase = parsed_line_one[2];
+    phrase = phrase.substr(6, 6);
+    orbital::SetLAUNCHpiecedesignator(stoi(phrase));
+    
+    phrase = parsed_line_one[3];
+    phrase = phrase.substr(0, 1);
+    orbital::SetEPOCHyear(stoi(phrase));
+    
+    //orbital::SetJULIANdatefraction(parsed_line_one[1]);
+    //orbital::SetBALLISTICcoefficient(parsed_line_one[1]);
+    //orbital::SetSECONDderivativemotion(parsed_line_one[1]);
+    //orbital::SetDRAGRADIATIONcoefficient(parsed_line_one[1]);
+    //orbital::SetEPHEMERIStype(parsed_line_one[1];
+   // orbital::SetELEMENTnumber(parsed_line_one[1]);
+    //orbital::SetCHECKsum(parsed_line_one[1]);
 };
