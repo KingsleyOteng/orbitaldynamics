@@ -110,7 +110,7 @@ void orbital::SetLAUNCHERnumberfield(int field)
 
 // sets the piece designator
 // store the data
-void orbital::SetLAUNCHpiecedesignator(char designator)
+void orbital::SetLAUNCHpiecedesignator(string designator)
 {
     m_designator_piece_of_launch = designator;
 };
@@ -138,14 +138,14 @@ void orbital::SetBALLISTICcoefficient(double coefficient)
 
 // extract and store the second derivative
 // store the data
-void orbital::SetSECONDderivativemotion(double motion)
+void orbital::SetSECONDderivativemotion(std::string motion)
 {
     m_second_derivative_of_motion = motion;
 };
 
 // extract and store the degradation coefficient
 // store the data
-void orbital::SetDRAGRADIATIONcoefficient(int coefficient)
+void orbital::SetDRAGRADIATIONcoefficient(std::string coefficient)
 {
     m_drag_term_or_radition_coefficient = coefficient;
 };
@@ -245,8 +245,51 @@ void  orbital::SetTLElinetwo(std::string phrase)
 // set all TLE parameters
 void orbital::SetTLEparameters(std::vector<std::string> parsed_line_one, std::vector<std::string>parsed_line_twos)
 {
+    std::string phrase;
     orbital::SetTLEname(parsed_line_one[0]);
+    
+    phrase = parsed_line_one[1];
+    phrase = phrase.substr(0, 4);
     orbital::SetSATnumber(stoi(parsed_line_one[1]));
-    //orbital::SetCLASSIFIERfield(parsed_line_one[1]);
-    //orbital::SetCLASSIFIERfield(<#std::string field#>);
+    
+    phrase = parsed_line_one[1];
+    phrase = phrase.substr(4, 5);
+    orbital::SetCLASSIFIERfield(stoi(phrase));
+    
+    phrase = parsed_line_one[2];
+    phrase = phrase.substr(0, 1);
+    orbital::SetLAUNCHERyearfield(stoi(phrase));
+    
+    phrase = parsed_line_one[2];
+    phrase = phrase.substr(2, 4);
+    orbital::SetLAUNCHERnumberfield(stoi(phrase));
+    
+    phrase = parsed_line_one[2];
+    phrase = phrase.substr(5, 5);
+    orbital::SetLAUNCHpiecedesignator(phrase);
+    
+    phrase = parsed_line_one[3];
+    phrase = phrase.substr(0, 1);
+    orbital::SetEPOCHyear(stoi(phrase));
+    
+    phrase = parsed_line_one[3];
+    phrase = phrase.substr(2, 13);
+    orbital::SetJULIANdatefraction(stoi(phrase));
+
+    phrase = parsed_line_one[4];
+    orbital::SetBALLISTICcoefficient(stoi(phrase));
+    
+    phrase = parsed_line_one[5];
+    orbital::SetSECONDderivativemotion(phrase);
+    
+    phrase = parsed_line_one[6];
+    orbital::SetDRAGRADIATIONcoefficient(phrase);
+    
+    phrase = parsed_line_one[7];
+    orbital::SetEPHEMERIStype(stoi(phrase));
+    
+    phrase = parsed_line_one[8];
+    orbital::SetELEMENTnumber(stoi(phrase));
+    
+    orbital::SetCHECKsum(0);
 };
