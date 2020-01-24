@@ -1,6 +1,5 @@
 //
-//  orbital.cpp
-//  HelloWorld
+// Overview: We implement here a tracking tool based off of NORAD Two-Line Element Sets.
 //
 //  Created by Kwadwo Oteng-Amoko on 14/01/2020.
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
@@ -16,6 +15,12 @@ using namespace std;
 // Date constructor
 // store the data
 orbital::orbital(int year, int month, int day)
+{
+    SetDate(year, month, day);
+}
+
+// Set the current epoch
+void orbital::SetCurrentEpoch(int year, int month, int day)
 {
     SetDate(year, month, day);
 }
@@ -242,54 +247,102 @@ void  orbital::SetTLElinetwo(std::string phrase)
     m_tle_line_two = phrase;
 };
 
-// set all TLE parameters
-void orbital::SetTLEparameters(std::vector<std::string> parsed_line_one, std::vector<std::string>parsed_line_twos)
-{
-    std::string phrase;
-    orbital::SetTLEname(parsed_line_one[0]);
-    
-    phrase = parsed_line_one[1];
-    phrase = phrase.substr(0, 4);
-    orbital::SetSATnumber(stoi(parsed_line_one[1]));
-    
-    phrase = parsed_line_one[1];
-    phrase = phrase.substr(4, 5);
-    orbital::SetCLASSIFIERfield(stoi(phrase));
-    
-    phrase = parsed_line_one[2];
-    phrase = phrase.substr(0, 1);
-    orbital::SetLAUNCHERyearfield(stoi(phrase));
-    
-    phrase = parsed_line_one[2];
-    phrase = phrase.substr(2, 4);
-    orbital::SetLAUNCHERnumberfield(stoi(phrase));
-    
-    phrase = parsed_line_one[2];
-    phrase = phrase.substr(5, 5);
-    orbital::SetLAUNCHpiecedesignator(phrase);
-    
-    phrase = parsed_line_one[3];
-    phrase = phrase.substr(0, 1);
-    orbital::SetEPOCHyear(stoi(phrase));
-    
-    phrase = parsed_line_one[3];
-    phrase = phrase.substr(2, 13);
-    orbital::SetJULIANdatefraction(stoi(phrase));
 
-    phrase = parsed_line_one[4];
-    orbital::SetBALLISTICcoefficient(stoi(phrase));
-    
-    phrase = parsed_line_one[5];
-    orbital::SetSECONDderivativemotion(phrase);
-    
-    phrase = parsed_line_one[6];
-    orbital::SetDRAGRADIATIONcoefficient(phrase);
-    
-    phrase = parsed_line_one[7];
-    orbital::SetEPHEMERIStype(stoi(phrase));
-    
-    phrase = parsed_line_one[8];
-    orbital::SetELEMENTnumber(stoi(phrase));
-    
-    orbital::SetCHECKsum(0);
+
+    // set all TLE parameters
+    void orbital::SetTLEparameters(std::string spacecraft, std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_two)
+    {
+        std::string phrase;
+        
+        // set the objects name
+        
+        orbital::SetTLEname(spacecraft);
+        
+        // line number one of the NORAD Set Format
+        // set the details
+        
+        phrase = parsed_line_one[1];
+        phrase = phrase.substr(0, 4);
+        orbital::SetSATnumber(stoi(phrase));
+        
+        phrase = parsed_line_one[1];
+        phrase = phrase.substr(4, 5);
+        orbital::SetCLASSIFIERfield(stoi(phrase));
+        
+        phrase = parsed_line_one[2];
+        phrase = phrase.substr(0, 1);
+        orbital::SetLAUNCHERyearfield(stoi(phrase));
+        
+        phrase = parsed_line_one[2];
+        phrase = phrase.substr(2, 4);
+        orbital::SetLAUNCHERnumberfield(stoi(phrase));
+        
+        phrase = parsed_line_one[2];
+        phrase = phrase.substr(5, 5);
+        orbital::SetLAUNCHpiecedesignator(phrase);
+        
+        phrase = parsed_line_one[3];
+        phrase = phrase.substr(0, 1);
+        orbital::SetEPOCHyear(stoi(phrase));
+        
+        phrase = parsed_line_one[3];
+        phrase = phrase.substr(2, 13);
+        orbital::SetJULIANdatefraction(stoi(phrase));
+
+        phrase = parsed_line_one[4];
+        orbital::SetBALLISTICcoefficient(stod(phrase));
+        
+        phrase = parsed_line_one[5];
+        orbital::SetSECONDderivativemotion(phrase);
+        
+        phrase = parsed_line_one[6];
+        orbital::SetDRAGRADIATIONcoefficient(phrase);
+        
+        phrase = parsed_line_one[7];
+        orbital::SetEPHEMERIStype(stoi(phrase));
+        
+        phrase = parsed_line_one[8];
+        orbital::SetELEMENTnumber(stoi(phrase));
+        
+        orbital::SetCHECKsum(0);
+        
+        // line number two of the NORAD Set Format
+        // set the details
+        
+        phrase = parsed_line_two[0];
+        orbital :: SetTLElinetwo(phrase);
+        
+        phrase = parsed_line_two[1];
+        orbital :: SetSATNUMBERline2(stoi(phrase));
+            
+        phrase = parsed_line_two[2];
+        orbital :: SetINCLINATIONfield(stod(phrase));
+        
+        phrase = parsed_line_two[3];
+        orbital :: SetRIGHTASCENTIONnode(stod(phrase));
+        
+        phrase = parsed_line_two[4];
+        orbital :: SetECCENTRICITYcoefficient(stoi(phrase));
+        
+        phrase = parsed_line_two[5];
+        orbital :: SetARGUMENTperigree(stod(phrase));
+        
+        phrase = parsed_line_two[6];
+        orbital :: SetMEANanomlay(stod(phrase));
+        
+        phrase = parsed_line_two[7];
+        orbital :: SetMEANmotion(stod(phrase));
+        
+        phrase = parsed_line_two[8];
+        orbital :: SetREVOLUTIONepochchecksum(stod(phrase));
+        
+        orbital::SetCHECKsumtwo(0);
+        
+};
+
+// set the checksum
+// store the data
+void orbital::SetCHECKsumtwo(int sum)
+{
+    m_check_sum = sum;
 };
