@@ -1,5 +1,6 @@
 //
-//  Overview: We implement here a tracking tool based off of NORAD Two-Line Element Sets.
+//  main.cpp
+//  HelloWorld
 //
 //  Created by Kwadwo Oteng-Amoko on 14/01/2020.
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
@@ -16,30 +17,33 @@ using namespace std;
 
 int main()
 {
-
+    // main file with some dummy code
+    std::cout << "Hello, Kwadwo!\n";
     std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
-    orb ->
-            getDataFile();
+    orb->getDataFile();
     
-    // summary of the current NORAD two-line elements details
-    std::cout << "\nSatellite name: \n \n" << orb ->
-                                                    getTLEname() << "\n";
-    std::cout << "\nNORAD TLE line one: \n \n" << orb ->
-                                                    getTLElineone() << "\n";
-    std::cout << "\nNORAD TLE line two: \n \n" << orb ->
-                                                    getTLElinetwo() << "\n\n";
+    std::cout << "\nsatellite name: \n \n" << orb -> getTLEname() << "\n";
+    std::cout << "\ntle line one: \n \n" << orb -> getTLElineone() << "\n";
+    std::cout << "\ntle line two: \n \n" << orb -> getTLElinetwo() << "\n";
     
-    // back out TLE parameters
+    
+    // back out TLE parametersxs
     util -> setStringParser(orb -> getTLElineone ());
     vector<string> parsed_line_ones = util -> getStringParser();
     
     util -> setStringParser(orb -> getTLElinetwo ());
     vector<string> parsed_line_twos = util -> getStringParser();
     
-    // store TLE parameters
-    orb->SetTLEparameters(orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
+    orb->SetTLEparameters(parsed_line_ones, parsed_line_twos);
+    
+    // set TLE parameters
+    //setTLEparameters(parsed_line_one, parsed_line_twos);
+    
+    cout << parsed_line_ones[0] << "\n";
+    
+    //std::cout << "parses " << "\n" << util -> getStringParser(orb -> getTLElinetwo ());
     
     return 0;
 }
