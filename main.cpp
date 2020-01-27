@@ -31,14 +31,17 @@ int main()
     
     // back out TLE parametersxs
     util -> setStringParser(orb -> getTLElineone ());
-    vector<string> parsed_line_one = util -> getStringParser();
+    vector<string> parsed_line_ones = util -> getStringParser();
+    
     util -> setStringParser(orb -> getTLElinetwo ());
     vector<string> parsed_line_twos = util -> getStringParser();
+    
+    orb->SetTLEparameters(parsed_line_ones, parsed_line_twos);
     
     // set TLE parameters
     //setTLEparameters(parsed_line_one, parsed_line_twos);
     
-    cout << parsed_line_one[0] << "\n";
+    cout << parsed_line_ones[0] << "\n";
     
     //std::cout << "parses " << "\n" << util -> getStringParser(orb -> getTLElinetwo ());
     

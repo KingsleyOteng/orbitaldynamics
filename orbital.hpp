@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <string>
+#include <vector>
 
 
 class orbital{
@@ -21,6 +22,8 @@ private:
     std::string m_tle_name;
     std::string m_tle_line_one;
     std::string m_tle_line_two;
+    std::vector<std::string> parsed_line_one_a;
+    std::vector<std::string> parsed_line_two_a;
     
     int         m_satellite_number;
     std::string m_classification;
@@ -70,6 +73,7 @@ public:
     void        SetEPHEMERIStype(int type);
     void        SetELEMENTnumber(int number);
     void        SetCHECKsum(int sum);
+     void       SetCHECKsumtwo(int sum);
     
     void        SetSATNUMBERline2(int number);
     void        SetTLElineone(std::string phrase);
@@ -82,7 +86,11 @@ public:
     void        SetMEANmotion(double motion);
     void        SetREVOLUTIONepochchecksum(double checksum);
     void        SetTLEparameters(std::string parsed_line_one, std::string parsed_line_twos);
-    void        SetTLEparameters(std::vector<std::string> parsed_line_one, std::vector<std::string>parsed_line_twos);
+    void        SetTLEparameters(std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_twos);
+    
+    // ----------------------->
+    void        SetTLEparameters();
+    
     
     void        getDataFile();
     std::string getTLEname() { return m_tle_name; }
