@@ -11,21 +11,28 @@
 #include <algorithm>
 #include "orbital.hpp"
 #include "utilities.hpp"
-
+#include <boost/any.hpp>
+#include <boost/regex.hpp>
 using namespace std;
 
 int main()
 {
 
+    boost::regex e();
+    
     std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
-    orb->getDataFile();
+    orb ->
+            getDataFile();
     
     // summary of the current NORAD two-line elements details
-    std::cout << "\nSatellite name: \n \n" << orb -> getTLEname() << "\n";
-    std::cout << "\nNORAD TLE line one: \n \n" << orb -> getTLElineone() << "\n";
-    std::cout << "\nNORAD TLE line two: \n \n" << orb -> getTLElinetwo() << "\n\n";
+    std::cout << "\nSatellite name: \n \n" << orb ->
+                                                    getTLEname() << "\n";
+    std::cout << "\nNORAD TLE line one: \n \n" << orb ->
+                                                    getTLElineone() << "\n";
+    std::cout << "\nNORAD TLE line two: \n \n" << orb ->
+                                                    getTLElinetwo() << "\n\n";
     
     // back out TLE parameters
     util -> setStringParser(orb -> getTLElineone ());

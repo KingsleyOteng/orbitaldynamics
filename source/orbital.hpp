@@ -95,6 +95,7 @@ public:
     
     
     void        getDataFile();
+    void        getURLData(std::string resource_locator);
     std::string getTLEname() { return m_tle_name; }
     // set the data from the second line of the tle
     std::string getTLElinetwo() { return m_tle_line_two; }

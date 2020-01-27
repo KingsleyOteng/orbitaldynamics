@@ -34,6 +34,16 @@ void orbital::SetDate(int year, int month, int day)
     m_year = year;
 }
 
+
+// Date member function
+// store the data
+// https://celestrak.com/satcat/tle.php?CATNR=43108
+void orbital::getURLData(std::string resource_locator)
+{
+    
+};
+
+
 // Date member function
 // store the data
 void orbital::getDataFile()
