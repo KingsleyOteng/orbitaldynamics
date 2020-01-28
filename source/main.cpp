@@ -9,16 +9,15 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include "orbital.hpp"
-#include "utilities.hpp"
-#include <boost/any.hpp>
-#include <boost/regex.hpp>
+#include "orbital.hpp"              // header files
+#include "utilities.hpp"            // my own routines for processing data
+#include <boost/any.hpp>            // boost standard library
+#include <boost/asio.hpp>           // io streaming headers
+
 using namespace std;
 
 int main()
 {
-
-    boost::regex e();
     
     std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
