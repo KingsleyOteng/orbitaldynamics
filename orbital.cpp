@@ -43,7 +43,6 @@ void orbital::getURLData(std::string resource_locator)
     
 };
 
-
 // Date member function
 // store the data
 void orbital::getDataFile()
@@ -86,6 +85,13 @@ void orbital::getDataFile()
     
     in.close();
 }
+
+// set the checksum
+// store the data
+void orbital::getURLData()
+{
+     
+};
 
 // Date member function
 // store the data
@@ -355,4 +361,18 @@ void  orbital::SetTLElinetwo(std::string phrase)
 void orbital::SetCHECKsumtwo(int sum)
 {
     m_check_sum = sum;
+};
+
+// set the checksum
+// store the data
+void orbital::SetDataFile(std::string TLE)
+{
+        m_file_name = TLE;
+};
+
+// set the checksum
+// store the data
+void orbital::SetURLData(std::string TLE)
+{
+        m_tle_url = TLE;
 };

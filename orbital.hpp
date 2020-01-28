@@ -18,7 +18,9 @@ class orbital{
 
 private:
     
+    std::string m_file_name;
     std::string m_tle_name;
+    std::string m_tle_url;
     std::string m_tle_line_one;
     std::string m_tle_line_two;
     std::vector<std::string> parsed_line_one_a;
@@ -89,12 +91,15 @@ public:
     void        SetREVOLUTIONepochchecksum(double checksum);
    // void        SetTLEparameters(std::string parsed_line_one, std::string parsed_line_twos);
     void        SetTLEparameters(std::string spacecraft, std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_two);
+    void        SetDataFile(std::string TLE);
+    void        SetURLData(std::string TLE);
     
     // ----------------------->
     void        SetTLEparameters();
     
     
     void        getDataFile();
+    void        getURLData();
     void        getURLData(std::string resource_locator);
     std::string getTLEname() { return m_tle_name; }
     // set the data from the second line of the tle
