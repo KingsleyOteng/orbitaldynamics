@@ -1,6 +1,5 @@
 //
-//  orbital.hpp
-//  HelloWorld
+//  Overview: We implement here a tracking tool based off of NORAD Two-Line Element Sets.
 //
 //  Created by Kwadwo Oteng-Amoko on 14/01/2020.
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
@@ -19,7 +18,9 @@ class orbital{
 
 private:
     
+    std::string m_file_name;
     std::string m_tle_name;
+    std::string m_tle_url;
     std::string m_tle_line_one;
     std::string m_tle_line_two;
     std::vector<std::string> parsed_line_one_a;
@@ -54,9 +55,12 @@ private:
  
     
 public:
-    
+    // constructor
     orbital(int year, int month, int day);
-
+    
+    // set the epoch details
+    void        SetCurrentEpoch(int year, int month, int day);
+  
     
     void        SetDate(int year, int month, int day);
     void        SetTLEname(std::string name);
@@ -73,7 +77,7 @@ public:
     void        SetEPHEMERIStype(int type);
     void        SetELEMENTnumber(int number);
     void        SetCHECKsum(int sum);
-     void       SetCHECKsumtwo(int sum);
+    void        SetCHECKsumtwo(int sum);
     
     void        SetSATNUMBERline2(int number);
     void        SetTLElineone(std::string phrase);
@@ -85,14 +89,18 @@ public:
     void        SetMEANanomlay(double anomaly);
     void        SetMEANmotion(double motion);
     void        SetREVOLUTIONepochchecksum(double checksum);
-    void        SetTLEparameters(std::string parsed_line_one, std::string parsed_line_twos);
-    void        SetTLEparameters(std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_twos);
+   // void        SetTLEparameters(std::string parsed_line_one, std::string parsed_line_twos);
+    void        SetTLEparameters(std::string spacecraft, std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_two);
+    void        SetDataFile(std::string TLE);
+    void        SetURLData(std::string TLE);
     
     // ----------------------->
     void        SetTLEparameters();
     
     
     void        getDataFile();
+    void        getURLData();
+    void        getURLData(std::string resource_locator);
     std::string getTLEname() { return m_tle_name; }
     // set the data from the second line of the tle
     std::string getTLElinetwo() { return m_tle_line_two; }
