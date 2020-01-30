@@ -25,8 +25,8 @@ int main()
     std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
-    orb ->
-            getDataFile();
+    //orb ->
+           // getDataFile();
     
     orb -> getURLData();
     

@@ -61,25 +61,18 @@ void orbital::getDataFile()
     int x = 0;
     while (std::getline(in, line))
     {
-           std::cout << line << "\n";
         
         if (x == 0)
         { orbital::SetTLEname(line); }
         
         if (x == 1)
         {
-            cout << "hello 1 :" << line << "\n";
             orbital::SetTLElineone(line);
-            
-            
         }
         
         if (x == 2)
         {
-            cout << "hello 2 :" << line << "\n";
             orbital::SetTLElinetwo(line);
-            
-            
         }
         
         x++;
@@ -97,11 +90,15 @@ void orbital::getURLData()
     char* line = NULL;
     size_t len = 0;
     
+    /* Initial memory allocation */
+    line = (char *) malloc(100*sizeof(char));
+    
     // capture the file required
     cout << std::system("php -f /Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/run.php");
     
     // open the file - we are using c here, it's about 5 times faster
     FILE* fp = fopen("/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/resource.html", "r");
+    
     if (fp == NULL)
         cout<<"failed to open";
 
@@ -115,25 +112,25 @@ void orbital::getURLData()
         
         if (x == 0)
         {
-            
+
             orbital::SetTLEname(line);
         }
         
         if (x == 1)
         {
-           // cout << "hello 1 :" << line << "\n";
+
             orbital::SetTLElineone(line);
         }
         
         if (x == 2)
         {
-           // cout << "hello 2 :" << line << "\n";
             orbital::SetTLElinetwo(line);
         }
         
         x++;
     }
     
+    /* deallocate memory allocation */
     // fclose the file -- again c
     fclose(fp);
     
