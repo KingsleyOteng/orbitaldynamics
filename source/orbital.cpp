@@ -94,7 +94,7 @@ void orbital::getURLData()
     line = (char *) malloc(100*sizeof(char));
     
     // capture the file required
-    cout << std::system("php -f /Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/run.php");
+    cout << std::system("php -f /Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/run.php https://celestrak.com/satcat/tle.php?CATNR=43108");
     
     // open the file - we are using c here, it's about 5 times faster
     FILE* fp = fopen("/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/resource.html", "r");
