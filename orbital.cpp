@@ -61,25 +61,18 @@ void orbital::getDataFile()
     int x = 0;
     while (std::getline(in, line))
     {
-           std::cout << line << "\n";
         
         if (x == 0)
         { orbital::SetTLEname(line); }
         
         if (x == 1)
         {
-            cout << "hello 1 :" << line << "\n";
             orbital::SetTLElineone(line);
-            
-            
         }
         
         if (x == 2)
         {
-            cout << "hello 2 :" << line << "\n";
             orbital::SetTLElinetwo(line);
-            
-            
         }
         
         x++;
@@ -94,14 +87,27 @@ void orbital::getURLData()
 {
     // variables declarationm
     std::string FILENAME;
+    std::string cmd;
     char* line = NULL;
     size_t len = 0;
     
+    
+    
+   // cout << orbital::m_tle_url;
+    
+    /* Initial memory allocation */
+    line = (char *) malloc(100*sizeof(char));
+    
+    
+    cmd = ("php -f /Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/run.php "+orbital::m_tle_url);
+
+    
     // capture the file required
-    cout << std::system("php -f /Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/run.php");
+    cout << std::system(cmd.c_str());
     
     // open the file - we are using c here, it's about 5 times faster
     FILE* fp = fopen("/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/resource.html", "r");
+    
     if (fp == NULL)
         cout<<"failed to open";
 
@@ -115,25 +121,25 @@ void orbital::getURLData()
         
         if (x == 0)
         {
-            
+
             orbital::SetTLEname(line);
         }
         
         if (x == 1)
         {
-           // cout << "hello 1 :" << line << "\n";
+
             orbital::SetTLElineone(line);
         }
         
         if (x == 2)
         {
-           // cout << "hello 2 :" << line << "\n";
             orbital::SetTLElinetwo(line);
         }
         
         x++;
     }
     
+    /* deallocate memory allocation */
     // fclose the file -- again c
     fclose(fp);
     
@@ -424,5 +430,7 @@ void orbital::SetDataFile(std::string TLE)
 // store the data
 void orbital::SetURLData(std::string TLE)
 {
+ 
         m_tle_url = TLE;
+
 };

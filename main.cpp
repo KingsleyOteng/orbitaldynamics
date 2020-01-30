@@ -25,9 +25,12 @@ int main()
     std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
-    orb ->
-            getDataFile();
+    //orb ->
+       //    getDataFile();
     
+    // map to the TLE resoure
+    // then open the resource
+    orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
     orb -> getURLData();
     
     // summary of the current NORAD two-line elements details
