@@ -9,6 +9,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -90,7 +92,55 @@ void orbital::getDataFile()
 // store the data
 void orbital::getURLData()
 {
-     
+    // variables declarationm
+    std::string FILENAME;
+    char* line = NULL;
+    size_t len = 0;
+    
+    // capture the file required
+    cout << std::system("php -f /Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/run.php");
+    
+    // open the file - we are using c here, it's about 5 times faster
+    FILE* fp = fopen("/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/resource.html", "r");
+    if (fp == NULL)
+        cout<<"failed to open";
+
+    // get information from the file
+    // note the getline approach is c
+    int x = 0;
+    while ((getline(&line, &len, fp)) != -1)
+    {
+        // using printf() in all tests for consistency
+        // printf("%s >>>>", line);
+        
+        if (x == 0)
+        {
+            
+            orbital::SetTLEname(line);
+        }
+        
+        if (x == 1)
+        {
+           // cout << "hello 1 :" << line << "\n";
+            orbital::SetTLElineone(line);
+        }
+        
+        if (x == 2)
+        {
+           // cout << "hello 2 :" << line << "\n";
+            orbital::SetTLElinetwo(line);
+        }
+        
+        x++;
+    }
+    
+    // fclose the file -- again c
+    fclose(fp);
+    
+    // free the memory -- again c
+    if (line)
+        free(line);
+    
 };
 
 // Date member function

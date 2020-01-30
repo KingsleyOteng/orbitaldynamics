@@ -20,13 +20,15 @@ using namespace std;
 int main()
 {
     
-    cout << std::system("php -f /Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/run.php");
+    
     
     std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
     orb ->
             getDataFile();
+    
+    orb -> getURLData();
     
     // summary of the current NORAD two-line elements details
     std::cout << "\nSatellite name: \n \n" << orb ->
