@@ -58,6 +58,7 @@ public:
     // constructor
     orbital(int year, int month, int day);
     
+    
     // set the epoch details
     void        SetCurrentEpoch(int year, int month, int day);
   
