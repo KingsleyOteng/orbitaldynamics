@@ -5,7 +5,7 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
- 
+#includ <Qtqui>
 #include <iostream>
 #include <vector>
 #include <algorithm>
