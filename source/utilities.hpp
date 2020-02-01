@@ -21,21 +21,21 @@ class utilities
 private:
    
     
-  // constructors  and destructors
-  utilities();
- ~utilities();
-    
+
     
   // members
   std::string              parse_input_phrase;
 
 public:
-    
+
+  // constructors  and destructors
+  utilities();
+ ~utilities();
+       
 
   // getters and setters
   // setters
   void                      setStringParser                 (std::string str);
-    
   // getters
   std::string               getStringParser                 (std::string str);
   std::vector<std::string>  getStringParser                 ();
