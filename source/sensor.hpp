@@ -16,11 +16,41 @@
 
 class sensor{
     
-
 private:
+        
+    // sensor predicted parameters
+    double      m_object_position;
+    double      m_object_velocity;
+    double      m_object_acceleration;
+    double      m_object_time;
+    
+    // sensor positining
+    double      m_prediction_azimuth;
+    double      m_prediction_elevation;
+    double      m_prediction_distance;
+    
     
     
 public:
+    
+    
+    // set parameters
+    void        set_m_object_position();
+    void        set_m_object_velocity();
+    void        set_m_object_acceleration();
+    void        set_m_object_time();
+    void        set_m_prediction_azimuth();
+    void        set_m_prediction_elevation();
+    void        set_m_prediction_distance();
+    
+    // get parameters
+    void        get_m_object_position();
+    void        get_m_object_velocity();
+    void        get_m_object_acceleration();
+    void        get_m_object_time();
+    void        get_m_prediction_azimuth();
+    void        get_m_prediction_elevation();
+    void        get_m_prediction_distance();
     
 };
 

@@ -7,3 +7,54 @@
 //
 
 #include "sensor.hpp"
+
+#include "orbital.hpp"
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+void set_m_object_position          (double m_position_vector, double vector_propogation)
+    {}
+
+void set_m_object_velocity          (double m_velocity_vector, double vector_propogation)
+    {}
+
+void set_m_object_acceleration      (double m_acceleration_vector, double vector_propogation)
+    {}
+
+void set_m_object_time              (double m_time_vector, double vector_propogation)
+    {}
+
+void set_m_prediction_azimuth       (double m_azimuth_vector, double vector_propogation)
+    {}
+
+void set_m_prediction_elevation     (double m_elevation_vector, double vector_propogation)
+    {}
+
+void set_m_prediction_distance      (double m_distance_vector, double vector_propogation)
+    {}
+
+double get_m_object_position          ()
+{   return m_position;}
+
+double get_m_object_velocity          ()
+{   return m_velocity;}
+
+double get_m_object_acceleration      ()
+{   return m_acceleration; }
+
+double get_m_object_time              ()
+{   return m_time; }
+
+double get_m_prediction_azimuth       ()
+{   return m_azimuth; }
+
+double get_m_prediction_elevation     ()
+{   return m_elevation; }
+
+double get_m_prediction_distance      ()
+{   return m_distance; }
