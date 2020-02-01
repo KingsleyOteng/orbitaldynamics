@@ -1,12 +1,4 @@
-#makefile for the boost project
-#You must modify the environment variables at the start of the file
-#in order to work!
-#example: Consider the 1_34_1 boost distribution, which installs all the
-#stuff by default in usr/local/lib (for the libraries) and in
-#usr/local/boost_1_34_1/boost (for the headers to be included).
-# The following setup is for loading the libraries from this location.
-#If you want to load them from a custom location, modify the variables
-#below accordingly.
+#the makefile was primarily created to support C++ with Boost in a Xcode ide
     
 BOOST_ROOT=/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/include/
 QT_ROOT=/Users/kwadwooteng-amoko/Qt5.14.0/5.14.0/clang_64/
