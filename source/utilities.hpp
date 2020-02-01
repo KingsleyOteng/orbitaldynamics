@@ -19,14 +19,16 @@ class utilities
 {
     
 private:
+ utilities();
+~utilities();
     
-    std::string                     parse_input_phrase;
+  std::string                                 parse_input_phrase;
 
 public:
-
-    std::string                     getStringParser(std::string str);
-    std::vector<std::string>        getStringParser();
-    void                            setStringParser(std::string str);
+  
+  std::string                                 getStringParser                 (std::string str);
+  std::vector<std::string>                    getStringParser                 ();
+  void                                        setStringParser                 (std::string str);
 
 };
 #endif /* utilities_hpp */
