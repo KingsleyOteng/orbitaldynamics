@@ -16,8 +16,17 @@
 
 class sensor{
     
+   
+    
 private:
-        
+    
+    
+    // constructors and destructors
+    sensor();
+   ~sensor();
+    
+    
+    // members
     // sensor predicted parameters
     double      m_object_position;
     double      m_object_velocity;
@@ -42,6 +51,7 @@ private:
 public:
     
     
+    // getters and setters
     // setter methods
     void        set_m_object_position          (double m_position_vector, double vector_propogation);
     void        set_m_object_velocity          (double m_velocity_vector, double vector_propogation);
@@ -59,8 +69,6 @@ public:
     double      get_m_prediction_azimuth       ();
     double      get_m_prediction_elevation     ();
     double      get_m_prediction_distance      ();
-    
-   
     
     
 };

@@ -15,51 +15,58 @@
 
 class orbital
 {
+   
     
 private:
+
     
-    std::string                                 m_file_name;
-    std::string                                 m_tle_name;
-    std::string                                 m_tle_url;
-    std::string                                 m_tle_line_one;
-    std::string                                 m_tle_line_two;
-    std::vector<std::string>                    parsed_line_one_a;
-    std::vector<std::string>                    parsed_line_two_a;
+    // members
+    std::string m_file_name;
+    std::string m_tle_name;
+    std::string m_tle_url;
+    std::string m_tle_line_one;
+    std::string m_tle_line_two;
+    std::vector<std::
+    string>     parsed_line_one_a;
+    std::vector<std::
+    string>     parsed_line_two_a;
+    int         m_satellite_number;
+    std::string m_classification;
+    int         m_designator_launch_year;
+    int         m_designator_launch_number_of_year;
+    std::string m_designator_piece_of_launch;
+    int         m_epoch_year;
+    double      m_julian_date_fraction;
+    double      m_ballistic_coefficient;
+    std::string m_second_derivative_of_motion;
+    std::string m_drag_term_or_radition_coefficient;
+    int         m_ephemeris_type;
+    int         m_element_number;
+    int         m_check_sum;
+    int         m_satellite_number_2;
+    double      m_satellite_inclination;
+    double      m_satellite_ascension_node;
+    double      m_satellite_eccentricity_coefficient;
+    double      m_argument_perigree;
+    double      m_mean_anomaly;
+    double      m_mean_motion;
+    double      m_epoch_checksum;
     
-    int                                         m_satellite_number;
-    std::string                                 m_classification;
-    int                                         m_designator_launch_year;
-    int                                         m_designator_launch_number_of_year;
-    std::string                                 m_designator_piece_of_launch;
-    int                                         m_epoch_year;
-    double                                      m_julian_date_fraction;
-    double                                      m_ballistic_coefficient;
-    std::string                                 m_second_derivative_of_motion;
-    std::string                                 m_drag_term_or_radition_coefficient;
-    int                                         m_ephemeris_type;
-    int                                         m_element_number;
-    int                                         m_check_sum;
-    
-    int                                         m_satellite_number_2;
-    double                                      m_satellite_inclination;
-    double                                      m_satellite_ascension_node;
-    double                                      m_satellite_eccentricity_coefficient;
-    double                                      m_argument_perigree;
-    double                                      m_mean_anomaly;
-    double                                      m_mean_motion;
-    double                                      m_epoch_checksum;
-    
-    int                                         m_year;
-    int                                         m_month;
-    int                                         m_day;
+    int         m_year;
+    int         m_month;
+    int         m_day;
  
     
 public:
-    //          constructor and destructors
-    orbital(int year, int month, int day);
-    ~orbital();
     
-    //          setters
+    
+    // constructor and destructors
+    orbital(int year, int month, int day);
+   ~orbital();
+    
+    
+    // getters and setters
+    // setters
     void        SetCurrentEpoch                 (int year, int month, int day);
     void        SetDate                         (int year, int month, int day);
     void        SetTLEname                      (std::string name);
@@ -92,7 +99,7 @@ public:
     void        SetURLData                      (std::string TLE);
     void        SetTLEparameters                ();
     
-    //          getters
+    // getter
     void        getDataFile                     ();
     void        getURLData                      ();
     void        getURLData                      (std::string resource_locator);
