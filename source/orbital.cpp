@@ -103,8 +103,9 @@ void
     /* Initial memory allocation */
     line = (char *) malloc(100*sizeof(char));
     
-    
-    cmd = ("php -f /Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/run.php "+orbital::m_tle_url);
+    std::string url;
+    url += orbital::m_tle_url;
+    cmd = ("php -f /Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/run.php "+url);
 
     
     // capture the file required
@@ -198,9 +199,9 @@ void
 // sets the piece designator
 // store the data
 void
-    orbital::SetLAUNCHpiecedesignator(string designator)
+    orbital::SetLAUNCHpiecedesignator(char designator[1])
 {
-    strcpy(m_designator_piece_of_launch,designator.c_str());
+    strcpy(m_designator_piece_of_launch,designator);
 };
 
 // set the epoch year
@@ -336,7 +337,7 @@ void
 void
     orbital::SetTLElineone(std::string phrase)
 {
-    m_tle_line_one = phrase;
+    strcpy(m_tle_line_one,phrase.c_str());
 };
 
 
@@ -345,7 +346,7 @@ void
 void
     orbital::SetTLElinetwo(std::string phrase)
 {
-    m_tle_line_two = phrase;
+    strcpy(m_tle_line_two,phrase.c_str());
 };
 
 
@@ -355,6 +356,7 @@ void
     orbital::SetTLEparameters(std::string spacecraft, std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_two)
     {
         std::string phrase;
+        char        phrase_c[1];
         
         // set the objects name
         
@@ -362,7 +364,6 @@ void
         
         // line number one of the NORAD Set Format
         // set the details
-        
         phrase = parsed_line_one[1];
         phrase = phrase.substr(0, 4);
         orbital::SetSATnumber(stoi(phrase));
@@ -381,7 +382,8 @@ void
         
         phrase = parsed_line_one[2];
         phrase = phrase.substr(5, 5);
-        orbital::SetLAUNCHpiecedesignator(phrase);
+        strcpy(phrase_c, phrase.c_str());
+        orbital::SetLAUNCHpiecedesignator(phrase_c);
         
         phrase = parsed_line_one[3];
         phrase = phrase.substr(0, 1);
@@ -464,6 +466,6 @@ void
     orbital::SetURLData(std::string TLE)
 {
  
-        m_tle_url = TLE;
+        strcpy(m_tle_url,TLE.c_str());
 
 };

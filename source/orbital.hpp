@@ -25,7 +25,7 @@ private:
     // members
     std::string m_file_name;
     char m_tle_name[ARRAY_SIZE];
-    char m_tle_url;
+    char m_tle_url[ARRAY_SIZE];
     char m_tle_line_one[ARRAY_SIZE];
     char m_tle_line_two[ARRAY_SIZE];
     std::vector<std::
@@ -36,7 +36,7 @@ private:
     std::string m_classification;
     int         m_designator_launch_year;
     int         m_designator_launch_number_of_year;
-    std::string m_designator_piece_of_launch;
+    char m_designator_piece_of_launch[1];
     int         m_epoch_year;
     double      m_julian_date_fraction;
     double      m_ballistic_coefficient;
@@ -76,7 +76,7 @@ public:
     void        SetCLASSIFIERfield              (char field);
     void        SetLAUNCHERyearfield            (int field);
     void        SetLAUNCHERnumberfield          (int field);
-    void        SetLAUNCHpiecedesignator        (std::string designator);
+    void        SetLAUNCHpiecedesignator        (char designator[1]);
     void        SetEPOCHyear                    (int year);
     void        SetJULIANdatefraction           (double fraction);
     void        SetBALLISTICcoefficient         (double coefficient);
@@ -107,13 +107,13 @@ public:
     void        getURLData                      (std::string resource_locator);
     
     std::string getTLEname                      () { return m_tle_name; }
-    char[ARRAY_SIZE] getTLElinetwo                   () { return m_tle_line_two; }
-    char[ARRAY_SIZE] getTLElineone                   () { return m_tle_line_one; }
+    char*       getTLElinetwo                   () { return m_tle_line_two; }
+    char*       getTLElineone                   () { return m_tle_line_one; }
     int         getSATnumber                    () { return m_satellite_number; }
     std::string getCLASSIFIERfield              () { return m_classification; }
     int         getLAUNCHERyearfield            () { return m_designator_launch_year; }
     int         getLAUNCHERnumberfield          () { return m_designator_launch_number_of_year; }
-    std::string getLAUNCHpiencedesignator       () { return m_designator_piece_of_launch; }
+    char*       getLAUNCHpiencedesignator       () { return m_designator_piece_of_launch; }
     int         getEPOCHyear                    () { return m_epoch_year; }
     double      getJULIANdatefraction           () { return m_julian_date_fraction; }
     double      getBALLISTICcoefficient         () { return m_ballistic_coefficient; }
