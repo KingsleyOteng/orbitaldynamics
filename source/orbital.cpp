@@ -157,9 +157,9 @@ void
 // Date member function
 // store the data
 void
-    orbital::SetTLEname(std::string name)
+    orbital::SetTLEname(string name)
 {
-    m_tle_name = name;
+    strcpy(m_tle_name,name.c_str());
 };
 
 // sets the statellite number
@@ -200,7 +200,7 @@ void
 void
     orbital::SetLAUNCHpiecedesignator(string designator)
 {
-    m_designator_piece_of_launch = designator;
+    strcpy(m_designator_piece_of_launch,designator.c_str());
 };
 
 // set the epoch year
@@ -358,7 +358,7 @@ void
         
         // set the objects name
         
-        orbital::SetTLEname(spacecraft);
+        orbital::SetTLEname(spacecraft.c_str());
         
         // line number one of the NORAD Set Format
         // set the details

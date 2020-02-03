@@ -18,14 +18,16 @@ class orbital
    
     
 private:
-
+    
+    // macro defining array size
+    #define ARRAY_SIZE 50
     
     // members
     std::string m_file_name;
-    std::string m_tle_name;
-    std::string m_tle_url;
-    std::string m_tle_line_one;
-    std::string m_tle_line_two;
+    char m_tle_name[ARRAY_SIZE];
+    char m_tle_url;
+    char m_tle_line_one[ARRAY_SIZE];
+    char m_tle_line_two[ARRAY_SIZE];
     std::vector<std::
     string>     parsed_line_one_a;
     std::vector<std::
@@ -105,8 +107,8 @@ public:
     void        getURLData                      (std::string resource_locator);
     
     std::string getTLEname                      () { return m_tle_name; }
-    std::string getTLElinetwo                   () { return m_tle_line_two; }
-    std::string getTLElineone                   () { return m_tle_line_one; }
+    char[ARRAY_SIZE] getTLElinetwo                   () { return m_tle_line_two; }
+    char[ARRAY_SIZE] getTLElineone                   () { return m_tle_line_one; }
     int         getSATnumber                    () { return m_satellite_number; }
     std::string getCLASSIFIERfield              () { return m_classification; }
     int         getLAUNCHERyearfield            () { return m_designator_launch_year; }
