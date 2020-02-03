@@ -18,11 +18,11 @@ using namespace std;
 
 // constructor
 sensor::sensor()
-{};
+    {};
 
 // destructor
 sensor::~sensor()
-{};
+    {};
 
 // methods
 void
@@ -79,4 +79,4 @@ double
 
 double
     sensor::get_m_prediction_distance    ()
-    {   return m_distance; }
+    {   return m_distance;  }
