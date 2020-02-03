@@ -24,9 +24,6 @@ int main()
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
     
-    //orb ->
-       //    getDataFile();
-    
     // map to the TLE resoure
     // then open the resource
     orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
