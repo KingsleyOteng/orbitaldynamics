@@ -59,6 +59,6 @@
       <TextField fx:id="Trade_Amount" layoutX="497.0" layoutY="193.0" onAction="#trade_amount_increase" prefHeight="37.0" prefWidth="113.0" />
       <Label fx:id="label21" layoutX="43.0" layoutY="353.0" minHeight="16" minWidth="69" text="curr. vol. (7-day)" />
       <Label fx:id="returnYtdLabel311" layoutX="247.0" layoutY="353.0" minHeight="16" minWidth="69" text="ret" />
-      <Button layoutX="27.0" layoutY="374.0" mnemonicParsing="false" prefHeight="132.0" prefWidth="134.0" text="SELL ORDER" />
+      <Button layoutX="22.0" layoutY="374.0" mnemonicParsing="false" prefHeight="132.0" prefWidth="134.0" text="SELL ORDER" />
     </children>
 </AnchorPane>
