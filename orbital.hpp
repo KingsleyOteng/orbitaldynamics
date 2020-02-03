@@ -24,10 +24,10 @@ private:
     
     // members
     std::string m_file_name;
-    char m_tle_name[ARRAY_SIZE];
-    char m_tle_url[ARRAY_SIZE];
-    char m_tle_line_one[ARRAY_SIZE];
-    char m_tle_line_two[ARRAY_SIZE];
+    char        m_tle_name                          [ARRAY_SIZE];
+    char        m_tle_url                           [ARRAY_SIZE];
+    char        m_tle_line_one                      [ARRAY_SIZE];
+    char        m_tle_line_two                      [ARRAY_SIZE];
     std::vector<std::
     string>     parsed_line_one_a;
     std::vector<std::
@@ -36,7 +36,7 @@ private:
     std::string m_classification;
     int         m_designator_launch_year;
     int         m_designator_launch_number_of_year;
-    char m_designator_piece_of_launch[1];
+    char        m_designator_piece_of_launch        [1];
     int         m_epoch_year;
     double      m_julian_date_fraction;
     double      m_ballistic_coefficient;

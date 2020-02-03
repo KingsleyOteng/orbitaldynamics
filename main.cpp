@@ -24,28 +24,27 @@ int main()
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
     
-    //orb ->
-       //    getDataFile();
-    
     // map to the TLE resoure
     // then open the resource
     orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
     orb -> getURLData();
     
     // summary of the current NORAD two-line elements details
-    std::cout << "\nSatellite name: \n \n" << orb ->
+    std::cout << "\nSatellite name: \n \n"      << orb ->
                                                     getTLEname() << "\n";
-    std::cout << "\nNORAD TLE line one: \n \n" << orb ->
+    std::cout << "\nNORAD TLE line one: \n \n"  << orb ->
                                                     getTLElineone() << "\n";
-    std::cout << "\nNORAD TLE line two: \n \n" << orb ->
+    std::cout << "\nNORAD TLE line two: \n \n"  << orb ->
                                                     getTLElinetwo() << "\n\n";
     
     // back out TLE parameters
     util -> setStringParser(orb -> getTLElineone ());
-    vector<string> parsed_line_ones = util -> getStringParser();
+    vector<string> parsed_line_ones             = util ->
+                                                    getStringParser();
     
     util -> setStringParser(orb -> getTLElinetwo ());
-    vector<string> parsed_line_twos = util -> getStringParser();
+    vector<string> parsed_line_twos             = util ->
+                                                    getStringParser();
     
     // store TLE parameters
     orb->SetTLEparameters(orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
