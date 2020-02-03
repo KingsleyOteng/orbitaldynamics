@@ -1,9 +1,9 @@
 //
-//  sensor.cpp
-//  source
+//      implementation of a sensor model for the orbital software
 //
-//  Created by Kwadwo Oteng-Amoko on 31/01/2020.
-//  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
+//
+//      Created by Kwadwo Oteng-Amoko on 31/01/2020.
+//      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
 #include "sensor.hpp"
