@@ -1,5 +1,5 @@
 //
-//      Overview: SGP4 for a Norad TLE.
+//      Overview: Extraction of object tracking data from NORAD TLE
 //
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
@@ -233,7 +233,7 @@ void
 void
     orbital::SetSECONDderivativemotion(std::string motion)
 {
-    strcpy(m_second_derivative_of_motion,motion.c_str());
+    m_second_derivative_of_motion = motion;
 };
 
 // extract and store the degradation coefficient
@@ -241,7 +241,7 @@ void
 void
     orbital::SetDRAGRADIATIONcoefficient(std::string coefficient)
 {
-    strcpy(m_drag_term_or_radition_coefficient,coefficient.c_str());
+    m_drag_term_or_radition_coefficient = coefficient;
 };
 
 // set the ephemeris details
