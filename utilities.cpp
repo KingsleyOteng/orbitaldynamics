@@ -1,8 +1,8 @@
 //
-//  Overview: We implement here a tracking tool based off of NORAD Two-Line Element Sets.
+//      Overview: Data parsing utilities
 //
-//  Created by Kwadwo Oteng-Amoko on 22/01/2020.
-//  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
+//      Created by Kwadwo Oteng-Amoko on 22/01/2020.
+//      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
 #include "utilities.hpp"
@@ -73,6 +73,6 @@ std::vector<string>
 void
     utilities::setStringParser(std::string str)
 {
-    parse_input_phrase = str;
+    strcpy(parse_input_phrase,str.c_str());
 }
 
