@@ -19,9 +19,9 @@ class utilities
 {
     
 private:
-   
     
-
+   // macro defining array size
+   #define ARRAY_SIZE 50
     
   // members
   char              parse_input_phrase              [ARRAY_SIZE];

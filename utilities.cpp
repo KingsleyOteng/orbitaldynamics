@@ -73,6 +73,6 @@ std::vector<string>
 void
     utilities::setStringParser(std::string str)
 {
-    parse_input_phrase = str;
+    strcpy(parse_input_phrase,str.c_str());
 }
 

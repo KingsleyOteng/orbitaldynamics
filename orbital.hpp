@@ -33,15 +33,15 @@ private:
     std::vector<std::
     string>     parsed_line_two_a;
     int         m_satellite_number;
-    char        m_classification                    [ARRAY_SIZE];
+    std::string m_classification;
     int         m_designator_launch_year;
     int         m_designator_launch_number_of_year;
     char        m_designator_piece_of_launch        [1];
     int         m_epoch_year;
     double      m_julian_date_fraction;
     double      m_ballistic_coefficient;
-    char        m_second_derivative_of_motion       [ARRAY_SIZE];
-    char        m_drag_term_or_radition_coefficient [ARRAY_SIZE];
+    std::string m_second_derivative_of_motion;
+    std::string m_drag_term_or_radition_coefficient;
     int         m_ephemeris_type;
     int         m_element_number;
     int         m_check_sum;
@@ -106,18 +106,18 @@ public:
     void        getURLData                      ();
     void        getURLData                      (std::string resource_locator);
     
-    char*       getTLEname                      () { return m_tle_name; }
+    std::string getTLEname                      () { return m_tle_name; }
     char*       getTLElinetwo                   () { return m_tle_line_two; }
     char*       getTLElineone                   () { return m_tle_line_one; }
     int         getSATnumber                    () { return m_satellite_number; }
-    char*       getCLASSIFIERfield              () { return m_classification; }
+    std::string getCLASSIFIERfield              () { return m_classification; }
     int         getLAUNCHERyearfield            () { return m_designator_launch_year; }
     int         getLAUNCHERnumberfield          () { return m_designator_launch_number_of_year; }
     char*       getLAUNCHpiencedesignator       () { return m_designator_piece_of_launch; }
     int         getEPOCHyear                    () { return m_epoch_year; }
     double      getJULIANdatefraction           () { return m_julian_date_fraction; }
     double      getBALLISTICcoefficient         () { return m_ballistic_coefficient; }
-    char*       getSECONDderivativemotion       () { return m_second_derivative_of_motion; }
+    std::string getSECONDderivativemotion       () { return m_second_derivative_of_motion; }
     int         getDRAGRADIATIONcoefficient     () { return m_designator_launch_number_of_year; }
     int         getEPHEMERIStype                () { return m_ephemeris_type; }
     int         getELEMENTnumber                () { return m_element_number; }
