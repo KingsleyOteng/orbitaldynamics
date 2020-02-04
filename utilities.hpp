@@ -24,7 +24,7 @@ private:
 
     
   // members
-  std::string              parse_input_phrase;
+  char              parse_input_phrase              [ARRAY_SIZE];
 
 public:
 

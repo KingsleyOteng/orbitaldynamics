@@ -33,7 +33,7 @@ private:
     std::vector<std::
     string>     parsed_line_two_a;
     int         m_satellite_number;
-    std::string m_classification;
+    char        m_classification                    [ARRAY_SIZE];
     int         m_designator_launch_year;
     int         m_designator_launch_number_of_year;
     char        m_designator_piece_of_launch        [1];
@@ -106,11 +106,11 @@ public:
     void        getURLData                      ();
     void        getURLData                      (std::string resource_locator);
     
-    std::string getTLEname                      () { return m_tle_name; }
+    char*       getTLEname                      () { return m_tle_name; }
     char*       getTLElinetwo                   () { return m_tle_line_two; }
     char*       getTLElineone                   () { return m_tle_line_one; }
     int         getSATnumber                    () { return m_satellite_number; }
-    std::string getCLASSIFIERfield              () { return m_classification; }
+    char*       getCLASSIFIERfield              () { return m_classification; }
     int         getLAUNCHERyearfield            () { return m_designator_launch_year; }
     int         getLAUNCHERnumberfield          () { return m_designator_launch_number_of_year; }
     char*       getLAUNCHpiencedesignator       () { return m_designator_piece_of_launch; }
