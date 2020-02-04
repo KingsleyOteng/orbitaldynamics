@@ -1,5 +1,5 @@
-//
-//      Overview: We implement here a tracking tool based off of NORAD Two-Line Element Sets.
+//      Headers
+//      Overview: Extraction of object tracking data from NORAD TLE
 //
 //      Created by Kwadwo Oteng-Amoko on 22/01/2020.
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
