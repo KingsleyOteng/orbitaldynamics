@@ -34,7 +34,7 @@ private:
     std::vector<std::
     string>     parsed_line_two_a;
     int         m_satellite_number;
-    char        m_classification                    [1];
+    char        m_classification                    [ARRAY_SIZE_ONE];
     int         m_designator_launch_year;
     int         m_designator_launch_number_of_year;
     char        m_designator_piece_of_launch        [ARRAY_SIZE_ONE];
