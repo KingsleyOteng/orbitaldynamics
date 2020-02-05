@@ -21,6 +21,7 @@ private:
     
     // macro defining array size
     #define ARRAY_SIZE 50
+    #define ARRAY_SIZE_ONE 1
     
     // members
     std::string m_file_name;
@@ -36,7 +37,7 @@ private:
     std::string m_classification;
     int         m_designator_launch_year;
     int         m_designator_launch_number_of_year;
-    char        m_designator_piece_of_launch        [1];
+    char        m_designator_piece_of_launch        [ARRAY_SIZE_ONE];
     int         m_epoch_year;
     double      m_julian_date_fraction;
     double      m_ballistic_coefficient;
