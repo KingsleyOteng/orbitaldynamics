@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 using namespace std;
+#define ARRAY_SIZE_ONE 1
 
 
 // methods
@@ -199,7 +200,7 @@ void
 // sets the piece designator
 // store the data
 void
-    orbital::SetLAUNCHpiecedesignator(char designator[1])
+    orbital::SetLAUNCHpiecedesignator(char designator[ARRAY_SIZE_ONE])
 {
     strcpy(m_designator_piece_of_launch,designator);
 };
