@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 using namespace std;
+#define ARRAY_SIZE_ONE 1
 
 
 // methods
@@ -174,9 +175,9 @@ void
 // sets the classifier field (1 digits)
 // store the data
 void
-    orbital::SetCLASSIFIERfield(char field)
+    orbital::SetCLASSIFIERfield(std::string field)
 {
-    m_classification = field;
+    strcpy(m_classification,field.c_str());
 };
 
 // sets the laumncher year field
@@ -199,7 +200,7 @@ void
 // sets the piece designator
 // store the data
 void
-    orbital::SetLAUNCHpiecedesignator(char designator[1])
+    orbital::SetLAUNCHpiecedesignator(char designator[ARRAY_SIZE_ONE])
 {
     strcpy(m_designator_piece_of_launch,designator);
 };
@@ -233,7 +234,7 @@ void
 void
     orbital::SetSECONDderivativemotion(std::string motion)
 {
-    m_second_derivative_of_motion = motion;
+    strcpy(m_second_derivative_of_motion,motion.c_str());
 };
 
 // extract and store the degradation coefficient
@@ -241,7 +242,7 @@ void
 void
     orbital::SetDRAGRADIATIONcoefficient(std::string coefficient)
 {
-    m_drag_term_or_radition_coefficient = coefficient;
+    strcpy(m_drag_term_or_radition_coefficient,coefficient.c_str());
 };
 
 // set the ephemeris details
@@ -370,7 +371,8 @@ void
         
         phrase = parsed_line_one[1];
         phrase = phrase.substr(4, 5);
-        orbital::SetCLASSIFIERfield(stoi(phrase));
+        //phrase_c = phrase;
+        orbital::SetCLASSIFIERfield(phrase);
         
         phrase = parsed_line_one[2];
         phrase = phrase.substr(0, 1);
