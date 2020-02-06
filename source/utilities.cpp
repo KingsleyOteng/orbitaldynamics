@@ -18,12 +18,12 @@ utilities::~utilities()
 {}
 
 // methods
-std::string
+char*
     utilities::getStringParser(std::string str)
 {
     // Used to split string around spaces.
     std::istringstream ss(str);
-    string final;
+    
     
     // Traverse through all words
     do
@@ -31,16 +31,19 @@ std::string
             // Read a word
             string word;
             ss >> word;
-      
+            word = word + "\n";
+            
             // Print the read word
             cout << word << endl;
-            final = final + "\n" + word;
+            
+            strcpy(parsed_string,word.c_str());
+           // finals = finals + "\n" + word;
             
       
         }
     while (ss); // While there is more to read
     
-    return final;
+    return parsed_string;
 }
   
 

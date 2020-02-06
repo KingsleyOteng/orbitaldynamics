@@ -25,7 +25,8 @@ private:
     
   // members
   char              parse_input_phrase              [ARRAY_SIZE];
-
+  char             parsed_string                   [ARRAY_SIZE];
+    
 public:
 
   // constructors  and destructors
@@ -37,7 +38,7 @@ public:
   // setters
   void                      setStringParser                 (std::string str);
   // getters
-  std::string               getStringParser                 (std::string str);
+  char*                     getStringParser                 (std::string str);
   std::vector<std::string>  getStringParser                 ();
 
 
