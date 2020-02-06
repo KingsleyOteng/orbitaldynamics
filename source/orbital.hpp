@@ -77,7 +77,7 @@ public:
     void        SetCLASSIFIERfield              (std::string field);
     void        SetLAUNCHERyearfield            (int field);
     void        SetLAUNCHERnumberfield          (int field);
-    void        SetLAUNCHpiecedesignator        (char designator[1]);
+    void        SetLAUNCHpiecedesignator        (char designator [ARRAY_SIZE_ONE]);
     void        SetEPOCHyear                    (int year);
     void        SetJULIANdatefraction           (double fraction);
     void        SetBALLISTICcoefficient         (double coefficient);
@@ -106,8 +106,7 @@ public:
     void        getDataFile                     ();
     void        getURLData                      ();
     void        getURLData                      (std::string resource_locator);
-    
-    std::string getTLEname                      () { return m_tle_name; }
+    char*       getTLEname                      () { return m_tle_name; }
     char*       getTLElinetwo                   () { return m_tle_line_two; }
     char*       getTLElineone                   () { return m_tle_line_one; }
     int         getSATnumber                    () { return m_satellite_number; }
