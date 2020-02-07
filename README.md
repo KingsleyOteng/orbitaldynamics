@@ -1,5 +1,5 @@
 # NORAD Two-line element set (NORAD TLE)
-### © orbital.cpp implementation in C++ was written by Kingsley OtengAmoako  2019, 2020. 
+### orbital.cpp implementation in C++ was written by Kingsley OtengAmoako © 2019, 2020. 
 
 Two-line element set (TLE) data format parser.
 
