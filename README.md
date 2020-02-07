@@ -26,12 +26,11 @@ Some data to play around with can be found at [Celestrak](http://www.celestrak.c
 
 ## Usage
 
-```js
+```c++
    orbital *orb = new orbital(12,13,14);
-    utilities *util = new utilities();
+   utilities *util = new utilities();
     
-    // map to the TLE resoure
-    // then open the resource
+    // mapping to URL method
     orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
     orb -> getURLData();
 ```
