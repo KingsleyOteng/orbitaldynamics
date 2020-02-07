@@ -50,5 +50,19 @@ int main()
     // store TLE parameters
     orb->SetTLEparameters(orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
     
+    std::cout << "\n" << "Line Number of Element Data" << "\n";
+    std::cout << "Satellite Number" << "\n";
+    std::cout << "Classification (U=Unclassified)" << "\n";
+    std::cout << "International Designator (Last two digits of launch year)"<< "\n";
+    std::cout << "International Designator (Launch number of the year)" << "\n";
+    std::cout << "International Designator (Piece of the launch)" << "\n";
+    std::cout << "International Designator (Epoch Year (Last two digits of year)" << "\n";
+    std::cout << "International Designator (Epoch (Day of the year and fractional portion of the day))" << "\n";
+    std::cout << "First Time Derivative of the Mean Motion" << "\n";
+    std::cout << "Second Time Derivative of Mean Motion (Leading decimal point assumed)" << "\n";
+    std::cout << "BSTAR drag term (Leading decimal point assumed)" << "\n";
+    std::cout << "Ephemeris type" << "\n";
+    std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1)" << "\n";
+    
     return 0;
 }
