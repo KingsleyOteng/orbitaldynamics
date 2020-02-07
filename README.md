@@ -1,5 +1,5 @@
 # NORAD Two-line element set (NORA TLE)
-[![build status]]()]
+[![build status]]
 
 Two-line element set (TLE) data format parser
 
