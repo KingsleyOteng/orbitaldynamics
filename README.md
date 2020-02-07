@@ -1,5 +1,5 @@
 # NORAD Two-line element set (NORAD TLE)
-### orbital.cpp was written by Kingsley OtengAmoako © December 2019 - Feburary 2020. 
+### orbital.cpp was written by Kingsley OtengAmoako © 2019, 2020. 
 
 Two-line element set (TLE) data format parser.
 
