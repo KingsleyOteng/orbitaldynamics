@@ -46,13 +46,14 @@ orb -> getURLData();
 ### Parsing a single set
 
 ```c++
-var set = 'ISS (ZARYA)\n' +
-  '1 25544U 98067A   08264.51782528 -.00002182  00000-0 -11606-4 0  2927\n' +
-  '2 25544  51.6416 247.4627 0006703 130.5360 325.0288 15.72125391563537'
+cout << orb -> getTLEname() << "\n";
+cout << orb -> getTLElineone() << "\n";
+cout << orb -> getTLElinetwo() << "\n";
 ```
 
+### Generate TLE summary
 ```c++
-var tle = TLE.parse( set )
+cout << orb -> getTLEsummary() << "\n";
 ```
 
 ```c++
@@ -94,34 +95,14 @@ fs.createReadStream( FILEPATH )
 
 ### Creating a TLE instance from existing data
 
-```js
-// From a JSON string
-var tle = TLE.fromJSON( '{"name":"ISS (ZARYA)","number":25544,"class":"U","id":"98067A","date":"2008-09-20T12:25:40.104Z","fdmm":-0.00002182,"sdmm":0,"drag":-0.000011606,"ephemeris":0,"esn":292,"inclination":51.6416,"ascension":247.4627,"eccentricity":0.0006703,"perigee":130.536,"anomaly":325.0288,"motion":15.721253915,"revolution":6353}' )
-```
-
-```js
-// From an object
-var tle = TLE.fromJSON({
-  name: 'FENGYUN 1C DEB',
-  class: 'U',
-  id: '29740',
-})
-```
+Currently does not allow the creation of TLEs. 
 
 ## Speed
 
-It can read, stream & parse ~2500 TLEs from the file system in about 100ms.
+It currently only handles a single TLE
 
 ```
-node example/fs-stream.js
-Parser: 2517 TLEs, 108ms, 23306 op/s
-Parser: 23 op/ms
-```
-
-## Examples
-
-See `examples` folder for runnable examples:
-```
-node examples/fs-stream.js
-node examples/http-stream.js
+tle_example/norad_model.cpp
+Parser: 
+Parser: 
 ```
