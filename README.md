@@ -1,4 +1,4 @@
-# Two-line element set (TLE)
+# NORAD Two-line element set (NORA TLE)
 [![npm](https://img.shields.io/npm/v/tle.svg?style=flat-square)](https://npmjs.com/package/tle)
 [![npm license](https://img.shields.io/npm/l/tle.svg?style=flat-square)](https://npmjs.com/package/tle)
 [![npm downloads](https://img.shields.io/npm/dm/tle.svg?style=flat-square)](https://npmjs.com/package/tle)
