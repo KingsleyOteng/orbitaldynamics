@@ -1,5 +1,5 @@
 # NORAD Two-line element set (NORA TLE)
-[![build status](https://img.shields.io/travis/jhermsmeier/node-tle.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-tle)
+[![build status]]()]
 
 Two-line element set (TLE) data format parser
 
