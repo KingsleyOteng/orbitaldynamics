@@ -2,9 +2,7 @@
 
 Two-line element set (TLE) data format parser.
 
-The [US Air Force] provides data for Earth-orbiting satellites in Two-Line Orbital Element Sets ([TLE]). The current TLE format is specified by [NORAD] with input from [NASA].  A derivation of the Two-Line Element set format called the Three-Line Element set exists where the first line contains the name of the satellite. These element sets are general perturbation mean elements constructed by a least squares estimation from observations. The Air Force provides the observations taken from the Space Surveillance Network, and FreeFlyer provides the capability of simulating observations to generate TLEs. The TLE elements may be propogated using an [SGP4] model (or one of the SGP8, [SDP4], SDP8 models).
-
-— From [Wikipedia](http://en.wikipedia.org/wiki/Two-line_element_set)
+The US Air Force provides data for Earth-orbiting satellites in Two-Line Orbital Element Sets ([TLE]). The current TLE format is specified by [NORAD] with input from [NASA].  A derivation of the Two-Line Element set format called the Three-Line Element set exists where the first line contains the name of the satellite. These element sets are general perturbation mean elements constructed by a least squares estimation from observations. The Air Force provides the observations taken from the Space Surveillance Network, and FreeFlyer provides the capability of simulating observations to generate TLEs. The TLE elements may be propogated using an [SGP4] model (or one of the SGP8, [SDP4], SDP8 models).
 
 [TLE]: http://en.wikipedia.org/wiki/Two-line_element_set
 [NORAD]: http://en.wikipedia.org/wiki/NORAD
