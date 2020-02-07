@@ -24,30 +24,38 @@ The [US Air Force] provides data for Earth-orbiting satellites in Two-Line Orbit
 
 Some data to play around with can be found at [Celestrak](http://www.celestrak.com/NORAD/elements/) and in [Celestrak's Master Index](http://www.celestrak.com/NORAD/elements/master.asp).
 
-## Usage
+## Usage from URL
 
 ```c++
-   orbital *orb = new orbital(12,13,14);
-   utilities *util = new utilities();
+orbital *orb = new orbital();
+utilities *util = new utilities();
     
-    // mapping to URL method
-    orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
-    orb -> getURLData();
+// mapping to URL method
+orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
+orb -> getURLData();
+```
+
+## Usage from data file
+
+```c++
+// mapping to file method
+orb -> SetDataFile("Sat_43108.txt");
+orb -> getURLData();
 ```
 
 ### Parsing a single set
 
-```js
+```c++
 var set = 'ISS (ZARYA)\n' +
   '1 25544U 98067A   08264.51782528 -.00002182  00000-0 -11606-4 0  2927\n' +
   '2 25544  51.6416 247.4627 0006703 130.5360 325.0288 15.72125391563537'
 ```
 
-```js
+```c++
 var tle = TLE.parse( set )
 ```
 
-```js
+```c++
 TLE {
   name: 'ISS (ZARYA)',
   number: 25544,
