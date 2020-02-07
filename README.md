@@ -12,12 +12,6 @@ The [US Air Force] provides data for Earth-orbiting satellites in Two-Line Orbit
 [SGP4]: http://en.wikipedia.org/wiki/SGP4
 [SDP4]: http://en.wikipedia.org/wiki/SDP4
 
-## Install via [npm](https://npmjs.com/package/tle)
-
-```sh
-$ npm install --save tle
-```
-
 ## Format
 
 **More,  detailed information is available at [NASA Human Space Flight](http://spaceflight.nasa.gov/realdata/sightings/SSapplications/Post/JavaSSOP/SSOP_Help/tle_def.html):**
@@ -33,7 +27,13 @@ Some data to play around with can be found at [Celestrak](http://www.celestrak.c
 ## Usage
 
 ```js
-var TLE = require( 'tle' )
+   orbital *orb = new orbital(12,13,14);
+    utilities *util = new utilities();
+    
+    // map to the TLE resoure
+    // then open the resource
+    orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
+    orb -> getURLData();
 ```
 
 ### Parsing a single set
