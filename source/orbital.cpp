@@ -375,7 +375,7 @@ void
         orbital::SetCLASSIFIERfield(phrase);
         
         phrase = parsed_line_one[2];
-        phrase = phrase.substr(0, 1);
+        phrase = phrase.substr(0, 2);
         orbital::SetLAUNCHERyearfield(stoi(phrase));
         
         phrase = parsed_line_one[2];
@@ -388,7 +388,7 @@ void
         orbital::SetLAUNCHpiecedesignator(phrase_c);
         
         phrase = parsed_line_one[3];
-        phrase = phrase.substr(0, 1);
+        phrase = phrase.substr(0, 2);
         orbital::SetEPOCHyear(stoi(phrase));
         
         phrase = parsed_line_one[3];

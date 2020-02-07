@@ -8,8 +8,8 @@
 
 
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <vector>                   // c-11 vector
+#include <algorithm>                // c-11 algoithm
 #include "orbital.hpp"              // header files
 #include "utilities.hpp"            // my own routines for processing data
 #include <boost/any.hpp>            // boost standard library
@@ -50,19 +50,19 @@ int main()
     // store TLE parameters
     orb->SetTLEparameters(orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
     
-    std::cout << "\n" << "Line Number of Element Data" << "\n";
-    std::cout << "Satellite Number" << "\n";
-    std::cout << "Classification (U=Unclassified)" << "\n";
-    std::cout << "International Designator (Last two digits of launch year)"<< "\n";
-    std::cout << "International Designator (Launch number of the year)" << "\n";
-    std::cout << "International Designator (Piece of the launch)" << "\n";
-    std::cout << "International Designator (Epoch Year (Last two digits of year)" << "\n";
-    std::cout << "International Designator (Epoch (Day of the year and fractional portion of the day))" << "\n";
-    std::cout << "First Time Derivative of the Mean Motion" << "\n";
-    std::cout << "Second Time Derivative of Mean Motion (Leading decimal point assumed)" << "\n";
-    std::cout << "BSTAR drag term (Leading decimal point assumed)" << "\n";
-    std::cout << "Ephemeris type" << "\n";
-    std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1)" << "\n";
+    std::cout << "Line Number of Element Data : " << "\n";
+    std::cout << "Satellite Number : " << orb->getTLEname() << "\n";
+    std::cout << "Classification (U=Unclassified) : " << orb->getCLASSIFIERfield() << "\n";
+    std::cout << "International Designator (Last two digits of launch year) : "<< orb->getLAUNCHERyearfield() << "\n";
+    std::cout << "International Designator (Launch number of the year) : " << orb->getLAUNCHERnumberfield() << "\n";
+    std::cout << "International Designator (Piece of the launch) : " << orb->getLAUNCHpiencedesignator() <<  "\n";
+    std::cout << "International Designator (Epoch Year (Last two digits of year) : " << orb->getEPOCHyear() << "\n";
+    std::cout << "International Designator (Epoch (Day of the year and fractional portion of the day)) : " << orb->getJULIANdatefraction() << "\n";
+    std::cout << "First Time Derivative of the Mean Motion : " << orb->getBALLISTICcoefficient() << "\n";
+    std::cout << "Second Time Derivative of Mean Motion (Leading decimal point assumed) : " << orb->getSECONDderivativemotion() << "\n";
+    std::cout << "BSTAR drag term (Leading decimal point assumed) : " << orb->getDRAGRADIATIONcoefficient() << "\n";
+    std::cout << "Ephemeris type : " << orb->getEPHEMERIStype() << "\n";
+    std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1) : " << orb->getELEMENTnumber() << "\n";
     
     return 0;
 }
