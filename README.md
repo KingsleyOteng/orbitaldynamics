@@ -1,8 +1,8 @@
 # NORAD Two-line element set (NORA TLE)
 
-Two-line element set (TLE) data format parser
+Two-line element set (TLE) data format parser.
 
-A two-line element set ([TLE]) is a data format used to convey sets of orbital elements that describe the orbits of Earth-orbiting satellites. A computer program called a model can use the TLE to compute the position of a satellite at a particular time. The TLE is a format specified by NORAD and used by [NORAD] and [NASA]. The TLE can be used directly by the [SGP4] model (or one of the SGP8, [SDP4], SDP8 models). Orbital elements are determined for many thousands of space objects by NORAD and are freely distributed on the Internet in the form of TLEs. A TLE consists of a title line followed by two lines of formatted text.
+The [US Air Force] provides data for Earth-orbiting satellites in Two-Line Orbital Element Sets ([TLE]). The current TLE format is specified by [NORAD] with input from [NASA].  A derivation of the Two-Line Element set format called the Three-Line Element set exists where the first line contains the name of the satellite. These element sets are general perturbation mean elements constructed by a least squares estimation from observations. The Air Force provides the observations taken from the Space Surveillance Network, and FreeFlyer provides the capability of simulating observations to generate TLEs. The TLE elements may be propogated using an [SGP4] model (or one of the SGP8, [SDP4], SDP8 models).
 
 — From [Wikipedia](http://en.wikipedia.org/wiki/Two-line_element_set)
 
