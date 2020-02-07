@@ -1,4 +1,4 @@
-# NORAD Two-line element set (NORA TLE)
+# NORAD Two-line element set (NORAD TLE)
 
 Two-line element set (TLE) data format parser.
 
@@ -93,7 +93,7 @@ fs.createReadStream( FILEPATH )
   })
 ```
 
-### Creating a TLE instance from existing data
+## Creating a TLE instance from existing data
 
 Currently does not allow the creation of TLEs. 
 
