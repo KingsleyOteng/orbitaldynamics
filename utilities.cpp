@@ -1,4 +1,4 @@
-//
+//      Source
 //      Overview: Data parsing utilities
 //
 //      Created by Kwadwo Oteng-Amoko on 22/01/2020.
@@ -54,6 +54,7 @@ std::vector<string>
     std::istringstream ss(parse_input_phrase);
     string final;
     vector<string> detokenized_strings;
+    
     // Traverse through all words
     do
         {

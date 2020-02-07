@@ -1,4 +1,4 @@
-//
+//      Source
 //      implementation of a sensor model for the orbital software
 //
 //
@@ -34,49 +34,49 @@ void
     {}
 
 void
-    sensor::set_m_object_acceleration      (double m_acceleration_vector, double vector_propogation)
+    sensor::set_m_object_acceleration       (double m_acceleration_vector, double vector_propogation)
     {}
 
 void
-    sensor::set_m_object_time              (double m_time_vector, double vector_propogation)
+    sensor::set_m_object_time               (double m_time_vector, double vector_propogation)
     {}
 
 void
-    sensor::set_m_prediction_azimuth       (double m_azimuth_vector, double vector_propogation)
+    sensor::set_m_prediction_azimuth        (double m_azimuth_vector, double vector_propogation)
     {}
 
 void
-    sensor::set_m_prediction_elevation     (double m_elevation_vector, double vector_propogation)
+    sensor::set_m_prediction_elevation      (double m_elevation_vector, double vector_propogation)
     {}
 
 void
-    sensor::set_m_prediction_distance      (double m_distance_vector, double vector_propogation)
+    sensor::set_m_prediction_distance       (double m_distance_vector, double vector_propogation)
     {}
 
 double
-    sensor::get_m_object_position        ()
+    sensor::get_m_object_position           ()
     {   return m_position; }
 
 double
-    sensor::get_m_object_velocity        ()
+    sensor::get_m_object_velocity           ()
     {   return m_velocity;}
 
 double
-    sensor::get_m_object_acceleration    ()
+    sensor::get_m_object_acceleration       ()
     {   return m_acceleration; }
 
 double
-    sensor::get_m_object_time            ()
+    sensor::get_m_object_time               ()
     {   return m_time; }
 
 double
-    sensor::get_m_prediction_azimuth     ()
+    sensor::get_m_prediction_azimuth        ()
     {   return m_azimuth; }
 
 double
-    sensor::get_m_prediction_elevation   ()
+    sensor::get_m_prediction_elevation      ()
     {   return m_elevation; }
 
 double
-    sensor::get_m_prediction_distance    ()
+    sensor::get_m_prediction_distance       ()
     {   return m_distance;  }

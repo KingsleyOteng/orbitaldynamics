@@ -24,8 +24,8 @@ private:
    #define ARRAY_SIZE 50
     
   // members
-  char              parse_input_phrase              [ARRAY_SIZE];
-  char             parsed_string                   [ARRAY_SIZE];
+  char             parse_input_phrase                       [ARRAY_SIZE];
+  char             parsed_string                            [ARRAY_SIZE];
     
 public:
 
