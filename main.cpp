@@ -12,8 +12,8 @@
 #include <algorithm>                // c-11 algoithm
 #include "orbital.hpp"              // header files
 #include "utilities.hpp"            // my own routines for processing data
-#include <boost/any.hpp>            // boost standard library
-#include <boost/asio.hpp>           // io streaming headers
+//#include <boost/any.hpp>            // boost standard library
+//#include <boost/asio.hpp>           // io streaming headers
 
 
 using namespace std;
@@ -29,7 +29,7 @@ int main()
     // then open the resource
     orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
     orb -> getURLData();
-    orb -> getTLEsummary();
+   
     
     // summary of the current NORAD two-line elements details
     std::cout << "\nSatellite name: \n \n"      << orb ->
@@ -66,6 +66,8 @@ int main()
     std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1) : " << orb->getELEMENTnumber() << "\n";
     
     std:cout  << "line two" << "\n";
+    
+     orb -> getTLEsummary();
     
     return 61;
 }

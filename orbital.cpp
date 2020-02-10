@@ -51,6 +51,14 @@ void
 
 // Date member function
 // store the data
+char*
+    orbital::getClassifierID()
+{
+    return m_id;
+};
+
+// Date member function
+// store the data
 void
     orbital::getDataFile()
 {
@@ -175,9 +183,9 @@ void
 // sets the classifier field (1 digits)
 // store the data
 void
-    orbital::SetCLASSIFIERfield(std::string field)
+    orbital::SetCLASSIFIERfield(std::string ClassifierID)
 {
-    strcpy(m_classification,field.c_str());
+    strcpy(m_classification, ClassifierID.c_str());
 };
 
 // sets the laumncher year field
@@ -373,10 +381,13 @@ void
         phrase = phrase.substr(5, 5);
         //phrase_c = phrase;
         orbital::SetCLASSIFIERfield(phrase);
-        
+    
         phrase = parsed_line_one[2];
         phrase = phrase.substr(0, 2);
         orbital::SetLAUNCHERyearfield(stoi(phrase));
+        
+        phrase = parsed_line_one[2];
+        orbital :: SetClassifierID(phrase);
         
         phrase = parsed_line_one[2];
         phrase = phrase.substr(2, 4);
@@ -472,6 +483,16 @@ void
 
 };
 
+// set the classifier id
+// store the data
+void
+    orbital::SetClassifierID(std::string id)
+{
+        cout << "id    " << id;
+        strcpy(m_id,id.c_str());
+
+};
+
 
 // generate a summary of the TLE
 void
@@ -482,7 +503,7 @@ void
     cout << "   name:  "            << m_tle_name           ;
     cout << "   number:  "          << m_satellite_number                   << "\n";
     cout << "   class:  "           << m_classification                     << "\n";
-    cout << "   id:  "              << m_de             << "\n";
+    cout << "   id:  "              << m_id                                 << "\n";
     cout << "   date:  "            << m_designator_launch_number_of_year   << "\n";
     cout << "   fdmm:  "            << m_satellite_number                   << "\n";
     cout << "   sdmm:  "            << m_satellite_number                   << "\n";
@@ -496,5 +517,5 @@ void
     cout << "   anomaly:  "         << m_satellite_number                   << "\n";
     cout << "   motion:  "          << m_satellite_number                   << "\n";
     cout << "   revolution:  "      << m_satellite_number                   << "\n";
-    cout << "}";
+    cout << "}" << "\n";
 };

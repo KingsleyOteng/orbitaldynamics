@@ -29,6 +29,7 @@ private:
     char        m_tle_url                           [ARRAY_SIZE];
     char        m_tle_line_one                      [ARRAY_SIZE];
     char        m_tle_line_two                      [ARRAY_SIZE];
+    char        m_id                                [ARRAY_SIZE];
     std::vector<std::
     string>     parsed_line_one_a;
     std::vector<std::
@@ -74,7 +75,7 @@ public:
     void        SetDate                         (int year, int month, int day);
     void        SetTLEname                      (std::string name);
     void        SetSATnumber                    (int number);
-    void        SetCLASSIFIERfield              (std::string field);
+    void        SetCLASSIFIERfield              (std::string id);
     void        SetLAUNCHERyearfield            (int field);
     void        SetLAUNCHERnumberfield          (int field);
     void        SetLAUNCHpiecedesignator        (char designator [ARRAY_SIZE_ONE]);
@@ -99,8 +100,9 @@ public:
     void        SetREVOLUTIONepochchecksum      (double checksum);
     void        SetTLEparameters                (std::string spacecraft, std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_two);
     void        SetDataFile                     (std::string TLE);
-    void        SetURLData                      (std::string TLE);
+    void        SetURLData                      (std::string URL);
     void        SetTLEparameters                ();
+    void        SetClassifierID                 (std::string ClassifierID);
     
     // getter
     void        getDataFile                     ();
@@ -131,6 +133,7 @@ public:
     double      getMEANanomlay                  (double anomaly) { return m_mean_anomaly; }
     double      getMEANmotion                   (double motion) { return m_mean_motion; }
     double      getREVOLUTIONepochchecksum      (double checksum) { return m_epoch_checksum; }
+    char*       getClassifierID                 ();
 
     int         getYear                         () { return m_year; }
     int         getMonth                        () { return m_month; }
