@@ -481,8 +481,8 @@ void
     cout << "TLE {"                 << "\n";
     cout << "   name:  "            << m_tle_name           ;
     cout << "   number:  "          << m_satellite_number                   << "\n";
-    cout << "   class:  "           << getCLASSIFIERfield()                     << "\n";
-    cout << "   id:  "              << m_designator_launch_year             << "\n";
+    cout << "   class:  "           << m_classification                     << "\n";
+    cout << "   id:  "              << m_epoch_year       << "\n";
     cout << "   date:  "            << m_designator_launch_number_of_year   << "\n";
     cout << "   fdmm:  "            << m_satellite_number                   << "\n";
     cout << "   sdmm:  "            << m_satellite_number                   << "\n";
