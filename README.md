@@ -42,9 +42,9 @@ orb -> getURLData();
 ### Parsing a single set
 
 ```c++
-cout << orb -> getTLEname() << "\n";
-cout << orb -> getTLElineone() << "\n";
-cout << orb -> getTLElinetwo() << "\n";
+cout << orb -> getTLEname()     << "\n";
+cout << orb -> getTLElineone()  << "\n";
+cout << orb -> getTLElinetwo()  << "\n";
 ```
 
 ### Generate TLE summary
@@ -77,7 +77,7 @@ TLE {
 ### Parsing a stream
 
 ```c++
-var parser = new TLE.Parser( options ) // OR
+var parser = new TLE.Parser( options ) 
 var parser = TLE.createParser( options )
 ````
 
