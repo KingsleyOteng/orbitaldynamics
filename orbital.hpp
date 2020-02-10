@@ -107,7 +107,7 @@ public:
     void        SetTLEparameters                ();
     void        SetClassifierID                 (std::string ClassifierID);
     void        SetCheckSumLineOne              (int checksum);
-    void        SetCheckSumLineTwo            (int checksum);
+    void        SetCheckSumLineTwo              (int checksum);
     
     // getter
     void        getDataFile                     ();
