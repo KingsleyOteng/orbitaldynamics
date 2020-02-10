@@ -51,6 +51,14 @@ void
 
 // Date member function
 // store the data
+char*
+    orbital::getClassifierID()
+{
+    return m_id;
+};
+
+// Date member function
+// store the data
 void
     orbital::getDataFile()
 {
@@ -175,9 +183,9 @@ void
 // sets the classifier field (1 digits)
 // store the data
 void
-    orbital::SetCLASSIFIERfield(std::string field)
+    orbital::SetCLASSIFIERfield(std::string ClassifierID)
 {
-    strcpy(m_classification,field.c_str());
+    strcpy(m_classification, ClassifierID.c_str());
 };
 
 // sets the laumncher year field
@@ -374,9 +382,16 @@ void
         //phrase_c = phrase;
         orbital::SetCLASSIFIERfield(phrase);
         
+        cout << "PPPPPPPPPPPPPPPPPP 1" << parsed_line_one[1] << "\n";
+        cout << "PPPPPPPPPPPPPPPPPP 2" << parsed_line_one[2] << "\n";
+        cout << "PPPPPPPPPPPPPPPPPP 3" << parsed_line_one[3] << "\n";
+        
         phrase = parsed_line_one[2];
         phrase = phrase.substr(0, 2);
         orbital::SetLAUNCHERyearfield(stoi(phrase));
+        
+        phrase = parsed_line_two[2];
+        orbital :: SetClassifierID(phrase);
         
         phrase = parsed_line_one[2];
         phrase = phrase.substr(2, 4);
@@ -469,6 +484,16 @@ void
 {
  
         strcpy(m_tle_url,TLE.c_str());
+
+};
+
+// set the classifier id
+// store the data
+void
+    orbital::SetClassifierID(std::string id)
+{
+    cout << "id    " << id;
+        strcpy(m_id,id.c_str());
 
 };
 
