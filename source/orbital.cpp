@@ -370,7 +370,7 @@ void
         orbital::SetSATnumber(stoi(phrase));
         
         phrase = parsed_line_one[1];
-        phrase = phrase.substr(4, 5);
+        phrase = phrase.substr(5, 5);
         //phrase_c = phrase;
         orbital::SetCLASSIFIERfield(phrase);
         
@@ -470,4 +470,31 @@ void
  
         strcpy(m_tle_url,TLE.c_str());
 
+};
+
+
+// generate a summary of the TLE
+void
+    orbital::getTLEsummary()
+{
+    cout << "\n";
+    cout << "TLE {"                 << "\n";
+    cout << "   name:  "            << m_tle_name           ;
+    cout << "   number:  "          << m_satellite_number                   << "\n";
+    cout << "   class:  "           << getCLASSIFIERfield()                     << "\n";
+    cout << "   id:  "              << m_designator_launch_year             << "\n";
+    cout << "   date:  "            << m_designator_launch_number_of_year   << "\n";
+    cout << "   fdmm:  "            << m_satellite_number                   << "\n";
+    cout << "   sdmm:  "            << m_satellite_number                   << "\n";
+    cout << "   drag:  "            << m_satellite_number                   << "\n";
+    cout << "   ephemeris:  "       << m_satellite_number                   << "\n";
+    cout << "   esn:  "             << m_satellite_number                   << "\n";
+    cout << "   inclination:  "     << m_satellite_number                   << "\n";
+    cout << "   ascension:  "       << m_satellite_number                   << "\n";
+    cout << "   eccentricity:  "    << m_satellite_number                   << "\n";
+    cout << "   perigee:  "         << m_satellite_number                   << "\n";
+    cout << "   anomaly:  "         << m_satellite_number                   << "\n";
+    cout << "   motion:  "          << m_satellite_number                   << "\n";
+    cout << "   revolution:  "      << m_satellite_number                   << "\n";
+    cout << "}";
 };

@@ -105,6 +105,7 @@ public:
     // getter
     void        getDataFile                     ();
     void        getURLData                      ();
+    void        getTLEsummary                   ();
     void        getURLData                      (std::string resource_locator);
     char*       getTLEname                      () { return m_tle_name; }
     char*       getTLElinetwo                   () { return m_tle_line_two; }
@@ -130,7 +131,7 @@ public:
     double      getMEANanomlay                  (double anomaly) { return m_mean_anomaly; }
     double      getMEANmotion                   (double motion) { return m_mean_motion; }
     double      getREVOLUTIONepochchecksum      (double checksum) { return m_epoch_checksum; }
-    
+
     int         getYear                         () { return m_year; }
     int         getMonth                        () { return m_month; }
     int         getDay                          () { return m_day; }
