@@ -51,6 +51,14 @@ void
 
 // Date member function
 // store the data
+char*
+    orbital::getClassifierID()
+{
+    return m_id;
+};
+
+// Date member function
+// store the data
 void
     orbital::getDataFile()
 {
@@ -175,9 +183,9 @@ void
 // sets the classifier field (1 digits)
 // store the data
 void
-    orbital::SetCLASSIFIERfield(std::string field)
+    orbital::SetCLASSIFIERfield(std::string ClassifierID)
 {
-    strcpy(m_classification,field.c_str());
+    strcpy(m_classification, ClassifierID.c_str());
 };
 
 // sets the laumncher year field
@@ -338,6 +346,7 @@ void
 void
     orbital::SetTLElineone(std::string phrase)
 {
+    
     strcpy(m_tle_line_one,phrase.c_str());
 };
 
@@ -373,10 +382,13 @@ void
         phrase = phrase.substr(5, 5);
         //phrase_c = phrase;
         orbital::SetCLASSIFIERfield(phrase);
-        
+    
         phrase = parsed_line_one[2];
         phrase = phrase.substr(0, 2);
         orbital::SetLAUNCHERyearfield(stoi(phrase));
+        
+        phrase = parsed_line_one[2];
+        orbital :: SetClassifierID(phrase);
         
         phrase = parsed_line_one[2];
         phrase = phrase.substr(2, 4);
@@ -396,9 +408,11 @@ void
         orbital::SetJULIANdatefraction(stoi(phrase));
 
         phrase = parsed_line_one[4];
+        //cout<<"SetBALLISTICcoefficient"<<phrase<<"\n";
         orbital::SetBALLISTICcoefficient(stod(phrase));
         
         phrase = parsed_line_one[5];
+        //cout<<"SetSECONDderivativemotion"<<phrase<<"\n";
         orbital::SetSECONDderivativemotion(phrase);
         
         phrase = parsed_line_one[6];
@@ -472,6 +486,16 @@ void
 
 };
 
+// set the classifier id
+// store the data
+void
+    orbital::SetClassifierID(std::string id)
+{
+        cout << "id    " << id;
+        strcpy(m_id,id.c_str());
+
+};
+
 
 // generate a summary of the TLE
 void
@@ -482,19 +506,19 @@ void
     cout << "   name:  "            << m_tle_name           ;
     cout << "   number:  "          << m_satellite_number                   << "\n";
     cout << "   class:  "           << m_classification                     << "\n";
-    cout << "   id:  "              << m_de             << "\n";
-    cout << "   date:  "            << m_designator_launch_number_of_year   << "\n";
-    cout << "   fdmm:  "            << m_satellite_number                   << "\n";
-    cout << "   sdmm:  "            << m_satellite_number                   << "\n";
-    cout << "   drag:  "            << m_satellite_number                   << "\n";
-    cout << "   ephemeris:  "       << m_satellite_number                   << "\n";
+    cout << "   id:  "              << m_id                                 << "\n";
+    cout << "   date:  "            << m_epoch_year                         << "\n";
+    cout << "   fdmm:  "            << m_ballistic_coefficient              << "\n";
+    cout << "   sdmm:  "            << m_second_derivative_of_motion        << "\n";
+    cout << "   drag:  "            << m_drag_term_or_radition_coefficient  << "\n";
+    cout << "   ephemeris:  "       << m_ephemeris_type                     << "\n";
     cout << "   esn:  "             << m_satellite_number                   << "\n";
-    cout << "   inclination:  "     << m_satellite_number                   << "\n";
-    cout << "   ascension:  "       << m_satellite_number                   << "\n";
-    cout << "   eccentricity:  "    << m_satellite_number                   << "\n";
-    cout << "   perigee:  "         << m_satellite_number                   << "\n";
-    cout << "   anomaly:  "         << m_satellite_number                   << "\n";
-    cout << "   motion:  "          << m_satellite_number                   << "\n";
-    cout << "   revolution:  "      << m_satellite_number                   << "\n";
-    cout << "}";
+    cout << "   inclination:  "     << m_satellite_inclination              << "\n";
+    cout << "   ascension:  "       << m_satellite_ascension_node           << "\n";
+    cout << "   eccentricity:  "    << m_satellite_eccentricity_coefficient << "\n";
+    cout << "   perigee:  "         << m_argument_perigree                  << "\n";
+    cout << "   anomaly:  "         << m_mean_anomaly                       << "\n";
+    cout << "   motion:  "          << m_mean_motion                        << "\n";
+    cout << "   revolution:  "      << m_epoch_checksum                     << "\n";
+    cout << "}" << "\n";
 };
