@@ -1,5 +1,6 @@
 #the makefile was primarily created to support C++ with Boost in a Xcode ide
     
+#BOOST_ROOT=/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/include/
 BOOST_ROOT=/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/include/
 QT_ROOT=/Users/kwadwooteng-amoko/Qt5.14.0/5.14.0/clang_64/
 PRODUCT_NAME=example
