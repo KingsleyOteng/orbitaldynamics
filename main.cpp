@@ -29,6 +29,7 @@ int main()
     // then open the resource
     orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
     orb -> getURLData();
+    orb -> getTLEsummary();
     
     // summary of the current NORAD two-line elements details
     std::cout << "\nSatellite name: \n \n"      << orb ->
