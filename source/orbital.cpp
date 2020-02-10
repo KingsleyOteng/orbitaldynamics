@@ -390,7 +390,7 @@ void
         phrase = phrase.substr(0, 2);
         orbital::SetLAUNCHERyearfield(stoi(phrase));
         
-        phrase = parsed_line_two[2];
+        phrase = parsed_line_one[2];
         orbital :: SetClassifierID(phrase);
         
         phrase = parsed_line_one[2];
@@ -492,7 +492,7 @@ void
 void
     orbital::SetClassifierID(std::string id)
 {
-    cout << "id    " << id;
+        cout << "id    " << id;
         strcpy(m_id,id.c_str());
 
 };
@@ -507,7 +507,7 @@ void
     cout << "   name:  "            << m_tle_name           ;
     cout << "   number:  "          << m_satellite_number                   << "\n";
     cout << "   class:  "           << m_classification                     << "\n";
-    cout << "   id:  "              << m_epoch_year       << "\n";
+    cout << "   id:  "              << m_id                                 << "\n";
     cout << "   date:  "            << m_designator_launch_number_of_year   << "\n";
     cout << "   fdmm:  "            << m_satellite_number                   << "\n";
     cout << "   sdmm:  "            << m_satellite_number                   << "\n";
@@ -521,5 +521,5 @@ void
     cout << "   anomaly:  "         << m_satellite_number                   << "\n";
     cout << "   motion:  "          << m_satellite_number                   << "\n";
     cout << "   revolution:  "      << m_satellite_number                   << "\n";
-    cout << "}";
+    cout << "}" << "\n";
 };
