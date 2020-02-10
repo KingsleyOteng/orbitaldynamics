@@ -63,7 +63,7 @@ std::vector<string>
             ss >> word;
       
             // Print the read word
-            cout << "><><<" << word << endl;
+            //cout << "><><<" << word << endl;
             //final = final + "\n" + word;
             
             detokenized_strings.push_back(word);
