@@ -56,6 +56,8 @@ private:
     double      m_mean_anomaly;
     double      m_mean_motion;
     double      m_epoch_checksum;
+    int         m_lineone_checksum;
+    int         m_linetwo_checksum;
     
     int         m_year;
     int         m_month;
@@ -104,6 +106,8 @@ public:
     void        SetURLData                      (std::string URL);
     void        SetTLEparameters                ();
     void        SetClassifierID                 (std::string ClassifierID);
+    void        SetCheckSumLineOne              (int checksum);
+    void        SetCheckSumLineTwo            (int checksum);
     
     // getter
     void        getDataFile                     ();
@@ -126,14 +130,17 @@ public:
     int         getEPHEMERIStype                () { return m_ephemeris_type; }
     int         getELEMENTnumber                () { return m_element_number; }
     int         getCHECKsum                     () { return m_check_sum; }
-    int         getSATNUMBERline2               (int number) { return m_satellite_number_2; }
-    double      getINCLINATIONfield             (double field) { return m_satellite_inclination; }
-    double      getRIGHTASCENTIONnode           (double node) { return m_satellite_ascension_node; }
-    double      getECCENTRICITYcoefficient      (double coefficient) { return m_satellite_eccentricity_coefficient; }
-    double      getARGUMENTperigree             (double perigree) { return m_argument_perigree; }
-    double      getMEANanomlay                  (double anomaly) { return m_mean_anomaly; }
-    double      getMEANmotion                   (double motion) { return m_mean_motion; }
-    double      getREVOLUTIONepochchecksum      (double checksum) { return m_epoch_checksum; }
+    int         getSATNUMBERline2               () { return m_satellite_number_2; }
+    double      getINCLINATIONfield             () { return m_satellite_inclination; }
+    double      getRIGHTASCENTIONnode           () { return m_satellite_ascension_node; }
+    double      getECCENTRICITYcoefficient      () { return m_satellite_eccentricity_coefficient; }
+    double      getARGUMENTperigree             () { return m_argument_perigree; }
+    double      getMEANanomlay                  () { return m_mean_anomaly; }
+    double      getMEANmotion                   () { return m_mean_motion; }
+    double      getREVOLUTIONepochchecksum      () { return m_epoch_checksum; }
+    int         getCheckSumLineOne              () { return m_lineone_checksum; }
+    int         getCheckSumLineTwo              () { return m_linetwo_checksum; }
+    
     char*       getClassifierID                 ();
 
     int         getYear                         () { return m_year; }

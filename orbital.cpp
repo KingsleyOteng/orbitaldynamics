@@ -136,13 +136,11 @@ void
         
         if (x == 0)
         {
-
             orbital::SetTLEname(line);
         }
         
         if (x == 1)
         {
-
             orbital::SetTLElineone(line);
         }
         
@@ -422,7 +420,12 @@ void
         orbital::SetEPHEMERIStype(stoi(phrase));
         
         phrase = parsed_line_one[8];
+        phrase = phrase.substr(0, 3);
         orbital::SetELEMENTnumber(stoi(phrase));
+        
+        phrase = parsed_line_one[8];
+               phrase = phrase.substr(0, 3);
+               //orbital::SetELEMENTnumber(stoi(phrase));
         
         orbital::SetCHECKsum(0);
         
@@ -491,11 +494,20 @@ void
 void
     orbital::SetClassifierID(std::string id)
 {
-        cout << "id    " << id;
         strcpy(m_id,id.c_str());
-
 };
 
+void
+    orbital::SetCheckSumLineOne(int checksum)
+{
+    m_lineone_checksum = checksum;
+};
+
+void
+    orbital::SetCheckSumLineTwo(int checksum)
+{
+    m_linetwo_checksum = checksum;
+};
 
 // generate a summary of the TLE
 void
