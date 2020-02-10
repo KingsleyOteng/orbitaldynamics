@@ -420,12 +420,13 @@ void
         orbital::SetEPHEMERIStype(stoi(phrase));
         
         phrase = parsed_line_one[8];
-        phrase = phrase.substr(0, 3);
+        phrase = phrase.substr(0, 2);
+        
         orbital::SetELEMENTnumber(stoi(phrase));
         
         phrase = parsed_line_one[8];
-               phrase = phrase.substr(0, 3);
-               //orbital::SetELEMENTnumber(stoi(phrase));
+        phrase = phrase.substr(2, 3);
+        orbital::SetCheckSumLineOne(stoi(phrase));
         
         orbital::SetCHECKsum(0);
         
@@ -457,7 +458,13 @@ void
         orbital :: SetMEANmotion(stod(phrase));
         
         phrase = parsed_line_two[8];
+        phrase = phrase.substr(0, 4);
         orbital :: SetREVOLUTIONepochchecksum(stod(phrase));
+        
+        phrase = parsed_line_two[8];
+        phrase = phrase.substr(4, 5);
+        orbital :: SetCheckSumLineTwo(stod(phrase));
+              
         
         orbital::SetCHECKsumtwo(0);
         
