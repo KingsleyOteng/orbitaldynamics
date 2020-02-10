@@ -346,6 +346,7 @@ void
 void
     orbital::SetTLElineone(std::string phrase)
 {
+    
     strcpy(m_tle_line_one,phrase.c_str());
 };
 
@@ -407,9 +408,11 @@ void
         orbital::SetJULIANdatefraction(stoi(phrase));
 
         phrase = parsed_line_one[4];
+        //cout<<"SetBALLISTICcoefficient"<<phrase<<"\n";
         orbital::SetBALLISTICcoefficient(stod(phrase));
         
         phrase = parsed_line_one[5];
+        //cout<<"SetSECONDderivativemotion"<<phrase<<"\n";
         orbital::SetSECONDderivativemotion(phrase);
         
         phrase = parsed_line_one[6];
@@ -504,18 +507,18 @@ void
     cout << "   number:  "          << m_satellite_number                   << "\n";
     cout << "   class:  "           << m_classification                     << "\n";
     cout << "   id:  "              << m_id                                 << "\n";
-    cout << "   date:  "            << m_designator_launch_number_of_year   << "\n";
-    cout << "   fdmm:  "            << m_satellite_number                   << "\n";
-    cout << "   sdmm:  "            << m_satellite_number                   << "\n";
-    cout << "   drag:  "            << m_satellite_number                   << "\n";
-    cout << "   ephemeris:  "       << m_satellite_number                   << "\n";
+    cout << "   date:  "            << m_epoch_year                         << "\n";
+    cout << "   fdmm:  "            << m_ballistic_coefficient              << "\n";
+    cout << "   sdmm:  "            << m_second_derivative_of_motion        << "\n";
+    cout << "   drag:  "            << m_drag_term_or_radition_coefficient  << "\n";
+    cout << "   ephemeris:  "       << m_ephemeris_type                     << "\n";
     cout << "   esn:  "             << m_satellite_number                   << "\n";
-    cout << "   inclination:  "     << m_satellite_number                   << "\n";
-    cout << "   ascension:  "       << m_satellite_number                   << "\n";
-    cout << "   eccentricity:  "    << m_satellite_number                   << "\n";
-    cout << "   perigee:  "         << m_satellite_number                   << "\n";
-    cout << "   anomaly:  "         << m_satellite_number                   << "\n";
-    cout << "   motion:  "          << m_satellite_number                   << "\n";
-    cout << "   revolution:  "      << m_satellite_number                   << "\n";
+    cout << "   inclination:  "     << m_satellite_inclination              << "\n";
+    cout << "   ascension:  "       << m_satellite_ascension_node           << "\n";
+    cout << "   eccentricity:  "    << m_satellite_eccentricity_coefficient << "\n";
+    cout << "   perigee:  "         << m_argument_perigree                  << "\n";
+    cout << "   anomaly:  "         << m_mean_anomaly                       << "\n";
+    cout << "   motion:  "          << m_mean_motion                        << "\n";
+    cout << "   revolution:  "      << m_epoch_checksum                     << "\n";
     cout << "}" << "\n";
 };
