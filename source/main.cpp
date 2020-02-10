@@ -64,5 +64,7 @@ int main()
     std::cout << "Ephemeris type : " << orb->getEPHEMERIStype() << "\n";
     std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1) : " << orb->getELEMENTnumber() << "\n";
     
-    return 0;
+    std:cout  << "line two" << "\n";
+    
+    return 61;
 }
