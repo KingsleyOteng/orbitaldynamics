@@ -28,8 +28,6 @@ Some data to play around with can be found at [Celestrak](http://www.celestrak.c
 ```c++
 orbital *orb = new orbital();
 utilities *util = new utilities();
-    
-// mapping to URL method
 
 orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
 orb -> getURLData();
@@ -38,9 +36,6 @@ orb -> getURLData();
 ## Usage from data file
 
 ```c++
-
-// mapping to file method
-
 orb -> SetDataFile("Sat_43108.txt");
 orb -> getURLData();
 ```
@@ -48,9 +43,9 @@ orb -> getURLData();
 ### Parsing a single set
 
 ```c++
-cout << orb -> getTLEname() << "\n";
-cout << orb -> getTLElineone() << "\n";
-cout << orb -> getTLElinetwo() << "\n";
+cout << orb -> getTLEname()     << "\n";
+cout << orb -> getTLElineone()  << "\n";
+cout << orb -> getTLElinetwo()  << "\n";
 ```
 
 ### Generate TLE summary
@@ -83,7 +78,7 @@ TLE {
 ### Parsing a stream
 
 ```c++
-var parser = new TLE.Parser( options ) // OR
+var parser = new TLE.Parser( options ) 
 var parser = TLE.createParser( options )
 ````
 

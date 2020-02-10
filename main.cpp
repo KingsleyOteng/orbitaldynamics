@@ -29,6 +29,7 @@ int main()
     // then open the resource
     orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
     orb -> getURLData();
+    orb -> getTLEsummary();
     
     // summary of the current NORAD two-line elements details
     std::cout << "\nSatellite name: \n \n"      << orb ->
@@ -64,5 +65,7 @@ int main()
     std::cout << "Ephemeris type : " << orb->getEPHEMERIStype() << "\n";
     std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1) : " << orb->getELEMENTnumber() << "\n";
     
-    return 0;
+    std:cout  << "line two" << "\n";
+    
+    return 61;
 }
