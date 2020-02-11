@@ -43,10 +43,10 @@ orb
 
 ```c++
 
-orb 
-  -> SetDataFile  ("Object43108.txt");
-orb 
-  -> getURLData   ();
+orb -> 
+  SetDataFile  ("Object43108.txt");
+orb -> 
+  getURLData   ();
 
 ```
 
