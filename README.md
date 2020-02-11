@@ -43,9 +43,9 @@ orb -> getURLData();
 ### Parsing a single set
 
 ```c++
-cout << orb -> getTLEname()     << "\n";
-cout << orb -> getTLElineone()  << "\n";
-cout << orb -> getTLElinetwo()  << "\n";
+cout << orb -> getTLEname();
+cout << orb -> getTLElineone();
+cout << orb -> getTLElinetwo();
 ```
 
 ### Generate TLE summary
