@@ -50,7 +50,7 @@ cout << orb -> getTLElinetwo();
 
 ### Generate TLE summary
 ```c++
-cout << orb -> getTLEsummary() << "\n";
+cout << orb -> getTLEsummary();
 ```
 
 ```c++
