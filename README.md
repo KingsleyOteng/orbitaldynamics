@@ -32,10 +32,10 @@ orbital
 utilities 
   *util           = new utilities();
 
-orb 
-  -> SetURLData   ("https://celestrak.com/satcat/tle.php?CATNR=43108");
-orb 
-  -> getURLData   ();
+orb -> 
+  SetURLData   ("https://celestrak.com/satcat/tle.php?CATNR=43108");
+orb -> 
+  getURLData   ();
 
 ```
 
