@@ -26,34 +26,43 @@ Some data to play around with can be found at [Celestrak](http://www.celestrak.c
 ## Usage from URL
 
 ```c++
-orbital *orb = new orbital();
-utilities *util = new utilities();
+
+orbital   *orb    = new orbital();
+utilities *util   = new utilities();
 
 orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
 orb -> getURLData();
+
 ```
 
 ## Usage from data file
 
 ```c++
+
 orb -> SetDataFile("Object43108.txt");
 orb -> getURLData();
+
 ```
 
 ### Parsing a single set
 
 ```c++
+
 cout << orb -> getTLEname();
 cout << orb -> getTLElineone();
 cout << orb -> getTLElinetwo();
+
 ```
 
 ### Generate TLE summary
 ```c++
+
 cout << orb -> getTLEsummary();
+
 ```
 
 ```c++
+
 TLE {
    name:  'BEIDOU-3 M',
    number:  4310,
@@ -73,13 +82,16 @@ TLE {
    motion:  1.86233,
    revolution:  1415
 }
+
 ```
 
 ### Parsing a stream
 
 ```c++
-var parser = new TLE.Parser( options ) 
-var parser = TLE.createParser( options )
+
+var parser   =  new TLE.Parser        ( options ) 
+var parser   =  TLE.createParser      ( options )
+
 ````
 
 ```c++
