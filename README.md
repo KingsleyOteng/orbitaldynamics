@@ -36,7 +36,7 @@ orb -> getURLData();
 ## Usage from data file
 
 ```c++
-orb -> SetDataFile("Sat_43108.txt");
+orb -> SetDataFile("Object43108.txt");
 orb -> getURLData();
 ```
 
@@ -55,23 +55,23 @@ cout << orb -> getTLEsummary() << "\n";
 
 ```c++
 TLE {
-  name: 'ISS (ZARYA)',
-  number: 25544,
-  class: 'U',
-  id: '98067A',
-  date: Date<'2008-09-20T12:25:40.104Z'>,
-  fdmm: -0.00002182,
-  sdmm: 0,
-  drag: -0.000011606,
-  ephemeris: 0,
-  esn: 292,
-  inclination: 51.6416,
-  ascension: 247.4627,
-  eccentricity: 0.0006703,
-  perigee: 130.536,
-  anomaly: 325.0288,
-  motion: 15.721253915,
-  revolution: 6353
+   name:  'BEIDOU-3 M',
+   number:  4310,
+   class:  U,
+   id:  18003B,
+   date:  20,
+   fdmm:  -6e-07,
+   sdmm:  00000-0,
+   drag:  00000-0,
+   ephemeris:  0,
+   esn:  4310,
+   inclination:  55.3263,
+   ascension:  21.9999,
+   eccentricity:  4719,
+   perigee:  254.162,
+   anomaly:  302.897,
+   motion:  1.86233,
+   revolution:  1415
 }
 ```
 
