@@ -27,8 +27,10 @@ Some data to play around with can be found at [Celestrak](http://www.celestrak.c
 
 ```c++
 
-orbital   *orb    = new orbital();
-utilities *util   = new utilities();
+orbital   
+  *orb            = new orbital();
+utilities 
+  *util           = new utilities();
 
 orb -> SetURLData   ("https://celestrak.com/satcat/tle.php?CATNR=43108");
 orb -> getURLData   ();
