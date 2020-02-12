@@ -520,6 +520,12 @@ void
     m_linetwo_checksum = checksum;
 };
 
+void
+    orbital::SetEpochDate(double epoch)
+{
+    m_sensor_epoch = epoch;
+};
+
 // generate a summary of the TLE
 void
     orbital::getTLEsummary()
@@ -543,5 +549,5 @@ void
     cout << "   anomaly:  "         << m_mean_anomaly                       << ",\n";
     cout << "   motion:  "          << m_mean_motion                        << ",\n";
     cout << "   revolution:  "      << m_epoch_checksum                     << "\n";
-    cout << "}" << "\n";
+    cout << "     }" << "\n";
 };

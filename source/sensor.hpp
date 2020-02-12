@@ -10,7 +10,7 @@
 #define sensor_hpp
 
 #include <stdio.h>
-#include <string>
+//#include <string>
 #include <vector>
 
 
@@ -27,6 +27,8 @@ private:
     
     
     // members
+    double      m_sensor_epoch;
+    
     // sensor specific parameters
     double      m_sensor_latitude;
     double      m_sensor_longitude;
@@ -59,6 +61,8 @@ private:
 public:
     
     // getters and setters
+    void        SetEpochDate                   (double epoch);
+    
     // sensor methods
     void        SetMSensorLocationLatitude     (double latitude_location);
     void        SetMSensorLocationLongitude    (double longitude_location);
