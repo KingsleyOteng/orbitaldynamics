@@ -168,10 +168,10 @@ void
     orbital::SetTLEname(string name)
 {
     std::string phrase;
-    phrase = name.substr(0, 10);
+    phrase = name.substr(0, 11);
     
     // set the objects name
-    phrase = '\'' + phrase + "\'";
+    phrase = "\'" + phrase + "\'";
     strcpy(m_tle_name,phrase.c_str());
 };
 

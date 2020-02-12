@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace std;
+//susing namespace std;
 
 // constructor
 sensor::sensor()
@@ -24,7 +24,63 @@ sensor::sensor()
 sensor::~sensor()
     {};
 
-// methods
+// sensor specific parameters
+double      m_sensor_latitude;
+double      m_sensor_longitude;
+double      m_sensor_elevation;
+double      m_sensor_range;
+double      m_sensor_min_azimuth;
+double      m_sensor_max_azimuth;
+
+// get methods
+
+
+// sensor methods
+void
+    sensor::SetMSensorLocationLatitude     (double latitude_location)
+    {   m_sensor_latitude = latitude_location; }
+
+void
+    sensor::SetMSensorLocationLongitude    (double longitude_location)
+    {   m_sensor_longitude = longitude_location; }
+
+void
+    sensor::SetMSensorRange                (double range)
+    {   m_sensor_range = range; }
+
+void
+    sensor::SetMSensorMinAzimuthSector     (double minAzimuth)
+    {   m_sensor_min_azimuth = minAzimuth; }
+
+void
+sensor::SetMSensorMaxAzimuthSector         (double maxAzimuth)
+    {   m_sensor_max_azimuth = maxAzimuth; }
+
+double
+    sensor::GetMSensorLocationLatitude     (double latitude_location)
+    { return m_sensor_latitude; }
+
+double
+    sensor::GetMSensorLocationLongitude    (double longitude_location)
+    { return m_sensor_longitude; }
+
+double
+    sensor::GetMSensorElevation            (double elevation)
+    { return m_sensor_elevation; }
+
+double
+    sensor::GetMSensorRange                (double range)
+    { return m_sensor_range; }
+
+double
+    sensor::GetMSensorMinAzimuthSector     (double minAzimuth)
+    { return m_sensor_min_azimuth; }
+
+double
+    sensor::GetMSensorMaxAzimuthSector     (double maxAzimuth)
+    { return m_sensor_max_azimuth; }
+
+// object methods
 void
     sensor::set_m_object_position          (double m_position_vector, double vector_propogation)
     {}

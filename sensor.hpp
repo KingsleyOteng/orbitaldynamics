@@ -10,7 +10,7 @@
 #define sensor_hpp
 
 #include <stdio.h>
-#include <string>
+//#include <string>
 #include <vector>
 
 
@@ -27,7 +27,15 @@ private:
     
     
     // members
-    // sensor predicted parameters
+    // sensor specific parameters
+    double      m_sensor_latitude;
+    double      m_sensor_longitude;
+    double      m_sensor_elevation;
+    double      m_sensor_range;
+    double      m_sensor_min_azimuth;
+    double      m_sensor_max_azimuth;
+    
+    // object predicted parameters
     double      m_object_position;
     double      m_object_velocity;
     double      m_object_acceleration;
@@ -50,9 +58,23 @@ private:
     
 public:
     
-    
     // getters and setters
-    // setter methods
+    // sensor methods
+    void        SetMSensorLocationLatitude     (double latitude_location);
+    void        SetMSensorLocationLongitude    (double longitude_location);
+    void        SetMSensorElevation            (double elevation);
+    void        SetMSensorRange                (double range);
+    void        SetMSensorMinAzimuthSector     (double maxAzimuth);
+    void        SetMSensorMaxAzimuthSector     (double maxAzimuth);
+    
+    double      GetMSensorLocationLatitude     (double latitude_location);
+    double      GetMSensorLocationLongitude    (double longitude_location);
+    double      GetMSensorElevation            (double elevation);
+    double      GetMSensorRange                (double range);
+    double      GetMSensorMinAzimuthSector     (double minAzimuth);
+    double      GetMSensorMaxAzimuthSector     (double maxAzimuth);
+    
+    // object methods
     void        set_m_object_position          (double m_position_vector, double vector_propogation);
     void        set_m_object_velocity          (double m_velocity_vector, double vector_propogation);
     void        set_m_object_acceleration      (double m_acceleration_vector, double vector_propogation);
