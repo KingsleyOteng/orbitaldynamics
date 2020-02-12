@@ -25,7 +25,6 @@ private:
     #define ARRAY_SIZE_ONE 1
     
     // members
-    double      m_sensor_epoch;
     std::string m_file_name;
     char        m_tle_name                          [ARRAY_SIZE];
     char        m_tle_url                           [ARRAY_SIZE];
@@ -63,7 +62,8 @@ private:
     int         m_year;
     int         m_month;
     int         m_day;
-
+ 
+    
 public:
     
     
@@ -74,7 +74,6 @@ public:
     
     // getters and setters
     // setters
-    void        SetEpochDate                    (double epoch);
     void        SetCurrentEpoch                 (int year, int month, int day);
     void        SetDate                         (int year, int month, int day);
     void        SetTLEname                      (std::string name);
