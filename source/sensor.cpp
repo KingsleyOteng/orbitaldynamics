@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace std;
+//susing namespace std;
 
 // constructor
 sensor::sensor()
