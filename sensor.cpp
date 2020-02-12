@@ -24,18 +24,19 @@ sensor::sensor()
 sensor::~sensor()
     {};
 
-// sensor specific parameters
-double      m_sensor_latitude;
-double      m_sensor_longitude;
-double      m_sensor_elevation;
-double      m_sensor_range;
-double      m_sensor_min_azimuth;
-double      m_sensor_max_azimuth;
+
+
 
 // get methods
 
 
 // sensor methods
+void
+    sensor::SetEpochDate(double epoch)
+{
+    m_sensor_epoch = epoch;
+};
+
 void
     sensor::SetMSensorLocationLatitude     (double latitude_location)
     {   m_sensor_latitude = latitude_location; }
