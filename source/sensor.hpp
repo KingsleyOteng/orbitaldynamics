@@ -10,7 +10,7 @@
 #define sensor_hpp
 
 #include <stdio.h>
-//#include <string>
+#include <string>
 #include <vector>
 
 
@@ -62,8 +62,9 @@ private:
 public:
     
     // getters and setters
-    void        SetEpochDate                   (double epoch);
-    void        SetJulianDate                  (int YY, int MM, int DD);
+    void        SetJulianEpochDate             (double epoch);
+    void        SetJulianEpochDate             (int YY, int MM, int DD);
+    
     // sensor methods
     void        SetMSensorLocationLatitude     (double latitude_location);
     void        SetMSensorLocationLongitude    (double longitude_location);

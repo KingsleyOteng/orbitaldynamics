@@ -27,6 +27,9 @@ private:
   char             parse_input_phrase                       [ARRAY_SIZE];
   char             parsed_string                            [ARRAY_SIZE];
   int              m_epoch_julian_date;
+  int              m_epoch_julian_day;
+  int              m_epoch_julian_month;
+  int              m_epoch_julian_year;
     
 public:
 
@@ -37,10 +40,13 @@ public:
 
   // getters and setters
   // setters
-  void                      setStringParser                 (std::string str);
+  void                      setStringParser                  (std::string str);
   // getters
-  char*                     getStringParser                 (std::string str);
-  std::vector<std::string>  getStringParser                 ();
+  char*                     getStringParser                  (std::string str);
+  std::vector<std::string>  getStringParser                  ();
+    
+  int                       setJulianDate                    ();
+  int                       getJulianDate                    ();
 
 
 };
