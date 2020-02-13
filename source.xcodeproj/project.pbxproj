@@ -27,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D805E6D423F535A000B2BBD3 /* notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = notes.rtf; sourceTree = "<group>"; };
 		D8221FFA23CE10B600AFBC4F /* orbital.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = orbital.cpp; sourceTree = "<group>"; };
 		D8221FFB23CE10B600AFBC4F /* orbital.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = orbital.hpp; sourceTree = "<group>"; };
 		D8221FFD23CE17BE00AFBC4F /* TLE_File.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TLE_File.rtf; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		D8BEF51C23CE0C3500C746DF /* source */ = {
 			isa = PBXGroup;
 			children = (
+				D805E6D423F535A000B2BBD3 /* notes.rtf */,
 				D899F92823E1B48E00186088 /* run.php */,
 				D83DE0FF23DF5192007E83D0 /* unit_test.hpp */,
 				D8221FFE23CE1C7700AFBC4F /* TLE_File.txt */,

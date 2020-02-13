@@ -28,6 +28,7 @@ private:
     
     // members
     double      m_sensor_epoch;
+    int         m_epoch_julian_date;
     
     // sensor specific parameters
     double      m_sensor_latitude;
@@ -62,7 +63,7 @@ public:
     
     // getters and setters
     void        SetEpochDate                   (double epoch);
-    
+    void        SetJulianDate                  (int YY, int MM, int DD);
     // sensor methods
     void        SetMSensorLocationLatitude     (double latitude_location);
     void        SetMSensorLocationLongitude    (double longitude_location);

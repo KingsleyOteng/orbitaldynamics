@@ -26,6 +26,7 @@ private:
   // members
   char             parse_input_phrase                       [ARRAY_SIZE];
   char             parsed_string                            [ARRAY_SIZE];
+  int              m_epoch_julian_date;
     
 public:
 

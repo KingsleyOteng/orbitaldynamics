@@ -5,6 +5,8 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+//      
+
 #ifndef orbital_hpp
 #define orbital_hpp
 
@@ -63,7 +65,8 @@ private:
     int         m_year;
     int         m_month;
     int         m_day;
-
+    int         m_epoch_julian_date;
+    
 public:
     
     
