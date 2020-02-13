@@ -95,8 +95,8 @@ TLE {
 
 ```c++
 
-var parser   =  new TLE.Parser        ( options ) 
-var parser   =  TLE.createParser      ( options )
+var parser   =  new TLE.Parser            ( options ) 
+var parser   =      TLE.createParser      ( options )
 
 ````
 
