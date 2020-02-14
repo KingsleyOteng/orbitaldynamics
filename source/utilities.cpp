@@ -125,7 +125,6 @@ void
     double m_epoch_year = 040.41532895;
     double temp;
     cout << " Year " << int(m_epoch_year);
-    //cout << " fraction " << m_epoch_year - int(m_epoch_year);
     cout << " hour " << int(24 *(m_epoch_year - int(m_epoch_year)));
     temp = 60 * ((24 *(m_epoch_year - int(m_epoch_year))) - int(24 *(m_epoch_year - int(m_epoch_year))));
     cout << " minutes " << int(temp);
