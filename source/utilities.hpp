@@ -45,9 +45,9 @@ public:
   char*                     getStringParser                  (std::string str);
   std::vector<std::string>  getStringParser                  ();
     
-  int                       setJulianDate                    ();
-  int                       getJulianDate                    ();
-
+  int                       setEpochJulianDate               (double epoch);
+  int                       setEpochJulianDate               (int dd, int mm, int yy);
+  int                       getEpochJulianDate               ();
 
 };
 #endif /* utilities_hpp */

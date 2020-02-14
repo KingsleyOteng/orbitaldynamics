@@ -10,7 +10,7 @@
 #define sensor_hpp
 
 #include <stdio.h>
-#include <string>
+#include <string.h>
 #include <vector>
 
 
