@@ -407,7 +407,7 @@ void
         
         phrase = parsed_line_one[3];
         phrase = phrase.substr(2, 13);
-        orbital::SetJULIANdatefraction(stoi(phrase));
+        orbital::SetJULIANdatefraction(stod(phrase));
 
         phrase = parsed_line_one[4];
         //cout<<"SetBALLISTICcoefficient"<<phrase<<"\n";
@@ -537,6 +537,7 @@ void
     cout << "   class:  "           << m_classification                     << ",\n";
     cout << "   id:  "              << m_id                                 << ",\n";
     cout << "   date:  "            << m_epoch_year                         << ",\n";
+   // cout << "   julian date fraction:  "            << m_julian_date_fraction                         << ",\n";
     cout << "   fdmm:  "            << m_ballistic_coefficient              << ",\n";
     cout << "   sdmm:  "            << m_second_derivative_of_motion        << ",\n";
     cout << "   drag:  "            << m_drag_term_or_radition_coefficient  << ",\n";

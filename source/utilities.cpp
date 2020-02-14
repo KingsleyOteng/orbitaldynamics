@@ -80,3 +80,56 @@ void
     strcpy(parse_input_phrase,str.c_str());
 }
 
+void
+    utilities::setEpochJulianDate(int ut, int dd, int mm, int YYYY)
+{
+      
+    m_epoch_julian_date = 367*YYYY - int(7*(YYYY + int((mm+9)/12))/4) - int(3*(int((YYYY + (mm-9)/7)/100)+1)/4) + int(275*mm/9) + dd + 1721028.5 + ut/24;
+
+};
+
+void
+    utilities::setEpochJulianDate(double julian_date)
+{
+      
+    m_epoch_julian_date = julian_date;
+
+};
+
+void
+    utilities::setSimpleFormatDate()
+{
+      
+    0;
+
+};
+char*
+    utilities::getSimpleFormatDate()
+{
+      
+    return simple_date_buffer;
+
+};
+
+double
+    utilities::getEpochJulianDate()
+{
+      
+    return m_epoch_julian_date;
+
+};
+
+void
+    utilities::testSimpleFormatDate()
+{
+    double m_epoch_year = 040.41532895;
+    double temp;
+    cout << " Year " << int(m_epoch_year);
+    //cout << " fraction " << m_epoch_year - int(m_epoch_year);
+    cout << " hour " << int(24 *(m_epoch_year - int(m_epoch_year)));
+    temp = 60 * ((24 *(m_epoch_year - int(m_epoch_year))) - int(24 *(m_epoch_year - int(m_epoch_year))));
+    cout << " minutes " << int(temp);
+    temp = 60 * (temp - int(temp));
+    cout << " seconds " << temp;
+};
+
