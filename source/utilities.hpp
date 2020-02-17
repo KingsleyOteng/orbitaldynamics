@@ -52,7 +52,7 @@ public:
   std::vector<std::string>  getStringParser                  ();
   void                      setEpochJulianDate               (double epoch);
   void                      setEpochJulianDate               (int ut, int dd, int mm, int YYYY);
-  void                      setSimpleFormatDate              ();
+  void                      SetSimpleDateFormatLong          ();
     
   // getters
   char*                     getSimpleFormatDate              ();
