@@ -32,9 +32,15 @@ sensor::~sensor()
 
 // sensor methods
 void
-    sensor::SetEpochDate(double epoch)
+    sensor::SetJulianEpochDate(double epoch)
 {
     m_sensor_epoch = epoch;
+};
+
+void
+    sensor::SetJulianEpochDate(int YY, int MM, int DD)
+{
+   
 };
 
 void
