@@ -120,15 +120,13 @@ double
 };
 
 void
-    utilities::testSimpleFormatDate()
+    utilities::SetSimpleDateFormatLong()
 {
-    double m_epoch_year = 040.41532895;
-    double temp;
-    cout << " Year " << int(m_epoch_year);
-    cout << " hour " << int(24 *(m_epoch_year - int(m_epoch_year)));
-    temp = 60 * ((24 *(m_epoch_year - int(m_epoch_year))) - int(24 *(m_epoch_year - int(m_epoch_year))));
-    cout << " minutes " << int(temp);
-    temp = 60 * (temp - int(temp));
-    cout << " seconds " << temp;
+    //double juliandate = m_epoch_julian_date;
+    m_epoch_gregorian_day_of_year = int(m_epoch_julian_date);
+    m_epoch_gregorian_year = int(m_epoch_julian_date);
+    m_epoch_greogorian_hour = m_epoch_gregorian_year - int(m_epoch_julian_date);
+    m_epoch_gregorian_minute =  m_epoch_greogorian_hour - int(m_epoch_greogorian_hour);
+    m_epoch_gregorian_second =  double(m_epoch_gregorian_minute - int(m_epoch_gregorian_minute));
 };
 
