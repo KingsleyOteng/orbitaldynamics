@@ -22,10 +22,10 @@ class utilities
 private:
     
    // macro defining array size
-   #define ARRAY_SIZE           50
-   #define ARRAY_LARGE_BUFFER   256
-   #define  JULIAN_AHEAD_OF_UTC    68.184
-   #define  JULIAN_DAY_OFFSET      0.5
+   #define         ARRAY_SIZE                              50
+   #define         ARRAY_LARGE_BUFFER                      256
+   #define         JULIAN_AHEAD_OF_UTC                     68.184
+   #define         JULIAN_DAY_OFFSET                       0.5
     
   // members
   char             parse_input_phrase                       [ARRAY_SIZE];
@@ -34,8 +34,13 @@ private:
   int              m_epoch_julian_day;
   int              m_epoch_julian_month;
   int              m_epoch_julian_year;
-  char             simple_date_buffer                       [ARRAY_LARGE_BUFFER];
+  int              m_epoch_gregorian_year;
+  int              m_epoch_gregorian_day_of_year;
+  int              m_epoch_greogorian_hour;
+  int              m_epoch_gregorian_minute;
+  double           m_epoch_gregorian_second;
     
+  char             simple_date_buffer                       [ARRAY_LARGE_BUFFER];
   struct           tm *ptr = new struct tm();
 
 public:
@@ -53,6 +58,7 @@ public:
   void                      setEpochJulianDate               (double epoch);
   void                      setEpochJulianDate               (int ut, int dd, int mm, int YYYY);
   void                      SetSimpleDateFormatLong          ();
+
     
   // getters
   char*                     getSimpleFormatDate              ();
