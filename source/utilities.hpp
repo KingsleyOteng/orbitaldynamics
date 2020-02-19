@@ -62,7 +62,7 @@ public:
   // getters
   char*                     getSimpleFormatDate              ();
   double                    getEpochJulianDate               ();
-  void                    testSimpleFormatDate();
-    
+  void                      testSimpleFormatDate();
+    void                      GetSimpleDateFormatLong();
 };
 #endif /* utilities_hpp */
