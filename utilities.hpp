@@ -57,12 +57,12 @@ public:
   void                      setEpochJulianDate               (double epoch);
   void                      setEpochJulianDate               (int ut, int dd, int mm, int YYYY);
   void                      SetSimpleDateFormatLong          ();
-  void                     GetSimpleDateFormatLong         ();
+
     
   // getters
   char*                     getSimpleFormatDate              ();
   double                    getEpochJulianDate               ();
-  // void                    testSimpleFormatDate();
-    
+  void                      testSimpleFormatDate();
+    void                      GetSimpleDateFormatLong();
 };
 #endif /* utilities_hpp */
