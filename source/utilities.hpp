@@ -63,6 +63,6 @@ public:
   char*                     getSimpleFormatDate              ();
   double                    getEpochJulianDate               ();
   void                      testSimpleFormatDate();
-    void                      GetSimpleDateFormatLong();
+  void                      GetSimpleDateFormatLong();
 };
 #endif /* utilities_hpp */
