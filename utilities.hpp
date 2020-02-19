@@ -39,7 +39,6 @@ private:
   int              m_epoch_greogorian_hour;
   int              m_epoch_gregorian_minute;
   double           m_epoch_gregorian_second;
-    
   char             simple_date_buffer                       [ARRAY_LARGE_BUFFER];
   struct           tm *ptr = new struct tm();
 
