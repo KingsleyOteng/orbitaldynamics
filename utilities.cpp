@@ -96,13 +96,6 @@ void
 
 };
 
-void
-    utilities::setSimpleFormatDate()
-{
-      
-    0;
-
-};
 char*
     utilities::getSimpleFormatDate()
 {
@@ -123,10 +116,45 @@ void
     utilities::SetSimpleDateFormatLong()
 {
     //double juliandate = m_epoch_julian_date;
-    m_epoch_gregorian_day_of_year = int(m_epoch_julian_date);
-    m_epoch_gregorian_year = int(m_epoch_julian_date);
-    m_epoch_greogorian_hour = m_epoch_gregorian_year - int(m_epoch_julian_date);
-    m_epoch_gregorian_minute =  m_epoch_greogorian_hour - int(m_epoch_greogorian_hour);
-    m_epoch_gregorian_second =  double(m_epoch_gregorian_minute - int(m_epoch_gregorian_minute));
+    m_epoch_gregorian_day_of_year       = int(m_epoch_julian_date);
+    m_epoch_gregorian_year              = int(m_epoch_julian_date);
+    m_epoch_greogorian_hour             = m_epoch_gregorian_year - int(m_epoch_julian_date);
+    m_epoch_gregorian_minute            = m_epoch_greogorian_hour - int(m_epoch_greogorian_hour);
+    m_epoch_gregorian_second            = double(m_epoch_gregorian_minute - int(m_epoch_gregorian_minute));
 };
+
+void
+    utilities::GetSimpleDateFormatLong()
+{
+    char    output[100];
+    char    append[2];
+    
+     cout << "xxx" << m_epoch_gregorian_day_of_year << "\n";
+    sprintf(append,"%d",m_epoch_gregorian_day_of_year);
+    strcat(output,append);
+    strcat(output," ");
+    cout << output << "\n";
+    
+    sprintf(append,"%d",m_epoch_gregorian_year);
+    strcat(output,append);
+    strcat(output," ");
+    
+    sprintf(append,"%d",m_epoch_greogorian_hour);
+    strcat(output,append);
+    strcat(output," ");
+    
+    sprintf(append,"%d",m_epoch_gregorian_minute);
+    strcat(output,append);
+    strcat(output," ");
+    
+    sprintf(append,"%0.8f",m_epoch_gregorian_second);
+    strcat(output,append);
+    strcat(output," ");
+    
+    cout <<"XXXXXXXXXXXXXXX" << "\n";
+    cout<< "time: " << output << "\n";
+    
+   // return output;
+};
+
 
