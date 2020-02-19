@@ -66,9 +66,8 @@ int main()
     std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1) : " << orb->getELEMENTnumber() << "\n";
     
     std:cout  << "line two" << "\n";
-    util->setEpochJulianDate(orb->getEPOCHyear());
-    util->GetSimpleDateFormatLong();
-     orb -> getTLEsummary();
+    util->testSimpleFormatDate();
+    orb -> getTLEsummary();
     
     return 61;
 }
