@@ -31,6 +31,7 @@ private:
   char             parse_input_phrase                       [ARRAY_SIZE];
   char             parsed_string                            [ARRAY_SIZE];
   double           m_epoch_julian_date;
+  double           m_epoch_julian_date_fraction;
   int              m_epoch_julian_day;
   int              m_epoch_julian_month;
   int              m_epoch_julian_year;
@@ -54,15 +55,14 @@ public:
   void                      setStringParser                  (std::string str);
   char*                     getStringParser                  (std::string str);
   std::vector<std::string>  getStringParser                  ();
-  void                      setEpochJulianDate               (double epoch);
-  void                      setEpochJulianDate               (int ut, int dd, int mm, int YYYY);
-  void                      SetSimpleDateFormatLong          ();
 
     
   // getters
-  char*                     getSimpleFormatDate              ();
-  double                    getEpochJulianDate               ();
-  void                      testSimpleFormatDate();
-    void                      GetSimpleDateFormatLong();
+  void                      SetEpochJulianDate               (double epoch);
+  void                      SetSimpleDateFormatLong          ();
+
+  char*                     GetSimpleDateFormatLong          ();
+  double                    GetEpochJulianDate               ();
+
 };
 #endif /* utilities_hpp */

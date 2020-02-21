@@ -71,6 +71,7 @@ public:
     
     
     // constructor and destructors
+    orbital();
     orbital(int year, int month, int day);
    ~orbital();
     
