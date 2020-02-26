@@ -87,21 +87,24 @@ void
     m_epoch_julian_date_fraction = epoch;
 }
 
+// converts Julian dates into the gregorian calendar
 void
     utilities::SetSimpleDateFormatLong()
 {
     
-
     m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
-
     m_epoch_greogorian_hour = int(24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year));
-
     m_epoch_gregorian_minute = 60 * ((24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year)) - int(m_epoch_greogorian_hour));
-
     m_epoch_gregorian_second = 60 * (m_epoch_gregorian_minute - (int)m_epoch_gregorian_minute);
-
     m_epoch_gregorian_splits = (m_epoch_gregorian_second - (int)m_epoch_gregorian_second);
 
+}
+
+// returns string of the Julian to Gregorian date conversion
+char*
+    utilities::GetSimpleDateFormatLong()
+{
+    return "hello";
 }
 
 double
@@ -110,8 +113,4 @@ double
     return m_epoch_julian_date;
 }
 
-char*
-    utilities::GetSimpleDateFormatLong()
-{
-    return "hello";
-}
+
