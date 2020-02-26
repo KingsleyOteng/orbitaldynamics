@@ -92,17 +92,17 @@ void
 {
     
     //double juliandate = m_epoch_julian_date;
-    cout<<"m_epoch_julian_date "<<m_epoch_julian_date_fraction<<"\n";
+    //cout<<"m_epoch_julian_date "<<m_epoch_julian_date_fraction<<"\n";
     m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
-    cout<<"m_epoch_gregorian_day_of_year "<<m_epoch_gregorian_day_of_year<<"\n";
+    //cout<<"m_epoch_gregorian_day_of_year "<<m_epoch_gregorian_day_of_year<<"\n";
     m_epoch_greogorian_hour = int(24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year));
-    cout<<"m_epoch_greogorian_hour "<<m_epoch_greogorian_hour<<"\n";
+   // cout<<"m_epoch_greogorian_hour "<<m_epoch_greogorian_hour<<"\n";
     m_epoch_gregorian_minute = 60 * ((24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year)) - int(m_epoch_greogorian_hour));
-    cout<<"m_epoch_gregorian_minute "<<(int)m_epoch_gregorian_minute<<"\n";
+   // cout<<"m_epoch_gregorian_minute "<<(int)m_epoch_gregorian_minute<<"\n";
     m_epoch_gregorian_second = 60 * (m_epoch_gregorian_minute - (int)m_epoch_gregorian_minute);
-    cout<<"m_epoch_gregorian_second "<<(int)m_epoch_gregorian_second<<"\n";
+    //cout<<"m_epoch_gregorian_second "<<(int)m_epoch_gregorian_second<<"\n";
     m_epoch_gregorian_splits = (m_epoch_gregorian_second - (int)m_epoch_gregorian_second);
-    cout<<"m_epoch_gregorian_splits "<<m_epoch_gregorian_splits<<"\n";
+   // cout<<"m_epoch_gregorian_splits "<<m_epoch_gregorian_splits<<"\n";
 }
 
 double
