@@ -38,8 +38,9 @@ private:
   int              m_epoch_gregorian_year;
   int              m_epoch_gregorian_day_of_year;
   int              m_epoch_greogorian_hour;
-  int              m_epoch_gregorian_minute;
+  double           m_epoch_gregorian_minute;
   double           m_epoch_gregorian_second;
+  double           m_epoch_gregorian_splits;
   char             simple_date_buffer                       [ARRAY_LARGE_BUFFER];
   struct           tm *ptr = new struct tm();
 
