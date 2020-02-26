@@ -471,6 +471,7 @@ void
               
         
         orbital::SetCHECKsumtwo(0);
+        //cout<<"m_julian_date_fraction"<<orbital::m_julian_date_fraction;
         
 };
 
@@ -499,6 +500,7 @@ void
         strcpy(m_tle_url,TLE.c_str());
 
 };
+
 
 // set the classifier id
 // store the data

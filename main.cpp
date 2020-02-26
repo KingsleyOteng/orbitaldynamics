@@ -51,6 +51,8 @@ int main()
     // store TLE parameters
     orb->SetTLEparameters(orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
     
+   // std::cout << "Phrase" <<
+    
     std::cout << "Line Number of Element Data : " << "\n";
     std::cout << "Satellite Number : " << orb->getTLEname() << "\n";
     std::cout << "Classification (U=Unclassified) : " << orb->getCLASSIFIERfield() << "\n";
@@ -66,8 +68,10 @@ int main()
     std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1) : " << orb->getELEMENTnumber() << "\n";
     
     std:cout  << "line two" << "\n";
-    util->testSimpleFormatDate();
-    orb -> getTLEsummary();
     
+    orb -> getTLEsummary();
+    util -> SetEpochJulianDate(orb->getJULIANdatefraction());
+    util -> SetSimpleDateFormatLong();
+    util -> GetSimpleDateFormatLong();
     return 61;
 }

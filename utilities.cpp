@@ -6,6 +6,7 @@
 //
 
 #include "utilities.hpp"
+#include "orbital.hpp"
 
 using namespace std;
 
@@ -81,52 +82,35 @@ void
 }
 
 void
-    utilities::setEpochJulianDate(int ut, int dd, int mm, int YYYY)
+    utilities::SetEpochJulianDate               (double epoch)
 {
-      
-    m_epoch_julian_date = 367*YYYY - int(7*(YYYY + int((mm+9)/12))/4) - int(3*(int((YYYY + (mm-9)/7)/100)+1)/4) + int(275*mm/9) + dd + 1721028.5 + ut/24;
-
-};
-
-void
-    utilities::setEpochJulianDate(double julian_date)
-{
-      
-    m_epoch_julian_date = julian_date;
-
-};
-
-void
-    utilities::setSimpleFormatDate()
-{
-      
-    0;
-
-};
-char*
-    utilities::getSimpleFormatDate()
-{
-      
-    return simple_date_buffer;
-
-};
-
-double
-    utilities::getEpochJulianDate()
-{
-      
-    return m_epoch_julian_date;
-
-};
+    m_epoch_julian_date_fraction = epoch;
+}
 
 void
     utilities::SetSimpleDateFormatLong()
 {
+    
     //double juliandate = m_epoch_julian_date;
-    m_epoch_gregorian_day_of_year = int(m_epoch_julian_date);
-    m_epoch_gregorian_year = int(m_epoch_julian_date);
-    m_epoch_greogorian_hour = m_epoch_gregorian_year - int(m_epoch_julian_date);
-    m_epoch_gregorian_minute =  m_epoch_greogorian_hour - int(m_epoch_greogorian_hour);
+    cout<<"m_epoch_julian_date"<<m_epoch_julian_date_fraction<<"\n";
+    m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
+    cout<<"m_epoch_gregorian_day_of_year"<<m_epoch_gregorian_day_of_year<<"\n";
+    m_epoch_greogorian_hour = int(24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year));
+    cout<<"m_epoch_greogorian_hour"<<m_epoch_greogorian_hour<<"\n";
+    m_epoch_gregorian_minute = 60 * ((24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year)) - int(m_epoch_greogorian_hour));
+    cout<<"m_epoch_gregorian_minute"<<m_epoch_gregorian_minute<<"\n";
     m_epoch_gregorian_second =  double(m_epoch_gregorian_minute - int(m_epoch_gregorian_minute));
-};
+    cout<<"m_epoch_gregorian_second"<<m_epoch_gregorian_second<<"\n";
+}
 
+double
+    utilities::GetEpochJulianDate()
+{
+    return m_epoch_julian_date;
+}
+
+char*
+    utilities::GetSimpleDateFormatLong()
+{
+    return "hello";
+}
