@@ -104,7 +104,11 @@ void
 char*
     utilities::GetSimpleDateFormatLong()
 {
-    return "hello";
+    char* return_string;
+    return_string = (char*)m_epoch_gregorian_day_of_year;
+    cout << "my string" << return_string;
+    //+ " " + m_epoch_greogorian_hour + " " + m_epoch_gregorian_minute + " " + m_epoch_gregorian_second + " " + m_epoch_gregorian_splits
+    return return_string;
 }
 
 double
