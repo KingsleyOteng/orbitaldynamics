@@ -72,8 +72,7 @@ int main()
     orb -> getTLEsummary();
     util -> SetEpochJulianDate(orb->getJULIANdatefraction());
     util -> SetSimpleDateFormatLong();
-    cout<<"hello";
-    util -> GetSimpleDateFormatLong();
+    cout << util -> GetSimpleDateFormatLong();
     
     return 61;
 }
