@@ -7,6 +7,7 @@
 
 #include "utilities.hpp"
 #include "orbital.hpp"
+#include <stdio.h>
 
 using namespace std;
 
@@ -96,7 +97,9 @@ void
     m_epoch_greogorian_hour = int(24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year));
     m_epoch_gregorian_minute = 60 * ((24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year)) - int(m_epoch_greogorian_hour));
     m_epoch_gregorian_second = 60 * (m_epoch_gregorian_minute - (int)m_epoch_gregorian_minute);
+    m_epoch_gregorian_minute = int(m_epoch_gregorian_minute);
     m_epoch_gregorian_splits = (m_epoch_gregorian_second - (int)m_epoch_gregorian_second);
+    m_epoch_gregorian_second = int (m_epoch_gregorian_second);
 
 }
 
@@ -104,12 +107,17 @@ void
 char*
     utilities::GetSimpleDateFormatLong()
 {
-    char return_string [1024];
-    std::string phrase;
+    char return_string [10024];
+
+    if (m_epoch_greogorian_hour < 10)
+    {
+    sprintf(return_string,"Day %d @ 0%d:%.0f:%.0f %.6f \n",m_epoch_gregorian_day_of_year,m_epoch_greogorian_hour , m_epoch_gregorian_minute, m_epoch_gregorian_second, m_epoch_gregorian_splits );
+    }
+    else
+    {
+        sprintf(return_string,"Day %d @ %d:%.0f:%.0f %.6f \n",m_epoch_gregorian_day_of_year,m_epoch_greogorian_hour , m_epoch_gregorian_minute, m_epoch_gregorian_second, m_epoch_gregorian_splits );
+    }
     
-    phrase = std::to_string(m_epoch_gregorian_day_of_year);
-    strcpy(return_string,phrase.c_str());
-    strcpy(return_string,phr);
     return return_string;
 }
 
