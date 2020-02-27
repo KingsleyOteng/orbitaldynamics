@@ -109,25 +109,43 @@ char*
 {
     char return_string [4096];
     double seconds_formatted;
+    double minutes_formatted = 0.0;
+    double hours_formatted = 0.0;
+    
     std::string seconds_string;
+    std::string minutes_string;
+    std::string hours_string;
     
     // generate seconds with splits expression.
         seconds_formatted = m_epoch_gregorian_second + m_epoch_gregorian_splits;
+    
     
     // format the notation for military time
     if (seconds_formatted < 10)
     {
         seconds_string = "0" + std::to_string(seconds_formatted);
     }
+    
+    // format the notation for military time
+       if (m_epoch_gregorian_minute < 10)
+       {
+           minutes_string = "0" + std::to_string(minutes_formatted);
+       }
+    
+    // format the notation for military time
+       if (m_epoch_greogorian_hour < 10)
+       {
+           hours_string = "0" + std::to_string(hours_formatted);
+       }
 
     // generate final expression
     if (m_epoch_greogorian_hour < 10)
     {
-        sprintf(return_string,"Day %d @ 0%d:%.0f:%s \n",m_epoch_gregorian_day_of_year,m_epoch_greogorian_hour , m_epoch_gregorian_minute, seconds_string.c_str() );
+        sprintf(return_string,"Day %d @ 0%d:%.0f:%s \n",m_epoch_gregorian_day_of_year, m_epoch_greogorian_hour , m_epoch_gregorian_minute, seconds_string.c_str() );
     }
     else
     {
-        sprintf(return_string,"Day %d @ %d:%.0f:%s \n",m_epoch_gregorian_day_of_year,m_epoch_greogorian_hour , m_epoch_gregorian_minute,  seconds_string.c_str() );
+        sprintf(return_string,"Day %d @ %d:%.0f:%s \n",m_epoch_gregorian_day_of_year, m_epoch_greogorian_hour , m_epoch_gregorian_minute,  seconds_string.c_str() );
     }
     
     return return_string;
