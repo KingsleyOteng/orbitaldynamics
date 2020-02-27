@@ -87,22 +87,28 @@ void
     m_epoch_julian_date_fraction = epoch;
 }
 
+// converts Julian dates into the gregorian calendar
 void
     utilities::SetSimpleDateFormatLong()
 {
     
-    //double juliandate = m_epoch_julian_date;
-    //cout<<"m_epoch_julian_date "<<m_epoch_julian_date_fraction<<"\n";
     m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
-    //cout<<"m_epoch_gregorian_day_of_year "<<m_epoch_gregorian_day_of_year<<"\n";
     m_epoch_greogorian_hour = int(24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year));
-   // cout<<"m_epoch_greogorian_hour "<<m_epoch_greogorian_hour<<"\n";
     m_epoch_gregorian_minute = 60 * ((24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year)) - int(m_epoch_greogorian_hour));
-   // cout<<"m_epoch_gregorian_minute "<<(int)m_epoch_gregorian_minute<<"\n";
     m_epoch_gregorian_second = 60 * (m_epoch_gregorian_minute - (int)m_epoch_gregorian_minute);
-    //cout<<"m_epoch_gregorian_second "<<(int)m_epoch_gregorian_second<<"\n";
     m_epoch_gregorian_splits = (m_epoch_gregorian_second - (int)m_epoch_gregorian_second);
-   // cout<<"m_epoch_gregorian_splits "<<m_epoch_gregorian_splits<<"\n";
+
+}
+
+// returns string of the Julian to Gregorian date conversion
+char*
+    utilities::GetSimpleDateFormatLong()
+{
+    char* return_string;
+    return_string = (char*)m_epoch_gregorian_day_of_year;
+    cout << "my string" << return_string;
+    //+ " " + m_epoch_greogorian_hour + " " + m_epoch_gregorian_minute + " " + m_epoch_gregorian_second + " " + m_epoch_gregorian_splits
+    return return_string;
 }
 
 double
@@ -111,8 +117,4 @@ double
     return m_epoch_julian_date;
 }
 
-char*
-    utilities::GetSimpleDateFormatLong()
-{
-    return "hello";
-}
+
