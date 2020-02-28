@@ -107,7 +107,6 @@ void
 char*
     utilities::GetSimpleDateFormatLong()
 {
-    char return_string [4096];
     double seconds_formatted;
     double minutes_formatted = 0.0;
     double hours_formatted = 0.0;

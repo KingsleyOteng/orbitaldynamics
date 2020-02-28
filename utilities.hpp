@@ -24,6 +24,7 @@ private:
    // macro defining array size
    #define         ARRAY_SIZE                              50
    #define         ARRAY_LARGE_BUFFER                      256
+   #define         ARRAY_EXTRA_LARGE_BUFFER                4096
    #define         JULIAN_AHEAD_OF_UTC                     68.184
    #define         JULIAN_DAY_OFFSET                       0.5
     
@@ -42,6 +43,7 @@ private:
   double           m_epoch_gregorian_second;
   double           m_epoch_gregorian_splits;
   char             simple_date_buffer                       [ARRAY_LARGE_BUFFER];
+  char             return_string                            [ARRAY_EXTRA_LARGE_BUFFER];
   struct           tm *ptr = new struct tm();
 
 public:
