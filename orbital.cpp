@@ -428,6 +428,7 @@ void
         
         orbital::SetELEMENTnumber(stoi(phrase));
         
+        // generate the checksum
         phrase = parsed_line_one[8];
         phrase = phrase.substr(2, 3);
         orbital::SetCheckSumLineOne(stoi(phrase));
@@ -437,34 +438,44 @@ void
         // line number two of the NORAD Set Format
         // set the details
         
+        // phrase
         phrase = parsed_line_two[0];
         orbital :: SetTLElinetwo(phrase);
         
+        // grab the satellite number data
         phrase = parsed_line_two[1];
         orbital :: SetSATNUMBERline2(stoi(phrase));
-            
+        
+        // grab the inclination data
         phrase = parsed_line_two[2];
         orbital :: SetINCLINATIONfield(stod(phrase));
         
+        // grab the right ascent data
         phrase = parsed_line_two[3];
         orbital :: SetRIGHTASCENTIONnode(stod(phrase));
         
+        // grab the eccentricity data
         phrase = parsed_line_two[4];
         orbital :: SetECCENTRICITYcoefficient(stoi(phrase));
         
+        // grab the perigree data
         phrase = parsed_line_two[5];
         orbital :: SetARGUMENTperigree(stod(phrase));
         
+        // grab the mean anomaly data
         phrase = parsed_line_two[6];
         orbital :: SetMEANanomlay(stod(phrase));
         
+        // grab the mean motion data
         phrase = parsed_line_two[7];
         orbital :: SetMEANmotion(stod(phrase));
         
+        // grab revolution and epoch data
         phrase = parsed_line_two[8];
         phrase = phrase.substr(0, 4);
         orbital :: SetREVOLUTIONepochchecksum(stod(phrase));
         
+        // grab the checksum
         phrase = parsed_line_two[8];
         phrase = phrase.substr(4, 5);
         orbital :: SetCheckSumLineTwo(stod(phrase));

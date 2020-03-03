@@ -76,12 +76,14 @@ std::vector<string>
     return detokenized_strings;
 }
 
+// string parser method
 void
     utilities::setStringParser(std::string str)
 {
     strcpy(parse_input_phrase,str.c_str());
 }
 
+// set the Julian date variable
 void
     utilities::SetEpochJulianDate               (double epoch)
 {
@@ -150,6 +152,7 @@ char*
     return return_string;
 }
 
+// returns the Julian date variable
 double
     utilities::GetEpochJulianDate()
 {
