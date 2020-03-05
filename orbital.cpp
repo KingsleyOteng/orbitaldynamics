@@ -380,65 +380,75 @@ void
         phrase = phrase.substr(0, 4);
         orbital::SetSATnumber(stoi(phrase));
         
+        // generate the classifier field
         phrase = parsed_line_one[1];
         phrase = phrase.substr(5, 5);
         //phrase_c = phrase;
         orbital::SetCLASSIFIERfield(phrase);
     
+        // generate the launcher year field
         phrase = parsed_line_one[2];
         phrase = phrase.substr(0, 2);
         orbital::SetLAUNCHERyearfield(stoi(phrase));
         
+        // generate the classifier ID
         phrase = parsed_line_one[2];
         orbital :: SetClassifierID(phrase);
         
+        // generate the launcher number field
         phrase = parsed_line_one[2];
         phrase = phrase.substr(2, 4);
         orbital::SetLAUNCHERnumberfield(stoi(phrase));
         
+        // generate the launch piece designator
         phrase = parsed_line_one[2];
         phrase = phrase.substr(5, 5);
         strcpy(phrase_c, phrase.c_str());
         orbital::SetLAUNCHpiecedesignator(phrase_c);
         
+        // generate the epoch year number
         phrase = parsed_line_one[3];
         phrase = phrase.substr(0, 2);
         orbital::SetEPOCHyear(stoi(phrase));
         
+        // generate the julian date fraction
         phrase = parsed_line_one[3];
         phrase = phrase.substr(2, 13);
         orbital::SetJULIANdatefraction(stod(phrase));
 
+        // generate the ballistic coefficient
         phrase = parsed_line_one[4];
         //cout<<"SetBALLISTICcoefficient"<<phrase<<"\n";
         orbital::SetBALLISTICcoefficient(stod(phrase));
         
+        // generate the second derivative of motion
         phrase = parsed_line_one[5];
         //cout<<"SetSECONDderivativemotion"<<phrase<<"\n";
         orbital::SetSECONDderivativemotion(phrase);
         
+        // generate the degradation coefficient
         phrase = parsed_line_one[6];
         orbital::SetDRAGRADIATIONcoefficient(phrase);
         
+        // generate the ephemeris type number
         phrase = parsed_line_one[7];
         orbital::SetEPHEMERIStype(stoi(phrase));
         
+        // generate the element number
         phrase = parsed_line_one[8];
         phrase = phrase.substr(0, 2);
-        
         orbital::SetELEMENTnumber(stoi(phrase));
         
-        // generate the checksum
+        // generate the checksum id
         phrase = parsed_line_one[8];
         phrase = phrase.substr(2, 3);
         orbital::SetCheckSumLineOne(stoi(phrase));
         
+        // generate the checksum
         orbital::SetCHECKsum(0);
         
         // line number two of the NORAD Set Format
         // set the details
-        
-        // phrase
         phrase = parsed_line_two[0];
         orbital :: SetTLElinetwo(phrase);
         
@@ -481,6 +491,7 @@ void
         orbital :: SetCheckSumLineTwo(stod(phrase));
               
         
+        // generate a checksum
         orbital::SetCHECKsumtwo(0);
         //cout<<"m_julian_date_fraction"<<orbital::m_julian_date_fraction;
         
@@ -563,5 +574,6 @@ void
     cout << "   anomaly:  "         << m_mean_anomaly                       << ",\n";
     cout << "   motion:  "          << m_mean_motion                        << ",\n";
     cout << "   revolution:  "      << m_epoch_checksum                     << "\n";
+    cout << "   time:  "      << "00"                     << "\n";
     cout << "     }" << "\n";
 };
