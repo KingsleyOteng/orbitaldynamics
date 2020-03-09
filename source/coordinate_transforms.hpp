@@ -39,6 +39,7 @@ private:
     double gst;
     double gmst;
     double utc;
+    double Julian_Date_of_Year;
     
     double universal_time_tu;
     double universal_time_du;
