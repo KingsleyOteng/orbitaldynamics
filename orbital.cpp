@@ -13,7 +13,8 @@
 #include <stdlib.h>
 
 using namespace std;
-#define ARRAY_SIZE_ONE 1
+#define ARRAY_SIZE_ONE  1
+#define Re              6378.1370
 
 
 // methods
@@ -574,6 +575,5 @@ void
     cout << "   anomaly:  "         << m_mean_anomaly                       << ",\n";
     cout << "   motion:  "          << m_mean_motion                        << ",\n";
     cout << "   revolution:  "      << m_epoch_checksum                     << "\n";
-    cout << "   time:  "      << "00"                     << "\n";
     cout << "     }" << "\n";
 };
