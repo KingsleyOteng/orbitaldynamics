@@ -1,11 +1,20 @@
 using namespace std;
 
+#define Re              6378.1370
 
 // methods
 // store the data
-coordinate_transform::
+void coordinate_transform::
     setCartesianCoordinates
-    (int latitude_box1, int latitude_box2, int latitude_box3, int longitude_box1, int longitude_box2, int longitude_box3)
+    (double latitude_box1,
+        double longitude_box1)
 {
-    SetDate(year, month, day);
-}
+        double R;
+    
+        R = Re * cos(latitude_box1);
+    
+        z_coordinate = (Re * sin(latitude_box1));
+        y_coordinate = R * sin(longitude_box1);
+        x_coordinate = R * cos(longitude_box1);
+    
+};

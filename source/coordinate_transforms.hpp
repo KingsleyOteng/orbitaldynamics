@@ -27,20 +27,21 @@ class coordinates
     
 private:
     
-    int latitude;
-    int longitude;
-    int elevation;
+    double latitude;
+    double longitude;
+    double elevation;
     
-    int z_coordinate;
-    int x_coordinate;
-    int y_coordinate;
+    double z_coordinate;
+    double x_coordinate;
+    double y_coordinate;
     
 public:
     
     // we mainly use kelso for this analysis
     // https://www.celestrak.com/columns/v02n02/
+    // https://www.latlong.net/lat-long-dms.html
     
-    void setCartesianCoordinates               ();
+    void setCartesianCoordinates               (double latitude_box1, double longitude_box1);
     void getCartesianCoordinates               ();
     
     // toggle cartesian coordinates
