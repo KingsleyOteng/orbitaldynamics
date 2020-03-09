@@ -38,4 +38,24 @@ void coordinate_transforms::setGMST
     
 }
 
-void coordinate_transforms::setTimeElapsed
+void coordinate_transforms::setTimeElapsedSinceJDIndex
+    (double date_du)
+{
+    universal_time_tu = (date_du - 2451545.0) / 36525;
+}
+
+// calculates the Greenwich sidereal time at midnight
+void coordinate_transforms::setGST
+    (double date_Tu)
+{
+    // calculate the gst
+    gst = 24110.54841 + (8640184.812866*date_Tu) + (0.093104*date_Tu*date_Tu) - (0.0000062*date_Tu*date_Tu*date_Tu);
+}
+
+// calculates the Greenwich mean sidereal time at midnight
+void coordinate_transforms::setGMST
+    ()
+{
+    // calculate the gmst
+    gmst = gst + we * utc_time;
+}

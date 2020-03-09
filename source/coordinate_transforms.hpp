@@ -36,6 +36,13 @@ private:
     double x_coordinate;
     double y_coordinate;
     
+    double gst;
+    double gmst;
+    double utc;
+    
+    double universal_time_tu;
+    double universal_time_du;
+    
 public:
     
     // we mainly use kelso for this analysis
@@ -52,6 +59,7 @@ public:
     void setLatitude                           ();
     void setLongitude                          ();
     void setElevation                          ();
+    void setGST                                ();
     
     // toggle eci coordinates
     void get_eci_z_coordinate                  ();
