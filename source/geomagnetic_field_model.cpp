@@ -1,4 +1,4 @@
-//
+    //
 //  geomagnetic_field_model.cpp
 //  source
 //
