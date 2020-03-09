@@ -39,6 +39,8 @@ private:
     double gst;
     double gmst;
     double utc;
+    double utc_time;
+    double Julian_Date_of_Year;
     
     double universal_time_tu;
     double universal_time_du;
@@ -59,7 +61,12 @@ public:
     void setLatitude                           ();
     void setLongitude                          ();
     void setElevation                          ();
-    void setGST                                ();
+    void setGST                                (double date_Tu);
+    void setGMST                               ();
+    void setCoordinates                        (double latitude_box1, double longitude_box1, double elevation);
+    void setJulianDate                         ();
+    void setJulianDate                         (int current_year);
+    void setTimeElapsedSinceJDIndex            (double date_du);
     
     // toggle eci coordinates
     void get_eci_z_coordinate                  ();
