@@ -3,7 +3,9 @@
 
 using namespace std;
 
-#define Re              6378.1370
+#define Re              6378.1370               // the earths radius; from Kelso
+#define we              0.00007.29211510        // Earth's rotation rate in radians/second; from Kelso
+
 
 // methods
 // perform coordinate transforms
@@ -36,3 +38,4 @@ void coordinate_transforms::setGMST
     
 }
 
+void coordinate_transforms::setTimeElapsed
