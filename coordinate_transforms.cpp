@@ -67,9 +67,10 @@ void coordinate_transforms::
 
 // calculates the JD elapsed
 void coordinate_transforms::
-    setJulianDate
-    (int current_year)
+    setJulianDateYear
+    (time_t yr_mo_dd)
 {
+    int current_year;
     int year;
     double A;
     double B;
@@ -80,3 +81,32 @@ void coordinate_transforms::
     
     Julian_Date_of_Year = trunc(365.25 * year) + trunc(30.6001 * 14) + 1720994.5 + B;
 }
+
+void coordinate_transforms::
+    setJulianDateDay
+    (time_t yr_mo_dd)
+{
+    int year;
+    int current_year;
+    double A;
+    double B;
+    
+    current_year = 0;
+    
+    year = current_year - 1;
+    A = trunc(year/100);
+    B = 2 - A + trunc(A/4);
+    
+    Julian_Date_Day = trunc(365.25 * year) + trunc(30.6001 * 14) + 1720994.5 + B;
+}
+
+void coordinate_transforms::
+    setJulianDate
+    (time_t yr_mo_dd)
+{
+    
+    Julian_Date = Julian_Date_of_Year + Julian_Date_Day;
+    
+}
+
+
