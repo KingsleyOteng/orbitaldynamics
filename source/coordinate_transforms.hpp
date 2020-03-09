@@ -10,6 +10,7 @@
 #define coordinate_transforms_hpp
 
 #include <stdio.h>
+#include <math.h>
 
 //
 //  coordinate_transforms.cpp
@@ -21,7 +22,7 @@
 
 #include "coordinate_transforms.hpp"
 
-class coordinates
+class coordinate_transforms
 {
    
     
@@ -41,7 +42,7 @@ public:
     // https://www.celestrak.com/columns/v02n02/
     // https://www.latlong.net/lat-long-dms.html
     
-    void setCartesianCoordinates               (double latitude_box1, double longitude_box1);
+    void setCartesianCoordinates               (double latitude_box1, double longitude_box1, double elevation);
     void getCartesianCoordinates               ();
     
     // toggle cartesian coordinates
