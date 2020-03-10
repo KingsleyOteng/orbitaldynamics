@@ -105,7 +105,7 @@ void coordinate_transforms::
     // get length of the particular integer array
     int length = sizeof(days_in_month) / sizeof(int);
     
-    for(int i=1; i<= length; i++)
+    for(int i=1; i<= mo; i++)
         {
             day = day + days_in_month[i];
         }
@@ -132,16 +132,54 @@ void coordinate_transforms::
 }
 
 tm* coordinate_transforms::
-    setTimeConversion(string date, string year)
+    setTimeConversion(string date_phrase, string year)
 {
     tm* tmepoch;
     
-    tmepoch->tm_year = 2000 + std::stoi(date) - 1900;
-    tmepoch->tm_mon = 1 - 1;
-    tmepoch->tm_mday = 1;
-    tmepoch->tm_hour = 0;
-    tmepoch->tm_min = 0;
-    tmepoch->tm_sec = 0;
+    int fract = 1;
+    int month = 1;
+    int year_int = std::stoi(year);
+    int day_int;
+    int hour_int;
+    int min_int;
+    int sec_int;
+    
+    std::string phrase;
+    
+    // obtain days from phrase
+    phrase = date_phrase;
+    phrase = phrase.substr(5, 7);
+    day_int = (stoi(phrase));
+    
+    // obtain hours from phrase
+    phrase = date_phrase;
+    phrase = phrase.substr(11, 12);
+    hour_int = (stoi(phrase));
+    
+    // obtain minutes from phrase
+    phrase = date_phrase;
+    phrase = phrase.substr(14, 15);
+    min_int = (stoi(phrase));
+    
+    // obtain seconds from phrase
+    phrase = date_phrase;
+    phrase = phrase.substr(17, 18);
+    sec_int = (stoi(phrase));
+    
+    while (fract > 0)
+    {
+        day_int = day_int - days_in_month[month];
+        if (day_int > days_in_month[month+1])
+            { fract = 0;}
+        month++;
+    }
+    
+    tmepoch->tm_year = 2000 + year_int - 1900;
+    tmepoch->tm_mon = month - 2;
+    tmepoch->tm_mday = day_int;
+    tmepoch->tm_hour = hour_int;
+    tmepoch->tm_min = min_int;
+    tmepoch->tm_sec = sec_int;
     
     return tmepoch;
 }
