@@ -12,7 +12,10 @@
 #include <stdio.h>
 #include <math.h>
 #include <ctime>
+#include <string>
+#include <iostream>
 
+using namespace std;
 //
 //  coordinate_transforms.cpp
 //  source
@@ -82,7 +85,7 @@ public:
     void set_eci_x_coordinate                  ();
     void set_eci_y_coordinate                  ();
 
-    tm* setTimeConversion                     ();
+    tm* setTimeConversion                      (std::string date, std::string year);
     
 };
 

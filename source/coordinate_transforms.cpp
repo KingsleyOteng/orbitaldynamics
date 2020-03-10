@@ -105,7 +105,7 @@ void coordinate_transforms::
     // get length of the particular integer array
     int length = sizeof(days_in_month) / sizeof(int);
     
-    for(int i=1; i<= length; i++)
+    for(int i=1; i<= mo; i++)
         {
             day = day + days_in_month[i];
         }
@@ -132,13 +132,25 @@ void coordinate_transforms::
 }
 
 tm* coordinate_transforms::
-    setTimeConversion()
+    setTimeConversion(string date, string year)
 {
     tm* tmepoch;
     
-    tmepoch->tm_year = 1970 - 1900;
-    tmepoch->tm_mon = 1 - 1;
-    tmepoch->tm_mday = 1;
+    int fract = 1;
+    int month = 1;
+    int year_int = std::stoi(year);
+    
+    while (fract > 0)
+    {
+        date_int = date_int - days_in_month[month];
+        if (date_int > days_in_month[month+1])
+            { fract = 0;}
+        month++;
+    }
+    
+    tmepoch->tm_year = 2000 + std::stoi(date) - 1900;
+    tmepoch->tm_mon = month - 2;
+    tmepoch->tm_mday = date_int;
     tmepoch->tm_hour = 0;
     tmepoch->tm_min = 0;
     tmepoch->tm_sec = 0;
