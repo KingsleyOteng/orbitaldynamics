@@ -97,7 +97,7 @@ void coordinate_transforms::
     A = trunc(year/100);
     B = 2 - A + trunc(A/4);
     
-    Julian_Date_Day = trunc(365.25 * year) + trunc(30.6001 * 14) + 1720994.5 + B;
+    Julian_Date_Day = trunc(365.2500 * year) + trunc(30.6001 * 14) + 1720994.5000 + B;
 }
 
 void coordinate_transforms::
