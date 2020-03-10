@@ -75,7 +75,9 @@ void coordinate_transforms::
     double A;
     double B;
     
-    year = current_year - 1;
+    tm *epoch_time = localtime(&yr_mo_dd);
+    
+    year = (1900 + epoch_time->tm_year) - 1;
     A = trunc(year/100);
     B = 2 - A + trunc(A/4);
     
