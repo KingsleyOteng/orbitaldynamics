@@ -70,16 +70,14 @@ void coordinate_transforms::
     setJulianDateYear
     (time_t yr_mo_dd)
 {
-    // note that time t is the amount of time since January 1st 1970
     int current_year;
     int year;
     double A;
     double B;
     
-   // The structure type tm holds the date and time in the form of a C structure
-    tm *ltm = localtime(&yr_mo_dd);
+    tm *epoch_time = localtime(&yr_mo_dd);
     
-    year = ltm->tm_year - 1;
+    year = (1900 + epoch_time->tm_year) - 1;
     A = trunc(year/100);
     B = 2 - A + trunc(A/4);
     
@@ -90,18 +88,14 @@ void coordinate_transforms::
     setJulianDateDay
     (time_t yr_mo_dd)
 {
-    // note that time t is the amount of time since January 1st 1970
-    
     int year;
     int current_year;
     double A;
     double B;
     
-    // The structure type tm holds the date and time in the form of a C structure
-    tm *ltm = localtime(&yr_mo_dd);
+    current_year = 0;
     
-    current_year = ltm->tm_year;
-    year = ltm->tm_year - 1;
+    year = current_year - 1;
     A = trunc(year/100);
     B = 2 - A + trunc(A/4);
     
@@ -112,10 +106,6 @@ void coordinate_transforms::
     setJulianDate
     (time_t yr_mo_dd)
 {
-    // note that time t is the amount of time since January 1st 1970
-    
-    // The structure type tm holds the date and time in the form of a C structure
-    tm *ltm = localtime(&yr_mo_dd);
     
     Julian_Date = Julian_Date_of_Year + Julian_Date_Day;
     
