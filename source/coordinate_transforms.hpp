@@ -82,6 +82,7 @@ public:
     void set_eci_x_coordinate                  ();
     void set_eci_y_coordinate                  ();
 
+    tm* setTimeConversion                     ();
     
 };
 

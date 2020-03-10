@@ -131,4 +131,17 @@ void coordinate_transforms::
     
 }
 
-
+tm* coordinate_transforms::
+    setTimeConversion()
+{
+    tm* tmepoch;
+    
+    tmepoch->tm_year = 1970 - 1900;
+    tmepoch->tm_mon = 1 - 1;
+    tmepoch->tm_mday = 1;
+    tmepoch->tm_hour = 0;
+    tmepoch->tm_min = 0;
+    tmepoch->tm_sec = 0;
+    
+    return tmepoch;
+}
