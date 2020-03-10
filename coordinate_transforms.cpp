@@ -75,7 +75,9 @@ void coordinate_transforms::
     double A;
     double B;
     
-    year = current_year - 1;
+    tm *epoch_time = localtime(&yr_mo_dd);
+    
+    year = (1900 + epoch_time->tm_year) - 1;
     A = trunc(year/100);
     B = 2 - A + trunc(A/4);
     
@@ -97,7 +99,7 @@ void coordinate_transforms::
     A = trunc(year/100);
     B = 2 - A + trunc(A/4);
     
-    Julian_Date_Day = trunc(365.25 * year) + trunc(30.6001 * 14) + 1720994.5 + B;
+    Julian_Date_Day = trunc(365.2500 * year) + trunc(30.6001 * 14) + 1720994.5000 + B;
 }
 
 void coordinate_transforms::
