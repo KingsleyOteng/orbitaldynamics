@@ -8,12 +8,13 @@
 
 
 #include <iostream>
-#include <vector>                   // c-11 vector
-#include <algorithm>                // c-11 algoithm
-#include "orbital.hpp"              // header files
-#include "utilities.hpp"            // my own routines for processing data
-#include <boost/any.hpp>            // boost standard library
-#include <boost/asio.hpp>           // io streaming headers
+#include <vector>                      // c-11 vector
+#include <algorithm>                   // c-11 algoithm
+#include "orbital.hpp"                 // header files
+#include "coordinate_transforms.hpp"   // coordinate transforms library
+#include "utilities.hpp"               // my own routines for processing data
+#include <boost/any.hpp>               // boost standard library
+#include <boost/asio.hpp>              // io streaming headers
 
 
 using namespace std;
@@ -73,6 +74,9 @@ int main()
     util -> SetEpochJulianDate(orb->getJULIANdatefraction());
     util -> SetSimpleDateFormatLong();
     cout << util -> GetSimpleDateFormatLong();
+    
+    coordinate_transforms ct = coordinate_transforms();
+    //setTimeConversion(string date_phrase, string year)
     
     return 61;
 }
