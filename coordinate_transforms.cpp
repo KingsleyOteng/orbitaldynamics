@@ -70,7 +70,7 @@ void coordinate_transforms::
     setJulianDateYear
     (time_t yr_mo_dd)
 {
-    int current_year;
+    //int current_year;
     int year;
     double A;
     double B;
@@ -88,27 +88,60 @@ void coordinate_transforms::
     setJulianDateDay
     (time_t yr_mo_dd)
 {
-    int year;
-    int current_year;
-    double A;
-    double B;
+    int day;
+    int yr;
+    int mo;
+    int dy;
     
-    current_year = 0;
+    tm *epoch_time = localtime(&yr_mo_dd);
     
-    year = current_year - 1;
-    A = trunc(year/100);
-    B = 2 - A + trunc(A/4);
+    // get date data
+    yr = epoch_time->tm_year;
+    mo = epoch_time->tm_mon;
+    dy = epoch_time->tm_mday;
     
-    Julian_Date_Day = trunc(365.2500 * year) + trunc(30.6001 * 14) + 1720994.5000 + B;
+    day = 0;
+    
+    // get length of the particular integer array
+    int length = sizeof(days_in_month) / sizeof(int);
+    
+    for(int i=1; i<= length; i++)
+        {
+            day = day + days_in_month[i];
+        }
+    
+    day = day + dy;
+    
+    if (((yr % 4) == 0) && (((yr % 100) != 0) || ((yr % 400) == 0)) && (mo > 2))
+        {
+            day = day + 1;
+        }
+    
+    Julian_Date_Day = day;
 }
 
 void coordinate_transforms::
     setJulianDate
     (time_t yr_mo_dd)
 {
+    setJulianDateDay(yr_mo_dd);
+    setJulianDateYear(yr_mo_dd);
     
     Julian_Date = Julian_Date_of_Year + Julian_Date_Day;
     
 }
 
-
+tm* coordinate_transforms::
+    setTimeConversion(string date, string year)
+{
+    tm* tmepoch;
+    
+    tmepoch->tm_year = 2000 + std::stoi(date) - 1900;
+    tmepoch->tm_mon = 1 - 1;
+    tmepoch->tm_mday = 1;
+    tmepoch->tm_hour = 0;
+    tmepoch->tm_min = 0;
+    tmepoch->tm_sec = 0;
+    
+    return tmepoch;
+}
