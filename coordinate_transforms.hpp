@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <ctime>
 
 //
 //  coordinate_transforms.cpp
@@ -28,6 +29,8 @@ class coordinate_transforms
     
 private:
     
+    int days_in_month[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+    
     double latitude;
     double longitude;
     double elevation;
@@ -39,6 +42,10 @@ private:
     double gst;
     double gmst;
     double utc;
+    double utc_time;
+    double Julian_Date_of_Year;
+    double Julian_Date_Day;
+    double Julian_Date;
     
     double universal_time_tu;
     double universal_time_du;
@@ -59,7 +66,13 @@ public:
     void setLatitude                           ();
     void setLongitude                          ();
     void setElevation                          ();
-    void setGST                                ();
+    void setGST                                (double date_Tu);
+    void setGMST                               ();
+    void setCoordinates                        (double latitude_box1, double longitude_box1, double elevation);
+    void setJulianDate                         (time_t yr_mo_dd);
+    void setJulianDateDay                      (time_t yr_mo_dd);
+    void setJulianDateYear                     (time_t yr_mo_dd);
+    void setTimeElapsedSinceJDIndex            (double date_du);
     
     // toggle eci coordinates
     void get_eci_z_coordinate                  ();
