@@ -144,27 +144,43 @@ tm* coordinate_transforms::
     int min_int;
     int sec_int;
     
+    std::string s = date_phrase;
+    //  std::string s = "Day 40 @ 09:58:04.421280";
+    
+    // construct regex expression
+    std::regex word_regex("(\\s*[0-9]+)");
+    auto words_begin = std::sregex_iterator(s.begin(), s.end(), word_regex);
+    auto words_end = std::sregex_iterator();
+    
+    std::cout << "Found "
+    << std::distance(words_begin, words_end)
+    << " words\n";
+    
+    std::string array_matched[50];
+    int ii = 0;
+    for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
+        std::smatch match = *i;
+        std::string match_str = match.str();
+        
+            std::cout << "  " << match_str << '\n';
+        array_matched[ii] = match.str();
+        ii++;
+        
+    }
+    
     std::string phrase;
     
     // obtain days from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(5, 7);
-    day_int = (stoi(phrase));
+    day_int = stoi(array_matched[0]);
     
     // obtain hours from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(11, 12);
-    hour_int = (stoi(phrase));
+    hour_int = stoi(array_matched[1]);
     
     // obtain minutes from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(14, 15);
-    min_int = (stoi(phrase));
+    min_int = stoi(array_matched[2]);
     
     // obtain seconds from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(17, 18);
-    sec_int = (stoi(phrase));
+    sec_int = stoi(array_matched[3]);
     
     while (fract > 0)
     {
@@ -183,3 +199,4 @@ tm* coordinate_transforms::
     
     return tmepoch;
 }
+\
