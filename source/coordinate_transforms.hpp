@@ -43,7 +43,7 @@ private:
     double y_coordinate;
     
     double gst;
-    double gmst;
+    
     double utc;
     double utc_time;
     double Julian_Date_of_Year;
@@ -54,6 +54,8 @@ private:
     double universal_time_du;
     
 public:
+    
+    double gmst;
     
     // we mainly use kelso for this analysis
     // https://www.celestrak.com/columns/v02n02/
@@ -69,7 +71,7 @@ public:
     void setLatitude                           ();
     void setLongitude                          ();
     void setElevation                          ();
-    void setGST                                (double date_Tu);
+    void setGST                                ();
     void setGMST                               ();
     void setCoordinates                        (double latitude_box1, double longitude_box1, double elevation);
     void setJulianDate                         (time_t yr_mo_dd);

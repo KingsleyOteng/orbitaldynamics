@@ -22,7 +22,7 @@ using namespace std;
 int main()
 {
 
-    std::vector<int> v{1,2,3};
+    //std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
     
@@ -75,7 +75,11 @@ int main()
     util -> SetSimpleDateFormatLong();
     cout << util -> GetSimpleDateFormatLong();
     
-    coordinate_transforms ct = coordinate_transforms();
+    coordinate_transforms *ct = new coordinate_transforms();
+    ct -> setTimeElapsedSinceJDIndex(30000000);
+    ct -> setGST();
+    ct -> setGMST();
+    cout << ct -> gmst;
     //setTimeConversion(string date_phrase, string year)
     
     return 61;

@@ -48,10 +48,10 @@ void coordinate_transforms::
 // calculates the Greenwich sidereal time at midnight
 void coordinate_transforms::
     setGST
-    (double date_Tu)
+    ()
 {
     // calculate the gst
-    gst = 24110.54841 + (date_Tu*8640184.812866) + (date_Tu*date_Tu*0.093104) - (0.0000062*date_Tu*date_Tu*date_Tu);
+    gst = 24110.54841 + (universal_time_tu*8640184.812866) + (universal_time_tu*universal_time_tu*0.093104) - (0.0000062*universal_time_tu*universal_time_tu*universal_time_tu);
     
 }
 
