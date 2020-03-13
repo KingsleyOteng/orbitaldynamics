@@ -14,7 +14,6 @@
 #include <ctime>
 #include <string>
 #include <iostream>
-#include <regex>
 
 using namespace std;
 //
@@ -70,7 +69,7 @@ public:
     void setLatitude                           ();
     void setLongitude                          ();
     void setElevation                          ();
-    void setGST                                (double date_Tu);
+    void setGST                                ();
     void setGMST                               ();
     void setCoordinates                        (double latitude_box1, double longitude_box1, double elevation);
     void setJulianDate                         (time_t yr_mo_dd);

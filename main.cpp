@@ -76,8 +76,7 @@ int main()
     cout << util -> GetSimpleDateFormatLong();
     
     coordinate_transforms *ct = new coordinate_transforms();
-    tm* x;
-    x = ct->setTimeConversion(util -> GetSimpleDateFormatLong(),"20");
+    ct -> setTimeElapsedSinceJDIndex(30000000);
     //setTimeConversion(string date_phrase, string year)
     
     return 61;

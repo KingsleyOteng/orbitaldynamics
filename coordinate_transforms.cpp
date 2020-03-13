@@ -48,10 +48,10 @@ void coordinate_transforms::
 // calculates the Greenwich sidereal time at midnight
 void coordinate_transforms::
     setGST
-    (double date_Tu)
+    ()
 {
     // calculate the gst
-    gst = 24110.54841 + (date_Tu*8640184.812866) + (date_Tu*date_Tu*0.093104) - (0.0000062*date_Tu*date_Tu*date_Tu);
+    gst = 24110.54841 + (universal_time_tu*8640184.812866) + (universal_time_tu*universal_time_tu*0.093104) - (0.0000062*universal_time_tu*universal_time_tu*universal_time_tu);
     
 }
 
@@ -144,43 +144,27 @@ tm* coordinate_transforms::
     int min_int;
     int sec_int;
     
-    std::string s = date_phrase;
-    //  std::string s = "Day 40 @ 09:58:04.421280";
-    
-    // construct regex expression
-    std::regex word_regex("(\\s*[0-9]+)");
-    auto words_begin = std::sregex_iterator(s.begin(), s.end(), word_regex);
-    auto words_end = std::sregex_iterator();
-    
-    std::cout << "Found "
-    << std::distance(words_begin, words_end)
-    << " words\n";
-    
-    std::string array_matched[50];
-    int ii = 0;
-    for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
-        std::smatch match = *i;
-        std::string match_str = match.str();
-        
-            std::cout << "  " << match_str << '\n';
-        array_matched[ii] = match.str();
-        ii++;
-        
-    }
-    
     std::string phrase;
     
     // obtain days from phrase
-    day_int = stoi(array_matched[0]);
+    phrase = date_phrase;
+    phrase = phrase.substr(5, 7);
+    day_int = (stoi(phrase));
     
     // obtain hours from phrase
-    hour_int = stoi(array_matched[1]);
+    phrase = date_phrase;
+    phrase = phrase.substr(11, 12);
+    hour_int = (stoi(phrase));
     
     // obtain minutes from phrase
-    min_int = stoi(array_matched[2]);
+    phrase = date_phrase;
+    phrase = phrase.substr(14, 15);
+    min_int = (stoi(phrase));
     
     // obtain seconds from phrase
-    sec_int = stoi(array_matched[3]);
+    phrase = date_phrase;
+    phrase = phrase.substr(17, 18);
+    sec_int = (stoi(phrase));
     
     while (fract > 0)
     {
@@ -199,4 +183,3 @@ tm* coordinate_transforms::
     
     return tmepoch;
 }
-\
