@@ -88,7 +88,7 @@ public:
     void set_eci_y_coordinate                  ();
 
     tm* setTimeConversion                      (std::string date, std::string year);
-    
+    tm* setTimeConversionM                      (std::string date, std::string year);
 };
 
 

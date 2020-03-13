@@ -80,6 +80,8 @@ int main()
     ct -> setGST();
     ct -> setGMST();
     cout << ct -> gmst;
+    cout << ct->setTimeConversion(util -> GetSimpleDateFormatLong(), "20"
+                                       );
     //setTimeConversion(string date_phrase, string year)
     
     return 61;
