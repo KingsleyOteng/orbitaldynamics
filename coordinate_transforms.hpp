@@ -43,7 +43,7 @@ private:
     double y_coordinate;
     
     double gst;
-    double gmst;
+    
     double utc;
     double utc_time;
     double Julian_Date_of_Year;
@@ -54,6 +54,8 @@ private:
     double universal_time_du;
     
 public:
+    
+    double gmst;
     
     // we mainly use kelso for this analysis
     // https://www.celestrak.com/columns/v02n02/
