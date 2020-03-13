@@ -48,7 +48,7 @@ void coordinate_transforms::
 // calculates the Greenwich sidereal time at midnight
 void coordinate_transforms::
     setGST
-    (double date_Tu)
+    ()
 {
     // calculate the gst
     gst = 24110.54841 + (universal_time_tu*8640184.812866) + (universal_time_tu*universal_time_tu*0.093104) - (0.0000062*universal_time_tu*universal_time_tu*universal_time_tu);
@@ -173,6 +173,60 @@ tm* coordinate_transforms::
             { fract = 0;}
         month++;
     }
+    
+    tmepoch->tm_year = 2000 + year_int - 1900;
+    tmepoch->tm_mon = month - 2;
+    tmepoch->tm_mday = day_int;
+    tmepoch->tm_hour = hour_int;
+    tmepoch->tm_min = min_int;
+    tmepoch->tm_sec = sec_int;
+    
+    return tmepoch;
+}
+
+tm* coordinate_transforms::
+    setTimeConversionM(string date_phrase, string year)
+{
+    tm* tmepoch;
+    
+    int fract = 1;
+    int month = 1;
+    int year_int = std::stoi(year);
+    int day_int;
+    int hour_int;
+    int min_int;
+    int sec_int;
+    
+    std::string phrase;
+    
+    // obtain days from phrase
+    phrase = date_phrase;
+    phrase = phrase.substr(5, 7);
+    day_int = (stoi(phrase));
+    
+    // obtain hours from phrase
+    phrase = date_phrase;
+    phrase = phrase.substr(11, 12);
+    hour_int = (stoi(phrase));
+    
+    // obtain minutes from phrase
+    phrase = date_phrase;
+    phrase = phrase.substr(14, 15);
+    min_int = (stoi(phrase));
+    
+    // obtain seconds from phrase
+    phrase = date_phrase;
+    phrase = phrase.substr(17, 18);
+    sec_int = (stoi(phrase));
+    
+    while (fract > 0)
+    {
+        day_int = day_int - days_in_month[month];
+        if (day_int > days_in_month[month+1])
+            { fract = 0;}
+        month++;
+    }
+    
     
     tmepoch->tm_year = 2000 + year_int - 1900;
     tmepoch->tm_mon = month - 2;
