@@ -51,7 +51,7 @@ void coordinate_transforms::
     ()
 {
     // calculate the gst
-    gst = 24110.54841 + (universal_time_tu*8640184.812866) + (universal_time_tu*universal_time_tu*0.093104) - (0.0000062*universal_time_tu*universal_time_tu*universal_time_tu);
+    gst = 24110.5484100 + universal_time_tu*((8640184.81286600) + universal_time_tu*((0.09310400) - (0.000006200*universal_time_tu)));
     
 }
 
@@ -81,7 +81,7 @@ void coordinate_transforms::
     A = trunc(year/100);
     B = 2 - A + trunc(A/4);
     
-    Julian_Date_of_Year = trunc(365.25 * year) + trunc(30.6001 * 14) + 1720994.5 + B;
+    Julian_Date_of_Year = trunc(365.25000 * year) + trunc(30.60010 * 14) + 1720994.50000 + B;
 }
 
 void coordinate_transforms::
@@ -226,6 +226,7 @@ tm* coordinate_transforms::
             { fract = 0;}
         month++;
     }
+    
     
     tmepoch->tm_year = 2000 + year_int - 1900;
     tmepoch->tm_mon = month - 2;
