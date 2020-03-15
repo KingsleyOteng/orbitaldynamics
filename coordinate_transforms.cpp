@@ -134,7 +134,7 @@ void coordinate_transforms::
 tm* coordinate_transforms::
     setTimeConversionM(string date_phrase, string year)
 {
-    tm* tmepoch;
+    tm* tmepoch = new tm();
     
     int fract = 1;
     int month = 1;
