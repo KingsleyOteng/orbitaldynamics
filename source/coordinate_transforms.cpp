@@ -132,62 +132,9 @@ void coordinate_transforms::
 }
 
 tm* coordinate_transforms::
-    setTimeConversion(string date_phrase, string year)
-{
-    tm* tmepoch;
-    
-    int fract = 1;
-    int month = 1;
-    int year_int = std::stoi(year);
-    int day_int;
-    int hour_int;
-    int min_int;
-    int sec_int;
-    
-    std::string phrase;
-    
-    // obtain days from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(5, 7);
-    day_int = (stoi(phrase));
-    
-    // obtain hours from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(11, 12);
-    hour_int = (stoi(phrase));
-    
-    // obtain minutes from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(14, 15);
-    min_int = (stoi(phrase));
-    
-    // obtain seconds from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(17, 18);
-    sec_int = (stoi(phrase));
-    
-    while (fract > 0)
-    {
-        day_int = day_int - days_in_month[month];
-        if (day_int > days_in_month[month+1])
-            { fract = 0;}
-        month++;
-    }
-    
-    tmepoch->tm_year = 2000 + year_int - 1900;
-    tmepoch->tm_mon = month - 2;
-    tmepoch->tm_mday = day_int;
-    tmepoch->tm_hour = hour_int;
-    tmepoch->tm_min = min_int;
-    tmepoch->tm_sec = sec_int;
-    
-    return tmepoch;
-}
-
-tm* coordinate_transforms::
     setTimeConversionM(string date_phrase, string year)
 {
-    tm* tmepoch;
+    tm* tmepoch = new tm();
     
     int fract = 1;
     int month = 1;
@@ -198,42 +145,50 @@ tm* coordinate_transforms::
     int sec_int;
     
     std::string phrase;
+    std::string hello;
+    hello = date_phrase;
     
-    // obtain days from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(5, 7);
-    day_int = (stoi(phrase));
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\d+) @ (\\d+):(\\d+):(\\d+)\\.(\\d+) " );
+    boost::xpressive::smatch what;
     
-    // obtain hours from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(11, 12);
-    hour_int = (stoi(phrase));
-    
-    // obtain minutes from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(14, 15);
-    min_int = (stoi(phrase));
-    
-    // obtain seconds from phrase
-    phrase = date_phrase;
-    phrase = phrase.substr(17, 18);
-    sec_int = (stoi(phrase));
-    
-    while (fract > 0)
+    if( regex_match( hello, what, rex ) )
     {
-        day_int = day_int - days_in_month[month];
-        if (day_int > days_in_month[month+1])
-            { fract = 0;}
-        month++;
+        // obtain number of days elapsed from the phrase
+        phrase =  what[2];
+        day_int = (stoi(phrase));
+        
+        // obtain hours from phrase
+        phrase = what[3];
+        hour_int = (stoi(phrase));
+        
+        // obtain minutes from phrase
+        phrase = what[4];
+        min_int = (stoi(phrase));
+        
+        // obtain seconds from phrase
+        phrase = what[5];
+        sec_int = (stoi(phrase));
+        
+        // add the mantissa to the seconds
+        phrase = what[6];
+        sec_int = sec_int + (stoi(phrase) / pow(10,phrase.size()));
+        
+        while (fract > 0)
+           {
+               day_int = day_int - days_in_month[month];
+               if (day_int > days_in_month[month+1])
+                   { fract = 0;}
+               month++;
+           }
+        
+        tmepoch->tm_year = 2000 + year_int - 1900;
+        tmepoch->tm_mon = month - 2;
+        tmepoch->tm_mday = day_int;
+        tmepoch->tm_hour = hour_int;
+        tmepoch->tm_min = min_int;
+        tmepoch->tm_sec = sec_int;
     }
-    
-    
-    tmepoch->tm_year = 2000 + year_int - 1900;
-    tmepoch->tm_mon = month - 2;
-    tmepoch->tm_mday = day_int;
-    tmepoch->tm_hour = hour_int;
-    tmepoch->tm_min = min_int;
-    tmepoch->tm_sec = sec_int;
-    
+       
+   
     return tmepoch;
 }

@@ -15,12 +15,15 @@
 #include "utilities.hpp"               // my own routines for processing data
 #include <boost/any.hpp>               // boost standard library
 #include <boost/asio.hpp>              // io streaming headers
-
+#include <boost/lambda/lambda.hpp>
+#include <boost/xpressive/xpressive.hpp>
+#include <cmath>
 
 using namespace std;
 
 int main()
 {
+   // boost::regex e;
 
     //std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
@@ -80,9 +83,28 @@ int main()
     ct -> setGST();
     ct -> setGMST();
     cout << ct -> gmst;
-    cout << ct->setTimeConversion(util -> GetSimpleDateFormatLong(), "20"
-                                       );
+    cout << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20");
     //setTimeConversion(string date_phrase, string year)
+    
+
+   
+    std::string hello("Day 040 @ 09:58:04.421280");
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\d+) @ (\\d+):(\\d+):(\\d+)\\.(\\d+)");
+    boost::xpressive::smatch what;
+    
+    if( regex_match( hello, what, rex ) )
+    {
+        std::cout << what[0] << "0" << '\n'; // whole match
+        std::cout << what[1] << "1" << '\n'; // first capture
+        std::cout << what[2] << "2" << '\n'; // second capture
+        std::cout << what[3] << '\n'; // third capture
+        std::cout << what[4] << '\n'; // fourth capture
+        std::cout << what[5] << '\n'; // fourth capture
+        std::cout << what[6] << '\n'; // fourth capture
+        
+        std::string x = what[6];
+        cout << "length" << stoi(what[6]) / pow(10,x.size());
+    }
     
     return 61;
 }

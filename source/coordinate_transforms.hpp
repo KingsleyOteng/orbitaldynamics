@@ -14,6 +14,7 @@
 #include <ctime>
 #include <string>
 #include <iostream>
+#include <boost/xpressive/xpressive.hpp>
 
 using namespace std;
 //
@@ -87,7 +88,6 @@ public:
     void set_eci_x_coordinate                  ();
     void set_eci_y_coordinate                  ();
 
-    tm* setTimeConversion                      (std::string date, std::string year);
     tm* setTimeConversionM                      (std::string date, std::string year);
 };
 
