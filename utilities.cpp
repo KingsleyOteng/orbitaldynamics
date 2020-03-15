@@ -154,11 +154,11 @@ char*
     // generate final expression
     if (m_epoch_greogorian_hour < 10)
     {
-        sprintf(return_string,"Day %s @ 0%d:%.0f:%s \n",m_epoch_gregorian_day_of_year_string, m_epoch_greogorian_hour , m_epoch_gregorian_minute, seconds_string.c_str() );
+        sprintf(return_string,"Day %s @ 0%d:%.0f:%s ",m_epoch_gregorian_day_of_year_string, m_epoch_greogorian_hour , m_epoch_gregorian_minute, seconds_string.c_str() );
     }
     else
     {
-        sprintf(return_string,"Day %s @ %d:%.0f:%s \n",m_epoch_gregorian_day_of_year_string, m_epoch_greogorian_hour , m_epoch_gregorian_minute,  seconds_string.c_str() );
+        sprintf(return_string,"Day %s @ %d:%.0f:%s ",m_epoch_gregorian_day_of_year_string, m_epoch_greogorian_hour , m_epoch_gregorian_minute,  seconds_string.c_str() );
     }
     
     return return_string;

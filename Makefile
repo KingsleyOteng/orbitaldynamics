@@ -8,9 +8,9 @@ BOOST_INCLUDE_DIR=$(BOOST_ROOT)boost/
 CFLAGS=-/Users/kwadwooteng-amoko/qt5.14/5.14.0/clang_64/lib/QtGui.framework/QtGui/
 LIBS=/Users/kwadwooteng-amoko/qt5.14/5.14.0/clang_64/lib/QtGui.framework/QtGui/
 BOOST_LIB_DIR=$(BOOST_ROOT)/lib
-#BOOST_LIB_DIR=$(BOOST_ROOT)/libs/
+BOOST_REGEX_LIB_DIR=boost_regex
    main: main.cpp
-       g++ main.cpp -I$(BOOST_INCLUDE_DIR;CFLAGS) -L$(BOOST_LIB_DIR;LIBS) -o $(PRODUCT_NAME)
+       g++ main.cpp -I$(BOOST_INCLUDE_DIR;CFLAGS) -L$(BOOST_LIB_DIR;LIBS;BOOST_REGEX_LIB_DIR) -o $(PRODUCT_NAME) 
        #g++ main.cpp -I$(BOOST_INCLUDE_DIR;CFLAGS) -L$(BOOST_LIB_DIR;LIBS) -o $(PRODUCT_NAME)
 clean:
        rm -f main
