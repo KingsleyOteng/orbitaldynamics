@@ -76,7 +76,7 @@ int main()
     orb -> getTLEsummary();
     util -> SetEpochJulianDate(orb->getJULIANdatefraction());
     util -> SetSimpleDateFormatLong();
-    cout << util -> GetSimpleDateFormatLong();
+    cout << util -> GetSimpleDateFormatLong() << "\n";
     
     coordinate_transforms *ct = new coordinate_transforms();
     
@@ -84,10 +84,10 @@ int main()
     ct -> setTimeElapsedSinceJDIndex(30000000);
     ct -> setGST();
     ct -> setGMST();
-    cout << ct -> gmst;
+    //cout << ct -> gmst;
     
     // generate a julian date time string
-    cout << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20");
+    cout << "time conversion" << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20") << "\n";
     
     
     return 61;
