@@ -76,35 +76,18 @@ int main()
     orb -> getTLEsummary();
     util -> SetEpochJulianDate(orb->getJULIANdatefraction());
     util -> SetSimpleDateFormatLong();
-    cout << util -> GetSimpleDateFormatLong();
+    cout << util -> GetSimpleDateFormatLong() << "\n";
     
     coordinate_transforms *ct = new coordinate_transforms();
+    
+    // do the GMST and GST conversion
     ct -> setTimeElapsedSinceJDIndex(30000000);
     ct -> setGST();
     ct -> setGMST();
-    cout << ct -> gmst;
-    cout << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20");
-    //setTimeConversion(string date_phrase, string year)
+    //cout << ct -> gmst;
     
-
-   
-    std::string hello("Day 040 @ 09:58:04.421280");
-    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\d+) @ (\\d+):(\\d+):(\\d+)\\.(\\d+)");
-    boost::xpressive::smatch what;
-    
-    if( regex_match( hello, what, rex ) )
-    {
-        std::cout << what[0] << "0" << '\n'; // whole match
-        std::cout << what[1] << "1" << '\n'; // first capture
-        std::cout << what[2] << "2" << '\n'; // second capture
-        std::cout << what[3] << '\n'; // third capture
-        std::cout << what[4] << '\n'; // fourth capture
-        std::cout << what[5] << '\n'; // fourth capture
-        std::cout << what[6] << '\n'; // fourth capture
-        
-        std::string x = what[6];
-        cout << "length" << stoi(what[6]) / pow(10,x.size());
-    }
+    // generate a julian date time string
+    cout << "time conversion" << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20") << "\n";
     
     return 61;
 }
