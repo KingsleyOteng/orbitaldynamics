@@ -89,6 +89,5 @@ int main()
     // generate a julian date time string
     cout << "time conversion" << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20") << "\n";
     
-    
     return 61;
 }

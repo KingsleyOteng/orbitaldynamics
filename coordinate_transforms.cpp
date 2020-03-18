@@ -131,6 +131,44 @@ void coordinate_transforms::
     
 }
 
+double coordinate_transforms::
+    FunctionThetaGJD(double jd)
+{
+    // Reference:  The 1992 Astronomical Almanac, page B6. }
+    double UT,TU,GMST, ThetaG_JD;
+
+  UT   = jd + 0.5;
+  jd   = jd - UT;
+  TU   = (jd - 2451545.0)/36525.0;
+  GMST = 24110.54841 + TU * (8640184.812866 + TU * (0.093104 - TU * 6.2E-6));
+  // GMST = ((GMST + (86400.0*1.00273790934*UT)%86400.0);
+  GMST = (86400.0*1.00273790934*UT);
+  GMST = fmod(GMST, 86400);
+  GMST = GMST + GMST;
+  ThetaG_JD = twopi * GMST/86400.0;
+    
+  return ThetaG_JD;
+}
+
+void coordinate_transforms::
+    FunctionThetaGJDM(double jd)
+{
+    // Reference:  The 1992 Astronomical Almanac, page B6. }
+    double UT,TU,GMST, ThetaG_JD;
+
+  UT   = jd + 0.5;
+  jd   = jd - UT;
+  TU   = (jd - 2451545.0)/36525.0;
+  GMST = 24110.54841 + TU * (8640184.812866 + TU * (0.093104 - TU * 6.2E-6));
+  // GMST = ((GMST + (86400.0*1.00273790934*UT)%86400.0);
+  GMST = (86400.0*1.00273790934*UT);
+  GMST = fmod(GMST, 86400);
+  GMST = GMST + GMST;
+  ThetaG_JD = twopi * GMST/86400.0;
+    
+}
+
+
 tm* coordinate_transforms::
     setTimeConversionM(string date_phrase, string year)
 {
@@ -191,4 +229,13 @@ tm* coordinate_transforms::
        
    
     return tmepoch;
+}
+
+double coordinate_transforms::
+fMod(double a, double b)
+{
+    double quot;
+    quot = (int) a / b;
+    
+    return (a - quot * b);
 }
