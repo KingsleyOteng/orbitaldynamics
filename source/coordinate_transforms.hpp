@@ -55,6 +55,7 @@ private:
     
     double universal_time_tu;
     double universal_time_du;
+    double ThetaG_JD;
     
 public:
     
@@ -83,6 +84,7 @@ public:
     void setTimeElapsedSinceJDIndex            (double date_du);
     double fMod                                (double a, double b);
     double FunctionThetaGJD                    (double jd);
+    void   FunctionThetaGJDM(double jd);
     
     // toggle eci coordinates
     void get_eci_z_coordinate                  ();
