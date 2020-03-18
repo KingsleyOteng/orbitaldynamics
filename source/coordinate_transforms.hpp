@@ -33,6 +33,8 @@ class coordinate_transforms
     
 private:
     
+    #define twopi 6.28318530718
+    
     int days_in_month[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
     
     double latitude;
@@ -79,6 +81,8 @@ public:
     void setJulianDateDay                      (time_t yr_mo_dd);
     void setJulianDateYear                     (time_t yr_mo_dd);
     void setTimeElapsedSinceJDIndex            (double date_du);
+    double fMod                                (double a, double b);
+    double FunctionThetaGJD                    (double jd);
     
     // toggle eci coordinates
     void get_eci_z_coordinate                  ();
