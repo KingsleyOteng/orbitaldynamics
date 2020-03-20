@@ -33,7 +33,8 @@ class coordinate_transforms
     
 private:
     
-    #define twopi 6.28318530718
+    #define twopi                       6.28318530718
+    #define earth_radius_equitorial     6378.137
     
     int days_in_month[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
     
@@ -93,8 +94,10 @@ public:
     void set_eci_z_coordinate                  ();
     void set_eci_x_coordinate                  ();
     void set_eci_y_coordinate                  ();
+    
 
     tm* setTimeConversionM                      (std::string date, std::string year);
+    void setUserPositionModel                   (double lat, double lon, double alt, double time);
 };
 
 
