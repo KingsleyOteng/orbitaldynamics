@@ -48,7 +48,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "192"
             endingLineNumber = "192"
-            landmarkName = "coordinate_transforms:: setTimeConversionM(date_phrase, year)"
+            landmarkName = "coordinate_transforms:: setUserPositionModel(lat, lon, alt, time)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
