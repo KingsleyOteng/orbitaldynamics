@@ -48,6 +48,7 @@ private:
     
     double gst;
     
+    double time_variable;
     double utc;
     double utc_time;
     double Julian_Date_of_Year;
@@ -85,7 +86,8 @@ public:
     void setTimeElapsedSinceJDIndex            (double date_du);
     double fMod                                (double a, double b);
     double FunctionThetaGJD                    (double jd);
-    void   FunctionThetaGJDM(double jd);
+    void   FunctionThetaGJDM                   (double jd);
+    
     
     // toggle eci coordinates
     void get_eci_z_coordinate                  ();
@@ -97,7 +99,8 @@ public:
     
 
     tm* setTimeConversionM                      (std::string date, std::string year);
-    void setUserPositionModel                   (double lat, double lon, double alt, double time);
+    void setUserPositionModel                   (double lat, double lon, double elev, double timet);
+    
 };
 
 
