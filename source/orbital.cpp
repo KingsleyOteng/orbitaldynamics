@@ -1,4 +1,4 @@
-//      Source  
+//      Source
 //      Overview: Extraction of object tracking data from NORAD TLE
 //
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
@@ -23,6 +23,11 @@ using namespace std;
 orbital::orbital(int year, int month, int day)
 {
     SetDate(year, month, day);
+}
+
+orbital::orbital(double x_observer, double y_observer, double z_observer)
+{
+    SetObserverCoordinates(x_observer, y_observer, z_observer);
 }
 
 // Set the current epoch
@@ -550,6 +555,14 @@ void
     orbital::SetEpochDate(double epoch)
 {
     m_sensor_epoch = epoch;
+};
+
+void
+    orbital::SetObserverCoordinates(double x_observer, double y_observer, double z_observer)
+{
+    model_x_observer = x_observer;
+    model_x_observer = x_observer;
+    model_x_observer = x_observer;
 };
 
 // generate a summary of the TLE

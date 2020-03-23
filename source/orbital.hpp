@@ -1,11 +1,10 @@
-//      Header
 //      Overview: Extraction of object tracking data from NORAD TLE
 //
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-//      
+//
 
 #ifndef orbital_hpp
 #define orbital_hpp
@@ -25,6 +24,16 @@ private:
     #define ARRAY_SIZE_DOUBLE 100
     #define ARRAY_SIZE 50
     #define ARRAY_SIZE_ONE 1
+    
+    
+    // observer and satellite coordinates
+    double z_coordinate;
+    double x_coordinate;
+    double y_coordinate;
+    
+    double model_z_observer;
+    double model_x_observer;
+    double model_y_observer;
     
     // members
     double      m_sensor_epoch;
@@ -73,6 +82,7 @@ public:
     // constructor and destructors
     orbital();
     orbital(int year, int month, int day);
+    orbital(double x_observer, double y_observer, double z_observer);
    ~orbital();
     
     
@@ -113,6 +123,8 @@ public:
     void        SetClassifierID                 (std::string ClassifierID);
     void        SetCheckSumLineOne              (int checksum);
     void        SetCheckSumLineTwo              (int checksum);
+    void        SetObserverCoordinates          (double x_observer, double y_observer, double z_observer);
+    
     
     // getter
     void        getDataFile                     ();

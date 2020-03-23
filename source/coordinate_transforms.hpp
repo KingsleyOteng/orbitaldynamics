@@ -34,6 +34,7 @@ class coordinate_transforms
 private:
     
     #define twopi                       6.28318530718
+    #define pi_constant  3.1415
     #define earth_radius_equitorial     6378.137
     
     int days_in_month[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
@@ -46,8 +47,27 @@ private:
     double x_coordinate;
     double y_coordinate;
     
+    double z_observer;
+    double x_observer;
+    double y_observer;
+    
+    double z_range;
+    double x_range;
+    double y_range;
+    
+    // eci coordinates
+    double range_sidereal;
+    double range_earthrotation;
+    double range_theta;
+    
+    // viewing coordinates
+    double viewing_range;
+    double viewing_elevation;
+    double viewing_azimuth;
+    
     double gst;
     
+    double time_variable;
     double utc;
     double utc_time;
     double Julian_Date_of_Year;
@@ -85,7 +105,8 @@ public:
     void setTimeElapsedSinceJDIndex            (double date_du);
     double fMod                                (double a, double b);
     double FunctionThetaGJD                    (double jd);
-    void   FunctionThetaGJDM(double jd);
+    void   FunctionThetaGJDM                   (double jd);
+    
     
     // toggle eci coordinates
     void get_eci_z_coordinate                  ();
@@ -97,9 +118,10 @@ public:
     
 
     tm* setTimeConversionM                      (std::string date, std::string year);
-    void setUserPositionModel                   (double lat, double lon, double alt, double time);
+    void setUserPositionModel                   (double lat, double lon, double elev, double timet);
+    void getObserverRange                       ();
+    void getTropocentricCoordinates             ();
 };
 
 
 #endif /* coordinate_transforms_hpp */
-
