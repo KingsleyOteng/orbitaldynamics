@@ -263,3 +263,41 @@ fMod(double a, double b)
     
     return (a - quot * b);
 }
+
+void coordinate_transforms::
+getTropocentricCoordinates                      ()
+{
+    // We convert from ECI to look-angles by shifting to the tropocentric-horizon
+    // In the tropocentric-horizon: (z-axis) must point north, (y-axis) must point east and the (x-axis) must point north
+    // To achieve that we must first rotate through an angle phi (local sidereal time), about the z azis (Earth rotation axis)
+    // and then through an angle gamma (the observer's latitude)
+    double theta;
+    
+    // calculate the angle theta
+    theta           = fMod(FunctionThetaGJD(time_variable) + longitude,twopi);
+    
+    
+    range_sidereal = sin(theta)*cos(latitude)*x_range + sin(theta)*sin(latitude)*y_range - cos(theta)*z_range;
+    range_earthrotation = -1 * sin(latitude)*x_range + cos(latitude)*y_range;
+    range_theta = cos(theta)*cos(latitude)*x_range + cos(theta)*sin(latitude)*y_range + sin(theta)*z_range;
+    
+    viewing_range = sqrt(pow(range_sidereal,2.0) + pow(range_earthrotation,2.0) + pow(range_theta,2.0));
+    viewing_elevation = asin(range_theta/viewing_range);
+    
+    // we use negative sign because he azimuth is determied clockwise from the North instead of counter-clockwise from the South
+    viewing_azimuth = atan(-1*range_earthrotation/range_sidereal);
+    if (range_sidereal > 0)     { viewing_azimuth = viewing_azimuth + pi_constant; }
+    if (viewing_azimuth < 0)    { viewing_azimuth = viewing_azimuth + twopi; }
+    
+}
+
+void coordinate_transforms::
+getObserverRange                       ()
+{
+    // Note that the range vector generated here will be in ECI
+    // A conversion from ECI to look-angles is required
+    x_range = (x_coordinate - x_observer);
+    y_range = (y_coordinate - y_observer);
+    z_range = (z_coordinate - z_observer);
+}
+

@@ -26,6 +26,16 @@ private:
     #define ARRAY_SIZE 50
     #define ARRAY_SIZE_ONE 1
     
+    
+    // observer and satellite coordinates
+    double z_coordinate;
+    double x_coordinate;
+    double y_coordinate;
+    
+    double model_z_observer;
+    double model_x_observer;
+    double model_y_observer;
+    
     // members
     double      m_sensor_epoch;
     std::string m_file_name;
@@ -73,6 +83,7 @@ public:
     // constructor and destructors
     orbital();
     orbital(int year, int month, int day);
+    orbital(double x_observer, double y_observer, double z_observer);
    ~orbital();
     
     
@@ -113,6 +124,8 @@ public:
     void        SetClassifierID                 (std::string ClassifierID);
     void        SetCheckSumLineOne              (int checksum);
     void        SetCheckSumLineTwo              (int checksum);
+    void        SetObserverCoordinates          (double x_observer, double y_observer, double z_observer);
+    
     
     // getter
     void        getDataFile                     ();
