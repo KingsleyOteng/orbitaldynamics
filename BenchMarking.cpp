@@ -36,6 +36,10 @@ getBenchMarking                         ()
     time2 = std::localtime( &t);
     
     coordinate_transforms *ct = new coordinate_transforms();
+    
+    ct->setJulianDate(mktime(time2));
+    //start = x->tm_year();
+    
   //  cout
    // cout << "hello time elapse" << '\n';
    //    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC << '\n';

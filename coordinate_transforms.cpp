@@ -132,12 +132,25 @@ void coordinate_transforms::
 }
 
 void coordinate_transforms::
+    setJulianDateFractionOfDay
+    (time_t yr_mo_dd)
+{
+    double m_epoch_julian_date_fraction = 0.0;
+    int m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
+    int m_epoch_greogorian_hour = int(24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year));
+    int m_epoch_gregorian_minute = 60 * ((24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year)) - int(m_epoch_greogorian_hour));
+    int m_epoch_gregorian_second = 60 * (m_epoch_gregorian_minute - (int)m_epoch_gregorian_minute);
+    m_epoch_gregorian_minute = int(m_epoch_gregorian_minute);
+    int m_epoch_gregorian_splits = (m_epoch_gregorian_second - (int)m_epoch_gregorian_second);
+    m_epoch_gregorian_second = int (m_epoch_gregorian_second);
+}
+
+void coordinate_transforms::
     setJulianDate
     (time_t yr_mo_dd)
 {
     setJulianDateDay(yr_mo_dd);
     setJulianDateYear(yr_mo_dd);
-    
     Julian_Date = Julian_Date_of_Year + Julian_Date_Day;
 }
 
