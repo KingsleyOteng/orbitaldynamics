@@ -121,8 +121,9 @@ public:
     void setUserPositionModel                   (double lat, double lon, double elev, double timet);
     void getObserverRange                       ();
     void getTropocentricCoordinates             ();
+    
+    void getBenchMarking                        ();
 };
 
 
 #endif /* coordinate_transforms_hpp */
-
