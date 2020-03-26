@@ -301,9 +301,18 @@ getObserverRange                       ()
 }
 
 void coordinate_transforms::
-getBenchMarking ()
+getBenchMarking                         ()
 {
     
+    std::string         i,j;
+    std::string         test_type;
+    double              start,stop,dt;
+    tm*                 time1,time2;
+    
+    const clock_t begin_time = clock();
+    
+    cout << "hello time elapse" << '\n';
+    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC << '\n';
 }
 
 
