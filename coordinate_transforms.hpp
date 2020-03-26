@@ -10,6 +10,7 @@
 #define coordinate_transforms_hpp
 
 #include <stdio.h>
+#include <time.h>
 #include <math.h>
 #include <ctime>
 #include <string>
@@ -25,7 +26,7 @@ using namespace std;
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-#include "coordinate_transforms.hpp"
+//#include "coordinate_transforms.hpp"
 
 class coordinate_transforms
 {
@@ -79,6 +80,8 @@ private:
     double ThetaG_JD;
     
 public:
+    coordinate_transforms();
+    ~coordinate_transforms();
     
     double gmst;
     
@@ -122,7 +125,7 @@ public:
     void getObserverRange                       ();
     void getTropocentricCoordinates             ();
     
-    void getBenchMarking                        ();
+  
 };
 
 
