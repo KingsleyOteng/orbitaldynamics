@@ -37,13 +37,13 @@ getBenchMarking                         ()
     
     coordinate_transforms *ct = new coordinate_transforms();
     
+    ct->setJulianDateFractionOfDay(mktime(time1));
+    start = ct->getJulianDateFractionOfDay();
+    
     ct->setJulianDateFractionOfDay(mktime(time2));
     start = ct->getJulianDateFractionOfDay();
-    //start = x->tm_year();
     
-  //  cout
-   // cout << "hello time elapse" << '\n';
-   //    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC << '\n';
+    dt = 86400*(stop - start);
 }
 
 
