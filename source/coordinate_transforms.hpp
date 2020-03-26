@@ -83,6 +83,7 @@ private:
     int     m_epoch_gregorian_minute;
     int     m_epoch_gregorian_second;
     int     m_epoch_gregorian_splits;
+    int     m_fraction_of_day;
 
     
     double universal_time_tu;
@@ -136,6 +137,7 @@ public:
     void setUserPositionModel                   (double lat, double lon, double elev, double timet);
     void getObserverRange                       ();
     void getTropocentricCoordinates             ();
+    int  getJulianDateFractionOfDay             ();
     
 };
 

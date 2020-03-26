@@ -142,8 +142,8 @@ void coordinate_transforms::
     (time_t yr_mo_dd)
 {
     
-    // function to convertion yr_mo_dd to double epoch
-    // set epoch
+    // set the epoch
+    setEpoch(yr_mo_dd);
     
     m_epoch_julian_date_fraction = m_julian_date_epoch;
     m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
@@ -153,6 +153,8 @@ void coordinate_transforms::
     m_epoch_gregorian_minute = int(m_epoch_gregorian_minute);
     m_epoch_gregorian_splits = (m_epoch_gregorian_second - (int)m_epoch_gregorian_second);
     m_epoch_gregorian_second = int (m_epoch_gregorian_second);
+    
+    m_fraction_of_day = m_epoch_greogorian_hour * 60 * 60 + m_epoch_gregorian_minute * 60 + m_epoch_gregorian_second;
 }
 
 void coordinate_transforms::
