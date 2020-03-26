@@ -22,6 +22,7 @@ getBenchMarking                         ()
     std::time_t t;
     
     time1 = std::localtime( &t);
+    
     for (int j=0; j<=9; j++)
     {
         int a = 1;
@@ -34,7 +35,7 @@ getBenchMarking                         ()
 
     time2 = std::localtime( &t);
     
-    coordinate_transforms ct;
+    coordinate_transforms *ct = new coordinate_transforms();
   //  cout
    // cout << "hello time elapse" << '\n';
    //    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC << '\n';

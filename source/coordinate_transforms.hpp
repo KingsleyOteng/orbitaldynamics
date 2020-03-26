@@ -81,7 +81,8 @@ private:
     
 public:
     coordinate_transforms();
-    ~c
+    ~coordinate_transforms();
+    
     double gmst;
     
     // we mainly use kelso for this analysis
