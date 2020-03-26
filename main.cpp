@@ -86,6 +86,7 @@ int main()
     ct -> setTimeElapsedSinceJDIndex(30000000);
     ct -> setGST();
     ct -> setGMST();
+    
     //cout << ct -> gmst;
     
     // generate a julian date time string

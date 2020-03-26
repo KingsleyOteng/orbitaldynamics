@@ -10,6 +10,7 @@
 #define coordinate_transforms_hpp
 
 #include <stdio.h>
+#include <time.h>
 #include <math.h>
 #include <ctime>
 #include <string>
@@ -25,7 +26,7 @@ using namespace std;
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-#include "coordinate_transforms.hpp"
+//#include "coordinate_transforms.hpp"
 
 class coordinate_transforms
 {
@@ -79,6 +80,8 @@ private:
     double ThetaG_JD;
     
 public:
+    coordinate_transforms();
+    ~coordinate_transforms();
     
     double gmst;
     
@@ -90,39 +93,40 @@ public:
     void getCartesianCoordinates               ();
     
     // toggle cartesian coordinates
-    void getLatitude                           ();
-    void getLongitude                          ();
-    void getElevation                          ();
-    void setLatitude                           ();
-    void setLongitude                          ();
-    void setElevation                          ();
-    void setGST                                ();
-    void setGMST                               ();
-    void setCoordinates                        (double latitude_box1, double longitude_box1, double elevation);
-    void setJulianDate                         (time_t yr_mo_dd);
-    void setJulianDateDay                      (time_t yr_mo_dd);
-    void setJulianDateYear                     (time_t yr_mo_dd);
-    void setTimeElapsedSinceJDIndex            (double date_du);
-    double fMod                                (double a, double b);
-    double FunctionThetaGJD                    (double jd);
-    void   FunctionThetaGJDM                   (double jd);
+    void    getLatitude                           ();
+    void    getLongitude                          ();
+    void    getElevation                          ();
+    void    setLatitude                           ();
+    void    setLongitude                          ();
+    void    setElevation                          ();
+    void    setGST                                ();
+    void    setGMST                               ();
+    void    setCoordinates                        (double latitude_box1, double longitude_box1, double elevation);
+    void    setJulianDate                         (time_t yr_mo_dd);
+    void    setJulianDateDay                      (time_t yr_mo_dd);
+    void    setJulianDateYear                     (time_t yr_mo_dd);
+    void    setTimeElapsedSinceJDIndex            (double date_du);
+    double  fMod                                (double a, double b);
+    double  FunctionThetaGJD                    (double jd);
+    void    FunctionThetaGJDM                   (double jd);
     
     
     // toggle eci coordinates
-    void get_eci_z_coordinate                  ();
-    void get_eci_x_coordinate                  ();
-    void get_eci_y_coordinate                  ();
-    void set_eci_z_coordinate                  ();
-    void set_eci_x_coordinate                  ();
-    void set_eci_y_coordinate                  ();
+    void    get_eci_z_coordinate                  ();
+    void    get_eci_x_coordinate                  ();
+    void    get_eci_y_coordinate                  ();
+    void    set_eci_z_coordinate                  ();
+    void    set_eci_x_coordinate                  ();
+    void    set_eci_y_coordinate                  ();
     
 
     tm* setTimeConversionM                      (std::string date, std::string year);
     void setUserPositionModel                   (double lat, double lon, double elev, double timet);
     void getObserverRange                       ();
     void getTropocentricCoordinates             ();
+    
+  
 };
 
 
 #endif /* coordinate_transforms_hpp */
-
