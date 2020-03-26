@@ -337,3 +337,9 @@ getObserverRange                       ()
     z_range = (z_coordinate - z_observer);
 }
 
+int coordinate_transforms::
+getJulianDateFractionOfDay              ()
+{
+    return m_fraction_of_day;
+}
+

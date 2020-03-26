@@ -11,6 +11,7 @@
 #include <vector>                      // c-11 vector
 #include <algorithm>                   // c-11 algoithm
 #include "orbital.hpp"                 // header files
+#include "Benchmarking.hpp"            // benchmarking routines
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 #include "utilities.hpp"               // my own routines for processing data
 #include <boost/any.hpp>               // boost standard library
@@ -88,6 +89,9 @@ int main()
     ct -> setGMST();
     
     //cout << ct -> gmst;
+    
+    benchmarking *b = new benchmarking();
+    b->getBenchMarking();
     
     // generate a julian date time string
     cout << "time conversion" << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20") << "\n";
