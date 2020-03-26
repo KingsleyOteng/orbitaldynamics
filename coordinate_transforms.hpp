@@ -73,6 +73,7 @@ private:
     double utc_time;
     double Julian_Date_of_Year;
     double Julian_Date_Day;
+    double Julian_Fraction_Of_Day;
     double Julian_Date;
     
     double universal_time_tu;
@@ -104,11 +105,12 @@ public:
     void    setCoordinates                        (double latitude_box1, double longitude_box1, double elevation);
     void    setJulianDate                         (time_t yr_mo_dd);
     void    setJulianDateDay                      (time_t yr_mo_dd);
+    void    setJulianDateFractionOfDay            (time_t yr_mo_dd);
     void    setJulianDateYear                     (time_t yr_mo_dd);
     void    setTimeElapsedSinceJDIndex            (double date_du);
-    double  fMod                                (double a, double b);
-    double  FunctionThetaGJD                    (double jd);
-    void    FunctionThetaGJDM                   (double jd);
+    double  fMod                                  (double a, double b);
+    double  FunctionThetaGJD                      (double jd);
+    void    FunctionThetaGJDM                     (double jd);
     
     
     // toggle eci coordinates
@@ -125,7 +127,6 @@ public:
     void getObserverRange                       ();
     void getTropocentricCoordinates             ();
     
-  
 };
 
 
