@@ -16,34 +16,46 @@ getBenchMarking                         ()
     std::string         test_type;
     double              start,stop,dt;
     //clock_t             time1,time2;
-    tm                  *time1, *time2;
+    tm                  *time_stamp1, *time_stamp2;
+     double a = 1;
     
+    // start timer
+    auto begins = chrono::steady_clock::now();
 
     std::time_t t;
     
-    time1 = std::localtime( &t);
+    // we take an initial time stamp
+    time_stamp1 = std::localtime( &t);
+    cout << "time 1: " << time_stamp1->tm_sec << '\n';
     
+    // we then run 1 billion iterations
     for (int j=0; j<=9; j++)
     {
-        int a = 1;
-        for (int k=1; k<=2499; k++)
+        a = 1;
+        for (int k=1; k<=1000000000; k++)
         {
             a = tan(atan(exp(log(sqrt(a*a))))) + 1;
         }
     }
-    
-
-    time2 = std::localtime( &t);
+    // end timer
+    auto ends = chrono::steady_clock::now();
+    // take the final stamp
+    std::time_t t2;
+    time_stamp2 = std::localtime( &t2);
+    cout << "time 2: " << time_stamp2->tm_sec << '\n';
     
     coordinate_transforms *ct = new coordinate_transforms();
     
-    ct->setJulianDateFractionOfDay(mktime(time1));
+    ct->setJulianDateFractionOfDay(mktime(time_stamp1));
     start = ct->getJulianDateFractionOfDay();
     
-    ct->setJulianDateFractionOfDay(mktime(time2));
-    start = ct->getJulianDateFractionOfDay();
+    ct->setJulianDateFractionOfDay(mktime(time_stamp2));
+    stop = ct->getJulianDateFractionOfDay();
+ 
     
-    dt = 86400*(stop - start);
+    auto int_ms = std::chrono::duration_cast<std::chrono::milliseconds>(ends - begins);
+    cout << "time elapsed: " << int_ms.count() <<'\n';
+    cout << "Answer is: " << a << '\n';
 }
 
 
