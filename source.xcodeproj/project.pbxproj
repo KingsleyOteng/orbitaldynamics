@@ -14,6 +14,7 @@
 		D897C3C02416873300389B89 /* coordinate_transforms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D897C3BE2416873300389B89 /* coordinate_transforms.cpp */; };
 		D8A5C59B23E4A4FE00AF2906 /* sensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A5C59923E4A4FE00AF2906 /* sensor.cpp */; };
 		D8BEF51E23CE0C3500C746DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8BEF51D23CE0C3500C746DF /* main.cpp */; };
+		D8E5C161242CA875000B2C67 /* BenchMarking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8E5C15F242CA875000B2C67 /* BenchMarking.cpp */; };
 		D8EDB7EE23D84FC300DC1818 /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8EDB7EC23D84FC300DC1818 /* utilities.cpp */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		D8A5C59A23E4A4FE00AF2906 /* sensor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sensor.hpp; sourceTree = "<group>"; };
 		D8BEF51A23CE0C3500C746DF /* source */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = source; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BEF51D23CE0C3500C746DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D8E5C15F242CA875000B2C67 /* BenchMarking.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BenchMarking.cpp; sourceTree = "<group>"; };
+		D8E5C160242CA875000B2C67 /* BenchMarking.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BenchMarking.hpp; sourceTree = "<group>"; };
 		D8EDB7EC23D84FC300DC1818 /* utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utilities.cpp; sourceTree = "<group>"; };
 		D8EDB7ED23D84FC300DC1818 /* utilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utilities.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +104,8 @@
 				D83DE10223DF55F9007E83D0 /* Makefile */,
 				D8A5C59923E4A4FE00AF2906 /* sensor.cpp */,
 				D8A5C59A23E4A4FE00AF2906 /* sensor.hpp */,
+				D8E5C15F242CA875000B2C67 /* BenchMarking.cpp */,
+				D8E5C160242CA875000B2C67 /* BenchMarking.hpp */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			files = (
 				D897C3C02416873300389B89 /* coordinate_transforms.cpp in Sources */,
 				D8EDB7EE23D84FC300DC1818 /* utilities.cpp in Sources */,
+				D8E5C161242CA875000B2C67 /* BenchMarking.cpp in Sources */,
 				D8BEF51E23CE0C3500C746DF /* main.cpp in Sources */,
 				D83DE10323DF55F9007E83D0 /* Makefile in Sources */,
 				D8221FFC23CE10B600AFBC4F /* orbital.cpp in Sources */,
