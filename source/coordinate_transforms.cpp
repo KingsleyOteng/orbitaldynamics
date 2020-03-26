@@ -132,12 +132,47 @@ void coordinate_transforms::
 }
 
 void coordinate_transforms::
+    setJulianDateFractionOfDay
+    (time_t yr_mo_dd)
+{
+    int day;
+    int yr;
+    int mo;
+    int dy;
+    
+    tm *epoch_time = localtime(&yr_mo_dd);
+    
+    // get date data
+    yr = epoch_time->tm_year;
+    mo = epoch_time->tm_mon;
+    dy = epoch_time->tm_mday;
+    
+    day = 0;
+    
+    // get length of the particular integer array
+    int length = sizeof(days_in_month) / sizeof(int);
+    
+    for(int i=1; i<= mo; i++)
+        {
+            day = day + days_in_month[i];
+        }
+    
+    day = day + dy;
+    
+    if (((yr % 4) == 0) && (((yr % 100) != 0) || ((yr % 400) == 0)) && (mo > 2))
+        {
+            day = day + 1;
+        }
+    
+    Julian_Date_Day = day;
+}
+
+void coordinate_transforms::
     setJulianDate
     (time_t yr_mo_dd)
 {
     setJulianDateDay(yr_mo_dd);
     setJulianDateYear(yr_mo_dd);
-    
     Julian_Date = Julian_Date_of_Year + Julian_Date_Day;
 }
 
