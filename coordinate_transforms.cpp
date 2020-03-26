@@ -307,9 +307,21 @@ getBenchMarking                         ()
     std::string         i,j;
     std::string         test_type;
     double              start,stop,dt;
-    tm*                 time1,time2;
+    clock_t                time1,time2;
     
+    time1 = clock();
     const clock_t begin_time = clock();
+    
+    for (int j=0; j<=9; j++)
+    {
+        int a = 1;
+        for (int k=1; k<=2499; k++)
+        {
+            a = tan(atan(exp(log(sqrt(a*a))))) + 1;
+        }
+    }
+    
+    time2 = clock();
     
     cout << "hello time elapse" << '\n';
     std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC << '\n';
