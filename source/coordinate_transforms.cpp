@@ -132,16 +132,26 @@ void coordinate_transforms::
 }
 
 void coordinate_transforms::
+    setEpoch(double epoch)
+{
+    m_julian_date_epoch = epoch;
+};
+
+void coordinate_transforms::
     setJulianDateFractionOfDay
     (time_t yr_mo_dd)
 {
-    double m_epoch_julian_date_fraction = 0.0;
-    int m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
-    int m_epoch_greogorian_hour = int(24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year));
-    int m_epoch_gregorian_minute = 60 * ((24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year)) - int(m_epoch_greogorian_hour));
-    int m_epoch_gregorian_second = 60 * (m_epoch_gregorian_minute - (int)m_epoch_gregorian_minute);
+    
+    // function to convertion yr_mo_dd to double epoch
+    // set epoch
+    
+    m_epoch_julian_date_fraction = m_julian_date_epoch;
+    m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
+    m_epoch_greogorian_hour = int(24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year));
+    m_epoch_gregorian_minute = 60 * ((24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year)) - int(m_epoch_greogorian_hour));
+    m_epoch_gregorian_second = 60 * (m_epoch_gregorian_minute - (int)m_epoch_gregorian_minute);
     m_epoch_gregorian_minute = int(m_epoch_gregorian_minute);
-    int m_epoch_gregorian_splits = (m_epoch_gregorian_second - (int)m_epoch_gregorian_second);
+    m_epoch_gregorian_splits = (m_epoch_gregorian_second - (int)m_epoch_gregorian_second);
     m_epoch_gregorian_second = int (m_epoch_gregorian_second);
 }
 

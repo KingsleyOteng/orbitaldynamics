@@ -76,6 +76,15 @@ private:
     double Julian_Fraction_Of_Day;
     double Julian_Date;
     
+    double  m_julian_date_epoch;
+    double  m_epoch_julian_date_fraction;
+    int     m_epoch_gregorian_day_of_year;
+    int     m_epoch_greogorian_hour;
+    int     m_epoch_gregorian_minute;
+    int     m_epoch_gregorian_second;
+    int     m_epoch_gregorian_splits;
+
+    
     double universal_time_tu;
     double universal_time_du;
     double ThetaG_JD;
@@ -103,6 +112,7 @@ public:
     void    setGST                                ();
     void    setGMST                               ();
     void    setCoordinates                        (double latitude_box1, double longitude_box1, double elevation);
+    void    setEpoch                              (double epoch);
     void    setJulianDate                         (time_t yr_mo_dd);
     void    setJulianDateDay                      (time_t yr_mo_dd);
     void    setJulianDateFractionOfDay            (time_t yr_mo_dd);
