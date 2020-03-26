@@ -37,7 +37,8 @@ getBenchMarking                         ()
     
     coordinate_transforms *ct = new coordinate_transforms();
     
-    ct->setJulianDate(mktime(time2));
+    ct->setJulianDateFractionOfDay(mktime(time2));
+    start = ct->getJulianDateFractionOfDay();
     //start = x->tm_year();
     
   //  cout
