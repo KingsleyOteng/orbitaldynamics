@@ -299,3 +299,11 @@ getObserverRange                       ()
     y_range = (y_coordinate - y_observer);
     z_range = (z_coordinate - z_observer);
 }
+
+void coordinate_transforms::
+getBenchMarking ()
+{
+    
+}
+
+
