@@ -135,36 +135,14 @@ void coordinate_transforms::
     setJulianDateFractionOfDay
     (time_t yr_mo_dd)
 {
-    int day;
-    int yr;
-    int mo;
-    int dy;
-    
-    tm *epoch_time = localtime(&yr_mo_dd);
-    
-    // get date data
-    yr = epoch_time->tm_year;
-    mo = epoch_time->tm_mon;
-    dy = epoch_time->tm_mday;
-    
-    day = 0;
-    
-    // get length of the particular integer array
-    int length = sizeof(days_in_month) / sizeof(int);
-    
-    for(int i=1; i<= mo; i++)
-        {
-            day = day + days_in_month[i];
-        }
-    
-    day = day + dy;
-    
-    if (((yr % 4) == 0) && (((yr % 100) != 0) || ((yr % 400) == 0)) && (mo > 2))
-        {
-            day = day + 1;
-        }
-    
-    Julian_Date_Day = day;
+    double m_epoch_julian_date_fraction = 0.0;
+    int m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
+    int m_epoch_greogorian_hour = int(24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year));
+    int m_epoch_gregorian_minute = 60 * ((24*(m_epoch_julian_date_fraction - m_epoch_gregorian_day_of_year)) - int(m_epoch_greogorian_hour));
+    int m_epoch_gregorian_second = 60 * (m_epoch_gregorian_minute - (int)m_epoch_gregorian_minute);
+    m_epoch_gregorian_minute = int(m_epoch_gregorian_minute);
+    int m_epoch_gregorian_splits = (m_epoch_gregorian_second - (int)m_epoch_gregorian_second);
+    m_epoch_gregorian_second = int (m_epoch_gregorian_second);
 }
 
 void coordinate_transforms::
