@@ -32,7 +32,7 @@ getBenchMarking                         ()
     for (int j=0; j<=9; j++)
     {
         a = 1;
-        for (int k=1; k<=1000000000; k++)
+        for (int k=1; k<10000; k++)
         {
             a = tan(atan(exp(log(sqrt(a*a))))) + 1;
         }
@@ -54,15 +54,15 @@ getBenchMarking                         ()
  
     
     auto int_ms = std::chrono::duration_cast<std::chrono::milliseconds>(ends - begins);
-    cout << "time elapsed: " << int_ms.count() <<'\n';
-    cout << "Answer is: " << a << '\n';
+    cout << "clocked at: " << int_ms.count() <<'\n';
+    cout << "Aggregate mean was: " << a << '\n';
 }
 
 
 void benchmarking::
 getBenchMarkingChrono                         ()
 {
-    
+    std::time_t         t;
     std::string         i,j;
     std::string         test_type;
     double              start,stop,dt;
@@ -70,10 +70,10 @@ getBenchMarkingChrono                         ()
     tm                  *time_stamp1, *time_stamp2;
      double a = 1;
     
-    // start timer
+    // start chrono timer
     auto begins = chrono::steady_clock::now();
 
-    std::time_t t;
+    
     
     // we take an initial time stamp
     time_stamp1 = std::localtime( &t);
@@ -83,13 +83,14 @@ getBenchMarkingChrono                         ()
     for (int j=0; j<=9; j++)
     {
         a = 1;
-        for (int k=1; k<=1000000000; k++)
+        for (int k=1; k<=100000; k++)
         {
             a = tan(atan(exp(log(sqrt(a*a))))) + 1;
         }
     }
-    // end timer
+    // end chrono timer
     auto ends = chrono::steady_clock::now();
+    
     // take the final stamp
     std::time_t t2;
     time_stamp2 = std::localtime( &t2);
@@ -105,8 +106,8 @@ getBenchMarkingChrono                         ()
  
     
     auto int_ms = std::chrono::duration_cast<std::chrono::milliseconds>(ends - begins);
-    cout << "time elapsed: " << int_ms.count() <<'\n';
-    cout << "Answer is: " << a << '\n';
+    cout << "clocked at: " << int_ms.count() <<'\n';
+    cout << "Aggregate mean was: " << a << '\n';
 }
 
 
