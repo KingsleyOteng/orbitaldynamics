@@ -298,7 +298,7 @@ int main()
     cout << "day from julian date" << day_final << "\n";
     cout << "hours from julian date" << hours_final << "\n";
     cout << "minutes from julian date" << min_final << "\n";
-    cout << "seconds from julian date" << seconds_final << "\n";
+    cout << "seconds from julian date" << round(seconds_final) << "\n";
     
     return 61;
 }
