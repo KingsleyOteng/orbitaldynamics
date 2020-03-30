@@ -12,6 +12,7 @@
 		D897C3B724164B2900389B89 /* sun_model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D897C3B524164B2900389B89 /* sun_model.cpp */; };
 		D897C3BA24164B3800389B89 /* geomagnetic_field_model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D897C3B824164B3800389B89 /* geomagnetic_field_model.cpp */; };
 		D897C3C02416873300389B89 /* coordinate_transforms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D897C3BE2416873300389B89 /* coordinate_transforms.cpp */; };
+		D898F8CB242FC51900B23D59 /* time_files.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D898F8C9242FC51900B23D59 /* time_files.cpp */; };
 		D8A5C59B23E4A4FE00AF2906 /* sensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A5C59923E4A4FE00AF2906 /* sensor.cpp */; };
 		D8BEF51E23CE0C3500C746DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8BEF51D23CE0C3500C746DF /* main.cpp */; };
 		D8E5C161242CA875000B2C67 /* BenchMarking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8E5C15F242CA875000B2C67 /* BenchMarking.cpp */; };
@@ -44,6 +45,8 @@
 		D897C3B924164B3800389B89 /* geomagnetic_field_model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = geomagnetic_field_model.hpp; sourceTree = "<group>"; };
 		D897C3BE2416873300389B89 /* coordinate_transforms.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = coordinate_transforms.cpp; sourceTree = "<group>"; };
 		D897C3BF2416873300389B89 /* coordinate_transforms.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = coordinate_transforms.hpp; sourceTree = "<group>"; };
+		D898F8C9242FC51900B23D59 /* time_files.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = time_files.cpp; sourceTree = "<group>"; };
+		D898F8CA242FC51900B23D59 /* time_files.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = time_files.hpp; sourceTree = "<group>"; };
 		D899F92823E1B48E00186088 /* run.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = run.php; sourceTree = "<group>"; };
 		D8A5C59923E4A4FE00AF2906 /* sensor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sensor.cpp; sourceTree = "<group>"; };
 		D8A5C59A23E4A4FE00AF2906 /* sensor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sensor.hpp; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				D8A5C59A23E4A4FE00AF2906 /* sensor.hpp */,
 				D8E5C15F242CA875000B2C67 /* BenchMarking.cpp */,
 				D8E5C160242CA875000B2C67 /* BenchMarking.hpp */,
+				D898F8C9242FC51900B23D59 /* time_files.cpp */,
+				D898F8CA242FC51900B23D59 /* time_files.hpp */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				D8221FFC23CE10B600AFBC4F /* orbital.cpp in Sources */,
 				D897C3B724164B2900389B89 /* sun_model.cpp in Sources */,
 				D8A5C59B23E4A4FE00AF2906 /* sensor.cpp in Sources */,
+				D898F8CB242FC51900B23D59 /* time_files.cpp in Sources */,
 				D897C3BA24164B3800389B89 /* geomagnetic_field_model.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

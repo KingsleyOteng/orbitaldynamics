@@ -96,5 +96,209 @@ int main()
     // generate a julian date time string
     cout << "time conversion" << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20") << "\n";
     
+    
+    auto start = std::chrono::system_clock::now();
+    std::time_t end_time = std::chrono::system_clock::to_time_t(start);
+    cout << "current time" << std::ctime(&end_time) << "\n";
+    
+    std::tm tm = {0};
+       tm.tm_sec = 45.57;
+       tm.tm_min = 0;
+       tm.tm_hour = 6;
+       tm.tm_mday = 17;
+       tm.tm_mon = 2;
+       tm.tm_year = 85;
+       tm.tm_isdst = 0;
+       // Convert std::tm to std::time_t (popular extension)
+       std::time_t tt = timegm(&tm);
+       // Convert std::time_t to std::chrono::system_clock::time_point
+       std::chrono::system_clock::time_point tp =
+                                        std::chrono::system_clock::from_time_t(tt);
+    
+    //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
+    //       4th ed., Duffet-Smith and Zwart, 2011.
+    
+    double year = 1900 + tm.tm_year;
+    double month = tm.tm_mon;
+    long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
+    
+    cout << "(double)(tm.tm_mday + (tm.tm_hour /24))" << (double(tm.tm_hour))/24 << "\n";
+    
+    cout << "month" << month << "\n";
+    cout << "day" << day << "\n";
+    cout << "year" << year << "\n";
+    double C,D,jd;
+    double A = trunc(year/100);
+    double B = 2 - A + trunc(A/4);
+    double yearp, monthp;
+    
+    if ((month == 1) or (month == 2))
+    {
+        yearp = year - 1;
+        monthp = month + 12;
+    }
+    else
+    {
+        yearp = year;
+        monthp = month;
+    }
+        
+    if ((year < 1582) or
+        (year == 1582 and month < 10) or
+        (year == 1582 and month == 10 and day < 15))
+    {
+        // before start of Gregorian calendar
+        B = 0;
+    }
+    else
+    {
+        // after start of Gregorian calendar
+        A = trunc(yearp / 100);
+        B = 2 - A + trunc(A / 4);
+    };
+    
+    if (yearp < 0)
+    {
+        C = trunc((365.25 * yearp) - 0.75);
+    }
+       else
+       {
+           C = trunc(365.25 * yearp);
+       };
+           
+    D = trunc(30.6001 * (monthp + 1));
+    jd = B + C + D + day + 1720994.5;
+    std::cout << std::fixed;
+    cout << std::setprecision(9) << "jd" << jd <<"\n";
+    
+//Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
+    //       4th ed., Duffet-Smith and Zwart, 2011.
+    
+    double jd_out;
+    double BB,E,F,G,I;
+    double day_final, month_final, year_final;
+    jd_out = jd + 0.5;
+    std::cout << std::fixed;
+    cout << std::setprecision(9) << "jd_out" << jd_out<<"\n";
+    F = modf(jd_out, &I);
+    double dayg, monthg, yearg;
+   
+    I = int(I);
+     F = jd_out - I;
+    cout<<"frac"<<F<<"\n";
+    cout<<"int"<<I<<"\n";
+    
+    A = trunc((I - 1867216.25)/36524.25);
+     cout << "A " << A << "\n";
+    if (I > 2299160)
+    {
+        BB = I + 1 + A - trunc(A / 4.);
+    }
+    else
+    {
+        BB = I;
+    };
+    
+    C = BB + 1524;
+    
+    D = trunc((C - 122.1) / 365.25);
+    
+    E = trunc(365.25 * D);
+    
+    G = trunc((C - E) / 30.6001);
+    
+    dayg = C - E + F - trunc(30.6001 * G);
+    
+    
+    
+    if (G < 13.5)
+    {
+        monthg = G - 1;
+    }
+    else
+    {
+        monthg = G - 13;
+    }
+    
+    if (month > 2.5)
+    {
+        (yearg = D - 4716);
+    }
+    else
+    {
+        (yearg = D - 4715);
+    }
+    std::cout << std::fixed;
+    cout << std::setprecision(9) << "dayg" << dayg << "\n";
+    cout << std::setprecision(9) << "monthg" << monthg << "\n";
+    cout << std::setprecision(9) << "yearg" << yearg << "\n";
+    
+    double frac_days, days_gg;
+    
+    frac_days = modf(dayg,&days_gg);
+    days_gg = int(days_gg);
+    frac_days = dayg - days_gg;
+    
+    cout<< std::setprecision(9)<<"dayg"<<dayg<<"\n";
+    cout<< std::setprecision(9)<<"frac_days"<<frac_days<<"\n";
+           
+    cout<<"B"<<BB   <<"\n";
+    cout << "A" << A << "\n";
+    cout << "I" << I << "\n";
+    cout << "BB" << BB << "\n";
+    
+    C = BB + 1524;
+    
+    D = trunc((C - 122.1) / 365.25);
+    
+    E = trunc(365.25 * D);
+    
+    G = trunc((C - E) / 30.6001);
+    
+    day_final = C - E + F - trunc(30.6001 * G);
+    
+    cout<<"day_final"<<day_final;
+    
+    if (G < 13.5)
+    {
+        month_final = G - 1;
+    }
+    else
+    {
+        month_final = G - 13;
+    }
+        
+    if (month_final > 2.5)
+    {
+        year_final = D - 4716;
+    }
+    else
+    {
+        year_final = D - 4715;
+    }
+    
+    double frac_hours, hours_gg, hours_final, min_final, seconds_final;
+    frac_hours = modf(dayg,&hours_gg);
+    cout << "frac_hours" << frac_hours << "\n";
+    cout << "hours_gg" << hours_gg << "\n";
+    hours_final = frac_hours * 24;
+    min_final = 60 * (hours_final - (int)(hours_final));
+    hours_final = (int) hours_final;
+    
+    
+    seconds_final = ((min_final - (int)(min_final)))*60;
+    min_final = (int) (min_final);
+    
+    cout << "time from " << std::chrono::system_clock::to_time_t(tp) << "\n";
+    cout << "time year " << 1990 + tm.tm_year << "\n";
+    cout << "time year " << trunc(365.25 * (1990 + year - 1)) + trunc(30.600001 * 14) + 1720994.5 + BB << "\n";
+    cout << "julian date" << jd << "\n";
+    cout << "year from julian date" << year_final << "\n";
+    cout << "month from julian date" << month_final << "\n";
+    cout << "day from julian date" << day_final << "\n";
+    cout << "hours from julian date" << hours_final << "\n";
+    cout << "minutes from julian date" << min_final << "\n";
+    cout << "seconds from julian date" << seconds_final << "\n";
+    
     return 61;
 }
