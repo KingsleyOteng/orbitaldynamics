@@ -29,7 +29,7 @@ getBenchMarking                         ()
     cout << "time 1: " << time_stamp1->tm_sec << '\n';
     
     // we then run 1 billion iterations
-    for (int j=0; j<=9; j++)
+    for (int j=0; j<=20; j++)
     {
         a = 1;
         for (int k=1; k<10000; k++)
@@ -80,7 +80,7 @@ getBenchMarkingChrono                         ()
     cout << "time 1: " << time_stamp1->tm_sec << '\n';
     
     // we then run 1 billion iterations
-    for (int j=0; j<=9; j++)
+    for (int j=0; j<=20; j++)
     {
         a = 1;
         for (int k=1; k<=100000; k++)
