@@ -11,11 +11,9 @@
 std::tm*
 time_files::jdTOtm      (double jd)
 {
-    std::tm*                    convertJDtoTM;
-    
 
      double jd_out;
-     double C,DBB,E,F,G,I;
+     double A,C,D,BB,E,F,G,I;
      double day_final, month_final, year_final;
      double dayg, monthg, yearg;
     
@@ -52,7 +50,7 @@ time_files::jdTOtm      (double jd)
          monthg = G - 13;
      }
      
-     if (month > 2.5)
+     if (monthg > 2.5)
      {
          (yearg = D - 4716);
      }
@@ -60,24 +58,12 @@ time_files::jdTOtm      (double jd)
      {
          (yearg = D - 4715);
      }
-     std::cout << std::fixed;
-     cout << std::setprecision(9) << "dayg" << dayg << "\n";
-     cout << std::setprecision(9) << "monthg" << monthg << "\n";
-     cout << std::setprecision(9) << "yearg" << yearg << "\n";
      
      double frac_days, days_gg;
      
      frac_days = modf(dayg,&days_gg);
      days_gg = int(days_gg);
      frac_days = dayg - days_gg;
-     
-     cout<< std::setprecision(9)<<"dayg"<<dayg<<"\n";
-     cout<< std::setprecision(9)<<"frac_days"<<frac_days<<"\n";
-            
-     cout<<"B"<<BB   <<"\n";
-     cout << "A" << A << "\n";
-     cout << "I" << I << "\n";
-     cout << "BB" << BB << "\n";
      
      C = BB + 1524;
      
@@ -88,8 +74,6 @@ time_files::jdTOtm      (double jd)
      G = trunc((C - E) / 30.6001);
      
      day_final = C - E + F - trunc(30.6001 * G);
-     
-     cout<<"day_final"<<day_final;
      
      if (G < 13.5)
      {
@@ -111,8 +95,6 @@ time_files::jdTOtm      (double jd)
      
      double frac_hours, hours_gg, hours_final, min_final, seconds_final;
      frac_hours = modf(dayg,&hours_gg);
-     cout << "frac_hours" << frac_hours << "\n";
-     cout << "hours_gg" << hours_gg << "\n";
      hours_final = frac_hours * 24;
      min_final = 60 * (hours_final - (int)(hours_final));
      hours_final = (int) hours_final;
@@ -121,5 +103,14 @@ time_files::jdTOtm      (double jd)
      seconds_final = ((min_final - (int)(min_final)))*60;
      min_final = (int) (min_final);
     
-    return convertJDtoTM;
+    std::tm* tm = {0};
+       tm->tm_sec = seconds_final;
+       tm->tm_min = min_final;
+       tm->tm_hour = hours_final;
+       tm->tm_mday = day_final;
+       tm->tm_mon = month_final;
+       tm->tm_year = year_final;
+       tm->tm_isdst = 0;
+    
+    return tm;
 }
