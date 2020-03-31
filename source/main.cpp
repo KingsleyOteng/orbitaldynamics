@@ -220,7 +220,7 @@ int main()
         monthg = G - 13;
     }
     
-    if (month > 2.5)
+    if (monthg > 2.5)
     {
         (yearg = D - 4716);
     }
@@ -299,6 +299,8 @@ int main()
     cout << "hours from julian date" << hours_final << "\n";
     cout << "minutes from julian date" << min_final << "\n";
     cout << "seconds from julian date" << round(seconds_final) << "\n";
+    
+    cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
     return 61;
 }

@@ -32,7 +32,27 @@ private:
     tm*                          time_components_format;
     
 public:
-   
+    
+
+     // constructors  and destructors
+     time_files();
+    ~time_files();
+          
+
+     // getters and setters
+     void                      setJDtime    (double jd);
+     double                    getJDtime    ();
+     void                      setTMtime    (int tm_sec, int tm_min, int tm_hour, int tm_mday, int tm_mon, int tm_year, int tm_isdst);
+     std::tm*                  getTMtime    ();
+     void                      setCTIMEtime (int tm_sec, int tm_min, int tm_hour, int tm_mday, int tm_mon, int tm_year, int tm_isdst);
+     time_t                    getCTIMEtime ();
+     
+     std::tm*                   jdTOtm      (double jd);
+     time_t                     jdTOctime   (double jd);
+     double                     tmTOjd      (tm* input);
+     time_t                     tmTOctime   (tm* input);
+     double                     ctimeTOjd   (time_t input);
+     std::tm*                   ctimeTOtm   (time_t input);
     
 };
 
