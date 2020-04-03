@@ -126,3 +126,24 @@ time_files::jdTOtm      (double jd)
      return valuable;
  }
 
+
+char*
+time_files::jdTOctime     (double jd)
+{
+
+    time_t valuable;
+    
+    valuable =  mktime(jdTOtm(jd));
+    
+    return std::ctime(&valuable);
+    
+}
+
+double
+time_files::ctimeTOjd     (char* ctime)
+{
+
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\d+) @ (\\d+):(\\d+):(\\d+)\\.(\\d+)" );
+    boost::xpressive::smatch what;
+    return 0;
+}
