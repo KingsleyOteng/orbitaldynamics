@@ -114,3 +114,15 @@ time_files::jdTOtm      (double jd)
     
     return tm;
 }
+
+
+ time_t
+ time_files::jdTOtime_t     (double jd)
+ {
+
+     time_t valuable;
+     
+     valuable =  mktime(jdTOtm(jd));
+     return valuable;
+ }
+
