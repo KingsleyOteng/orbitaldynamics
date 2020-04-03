@@ -7,6 +7,16 @@
 //
 
 #include "time_files.hpp"
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <stdio.h>
+#include <stdlib.h>
+
+// constructor
+time_files::time_files()
+{}
+
 
 std::tm*
 time_files::jdTOtm      (double jd)
@@ -113,4 +123,59 @@ time_files::jdTOtm      (double jd)
        tm->tm_isdst = 0;
     
     return tm;
+}
+
+
+ time_t
+ time_files::jdTOtime_t     (double jd)
+ {
+
+     time_t valuable;
+     
+     valuable =  mktime(jdTOtm(jd));
+     return valuable;
+ }
+
+
+char*
+time_files::jdTOctime     (double jd)
+{
+
+    time_t valuable;
+    
+    valuable =  mktime(jdTOtm(jd));
+    
+    return std::ctime(&valuable);
+    
+}
+
+double
+time_files::ctimeTOjd     (char* ctime)
+{
+
+    
+     std::string hello = ctime;
+    
+    
+    
+    int fract = 1;
+    int month = 1;
+
+    int day_int;
+    int hour_int;
+    int min_int;
+    int sec_int;
+    
+    std::string phrase = "Fri Apr  3 22:26:58 2020";
+    
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\w+)  (\\d+) (\\d+):(\\d+):(\\d+) (\\d+)" );
+    boost::xpressive::smatch what;
+    
+    if( regex_match( phrase, what, rex ) )
+    {
+        cout << "what[0]" << what[0] << "\n";
+    }cout << "what[1]" << what[1] << "\n";
+    cout << "what[2]" << what[2] << "\n";
+    
+    return 0;
 }
