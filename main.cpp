@@ -169,7 +169,7 @@ int main()
     D = trunc(30.6001 * (monthp + 1));
     jd = B + C + D + day + 1720994.5;
     std::cout << std::fixed;
-    cout << std::setprecision(9) << "jd" << jd <<"\n";
+    cout << "jd" << jd <<"\n";
     
 //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
@@ -179,7 +179,7 @@ int main()
     double day_final, month_final, year_final;
     jd_out = jd + 0.5;
     std::cout << std::fixed;
-    cout << std::setprecision(9) << "jd_out" << jd_out<<"\n";
+    cout  << "jd_out" << jd_out<<"\n";
     F = modf(jd_out, &I);
     double dayg, monthg, yearg;
    
@@ -220,7 +220,7 @@ int main()
         monthg = G - 13;
     }
     
-    if (month > 2.5)
+    if (monthg > 2.5)
     {
         (yearg = D - 4716);
     }
@@ -229,9 +229,9 @@ int main()
         (yearg = D - 4715);
     }
     std::cout << std::fixed;
-    cout << std::setprecision(9) << "dayg" << dayg << "\n";
-    cout << std::setprecision(9) << "monthg" << monthg << "\n";
-    cout << std::setprecision(9) << "yearg" << yearg << "\n";
+    cout  << "dayg" << dayg << "\n";
+    cout << "monthg" << monthg << "\n";
+    cout  << "yearg" << yearg << "\n";
     
     double frac_days, days_gg;
     
@@ -239,8 +239,8 @@ int main()
     days_gg = int(days_gg);
     frac_days = dayg - days_gg;
     
-    cout<< std::setprecision(9)<<"dayg"<<dayg<<"\n";
-    cout<< std::setprecision(9)<<"frac_days"<<frac_days<<"\n";
+    cout<<"dayg"<<dayg<<"\n";
+    cout<<"frac_days"<<frac_days<<"\n";
            
     cout<<"B"<<BB   <<"\n";
     cout << "A" << A << "\n";
@@ -299,6 +299,8 @@ int main()
     cout << "hours from julian date" << hours_final << "\n";
     cout << "minutes from julian date" << min_final << "\n";
     cout << "seconds from julian date" << round(seconds_final) << "\n";
+    
+    cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
     return 61;
 }
