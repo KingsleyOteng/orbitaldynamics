@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
-//#include <ctime>
+#include <ctime>
 #include <string>
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
@@ -35,7 +35,8 @@ public:
 
      // constructors  and destructors
      time_files();
-    ~time_files();
+   ~time_files();
+
           
 
      // getters and setters
@@ -52,7 +53,7 @@ public:
      double                     tmTOjd          (tm* input);
      char*                      tmTOctime       (tm* input);
      time_t                     tmTOtime_t      (tm* input);
-     double                     ctimeTOjd       (time_t input);
+     double                     ctimeTOjd       (char* ctime);
      std::tm*                   ctimeTOtm       (time_t input);
      time_t                     ctimeTOtime_t   (time_t input);
 };

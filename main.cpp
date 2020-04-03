@@ -12,6 +12,7 @@
 #include <algorithm>                   // c-11 algoithm
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
+#include "time_files.hpp"
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 #include "utilities.hpp"               // my own routines for processing data
 #include <boost/any.hpp>               // boost standard library
@@ -100,6 +101,7 @@ int main()
     auto start = std::chrono::system_clock::now();
     std::time_t end_time = std::chrono::system_clock::to_time_t(start);
     cout << "current time" << std::ctime(&end_time) << "\n";
+
     
     std::tm tm = {0};
        tm.tm_sec = 45.57;
@@ -301,6 +303,9 @@ int main()
     cout << "seconds from julian date" << round(seconds_final) << "\n";
     
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
+    
+    time_files* nf = new time_files();
+    cout << nf->ctimeTOjd("Fri Apr  3 16:13:31 2020") << "\n";
     
     return 61;
 }
