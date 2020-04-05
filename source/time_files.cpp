@@ -155,7 +155,9 @@ time_files::ctimeTOjd     (char* ctime)
     std::string phrase = ctime;
     
     std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
-    size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), "MAR"));
+    
+    // returns index for the month
+    
     cout << "index" << index << "\n";
     
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\w+)  (\\d+) (\\d+):(\\d+):(\\d+) (\\d+)" );
@@ -180,11 +182,15 @@ time_files::ctimeTOjd     (char* ctime)
         int year_num = stoi(what[7].str());
         int day_num = stoi(what[3].str());
         
+        // determine the current month in digits
+        size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
+        
+        cout << what[2].str() << "\n";
         cout << "yy" << hour_num << "\n";
         
         cout << "what[0]" << what[0] << "\n";
         cout << "what[1]" << what[1] << "\n";
-        cout << "what[2]" << month_number << "\n";
+        cout << "what[2]" << month_number + 1 << "\n";
         cout << "what[3]" << what[3] << "\n";
         cout << "what[4]" << what[4] << "\n";
         cout << "what[5]" << what[5] << "\n";
@@ -195,14 +201,14 @@ time_files::ctimeTOjd     (char* ctime)
         
         
         
-        //std::tm* tm = {0};
-        //tm->tm_sec = sec_num;
-        //tm->tm_min = minute_num;
-        //tm->tm_hour = hour_num;
-        //tm->tm_mday = day_num;
-        //tm->tm_mon = int(month_number);
-       // tm->tm_year = year_num;
-        //tm->tm_isdst = 0;
+        std::tm tm = {0};
+        tm.tm_sec = stoi(what[6].str());
+        tm.tm_min = stoi(what[3].str());
+        tm.tm_hour = stoi(what[4].str());
+        tm.tm_mday = stoi(what[3].str());
+        tm.tm_mon =  month_number + 1;
+        tm.tm_year = stoi(what[7].str());
+        tm.tm_isdst = 0;
     }
     return 0;
 }
