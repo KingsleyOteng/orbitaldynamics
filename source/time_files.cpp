@@ -150,6 +150,19 @@ time_files::jdTOctime     (double jd)
 }
 
 double
+time_files::time_tTOjd      (time_t input)
+{
+    
+    std::chrono::system_clock::time_point tp =
+                                        std::chrono::system_clock::from_time_t(input);
+    
+   
+    return 0;
+
+    
+};
+
+double
 time_files::ctimeTOjd     (char* ctime)
 {
     std::string phrase = ctime;
@@ -209,6 +222,13 @@ time_files::ctimeTOjd     (char* ctime)
         tm.tm_mon =  month_number + 1;
         tm.tm_year = stoi(what[7].str());
         tm.tm_isdst = 0;
+        
+         std::time_t tt = timegm(&tm);
+        
+        std::chrono::system_clock::time_point tp =
+        std::chrono::system_clock::from_time_t(tt);
+        
+        
     }
     return 0;
 }
