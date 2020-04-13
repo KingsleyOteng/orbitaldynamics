@@ -150,14 +150,98 @@ time_files::jdTOctime     (double jd)
 }
 
 double
-time_files::time_tTOjd      (time_t input)
+time_files::tmTOjd      (tm* input)
 {
     
-    std::chrono::system_clock::time_point tp =
-                                        std::chrono::system_clock::from_time_t(input);
+
     
    
-    return 0;
+     double year = 1900 + input->tm_year;
+     double month = input->tm_mon;
+     long double day = (double)(input->tm_mday + (double(input->tm_hour))/24 + (double(input->tm_min))/(24*60)  + (double(input->tm_sec))/(24*60*60));
+       
+       
+       double C,D,jd;
+       double A = trunc(year/100);
+       double B = 2 - A + trunc(A/4);
+       double yearp, monthp;
+       
+       if ((month == 1) or (month == 2))
+       {
+           yearp = year - 1;
+           monthp = month + 12;
+       }
+       else
+       {
+           yearp = year;
+           monthp = month;
+       }
+           
+       if ((year < 1582) or
+           (year == 1582 and month < 10) or
+           (year == 1582 and month == 10 and day < 15))
+       {
+           // before start of Gregorian calendar
+           B = 0;
+       }
+       else
+       {
+           // after start of Gregorian calendar
+           A = trunc(yearp / 100);
+           B = 2 - A + trunc(A / 4);
+       };
+       
+       if (yearp < 0)
+       {
+           C = trunc((365.25 * yearp) - 0.75);
+       }
+          else
+          {
+              C = trunc(365.25 * yearp);
+          };
+              
+       D = trunc(30.6001 * (monthp + 1));
+       jd = B + C + D + day + 1720994.5;
+       std::cout << std::fixed;
+    return jd;
+
+    
+};
+
+double
+time_files::time_tTOjd      (string* input)
+{
+    std::string* phrase = input;
+    
+     std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
+    
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)-(\\w+)-(\\w+) (\\d+):(\\d+):(\\d+)" );
+    boost::xpressive::smatch what;
+    
+    std::tm *tm = {0};
+    
+    if( regex_match( *phrase, what, rex ) )
+    {
+    
+        
+        // determine the current month in digits
+        size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
+        
+        
+        
+        tm->tm_sec = stoi(what[6].str());
+        tm->tm_min = stoi(what[3].str());
+        tm->tm_hour = stoi(what[4].str());
+        tm->tm_mday = stoi(what[3].str());
+        tm->tm_mon =  month_number + 1;
+        tm->tm_year = stoi(what[7].str());
+        tm->tm_isdst = 0;
+        
+        
+    }
+    
+   
+    return tmTOjd(tm);
 
     
 };
@@ -177,14 +261,8 @@ time_files::ctimeTOjd     (char* ctime)
     boost::xpressive::smatch what;
     
     int temp;
-    //temp = what[3];
     
-    
-    
-   // int hour_num = int.Parse(what[4]);
-   // int minute_num = int(what[5]);
-   // int sec_num = int(what[6]);
-   // int year_num = int(what[7]);
+    std::tm *tm = {0};
     
     if( regex_match( phrase, what, rex ) )
     {
@@ -197,35 +275,17 @@ time_files::ctimeTOjd     (char* ctime)
         
         // determine the current month in digits
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
-        
-        // cout << what[2].str() << "\n";
-        // cout << "yy" << hour_num << "\n";
-        
-        // cout << "what[0]" << what[0] << "\n";
-       //  cout << "what[1]" << what[1] << "\n";
-       //  cout << "what[2]" << month_number + 1 << "\n";
-       //  cout << "what[3]" << what[3] << "\n";
-       //  cout << "what[4]" << what[4] << "\n";
-       //  cout << "what[5]" << what[5] << "\n";
-       //  cout << "what[6]" << what[6] << "\n";
-       //  cout << "what[7]" << what[7] << "\n";
-        
-        std::tm tm = {0};
-        tm.tm_sec = stoi(what[6].str());
-        tm.tm_min = stoi(what[3].str());
-        tm.tm_hour = stoi(what[4].str());
-        tm.tm_mday = stoi(what[3].str());
-        tm.tm_mon =  month_number + 1;
-        tm.tm_year = stoi(what[7].str());
-        tm.tm_isdst = 0;
-        
-        std::time_t tt = timegm(&tm);
-        
-        std::chrono::system_clock::time_point tp =
-        std::chrono::system_clock::from_time_t(tt);
-        
+    
+        tm->tm_sec = stoi(what[6].str());
+        tm->tm_min = stoi(what[3].str());
+        tm->tm_hour = stoi(what[4].str());
+        tm->tm_mday = stoi(what[3].str());
+        tm->tm_mon =  month_number + 1;
+        tm->tm_year = stoi(what[7].str());
+        tm->tm_isdst = 0;
         
         
     }
-    return 0;
+    
+    return tmTOjd(tm);
 }

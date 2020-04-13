@@ -6,7 +6,7 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-
+// preprocessor instructions
 #include <iostream>
 #include <vector>                      // c-11 vector
 #include <algorithm>                   // c-11 algoithm
@@ -305,7 +305,7 @@ int main()
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
     time_files* nf = new time_files();
-    cout << nf->ctimeTOjd("Fri Apr  3 16:13:31 2020") << "\n";
+   //-----> remove this cout << nf->ctimeTOjd("Fri Apr  3 16:13:31 2020") << "\n";
     
     return 61;
 }
