@@ -47,10 +47,11 @@ public:
      void                      setCTIMEtime (int tm_sec, int tm_min, int tm_hour, int tm_mday, int tm_mon, int tm_year, int tm_isdst);
      time_t                    getCTIMEtime ();
      
+   
      std::tm*                   jdTOtm          (double jd);
      time_t                     jdTOtime_t      (double jd);
      char*                      jdTOctime       (double jd);
-     double                     time_tTOjd      (time_t input);
+     double                     time_tTOjd      (string* input);
      double                     tmTOjd          (tm* input);
      char*                      tmTOctime       (tm* input);
      time_t                     tmTOtime_t      (tm* input);
