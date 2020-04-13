@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// tell the preprocessor
 #include "time_files.hpp"
 #include <iostream>
 #include <fstream>
@@ -203,6 +204,7 @@ time_files::tmTOjd      (tm* input)
        D = trunc(30.6001 * (monthp + 1));
        jd = B + C + D + day + 1720994.5;
        std::cout << std::fixed;
+    
     return jd;
 
     
@@ -236,8 +238,6 @@ time_files::time_tTOjd      (string* input)
         tm->tm_mon =  month_number + 1;
         tm->tm_year = stoi(what[7].str());
         tm->tm_isdst = 0;
-        
-        
     }
     
    
@@ -282,9 +282,7 @@ time_files::ctimeTOjd     (char* ctime)
         tm->tm_mday = stoi(what[3].str());
         tm->tm_mon =  month_number + 1;
         tm->tm_year = stoi(what[7].str());
-        tm->tm_isdst = 0;
-        
-        
+        tm->tm_isdst = 0;   
     }
     
     return tmTOjd(tm);
