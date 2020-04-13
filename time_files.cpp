@@ -157,6 +157,7 @@ time_files::time_tTOjd      (time_t input)
                                         std::chrono::system_clock::from_time_t(input);
     
    
+    return 0;
 
     
 };
@@ -197,21 +198,17 @@ time_files::ctimeTOjd     (char* ctime)
         // determine the current month in digits
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
         
-        cout << what[2].str() << "\n";
-        cout << "yy" << hour_num << "\n";
+        // cout << what[2].str() << "\n";
+        // cout << "yy" << hour_num << "\n";
         
-        cout << "what[0]" << what[0] << "\n";
-        cout << "what[1]" << what[1] << "\n";
-        cout << "what[2]" << month_number + 1 << "\n";
-        cout << "what[3]" << what[3] << "\n";
-        cout << "what[4]" << what[4] << "\n";
-        cout << "what[5]" << what[5] << "\n";
-        cout << "what[6]" << what[6] << "\n";
-         cout << "what[7]" << what[7] << "\n";
-        
-       
-        
-        
+        // cout << "what[0]" << what[0] << "\n";
+       //  cout << "what[1]" << what[1] << "\n";
+       //  cout << "what[2]" << month_number + 1 << "\n";
+       //  cout << "what[3]" << what[3] << "\n";
+       //  cout << "what[4]" << what[4] << "\n";
+       //  cout << "what[5]" << what[5] << "\n";
+       //  cout << "what[6]" << what[6] << "\n";
+       //  cout << "what[7]" << what[7] << "\n";
         
         std::tm tm = {0};
         tm.tm_sec = stoi(what[6].str());
@@ -222,10 +219,11 @@ time_files::ctimeTOjd     (char* ctime)
         tm.tm_year = stoi(what[7].str());
         tm.tm_isdst = 0;
         
-         std::time_t tt = timegm(&tm);
+        std::time_t tt = timegm(&tm);
         
         std::chrono::system_clock::time_point tp =
         std::chrono::system_clock::from_time_t(tt);
+        
         
         
     }
