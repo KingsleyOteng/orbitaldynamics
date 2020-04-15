@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
-#include <ctime>
+//#include <ctime>
 #include <string>
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
@@ -47,7 +47,12 @@ public:
      void                      setCTIMEtime (int tm_sec, int tm_min, int tm_hour, int tm_mday, int tm_mon, int tm_year, int tm_isdst);
      time_t                    getCTIMEtime ();
      
-   
+     // time step calculation
+     double                     deltaJD         (int unit_time, double lapse, double jd_current);
+     std::tm*                    deltaTM         (int unit_time, double lapse,char* ctime);
+     time_t                     deltaTIMET      (int unit_time, time_t *tm);
+     
+     // time conversion strings
      std::tm*                   jdTOtm          (double jd);
      time_t                     jdTOtime_t      (double jd);
      char*                      jdTOctime       (double jd);
