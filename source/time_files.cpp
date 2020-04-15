@@ -143,9 +143,7 @@ time_files::jdTOctime     (double jd)
 {
 
     time_t valuable;
-    
     valuable =  mktime(jdTOtm(jd));
-    
     return std::ctime(&valuable);
     
 }
@@ -215,7 +213,7 @@ time_files::time_tTOjd      (string* input)
 {
     std::string* phrase = input;
     
-     std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
+    std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
     
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)-(\\w+)-(\\w+) (\\d+):(\\d+):(\\d+)" );
     boost::xpressive::smatch what;
@@ -286,4 +284,84 @@ time_files::ctimeTOjd     (char* ctime)
     }
     
     return tmTOjd(tm);
+}
+
+
+double
+time_files::deltaJD  (int unit_time, double lapse, double jd_current)
+{
+    switch (unit_time){
+        case 1         :    //'YY'
+            return (jd_current + (lapse * 365) );
+            break;
+        case 2            :  //LY
+            return (jd_current + (lapse * 366) );
+            break;
+        case 3           :  //MM
+            return (jd_current + (lapse * 30) );
+            break;
+        case 4           :  //DD
+            return (jd_current + (lapse * 1) );
+            break;
+        case 5           :  //HH
+            return (jd_current + (lapse * (1/24) ) );
+            break;
+        case 6            : //mm
+            return (jd_current + (lapse * (1/(24*60))));
+                    break;
+        case 7          :   //sec
+                    return (jd_current + (lapse * (1/(24*60*60))) );
+                    break;
+        case 8        :     //minsec
+                    return (jd_current + (lapse * (1/(24*60*60*100)))  );
+            break;
+}
+    
+    return 0;
+};
+
+std::tm*
+time_files::deltaTM  (int unit_time, double lapse, char* ctime)
+{
+    std::string phrase = ctime;
+    
+    std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
+    
+    // returns index for the month
+    
+    cout << "index" << index << "\n";
+    
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\w+)  (\\d+) (\\d+):(\\d+):(\\d+) (\\d+)" );
+    boost::xpressive::smatch what;
+    
+    int temp;
+    
+    std::tm *tm = {0};
+    std::tm *tm2 = {0};
+    if( regex_match( phrase, what, rex ) )
+    {
+        
+        size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
+    
+        tm->tm_sec = stoi(what[6].str());
+        tm->tm_min = stoi(what[3].str());
+        tm->tm_hour = stoi(what[4].str());
+        tm->tm_mday = stoi(what[3].str());
+        tm->tm_mon =  month_number + 1;
+        tm->tm_year = stoi(what[7].str());
+        tm->tm_isdst = 0;
+        
+         switch (unit_time)
+         {
+                  case 1           : tm2->tm_year = tm->tm_year + (lapse);                  break;
+                  case 2           : tm2->tm_mon = tm->tm_mon + (lapse);                        break;
+                  case 3           : tm2->tm_mday = tm->tm_mday + (lapse);                       break;
+                  case 4            : tm2->tm_mday = tm->tm_mday+ (lapse);                   break;
+                  case  5            : tm2->tm_min  = tm->tm_min + (lapse);              break;
+                   case 6           : tm2->tm_sec  = tm->tm_sec + (lapse);           break;
+         };
+                                          
+    };
+
+    return tm2;
 }
