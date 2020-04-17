@@ -49,9 +49,11 @@ public:
      
      // time step calculation
      double                     deltaJD         (int unit_time, double lapse, double jd_current);
-     std::tm*                    deltaTM         (int unit_time, double lapse,char* ctime);
+     std::tm*                   deltaTM         (int unit_time, double lapse,char* ctime);
      time_t                     deltaTIMET      (int unit_time, time_t *tm);
-     
+     char*                      deltaCTIME      (int unit_time, double lapse, char* ctime);
+    
+    
      // time conversion strings
      std::tm*                   jdTOtm          (double jd);
      time_t                     jdTOtime_t      (double jd);
