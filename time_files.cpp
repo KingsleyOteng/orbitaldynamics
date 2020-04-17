@@ -291,7 +291,7 @@ double
 time_files::deltaJD  (int unit_time, double lapse, double jd_current)
 {
     // error check
-    if (unit_time == NULL) return;
+    //if (unit_time == NULL) return;
     
     switch (unit_time){
         case 1         :    //'YY'
@@ -327,7 +327,7 @@ std::tm*
 time_files::deltaTM  (int unit_time, double lapse, char* ctime)
 {
     // error check
-    if (unit_time == NULL) return;
+   // if (unit_time == NULL) return;
     
     std::string phrase = ctime;
     
@@ -373,13 +373,12 @@ time_files::deltaTM  (int unit_time, double lapse, char* ctime)
 }
 
 char*
-time_files::deltaCTIME  (char* unit_time, double lapse, char* ctime)
+time_files::deltaCTIME  (int unit_time, double lapse, char* ctime)
 {
     // error check
-    if (unit_time == NULL) return;
+    //if (unit_time == NULL) return;
     
     std::string phrase = ctime;
-    
     std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
     
     // returns index for the month
@@ -417,6 +416,9 @@ time_files::deltaCTIME  (char* unit_time, double lapse, char* ctime)
          };
                                           
     };
+    
 
-    return tm2;
+    time_t out = mktime(tm);
+    
+    return std::ctime(&out);
 }
