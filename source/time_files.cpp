@@ -150,13 +150,13 @@ time_files::jdTOctime     (double jd)
 
 time_t
 time_files::tmTOtime_t   (tm *input)
-{
+{   //return
     return mktime(input);
 }
 
 char*
 time_files::tmTOctime   (tm *input)
-{
+{   //return
     time_t out = mktime(input);
     return std::ctime(&out);
 }
