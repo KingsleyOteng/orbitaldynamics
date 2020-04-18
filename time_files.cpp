@@ -148,13 +148,26 @@ time_files::jdTOctime     (double jd)
     
 }
 
+time_t
+time_files::tmTOtime_t   (tm *input)
+{   //return
+    return mktime(input);
+}
+
+char*
+time_files::tmTOctime   (tm *input)
+{   //return
+    time_t out = mktime(input);
+    return std::ctime(&out);
+}
+
 double
 time_files::tmTOjd      (tm* input)
 {
     
 
     
-   
+     unsigned long one = 1.0;
      double year = 1900 + input->tm_year;
      double month = input->tm_mon;
      long double day = (double)(input->tm_mday + (double(input->tm_hour))/24 + (double(input->tm_min))/(24*60)  + (double(input->tm_sec))/(24*60*60));
@@ -211,6 +224,8 @@ time_files::tmTOjd      (tm* input)
 double
 time_files::time_tTOjd      (string* input)
 {
+     unsigned long one = 1.0;
+    
     std::string* phrase = input;
     
     std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
@@ -233,7 +248,7 @@ time_files::time_tTOjd      (string* input)
         tm->tm_min = stoi(what[3].str());
         tm->tm_hour = stoi(what[4].str());
         tm->tm_mday = stoi(what[3].str());
-        tm->tm_mon =  month_number + 1;
+        tm->tm_mon =  month_number + one;
         tm->tm_year = stoi(what[7].str());
         tm->tm_isdst = 0;
     }
@@ -247,6 +262,8 @@ time_files::time_tTOjd      (string* input)
 double
 time_files::ctimeTOjd     (char* ctime)
 {
+    unsigned long one = 1.0;
+    
     std::string phrase = ctime;
     
     std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
@@ -278,7 +295,7 @@ time_files::ctimeTOjd     (char* ctime)
         tm->tm_min = stoi(what[3].str());
         tm->tm_hour = stoi(what[4].str());
         tm->tm_mday = stoi(what[3].str());
-        tm->tm_mon =  month_number + 1;
+        tm->tm_mon =  month_number + one;
         tm->tm_year = stoi(what[7].str());
         tm->tm_isdst = 0;   
     }
@@ -329,18 +346,18 @@ time_files::deltaTM  (int unit_time, double lapse, char* ctime)
     // error check
    // if (unit_time == NULL) return;
     
+    unsigned long one = 1.0;
+    
     std::string phrase = ctime;
     
     std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
     
     // returns index for the month
     
-    cout << "index" << index << "\n";
+    //cout << "index" << index << "\n";
     
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\w+)  (\\d+) (\\d+):(\\d+):(\\d+) (\\d+)" );
     boost::xpressive::smatch what;
-    
-    int temp;
     
     std::tm *tm = {0};
     std::tm *tm2 = {0};
@@ -353,7 +370,7 @@ time_files::deltaTM  (int unit_time, double lapse, char* ctime)
         tm->tm_min = stoi(what[3].str());
         tm->tm_hour = stoi(what[4].str());
         tm->tm_mday = stoi(what[3].str());
-        tm->tm_mon =  month_number + 1;
+        tm->tm_mon =  month_number + one;
         tm->tm_year = stoi(what[7].str());
         tm->tm_isdst = 0;
         
@@ -383,12 +400,12 @@ time_files::deltaCTIME  (int unit_time, double lapse, char* ctime)
     
     // returns index for the month
     
-    cout << "index" << index << "\n";
+    // cout << "index" << index << "\n";
     
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\w+)  (\\d+) (\\d+):(\\d+):(\\d+) (\\d+)" );
     boost::xpressive::smatch what;
     
-    int temp;
+    // int temp;
     
     std::tm *tm = {0};
     std::tm *tm2 = {0};
@@ -396,12 +413,13 @@ time_files::deltaCTIME  (int unit_time, double lapse, char* ctime)
     {
         
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
-    
+        unsigned long one = 1.0;
+        
         tm->tm_sec = stoi(what[6].str());
         tm->tm_min = stoi(what[3].str());
         tm->tm_hour = stoi(what[4].str());
         tm->tm_mday = stoi(what[3].str());
-        tm->tm_mon =  month_number + 1;
+        tm->tm_mon =  month_number + one;
         tm->tm_year = stoi(what[7].str());
         tm->tm_isdst = 0;
         
