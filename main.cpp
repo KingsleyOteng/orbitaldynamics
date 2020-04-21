@@ -305,7 +305,7 @@ int main()
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
     time_files* nf = new time_files();
-   //-----> remove this cout << nf->ctimeTOjd("Fri Apr  3 16:13:31 2020") << "\n";
+    cout << nf->ctimeTOjd("Fri Apr  3 16:13:31 2020") << "\n";
     
     return 61;
 }
