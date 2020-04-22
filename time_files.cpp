@@ -281,7 +281,7 @@ time_files::ctimeTOjd     (char* ctime)
     cout << "phrase" << phrase;
     if( regex_match( phrase, what, rex ) )
     {
-        cout << "yyyyy" << what[1].str() << "x";
+        cout << "yyyyy" << what[8].str() << "x";
        // int hour_num = stoi(what[4].str());
         //int minute_num = stoi(what[5].str());
         //int sec_num = stoi(what[6].str());
@@ -291,17 +291,27 @@ time_files::ctimeTOjd     (char* ctime)
         // determine the current month in digits
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
     
-        tm->tm_sec = stoi(what[6].str());
-        cout <<  stoi(what[6].str()) << "tm->tm.sec";
-        tm->tm_min = stoi(what[3].str());
-        cout << stoi(what[3].str()) << "tm->tm.min";
-        tm->tm_hour = stoi(what[4].str());
-        tm->tm_mday = stoi(what[3].str());
-        tm->tm_mon =  month_number + one;
-        tm->tm_year = stoi(what[7].str());
-        tm->tm_isdst = 0;   
+      //   tm->tm_sec = stoi(what[6].str());
+    //     cout <<  stoi(what[6].str()) << "tm->tm.sec";
+     //    tm->tm_min = stoi(what[3].str());
+      //   cout << stoi(what[3].str()) << "tm->tm.min";
+   //      tm->tm_hour = stoi(what[4].str());
+      //   tm->tm_mday = stoi(what[3].str());
+    //     tm->tm_mon =  month_number + one;
+    //     tm->tm_year = stoi(what[7].str());
+     //    tm->tm_isdst = 0;
+        
+            tm->tm_sec = 10;
+           //     cout <<  stoi(what[6].str()) << "tm->tm.sec";
+            tm->tm_min = 8;
+             //   cout << stoi(what[3].str()) << "tm->tm.min";
+            tm->tm_hour = 6;
+            tm->tm_mday = 6;
+            tm->tm_mon =  4;
+        tm->tm_year = 2;
+            tm->tm_isdst = 0;
     }
-    
+    cout << "rubber" << "\n";
     return tmTOjd(tm);
 }
 
