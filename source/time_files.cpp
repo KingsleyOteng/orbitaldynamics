@@ -163,15 +163,15 @@ time_files::tmTOctime   (tm *input)
 }
 
 double
-time_files::tmTOjd      (tm* input)
+time_files::tmTOjd      (tm input)
 {
     
 
     
      unsigned long one = 1.0;
-     double year = 1900 + input->tm_year;
-     double month = input->tm_mon;
-     long double day = (double)(input->tm_mday + (double(input->tm_hour))/24 + (double(input->tm_min))/(24*60)  + (double(input->tm_sec))/(24*60*60));
+     double year = 1900 + input.tm_year;
+     double month = input.tm_mon;
+     long double day = (double)(input.tm_mday + (double(input.tm_hour))/24 + (double(input.tm_min))/(24*60)  + (double(input.tm_sec))/(24*60*60));
        
        
        double C,D,jd;
@@ -223,20 +223,20 @@ time_files::tmTOjd      (tm* input)
 };
 
 double
-time_files::time_tTOjd      (string* input)
+time_files::time_tTOjd      (char* input)
 {
      unsigned long one = 1.0;
     
-    std::string* phrase = input;
+    std::string phrase = input;
     
     std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
     
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)-(\\w+)-(\\w+) (\\d+):(\\d+):(\\d+)" );
     boost::xpressive::smatch what;
     
-    std::tm *tm = {0};
+    std::tm tm = {0};
     
-    if( regex_match( *phrase, what, rex ) )
+    if( regex_match( phrase, what, rex ) )
     {
     
         
@@ -245,13 +245,13 @@ time_files::time_tTOjd      (string* input)
         
         
         
-        tm->tm_sec = stoi(what[6].str());
-        tm->tm_min = stoi(what[3].str());
-        tm->tm_hour = stoi(what[4].str());
-        tm->tm_mday = stoi(what[3].str());
-        tm->tm_mon =  month_number + one;
-        tm->tm_year = stoi(what[7].str());
-        tm->tm_isdst = 0;
+        tm.tm_sec = stoi(what[6].str());
+        tm.tm_min = stoi(what[3].str());
+        tm.tm_hour = stoi(what[4].str());
+        tm.tm_mday = stoi(what[3].str());
+        tm.tm_mon =  month_number + one;
+        tm.tm_year = stoi(what[7].str());
+        tm.tm_isdst = 0;
     }
     
    
@@ -295,7 +295,7 @@ time_files::ctimeTOjd     (char* ctime)
         
     }
     
-    return tmTOjd(&tm);
+    return tmTOjd(tm);
 }
 
 

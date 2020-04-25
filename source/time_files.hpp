@@ -58,8 +58,8 @@ public:
      std::tm*                   jdTOtm          (double jd);
      time_t                     jdTOtime_t      (double jd);
      char*                      jdTOctime       (double jd);
-     double                     time_tTOjd      (string* input);
-     double                     tmTOjd          (tm* input);
+     double                     time_tTOjd      (char* input);
+     double                     tmTOjd          (tm input);
      char*                      tmTOctime       (tm* input);
      time_t                     tmTOtime_t      (tm* input);
      double                     ctimeTOjd       (char* ctime);
