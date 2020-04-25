@@ -305,7 +305,10 @@ int main()
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
     time_files* nf = new time_files();
+    cout << nf->time_tTOjd("Thu Jan  1 00:00:00 1970") < "\n";
     cout << nf->ctimeTOjd("Fri Apr  3 16:13:31 2020") << "\n";
+    //deltaCTIME
     
+    //cout << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     return 61;
 }
