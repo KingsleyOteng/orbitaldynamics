@@ -246,11 +246,17 @@ time_files::time_tTOjd      (char* input)
         
         
         tm.tm_sec = stoi(what[6].str());
-        tm.tm_min = stoi(what[3].str());
+        
+        tm.tm_min = stoi(what[5].str());
+        
         tm.tm_hour = stoi(what[4].str());
+       
         tm.tm_mday = stoi(what[3].str());
-        tm.tm_mon =  month_number + one;
-        tm.tm_year = stoi(what[7].str());
+       
+        tm.tm_mon =  stoi(what[2].str());
+     
+        tm.tm_year = stoi(what[1].str());
+        
         tm.tm_isdst = 0;
     }
     
