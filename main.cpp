@@ -305,7 +305,7 @@ int main()
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
     time_files* nf = new time_files();
-    cout << nf->time_tTOjd ("Fri Apr  3 16:13:31 2020") << "\n";
+    cout << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
     cout << nf->ctimeTOjd  ("Fri Apr  3 16:13:31 2020") << "\n";
     //deltaCTIME
     
