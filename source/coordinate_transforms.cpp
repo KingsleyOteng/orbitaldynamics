@@ -343,3 +343,16 @@ getJulianDateFractionOfDay              ()
     return m_fraction_of_day;
 }
 
+double coordinate_transforms::
+getPolarRadius              ()
+{
+    //using an oblate spheroid near the polls
+    return 6356.751;
+}
+
+double coordinate_transforms::
+getGeocentricLatitude       (double geodeticLatitude, double a, double b)
+{
+    return 0;
+}
+

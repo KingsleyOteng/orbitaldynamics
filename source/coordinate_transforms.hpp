@@ -138,7 +138,8 @@ public:
     void getObserverRange                       ();
     void getTropocentricCoordinates             ();
     int  getJulianDateFractionOfDay             ();
-    
+    double getPolarRadius                       ();
+    double getGeocentricLatitude                (double geodeticLatitude, double a, double b);
 };
 
 
