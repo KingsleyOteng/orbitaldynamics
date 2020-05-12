@@ -29,6 +29,7 @@ private:
     using jd_elapsed             = std::chrono::duration<float, std::ratio<14*24*60*60, 1000000>>;
     time_t                       time_standard_block_format;
     tm*                          time_components_format;
+    double                       TimeElapsed;
     
 public:
     
@@ -49,20 +50,25 @@ public:
      
      // time step calculation
      double                     deltaJD         (int unit_time, double lapse, double jd_current);
-     std::tm*                    deltaTM         (int unit_time, double lapse,char* ctime);
+     std::tm*                   deltaTM         (int unit_time, double lapse,char* ctime);
      time_t                     deltaTIMET      (int unit_time, time_t *tm);
-     
+     char*                      deltaCTIME      (int unit_time, double lapse, char* ctime);
+     void                       setCurrentTLETime  (char* ctime);
+    void                       setTimeElapsed  (double time_now, double epoch);
+     double                      getTimeElapsed  ();
+    
      // time conversion strings
      std::tm*                   jdTOtm          (double jd);
      time_t                     jdTOtime_t      (double jd);
      char*                      jdTOctime       (double jd);
-     double                     time_tTOjd      (string* input);
-     double                     tmTOjd          (tm* input);
+     double                     time_tTOjd      (char* input);
+     double                     tmTOjd          (tm input);
      char*                      tmTOctime       (tm* input);
      time_t                     tmTOtime_t      (tm* input);
      double                     ctimeTOjd       (char* ctime);
      std::tm*                   ctimeTOtm       (time_t input);
      time_t                     ctimeTOtime_t   (time_t input);
+    
 };
 
 

@@ -20,7 +20,7 @@ time_files::time_files()
 {}
 
 
-std::tm*
+tm*
 time_files::jdTOtm      (double jd)
 {
 
@@ -115,12 +115,12 @@ time_files::jdTOtm      (double jd)
      seconds_final = ((min_final - (int)(min_final)))*60;
      min_final = (int) (min_final);
     
-    std::tm* tm = {0};
+    tm* tm = new struct tm();
        tm->tm_sec = seconds_final;
        tm->tm_min = min_final;
        tm->tm_hour = hours_final;
        tm->tm_mday = day_final;
-       tm->tm_mon = month_final;
+       tm->tm_mon = month_final - 2;
        tm->tm_year = year_final;
        tm->tm_isdst = 0;
     
@@ -243,20 +243,12 @@ time_files::time_tTOjd      (char* input)
         // determine the current month in digits
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
         
-        
-        
         tm.tm_sec = stoi(what[6].str());
-        cout << "Seconds" << what[6].str() << "\n";
         tm.tm_min = stoi(what[5].str());
-        cout << "Minutes" << what[5].str() << "\n";
         tm.tm_hour = stoi(what[4].str());
-        cout << "Hours" << what[4].str() << "\n";
         tm.tm_mday = stoi(what[3].str());
-        cout << "Day" << what[3].str() << "\n";
-        tm.tm_mon =  stoi(what[2].str());
-         cout << "Month" << what[2].str() << "\n";
+        tm.tm_mon =  stoi(what[2].str()) + 1;
         tm.tm_year = stoi(what[1].str());
-        cout << "Year" << what[1].str() << "\n";
         tm.tm_isdst = 0;
     }
     
@@ -269,11 +261,11 @@ time_files::time_tTOjd      (char* input)
 double
 time_files::ctimeTOjd     (char* ctime)
 {
-    unsigned long one = 1.0;
+    int one = 1.0;
     
     std::string phrase = ctime;
     
-    std::vector<std::string> months = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
+    std::vector<std::string> months = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
     
     // returns index for the month
 
@@ -292,10 +284,10 @@ time_files::ctimeTOjd     (char* ctime)
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
     
             tm.tm_sec = stoi(what[6].str());
-            tm.tm_min = stoi(what[3].str());
+            tm.tm_min = stoi(what[5].str());
             tm.tm_hour = stoi(what[4].str());
             tm.tm_mday = stoi(what[3].str());
-            tm.tm_mon =  month_number + one;
+            tm.tm_mon =  static_cast<int>(month_number + 2.0);
             tm.tm_year = stoi(what[7].str());
             tm.tm_isdst = 0;
         
@@ -438,3 +430,22 @@ time_files::deltaCTIME  (int unit_time, double lapse, char* ctime)
     
     return std::ctime(&out);
 }
+
+void
+time_files::setTimeElapsed  (double time_now, double epoch)
+{
+    TimeElapsed = time_now - epoch;
+};
+
+double
+time_files::getTimeElapsed  ()
+{
+    return TimeElapsed;
+}
+
+void
+time_files::setCurrentTLETime  (char* ctime)
+{
+    
+}
+
