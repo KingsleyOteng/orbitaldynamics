@@ -307,6 +307,8 @@ int main()
     time_files* nf = new time_files();
     cout << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
     cout << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
+    double xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
+    cout << nf->jdTOctime(xx);
     //deltaCTIME
     
     //cout << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";

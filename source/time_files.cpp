@@ -20,7 +20,7 @@ time_files::time_files()
 {}
 
 
-std::tm*
+tm*
 time_files::jdTOtm      (double jd)
 {
 
@@ -115,12 +115,12 @@ time_files::jdTOtm      (double jd)
      seconds_final = ((min_final - (int)(min_final)))*60;
      min_final = (int) (min_final);
     
-    std::tm* tm = {0};
+    tm* tm = new struct tm();
        tm->tm_sec = seconds_final;
        tm->tm_min = min_final;
        tm->tm_hour = hours_final;
        tm->tm_mday = day_final;
-       tm->tm_mon = month_final;
+       tm->tm_mon = month_final - 2;
        tm->tm_year = year_final;
        tm->tm_isdst = 0;
     
@@ -430,3 +430,22 @@ time_files::deltaCTIME  (int unit_time, double lapse, char* ctime)
     
     return std::ctime(&out);
 }
+
+void
+time_files::setTimeElapsed  (double time_now, double epoch)
+{
+    TimeElapsed = time_now - epoch;
+};
+
+double
+time_files::getTimeElapsed  ()
+{
+    return TimeElapsed;
+}
+
+void
+time_files::setCurrentTLETime  (char* ctime)
+{
+    
+}
+

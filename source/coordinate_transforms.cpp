@@ -356,3 +356,11 @@ getGeocentricLatitude       (double geodeticLatitude, double a, double b)
     return 0;
 }
 
+double coordinate_transforms::
+getElapsedTime              (double jd_epoch, double jd_now)
+{
+    double time_elapsed = jd_epoch - jd_now;
+    return 0;
+    
+};
+

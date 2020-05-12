@@ -140,6 +140,7 @@ public:
     int  getJulianDateFractionOfDay             ();
     double getPolarRadius                       ();
     double getGeocentricLatitude                (double geodeticLatitude, double a, double b);
+    double getElapsedTime                       (double jd_epoch, double jd_now);
 };
 
 
