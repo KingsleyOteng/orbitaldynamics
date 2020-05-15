@@ -364,3 +364,10 @@ getElapsedTime              (double jd_epoch, double jd_now)
     
 };
 
+double coordinate_transforms::
+getTLEDateTimeFormat              ()
+{
+    double time_elapsed = jd_epoch - jd_now;
+    return 0;
+    
+};
