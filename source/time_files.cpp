@@ -457,3 +457,8 @@ time_files::setCurrentTLETime  (char* ctime)
     
 }
 
+double
+time_files::getTimeDiff  ()
+{
+    return 0;
+}

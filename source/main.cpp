@@ -305,10 +305,10 @@ int main()
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
     time_files* nf = new time_files();
-    cout << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
-    cout << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
+    cout << "zz:"  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
+    cout << "cc:" << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
     double xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
-    cout << nf->jdTOctime(xx);
+    cout << "yy:" << nf->jdTOctime(xx);
     //deltaCTIME
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     //cout << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";

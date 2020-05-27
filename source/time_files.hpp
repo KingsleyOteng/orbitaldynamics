@@ -68,6 +68,7 @@ public:
      double                     ctimeTOjd       (char* ctime);
      std::tm*                   ctimeTOtm       (time_t input);
      time_t                     ctimeTOtime_t   (time_t input);
+     double                     getTimeDiff     ();
     
 };
 
