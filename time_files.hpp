@@ -54,8 +54,8 @@ public:
      time_t                     deltaTIMET      (int unit_time, time_t *tm);
      char*                      deltaCTIME      (int unit_time, double lapse, char* ctime);
      void                       setCurrentTLETime  (char* ctime);
-    void                       setTimeElapsed  (double time_now, double epoch);
-     double                      getTimeElapsed  ();
+     void                       setTimeElapsed  (double time_now, double epoch);
+     double                     getTimeElapsed  ();
     
      // time conversion strings
      std::tm*                   jdTOtm          (double jd);
@@ -68,6 +68,7 @@ public:
      double                     ctimeTOjd       (char* ctime);
      std::tm*                   ctimeTOtm       (time_t input);
      time_t                     ctimeTOtime_t   (time_t input);
+     double                     getTimeDiff     ();
     
 };
 
