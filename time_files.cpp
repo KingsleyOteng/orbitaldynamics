@@ -526,20 +526,18 @@ char* time_files::month_generator_classification(double days_elapsed) {
     }
     ;
     
-   std::array<double, N-1> ubounds365 =
-    {
-        { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334  }
-    };
-    
-    std::array<double, N-1> ubounds366 =
-    {
-        { 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335  }
-    };
+    int myints[] = { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334  };
+     std::vector<int> v(myints,myints+8);
 
-    auto lookup = std::upper_bound(std::begin(ubounds365), std::end(ubounds365), days_elapsed);
-    
-    auto lookup2 = std::upper_bound(std::begin(ubounds366), std::end(ubounds366), days_elapsed);
 
-   // return classifications.at(lookup - std::begin(ubounds366));
-    return classifications[1];
+     std::sort (v.begin(), v.end());                // 10 10 10 20 20 20 30 30
+
+   std::vector<int>::iterator low,up;
+   low=std::lower_bound (v.begin(), v.end(), 335); //          ^
+   up= std::upper_bound (v.begin(), v.end(), 335); //
+    std::cout << "lower_bound at position " << (low- v.begin()) << '\n';
+    std::cout << "upper_bound at position " << (up - v.begin()) << '\n';
+    std::cout << "calendar month" << classifications[(low - v.begin()) ] << '\n';
+
+    return  "one";
 }
