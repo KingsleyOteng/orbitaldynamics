@@ -13,6 +13,8 @@
 #include <fstream>
 #include <vector>
 #include <stdio.h>
+#include <array>
+#include <iterator>
 #include <stdlib.h>
 
 // constructor
@@ -417,7 +419,6 @@ time_files::deltaCTIME  (int unit_time, double lapse, char* ctime)
         tm.tm_hour = stoi(what[4].str());
         tm.tm_mday = stoi(what[3].str());
         tm.tm_mon =  month_number + one;
-        cout << "year------------------------------>" << what[7].str() << "\n";
         tm.tm_year = stoi(what[7].str());
         tm.tm_isdst = 0;
         
@@ -457,3 +458,88 @@ time_files::setCurrentTLETime  (char* ctime)
     
 }
 
+double
+time_files::getTimeDiff  (char*  Time1, char*  Time2)
+{
+    return (this->time_tTOjd (Time1) - this->time_tTOjd (Time2));
+}
+
+double
+time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
+{
+    int one = 1.0;
+    
+    std::string phrase = dateStringTLE;
+    
+    std::vector<std::string> months = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+    
+    // returns index for the month
+
+
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3}).(\\d+)" );
+    boost::xpressive::smatch what;
+    
+    int temp;
+    
+    std::tm tm = {0};
+    //= time_t
+
+    if( regex_match( phrase, what, rex ) )
+    {
+            // convert days elapsed to months
+            int days_elapsed = stoi(what[2].str());
+        
+            //case(days_elapsed)
+       
+        size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
+    
+            
+            cout << what[1].str() << "<<<< \n";
+            cout << what[2].str() << "<<<< \n";
+            cout << what[3].str() << "<<<< \n";
+        
+            //tm->tm_sec = stoi(what[6].str());
+            //tm->tm_min = stoi(what[3].str());
+            //tm->tm_hour = stoi(what[4].str());
+          //  tm->tm_mday = stoi(what[3].str());
+            //tm->tm_mon =  month_number + one;
+            //tm->tm_year = stoi(what[7].str());
+           // tm->tm_isdst = 0;
+        
+        
+            std::tm tm = {0};
+    }
+     
+    
+    return 0;
+}
+
+char* time_files::month_generator_classification(double days_elapsed) {
+    
+    constexpr int N = 12;
+    
+    std::array<int, 3> a = {1,2,3};
+    cout << a[1] << "\n";
+    std::array<char *, N> classifications =
+    {
+        { "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}
+    }
+    ;
+    
+   std::array<double, N-1> ubounds365 =
+    {
+        { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334  }
+    };
+    
+    std::array<double, N-1> ubounds366 =
+    {
+        { 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335  }
+    };
+
+    auto lookup = std::upper_bound(std::begin(ubounds365), std::end(ubounds365), days_elapsed);
+    
+    auto lookup2 = std::upper_bound(std::begin(ubounds366), std::end(ubounds366), days_elapsed);
+
+   // return classifications.at(lookup - std::begin(ubounds366));
+    return classifications[1];
+}
