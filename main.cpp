@@ -313,6 +313,6 @@ int main()
     //deltaCTIME
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
-    cout << "ZZZZ: " << nf->month_generator_classification(80);
+    cout << "Day to Month" << nf->month_generator_classification(80);
     return 61;
 }

@@ -519,7 +519,7 @@ char* time_files::month_generator_classification(double days_elapsed) {
     constexpr int N = 12;
     
     std::array<int, 3> a = {1,2,3};
-    cout << a[1] << "\n";
+ 
     std::array<char *, N> classifications =
     {
         { "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}
@@ -527,18 +527,14 @@ char* time_files::month_generator_classification(double days_elapsed) {
     ;
     
     int myints[] = { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334  };
-     std::vector<int> v(myints,myints+12);
+    std::vector<int> v(myints,myints+12);
 
 
-     std::sort (v.begin(), v.end());                // 10 10 10 20 20 20 30 30
+    std::sort (v.begin(), v.end());                // 10 10 10 20 20 20 30 30
 
-   std::vector<int>::iterator low,up;
-   low=std::lower_bound (v.begin(), v.end(), days_elapsed); //          ^
-   up= std::upper_bound (v.begin(), v.end(), days_elapsed); //
-    //std::cout << "lower_bound at position " << (low- v.begin()) << '\n';
-    //std::cout << "upper_bound at position " << (up - v.begin()) << '\n';
-    //std::cout << "calendar month " << classifications[ (up - v.begin()) ] << '\n';
-    //std::cout << "up" << v.begin() << "\n";
+    std::vector<int>::iterator low,up;
+    low=std::lower_bound (v.begin(), v.end(), days_elapsed);
+    up= std::upper_bound (v.begin(), v.end(), days_elapsed);
     
     char* hello = classifications[ (up - v.begin()) ];
     return   hello;
