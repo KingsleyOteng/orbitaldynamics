@@ -309,8 +309,10 @@ int main()
     cout << "cc:" << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
     double xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
     cout << "yy:" << nf->jdTOctime(xx);
+    cout << "ooo:" << nf->getDeltaCtimeFromTLE("20040.41532895");
     //deltaCTIME
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
-    //cout << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
+    //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
+    cout << "ZZZZ: " << nf->month_generator_classification(80);
     return 61;
 }

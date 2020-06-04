@@ -68,8 +68,9 @@ public:
      double                     ctimeTOjd       (char* ctime);
      std::tm*                   ctimeTOtm       (time_t input);
      time_t                     ctimeTOtime_t   (time_t input);
-     double                     getTimeDiff     ();
-    
+    double                      getTimeDiff  (char*  Time1, char*  Time2);
+    double                      getDeltaCtimeFromTLE (std::string dateStringTLE);
+    char*                       month_generator_classification(double days_elapsed);
 };
 
 
