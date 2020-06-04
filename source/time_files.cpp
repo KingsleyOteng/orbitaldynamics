@@ -527,17 +527,19 @@ char* time_files::month_generator_classification(double days_elapsed) {
     ;
     
     int myints[] = { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334  };
-     std::vector<int> v(myints,myints+8);
+     std::vector<int> v(myints,myints+12);
 
 
      std::sort (v.begin(), v.end());                // 10 10 10 20 20 20 30 30
 
    std::vector<int>::iterator low,up;
-   low=std::lower_bound (v.begin(), v.end(), 31); //          ^
-   up= std::upper_bound (v.begin(), v.end(), 31); //
+   low=std::lower_bound (v.begin(), v.end(), 360); //          ^
+   up= std::upper_bound (v.begin(), v.end(), 360); //
     std::cout << "lower_bound at position " << (low- v.begin()) << '\n';
     std::cout << "upper_bound at position " << (up - v.begin()) << '\n';
-    std::cout << "calendar month" << classifications[(up - v.begin()) ] << 
+    std::cout << "calendar month" << classifications[(up - v.begin()) ] << '\n';
+    //std::cout << "up" << v.begin() << "\n";
+    
 
     return  "one";
 }
