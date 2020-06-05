@@ -70,7 +70,8 @@ public:
      time_t                     ctimeTOtime_t   (time_t input);
     double                      getTimeDiff  (char*  Time1, char*  Time2);
     double                      getDeltaCtimeFromTLE (std::string dateStringTLE);
-    char*                   month_generator_classification(double days_elapsed);
+    char*                       month_generator_classification_phrase(double days_elapsed);
+    char*                       month_generator_classification_number(double days_elapsed);
 };
 
 
