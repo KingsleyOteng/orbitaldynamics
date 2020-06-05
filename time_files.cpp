@@ -469,6 +469,8 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
 {
     int one = 1.0;
     
+    double fraction = 0.0;
+    
     std::string phrase = dateStringTLE;
     
     std::vector<std::string> months = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
@@ -476,7 +478,7 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
     // returns index for the month
 
 
-    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3}).(\\d+)" );
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3})(.\\d+)" );
     boost::xpressive::smatch what;
     
     int temp;
@@ -501,8 +503,9 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
             //tm->tm_sec = stoi(what[6].str());
             //tm->tm_min = stoi(what[3].str());
             //tm->tm_hour = stoi(what[4].str());
-          //  tm->tm_mday = stoi(what[3].str());
-            cout<<stoi(what[2].str())<<"\n";
+            double fract = (stod(what[3].str())* 24);
+            tm.tm_mday = int(fract);
+            fract = fract - int(fract);
             cout<<month_generator_classification_number(stoi(what[2].str()));
             tm.tm_mon =  stoi(month_generator_classification_number(stoi(what[2].str())));
             tm.tm_yday = stoi(what[2].str());
