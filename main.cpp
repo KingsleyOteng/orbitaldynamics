@@ -345,10 +345,7 @@ int main()
     ///TESTING GET SATELLITE NUMBER LINE 1 (COMPLETED)
     cout << "\n" << "satellite number " << orb->getSATnumber() << "\n";
     
-    ///TESTING GET SATELLIT INTERNATIONAL DESIGNATOR (COMPLETED)
+    ///TESTING GET SATELLIT INTERNATIONAL DESIGNATOR
     cout << "\n" << "satellite id " << orb->getClassifierID() << "\n";
-    
-    ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
-    cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
     return 61;
 }
