@@ -1,4 +1,4 @@
-//      Source  
+//      Source
 //      Overview: Extraction of object tracking data from NORAD TLE
 //
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
@@ -384,7 +384,7 @@ void
         // line number one of the NORAD Set Format
         // set the details
         phrase = parsed_line_one[1];
-        phrase = phrase.substr(0, 4);
+        phrase = phrase.substr(0, 5);
         orbital::SetSATnumber(stoi(phrase));
         
         // generate the classifier field
