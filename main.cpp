@@ -13,6 +13,14 @@
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
+#include <time.h>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <stdio.h>
+#include <array>
+#include <iterator>
+#include <stdlib.h>
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 #include "utilities.hpp"               // my own routines for processing data
 #include <boost/any.hpp>               // boost standard library
@@ -314,5 +322,18 @@ int main()
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
+    
+    
+    
+    
+    ///TESTING
+    std::tm tm = {0};
+       tm.tm_sec = seconds_final;
+       tm.tm_min = min_final;
+       tm.tm_hour = hours_final;
+       tm.tm_mday = day_final;
+       tm.tm_mon = month_final - 2;
+       tm.tm_year = year_final;
+       tm.tm_isdst = 0;
     return 61;
 }
