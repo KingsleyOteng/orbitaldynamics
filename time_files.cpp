@@ -502,8 +502,21 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
             //tm->tm_min = stoi(what[3].str());
             //tm->tm_hour = stoi(what[4].str());
           //  tm->tm_mday = stoi(what[3].str());
-            //tm->tm_mon =  month_number + one;
-            //tm->tm_year = stoi(what[7].str());
+            cout<<"one  :"<<"\n";
+            cout<<stoi(what[2].str())<<"\n";
+            cout<<month_generator_classification_number(stoi(what[2].str()));
+        cout<<"golden" << "\n";
+            tm.tm_mon =  stoi(month_generator_classification_number(stoi(what[2].str())));
+            tm.tm_yday = stoi(what[2].str());
+            cout<<"two  :"<<"\n";
+            if (stoi(what[1].str()) > 50)
+            {
+                    tm.tm_year = stoi(what[1].str()) + 1900;
+            }
+            else
+            {
+                    tm.tm_year = stoi(what[1].str()) + 2000;
+            };
            // tm->tm_isdst = 0;
         
         
@@ -514,18 +527,17 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
     return 0;
 }
 
-char* time_files::month_generator_classification(double days_elapsed) {
+char* time_files::month_generator_classification_phrase(double days_elapsed) {
     
     constexpr int N = 12;
-    
-    std::array<int, 3> a = {1,2,3};
- 
+
     std::array<char *, N> classifications =
     {
         { "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}
     }
     ;
     
+ 
     int myints[] = { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334  };
     std::vector<int> v(myints,myints+12);
 
@@ -536,6 +548,31 @@ char* time_files::month_generator_classification(double days_elapsed) {
     low=std::lower_bound (v.begin(), v.end(), days_elapsed);
     up= std::upper_bound (v.begin(), v.end(), days_elapsed);
     
-    char* hello = classifications[ (up - v.begin()) ];
-    return   hello;
+    char* month_classifier = classifications[ (up - v.begin()) ];
+    return   month_classifier;
+}
+
+char* time_files::month_generator_classification_number(double days_elapsed) {
+    
+    constexpr int N = 12;
+
+    std::array<char *, N> classifications =
+    {
+        { "1","2","3","4","5","6","7","8","9","10","11","12"}
+    }
+    ;
+    
+ 
+    int myints[] = { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334  };
+    std::vector<int> v(myints,myints+12);
+
+
+    std::sort (v.begin(), v.end());                // 10 10 10 20 20 20 30 30
+
+    std::vector<int>::iterator low,up;
+    low=std::lower_bound (v.begin(), v.end(), days_elapsed);
+    up= std::upper_bound (v.begin(), v.end(), days_elapsed);
+    
+    char* month_classifier = classifications[ (up - v.begin()) ];
+    return   month_classifier;
 }
