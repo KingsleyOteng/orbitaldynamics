@@ -240,7 +240,7 @@ time_files::tmTOj2000      (tm input)
     // Returns the elpased time since January 1st, 2000
     double jd_value = tmTOjd(input);
         
-    return jd_value - 2,451,544.5;
+    return jd_value - 2400000;
 
 };
 double
