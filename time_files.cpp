@@ -500,13 +500,18 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
             cout << what[2].str() << "<<<< \n";
             cout << what[3].str() << "<<<< \n";
         
-            //tm->tm_sec = stoi(what[6].str());
-            //tm->tm_min = stoi(what[3].str());
-            //tm->tm_hour = stoi(what[4].str());
             double fract = (stod(what[3].str())* 24);
             tm.tm_mday = int(fract);
             fract = fract - int(fract);
-            cout<<month_generator_classification_number(stoi(what[2].str()));
+        
+            fract = fract * 60;
+            tm.tm_min = int(fract);
+            fract = fract - int(fract);
+        
+            fract = fract * 60;
+            tm.tm_sec = int(fract);
+            fract = fract - int(fract);
+    
             tm.tm_mon =  stoi(month_generator_classification_number(stoi(what[2].str())));
             tm.tm_yday = stoi(what[2].str());
 
