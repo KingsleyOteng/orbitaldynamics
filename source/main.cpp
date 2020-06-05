@@ -334,7 +334,7 @@ int main()
        tm.tm_mon = 6;
        tm.tm_year = 120;
        tm.tm_isdst = 1;
-        cout << "\n" << "try this" << nf->tmTOjd(tm) << "\n";
+        cout << "\n" << "julian date: " << nf->tmTOjd(tm) << "\n";
     
     ///TESTING  FOR MODIFIED JULIAN DATE CALCULATOR (COMPLETED)
     tm.tm_sec = 0;
@@ -344,6 +344,6 @@ int main()
     tm.tm_mon = 6;
     tm.tm_year = 120;
     tm.tm_isdst = 1;
-     cout << "\n" << "try this" << nf->tmTOmodifiedjd(tm) << "\n";
+     cout << "\n" << "modified julian" << nf->tmTOmodifiedjd(tm) << "\n";
     return 61;
 }
