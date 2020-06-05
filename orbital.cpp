@@ -30,6 +30,13 @@ orbital::orbital(double x_observer, double y_observer, double z_observer)
     SetObserverCoordinates(x_observer, y_observer, z_observer);
 }
 
+// Set data from web
+void
+    orbital::SetSatelliteData()
+{
+    
+}
+
 // Set the current epoch
 void
     orbital::SetCurrentEpoch(int year, int month, int day)
@@ -100,6 +107,14 @@ void
     
     in.close();
 }
+
+// return the satellite number
+double
+     orbital::getCheckLaunchDate()
+{
+    
+}
+
 
 // set the checksum
 // store the data

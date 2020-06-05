@@ -1,11 +1,10 @@
-//      Header
 //      Overview: Extraction of object tracking data from NORAD TLE
 //
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-//      
+//
 
 #ifndef orbital_hpp
 #define orbital_hpp
@@ -125,7 +124,7 @@ public:
     void        SetCheckSumLineOne              (int checksum);
     void        SetCheckSumLineTwo              (int checksum);
     void        SetObserverCoordinates          (double x_observer, double y_observer, double z_observer);
-    
+    void        SetSatelliteData                ();
     
     // getter
     void        getDataFile                     ();
@@ -158,7 +157,7 @@ public:
     double      getREVOLUTIONepochchecksum      () { return m_epoch_checksum; }
     int         getCheckSumLineOne              () { return m_lineone_checksum; }
     int         getCheckSumLineTwo              () { return m_linetwo_checksum; }
-    
+    double      getCheckLaunchDate              () { return m_linetwo_checksum; } 
     char*       getClassifierID                 ();
 
     int         getYear                         () { return m_year; }
