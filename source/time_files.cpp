@@ -225,6 +225,16 @@ time_files::tmTOjd      (tm input)
 };
 
 double
+time_files::tmTOmodifiedjd      (tm input)
+{
+    
+    double jd_value = tmTOjd(input);
+    
+    return jd_value - 2400000;
+
+};
+
+double
 time_files::time_tTOjd      (char* input)
 {
      unsigned long one = 1.0;

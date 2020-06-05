@@ -326,14 +326,24 @@ int main()
     
     
     
-    ///TESTING
-    std::tm x = {0};
-       tm.tm_sec = seconds_final;
-       tm.tm_min = min_final;
-       tm.tm_hour = hours_final;
-       tm.tm_mday = day_final;
-       tm.tm_mon = month_final - 2;
-       tm.tm_year = year_final;
-       tm.tm_isdst = 0;
+    ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
+       tm.tm_sec = 0;
+       tm.tm_min = 0;
+       tm.tm_hour = 0;
+       tm.tm_mday = 5;
+       tm.tm_mon = 6;
+       tm.tm_year = 120;
+       tm.tm_isdst = 1;
+        cout << "\n" << "try this" << nf->tmTOjd(tm) << "\n";
+    
+    ///TESTING  FOR MODIFIED JULIAN DATE CALCULATOR (COMPLETED)
+    tm.tm_sec = 0;
+    tm.tm_min = 0;
+    tm.tm_hour = 0;
+    tm.tm_mday = 5;
+    tm.tm_mon = 6;
+    tm.tm_year = 120;
+    tm.tm_isdst = 1;
+     cout << "\n" << "try this" << nf->tmTOmodifiedjd(tm) << "\n";
     return 61;
 }
