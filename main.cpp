@@ -13,6 +13,14 @@
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
+#include <time.h>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <stdio.h>
+#include <array>
+#include <iterator>
+#include <stdlib.h>
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 #include "utilities.hpp"               // my own routines for processing data
 #include <boost/any.hpp>               // boost standard library
@@ -314,5 +322,28 @@ int main()
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
+    
+    
+    
+    
+    ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
+       tm.tm_sec = 0;
+       tm.tm_min = 0;
+       tm.tm_hour = 0;
+       tm.tm_mday = 5;
+       tm.tm_mon = 6;
+       tm.tm_year = 120;
+       tm.tm_isdst = 1;
+        cout << "\n" << "try this" << nf->tmTOjd(tm) << "\n";
+    
+    ///TESTING  FOR MODIFIED JULIAN DATE CALCULATOR (COMPLETED)
+    tm.tm_sec = 0;
+    tm.tm_min = 0;
+    tm.tm_hour = 0;
+    tm.tm_mday = 5;
+    tm.tm_mon = 6;
+    tm.tm_year = 120;
+    tm.tm_isdst = 1;
+     cout << "\n" << "try this" << nf->tmTOmodifiedjd(tm) << "\n";
     return 61;
 }
