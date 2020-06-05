@@ -235,15 +235,6 @@ time_files::tmTOmodifiedjd      (tm input)
 };
 
 double
-time_files::tmTOj2000      (tm input)
-{
-    // Returns the elpased time since January 1st, 2000
-    double jd_value = tmTOjd(input);
-        
-    return jd_value - 2400000;
-
-};
-double
 time_files::time_tTOjd      (char* input)
 {
      unsigned long one = 1.0;
