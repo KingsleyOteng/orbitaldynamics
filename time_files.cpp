@@ -227,9 +227,9 @@ time_files::tmTOjd      (tm input)
 double
 time_files::tmTOmodifiedjd      (tm input)
 {
-    
+    // Returns the elpased time since November 17th, 1858
     double jd_value = tmTOjd(input);
-    
+        
     return jd_value - 2400000;
 
 };
