@@ -72,6 +72,7 @@ public:
     double                      getDeltaCtimeFromTLE (std::string dateStringTLE);
     char*                       month_generator_classification_phrase(double days_elapsed);
     char*                       month_generator_classification_number(double days_elapsed);
+    char*                       time_elapsed_since_epoch();
 };
 
 
