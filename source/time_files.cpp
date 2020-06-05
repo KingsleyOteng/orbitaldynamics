@@ -490,15 +490,8 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
     {
             // convert days elapsed to months
             int days_elapsed = stoi(what[2].str());
-        
-            //case(days_elapsed)
        
-        size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
-    
-            
-            cout << what[1].str() << "<<<< \n";
-            cout << what[2].str() << "<<<< \n";
-            cout << what[3].str() << "<<<< \n";
+            size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
         
             double fract = (stod(what[3].str())* 24);
             tm.tm_mday = int(fract);
@@ -523,8 +516,6 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
             {
                     tm.tm_year = stoi(what[1].str()) + 2000;
             };
-           // tm->tm_isdst = 0;
-        
         
             std::tm tm = {0};
     }
@@ -581,4 +572,8 @@ char* time_files::month_generator_classification_number(double days_elapsed) {
     
     char* month_classifier = classifications[ (up - v.begin()) ];
     return   month_classifier;
+}
+
+char* time_files::time_elapsed_since_epoch() {
+
 }
