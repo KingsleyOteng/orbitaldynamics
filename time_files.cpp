@@ -227,13 +227,22 @@ time_files::tmTOjd      (tm input)
 double
 time_files::tmTOmodifiedjd      (tm input)
 {
-    
+    // Returns the elpased time since November 17th, 1858
     double jd_value = tmTOjd(input);
-    
+        
     return jd_value - 2400000;
 
 };
 
+double
+time_files::tmTOj2000      (tm input)
+{
+    // Returns the elpased time since January 1st, 2000
+    double jd_value = tmTOjd(input);
+        
+    return jd_value - 2,451,544.5;
+
+};
 double
 time_files::time_tTOjd      (char* input)
 {

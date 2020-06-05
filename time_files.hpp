@@ -65,6 +65,7 @@ public:
      double                     time_tTOjd      (char* input);
      double                     tmTOjd          (tm input);
      double                     tmTOmodifiedjd  (tm input);
+        double                     tmTOj2000       (tm input);
      char*                      tmTOctime       (tm* input);
      time_t                     tmTOtime_t      (tm* input);
      double                     ctimeTOjd       (char* ctime);
