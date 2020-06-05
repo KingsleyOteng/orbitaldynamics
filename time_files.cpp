@@ -502,13 +502,11 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
             //tm->tm_min = stoi(what[3].str());
             //tm->tm_hour = stoi(what[4].str());
           //  tm->tm_mday = stoi(what[3].str());
-            cout<<"one  :"<<"\n";
             cout<<stoi(what[2].str())<<"\n";
             cout<<month_generator_classification_number(stoi(what[2].str()));
-        cout<<"golden" << "\n";
             tm.tm_mon =  stoi(month_generator_classification_number(stoi(what[2].str())));
             tm.tm_yday = stoi(what[2].str());
-            cout<<"two  :"<<"\n";
+
             if (stoi(what[1].str()) > 50)
             {
                     tm.tm_year = stoi(what[1].str()) + 1900;
