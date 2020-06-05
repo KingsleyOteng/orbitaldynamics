@@ -296,11 +296,6 @@ time_files::ctimeTOjd     (char* ctime)
             tm.tm_isdst = 0;
         
     }
-     
-    cout << "year------------------------------>" << what[4].str() << "\n";
-    cout << "year------------------------------>" << what[5].str() << "\n";
-    cout << "year------------------------------>" << what[6].str() << "\n";
-    cout << "year------------------------------>" << stoi(what[7].str()) << "\n";
     
     return tmTOjd(tm);
 }
@@ -576,4 +571,5 @@ char* time_files::month_generator_classification_number(double days_elapsed) {
 
 char* time_files::time_elapsed_since_epoch() {
 
+    return "0";
 }
