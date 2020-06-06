@@ -600,8 +600,3 @@ char* time_files::time_elapsed_since_epoch() {
        std::cout << stream.rdbuf();
     return "0";
 }
-
-double getCheckLaunchDate()
-{
-    return 0;
-}
