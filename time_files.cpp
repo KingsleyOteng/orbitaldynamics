@@ -18,6 +18,9 @@
 #include <stdlib.h>
 #include <boost/asio.hpp>
 
+
+using namespace std;
+
 // constructor
 time_files::time_files()
 {}
@@ -599,4 +602,31 @@ char* time_files::time_elapsed_since_epoch() {
        stream.flush();
        std::cout << stream.rdbuf();
     return "0";
+}
+
+double time_files::getCheckLaunchDate()
+{
+    boost::asio::ip::tcp::iostream stream("https://www.goodreads.com/review/list/59538890", "http");
+    stream << "GET / HTTP/1.1\r\n";
+    stream << "Host: www.martinbroadhurst.com\r\n";
+    stream << "Accept: */*\r\n";
+    stream << "Connection: close\r\n\r\n";
+    stream.flush();
+    std::cout << stream.rdbuf();
+    return 0;
+}
+
+void time_files::getCheckLaunchDateV()
+{
+    boost::asio::ip::tcp::iostream stream("www.google.com", "http");
+    stream << "GET / HTTP/1.1\r\n";
+    stream << "Host: www.martinbroadhurst.com\r\n";
+    stream << "Accept: */*\r\n";
+    stream << "Connection: close\r\n\r\n";
+    stream.flush();
+    cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<"\n";
+    cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<"\n";
+    cout<<"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<"\n";
+    std::cout << stream.rdbuf();
+   
 }
