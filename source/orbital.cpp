@@ -30,6 +30,13 @@ orbital::orbital(double x_observer, double y_observer, double z_observer)
     SetObserverCoordinates(x_observer, y_observer, z_observer);
 }
 
+// Set data from web
+void
+    orbital::SetSatelliteData()
+{
+    
+}
+
 // Set the current epoch
 void
     orbital::SetCurrentEpoch(int year, int month, int day)
@@ -100,6 +107,8 @@ void
     
     in.close();
 }
+
+
 
 // set the checksum
 // store the data
@@ -384,7 +393,7 @@ void
         // line number one of the NORAD Set Format
         // set the details
         phrase = parsed_line_one[1];
-        phrase = phrase.substr(0, 4);
+        phrase = phrase.substr(0, 5);
         orbital::SetSATnumber(stoi(phrase));
         
         // generate the classifier field

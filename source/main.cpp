@@ -29,6 +29,9 @@
 #include <boost/xpressive/xpressive.hpp>
 #include <cmath>
 
+#include <string>
+#include <iostream>
+
 using namespace std;
 
 int main()
@@ -70,7 +73,7 @@ int main()
    // std::cout << "Phrase" <<
     
     std::cout << "Line Number of Element Data : " << "\n";
-    std::cout << "Satellite Number : " << orb->getTLEname() << "\n";
+    std::cout << "Satellite Name : " << orb->getTLEname() << "\n";
     std::cout << "Classification (U=Unclassified) : " << orb->getCLASSIFIERfield() << "\n";
     std::cout << "International Designator (Last two digits of launch year) : "<< orb->getLAUNCHERyearfield() << "\n";
     std::cout << "International Designator (Launch number of the year) : " << orb->getLAUNCHERnumberfield() << "\n";
@@ -318,6 +321,7 @@ int main()
     double xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
     cout << "yy:" << nf->jdTOctime(xx);
     cout << "ooo:" << nf->getDeltaCtimeFromTLE("20040.41532895");
+    nf->getCheckLaunchDateV();
     //deltaCTIME
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
@@ -337,13 +341,18 @@ int main()
         cout << "\n" << "julian date: " << nf->tmTOjd(tm) << "\n";
     
     ///TESTING  FOR MODIFIED JULIAN DATE CALCULATOR (COMPLETED)
-    tm.tm_sec = 0;
-    tm.tm_min = 0;
-    tm.tm_hour = 0;
-    tm.tm_mday = 5;
-    tm.tm_mon = 6;
-    tm.tm_year = 120;
-    tm.tm_isdst = 1;
-     cout << "\n" << "modified julian" << nf->tmTOmodifiedjd(tm) << "\n";
+     cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
+    
+    ///TESTING  FOR J2000 DATE CALCULATOR (COMPLETED)
+    cout << "\n" << "j2000 date " << nf->tmTOj2000(tm) << "\n";
+    
+    ///TESTING GET SATELLITE NUMBER LINE 1 (COMPLETED)
+    cout << "\n" << "satellite number " << orb->getSATnumber() << "\n";
+    
+    ///TESTING GET SATELLIT INTERNATIONAL DESIGNATOR (COMPLETED)
+    cout << "\n" << "satellite id " << orb->getClassifierID() << "\n";
+    
+    ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
+    cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
     return 61;
 }

@@ -71,6 +71,10 @@ private:
     int         m_lineone_checksum;
     int         m_linetwo_checksum;
     
+    double      m_launch_date_jd;
+    double      m_number_of_revoltions_elapsed;
+    double      m_deg_solar_per_day;
+    
     int         m_year;
     int         m_month;
     int         m_day;
@@ -124,7 +128,7 @@ public:
     void        SetCheckSumLineOne              (int checksum);
     void        SetCheckSumLineTwo              (int checksum);
     void        SetObserverCoordinates          (double x_observer, double y_observer, double z_observer);
-    
+    void        SetSatelliteData                ();
     
     // getter
     void        getDataFile                     ();
@@ -157,6 +161,9 @@ public:
     double      getREVOLUTIONepochchecksum      () { return m_epoch_checksum; }
     int         getCheckSumLineOne              () { return m_lineone_checksum; }
     int         getCheckSumLineTwo              () { return m_linetwo_checksum; }
+    
+    double      getCheckLaunchDate              ()  { return m_linetwo_checksum; }
+    double      getNumberOfRevolutionsSinceLaunch ()    { return m_linetwo_checksum; }
     
     char*       getClassifierID                 ();
 
