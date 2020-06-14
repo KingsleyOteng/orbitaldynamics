@@ -78,7 +78,9 @@ public:
      char*                       month_generator_classification_number(double days_elapsed);
      char*                       time_elapsed_since_epoch();
      double                      getCheckLaunchDate();
-     void                      getCheckLaunchDateV();
+     void                        getCheckLaunchDateV();
+     void                        connectToDatabase();
+     void                         
     
 };
 
