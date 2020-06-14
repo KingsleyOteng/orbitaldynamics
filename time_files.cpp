@@ -613,6 +613,17 @@ double time_files::getCheckLaunchDate()
 void time_files::getCheckLaunchDateV()
 {
 
-    return 0;
+
    
+}
+
+void                        connectToDatabase()
+{
+    
+}
+
+
+void                        disconnectToDatabase()
+{
+    
 }

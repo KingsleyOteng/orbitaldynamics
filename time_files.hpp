@@ -80,7 +80,7 @@ public:
      double                      getCheckLaunchDate();
      void                        getCheckLaunchDateV();
      void                        connectToDatabase();
-     void                         
+    void                        disconnectToDatabase();
     
 };
 
