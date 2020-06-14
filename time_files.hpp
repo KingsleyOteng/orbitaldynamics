@@ -56,25 +56,32 @@ public:
      void                       setCurrentTLETime  (char* ctime);
      void                       setTimeElapsed  (double time_now, double epoch);
      double                     getTimeElapsed  ();
+
     
      // time conversion strings
-     std::tm*                   jdTOtm          (double jd);
+     std::tm*                    jdTOtm          (double jd);
 
-     time_t                     jdTOtime_t      (double jd);
-     char*                      jdTOctime       (double jd);
-     double                     time_tTOjd      (char* input);
-     double                     tmTOjd          (tm input);
-     double                     tmTOmodifiedjd  (tm input);
-     char*                      tmTOctime       (tm* input);
-     time_t                     tmTOtime_t      (tm* input);
-     double                     ctimeTOjd       (char* ctime);
-     std::tm*                   ctimeTOtm       (time_t input);
-     time_t                     ctimeTOtime_t   (time_t input);
-    double                      getTimeDiff  (char*  Time1, char*  Time2);
-    double                      getDeltaCtimeFromTLE (std::string dateStringTLE);
-    char*                       month_generator_classification_phrase(double days_elapsed);
-    char*                       month_generator_classification_number(double days_elapsed);
-    char*                       time_elapsed_since_epoch();
+     time_t                      jdTOtime_t      (double jd);
+     char*                       jdTOctime       (double jd);
+     double                      time_tTOjd      (char* input);
+     double                      tmTOjd          (tm input);
+     double                      tmTOmodifiedjd  (tm input);
+     double                      tmTOj2000       (tm input);
+     char*                       tmTOctime       (tm* input);
+     time_t                      tmTOtime_t      (tm* input);
+     double                      ctimeTOjd       (char* ctime);
+     std::tm*                    ctimeTOtm       (time_t input);
+     time_t                      ctimeTOtime_t   (time_t input);
+     double                      getTimeDiff  (char*  Time1, char*  Time2);
+     double                      getDeltaCtimeFromTLE (std::string dateStringTLE);
+     char*                       month_generator_classification_phrase(double days_elapsed);
+     char*                       month_generator_classification_number(double days_elapsed);
+     char*                       time_elapsed_since_epoch();
+     double                      getCheckLaunchDate();
+     void                        getCheckLaunchDateV();
+     void                        connectToDatabase();
+     void                         
+    
 };
 
 

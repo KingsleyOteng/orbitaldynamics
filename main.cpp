@@ -29,6 +29,9 @@
 #include <boost/xpressive/xpressive.hpp>
 #include <cmath>
 
+#include <string>
+#include <iostream>
+
 using namespace std;
 
 int main()
@@ -318,6 +321,7 @@ int main()
     double xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
     cout << "yy:" << nf->jdTOctime(xx);
     cout << "ooo:" << nf->getDeltaCtimeFromTLE("20040.41532895");
+    nf->getCheckLaunchDateV();
     //deltaCTIME
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
@@ -345,7 +349,10 @@ int main()
     ///TESTING GET SATELLITE NUMBER LINE 1 (COMPLETED)
     cout << "\n" << "satellite number " << orb->getSATnumber() << "\n";
     
-    ///TESTING GET SATELLIT INTERNATIONAL DESIGNATOR
+    ///TESTING GET SATELLIT INTERNATIONAL DESIGNATOR (COMPLETED)
     cout << "\n" << "satellite id " << orb->getClassifierID() << "\n";
+    
+    ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
+    cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
     return 61;
 }

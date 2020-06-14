@@ -16,6 +16,10 @@
 #include <array>
 #include <iterator>
 #include <stdlib.h>
+#include <boost/asio.hpp>
+
+
+using namespace std;
 
 // constructor
 time_files::time_files()
@@ -234,6 +238,15 @@ time_files::tmTOmodifiedjd      (tm input)
 
 };
 
+double
+time_files::tmTOj2000      (tm input)
+{
+    // Returns the elpased time since January 1st, 2000
+    double jd_value = tmTOjd(input);
+        
+    return jd_value - 2451544.5;
+
+};
 double
 time_files::time_tTOjd      (char* input)
 {
@@ -581,5 +594,25 @@ char* time_files::month_generator_classification_number(double days_elapsed) {
 
 char* time_files::time_elapsed_since_epoch() {
 
+    boost::asio::ip::tcp::iostream stream("www.martinbroadhurst.com", "http");
+       stream << "GET / HTTP/1.1\r\n";
+       stream << "Host: www.martinbroadhurst.com\r\n";
+       stream << "Accept: */*\r\n";
+       stream << "Connection: close\r\n\r\n";
+       stream.flush();
+       std::cout << stream.rdbuf();
     return "0";
+}
+
+double time_files::getCheckLaunchDate()
+{
+
+    return 0;
+}
+
+void time_files::getCheckLaunchDateV()
+{
+
+    return 0;
+   
 }

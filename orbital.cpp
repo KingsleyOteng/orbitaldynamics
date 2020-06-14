@@ -108,12 +108,6 @@ void
     in.close();
 }
 
-// return the satellite number
-double
-     orbital::getCheckLaunchDate()
-{
-    
-}
 
 
 // set the checksum
