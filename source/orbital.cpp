@@ -600,3 +600,9 @@ void
     cout << "   revolution:  "      << m_epoch_checksum                     << "\n";
     cout << "     }" << "\n";
 };
+
+double
+    orbital::getCheckSum()
+{
+    return 0;
+}
