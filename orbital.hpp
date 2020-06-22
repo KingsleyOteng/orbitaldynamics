@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-
+#include <boost/functional/hash.hpp>
 
 class orbital
 {
