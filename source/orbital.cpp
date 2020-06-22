@@ -11,6 +11,7 @@
 #include <vector>
 #include <stdio.h>
 #include <stdlib.h>
+#include <boost/functional/hash.hpp>
 
 using namespace std;
 
@@ -604,5 +605,7 @@ void
 double
     orbital::getCheckSum()
 {
-    return 0;
+    boost::hash<std::string> string_hash;
+
+    return string_hash(getClassifierID());
 }
