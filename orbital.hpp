@@ -73,6 +73,7 @@ private:
     
     double      m_launch_date_jd;
     double      m_number_of_revoltions_elapsed;
+    double      m_deg_solar_per_day;
     
     int         m_year;
     int         m_month;
@@ -169,6 +170,7 @@ public:
     int         getYear                         () { return m_year; }
     int         getMonth                        () { return m_month; }
     int         getDay                          () { return m_day; }
+    double      getCheckSum                     ();
 };
 
 
