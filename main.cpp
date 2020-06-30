@@ -13,6 +13,9 @@
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
+#include <mysql.h>
+#include <soci/soci.h>
+#include <soci/mysql/soci-mysql.h>
 #include <time.h>
 #include <iostream>
 #include <fstream>
@@ -33,7 +36,7 @@
 #include <iostream>
 
 using namespace std;
-
+using namespace soci;
 int main()
 {
    // boost::regex e;
