@@ -37,6 +37,7 @@
 
 using namespace std;
 using namespace soci;
+// https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
 int main()
 {
    // boost::regex e;
