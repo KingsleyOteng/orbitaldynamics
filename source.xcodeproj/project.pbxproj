@@ -56,6 +56,7 @@
 		D8E5C160242CA875000B2C67 /* BenchMarking.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BenchMarking.hpp; sourceTree = "<group>"; };
 		D8EDB7EC23D84FC300DC1818 /* utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utilities.cpp; sourceTree = "<group>"; };
 		D8EDB7ED23D84FC300DC1818 /* utilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utilities.hpp; sourceTree = "<group>"; };
+		D8FBC25224AB9B6F00455070 /* soci-mysql.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "soci-mysql.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 		D8BEF51C23CE0C3500C746DF /* source */ = {
 			isa = PBXGroup;
 			children = (
+				D8FBC25224AB9B6F00455070 /* soci-mysql.h */,
 				D897C3BE2416873300389B89 /* coordinate_transforms.cpp */,
 				D897C3BF2416873300389B89 /* coordinate_transforms.hpp */,
 				D897C3B524164B2900389B89 /* sun_model.cpp */,
@@ -301,8 +303,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/include/";
-				LIBRARY_SEARCH_PATHS = "/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/lib/";
+				HEADER_SEARCH_PATHS = (
+					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/include/",
+					"/Users/kwadwooteng-amoko/soci/include/",
+					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
+					/Applications/XAMPP/xamppfiles/include/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/lib/",
+					"/Users/kwadwooteng-amoko/soci/include/",
+					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
+					/Applications/XAMPP/xamppfiles/include/,
+				);
+				NEW_SETTING = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -311,8 +324,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/include/";
-				LIBRARY_SEARCH_PATHS = "/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/lib/";
+				HEADER_SEARCH_PATHS = (
+					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/include/",
+					"/Users/kwadwooteng-amoko/soci/include/",
+					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
+					/Applications/XAMPP/xamppfiles/include/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/lib/",
+					"/Users/kwadwooteng-amoko/soci/include/",
+					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
+					/Applications/XAMPP/xamppfiles/include/,
+				);
+				NEW_SETTING = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
