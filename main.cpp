@@ -358,5 +358,14 @@ int main()
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
+    
+    
+    
+    try
+    {
+        session sql(mysql, "host=156.67.222.64 user=u311839917_koteng password=Mypass1234!");
+    }
+    u311839917_USC_Satellites
+    
     return 61;
 }
