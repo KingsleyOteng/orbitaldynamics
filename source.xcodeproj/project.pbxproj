@@ -14,6 +14,7 @@
 		D897C3C02416873300389B89 /* coordinate_transforms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D897C3BE2416873300389B89 /* coordinate_transforms.cpp */; };
 		D898F8CB242FC51900B23D59 /* time_files.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D898F8C9242FC51900B23D59 /* time_files.cpp */; };
 		D8A5C59B23E4A4FE00AF2906 /* sensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A5C59923E4A4FE00AF2906 /* sensor.cpp */; };
+		D8A8344B24C0A88100E0E848 /* lib64 in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A8344A24C0A88100E0E848 /* lib64 */; };
 		D8BEF51E23CE0C3500C746DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8BEF51D23CE0C3500C746DF /* main.cpp */; };
 		D8E5C161242CA875000B2C67 /* BenchMarking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8E5C15F242CA875000B2C67 /* BenchMarking.cpp */; };
 		D8EDB7EE23D84FC300DC1818 /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8EDB7EC23D84FC300DC1818 /* utilities.cpp */; };
@@ -39,6 +40,7 @@
 		D8221FFE23CE1C7700AFBC4F /* TLE_File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TLE_File.txt; sourceTree = "<group>"; };
 		D83DE0FF23DF5192007E83D0 /* unit_test.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = unit_test.hpp; path = ../../../../Documents/unit_test.hpp; sourceTree = "<group>"; };
 		D83DE10223DF55F9007E83D0 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		D8747E3524BCB56A00B1FD28 /* jni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jni.h; path = ../../../../jni.h; sourceTree = "<group>"; };
 		D897C3B524164B2900389B89 /* sun_model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sun_model.cpp; sourceTree = "<group>"; };
 		D897C3B624164B2900389B89 /* sun_model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sun_model.hpp; sourceTree = "<group>"; };
 		D897C3B824164B3800389B89 /* geomagnetic_field_model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = geomagnetic_field_model.cpp; sourceTree = "<group>"; };
@@ -50,6 +52,8 @@
 		D899F92823E1B48E00186088 /* run.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = run.php; sourceTree = "<group>"; };
 		D8A5C59923E4A4FE00AF2906 /* sensor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sensor.cpp; sourceTree = "<group>"; };
 		D8A5C59A23E4A4FE00AF2906 /* sensor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sensor.hpp; sourceTree = "<group>"; };
+		D8A8344A24C0A88100E0E848 /* lib64 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib64; path = "../../../mysql xcode/mysql-connector-c++-8.0.21-macos10.15-x86-64bit/lib64"; sourceTree = "<group>"; };
+		D8A8347F24C0C66400E0E848 /* mysql_connection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mysql_connection.h; path = "../../../../mysql xcode/include/jdbc/mysql_connection.h"; sourceTree = "<group>"; };
 		D8BEF51A23CE0C3500C746DF /* source */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = source; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BEF51D23CE0C3500C746DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D8E5C15F242CA875000B2C67 /* BenchMarking.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BenchMarking.cpp; sourceTree = "<group>"; };
@@ -64,17 +68,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A8344B24C0A88100E0E848 /* lib64 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8A8344924C0A88100E0E848 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8A8344A24C0A88100E0E848 /* lib64 */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8BEF51123CE0C3500C746DF = {
 			isa = PBXGroup;
 			children = (
 				D8BEF51C23CE0C3500C746DF /* source */,
 				D8BEF51B23CE0C3500C746DF /* Products */,
+				D8A8344924C0A88100E0E848 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,9 +103,11 @@
 		D8BEF51C23CE0C3500C746DF /* source */ = {
 			isa = PBXGroup;
 			children = (
+				D8747E3524BCB56A00B1FD28 /* jni.h */,
 				D8FBC25224AB9B6F00455070 /* soci-mysql.h */,
 				D897C3BE2416873300389B89 /* coordinate_transforms.cpp */,
 				D897C3BF2416873300389B89 /* coordinate_transforms.hpp */,
+				D8A8347F24C0C66400E0E848 /* mysql_connection.h */,
 				D897C3B524164B2900389B89 /* sun_model.cpp */,
 				D897C3B624164B2900389B89 /* sun_model.hpp */,
 				D897C3B824164B3800389B89 /* geomagnetic_field_model.cpp */,
@@ -308,12 +324,30 @@
 					"/Users/kwadwooteng-amoko/soci/include/",
 					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
 					/Applications/XAMPP/xamppfiles/include/,
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mys/",
+					"/Users/kwadwooteng-amoko/Desktop/mysql/",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/lib/",
 					"/Users/kwadwooteng-amoko/soci/include/",
 					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
 					/Applications/XAMPP/xamppfiles/include/,
+					"/Users/kwadwooteng-amoko/Qt5.14.0/5.14.0/Src/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/libavcodec/",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql/",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/lib/",
+					"/Users/kwadwooteng-amoko/soci/include/",
+					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
+					/Applications/XAMPP/xamppfiles/include/,
+					"/Users/kwadwooteng-amoko/Qt5.14.0/5.14.0/Src/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/libavcodec/",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
 				);
 				NEW_SETTING = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -329,12 +363,37 @@
 					"/Users/kwadwooteng-amoko/soci/include/",
 					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
 					/Applications/XAMPP/xamppfiles/include/,
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql/",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/lib/",
 					"/Users/kwadwooteng-amoko/soci/include/",
 					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
 					/Applications/XAMPP/xamppfiles/include/,
+					"/Users/kwadwooteng-amoko/Qt5.14.0/5.14.0/Src/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/libavcodec/",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql-connector-c++-8.0.21-macos10.15-x86-64bit/",
+					"/Users/kwadwooteng-amoko/Desktop/mys/",
+					"/Users/kwadwooteng-amoko/Desktop/mysql/",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/lib/",
+					"/Users/kwadwooteng-amoko/soci/include/",
+					"/Users/kwadwooteng-amoko/soci/include/soci/mysql/",
+					/Applications/XAMPP/xamppfiles/include/,
+					"/Users/kwadwooteng-amoko/Qt5.14.0/5.14.0/Src/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/libavcodec/",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
+					"/Users/kwadwooteng-amoko/Desktop/mysql/",
+					"/Users/kwadwooteng-amoko/Desktop/mysql-connector-c++-8.0.21-macos10.15-x86-64bit/",
+					"/Users/kwadwooteng-amoko/Desktop/mys/",
+					"/Users/kwadwooteng-amoko/Desktop/mysql",
 				);
 				NEW_SETTING = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
