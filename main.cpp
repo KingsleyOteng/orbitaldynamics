@@ -6,6 +6,7 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+
 // preprocessor instructions
 //#include "jni.h"
 #include <iostream>
@@ -14,7 +15,8 @@
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
-#include <mysql.h>
+//#include <mysql.h>
+
 //#include <soci/session.h>
 //#include <soci/soci.h>
 //#include <soci/mysql/soci-mysql.h>
@@ -36,12 +38,14 @@
 #include <cmath>
 #include <string>
 #include <iostream>
+#include <SQLAPI.h>
 //#include "stdafx.h"
 
-#include "mysql_connection.h"
-#include <cppconn/driver.h>
-#include <cppconn/exception.h>
-#include <cppconn/prepared_statement.h>
+//#include "mysql_connection.h"
+//#include <cppconn/driver.h>
+//#include <cppconn/exception.h>
+//#include <cppconn/prepared_statement.h>
+
 
 using namespace std;
 //using namespace soci;
@@ -240,7 +244,7 @@ int main()
     dayg = C - E + F - trunc(30.6001 * G);
     
     
-    
+
     if (G < 13.5)
     {
         monthg = G - 1;
@@ -393,21 +397,21 @@ int main()
     
     
     ////////////////
-        sql::Driver *driver;
-        sql::Connection *con;
-        sql::Statement *stmt;
+        //sql::Driver *driver;
+       // sql::Connection *con;
+        //sql::Statement *stmt;
     
-        try
-        {
-            driver = get_driver_instance();
-            //con = driver->connect(server, username, password);
-        }
-        catch (sql::SQLException e)
-        {
-            cout << "Could not connect to server. Error message: " << e.what() << endl;
-            system("pause");
-            exit(1);
-        }
+      //  try
+       // {
+           //driver = get_driver_instance();
+           //con->connect(server, username, password);
+       // }
+       // catch (sql::SQLException e)
+        //{
+           // cout << "Could not connect to server. Error message: " << e.what() << endl;
+           // system("pause");
+           // exit(1);
+        //}
     
     return 61;
 }
