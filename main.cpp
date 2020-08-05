@@ -17,6 +17,7 @@
 #include "time_files.hpp"
 //#include <mysql.h>
 
+
 //#include <soci/session.h>
 //#include <soci/soci.h>
 //#include <soci/mysql/soci-mysql.h>
@@ -41,8 +42,8 @@
 #include <SQLAPI.h>
 //#include "stdafx.h"
 
-//#include "mysql_connection.h"
-//#include <cppconn/driver.h>
+#include "mysql_connection.h"
+#include <cppconn/driver.h>
 //#include <cppconn/exception.h>
 //#include <cppconn/prepared_statement.h>
 
@@ -57,6 +58,7 @@ const string password = "Mypass1234!";
 
 int main()
 {
+    //  SAConnection con;
    // boost::regex e;
 
     //std::vector<int> v{1,2,3};
@@ -401,17 +403,35 @@ int main()
        // sql::Connection *con;
         //sql::Statement *stmt;
     
-      //  try
-       // {
+      //try
+        //{
            //driver = get_driver_instance();
            //con->connect(server, username, password);
-       // }
+        //}
        // catch (sql::SQLException e)
         //{
            // cout << "Could not connect to server. Error message: " << e.what() << endl;
            // system("pause");
            // exit(1);
         //}
+  
+    try {
+        // con.Connect(_TSA("156.67.222.64"), _TSA("u311839917_koteng"), _TSA("Mypass1234!"),  //SA_MySQL_Client);
+       printf("We are connected!\n");
+
+  //          /*
+    //        The rest of the tutorial goes here!
+    //        */
+           
+    //        con.Disconnect();
+    //        printf("We are disconnected!\n");
+        }
+        catch(SAException &x) {
+          // con.Rollback();
+     //       printf("%s\n", x.ErrText().GetMultiByteChars());
+       }
+    
+    
     
     return 61;
 }
