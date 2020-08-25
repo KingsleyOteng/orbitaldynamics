@@ -9,7 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 /**
- * @details text file generator from ODBC
+ * @details text file generator from ODBC; to be used with the space scheduling program
  * @author kwadwooteng-amoko
  */
 public class FXMLDocumentController implements Initializable {
@@ -19,8 +19,6 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
     }
     
     @Override
