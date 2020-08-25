@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="363.0" prefWidth="492.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication20.FXMLDocumentController">
+    <children>
+        <Button fx:id="button" layoutX="99.0" layoutY="303.0" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="340.0" text="Click Me!" />
+        <Label fx:id="label" layoutX="51.0" layoutY="108.0" minHeight="16" minWidth="69" text="Username :" />
+      <TextArea layoutX="139.0" layoutY="99.0" prefHeight="17.0" prefWidth="294.0" />
+      <Label fx:id="label1" layoutX="51.0" layoutY="153.0" minHeight="16" minWidth="69" text="Password :" />
+      <PasswordField layoutX="139.0" layoutY="142.0" prefHeight="38.0" prefWidth="294.0" />
+      <TextArea layoutX="139.0" layoutY="182.0" prefHeight="17.0" prefWidth="294.0" />
+      <Label fx:id="label2" layoutX="51.0" layoutY="195.0" minHeight="16" minWidth="69" text="Database :" />
+      <Label fx:id="label21" layoutX="51.0" layoutY="239.0" minHeight="16" minWidth="69" text="Log file :" />
+      <TextArea layoutX="139.0" layoutY="225.0" prefHeight="17.0" prefWidth="294.0" />
+      <Label fx:id="label3" layoutX="198.0" layoutY="37.0" minHeight="16" minWidth="69" text="Space Objects Cataloguer" />
+      <Label fx:id="label31" layoutX="235.0" layoutY="271.0" minHeight="16" minWidth="69" />
+    </children>
+</AnchorPane>
