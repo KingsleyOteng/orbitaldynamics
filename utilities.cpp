@@ -172,4 +172,9 @@ double
     return m_epoch_julian_date;
 }
 
+std::string
+    utilities::GetFlatFileData                  (std::string flatfile, std::string field)
+{
+    return "0";
+}
 

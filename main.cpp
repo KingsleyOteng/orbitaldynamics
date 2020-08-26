@@ -6,16 +6,16 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+
 // preprocessor instructions
+//#include "jni.h"
 #include <iostream>
 #include <vector>                      // c-11 vector
 #include <algorithm>                   // c-11 algoithm
 #include "orbital.hpp"                 // header files
-#include "Benchmarking.hpp"            // benchmarking routines
+#include "BenchMarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
-#include <mysql.h>
-#include <soci/soci.h>
-#include <soci/mysql/soci-mysql.h>
+
 #include <time.h>
 #include <iostream>
 #include <fstream>
@@ -31,15 +31,24 @@
 #include <boost/lambda/lambda.hpp>
 #include <boost/xpressive/xpressive.hpp>
 #include <cmath>
-
 #include <string>
 #include <iostream>
 
+#include "mysql_connection.h"
+
+
+
 using namespace std;
-using namespace soci;
+//using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
+
+const string server = "156.67.222.64";
+const string username = "u311839917_koteng";
+const string password = "Mypass1234!";
+
 int main()
 {
+   
    // boost::regex e;
 
     //std::vector<int> v{1,2,3};
@@ -227,7 +236,7 @@ int main()
     dayg = C - E + F - trunc(30.6001 * G);
     
     
-    
+
     if (G < 13.5)
     {
         monthg = G - 1;
@@ -359,13 +368,6 @@ int main()
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
     
-    
-    
-    try
-    {
-        session sql(mysql, "host=156.67.222.64 user=u311839917_koteng password=Mypass1234!");
-    }
-    u311839917_USC_Satellites
     
     return 61;
 }

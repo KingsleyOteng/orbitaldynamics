@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="541.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timetablegeneratormodel.FXMLDocumentController">
+    <children>
+        <Button fx:id="button" layoutX="160.0" layoutY="341.0" onAction="#handleButtonAction" prefHeight="72.0" prefWidth="366.0" text="connect">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Label layoutX="66.0" layoutY="112.0" text="Database :" />
+      <Label layoutX="66.0" layoutY="148.0" text="Log-file :" />
+      <Label layoutX="66.0" layoutY="258.0" text="Password :" />
+      <Label layoutX="66.0" layoutY="222.0" text="Username :" />
+      <TextArea layoutX="161.0" layoutY="108.0" prefHeight="25.0" prefWidth="366.0" />
+      <TextArea layoutX="161.0" layoutY="218.0" prefHeight="25.0" prefWidth="366.0" />
+      <PasswordField layoutX="161.0" layoutY="253.0" prefHeight="40.0" prefWidth="366.0" />
+      <TextArea layoutX="161.0" layoutY="144.0" prefHeight="25.0" prefWidth="366.0" />
+      <Button fx:id="button1" layoutX="25.0" layoutY="341.0" onAction="#handleButtonAction" prefHeight="72.0" prefWidth="107.0" text="update table">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="label1" layoutX="159.0" layoutY="39.0" minHeight="16" minWidth="69" text="Timetable Object Generator">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
