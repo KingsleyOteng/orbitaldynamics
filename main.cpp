@@ -14,11 +14,7 @@
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
-#include <mysql.h>
-//#include <soci/session.h>
-//#include <soci/soci.h>
-//#include <soci/mysql/soci-mysql.h>
-//#include <soci/postgresql/soci-postgresql.h>
+#include <mysql.h>  
 #include <time.h>
 #include <iostream>
 #include <fstream>
@@ -339,9 +335,7 @@ int main()
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
     
-    
-    
-    
+ 
     ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
        tm.tm_sec = 0;
        tm.tm_min = 0;
