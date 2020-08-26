@@ -6,7 +6,6 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-
 // preprocessor instructions
 //#include "jni.h"
 #include <iostream>
@@ -15,9 +14,7 @@
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
-//#include <mysql.h>
-
-
+#include <mysql.h>
 //#include <soci/session.h>
 //#include <soci/soci.h>
 //#include <soci/mysql/soci-mysql.h>
@@ -39,26 +36,18 @@
 #include <cmath>
 #include <string>
 #include <iostream>
-#include <SQLAPI.h>
 //#include "stdafx.h"
 
 #include "mysql_connection.h"
 #include <cppconn/driver.h>
-//#include <cppconn/exception.h>
-//#include <cppconn/prepared_statement.h>
-
+#include <cppconn/exception.h>
+#include <cppconn/prepared_statement.h>
 
 using namespace std;
 //using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
-
-const string server = "156.67.222.64";
-const string username = "u311839917_koteng";
-const string password = "Mypass1234!";
-
 int main()
 {
-    //  SAConnection con;
    // boost::regex e;
 
     //std::vector<int> v{1,2,3};
@@ -246,7 +235,7 @@ int main()
     dayg = C - E + F - trunc(30.6001 * G);
     
     
-
+    
     if (G < 13.5)
     {
         monthg = G - 1;
@@ -377,60 +366,6 @@ int main()
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
-    
-    
-    
-    try
-    {
-        //session sql("mysql", "db=u311839917_USC_Satellites host=156.67.222.64 user=u311839917_koteng password='Mypass1234!'");
-        //session sql(mysql, "db=u311839917_USC_Satellites host=156.67.222.64 user=u311839917_koteng password='Mypass1234!'");
-
-        //session sql("mysql", "host=156.67.222.64  user=u311839917_koteng password=''");
-        //session sql("mysql", "host=localhost user=root password=''");
-          //session sql("mysql://host=156.67.222.64  dbname=u311839917_USC_Satellites user=u311839917_koteng password=123");
-
-    }
-    catch (exception& e)
-    {
-        //cerr << e.what() << endl;
-    }
-    
-    
-    
-    
-    ////////////////
-        //sql::Driver *driver;
-       // sql::Connection *con;
-        //sql::Statement *stmt;
-    
-      //try
-        //{
-           //driver = get_driver_instance();
-           //con->connect(server, username, password);
-        //}
-       // catch (sql::SQLException e)
-        //{
-           // cout << "Could not connect to server. Error message: " << e.what() << endl;
-           // system("pause");
-           // exit(1);
-        //}
-  
-    try {
-        // con.Connect(_TSA("156.67.222.64"), _TSA("u311839917_koteng"), _TSA("Mypass1234!"),  //SA_MySQL_Client);
-       printf("We are connected!\n");
-
-  //          /*
-    //        The rest of the tutorial goes here!
-    //        */
-           
-    //        con.Disconnect();
-    //        printf("We are disconnected!\n");
-        }
-        catch(SAException &x) {
-          // con.Rollback();
-     //       printf("%s\n", x.ErrText().GetMultiByteChars());
-       }
-    
     
     
     return 61;
