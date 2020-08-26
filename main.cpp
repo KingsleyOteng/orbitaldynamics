@@ -6,15 +6,16 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+
 // preprocessor instructions
 //#include "jni.h"
 #include <iostream>
 #include <vector>                      // c-11 vector
 #include <algorithm>                   // c-11 algoithm
 #include "orbital.hpp"                 // header files
-#include "Benchmarking.hpp"            // benchmarking routines
+#include "BenchMarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
-#include <mysql.h>  
+
 #include <time.h>
 #include <iostream>
 #include <fstream>
@@ -32,18 +33,22 @@
 #include <cmath>
 #include <string>
 #include <iostream>
-//#include "stdafx.h"
 
 #include "mysql_connection.h"
-#include <cppconn/driver.h>
-#include <cppconn/exception.h>
-#include <cppconn/prepared_statement.h>
+
+
 
 using namespace std;
 //using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
+
+const string server = "156.67.222.64";
+const string username = "u311839917_koteng";
+const string password = "Mypass1234!";
+
 int main()
 {
+   
    // boost::regex e;
 
     //std::vector<int> v{1,2,3};
@@ -231,7 +236,7 @@ int main()
     dayg = C - E + F - trunc(30.6001 * G);
     
     
-    
+
     if (G < 13.5)
     {
         monthg = G - 1;
@@ -335,7 +340,9 @@ int main()
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
     
- 
+    
+    
+    
     ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
        tm.tm_sec = 0;
        tm.tm_min = 0;

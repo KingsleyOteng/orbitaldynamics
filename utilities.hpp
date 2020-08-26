@@ -9,7 +9,6 @@
 #define utilities_hpp
 
 #include <stdio.h>
-#include <stdio.h>
 #include <string>
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
@@ -66,6 +65,7 @@ public:
 
   char*                     GetSimpleDateFormatLong          ();
   double                    GetEpochJulianDate               ();
+  std::string               GetFlatFileData                  ();
 
 };
 #endif /* utilities_hpp */
