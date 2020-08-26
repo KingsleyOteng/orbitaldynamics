@@ -65,7 +65,7 @@ public:
 
   char*                     GetSimpleDateFormatLong          ();
   double                    GetEpochJulianDate               ();
-  std::string               GetFlatFileData                  ();
+  std::string               GetFlatFileData                  (std::string flatfile, std::string field);
 
 };
 #endif /* utilities_hpp */

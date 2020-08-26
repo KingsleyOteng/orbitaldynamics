@@ -173,7 +173,7 @@ double
 }
 
 std::string
-    utilities::GetFlatFileData                  ()
+    utilities::GetFlatFileData                  (std::string flatfile, std::string field)
 {
     return "0";
 }
