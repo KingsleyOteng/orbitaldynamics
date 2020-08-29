@@ -6,7 +6,11 @@
 package timetablegeneratormodel;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -44,6 +48,18 @@ public class TimetableGeneratorModel extends Application {
         launch(args);
         Connection conn = null;
         Statement stmt = null;
+         try{
+      //STEP 2: Register JDBC driver
+      Class.forName("com.mysql.jdbc.Driver");
+
+      //STEP 3: Open a connection
+      System.out.println("Connecting to database...");
+      conn = DriverManager.getConnection(DB_URL,USER,PASS);
+         } catch (ClassNotFoundException ex) {
+           Logger.getLogger(TimetableGeneratorModel.class.getName()).log(Level.SEVERE, null, ex);
+       } catch (SQLException ex) {
+           Logger.getLogger(TimetableGeneratorModel.class.getName()).log(Level.SEVERE, null, ex);
+       }
     }
     
 }
