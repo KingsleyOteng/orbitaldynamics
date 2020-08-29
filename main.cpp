@@ -6,16 +6,19 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-
 // preprocessor instructions
 //#include "jni.h"
 #include <iostream>
 #include <vector>                      // c-11 vector
 #include <algorithm>                   // c-11 algoithm
 #include "orbital.hpp"                 // header files
-#include "BenchMarking.hpp"            // benchmarking routines
+#include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
-
+#include <mysql.h>
+//#include <soci/session.h>
+//#include <soci/soci.h>
+//#include <soci/mysql/soci-mysql.h>
+//#include <soci/postgresql/soci-postgresql.h>
 #include <time.h>
 #include <iostream>
 #include <fstream>
@@ -33,10 +36,12 @@
 #include <cmath>
 #include <string>
 #include <iostream>
+//#include "stdafx.h"
 
 #include "mysql_connection.h"
-
-
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/prepared_statement.h>
 
 using namespace std;
 //using namespace soci;
@@ -48,7 +53,6 @@ const string password = "Mypass1234!";
 
 int main()
 {
-   
    // boost::regex e;
 
     //std::vector<int> v{1,2,3};
@@ -236,7 +240,7 @@ int main()
     dayg = C - E + F - trunc(30.6001 * G);
     
     
-
+    
     if (G < 13.5)
     {
         monthg = G - 1;
@@ -340,9 +344,6 @@ int main()
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
     
-    
-    
-    
     ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
        tm.tm_sec = 0;
        tm.tm_min = 0;
@@ -368,6 +369,39 @@ int main()
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
     
+    
+    
+    try
+    {
+        //session sql("mysql", "db=u311839917_USC_Satellites host=156.67.222.64 user=u311839917_koteng password='Mypass1234!'");
+        //session sql(mysql, "db=u311839917_USC_Satellites host=156.67.222.64 user=u311839917_koteng password='Mypass1234!'");
+
+        //session sql("mysql", "host=156.67.222.64  user=u311839917_koteng password=''");
+        //session sql("mysql", "host=localhost user=root password=''");
+          //session sql("mysql://host=156.67.222.64  dbname=u311839917_USC_Satellites user=u311839917_koteng password=123");
+
+    }
+    catch (exception& e)
+    {
+        //cerr << e.what() << endl;
+    }
+    
+    ////////////////
+        sql::Driver *driver;
+        sql::Connection *con;
+        sql::Statement *stmt;
+    
+        try
+        {
+            //driver = get_driver_instance();
+            //con = driver->connect(server, username, password);
+        }
+        catch (sql::SQLException e)
+        {
+            cout << "Could not connect to server. Error message: " << e.what() << endl;
+            system("pause");
+            exit(1);
+        }
     
     return 61;
 }
