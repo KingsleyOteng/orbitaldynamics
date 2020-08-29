@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import java.sql.*;
 
 /**
  * @details text file generator from ODBC; to be used with the space scheduling program
