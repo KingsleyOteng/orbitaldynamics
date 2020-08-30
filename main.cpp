@@ -344,6 +344,9 @@ int main()
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
     
+    
+    
+    
     ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
        tm.tm_sec = 0;
        tm.tm_min = 0;
@@ -385,6 +388,9 @@ int main()
     {
         //cerr << e.what() << endl;
     }
+    
+    
+    
     
     ////////////////
         sql::Driver *driver;
