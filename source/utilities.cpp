@@ -172,4 +172,8 @@ double
     return m_epoch_julian_date;
 }
 
-
+std::string
+    utilities::GetSatelliteLog()
+{
+    return "0";
+}
