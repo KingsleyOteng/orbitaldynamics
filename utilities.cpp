@@ -173,8 +173,7 @@ double
 }
 
 std::string
-    utilities::GetFlatFileData                  (std::string flatfile, std::string field)
+    utilities::GetSatelliteLog()
 {
     return "0";
 }
-
