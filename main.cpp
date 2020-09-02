@@ -87,8 +87,6 @@ int main()
     // store TLE parameters
     orb->SetTLEparameters(orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
     
-   // std::cout << "Phrase" <<
-    
     std::cout << "Line Number of Element Data : " << "\n";
     std::cout << "Satellite Name : " << orb->getTLEname() << "\n";
     std::cout << "Classification (U=Unclassified) : " << orb->getCLASSIFIERfield() << "\n";
@@ -341,7 +339,6 @@ int main()
     nf->getCheckLaunchDateV();
     //deltaCTIME
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
-    //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
     
     
@@ -371,26 +368,6 @@ int main()
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
-    
-    
-    
-    try
-    {
-        //session sql("mysql", "db=u311839917_USC_Satellites host=156.67.222.64 user=u311839917_koteng password='Mypass1234!'");
-        //session sql(mysql, "db=u311839917_USC_Satellites host=156.67.222.64 user=u311839917_koteng password='Mypass1234!'");
-
-        //session sql("mysql", "host=156.67.222.64  user=u311839917_koteng password=''");
-        //session sql("mysql", "host=localhost user=root password=''");
-          //session sql("mysql://host=156.67.222.64  dbname=u311839917_USC_Satellites user=u311839917_koteng password=123");
-
-    }
-    catch (exception& e)
-    {
-        //cerr << e.what() << endl;
-    }
-    
-    
-    
     
     ////////////////
         sql::Driver *driver;
