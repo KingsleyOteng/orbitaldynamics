@@ -13,6 +13,7 @@
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
 #include <vector>
+#include <boost/xpressive/xpressive.hpp>
 
 
 class utilities
@@ -65,6 +66,6 @@ public:
 
   char*                     GetSimpleDateFormatLong          ();
   double                    GetEpochJulianDate               ();
-  std::string               utilities::GetSatelliteLog       ();
+  std::string               GetSatelliteLog       ();
 };
 #endif /* utilities_hpp */
