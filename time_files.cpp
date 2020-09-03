@@ -16,7 +16,7 @@
 #include <array>
 #include <iterator>
 #include <stdlib.h>
-#include <boost/asio.hpp>
+//#include <boost/asio.hpp>
 
 
 using namespace std;
@@ -496,7 +496,7 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
     // returns index for the month
 
 
-    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3})(.\\d+)" );
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})" );
     boost::xpressive::smatch what;
     
     int temp;

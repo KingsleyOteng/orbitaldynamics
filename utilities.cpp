@@ -172,8 +172,11 @@ double
     return m_epoch_julian_date;
 }
 
+// extracts data from a flat file
 std::string
     utilities::GetSatelliteLog()
 {
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3})(.\\d+)" );
+    boost::xpressive::smatch what;
     return "0";
 }
