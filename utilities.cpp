@@ -176,7 +176,13 @@ double
 std::string
     utilities::GetSatelliteLog()
 {
-    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(.\\d+)(\\d+)(\\d+)(.\\d+)(.\\d+)(.\\d+)(\\d+)(\\w+)(\\w+)(\\w+)(\\d +)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\d+)(\\w+)" );
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+))(\\w+))(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)" );
     boost::xpressive::smatch what;
+    
+    if( regex_match( phrase, what, rex ) )
+    {
+          
+    }
+    
     return "0";
 }
