@@ -368,7 +368,7 @@ int main()
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
-    
+        
     ////////////////
         sql::Driver *driver;
         sql::Connection *con;

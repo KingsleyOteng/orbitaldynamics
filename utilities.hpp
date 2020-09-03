@@ -13,6 +13,7 @@
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
 #include <vector>
+#include <boost/xpressive/xpressive.hpp>
 
 
 class utilities
