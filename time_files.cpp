@@ -16,7 +16,7 @@
 #include <array>
 #include <iterator>
 #include <stdlib.h>
-//#include <boost/asio.hpp>
+#include <boost/asio.hpp>
 
 
 using namespace std;
@@ -485,9 +485,9 @@ time_files::getTimeDiff  (char*  Time1, char*  Time2)
 double
 time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
 {
-    int one = 1.0;
+    //int one = 1.0;
     
-    double fraction = 0.0;
+    //double fraction = 0.0;
     
     std::string phrase = dateStringTLE;
     
@@ -499,7 +499,7 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})" );
     boost::xpressive::smatch what;
     
-    int temp;
+
     
     std::tm tm = {0};
     //= time_t
@@ -507,7 +507,7 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
     if( regex_match( phrase, what, rex ) )
     {
             // convert days elapsed to months
-            int days_elapsed = stoi(what[2].str());
+            //int days_elapsed = stoi(what[2].str());
        
             size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
         
