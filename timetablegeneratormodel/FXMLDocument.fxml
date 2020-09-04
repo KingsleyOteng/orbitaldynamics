@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="541.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timetablegeneratormodel.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="541.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timetablegeneratormodel.FXMLDocumentController">
     <children>
-        <Button fx:id="connect_button" layoutX="160.0" layoutY="341.0" onAction="#handleButtonAction" prefHeight="72.0" prefWidth="366.0" text="connect">
+        <Button fx:id="download_button" layoutX="160.0" layoutY="365.0" onAction="#handleButtonAction" prefHeight="72.0" prefWidth="366.0" text="download data">
          <font>
             <Font size="14.0" />
          </font></Button>
@@ -21,7 +22,7 @@
       <TextArea fx:id="username" layoutX="161.0" layoutY="218.0" prefHeight="25.0" prefWidth="366.0" promptText="Username" />
       <PasswordField fx:id="password" layoutX="161.0" layoutY="253.0" prefHeight="40.0" prefWidth="366.0" promptText="Password" />
       <TextArea fx:id="logfile" layoutX="161.0" layoutY="144.0" prefHeight="25.0" prefWidth="366.0" promptText="Log-file" />
-      <Button fx:id="update_button" layoutX="25.0" layoutY="341.0" onAction="#handleButtonAction" prefHeight="72.0" prefWidth="107.0" text="update table">
+      <Button fx:id="update_button" layoutX="12.0" layoutY="365.0" onAction="#handleButtonAction" prefHeight="72.0" prefWidth="120.0" text="process update">
          <font>
             <Font size="14.0" />
          </font>
@@ -31,5 +32,13 @@
             <Font size="21.0" />
          </font>
       </Label>
+      <Button fx:id="connect_button" layoutX="161.0" layoutY="308.0" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="366.0" text="connect">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Circle fill="DODGERBLUE" layoutX="34.0" layoutY="484.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="34.0" layoutY="509.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="34.0" layoutY="533.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
 </AnchorPane>
