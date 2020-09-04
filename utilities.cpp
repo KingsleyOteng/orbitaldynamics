@@ -177,18 +177,11 @@ std::string
     utilities::GetSatelliteLog(std::string phrasalmatching)
 {
     
-    std::string phrase = phrasalmatching;
-    cout << "top" << "\n";
-    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "\\w+)");
- 
-    boost::xpressive::smatch what;
-    cout << "xxxx" << "\n";
-     cout << "phrases" << phrase << "\n";
     
-    if( regex_match( phrase, what, rex ) )
-    {
-        cout << "hello mate" << what[4] << "\n";
-    }
+    boost::xpressive::sregex expr = boost::xpressive::sregex::compile("\\w+");
+    cout << phrasalmatching <<"<<phrase";
+    std::cout << "now <<<<" << std::boolalpha << regex_match(phrasalmatching, expr) << '\n';
+    
     
     return "0";
 }
