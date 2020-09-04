@@ -176,11 +176,18 @@ double
 std::string
     utilities::GetSatelliteLog(std::string phrasalmatching)
 {
+    const std::string x = "Boost Libraries";
+    const char *c = "Boost Libraries";
+    boost::xpressive::cregex expr = boost::xpressive::cregex::compile("(\\w+) (\\w+)!");
+     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "\\w+\\s\\w+" );
+    boost::xpressive::smatch what;
+    std::cout << std::boolalpha << regex_match(c, expr) << '\n';
     
-    
-    boost::xpressive::sregex expr = boost::xpressive::sregex::compile("\\w+");
-    cout << phrasalmatching <<"<<phrase";
-    std::cout << "now <<<<" << std::boolalpha << regex_match(phrasalmatching, expr) << '\n';
+    cout << "ok" << "\n";
+    if( regex_match( x, what, rex ) )
+       {
+           cout << "you>>>>" << what[2] << "\n";
+       };
     
     
     return "0";
