@@ -178,11 +178,11 @@ std::string
 {
     
     std::string phrase = phrasalmatching;
-    
+   
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+))(\\w+))(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)" );
     
     boost::xpressive::smatch what;
-    
+     cout << "phrases" << phrase << "\n";
     if( regex_match( phrase, what, rex ) )
     {
           
