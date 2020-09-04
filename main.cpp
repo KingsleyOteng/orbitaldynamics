@@ -386,5 +386,15 @@ int main()
             exit(1);
         }
     
+    
+        ////////////////////////////////////////// Testing New Feature
+    try
+          {
+    cout << util -> GetSatelliteLog("'NIUSat (Noorul Islam University Satellite)' 'India' 'India'")<< "\n";
+          }
+    catch (exception e)
+    {
+        cout << "there was an error";
+    }
     return 61;
 }

@@ -174,10 +174,13 @@ double
 
 // extracts data from a flat file
 std::string
-    utilities::GetSatelliteLog()
+    utilities::GetSatelliteLog(std::string phrasalmatching)
 {
-    std::string phrase;
+    
+    std::string phrase = phrasalmatching;
+    
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+))(\\w+))(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)(\\w+)" );
+    
     boost::xpressive::smatch what;
     
     if( regex_match( phrase, what, rex ) )
