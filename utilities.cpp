@@ -179,7 +179,7 @@ std::string
     const std::string x = "Boost Libraries";
     const char *c = "Boost Libraries";
     boost::xpressive::cregex expr = boost::xpressive::cregex::compile("(\\w+) (\\w+)!");
-     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "\\w+\\s\\w+" );
+     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)\\s(\\w+)" );
     boost::xpressive::smatch what;
     std::cout << std::boolalpha << regex_match(c, expr) << '\n';
     
