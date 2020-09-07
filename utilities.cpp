@@ -176,18 +176,27 @@ double
 std::string
     utilities::GetSatelliteLog(std::string phrasalmatching)
 {
-    const std::string x = "Boost Libraries";
+    const std::string x = "'NIUSat (Noorul Islam University Satellite)'    'India'    'India'    'Noorul Islam University'    'Civil'    'Technology Development'";
     const char *c = "Boost Libraries";
     boost::xpressive::cregex expr = boost::xpressive::cregex::compile("(\\w+) (\\w+)!");
-     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)\\s(\\w+)" );
+    boost::xpressive::sregex expre = boost::xpressive::sregex::compile("(\\w+)!");
+     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)?(\\s)" );
     boost::xpressive::smatch what;
     std::cout << std::boolalpha << regex_match(c, expr) << '\n';
     
     cout << "ok" << "\n";
     if( regex_match( x, what, rex ) )
        {
-           cout << "you>>>>" << what[2] << "\n";
+           cout << "you>>>>" << what[0] << "\n";
        };
+    
+    std::string input("01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981");
+    //boost::xpressive::sregex re = +alpha; // find a date
+    
+    boost::xpressive::sregex_token_iterator begin( input.begin(), input.end(), re, 3 ), end;
+
+    std::ostream_iterator< std::string > out_iter( std::cout, "\n" );
+    std::copy( begin, end, out_iter );
     
     
     return "0";
