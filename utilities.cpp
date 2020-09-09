@@ -191,7 +191,16 @@ std::string
        };
     
     std::string input("01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981");
-    
+    boost::xpressive::sregex dates = boost::xpressive::sregex::compile("(\\d{2})/(\\d{2})/(\\d{4})");
+    boost::xpressive::sregex strings = boost::xpressive::sregex::compile("(\\d{2})/?(\\d{2})/(\\d{4})");
+    // find a date
+
+    // iterate over all the years in the input. Note the 3 below, corresponding to the 3rd sub-expression:
+    boost::xpressive::sregex_token_iterator begin( input.begin(), input.end(), strings, 2 ), end;
+
+    // write all the words to std::cout
+    std::ostream_iterator< std::string > out_iter( std::cout, "\n" );
+    std::copy( begin, end, out_iter );
     
     return "0";
 }
