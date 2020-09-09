@@ -191,12 +191,6 @@ std::string
        };
     
     std::string input("01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981");
-    //boost::xpressive::sregex re = +alpha; // find a date
-    
-    boost::xpressive::sregex_token_iterator begin( input.begin(), input.end(), re, 3 ), end;
-
-    std::ostream_iterator< std::string > out_iter( std::cout, "\n" );
-    std::copy( begin, end, out_iter );
     
     
     return "0";
