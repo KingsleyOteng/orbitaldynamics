@@ -66,6 +66,6 @@ public:
 
   char*                     GetSimpleDateFormatLong          ();
   double                    GetEpochJulianDate               ();
-  std::string               GetSatelliteLog       ();
+  std::string               GetSatelliteLog                 (std::string phrasalmatching);
 };
 #endif /* utilities_hpp */
