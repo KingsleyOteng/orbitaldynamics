@@ -172,6 +172,13 @@ double
     return m_epoch_julian_date;
 }
 
+// returns the Julian date variable
+std::string
+    utilities::GetFlatFileData(std::string flatfile, std::string field)
+{
+    return "0";
+}
+
 // extracts data from a flat file
 std::string
     utilities::GetSatelliteLog(std::string phrasalmatching)
