@@ -176,31 +176,19 @@ double
 std::string
     utilities::GetSatelliteLog(std::string phrasalmatching)
 {
-    const std::string x = "NIUSat (Noorul Islam University Satellite)    India    India    Noorul Islam University    Civil    Technology Development";
+    const std::string x = "'NIUSat (Noorul Islam University Satellite)'    'India'    'India'    'Noorul Islam University'    'Civil'    'Technology Development'";
     const std::string xx = "'one' two three";
-    const char *c = "Boost Libraries";
-    boost::xpressive::sregex expr =  boost::xpressive::sregex::compile("[a-zA-z]+");
-   // boost::xpressive::sregex::compile("((?:'|)(\\w+)(?:'|)((?=\\s)(?:.)([a-zA-z]+).+)+)+");
-   // boost::xpressive::sregex::compile("(?:'|)(\\w+)(?:'|)((?=\\s)(?:.)([a-zA-z]+).+)+");
-   // boost::xpressive::sregex::compile("(?:'|)(\\w+)(?:'|)(?=\\s)(?:.)([a-zA-z]+).+");
-    boost::xpressive::sregex expre = boost::xpressive::sregex::compile("(\\'\\w+)");
-     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)?(\\s)" );
-    boost::xpressive::smatch what;
-    //std::cout << std::boolalpha << regex_match(c, expr) << '\n';
     
-    boost::xpressive::smatch match;
+    std::string input("01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981");
+    boost::xpressive::sregex re = boost::xpressive::sregex::compile("(\\d{2})/(\\d{2})/(\\d{4})");
+     boost::xpressive::sregex re2 = boost::xpressive::sregex::compile("((?:\')\\w+)|(\\w+)|");
     
-    std::cout << std::boolalpha << regex_match(xx, match, expr) << '\n';
+    int const sub_matches[] = { 2, 1, 3 }; // day, month, year
+    boost::xpressive::sregex_token_iterator begin( x.begin(), x.end(), re2, sub_matches ), end;
 
-    //std::cout << "    " <<  std::boolalpha << boost::regex_match(x, match, expr) << std::endl;
-    std::cout << "    " <<  match[0] << "- Full Match" << std::endl;
-    std::cout << "    " <<  match[1] << "- No Subexpression match is captured" << std::endl;
-    std::cout << "    " <<  match[2] << "- No Subexpression match is captured" << std::endl;
-    std::cout << "    " <<  match[3] << "- No Subexpression match is captured" << std::endl;
-    std::cout << "    " <<  match[4] << "- No Subexpression match is captured" << std::endl;
-    std::cout << "    " <<  match[5] << "- No Subexpression match is captured" << std::endl;
-    std::cout << "    " <<  match[6] << "- No Subexpression match is captured" << std::endl;
-    std::cout << "    " <<  match[7] << "- No Subexpression match is captured" << std::endl;
+    // write all the words to std::cout
+    std::ostream_iterator< std::string > out_iter( std::cout, "\n" );
+    std::copy( begin, end, out_iter );
     
     return "0";
 }

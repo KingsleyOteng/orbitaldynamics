@@ -13,7 +13,9 @@
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
 #include <vector>
-
+#include <boost/regex.hpp>
+#include <boost/xpressive/xpressive.hpp>
+#include <regex>
 
 class utilities
 {
@@ -65,7 +67,6 @@ public:
 
   char*                     GetSimpleDateFormatLong          ();
   double                    GetEpochJulianDate               ();
-  std::string                GetFlatFileData                  (std::string flatfile, std::string field);
   std::string               GetSatelliteLog                 (std::string phrasalmatching);
 };
 #endif /* utilities_hpp */
