@@ -176,11 +176,11 @@ double
 std::string
     utilities::GetSatelliteLog(std::string phrasalmatching)
 {
-    const std::string x = "'NIUSat (Noorul Islam University Satellite)'    'India'    'India'    'Noorul Islam University'    'Civil'    'Technology Development'";
+    const std::string x = "NIUSat (Noorul Islam University Satellite)    India    India    Noorul Islam University    Civil    Technology Development";
     const std::string xx = "'one' two three";
     const char *c = "Boost Libraries";
-    boost::xpressive::sregex expr =
-    boost::xpressive::sregex::compile("((?:'|\s)(\\w+)(?:'|\s))?(.+)");
+    boost::xpressive::sregex expr =  boost::xpressive::sregex::compile("[a-zA-z]+");
+   // boost::xpressive::sregex::compile("((?:'|)(\\w+)(?:'|)((?=\\s)(?:.)([a-zA-z]+).+)+)+");
    // boost::xpressive::sregex::compile("(?:'|)(\\w+)(?:'|)((?=\\s)(?:.)([a-zA-z]+).+)+");
    // boost::xpressive::sregex::compile("(?:'|)(\\w+)(?:'|)(?=\\s)(?:.)([a-zA-z]+).+");
     boost::xpressive::sregex expre = boost::xpressive::sregex::compile("(\\'\\w+)");
