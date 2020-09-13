@@ -172,42 +172,32 @@ double
     return m_epoch_julian_date;
 }
 
-// returns the Julian date variable
-std::string
-    utilities::GetFlatFileData(std::string flatfile, std::string field)
-{
-    return "0";
-}
-
 // extracts data from a flat file
 std::string
     utilities::GetSatelliteLog(std::string phrasalmatching)
 {
     const std::string x = "'NIUSat (Noorul Islam University Satellite)'    'India'    'India'    'Noorul Islam University'    'Civil'    'Technology Development'";
+    const std::string xx = "'one' two three";
     const char *c = "Boost Libraries";
-    boost::xpressive::cregex expr = boost::xpressive::cregex::compile("(\\w+) (\\w+)!");
-    boost::xpressive::sregex expre = boost::xpressive::sregex::compile("(\\w+)!");
+    boost::xpressive::sregex expr =
+    boost::xpressive::sregex::compile("((?:'|\s)(\\w+)(?:'|)).+");
+   // boost::xpressive::sregex::compile("(?:'|)(\\w+)(?:'|)((?=\\s)(?:.)([a-zA-z]+).+)+");
+   // boost::xpressive::sregex::compile("(?:'|)(\\w+)(?:'|)(?=\\s)(?:.)([a-zA-z]+).+");
+    boost::xpressive::sregex expre = boost::xpressive::sregex::compile("(\\'\\w+)");
      boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)?(\\s)" );
     boost::xpressive::smatch what;
-    std::cout << std::boolalpha << regex_match(c, expr) << '\n';
+    //std::cout << std::boolalpha << regex_match(c, expr) << '\n';
     
-    cout << "ok" << "\n";
-    if( regex_match( x, what, rex ) )
-       {
-           cout << "you>>>>" << what[0] << "\n";
-       };
+    boost::xpressive::smatch match;
     
-    std::string input("01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981");
-    boost::xpressive::sregex strings = boost::xpressive::sregex::compile("(\\d{2})/(\\d{2})/(\\d{4})");
-    boost::xpressive::sregex dates = boost::xpressive::sregex::compile("(\\d{2})/?(\\d{2})/?(\\d{4})");
-    // find a date
+    std::cout << std::boolalpha << regex_match(xx, match, expr) << '\n';
 
-    // iterate over all the years in the input. Note the 3 below, corresponding to the 3rd sub-expression:
-    boost::xpressive::sregex_token_iterator begin( input.begin(), input.end(), strings, 2 ), end;
-
-    // write all the words to std::cout
-    std::ostream_iterator< std::string > out_iter( std::cout, "\n" );
-    std::copy( begin, end, out_iter );
+    //std::cout << "    " <<  std::boolalpha << boost::regex_match(x, match, expr) << std::endl;
+    std::cout << "    " <<  match[0] << "- Full Match" << std::endl;
+    std::cout << "    " <<  match[1] << "- No Subexpression match is captured" << std::endl;
+    std::cout << "    " <<  match[2] << "- No Subexpression match is captured" << std::endl;
+    std::cout << "    " <<  match[3] << "- No Subexpression match is captured" << std::endl;
+    std::cout << "    " <<  match[4] << "- No Subexpression match is captured" << std::endl;
     
     return "0";
 }
