@@ -180,7 +180,7 @@ std::string
     const std::string xx = "'one' two three";
     const char *c = "Boost Libraries";
     boost::xpressive::sregex expr =
-    boost::xpressive::sregex::compile("((?:'|\s)(\\w+)(?:'|)).+");
+    boost::xpressive::sregex::compile("((?:'|\s)(\\w+)(?:'|\s))?(.+)");
    // boost::xpressive::sregex::compile("(?:'|)(\\w+)(?:'|)((?=\\s)(?:.)([a-zA-z]+).+)+");
    // boost::xpressive::sregex::compile("(?:'|)(\\w+)(?:'|)(?=\\s)(?:.)([a-zA-z]+).+");
     boost::xpressive::sregex expre = boost::xpressive::sregex::compile("(\\'\\w+)");
@@ -198,6 +198,9 @@ std::string
     std::cout << "    " <<  match[2] << "- No Subexpression match is captured" << std::endl;
     std::cout << "    " <<  match[3] << "- No Subexpression match is captured" << std::endl;
     std::cout << "    " <<  match[4] << "- No Subexpression match is captured" << std::endl;
+    std::cout << "    " <<  match[5] << "- No Subexpression match is captured" << std::endl;
+    std::cout << "    " <<  match[6] << "- No Subexpression match is captured" << std::endl;
+    std::cout << "    " <<  match[7] << "- No Subexpression match is captured" << std::endl;
     
     return "0";
 }
