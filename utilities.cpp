@@ -182,7 +182,8 @@ std::string
     std::string input("01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981");
     boost::xpressive::sregex re = boost::xpressive::sregex::compile("(\\d{2})/(\\d{2})/(\\d{4})");
      boost::xpressive::sregex re2 =
-    boost::xpressive::sregex::compile("(\\w+\\)\\')|(\\(\\w+)|(\\w+\\')");
+        boost::xpressive::sregex::compile("('\\w+)|(\\(\\w+)|(\\w+)|(\\w+')");
+    //boost::xpressive::sregex::compile("(\\w+\\)\\')|(\\w+)|(\\w+)|(\\'\\w+)|(\\(\\w+)|(\\w+\\')");
     //boost::xpressive::sregex::compile("(\\(\\w+)|(\\w+\\')|(\\'\\w+)|(\\w+\\))|(\\w+\\)\\')");
     // boost::xpressive::sregex::compile("((?:\')\\w+)|(\\w+)|(\\w+\')");
     int const sub_matches[] = { 2, 1, 3 }; // day, month, year
