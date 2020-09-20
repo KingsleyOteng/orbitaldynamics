@@ -15,6 +15,7 @@
 #include <vector>
 #include <boost/regex.hpp>
 #include <boost/xpressive/xpressive.hpp>
+#include <boost/regex.hpp>
 #include <regex>
 
 class utilities

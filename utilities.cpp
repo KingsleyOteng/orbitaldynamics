@@ -186,9 +186,15 @@ std::string
     //boost::xpressive::sregex::compile("(\\w+\\)\\')|(\\w+)|(\\w+)|(\\'\\w+)|(\\(\\w+)|(\\w+\\')");
     //boost::xpressive::sregex::compile("(\\(\\w+)|(\\w+\\')|(\\'\\w+)|(\\w+\\))|(\\w+\\)\\')");
     // boost::xpressive::sregex::compile("((?:\')\\w+)|(\\w+)|(\\w+\')");
+    
+    
     int const sub_matches[] = { 2, 1, 3 }; // day, month, year
-    boost::xpressive::sregex_token_iterator begin( x.begin(), x.end(), re2, sub_matches ), end;
+    boost::xpressive::sregex_token_iterator begin( input.begin(), input.end(), re2, sub_matches ), end;
 
+    cout << "hello: " << input[1];
+    cout << "hello: " << x.find("2003");
+    //<< "\n";
+    
     // write all the words to std::cout
     std::ostream_iterator< std::string > out_iter( std::cout, "\n" );
     std::copy( begin, end, out_iter );
