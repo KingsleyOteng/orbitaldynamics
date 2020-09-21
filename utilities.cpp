@@ -191,11 +191,11 @@ std::string
     int const sub_matches[] = { 2, 1, 3 }; // day, month, year
     boost::xpressive::sregex_token_iterator begin( input.begin(), input.end(), re2, sub_matches ), end;
 
-        smatch what;
-        if(boost::xpressive::regex_match(input, what, re2))
-        {
-            std::cout << "char = " << what["firstword"]  << what["secondword"] std::endl;
-        }
+        //smatch what;
+       // if(boost::xpressive::regex_match(input, what, re2))
+      //  {
+      //      std::cout << "char = " << what["firstword"]  << what["secondword"] std::endl;
+      //  }
 
 
 
