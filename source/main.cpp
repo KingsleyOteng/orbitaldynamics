@@ -77,6 +77,8 @@ int main()
     
     // back out TLE parameters
     util -> setStringParser(orb -> getTLElineone ());
+    util -> ReadLineByLine();
+    
     vector<string> parsed_line_ones             = util ->
                                                     getStringParser();
     
@@ -394,7 +396,9 @@ int main()
           }
     catch (exception e)
     {
-        cout << "there was an error";
+        //cout << "there was an error";
     }
+    
+    
     return 61;
 }

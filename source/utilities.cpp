@@ -176,31 +176,38 @@ double
 std::string
     utilities::GetSatelliteLog(std::string phrasalmatching)
 {
-    const std::string x = "'NIUSat (Noorul Islam University Satellite)'    'India'    'India'    'Noorul Islam University'    'Civil'    'Technology Development'";
-    const char *c = "Boost Libraries";
-    boost::xpressive::cregex expr = boost::xpressive::cregex::compile("(\\w+) (\\w+)!");
-    boost::xpressive::sregex expre = boost::xpressive::sregex::compile("(\\w+)!");
-     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+)?(\\s)" );
-    boost::xpressive::smatch what;
-    std::cout << std::boolalpha << regex_match(c, expr) << '\n';
+    const std::string x = "'NIUSat (Noorul Islam University Satellite)' 'India' 'India' 'Noorul Islam University'    'Civil'    'Technology Development'";
     
-    cout << "ok" << "\n";
-    if( regex_match( x, what, rex ) )
-       {
-           cout << "you>>>>" << what[0] << "\n";
-       };
+    const std::string s = "01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981";
     
-    std::string input("01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981");
-    boost::xpressive::sregex strings = boost::xpressive::sregex::compile("(\\d{2})/(\\d{2})/(\\d{4})");
-    boost::xpressive::sregex dates = boost::xpressive::sregex::compile("(\\d{2})/?(\\d{2})/?(\\d{4})");
-    // find a date
-
-    // iterate over all the years in the input. Note the 3 below, corresponding to the 3rd sub-expression:
-    boost::xpressive::sregex_token_iterator begin( input.begin(), input.end(), strings, 2 ), end;
-
-    // write all the words to std::cout
-    std::ostream_iterator< std::string > out_iter( std::cout, "\n" );
-    std::copy( begin, end, out_iter );
+       std::regex words_regex("('\\w+)|(\\(\\w+)|(\\w+)|(\\w+')");
+       auto words_begin =
+           std::sregex_iterator(x.begin(), x.end(), words_regex);
+       auto words_end = std::sregex_iterator();
+    
+       std::cout << "Found "
+                 << std::distance(words_begin, words_end)
+                 << " words:\n";
+    
+       for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
+           std::smatch match = *i;
+           std::string match_str = match.str();
+           std::cout << match_str << '\n';
+       }
     
     return "0";
+}
+
+
+void
+    utilities::ReadLineByLine()
+{
+    cout << "kwajwo kwajwo" << "\n";
+    std::istringstream f("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/nameofsatellite.txt");
+    std::string line;
+    while (std::getline(f, line)) {
+        std::cout << line << "xxx" << std::endl<<"end";
+    }
+    
+   
 }

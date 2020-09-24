@@ -34,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		D805E6D423F535A000B2BBD3 /* notes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = notes.rtf; sourceTree = "<group>"; };
+		D819BAAD25193B46001D1F4B /* names.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = names.rtf; sourceTree = "<group>"; };
+		D819BAAE251950D6001D1F4B /* output.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = output.rtf; sourceTree = "<group>"; };
+		D819BAAF25195731001D1F4B /* NameOfSatellite.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = NameOfSatellite.txt; path = ../../../../NameOfSatellite.txt; sourceTree = "<group>"; };
 		D8221FFA23CE10B600AFBC4F /* orbital.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = orbital.cpp; sourceTree = "<group>"; };
 		D8221FFB23CE10B600AFBC4F /* orbital.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = orbital.hpp; sourceTree = "<group>"; };
 		D8221FFD23CE17BE00AFBC4F /* TLE_File.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TLE_File.rtf; sourceTree = "<group>"; };
@@ -87,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				D8BEF51C23CE0C3500C746DF /* source */,
-				D8BEF51B23CE0C3500C746DF /* Products */,
 				D8A8344924C0A88100E0E848 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +100,7 @@
 				D8BEF51A23CE0C3500C746DF /* source */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D8BEF51C23CE0C3500C746DF /* source */ = {
@@ -116,19 +119,23 @@
 				D899F92823E1B48E00186088 /* run.php */,
 				D83DE0FF23DF5192007E83D0 /* unit_test.hpp */,
 				D8221FFE23CE1C7700AFBC4F /* TLE_File.txt */,
+				D8BEF51B23CE0C3500C746DF /* Products */,
 				D8BEF51D23CE0C3500C746DF /* main.cpp */,
 				D8221FFA23CE10B600AFBC4F /* orbital.cpp */,
 				D8221FFB23CE10B600AFBC4F /* orbital.hpp */,
 				D8221FFD23CE17BE00AFBC4F /* TLE_File.rtf */,
 				D8EDB7EC23D84FC300DC1818 /* utilities.cpp */,
 				D8EDB7ED23D84FC300DC1818 /* utilities.hpp */,
+				D819BAAD25193B46001D1F4B /* names.rtf */,
 				D83DE10223DF55F9007E83D0 /* Makefile */,
 				D8A5C59923E4A4FE00AF2906 /* sensor.cpp */,
+				D819BAAF25195731001D1F4B /* NameOfSatellite.txt */,
 				D8A5C59A23E4A4FE00AF2906 /* sensor.hpp */,
 				D8E5C15F242CA875000B2C67 /* BenchMarking.cpp */,
 				D8E5C160242CA875000B2C67 /* BenchMarking.hpp */,
 				D898F8C9242FC51900B23D59 /* time_files.cpp */,
 				D898F8CA242FC51900B23D59 /* time_files.hpp */,
+				D819BAAE251950D6001D1F4B /* output.rtf */,
 			);
 			path = source;
 			sourceTree = "<group>";
