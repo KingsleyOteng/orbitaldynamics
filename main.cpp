@@ -6,8 +6,8 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+
 // preprocessor instructions
-//#include "jni.h"
 #include <iostream>
 #include <vector>                      // c-11 vector
 #include <algorithm>                   // c-11 algoithm
@@ -15,10 +15,8 @@
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
 #include <mysql.h>
-//#include <soci/session.h>
-//#include <soci/soci.h>
-//#include <soci/mysql/soci-mysql.h>
-//#include <soci/postgresql/soci-postgresql.h>
+#include <soci/soci.h>
+#include <soci/mysql/soci-mysql.h>
 #include <time.h>
 #include <iostream>
 #include <fstream>
@@ -34,23 +32,13 @@
 #include <boost/lambda/lambda.hpp>
 #include <boost/xpressive/xpressive.hpp>
 #include <cmath>
+
 #include <string>
 #include <iostream>
-//#include "stdafx.h"
-
-//#include "mysql_connection.h"
-#include <cppconn/driver.h>
-#include <cppconn/exception.h>
-#include <cppconn/prepared_statement.h>
 
 using namespace std;
-//using namespace soci;
+using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
-
-const string server = "156.67.222.64";
-const string username = "u311839917_koteng";
-const string password = "Mypass1234!";
-
 int main()
 {
    // boost::regex e;
@@ -86,6 +74,8 @@ int main()
     
     // store TLE parameters
     orb->SetTLEparameters(orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
+    
+   // std::cout << "Phrase" <<
     
     std::cout << "Line Number of Element Data : " << "\n";
     std::cout << "Satellite Name : " << orb->getTLEname() << "\n";
@@ -320,13 +310,13 @@ int main()
     cout << "time from " << std::chrono::system_clock::to_time_t(tp) << "\n";
     cout << "time year " << 1990 + tm.tm_year << "\n";
     cout << "time year " << trunc(365.25 * (1990 + year - 1)) + trunc(30.600001 * 14) + 1720994.5 + BB << "\n";
-    cout << "julian date" << jd << "\n";
-    cout << "year from julian date" << year_final << "\n";
-    cout << "month from julian date" << month_final << "\n";
-    cout << "day from julian date" << day_final << "\n";
-    cout << "hours from julian date" << hours_final << "\n";
-    cout << "minutes from julian date" << min_final << "\n";
-    cout << "seconds from julian date" << round(seconds_final) << "\n";
+    cout << "julian date"                       << jd                       << "\n";
+    cout << "year from julian date"             << year_final               << "\n";
+    cout << "month from julian date"            << month_final              << "\n";
+    cout << "day from julian date"              << day_final                << "\n";
+    cout << "hours from julian date"            << hours_final              << "\n";
+    cout << "minutes from julian date"          << min_final                << "\n";
+    cout << "seconds from julian date"          << round(seconds_final)     << "\n";
     
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
@@ -339,10 +329,8 @@ int main()
     nf->getCheckLaunchDateV();
     //deltaCTIME
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
+    //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
-    
-    
-    
     
     ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
        tm.tm_sec = 0;
@@ -352,7 +340,8 @@ int main()
        tm.tm_mon = 6;
        tm.tm_year = 120;
        tm.tm_isdst = 1;
-        cout << "\n" << "julian date: " << nf->tmTOjd(tm) << "\n";
+    
+    cout << "\n" << "julian date: " << nf->tmTOjd(tm) << "\n";
     
     ///TESTING  FOR MODIFIED JULIAN DATE CALCULATOR (COMPLETED)
      cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
@@ -368,33 +357,5 @@ int main()
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
-        
-    ////////////////
-        sql::Driver *driver;
-        sql::Connection *con;
-        sql::Statement *stmt;
-    
-        try
-        {
-            //driver = get_driver_instance();
-            //con = driver->connect(server, username, password);
-        }
-        catch (sql::SQLException e)
-        {
-            cout << "Could not connect to server. Error message: " << e.what() << endl;
-            system("pause");
-            exit(1);
-        }
-    
-    
-        ////////////////////////////////////////// Testing New Feature
-    try
-          {
-    cout << util -> GetSatelliteLog("NIUSat (Noorul Islam University Satellite)' 'India' 'India' 'Noorul Islam University'    'Civil'    'Technology Development'    'N/A'    'Sun-Synchronous'        '0.00'    '496'    '517' '0.0015269395768196'    '97.40'    '94.5'    '15'    'N/A'    'N/A'    '22/06/2017'    '2'    'Noorul Islam University'    'India' 'Satish Dhawan Space Centre'    'PSLV'    '2017-036B'    '42766'    'Agricultural Monitoriing'")<< "\n";
-          }
-    catch (exception e)
-    {
-        cout << "there was an error";
-    }
     return 61;
 }
