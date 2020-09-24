@@ -202,11 +202,11 @@ std::string
 void
     utilities::ReadLineByLine()
 {
-   
-    std::istringstream f("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/names.rtf");
+    cout << "kwajwo kwajwo" << "\n";
+    std::istringstream f("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/nameofsatellite.txt");
     std::string line;
     while (std::getline(f, line)) {
-        std::cout << line << std::endl;
+        std::cout << line << "xxx" << std::endl<<"end";
     }
     
    
