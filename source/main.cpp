@@ -77,7 +77,7 @@ int main()
     
     // back out TLE parameters
     util -> setStringParser(orb -> getTLElineone ());
-    util -> ReadLineByLine();
+    //util -> ReadLineByLine();
     
     vector<string> parsed_line_ones             = util ->
                                                     getStringParser();

@@ -200,14 +200,37 @@ std::string
 
 
 void
-    utilities::ReadLineByLine()
+    utilities::SatelliteNORADRecord(std::string noradId)
 {
-    cout << "kwajwo kwajwo" << "\n";
-    std::istringstream f("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/nameofsatellite.txt");
-    std::string line;
-    while (std::getline(f, line)) {
-        std::cout << line << "xxx" << std::endl<<"end";
-    }
-    
+
+    string line;
+     ifstream myfile ("example.txt");
+     if (myfile.is_open())
+     {
+       while ( getline (myfile,line) )
+       {
+         regex
+           regexp("("+noradId+")");
+         regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
+         smatch match;
+           if (regex_search(line, regexp))
+           {
+             cout<< line;
+             
+            if (regex_search(line, match, regexpsecond) == true)
+            {
+  
+                          for (int xI = 1; xI < match.size() - 1; xI++)
+                            {
+                                cout << xI <<"nth capturing group is '" << match.str(xI) <<"\n";
+                            }
+             }
+         }
+       }
+       myfile.close();
+     }
+     else cout << "Unable to open file";
+
+
    
 }
