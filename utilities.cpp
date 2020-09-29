@@ -213,32 +213,18 @@ void
            regexp("("+noradId+")");
          regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
          smatch match;
-         if (regex_search(line, regexp))
-         {
+           if (regex_search(line, regexp))
+           {
              cout<< line;
              
-             if (regex_search(line, match, regexpsecond) == true)
-                      {
-                      
-                            
-                            cout << "Match size = " << match.size() << endl;
-                      
-                            // Capturing group is index from 0 to match_size -1
-                            // .....here 0 to 2
-                            // pattern at index 0 is the overall match "geeksforgeeks"
-                            // pattern at index 1 is the first capturing group "geeks"
-                            // pattern at index 2 is the 2nd capturing group "forgeeks"
-                      
-                          cout << "Whole match : " << match.str(0) << endl;
+            if (regex_search(line, match, regexpsecond) == true)
+            {
+  
                           for (int xI = 1; xI < match.size() - 1; xI++)
                             {
-                                               cout << xI <<"nth capturing group is '" << match.str(xI)
-                               <<"\n";
-                                                   
+                                cout << xI <<"nth capturing group is '" << match.str(xI) <<"\n";
                             }
-             
-                      }
-    
+             }
          }
        }
        myfile.close();
