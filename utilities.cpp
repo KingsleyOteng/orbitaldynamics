@@ -202,12 +202,26 @@ std::string
 void
     utilities::ReadLineByLine()
 {
-    cout << "kwajwo kwajwo" << "\n";
-    std::istringstream f("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/nameofsatellite.txt");
-    std::string line;
-    while (std::getline(f, line)) {
-        std::cout << line << "xxx" << std::endl<<"end";
+
+    string line;
+    ifstream myfile ("example.txt");
+    if (myfile.is_open())
+    {
+      while ( getline (myfile,line) )
+      {
+        cout << line << '\n';
+        regex regexp("(\s+?<record>,)");
+        smatch m;
+        regex_search(line, m, regexp);
+          cout <<"mmmmm";
+          for (auto x : m)
+          cout << ">>>>" << line << "<<<<<<solved" << "\n";
+      }
+      myfile.close();
     }
+
+    else cout << "Unable to open file";
+}
     
    
 }
