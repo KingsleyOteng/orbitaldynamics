@@ -204,24 +204,21 @@ void
 {
 
     string line;
-    ifstream myfile ("example.txt");
-    if (myfile.is_open())
-    {
-      while ( getline (myfile,line) )
-      {
-        cout << line << '\n';
-        regex regexp("(\s+?<record>,)");
-        smatch m;
-        regex_search(line, m, regexp);
-          cout <<"mmmmm";
-          for (auto x : m)
-          cout << ">>>>" << line << "<<<<<<solved" << "\n";
-      }
-      myfile.close();
-    }
+     ifstream myfile ("example.txt");
+     if (myfile.is_open())
+     {
+       while ( getline (myfile,line) )
+       {
+         regex regexp("(22314)");
+         smatch m;
+         if (regex_search(line, regexp))
+         {
+             cout<< line;
+         }
+       }
+       myfile.close();
+     }
 
-    else cout << "Unable to open file";
-}
-    
+     else cout << "Unable to open file";
    
 }
