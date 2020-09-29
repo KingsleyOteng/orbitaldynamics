@@ -200,7 +200,7 @@ std::string
 
 
 void
-    utilities::ReadLineByLine()
+    utilities::SatelliteNORADRecord(std::string noradId)
 {
 
     string line;
@@ -209,7 +209,7 @@ void
     {
       while ( getline (myfile,line) )
       {
-        regex regexp("(22314)");
+        regex regexp("("+noradId+")");
         smatch m;
         if (regex_search(line, regexp))
         {
