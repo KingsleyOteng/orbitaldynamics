@@ -204,9 +204,6 @@ utilities::SatelliteNORADRecord(std::string noradId, int indx)
 {
 
     string line;
-    char grades = 1;
-    //int indx = 0;
-    cout << "("+noradId+")" << "\n";
     
     // create a read stream for the text file
      ifstream myfile ("example.txt");
