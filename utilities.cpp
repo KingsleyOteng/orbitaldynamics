@@ -200,11 +200,11 @@ std::string
 
 
 void
-    utilities::SatelliteNORADRecord(std::string noradId, int grade)
+utilities::SatelliteNORADRecord(std::string noradId, int grade)
 {
 
     string line;
-    //char grade = 'D';
+    char grades = 1;
     int indx = 0;
     
     // create a read stream for the text file
@@ -212,7 +212,7 @@ void
     
     
        // determine the index
-       switch(grade) {
+       switch(grades) {
           case 'name' :
                indx = 1;
              break;
