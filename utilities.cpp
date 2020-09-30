@@ -200,11 +200,17 @@ std::string
 
 
 void
-    utilities::SatelliteNORADRecord(std::string noradId, std::string parameter)
+    utilities::SatelliteNORADRecord(std::string noradId, std::string grade)
 {
 
     string line;
+    //char grade = 'D';
+    int indx = 0;
+    
+    // create a read stream for the text file
      ifstream myfile ("example.txt");
+    
+    //open the file stream
      if (myfile.is_open())
      {
        while ( getline (myfile,line) )
@@ -231,9 +237,7 @@ void
      }
      else cout << "Unable to open file";
     
-    char grade = 'D';
-    int indx = 0;
-    
+    // determine the index
     switch(grade) {
        case 'name' :
             indx = 1;
