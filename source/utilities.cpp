@@ -311,9 +311,9 @@ void
             if (regex_search(line, match, regexpsecond) == true)
             {
   
-                          for (int xI = 1; xI < match.size() - 1; xI++)
+                          //for (int xI = 1; xI < match.size() - 1; xI++)
                             {
-                                cout << xI <<"nth capturing group is '" << match.str(indx) <<"\n";
+                                cout <<"nth capturing group is>>>>>>>>>>>>>>>> '" << match.str(indx) <<"\n";
                             }
              }
          }
