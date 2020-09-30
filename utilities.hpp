@@ -71,6 +71,6 @@ public:
   char*                     GetSimpleDateFormatLong          ();
   double                    GetEpochJulianDate               ();
   std::string               GetSatelliteLog                  (std::string phrasalmatching);
-  void                      SatelliteNORADRecord             (std::string noradId, int grade);
+ void                       SatelliteNORADRecord(std::string noradId, int indx);
 };
 #endif /* utilities_hpp */
