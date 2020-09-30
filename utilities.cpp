@@ -200,7 +200,7 @@ std::string
 
 
 void
-    utilities::SatelliteNORADRecord(std::string noradId, std::string grade)
+    utilities::SatelliteNORADRecord(std::string noradId, int grade)
 {
 
     string line;
