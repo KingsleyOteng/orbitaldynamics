@@ -200,25 +200,127 @@ std::string
 
 
 void
-    utilities::SatelliteNORADRecord(std::string noradId)
+    utilities::SatelliteNORADRecord(std::string noradId, std::string grade)
 {
 
     string line;
-    ifstream myfile ("example.txt");
-    if (myfile.is_open())
-    {
-      while ( getline (myfile,line) )
-      {
-        regex regexp("("+noradId+")");
-        smatch m;
-        if (regex_search(line, regexp))
-        {
-            cout<< line;
-        }
-      }
-      myfile.close();
+    //char grade = 'D';
+    int indx = 0;
+    
+    // create a read stream for the text file
+     ifstream myfile ("example.txt");
+    
+    //open the file stream
+     if (myfile.is_open())
+     {
+       while ( getline (myfile,line) )
+       {
+         regex
+           regexp("("+noradId+")");
+         regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
+         smatch match;
+           if (regex_search(line, regexp))
+           {
+             cout<< line;
+             
+            if (regex_search(line, match, regexpsecond) == true)
+            {
+  
+                          for (int xI = 1; xI < match.size() - 1; xI++)
+                            {
+                                cout << xI <<"nth capturing group is '" << match.str(xI) <<"\n";
+                            }
+             }
+         }
+       }
+       myfile.close();
+     }
+     else cout << "Unable to open file";
+    
+    // determine the index
+    switch(grade) {
+       case 'name' :
+            indx = 1;
+          break;
+       case 'origin' :
+            indx = 2;
+          break;
+       case 'operator' :
+            indx = 3;
+          break;
+       case 'owner' :
+            indx = 4;
+          break;
+       case 'purpose' :
+      indx = 5;
+          break;
+       case 'purposedetaild' :
+          indx = 6;
+         break;
+       case 'orbitclass' :
+            indx = 7;
+          break;
+       case 'orbittype' :
+            indx = 8;
+          break;
+       case 'longitude' :
+            indx = 9;
+          break;
+       case 'perigree' :
+          indx = 10;
+          break;
+       case 'apogee' :
+            indx = 11;
+              break;
+       case 'eccentricity' :
+           indx = 12;
+              break;
+       case 'inclination' :
+          indx = 13;
+              break;
+       case 'period' :
+        indx = 14;
+              break;
+       case 'masslaunch' :
+          indx = 15;
+              break;
+       case 'massdry' :
+           indx = 16;
+             break;
+       case 'power' :
+           indx = 17;
+              break;
+       case 'date' :
+            indx = 18;
+              break;
+       case 'lifetime' :
+            indx = 19;
+              break;
+       case 'contractor' :
+             indx = 20;
+              break;
+       case 'contractorcountry' :
+             indx = 21;
+              break;
+       case 'launchsite' :
+            indx = 22;
+              break;
+       case 'launchvehicle' :
+           indx = 22;
+              break;
+       case 'cospar' :
+            indx = 23;
+              break;
+       case 'norad' :
+            indx = 24;
+              break;
+       case 'comments' :
+            indx = 25;
+              break;
+       default :
+            cout << "Invalid grade" << endl;
     }
 
-    else cout << "Unable to open file";
+
    
 }
