@@ -399,7 +399,7 @@ int main()
         //cout << "there was an error";
     }
     
-    cout << util -> 
+    util -> SatelliteNORADRecord("42766", 1);
     
     return 61;
 }
