@@ -207,6 +207,7 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     string line;
     std::string output;
     
+    // flat file search key
     if (indx == "Name") {indx_ref = 0;}
     else if (indx == "country-orig") {indx_ref = 1;}
     else if (indx == "country-operator") {indx_ref = 2;}
@@ -239,17 +240,17 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     
     // create a read stream for the text file
      ifstream myfile ("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/example.txt");
-     //cout << "("+noradId+")" << "\n";
     
     //open the file stream
      if (myfile.is_open())
      {
        while ( getline (myfile,line) )
        {
-         regex
-           regexp("("+noradId+")");
+         // search using the norad id
+         regex  regexp("("+noradId+")");
          regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
            
+        // where there is a match extract data using a key
         smatch match;
         if (regex_search(line, regexp))
            {
@@ -265,7 +266,4 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
      else cout << "Unable to open file";
    
     return output;
-
-    //no return value.
-   
 }
