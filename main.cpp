@@ -371,10 +371,7 @@ int main()
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
         
-    ////////////////
-        sql::Driver *driver;
-        sql::Connection *con;
-        sql::Statement *stmt;
+   
     
         try
         {
@@ -389,7 +386,7 @@ int main()
         }
     
     
-        ////////////////////////////////////////// Testing New Feature
+    ////////////////////////////////////////// Testing New Feature
     try
           {
     cout << util -> GetSatelliteLog("NIUSat (Noorul Islam University Satellite)' 'India' 'India' 'Noorul Islam University'    'Civil'    'Technology Development'    'N/A'    'Sun-Synchronous'        '0.00'    '496'    '517' '0.0015269395768196'    '97.40'    '94.5'    '15'    'N/A'    'N/A'    '22/06/2017'    '2'    'Noorul Islam University'    'India' 'Satish Dhawan Space Centre'    'PSLV'    '2017-036B'    '42766'    'Agricultural Monitoriing'")<< "\n";
@@ -399,8 +396,12 @@ int main()
         //cout << "there was an error";
     }
     
+    // Let's grab a record using the NORAD ID and query the record for launch details
     std::string query_output;
-    util -> SatelliteNORADRecord("42766", "apogee");
+    std::string query_field = "apogee";
+    query_output = util -> SatelliteNORADRecord("42766", query_field);
+    cout << "record> " << query_field <<  ">" << query_output << "\n";
     
+    // exit
     return 61;
 }

@@ -199,12 +199,13 @@ std::string
 }
 
 
-void
+std::string
 utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
 {
 
     int indx_ref;
     string line;
+    std::string output;
     
     if (indx == "Name") {indx_ref = 0;}
     else if (indx == "country-orig") {indx_ref = 1;}
@@ -249,28 +250,22 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
            regexp("("+noradId+")");
          regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
            
-          // cout << "("+noradId+")" << "\n";
-         smatch match;
-           if (regex_search(line, regexp))
+        smatch match;
+        if (regex_search(line, regexp))
            {
-             //cout<< line;
              
-            if (regex_search(line, match, regexpsecond) == true)
-            {
-  
-                          //for (int xI = 1; xI < match.size() - 1; xI++)
-                            {
-                                cout <<"captured record >>>>>>>> '\n" << match.str(indx_ref+2) <<"\n <<<<< ";
-                                cout << ">>> 0 " << match.str(0) << "{{{{{{}" << "\n";
-                                cout << ">>> 1 " << match.str(1) << "{{{{{{}" << "\n";
-                            }
-             }
-         }
+               if (regex_search(line, match, regexpsecond) == true)
+                {
+                        output = match.str(indx_ref+2);
+                }
+           }
        }
        myfile.close();
      }
      else cout << "Unable to open file";
    
+    
+    return output;
 
     //no return value.
    
