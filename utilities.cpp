@@ -217,24 +217,24 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     else if (indx == "orbit-type") {indx_ref = 8;}
     else if (indx == "longitude-geo") {indx_ref = 9;}
     else if (indx == "perigree") {indx_ref = 10;}
-    else if (indx == "apogee") {indx = 11;}
-    else if (indx == "eccentricity") {indx = 12;}
-    else if (indx == "inclination") {indx = 13;}
-    else if (indx == "period") {indx = 14;}
-    else if (indx == "mass-launch") {indx = 15;}
-    else if (indx == "mass-dry") {indx = 16;}
-    else if (indx == "power") {indx = 17;}
-    else if (indx == "date-launch") {indx = 18;}
-    else if (indx == "lifetime") {indx = 19;}
-    else if (indx == "contractor") {indx = 20;}
-    else if (indx == "contractor-country") {indx = 21;}
-    else if (indx == "launch-site") {indx = 22;}
-    else if (indx == "launch-vehicle") {indx = 23;}
-    else if (indx == "cospar") {indx = 24;}
-    else if (indx == "norad") {indx = 25;}
-    else if (indx == "comments") {indx = 26;}
-    else if (indx == "source") {indx = 28;}
-    else {indx = 0;};
+    else if (indx == "apogee") {indx_ref = 11;}
+    else if (indx == "eccentricity") {indx_ref = 12;}
+    else if (indx == "inclination") {indx_ref = 13;}
+    else if (indx == "period") {indx_ref = 14;}
+    else if (indx == "mass-launch") {indx_ref = 15;}
+    else if (indx == "mass-dry") {indx_ref = 16;}
+    else if (indx == "power") {indx_ref = 17;}
+    else if (indx == "date-launch") {indx_ref = 18;}
+    else if (indx == "lifetime") {indx_ref = 19;}
+    else if (indx == "contractor") {indx_ref = 20;}
+    else if (indx == "contractor-country") {indx_ref = 21;}
+    else if (indx == "launch-site") {indx_ref = 22;}
+    else if (indx == "launch-vehicle") {indx_ref = 23;}
+    else if (indx == "cospar") {indx_ref = 24;}
+    else if (indx == "norad") {indx_ref = 25;}
+    else if (indx == "comments") {indx_ref = 26;}
+    else if (indx == "source") {indx_ref = 28;}
+    else {indx_ref = 0;};
     
     // create a read stream for the text file
      ifstream myfile ("example.txt");
@@ -259,7 +259,7 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
   
                           //for (int xI = 1; xI < match.size() - 1; xI++)
                             {
-                                cout <<"nth capturing group is>>>>>>>>>>>>>>>> '" << match.str(indx) <<"\n";
+                                cout <<"nth capturing group is>>>>>>>>>>>>>>>> '" << match.str(indx_ref) <<"\n";
                             }
              }
          }
