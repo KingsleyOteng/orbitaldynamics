@@ -399,7 +399,7 @@ int main()
         //cout << "there was an error";
     }
     
-    util -> SatelliteNORADRecord("42766", "name");
+    util -> SatelliteNORADRecord("42766", "apogee");
     
     return 61;
 }
