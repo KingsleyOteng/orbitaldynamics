@@ -238,6 +238,7 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     
     // create a read stream for the text file
      ifstream myfile ("example.txt");
+     cout << "HHHHHHHHHHHHHHHHHHHH("+noradId+")" << "\n";
     
     //open the file stream
      if (myfile.is_open())
@@ -248,7 +249,7 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
            regexp("("+noradId+")");
          regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
            
-           cout << "("+noradId+")" << "\n";
+           cout << "??????????????????????????????("+noradId+")" << "\n";
          smatch match;
            if (regex_search(line, regexp))
            {
