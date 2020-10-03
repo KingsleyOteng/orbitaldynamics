@@ -43,6 +43,7 @@
 		D8221FFE23CE1C7700AFBC4F /* TLE_File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TLE_File.txt; sourceTree = "<group>"; };
 		D83DE0FF23DF5192007E83D0 /* unit_test.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = unit_test.hpp; path = ../../../../Documents/unit_test.hpp; sourceTree = "<group>"; };
 		D83DE10223DF55F9007E83D0 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		D85733052529116800D9AE9A /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = example.txt; path = "../../../../../Library/Developer/Xcode/DerivedData/read_from_file-gqjygbrscrfksbelepsqfpumajdo/Build/Products/Debug/example.txt"; sourceTree = "<group>"; };
 		D8747E3524BCB56A00B1FD28 /* jni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jni.h; path = ../../../../jni.h; sourceTree = "<group>"; };
 		D897C3B524164B2900389B89 /* sun_model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sun_model.cpp; sourceTree = "<group>"; };
 		D897C3B624164B2900389B89 /* sun_model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sun_model.hpp; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 				D8221FFA23CE10B600AFBC4F /* orbital.cpp */,
 				D8221FFB23CE10B600AFBC4F /* orbital.hpp */,
 				D8221FFD23CE17BE00AFBC4F /* TLE_File.rtf */,
+				D85733052529116800D9AE9A /* example.txt */,
 				D8EDB7EC23D84FC300DC1818 /* utilities.cpp */,
 				D8EDB7ED23D84FC300DC1818 /* utilities.hpp */,
 				D819BAAD25193B46001D1F4B /* names.rtf */,
