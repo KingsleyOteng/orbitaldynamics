@@ -399,7 +399,8 @@ int main()
         //cout << "there was an error";
     }
     
-    util -> SatelliteNORADRecord("42766", "name");
+    std::string query_output;
+    util -> SatelliteNORADRecord("42766", "apogee");
     
     return 61;
 }

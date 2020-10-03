@@ -237,8 +237,8 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     else {indx_ref = 0;};
     
     // create a read stream for the text file
-     ifstream myfile ("example.txt");
-     cout << "HHHHHHHHHHHHHHHHHHHH("+noradId+")" << "\n";
+     ifstream myfile ("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/example.txt");
+     cout << "("+noradId+")" << "\n";
     
     //open the file stream
      if (myfile.is_open())
@@ -249,18 +249,20 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
            regexp("("+noradId+")");
          regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
            
-           cout << "??????????????????????????????("+noradId+")" << "\n";
+          // cout << "("+noradId+")" << "\n";
          smatch match;
            if (regex_search(line, regexp))
            {
-             cout<< line;
+             //cout<< line;
              
             if (regex_search(line, match, regexpsecond) == true)
             {
   
                           //for (int xI = 1; xI < match.size() - 1; xI++)
                             {
-                                cout <<"nth capturing group is>>>>>>>>>>>>>>>> '" << match.str(indx_ref) <<"\n";
+                                cout <<"captured record >>>>>>>> '\n" << match.str(indx_ref+2) <<"\n <<<<< ";
+                                cout << ">>> 0 " << match.str(0) << "{{{{{{}" << "\n";
+                                cout << ">>> 1 " << match.str(1) << "{{{{{{}" << "\n";
                             }
              }
          }
