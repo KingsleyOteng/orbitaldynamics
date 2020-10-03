@@ -200,42 +200,41 @@ std::string
 
 
 void
-utilities::SatelliteNORADRecord(std::string noradId, int indx)
+utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
 {
 
-    string indx2;
-    
+    int indx_ref;
     string line;
     
-    if (indx2 == "Name") {indx = 2;}
-    else if (indx2 == "country-orig") {}
-     else if (indx2 == "country-operator") {}
-     else if (indx2 == "operator") {}
-     else if (indx2 == "users") {}
-     else if (indx2 == "purpose") {}
-     else if (indx2 == "purpose-detailed") {}
-     else if (indx2 == "orbit") {}
-     else if (indx2 == "orbit-type") {}
-     else if (indx2 == "longitude-geo") {}
-     else if (indx2 == "perigree") {}
-     else if (indx2 == "apogee") {}
-     else if (indx2 == "eccentricity") {}
-     else if (indx2 == "inclination") {}
-     else if (indx2 == "period") {}
-     else if (indx2 == "mass-dry") {}
-     else if (indx2 == "mass-launch") {}
-     else if (indx2 == "power") {}
-     else if (indx2 == "date-launch") {}
-     else if (indx2 == "lifetime") {}
-       else if (indx2 == "contractor") {}
-       else if (indx2 == "contractor-country") {}
-       else if (indx2 == "launch-site") {}
-       else if (indx2 == "launch-vehicle") {}
-       else if (indx2 == "cospar") {}
-       else if (indx2 == "norad") {}
-    else if (indx2 == "comments") {}
-    else if (indx2 == "source") {}
-     else {};
+    if (indx == "Name") {indx_ref = 0;}
+    else if (indx == "country-orig") {indx_ref = 1;}
+    else if (indx == "country-operator") {indx_ref = 2;}
+    else if (indx == "operator") {indx_ref = 3;}
+    else if (indx == "users") {indx_ref = 4;}
+    else if (indx == "purpose") {indx_ref = 5;}
+    else if (indx == "purpose-detailed") {indx_ref = 6;}
+    else if (indx == "orbit") {indx_ref = 7;}
+    else if (indx == "orbit-type") {indx_ref = 8;}
+    else if (indx == "longitude-geo") {indx_ref = 9;}
+    else if (indx == "perigree") {indx_ref = 10;}
+    else if (indx == "apogee") {indx = 11;}
+    else if (indx == "eccentricity") {indx = 12;}
+    else if (indx == "inclination") {indx = 13;}
+    else if (indx == "period") {indx = 14;}
+    else if (indx == "mass-launch") {indx = 15;}
+    else if (indx == "mass-dry") {indx = 16;}
+    else if (indx == "power") {indx = 17;}
+    else if (indx == "date-launch") {indx = 18;}
+    else if (indx == "lifetime") {indx = 19;}
+    else if (indx == "contractor") {indx = 20;}
+    else if (indx == "contractor-country") {indx = 21;}
+    else if (indx == "launch-site") {indx = 22;}
+    else if (indx == "launch-vehicle") {indx = 23;}
+    else if (indx == "cospar") {indx = 24;}
+    else if (indx == "norad") {indx = 25;}
+    else if (indx == "comments") {indx = 26;}
+    else if (indx == "source") {indx = 28;}
+    else {indx = 0;};
     
     // create a read stream for the text file
      ifstream myfile ("example.txt");
