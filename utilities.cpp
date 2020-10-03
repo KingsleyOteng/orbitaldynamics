@@ -203,7 +203,39 @@ void
 utilities::SatelliteNORADRecord(std::string noradId, int indx)
 {
 
+    string indx2;
+    
     string line;
+    
+    if (indx2 == "Name") {indx = 2;}
+    else if (indx2 == "country-orig") {}
+     else if (indx2 == "country-operator") {}
+     else if (indx2 == "operator") {}
+     else if (indx2 == "users") {}
+     else if (indx2 == "purpose") {}
+     else if (indx2 == "purpose-detailed") {}
+     else if (indx2 == "orbit") {}
+     else if (indx2 == "orbit-type") {}
+     else if (indx2 == "longitude-geo") {}
+     else if (indx2 == "perigree") {}
+     else if (indx2 == "apogee") {}
+     else if (indx2 == "eccentricity") {}
+     else if (indx2 == "inclination") {}
+     else if (indx2 == "period") {}
+     else if (indx2 == "mass-dry") {}
+     else if (indx2 == "mass-launch") {}
+     else if (indx2 == "power") {}
+     else if (indx2 == "date-launch") {}
+     else if (indx2 == "lifetime") {}
+       else if (indx2 == "contractor") {}
+       else if (indx2 == "contractor-country") {}
+       else if (indx2 == "launch-site") {}
+       else if (indx2 == "launch-vehicle") {}
+       else if (indx2 == "cospar") {}
+       else if (indx2 == "norad") {}
+    else if (indx2 == "comments") {}
+    else if (indx2 == "source") {}
+     else {};
     
     // create a read stream for the text file
      ifstream myfile ("example.txt");
@@ -238,6 +270,6 @@ utilities::SatelliteNORADRecord(std::string noradId, int indx)
      else cout << "Unable to open file";
    
 
-
+    //no return value.
    
 }
