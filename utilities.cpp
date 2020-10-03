@@ -239,7 +239,7 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     
     // create a read stream for the text file
      ifstream myfile ("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/example.txt");
-     cout << "("+noradId+")" << "\n";
+     //cout << "("+noradId+")" << "\n";
     
     //open the file stream
      if (myfile.is_open())
@@ -264,7 +264,6 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
      }
      else cout << "Unable to open file";
    
-    
     return output;
 
     //no return value.
