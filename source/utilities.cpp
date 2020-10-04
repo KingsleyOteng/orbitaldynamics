@@ -199,13 +199,16 @@ std::string
 }
 
 
-void
+std::string
 utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
 {
-
+    
     int indx_ref;
     string line;
+    std::string output;
+    smatch match;
     
+    // flat file search key
     if (indx == "Name") {indx_ref = 0;}
     else if (indx == "country-orig") {indx_ref = 1;}
     else if (indx == "country-operator") {indx_ref = 2;}
@@ -237,41 +240,30 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     else {indx_ref = 0;};
     
     // create a read stream for the text file
-     ifstream myfile ("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/example.txt");
-     cout << "("+noradId+")" << "\n";
+    ifstream myfile ("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/example.txt");
     
     //open the file stream
      if (myfile.is_open())
      {
        while ( getline (myfile,line) )
        {
-         regex
-           regexp("("+noradId+")");
+         // search using the norad id
+         regex  regexp("("+noradId+")");
          regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
            
-          // cout << "("+noradId+")" << "\n";
-         smatch match;
-           if (regex_search(line, regexp))
+        // where there is a match extract data using a key
+        
+        if (regex_search(line, regexp))
            {
-             //cout<< line;
-             
-            if (regex_search(line, match, regexpsecond) == true)
-            {
-  
-                          //for (int xI = 1; xI < match.size() - 1; xI++)
-                            {
-                                cout <<"captured record >>>>>>>> '\n" << match.str(indx_ref+2) <<"\n <<<<< ";
-                                cout << ">>> 0 " << match.str(0) << "{{{{{{}" << "\n";
-                                cout << ">>> 1 " << match.str(1) << "{{{{{{}" << "\n";
-                            }
-             }
-         }
+               if (regex_search(line, match, regexpsecond) == true)
+                {
+                        output = match.str(indx_ref+2);
+                }
+           }
        }
        myfile.close();
      }
-     else cout << "Unable to open file";
+    else cout << "Unable to open file";
    
-
-    //no return value.
-   
+    return output;
 }
