@@ -165,44 +165,16 @@ char*
     return return_string;
 }
 
-// returns the Julian date variable
-double
-    utilities::GetEpochJulianDate()
+void
+utilities::RungeKuttaMethod                ()
 {
-    return m_epoch_julian_date;
-}
-
-// extracts data from a flat file
-std::string
-    utilities::GetSatelliteLog(std::string phrasalmatching)
-{
-    const std::string x = "'NIUSat (Noorul Islam University Satellite)' 'India' 'India' 'Noorul Islam University'    'Civil'    'Technology Development'";
     
-    const std::string s = "01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981";
-    
-       std::regex words_regex("('\\w+)|(\\(\\w+)|(\\w+)|(\\w+')");
-       auto words_begin =
-           std::sregex_iterator(x.begin(), x.end(), words_regex);
-       auto words_end = std::sregex_iterator();
-    
-       std::cout << "Found "
-                 << std::distance(words_begin, words_end)
-                 << " words:\n";
-    
-       for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
-           std::smatch match = *i;
-           std::string match_str = match.str();
-           std::cout << match_str << '\n';
-       }
-    
-    return "0";
-}
-
+};
 
 std::string
 utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
 {
-    
+    // variables
     int indx_ref;
     string line;
     std::string output;
@@ -242,7 +214,7 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     // create a read stream for the text file
     ifstream myfile ("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/example.txt");
     
-    //open the file stream
+     //open the file stream
      if (myfile.is_open())
      {
        while ( getline (myfile,line) )
@@ -252,13 +224,12 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
          regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
            
         // where there is a match extract data using a key
-        
         if (regex_search(line, regexp))
            {
                if (regex_search(line, match, regexpsecond) == true)
-                {
+                    {
                         output = match.str(indx_ref+2);
-                }
+                    }
            }
        }
        myfile.close();
