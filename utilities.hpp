@@ -72,5 +72,6 @@ public:
   double                    GetEpochJulianDate               ();
   std::string               GetSatelliteLog                  (std::string phrasalmatching);
   std::string               SatelliteNORADRecord             (std::string noradId, std::string indx);
+  void                      RungeKutta                       ();
 };
 #endif /* utilities_hpp */
