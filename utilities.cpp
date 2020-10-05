@@ -199,7 +199,7 @@ std::string
 }
 
 void
-utilities::RungeKutta                       ()
+utilities::RungeKuttaMethod                ()
 {
     
 };
@@ -207,7 +207,7 @@ utilities::RungeKutta                       ()
 std::string
 utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
 {
-    
+    // variables
     int indx_ref;
     string line;
     std::string output;
@@ -247,7 +247,7 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     // create a read stream for the text file
     ifstream myfile ("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/example.txt");
     
-    //open the file stream
+     //open the file stream
      if (myfile.is_open())
      {
        while ( getline (myfile,line) )
@@ -257,13 +257,12 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
          regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
            
         // where there is a match extract data using a key
-        
         if (regex_search(line, regexp))
            {
                if (regex_search(line, match, regexpsecond) == true)
-                {
+                    {
                         output = match.str(indx_ref+2);
-                }
+                    }
            }
        }
        myfile.close();
