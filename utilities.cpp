@@ -165,39 +165,6 @@ char*
     return return_string;
 }
 
-// returns the Julian date variable
-double
-    utilities::GetEpochJulianDate()
-{
-    return m_epoch_julian_date;
-}
-
-// extracts data from a flat file
-std::string
-    utilities::GetSatelliteLog(std::string phrasalmatching)
-{
-    const std::string x = "'NIUSat (Noorul Islam University Satellite)' 'India' 'India' 'Noorul Islam University'    'Civil'    'Technology Development'";
-    
-    const std::string s = "01/02/2003 blahblah 04/23/1999 blahblah 11/13/1981";
-    
-       std::regex words_regex("('\\w+)|(\\(\\w+)|(\\w+)|(\\w+')");
-       auto words_begin =
-           std::sregex_iterator(x.begin(), x.end(), words_regex);
-       auto words_end = std::sregex_iterator();
-    
-       std::cout << "Found "
-                 << std::distance(words_begin, words_end)
-                 << " words:\n";
-    
-       for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
-           std::smatch match = *i;
-           std::string match_str = match.str();
-           std::cout << match_str << '\n';
-       }
-    
-    return "0";
-}
-
 void
 utilities::RungeKuttaMethod                ()
 {
