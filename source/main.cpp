@@ -386,8 +386,11 @@ int main()
         }
     
     // Let's grab a record using the NORAD ID and query the record for launch details
+    
+    // -----> The goal of this code was to check the launchdate
+    // Psalm 19:12
     std::string query_field = "apogee";
-    std::string query_output = util -> SatelliteNORADRecord("42766", query_field);
+    std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
     cout << "record> " << query_field <<  " " << query_output << "\n";
     
     // exit

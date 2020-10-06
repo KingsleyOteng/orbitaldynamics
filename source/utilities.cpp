@@ -9,6 +9,7 @@
 #include "utilities.hpp"
 #include "orbital.hpp"
 #include <stdio.h>
+#include <boost/algorithm/string/replace.hpp>
 
 using namespace std;
 
@@ -181,7 +182,7 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     smatch match;
     
     // flat file search key
-    if (indx == "Name") {indx_ref = 0;}
+    if      (indx == "Name") {indx_ref = 0;}
     else if (indx == "country-orig") {indx_ref = 1;}
     else if (indx == "country-operator") {indx_ref = 2;}
     else if (indx == "operator") {indx_ref = 3;}
@@ -209,12 +210,12 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     else if (indx == "norad") {indx_ref = 25;}
     else if (indx == "comments") {indx_ref = 26;}
     else if (indx == "source") {indx_ref = 28;}
-    else {indx_ref = 0;};
+    else    {indx_ref = 0;};
     
-    // create a read stream for the text file
-    ifstream myfile ("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/example.txt");
+    // create a read stream for text file
+    ifstream myfile ("/Users/kwadwooteng-amoko/Development/data/UCS-Satellite-Database/database-2020-4-1.txt");
     
-     //open the file stream
+     //stream flat file
      if (myfile.is_open())
      {
        while ( getline (myfile,line) )
@@ -236,5 +237,23 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
      }
     else cout << "Unable to open file";
    
+    
+   // remove the comma present in apogee, perigree, period, mass-launch, dry,mass and power data fields
+    if (
+        (indx == "apogee") ||
+        (indx == "perigree") ||
+        (indx == "period") ||
+        (indx == "mass-launch") ||
+        (indx == "dry-mass") ||
+        (indx == "power")
+       )
+    {
+        boost::replace_all(
+                           output,
+                           ",",
+                           ""
+                           );
+    };
+    
     return output;
 }
