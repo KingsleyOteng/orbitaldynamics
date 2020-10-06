@@ -9,6 +9,7 @@
 #include "utilities.hpp"
 #include "orbital.hpp"
 #include <stdio.h>
+#include <boost/algorithm/string/replace.hpp>
 
 using namespace std;
 
@@ -236,5 +237,19 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
      }
     else cout << "Unable to open file";
    
+    
+   // remove the comma present in some of the data fields
+    if (
+        (indx == "apogee") ||
+        (indx == "perigree") ||
+        (indx == "period") ||
+        (indx == "mass-launch") ||
+        (indx == "dry-mass") ||
+        (indx == "power")
+       )
+    {
+        boost::replace_all(output, ",", "");
+    };
+    
     return output;
 }

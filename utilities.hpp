@@ -15,6 +15,7 @@
 #include <vector>
 #include <boost/regex.hpp>
 #include <boost/xpressive/xpressive.hpp>
+#include <boost/algorithm/string/replace.hpp>
 #include <boost/regex.hpp>
 #include <regex>
 #include <iostream>     // std::cout
