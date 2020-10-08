@@ -15,10 +15,6 @@
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
 #include <mysql.h>
-//#include <soci/session.h>
-//#include <soci/soci.h>
-//#include <soci/mysql/soci-mysql.h>
-//#include <soci/postgresql/soci-postgresql.h>
 #include <time.h>
 #include <iostream>
 #include <fstream>
@@ -36,9 +32,7 @@
 #include <cmath>
 #include <string>
 #include <iostream>
-//#include "stdafx.h"
 
-//#include "mysql_connection.h"
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
 #include <cppconn/prepared_statement.h>
