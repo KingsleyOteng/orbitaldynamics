@@ -14,11 +14,11 @@
 using namespace std;
 
 // constructor
-utilities::utilities()
+utilities::utilities                            ()
 {}
 
 // destructor
-utilities::~utilities()
+utilities::~utilities                           ()
 {}
 
 // methods
@@ -52,7 +52,7 @@ char*
   
 
 std::vector<string>
-    utilities::getStringParser()
+    utilities::getStringParser                  ()
 {
     // Used to split string around spaces.
     std::istringstream ss(parse_input_phrase);
@@ -80,7 +80,7 @@ std::vector<string>
 
 // string parser method
 void
-    utilities::setStringParser(std::string str)
+    utilities::setStringParser                  (std::string str)
 {
     strcpy(parse_input_phrase,str.c_str());
 }
@@ -94,7 +94,7 @@ void
 
 // converts Julian dates into the gregorian calendar
 void
-    utilities::SetSimpleDateFormatLong()
+    utilities::SetSimpleDateFormatLong          ()
 {
     
     m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
@@ -109,7 +109,7 @@ void
 
 // returns string of the Julian to Gregorian date conversion
 char*
-    utilities::GetSimpleDateFormatLong()
+    utilities::GetSimpleDateFormatLong          ()
 {
     double seconds_formatted;
     double minutes_formatted = 0.0;
@@ -167,7 +167,7 @@ char*
 }
 
 void
-utilities::RungeKuttaMethod                ()
+utilities::RungeKuttaMethod                 ()
 {
     
 };
@@ -182,35 +182,35 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
     smatch match;
     
     // flat file search key
-    if      (indx == "Name") {indx_ref = 0;}
-    else if (indx == "country-orig") {indx_ref = 1;}
-    else if (indx == "country-operator") {indx_ref = 2;}
-    else if (indx == "operator") {indx_ref = 3;}
-    else if (indx == "users") {indx_ref = 4;}
-    else if (indx == "purpose") {indx_ref = 5;}
-    else if (indx == "purpose-detailed") {indx_ref = 6;}
-    else if (indx == "orbit") {indx_ref = 7;}
-    else if (indx == "orbit-type") {indx_ref = 8;}
-    else if (indx == "longitude-geo") {indx_ref = 9;}
-    else if (indx == "perigree") {indx_ref = 10;}
-    else if (indx == "apogee") {indx_ref = 11;}
-    else if (indx == "eccentricity") {indx_ref = 12;}
-    else if (indx == "inclination") {indx_ref = 13;}
-    else if (indx == "period") {indx_ref = 14;}
-    else if (indx == "mass-launch") {indx_ref = 15;}
-    else if (indx == "mass-dry") {indx_ref = 16;}
-    else if (indx == "power") {indx_ref = 17;}
-    else if (indx == "date-launch") {indx_ref = 18;}
-    else if (indx == "lifetime") {indx_ref = 19;}
-    else if (indx == "contractor") {indx_ref = 20;}
-    else if (indx == "contractor-country") {indx_ref = 21;}
-    else if (indx == "launch-site") {indx_ref = 22;}
-    else if (indx == "launch-vehicle") {indx_ref = 23;}
-    else if (indx == "cospar") {indx_ref = 24;}
-    else if (indx == "norad") {indx_ref = 25;}
-    else if (indx == "comments") {indx_ref = 26;}
-    else if (indx == "source") {indx_ref = 28;}
-    else    {indx_ref = 0;};
+    if      (indx == "Name")                    {indx_ref = 0;}
+    else if (indx == "country-orig")            {indx_ref = 1;}
+    else if (indx == "country-operator")        {indx_ref = 2;}
+    else if (indx == "operator")                {indx_ref = 3;}
+    else if (indx == "users")                   {indx_ref = 4;}
+    else if (indx == "purpose")                 {indx_ref = 5;}
+    else if (indx == "purpose-detailed")        {indx_ref = 6;}
+    else if (indx == "orbit")                   {indx_ref = 7;}
+    else if (indx == "orbit-type")              {indx_ref = 8;}
+    else if (indx == "longitude-geo")           {indx_ref = 9;}
+    else if (indx == "perigree")                {indx_ref = 10;}
+    else if (indx == "apogee")                  {indx_ref = 11;}
+    else if (indx == "eccentricity")            {indx_ref = 12;}
+    else if (indx == "inclination")             {indx_ref = 13;}
+    else if (indx == "period")                  {indx_ref = 14;}
+    else if (indx == "mass-launch")             {indx_ref = 15;}
+    else if (indx == "mass-dry")                {indx_ref = 16;}
+    else if (indx == "power")                   {indx_ref = 17;}
+    else if (indx == "date-launch")             {indx_ref = 18;}
+    else if (indx == "lifetime")                {indx_ref = 19;}
+    else if (indx == "contractor")              {indx_ref = 20;}
+    else if (indx == "contractor-country")      {indx_ref = 21;}
+    else if (indx == "launch-site")             {indx_ref = 22;}
+    else if (indx == "launch-vehicle")          {indx_ref = 23;}
+    else if (indx == "cospar")                  {indx_ref = 24;}
+    else if (indx == "norad")                   {indx_ref = 25;}
+    else if (indx == "comments")                {indx_ref = 26;}
+    else if (indx == "source")                  {indx_ref = 28;}
+    else                                        {indx_ref = 0;};
     
     // create a read stream for text file
     ifstream myfile ("/Users/kwadwooteng-amoko/Development/data/UCS-Satellite-Database/database-2020-4-1.txt");
@@ -222,7 +222,8 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
        {
          // search using the norad id
          regex  regexp("("+noradId+")");
-         regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
+         regex regexpsecond(
+                            "(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?");
            
         // where there is a match extract data using a key
         if (regex_search(line, regexp))
@@ -239,21 +240,23 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
    
     
    // remove the comma present in apogee, perigree, period, mass-launch, dry,mass and power data fields
-    if (
-        (indx == "apogee") ||
-        (indx == "perigree") ||
-        (indx == "period") ||
-        (indx == "mass-launch") ||
-        (indx == "dry-mass") ||
-        (indx == "power")
-       )
+    if   (
+            (indx == "apogee")      ||
+            (indx == "perigree")    ||
+            (indx == "period")      ||
+            (indx == "mass-launch") ||
+            (indx == "dry-mass")    ||
+            (indx == "power")
+         )
     {
-        boost::replace_all(
-                           output,
-                           ",",
-                           ""
-                           );
+        boost::replace_all
+        (
+            output,
+            ",",
+            ""
+        );
     };
     
-    return output;
+    return
+            output;
 }
