@@ -14,11 +14,11 @@
 using namespace std;
 
 // constructor
-utilities::utilities()
+utilities::utilities                            ()
 {}
 
 // destructor
-utilities::~utilities()
+utilities::~utilities                           ()
 {}
 
 // methods
@@ -52,7 +52,7 @@ char*
   
 
 std::vector<string>
-    utilities::getStringParser()
+    utilities::getStringParser                  ()
 {
     // Used to split string around spaces.
     std::istringstream ss(parse_input_phrase);
@@ -80,7 +80,7 @@ std::vector<string>
 
 // string parser method
 void
-    utilities::setStringParser(std::string str)
+    utilities::setStringParser                  (std::string str)
 {
     strcpy(parse_input_phrase,str.c_str());
 }
@@ -94,7 +94,7 @@ void
 
 // converts Julian dates into the gregorian calendar
 void
-    utilities::SetSimpleDateFormatLong()
+    utilities::SetSimpleDateFormatLong          ()
 {
     
     m_epoch_gregorian_day_of_year = int(m_epoch_julian_date_fraction);
@@ -109,7 +109,7 @@ void
 
 // returns string of the Julian to Gregorian date conversion
 char*
-    utilities::GetSimpleDateFormatLong()
+    utilities::GetSimpleDateFormatLong          ()
 {
     double seconds_formatted;
     double minutes_formatted = 0.0;
@@ -167,7 +167,7 @@ char*
 }
 
 void
-utilities::RungeKuttaMethod                ()
+utilities::RungeKuttaMethod                 ()
 {
     
 };
@@ -222,7 +222,8 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
        {
          // search using the norad id
          regex  regexp("("+noradId+")");
-         regex regexpsecond("(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
+         regex regexpsecond(
+                            "(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?");
            
         // where there is a match extract data using a key
         if (regex_search(line, regexp))

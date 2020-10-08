@@ -370,23 +370,8 @@ int main()
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
-        
-   
-    
-        try
-        {
-            //driver = get_driver_instance();
-            //con = driver->connect(server, username, password);
-        }
-        catch (sql::SQLException e)
-        {
-            cout << "Could not connect to server. Error message: " << e.what() << endl;
-            system("pause");
-            exit(1);
-        }
     
     // Let's grab a record using the NORAD ID and query the record for launch details
-    
     // -----> The goal of this code was to check the launchdate
     // Psalm 19:12
     std::string query_field = "apogee";
