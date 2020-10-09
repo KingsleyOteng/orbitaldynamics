@@ -195,7 +195,7 @@ int main()
     std::cout << std::fixed;
     cout << "jd" << jd <<"\n";
     
-//Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
+    //       Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
     double jd_out;
@@ -327,13 +327,16 @@ int main()
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
     time_files* nf = new time_files();
-    cout << "zz:"  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
-    cout << "cc:" << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
+    
+    // testing some time conversions
+    cout << "current time:"  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
+    cout << "ctime time conversion:" << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
     double xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
-    cout << "yy:" << nf->jdTOctime(xx);
-    cout << "ooo:" << nf->getDeltaCtimeFromTLE("20040.41532895");
+    cout << "JD time conversion:" << nf->jdTOctime(xx);
+    cout << "Delta time calculation from tle:" << nf->getDeltaCtimeFromTLE("20040.41532895");
     nf->getCheckLaunchDateV();
     //deltaCTIME
+    
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
     
