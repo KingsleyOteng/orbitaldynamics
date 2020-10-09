@@ -40,7 +40,7 @@
 using namespace std;
 //using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
-
+double frac_hours, hours_example, hours_final, min_final, seconds_final;
 const string server = "156.67.222.64";
 const string username = "u311839917_koteng";
 const string password = "Mypass1234!";
@@ -195,7 +195,7 @@ int main()
     std::cout << std::fixed;
     cout << "jd" << jd <<"\n";
     
-    //       Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
+//Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
     double jd_out;
@@ -301,10 +301,9 @@ int main()
         year_final = D - 4715;
     }
     
-    double frac_hours, hours_gg, hours_final, min_final, seconds_final;
-    frac_hours = modf(dayg,&hours_gg);
+    frac_hours = modf(dayg,&hours_example);
     cout << "frac_hours" << frac_hours << "\n";
-    cout << "hours_gg" << hours_gg << "\n";
+    cout << "hours_example" << hours_example << "\n";
     hours_final = frac_hours * 24;
     min_final = 60 * (hours_final - (int)(hours_final));
     hours_final = (int) hours_final;
@@ -327,16 +326,13 @@ int main()
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     
     time_files* nf = new time_files();
-    
-    // testing some time conversions
-    cout << "current time:"  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
-    cout << "ctime time conversion:" << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
-    double xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
-    cout << "JD time conversion:" << nf->jdTOctime(xx);
-    cout << "Delta time calculation from tle:" << nf->getDeltaCtimeFromTLE("20040.41532895");
+    cout << "time_t: "  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
+    cout << "conversion from ctime: " << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
+    double ctime_example = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
+    cout << "ctime: " << nf->jdTOctime(ctime_example) << "\n";
+    cout << "delta ctime: " << nf->getDeltaCtimeFromTLE("20040.41532895") << "\n";
     nf->getCheckLaunchDateV();
     //deltaCTIME
-    
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
     
@@ -372,9 +368,9 @@ int main()
     // -----> The goal of this code was to check the launchdate
     // Psalm 19:12
     std::string query_field = "apogee";
+
     std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
     cout << "record> " << query_field <<  " " << query_output << "\n";
-    
     // exit
     return 61;
 }
