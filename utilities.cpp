@@ -256,6 +256,13 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
             ",",
             ""
         );
+        
+        boost::replace_all
+        (
+            output,
+            "\"",
+            ""
+        );
     };
     
     return

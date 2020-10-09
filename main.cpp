@@ -83,6 +83,7 @@ int main()
     // store TLE parameters
     orb->SetTLEparameters(orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
     
+    std:cout  << "line one: " << "\n";
     std::cout << "Line Number of Element Data : " << "\n";
     std::cout << "Satellite Name : " << orb->getTLEname() << "\n";
     std::cout << "Classification (U=Unclassified) : " << orb->getCLASSIFIERfield() << "\n";
@@ -97,12 +98,11 @@ int main()
     std::cout << "Ephemeris type : " << orb->getEPHEMERIStype() << "\n";
     std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1) : " << orb->getELEMENTnumber() << "\n";
     
-    std:cout  << "line two" << "\n";
-    
+    std::cout  << "line two: " << "\n";
     orb -> getTLEsummary();
     util -> SetEpochJulianDate(orb->getJULIANdatefraction());
     util -> SetSimpleDateFormatLong();
-    cout << util -> GetSimpleDateFormatLong() << "\n";
+    std::cout << util -> GetSimpleDateFormatLong() << "\n";
     
     coordinate_transforms *ct = new coordinate_transforms();
     
@@ -111,14 +111,11 @@ int main()
     ct -> setGST();
     ct -> setGMST();
     
-    //cout << ct -> gmst;
-    
     benchmarking *b = new benchmarking();
     b->getBenchMarking();
     
     // generate a julian date time string
     cout << "time conversion" << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20") << "\n";
-    
     
     auto start = std::chrono::system_clock::now();
     std::time_t end_time = std::chrono::system_clock::to_time_t(start);
@@ -133,8 +130,10 @@ int main()
        tm.tm_mon = 2;
        tm.tm_year = 85;
        tm.tm_isdst = 0;
+    
        // Convert std::tm to std::time_t (popular extension)
        std::time_t tt = timegm(&tm);
+    
        // Convert std::time_t to std::chrono::system_clock::time_point
        std::chrono::system_clock::time_point tp =
                                         std::chrono::system_clock::from_time_t(tt);
@@ -145,8 +144,6 @@ int main()
     double year = 1900 + tm.tm_year;
     double month = tm.tm_mon;
     long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
-    
-    cout << "(double)(tm.tm_mday + (tm.tm_hour /24))" << (double(tm.tm_hour))/24 << "\n";
     
     cout << "month" << month << "\n";
     cout << "day" << day << "\n";
