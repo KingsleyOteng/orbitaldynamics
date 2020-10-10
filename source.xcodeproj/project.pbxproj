@@ -18,6 +18,8 @@
 		D8BEF51E23CE0C3500C746DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8BEF51D23CE0C3500C746DF /* main.cpp */; };
 		D8E5C161242CA875000B2C67 /* BenchMarking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8E5C15F242CA875000B2C67 /* BenchMarking.cpp */; };
 		D8EDB7EE23D84FC300DC1818 /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8EDB7EC23D84FC300DC1818 /* utilities.cpp */; };
+		D8FB528F25323E3B00DC48B8 /* sgp4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8FB528D25323E3B00DC48B8 /* sgp4.cpp */; };
+		D8FB529225323E6900DC48B8 /* sdp4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8FB529025323E6900DC48B8 /* sdp4.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +66,10 @@
 		D8E5C160242CA875000B2C67 /* BenchMarking.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BenchMarking.hpp; sourceTree = "<group>"; };
 		D8EDB7EC23D84FC300DC1818 /* utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utilities.cpp; sourceTree = "<group>"; };
 		D8EDB7ED23D84FC300DC1818 /* utilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utilities.hpp; sourceTree = "<group>"; };
+		D8FB528D25323E3B00DC48B8 /* sgp4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sgp4.cpp; sourceTree = "<group>"; };
+		D8FB528E25323E3B00DC48B8 /* sgp4.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sgp4.hpp; sourceTree = "<group>"; };
+		D8FB529025323E6900DC48B8 /* sdp4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sdp4.cpp; sourceTree = "<group>"; };
+		D8FB529125323E6900DC48B8 /* sdp4.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sdp4.hpp; sourceTree = "<group>"; };
 		D8FBC25224AB9B6F00455070 /* soci-mysql.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "soci-mysql.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +144,10 @@
 				D898F8C9242FC51900B23D59 /* time_files.cpp */,
 				D898F8CA242FC51900B23D59 /* time_files.hpp */,
 				D819BAAE251950D6001D1F4B /* output.rtf */,
+				D8FB528D25323E3B00DC48B8 /* sgp4.cpp */,
+				D8FB528E25323E3B00DC48B8 /* sgp4.hpp */,
+				D8FB529025323E6900DC48B8 /* sdp4.cpp */,
+				D8FB529125323E6900DC48B8 /* sdp4.hpp */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -207,6 +217,8 @@
 				D8221FFC23CE10B600AFBC4F /* orbital.cpp in Sources */,
 				D897C3B724164B2900389B89 /* sun_model.cpp in Sources */,
 				D8A5C59B23E4A4FE00AF2906 /* sensor.cpp in Sources */,
+				D8FB529225323E6900DC48B8 /* sdp4.cpp in Sources */,
+				D8FB528F25323E3B00DC48B8 /* sgp4.cpp in Sources */,
 				D898F8CB242FC51900B23D59 /* time_files.cpp in Sources */,
 				D897C3BA24164B3800389B89 /* geomagnetic_field_model.cpp in Sources */,
 			);

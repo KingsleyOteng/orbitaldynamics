@@ -11,6 +11,7 @@
 #include <vector>
 #include <stdio.h>
 #include <stdlib.h>
+#include "utilities.hpp"               // my own routines for processing data
 #include <boost/functional/hash.hpp>
 
 using namespace std;
@@ -579,6 +580,8 @@ void
 void
     orbital::getTLEsummary()
 {
+    utilities *util = new utilities();
+ 
     cout << "\n";
     cout << "TLE {"                 << "\n";
     cout << "   name:  "            << m_tle_name                           << ",\n";
@@ -599,6 +602,10 @@ void
     cout << "   anomaly:  "         << m_mean_anomaly                       << ",\n";
     cout << "   motion:  "          << m_mean_motion                        << ",\n";
     cout << "   revolution:  "      << m_epoch_checksum                     << "\n";
+    
+    std::string query_field = "apogee";
+    std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
+    cout << "   apogee (introduced):     "       << query_output;
     cout << "     }" << "\n";
 };
 

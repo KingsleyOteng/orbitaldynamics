@@ -222,9 +222,10 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
        {
          // search using the norad id
          regex  regexp("("+noradId+")");
+        
          regex regexpsecond(
-                            "(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?");
-           
+                            "(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)");
+          
         // where there is a match extract data using a key
         if (regex_search(line, regexp))
            {
@@ -253,6 +254,13 @@ utilities::SatelliteNORADRecord(std::string noradId, std::string indx)
         (
             output,
             ",",
+            ""
+        );
+        
+        boost::replace_all
+        (
+            output,
+            "\"",
             ""
         );
     };
