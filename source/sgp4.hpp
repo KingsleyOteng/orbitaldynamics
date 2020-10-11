@@ -12,3 +12,6 @@
 #include <stdio.h>
 
 #endif /* sgp4_hpp */
+
+orbital *orb = new orbital();
+utilities *util = new utilities();
