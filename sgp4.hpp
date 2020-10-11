@@ -10,5 +10,27 @@
 #define sgp4_hpp
 
 #include <stdio.h>
+#include <string>
+#include <sstream>      // std::istringstream
+#include <iostream>     // std::cout
+#include <vector>
+#include "utilities.hpp"
+#include "orbital.hpp"
+#include <boost/regex.hpp>
+#include <boost/xpressive/xpressive.hpp>
+#include <boost/algorithm/string/replace.hpp>
+#include <boost/regex.hpp>
+#include <regex>
+#include <iostream>     // std::cout
+#include <fstream>      // std::ifstream
+
+class sgp4
+{
+    
+private:
+    
+    orbital     *orb;
+    utilities   *util;
+};
 
 #endif /* sgp4_hpp */
