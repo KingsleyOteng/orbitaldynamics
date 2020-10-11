@@ -14,6 +14,8 @@
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
+#include "sgp4.hpp"
+#include "sdp4.hpp"
 #include <mysql.h>
 #include <time.h>
 #include <iostream>
@@ -44,6 +46,8 @@ double frac_hours, hours_example, hours_final, min_final, seconds_final;
 const string server = "156.67.222.64";
 const string username = "u311839917_koteng";
 const string password = "Mypass1234!";
+time_files* nf = new time_files();
+double ctime_example;
 
 int main()
 {
@@ -321,20 +325,15 @@ int main()
     cout << "seconds from julian date" << round(seconds_final) << "\n";
     
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
-    
-    time_files* nf = new time_files();
     cout << "time_t: "  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
     cout << "conversion from ctime: " << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
-    double ctime_example = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
+    ctime_example = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
     cout << "ctime: " << nf->jdTOctime(ctime_example) << "\n";
     cout << "delta ctime: " << nf->getDeltaCtimeFromTLE("20040.41532895") << "\n";
     nf->getCheckLaunchDateV();
-    //deltaCTIME
+  
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
-    
-    
-    
     
     ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
        tm.tm_sec = 0;
@@ -344,10 +343,11 @@ int main()
        tm.tm_mon = 6;
        tm.tm_year = 120;
        tm.tm_isdst = 1;
-        cout << "\n" << "julian date: " << nf->tmTOjd(tm) << "\n";
+    
+    cout << "\n" << "julian date: " << nf->tmTOjd(tm) << "\n";
     
     ///TESTING  FOR MODIFIED JULIAN DATE CALCULATOR (COMPLETED)
-     cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
+    cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
     
     ///TESTING  FOR J2000 DATE CALCULATOR (COMPLETED)
     cout << "\n" << "j2000 date " << nf->tmTOj2000(tm) << "\n";
@@ -368,6 +368,8 @@ int main()
 
     std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
     cout << "record> " << query_field <<  " " << query_output << "\n";
+    
+    // let's introduce sgp4
     // exit
     return 61;
 }
