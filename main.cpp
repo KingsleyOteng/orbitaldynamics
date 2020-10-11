@@ -51,9 +51,13 @@ double ctime_example;
 
 int main()
 {
+   // boost::regex e;
 
+    //std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
+    
+    //
     
     // map to the TLE resoure
     // then open the resource
