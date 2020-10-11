@@ -18,13 +18,24 @@ sgp4::~sgp4                           ()
 
 void builds()
 {
-    orbital *orb = new orbital();
-    utilities *util = new utilities();
+    double perigree;
+    double perigree_h;
     
-    orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
-    orb -> getURLData();
+    // declare the variables
+    orbital
+            *orb = new orbital();
+    utilities
+            *util = new utilities();
+    vector<string>
+            parsed_line_ones = util -> getStringParser();
+    vector<string>
+            parsed_line_twos = util -> getStringParser();
+
+    // grab a raw TLE from the celestrak website and process it
+            orb -> setURLData       ("https://celestrak.com/satcat/tle.php?CATNR=43108");
+            orb -> getURLData       ();
     
-    util -> setStringParser(orb -> getTLElineone ());
-    util -> setStringParser(orb -> getTLElinetwo ());
+    // set the TLE parameters
+            orb -> SetTLEparameters (orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
 
 }

@@ -61,7 +61,7 @@ int main()
     
     // map to the TLE resoure
     // then open the resource
-    orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
+    orb -> setURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
     orb -> getURLData();
    
     

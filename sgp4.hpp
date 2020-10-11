@@ -14,6 +14,7 @@
 #include "orbital.hpp"
 #include "utilities.hpp"
 
+using namespace std;
 
 #ifndef sgp4_hpp
 #define sgp4_hpp
@@ -22,14 +23,14 @@ class sgp4
     
     private:
     
-    orbital *orb;
-    utilities *util;
+        orbital *orb;
+        utilities *util;
     
     public:
 
      // constructors  and destructors
-     sgp4();
-    ~sgp4();
+        sgp4();
+       ~sgp4();
     
     //void    sgp4::builds();
 };

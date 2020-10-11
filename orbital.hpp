@@ -122,7 +122,7 @@ public:
     void        SetREVOLUTIONepochchecksum      (double checksum);
     void        SetTLEparameters                (std::string spacecraft, std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_two);
     void        SetDataFile                     (std::string TLE);
-    void        SetURLData                      (std::string URL);
+    void        setURLData                      (std::string URL);
     void        SetTLEparameters                ();
     void        SetClassifierID                 (std::string ClassifierID);
     void        SetCheckSumLineOne              (int checksum);

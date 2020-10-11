@@ -541,7 +541,7 @@ void
 // set the checksum
 // store the data
 void
-    orbital::SetURLData(std::string TLE)
+    orbital::setURLData(std::string TLE)
 {
  
         strcpy(m_tle_url,TLE.c_str());
