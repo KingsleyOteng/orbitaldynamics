@@ -22,6 +22,13 @@ using namespace std;
 
 // methods
 // store the data
+ // constructors  and destructors
+orbital::orbital    ()
+{};
+
+orbital::~orbital   ()
+{};
+
 orbital::orbital(int year, int month, int day)
 {
     SetDate(year, month, day);
@@ -534,7 +541,7 @@ void
 // set the checksum
 // store the data
 void
-    orbital::SetURLData(std::string TLE)
+    orbital::setURLData(std::string TLE)
 {
  
         strcpy(m_tle_url,TLE.c_str());
