@@ -22,6 +22,13 @@ using namespace std;
 
 // methods
 // store the data
+ // constructors  and destructors
+orbital::orbital    ()
+{};
+
+orbital::~orbital   ()
+{};
+
 orbital::orbital(int year, int month, int day)
 {
     SetDate(year, month, day);

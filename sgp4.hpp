@@ -14,6 +14,7 @@
 #include "orbital.hpp"
 #include "utilities.hpp"
 
+
 #ifndef sgp4_hpp
 #define sgp4_hpp
 class sgp4
@@ -21,14 +22,16 @@ class sgp4
     
     private:
     
-    orbital *orb = new orbital();
-    utilities *util = new utilities();
+    orbital *orb;
+    utilities *util;
     
     public:
 
      // constructors  and destructors
      sgp4();
     ~sgp4();
+    
+    //void    sgp4::builds();
 };
 
 #endif /* sgp4_hpp */
