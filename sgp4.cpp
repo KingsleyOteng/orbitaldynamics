@@ -44,26 +44,26 @@ void builds()
     int         m_satellite_number = orb -> getSATnumber();
     char*       m_classification = orb -> getCLASSIFIERfield();
     int         m_designator_launch_year;
-    int         m_designator_launch_number_of_year;
+    int         m_designator_launch_number_of_year
     char*       m_designator_piece_of_launch        [ARRAY_SIZE_ONE];
-    int         m_epoch_year;
-    double      m_julian_date_fraction;
+    int         m_epoch_year = orb -> getEPOCHyear();
+    double      m_julian_date_fraction = orb -> getJULIANdatefraction();
     double      m_ballistic_coefficient;
     char*       m_second_derivative_of_motion       [ARRAY_SIZE];
     char*       m_drag_term_or_radition_coefficient [ARRAY_SIZE];
-    int         m_ephemeris_type;
-    int         m_element_number;
+    int         m_ephemeris_type = orb -> getEPHEMERIStype();
+    int         m_element_number = orb -> getELEMENTnumber();
     int         m_check_sum;
-    int         m_satellite_number_2;
+    int         m_satellite_number_2 = orb -> getSATNUMBERline2()
     double      m_satellite_inclination;
     double      m_satellite_ascension_node;
     double      m_satellite_eccentricity_coefficient;
     double      m_argument_perigree;
     double      m_mean_anomaly;
     double      m_mean_motion;
-    double      m_epoch_checksum;
-    int         m_lineone_checksum;
-    int         m_linetwo_checksum;
+    double      m_epoch_checksum = orb -> getREVOLUTIONepochchecksum(); //??? 
+    int         m_lineone_checksum = = orb -> getCheckSumLineOne();
+    int         m_linetwo_checksum = orb -> getCheckSumLineTwo();
     
     
     
