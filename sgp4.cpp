@@ -58,9 +58,9 @@ void builds()
     double      m_satellite_inclination = orb -> getINCLINATIONfield();
     double      m_satellite_ascension_node = orb -> getRIGHTASCENTIONnode();
     double      m_satellite_eccentricity_coefficient = orb->getECCENTRICITYcoefficient();
-    double      m_argument_perigree = orb->getARGUMENTperigree();
-    double      m_mean_anomaly = orb -> getMEANanomlay();
-    double      m_mean_motion = orb -> getMEANmotion();
+    double      m_argument_perigree;
+    double      m_mean_anomaly;
+    double      m_mean_motion;
     double      m_epoch_checksum = orb -> getREVOLUTIONepochchecksum(); //???
     int         m_lineone_checksum = orb -> getCheckSumLineOne();
     int         m_linetwo_checksum = orb -> getCheckSumLineTwo();
