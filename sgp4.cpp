@@ -43,12 +43,12 @@ void builds()
     // parameters
     int         m_satellite_number = orb -> getSATnumber();
     char*       m_classification = orb -> getCLASSIFIERfield();
-    int         m_designator_launch_year;
-    int         m_designator_launch_number_of_year;
+    int         m_designator_launch_year = orb -> getLAUNCHERyearfield(); // ??
+    int         m_designator_launch_number_of_year = orb -> getLAUNCHERnumberfield(); //??
     char*       m_designator_piece_of_launch        [ARRAY_SIZE_ONE];
     int         m_epoch_year = orb -> getEPOCHyear();
     double      m_julian_date_fraction = orb -> getJULIANdatefraction();
-    double      m_ballistic_coefficient = orb -> getBALLISTICcoefficient()'
+    double      m_ballistic_coefficient = orb -> getBALLISTICcoefficient();
     char*       m_second_derivative_of_motion       [ARRAY_SIZE];
     char*       m_drag_term_or_radition_coefficient [ARRAY_SIZE];
     int         m_ephemeris_type = orb -> getEPHEMERIStype();
