@@ -45,7 +45,7 @@ void builds()
     char*       m_classification = orb -> getCLASSIFIERfield();
     int         m_designator_launch_year = orb -> getLAUNCHERyearfield(); // ??
     int         m_designator_launch_number_of_year = orb -> getLAUNCHERnumberfield(); //??
-    char*       m_designator_piece_of_launch        [ARRAY_SIZE_ONE];
+    char*       m_designator_piece_of_launch        [ARRAY_SIZE_ONE] = orb -> getDESIGNATORpiece();
     int         m_epoch_year = orb -> getEPOCHyear();
     double      m_julian_date_fraction = orb -> getJULIANdatefraction();
     double      m_ballistic_coefficient = orb -> getBALLISTICcoefficient();
