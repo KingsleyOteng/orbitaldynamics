@@ -147,6 +147,7 @@ public:
     double      getJULIANdatefraction           () { return m_julian_date_fraction; }
     double      getBALLISTICcoefficient         () { return m_ballistic_coefficient; }
     char*       getSECONDderivativemotion       () { return m_second_derivative_of_motion; }
+    char*       getDESIGNATORpiece              () { return m_designator_piece_of_launch;  }
     int         getDRAGRADIATIONcoefficient     () { return m_designator_launch_number_of_year; }
     int         getEPHEMERIStype                () { return m_ephemeris_type; }
     int         getELEMENTnumber                () { return m_element_number; }
