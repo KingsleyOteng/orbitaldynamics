@@ -42,11 +42,12 @@ sgp4::sgp4                            ()
     
     // parameters
     int         m_satellite_number = orb -> getSATnumber();
-    char        m_classification    [ARRAY_SIZE_ONE];
+    char        m_classification            [ARRAY_SIZE_ONE];;
+                strcpy(m_classification,orb->getCLASSIFIERfield());
     int         m_designator_launch_year = orb -> getLAUNCHERyearfield(); // ??
     int         m_designator_launch_number_of_year = orb -> getLAUNCHERnumberfield(); //??
     char        m_designator_piece_of_launch        [ARRAY_SIZE_ONE];
-                //strcpy(m_second_derivative_of_motion,orb -> getSECONDderivativemotion());
+                strcpy(m_designator_piece_of_launch,orb -> getLAUNCHpiencedesignator());
     int         m_epoch_year = orb -> getEPOCHyear();
     double      m_julian_date_fraction = orb -> getJULIANdatefraction();
     double      m_ballistic_coefficient = orb -> getBALLISTICcoefficient();
