@@ -7,25 +7,19 @@
 //
 
 #include "sgp4.hpp"
+#include <string>
+
 //std::vector<int> v{1,2,3};
 // constructor
 sgp4::sgp4                            ()
-{}
-
-// destructor
-sgp4::~sgp4                           ()
-{}
-
-void builds()
 {
-    double perigree;
-    double perigree_h;
-    
     // declare the variables
     orbital
             *orb = new orbital();
     utilities
             *util = new utilities();
+    double perigree;
+    double perigree_h;  
     
     vector<string>
             parsed_line_ones = util -> getStringParser();
@@ -37,20 +31,29 @@ void builds()
             orb -> setURLData       ("https://celestrak.com/satcat/tle.php?CATNR=43108");
             orb -> getURLData       ();
     
+    //m_designator_piece_of_launch = orb -> getDESIGNATORpiece();
+    
+
+    
+    
+    
     // set the TLE parameters
             orb -> SetTLEparameters (orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
     
     // parameters
     int         m_satellite_number = orb -> getSATnumber();
-    char*       m_classification = orb -> getCLASSIFIERfield();
+    char        m_classification    [ARRAY_SIZE_ONE];
     int         m_designator_launch_year = orb -> getLAUNCHERyearfield(); // ??
     int         m_designator_launch_number_of_year = orb -> getLAUNCHERnumberfield(); //??
-    char*       m_designator_piece_of_launch        [ARRAY_SIZE_ONE] = orb -> getDESIGNATORpiece();
+    char        m_designator_piece_of_launch        [ARRAY_SIZE_ONE];
+                //strcpy(m_second_derivative_of_motion,orb -> getSECONDderivativemotion());
     int         m_epoch_year = orb -> getEPOCHyear();
     double      m_julian_date_fraction = orb -> getJULIANdatefraction();
     double      m_ballistic_coefficient = orb -> getBALLISTICcoefficient();
-    char*       m_second_derivative_of_motion       [ARRAY_SIZE];
-    char*       m_drag_term_or_radition_coefficient [ARRAY_SIZE];
+    char        m_second_derivative_of_motion       [ARRAY_SIZE];
+                strcpy(m_second_derivative_of_motion,orb -> getSECONDderivativemotion());
+    char        m_drag_term_or_radition_coefficient [ARRAY_SIZE];
+                strcpy(m_second_derivative_of_motion,orb -> getSECONDderivativemotion());
     int         m_ephemeris_type = orb -> getEPHEMERIStype();
     int         m_element_number = orb -> getELEMENTnumber();
     int         m_check_sum = orb -> getCheckSumLineOne(); //????
@@ -64,6 +67,15 @@ void builds()
     double      m_epoch_checksum = orb -> getREVOLUTIONepochchecksum(); //???
     int         m_lineone_checksum = orb -> getCheckSumLineOne();
     int         m_linetwo_checksum = orb -> getCheckSumLineTwo();
+}
+
+// destructor
+sgp4::~sgp4                           ()
+{}
+
+void builds()
+{
+    
     
     
     
