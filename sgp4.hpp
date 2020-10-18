@@ -32,10 +32,9 @@ class sgp4
     
         orbital *orb;
         utilities *util;
-     int         m_satellite_number = orb -> getSATnumber();
-        char        m_classification            [ARRAY_SIZE_ONE];;
-                    strcpy(m_classification,orb->getCLASSIFIERfield());
-        int         m_designator_launch_year = orb -> getLAUNCHERyearfield(); // ??
+     int         m_satellite_number;
+     char        m_classification            [ARRAY_SIZE_ONE];
+    int         m_designator_launch_year; // ??
         int         m_designator_launch_number_of_year = orb -> getLAUNCHERnumberfield(); //??
         char        m_designator_piece_of_launch        [ARRAY_SIZE_ONE];
                     strcpy(m_designator_piece_of_launch,orb -> getLAUNCHpiencedesignator());
