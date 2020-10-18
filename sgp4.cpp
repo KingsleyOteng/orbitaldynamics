@@ -40,7 +40,7 @@ sgp4::sgp4                            ()
     // set the TLE parameters
             orb -> SetTLEparameters (orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
     
-    // parameters
+    // member variables
     int         m_satellite_number = orb -> getSATnumber();
     char        m_classification            [ARRAY_SIZE_ONE];;
                 strcpy(m_classification,orb->getCLASSIFIERfield());
