@@ -35,17 +35,15 @@ class sgp4
      int         m_satellite_number;
      char        m_classification            [ARRAY_SIZE_ONE];
     int         m_designator_launch_year; // ??
-        int         m_designator_launch_number_of_year = orb -> getLAUNCHERnumberfield(); //??
+        int         m_designator_launch_number_of_year; //??
         char        m_designator_piece_of_launch        [ARRAY_SIZE_ONE];
-                    strcpy(m_designator_piece_of_launch,orb -> getLAUNCHpiencedesignator());
-        int         m_epoch_year = orb -> getEPOCHyear();
-        double      m_julian_date_fraction = orb -> getJULIANdatefraction();
-        double      m_ballistic_coefficient = orb -> getBALLISTICcoefficient();
+                    
+        int         m_epoch_year;
+        double      m_julian_date_fraction;
+        double      m_ballistic_coefficient;
         char        m_second_derivative_of_motion       [ARRAY_SIZE];
-                    strcpy(m_second_derivative_of_motion,orb -> getSECONDderivativemotion());
         char        m_drag_term_or_radition_coefficient [ARRAY_SIZE];
-                    strcpy(m_second_derivative_of_motion,orb -> getSECONDderivativemotion());
-        int         m_ephemeris_type = orb -> getEPHEMERIStype();
+        int         m_ephemeris_type;
         int         m_element_number = orb -> getELEMENTnumber();
         int         m_check_sum = orb -> getCheckSumLineOne(); //????
         int         m_satellite_number_2 = orb -> getSATNUMBERline2();
