@@ -23,7 +23,7 @@ private:
     // macro defining array size
     #define ARRAY_SIZE_DOUBLE 100
     #define ARRAY_SIZE 50
-    #define ARRAY_SIZE_ONE 1
+    #define ARRAY_SIZE_ONE 5
     
     
     // observer and satellite coordinates
