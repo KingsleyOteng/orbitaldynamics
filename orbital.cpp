@@ -518,7 +518,6 @@ void
         
         // generate a checksum
         orbital::SetCHECKsumtwo(0);
-        //cout<<"m_julian_date_fraction"<<orbital::m_julian_date_fraction;
         
 };
 
@@ -596,7 +595,6 @@ void
     cout << "   class:  "           << m_classification                     << ",\n";
     cout << "   id:  "              << m_id                                 << ",\n";
     cout << "   date:  "            << m_epoch_year                         << ",\n";
-   // cout << "   julian date fraction:  "            << m_julian_date_fraction                         << ",\n";
     cout << "   fdmm:  "            << m_ballistic_coefficient              << ",\n";
     cout << "   sdmm:  "            << m_second_derivative_of_motion        << ",\n";
     cout << "   drag:  "            << m_drag_term_or_radition_coefficient  << ",\n";

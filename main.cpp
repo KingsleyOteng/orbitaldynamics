@@ -51,13 +51,21 @@ double ctime_example;
 
 int main()
 {
-   // boost::regex e;
-
-    //std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
-    
-    //
+    std::tm tm = {0};
+    double year = 1900 + tm.tm_year;
+    double month = tm.tm_mon;
+    long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
+    double C,D,jd;
+    double A = trunc(year/100);
+    double B = 2 - A + trunc(A/4);
+    double yearp, monthp;
+    double jd_out;
+    double BB,E,F,G,I;
+    double day_final, month_final, year_final;
+    double dayg, monthg, yearg;
+    double frac_days, days_gg;
     
     // map to the TLE resoure
     // then open the resource
@@ -125,8 +133,6 @@ int main()
     std::time_t end_time = std::chrono::system_clock::to_time_t(start);
     cout << "current time" << std::ctime(&end_time) << "\n";
 
-    
-    std::tm tm = {0};
        tm.tm_sec = 45.57;
        tm.tm_min = 0;
        tm.tm_hour = 6;
@@ -145,19 +151,7 @@ int main()
     //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
-    double year = 1900 + tm.tm_year;
-    double month = tm.tm_mon;
-    long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
-    double C,D,jd;
-    double A = trunc(year/100);
-    double B = 2 - A + trunc(A/4);
-    double yearp, monthp;
-    double jd_out;
-    double BB,E,F,G,I;
-    double day_final, month_final, year_final;
-    double dayg, monthg, yearg;
-    double frac_days, days_gg;
-    
+
     
     if ((month == 1) or (month == 2))
     {
@@ -188,10 +182,10 @@ int main()
     {
         C = trunc((365.25 * yearp) - 0.75);
     }
-       else
-       {
-           C = trunc(365.25 * yearp);
-       };
+    else
+    {
+        C = trunc(365.25 * yearp);
+    };
            
     D = trunc(30.6001 * (monthp + 1));
     jd = B + C + D + day + 1720994.5;
@@ -200,7 +194,6 @@ int main()
 //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
-
     jd_out = jd + 0.5;
     F = modf(jd_out, &I);
     I = int(I);
@@ -225,8 +218,6 @@ int main()
     
     dayg = C - E + F - trunc(30.6001 * G);
     
-    
-    
     if (G < 13.5)
     {
         monthg = G - 1;
@@ -245,9 +236,6 @@ int main()
         (yearg = D - 4715);
     }
     std::cout << std::fixed;
-    
-
-    
     frac_days = modf(dayg,&days_gg);
     days_gg = int(days_gg);
     frac_days = dayg - days_gg;
@@ -341,7 +329,6 @@ int main()
     // -----> The goal of this code was to check the launchdate
     // Psalm 19:12
     std::string query_field = "apogee";
-
     std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
     cout << "record> " << query_field <<  " " << query_output << "\n";
     
