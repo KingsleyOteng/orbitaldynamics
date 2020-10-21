@@ -56,8 +56,19 @@ int main()
     //std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
-    
-    //
+    std::tm tm = {0};
+    double year = 1900 + tm.tm_year;
+    double month = tm.tm_mon;
+    long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
+    double C,D,jd;
+    double A = trunc(year/100);
+    double B = 2 - A + trunc(A/4);
+    double yearp, monthp;
+    double jd_out;
+    double BB,E,F,G,I;
+    double day_final, month_final, year_final;
+    double dayg, monthg, yearg;
+    double frac_days, days_gg;
     
     // map to the TLE resoure
     // then open the resource
@@ -126,7 +137,7 @@ int main()
     cout << "current time" << std::ctime(&end_time) << "\n";
 
     
-    std::tm tm = {0};
+ 
        tm.tm_sec = 45.57;
        tm.tm_min = 0;
        tm.tm_hour = 6;
@@ -145,17 +156,7 @@ int main()
     //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
-    double year = 1900 + tm.tm_year;
-    double month = tm.tm_mon;
-    long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
-    
-    cout << "month" << month << "\n";
-    cout << "day" << day << "\n";
-    cout << "year" << year << "\n";
-    double C,D,jd;
-    double A = trunc(year/100);
-    double B = 2 - A + trunc(A/4);
-    double yearp, monthp;
+
     
     if ((month == 1) or (month == 2))
     {
@@ -194,27 +195,16 @@ int main()
     D = trunc(30.6001 * (monthp + 1));
     jd = B + C + D + day + 1720994.5;
     std::cout << std::fixed;
-    cout << "jd" << jd <<"\n";
     
 //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
-    double jd_out;
-    double BB,E,F,G,I;
-    double day_final, month_final, year_final;
+
     jd_out = jd + 0.5;
-    std::cout << std::fixed;
-    cout  << "jd_out" << jd_out<<"\n";
     F = modf(jd_out, &I);
-    double dayg, monthg, yearg;
-   
     I = int(I);
-     F = jd_out - I;
-    cout<<"frac"<<F<<"\n";
-    cout<<"int"<<I<<"\n";
-    
+    F = jd_out - I;
     A = trunc((I - 1867216.25)/36524.25);
-     cout << "A " << A << "\n";
     if (I > 2299160)
     {
         BB = I + 1 + A - trunc(A / 4.);
@@ -254,23 +244,12 @@ int main()
         (yearg = D - 4715);
     }
     std::cout << std::fixed;
-    cout  << "dayg" << dayg << "\n";
-    cout << "monthg" << monthg << "\n";
-    cout  << "yearg" << yearg << "\n";
     
-    double frac_days, days_gg;
+
     
     frac_days = modf(dayg,&days_gg);
     days_gg = int(days_gg);
     frac_days = dayg - days_gg;
-    
-    cout<<"dayg"<<dayg<<"\n";
-    cout<<"frac_days"<<frac_days<<"\n";
-           
-    cout<<"B"<<BB   <<"\n";
-    cout << "A" << A << "\n";
-    cout << "I" << I << "\n";
-    cout << "BB" << BB << "\n";
     
     C = BB + 1524;
     
@@ -281,8 +260,6 @@ int main()
     G = trunc((C - E) / 30.6001);
     
     day_final = C - E + F - trunc(30.6001 * G);
-    
-    cout<<"day_final"<<day_final;
     
     if (G < 13.5)
     {
@@ -303,8 +280,6 @@ int main()
     }
     
     frac_hours = modf(dayg,&hours_example);
-    cout << "frac_hours" << frac_hours << "\n";
-    cout << "hours_example" << hours_example << "\n";
     hours_final = frac_hours * 24;
     min_final = 60 * (hours_final - (int)(hours_final));
     hours_final = (int) hours_final;
@@ -365,7 +340,6 @@ int main()
     // -----> The goal of this code was to check the launchdate
     // Psalm 19:12
     std::string query_field = "apogee";
-
     std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
     cout << "record> " << query_field <<  " " << query_output << "\n";
     
