@@ -66,15 +66,14 @@ getBenchMarkingChrono                         ()
     std::string         i,j;
     std::string         test_type;
     double              start,stop,dt;
+    double              a = 1;
     //clock_t             time1,time2;
     tm                  *time_stamp1, *time_stamp2;
-     double a = 1;
+   
     
     // start chrono timer
     auto begins = chrono::steady_clock::now();
-
-    
-    
+   
     // we take an initial time stamp
     time_stamp1 = std::localtime( &t);
     cout << "time 1: " << time_stamp1->tm_sec << '\n';
@@ -95,12 +94,9 @@ getBenchMarkingChrono                         ()
     std::time_t t2;
     time_stamp2 = std::localtime( &t2);
     cout << "time 2: " << time_stamp2->tm_sec << '\n';
-    
     coordinate_transforms *ct = new coordinate_transforms();
-    
     ct->setJulianDateFractionOfDay(mktime(time_stamp1));
     start = ct->getJulianDateFractionOfDay();
-    
     ct->setJulianDateFractionOfDay(mktime(time_stamp2));
     stop = ct->getJulianDateFractionOfDay();
  
