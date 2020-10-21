@@ -224,8 +224,6 @@ int main()
     
     dayg = C - E + F - trunc(30.6001 * G);
     
-    
-    
     if (G < 13.5)
     {
         monthg = G - 1;
@@ -244,9 +242,6 @@ int main()
         (yearg = D - 4715);
     }
     std::cout << std::fixed;
-    
-
-    
     frac_days = modf(dayg,&days_gg);
     days_gg = int(days_gg);
     frac_days = dayg - days_gg;
