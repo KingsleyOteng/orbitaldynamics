@@ -56,7 +56,8 @@ class sgp4
         int         m_lineone_checksum;
         int         m_linetwo_checksum;
         std::string query_field;
-    std::string query_output;
+        std::string query_output;
+    
     public:
     
      // constructors  and destructors
