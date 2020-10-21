@@ -51,9 +51,6 @@ double ctime_example;
 
 int main()
 {
-   // boost::regex e;
-
-    //std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
     std::tm tm = {0};
@@ -136,8 +133,6 @@ int main()
     std::time_t end_time = std::chrono::system_clock::to_time_t(start);
     cout << "current time" << std::ctime(&end_time) << "\n";
 
-    
- 
        tm.tm_sec = 45.57;
        tm.tm_min = 0;
        tm.tm_hour = 6;
@@ -187,10 +182,10 @@ int main()
     {
         C = trunc((365.25 * yearp) - 0.75);
     }
-       else
-       {
-           C = trunc(365.25 * yearp);
-       };
+    else
+    {
+        C = trunc(365.25 * yearp);
+    };
            
     D = trunc(30.6001 * (monthp + 1));
     jd = B + C + D + day + 1720994.5;
@@ -199,7 +194,6 @@ int main()
 //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
-
     jd_out = jd + 0.5;
     F = modf(jd_out, &I);
     I = int(I);
@@ -224,8 +218,6 @@ int main()
     
     dayg = C - E + F - trunc(30.6001 * G);
     
-    
-    
     if (G < 13.5)
     {
         monthg = G - 1;
@@ -244,9 +236,6 @@ int main()
         (yearg = D - 4715);
     }
     std::cout << std::fixed;
-    
-
-    
     frac_days = modf(dayg,&days_gg);
     days_gg = int(days_gg);
     frac_days = dayg - days_gg;
