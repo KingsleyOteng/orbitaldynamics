@@ -20,11 +20,10 @@ sgp4::sgp4                            ()
             *util = new utilities();
     double perigree;
     double perigree_h;  
+    vector<string> parsed_line_ones;
+    vector<string> parsed_line_twos;
     
-    vector<string>
             parsed_line_ones = util -> getStringParser();
-    
-    vector<string>
             parsed_line_twos = util -> getStringParser();
 
     // grab a raw TLE from the celestrak website and process it
@@ -60,6 +59,7 @@ sgp4::sgp4                            ()
           m_lineone_checksum = orb -> getCheckSumLineOne();
           m_linetwo_checksum = orb -> getCheckSumLineTwo();
     
+    // query text files for additional information
           query_field = "apogee";
           query_output = util -> SatelliteNORADRecord("43108", query_field);
           cout << "record> " << query_field <<  " " << query_output << "\n";
