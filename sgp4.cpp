@@ -61,8 +61,8 @@ sgp4::sgp4                            ()
           m_linetwo_checksum = orb -> getCheckSumLineTwo();
     
           query_field = "apogee";
-          std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
-    cout << "record> " << query_field <<  " " << query_output << "\n";
+          query_output = util -> SatelliteNORADRecord("43108", query_field);
+          cout << "record> " << query_field <<  " " << query_output << "\n";
 }
 
 // destructor
