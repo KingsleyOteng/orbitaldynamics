@@ -55,7 +55,7 @@ class sgp4
         double      m_epoch_checksum; //???
         int         m_lineone_checksum;
         int         m_linetwo_checksum;
-    
+        std::string query_field;
     
     public:
     
