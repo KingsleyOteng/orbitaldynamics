@@ -56,8 +56,19 @@ int main()
     //std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
-    
-    //
+    std::tm tm = {0};
+    double year = 1900 + tm.tm_year;
+    double month = tm.tm_mon;
+    long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
+    double C,D,jd;
+    double A = trunc(year/100);
+    double B = 2 - A + trunc(A/4);
+    double yearp, monthp;
+    double jd_out;
+    double BB,E,F,G,I;
+    double day_final, month_final, year_final;
+    double dayg, monthg, yearg;
+    double frac_days, days_gg;
     
     // map to the TLE resoure
     // then open the resource
@@ -126,7 +137,7 @@ int main()
     cout << "current time" << std::ctime(&end_time) << "\n";
 
     
-    std::tm tm = {0};
+ 
        tm.tm_sec = 45.57;
        tm.tm_min = 0;
        tm.tm_hour = 6;
@@ -145,19 +156,7 @@ int main()
     //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
-    double year = 1900 + tm.tm_year;
-    double month = tm.tm_mon;
-    long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
-    double C,D,jd;
-    double A = trunc(year/100);
-    double B = 2 - A + trunc(A/4);
-    double yearp, monthp;
-    double jd_out;
-    double BB,E,F,G,I;
-    double day_final, month_final, year_final;
-    double dayg, monthg, yearg;
-    double frac_days, days_gg;
-    
+
     
     if ((month == 1) or (month == 2))
     {
@@ -341,7 +340,6 @@ int main()
     // -----> The goal of this code was to check the launchdate
     // Psalm 19:12
     std::string query_field = "apogee";
-
     std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
     cout << "record> " << query_field <<  " " << query_output << "\n";
     
