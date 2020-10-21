@@ -58,7 +58,7 @@ class sgp4
     
     
     public:
-
+    
      // constructors  and destructors
         sgp4();
        ~sgp4();

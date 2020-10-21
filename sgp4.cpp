@@ -30,13 +30,7 @@ sgp4::sgp4                            ()
     // grab a raw TLE from the celestrak website and process it
             orb -> setURLData       ("https://celestrak.com/satcat/tle.php?CATNR=43108");
             orb -> getURLData       ();
-    
-    //m_designator_piece_of_launch = orb -> getDESIGNATORpiece();
-    
 
-    
-    
-    
     // set the TLE parameters
             orb -> SetTLEparameters (orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
     
