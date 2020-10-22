@@ -59,6 +59,8 @@ sgp4::sgp4                            ()
 
     // query text files for additional information
       query_field = "apogee";
+      space_vehicle = "43108";
+    
       query_output = util -> SatelliteNORADRecord("43108", query_field);
       cout << "record> " << query_field <<  " " << query_output << "\n";
 }
