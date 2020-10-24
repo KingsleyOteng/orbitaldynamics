@@ -327,7 +327,8 @@ int main()
     cout << "yy:" << nf->jdTOctime(xx);
     cout << "ooo:" << nf->getDeltaCtimeFromTLE("20040.41532895");
     nf->getCheckLaunchDateV();
-    //deltaCTIME
+   
+    
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
     //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
