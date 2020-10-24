@@ -296,13 +296,13 @@ int main()
     }
     
     double frac_hours, hours_gg, hours_final, min_final, seconds_final;
+    double xx;
     frac_hours = modf(dayg,&hours_gg);
     cout << "frac_hours" << frac_hours << "\n";
     cout << "hours_gg" << hours_gg << "\n";
     hours_final = frac_hours * 24;
     min_final = 60 * (hours_final - (int)(hours_final));
     hours_final = (int) hours_final;
-    
     
     seconds_final = ((min_final - (int)(min_final)))*60;
     min_final = (int) (min_final);
@@ -323,7 +323,7 @@ int main()
     time_files* nf = new time_files();
     cout << "zz:"  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
     cout << "cc:" << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
-    double xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
+    xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
     cout << "yy:" << nf->jdTOctime(xx);
     cout << "ooo:" << nf->getDeltaCtimeFromTLE("20040.41532895");
     nf->getCheckLaunchDateV();
