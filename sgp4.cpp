@@ -57,11 +57,12 @@ sgp4::sgp4                            ()
       m_lineone_checksum = orb -> getCheckSumLineOne();
       m_linetwo_checksum = orb -> getCheckSumLineTwo();
 
-    // query text files for additional information
+      // query text files for additional information
       query_field = "apogee";
       space_vehicle = "43108";
       query_output = util -> SatelliteNORADRecord("43108", query_field);
       cout << "record> " << query_field <<  " " << query_output << "\n";
+      cout << "satellite number" << m_satellite_number << "\n";
 }
 
 // destructor
