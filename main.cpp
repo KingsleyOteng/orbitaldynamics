@@ -6,17 +6,17 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-
 // preprocessor instructions
+//#include "jni.h"
 #include <iostream>
 #include <vector>                      // c-11 vector
 #include <algorithm>                   // c-11 algoithm
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
+#include "sgp4.hpp"
+#include "sdp4.hpp"
 #include <mysql.h>
-#include <soci/soci.h>
-#include <soci/mysql/soci-mysql.h>
 #include <time.h>
 #include <iostream>
 #include <fstream>
@@ -32,26 +32,45 @@
 #include <boost/lambda/lambda.hpp>
 #include <boost/xpressive/xpressive.hpp>
 #include <cmath>
-
 #include <string>
 #include <iostream>
 
+
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/prepared_statement.h>
+
 using namespace std;
-using namespace soci;
+//using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
+double frac_hours, hours_example, hours_final, min_final, seconds_final;
+const string server = "156.67.222.64";
+const string username = "u311839917_koteng";
+const string password = "Mypass1234!";
+time_files* nf = new time_files();
+double ctime_example;
+
 int main()
 {
-   // boost::regex e;
-
-    //std::vector<int> v{1,2,3};
     orbital *orb = new orbital(12,13,14);
     utilities *util = new utilities();
-    
-    //
+    std::tm tm = {0};
+    double year = 1900 + tm.tm_year;
+    double month = tm.tm_mon;
+    long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
+    double C,D,jd;
+    double A = trunc(year/100);
+    double B = 2 - A + trunc(A/4);
+    double yearp, monthp;
+    double jd_out;
+    double BB,E,F,G,I;
+    double day_final, month_final, year_final;
+    double dayg, monthg, yearg;
+    double frac_days, days_gg;
     
     // map to the TLE resoure
     // then open the resource
-    orb -> SetURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
+    orb -> setURLData("https://celestrak.com/satcat/tle.php?CATNR=43108");
     orb -> getURLData();
    
     
@@ -65,6 +84,8 @@ int main()
     
     // back out TLE parameters
     util -> setStringParser(orb -> getTLElineone ());
+    //util -> ReadLineByLine();
+    
     vector<string> parsed_line_ones             = util ->
                                                     getStringParser();
     
@@ -75,8 +96,7 @@ int main()
     // store TLE parameters
     orb->SetTLEparameters(orb -> getTLEname(), parsed_line_ones, parsed_line_twos);
     
-   // std::cout << "Phrase" <<
-    
+    std:cout  << "line one: " << "\n";
     std::cout << "Line Number of Element Data : " << "\n";
     std::cout << "Satellite Name : " << orb->getTLEname() << "\n";
     std::cout << "Classification (U=Unclassified) : " << orb->getCLASSIFIERfield() << "\n";
@@ -90,13 +110,13 @@ int main()
     std::cout << "BSTAR drag term (Leading decimal point assumed) : " << orb->getDRAGRADIATIONcoefficient() << "\n";
     std::cout << "Ephemeris type : " << orb->getEPHEMERIStype() << "\n";
     std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1) : " << orb->getELEMENTnumber() << "\n";
-    
-    std:cout  << "line two" << "\n";
+    std::cout  << "line two: " << "\n";
     
     orb -> getTLEsummary();
     util -> SetEpochJulianDate(orb->getJULIANdatefraction());
     util -> SetSimpleDateFormatLong();
-    cout << util -> GetSimpleDateFormatLong() << "\n";
+    
+    std::cout << util -> GetSimpleDateFormatLong() << "\n";
     
     coordinate_transforms *ct = new coordinate_transforms();
     
@@ -105,21 +125,16 @@ int main()
     ct -> setGST();
     ct -> setGMST();
     
-    //cout << ct -> gmst;
-    
     benchmarking *b = new benchmarking();
     b->getBenchMarking();
     
     // generate a julian date time string
     cout << "time conversion" << ct->setTimeConversionM(util -> GetSimpleDateFormatLong(),"20") << "\n";
     
-    
     auto start = std::chrono::system_clock::now();
     std::time_t end_time = std::chrono::system_clock::to_time_t(start);
     cout << "current time" << std::ctime(&end_time) << "\n";
 
-    
-    std::tm tm = {0};
        tm.tm_sec = 45.57;
        tm.tm_min = 0;
        tm.tm_hour = 6;
@@ -127,8 +142,10 @@ int main()
        tm.tm_mon = 2;
        tm.tm_year = 85;
        tm.tm_isdst = 0;
+    
        // Convert std::tm to std::time_t (popular extension)
        std::time_t tt = timegm(&tm);
+    
        // Convert std::time_t to std::chrono::system_clock::time_point
        std::chrono::system_clock::time_point tp =
                                         std::chrono::system_clock::from_time_t(tt);
@@ -136,19 +153,7 @@ int main()
     //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
-    double year = 1900 + tm.tm_year;
-    double month = tm.tm_mon;
-    long double day = (double)(tm.tm_mday + (double(tm.tm_hour))/24 + (double(tm.tm_min))/(24*60)  + (double(tm.tm_sec))/(24*60*60));
-    
-    cout << "(double)(tm.tm_mday + (tm.tm_hour /24))" << (double(tm.tm_hour))/24 << "\n";
-    
-    cout << "month" << month << "\n";
-    cout << "day" << day << "\n";
-    cout << "year" << year << "\n";
-    double C,D,jd;
-    double A = trunc(year/100);
-    double B = 2 - A + trunc(A/4);
-    double yearp, monthp;
+
     
     if ((month == 1) or (month == 2))
     {
@@ -179,37 +184,23 @@ int main()
     {
         C = trunc((365.25 * yearp) - 0.75);
     }
-       else
-       {
-           C = trunc(365.25 * yearp);
-       };
+    else
+    {
+        C = trunc(365.25 * yearp);
+    };
            
     D = trunc(30.6001 * (monthp + 1));
     jd = B + C + D + day + 1720994.5;
     std::cout << std::fixed;
-    cout << "jd" << jd <<"\n";
     
 //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
-    
-    double dayg, monthg, yearg;
-    double jd_out;
-    double BB,E,F,G,I;
-    double day_final, month_final, year_final;
     
     jd_out = jd + 0.5;
     F = modf(jd_out, &I);
     I = int(I);
     F = jd_out - I;
     A = trunc((I - 1867216.25)/36524.25);
-    
-    std::cout << std::fixed;
-    
-    cout  << "jd_out" << jd_out<<"\n";
-    cout<<"frac"<<F<<"\n";
-    cout<<"int"<<I<<"\n";
-    cout << "A " << A << "\n";
-    
     if (I > 2299160)
     {
         BB = I + 1 + A - trunc(A / 4.);
@@ -246,24 +237,11 @@ int main()
     {
         (yearg = D - 4715);
     }
+    
     std::cout << std::fixed;
-    cout  << "dayg" << dayg << "\n";
-    cout << "monthg" << monthg << "\n";
-    cout  << "yearg" << yearg << "\n";
-    
-    double frac_days, days_gg;
-    
     frac_days = modf(dayg,&days_gg);
     days_gg = int(days_gg);
     frac_days = dayg - days_gg;
-    
-    cout<<"dayg"<<dayg<<"\n";
-    cout<<"frac_days"<<frac_days<<"\n";
-           
-    cout<<"B"<<BB   <<"\n";
-    cout << "A" << A << "\n";
-    cout << "I" << I << "\n";
-    cout << "BB" << BB << "\n";
     
     C = BB + 1524;
     
@@ -274,8 +252,6 @@ int main()
     G = trunc((C - E) / 30.6001);
     
     day_final = C - E + F - trunc(30.6001 * G);
-    
-    cout<<"day_final"<<day_final;
     
     if (G < 13.5)
     {
@@ -295,42 +271,33 @@ int main()
         year_final = D - 4715;
     }
     
-    double frac_hours, hours_gg, hours_final, min_final, seconds_final;
-    double xx;
-    frac_hours = modf(dayg,&hours_gg);
-    cout << "frac_hours" << frac_hours << "\n";
-    cout << "hours_gg" << hours_gg << "\n";
+    frac_hours = modf(dayg,&hours_example);
     hours_final = frac_hours * 24;
     min_final = 60 * (hours_final - (int)(hours_final));
     hours_final = (int) hours_final;
-    
     seconds_final = ((min_final - (int)(min_final)))*60;
     min_final = (int) (min_final);
     
     cout << "time from " << std::chrono::system_clock::to_time_t(tp) << "\n";
     cout << "time year " << 1990 + tm.tm_year << "\n";
     cout << "time year " << trunc(365.25 * (1990 + year - 1)) + trunc(30.600001 * 14) + 1720994.5 + BB << "\n";
-    cout << "julian date"                       << jd                       << "\n";
-    cout << "year from julian date"             << year_final               << "\n";
-    cout << "month from julian date"            << month_final              << "\n";
-    cout << "day from julian date"              << day_final                << "\n";
-    cout << "hours from julian date"            << hours_final              << "\n";
-    cout << "minutes from julian date"          << min_final                << "\n";
-    cout << "seconds from julian date"          << round(seconds_final)     << "\n";
+    cout << "julian date" << jd << "\n";
+    cout << "year from julian date" << year_final << "\n";
+    cout << "month from julian date" << month_final << "\n";
+    cout << "day from julian date" << day_final << "\n";
+    cout << "hours from julian date" << hours_final << "\n";
+    cout << "minutes from julian date" << min_final << "\n";
+    cout << "seconds from julian date" << round(seconds_final) << "\n";
     
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
-    
-    time_files* nf = new time_files();
-    cout << "zz:"  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
-    cout << "cc:" << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
-    xx = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
-    cout << "yy:" << nf->jdTOctime(xx);
-    cout << "ooo:" << nf->getDeltaCtimeFromTLE("20040.41532895");
+    cout << "time_t: "  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
+    cout << "conversion from ctime: " << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
+    ctime_example = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
+    cout << "ctime: " << nf->jdTOctime(ctime_example) << "\n";
+    cout << "delta ctime: " << nf->getDeltaCtimeFromTLE("20040.41532895") << "\n";
     nf->getCheckLaunchDateV();
-   
-    
+  
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
-    //out << nf->deltaCTIME("Day 040 @ 09:58:04.421280") << "\n";
     cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
     
     ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
@@ -345,7 +312,7 @@ int main()
     cout << "\n" << "julian date: " << nf->tmTOjd(tm) << "\n";
     
     ///TESTING  FOR MODIFIED JULIAN DATE CALCULATOR (COMPLETED)
-     cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
+    cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
     
     ///TESTING  FOR J2000 DATE CALCULATOR (COMPLETED)
     cout << "\n" << "j2000 date " << nf->tmTOj2000(tm) << "\n";
@@ -358,5 +325,16 @@ int main()
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
     cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
+    
+    // Let's grab a record using the NORAD ID and query the record for launch details
+    // -----> The goal of this code was to check the launchdate
+    // Psalm 19:12
+    std::string query_field = "apogee";
+    std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
+    cout << "record> " << query_field <<  " " << query_output << "\n";
+    
+    // let's introduce sgp4
+    // exit
+    sgp4 *sgp_model = new sgp4();
     return 61;
 }
