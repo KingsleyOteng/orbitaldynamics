@@ -63,6 +63,15 @@ sgp4::sgp4                            ()
       query_output = util -> SatelliteNORADRecord("43108", query_field);
       cout << "record> " << query_field <<  " " << query_output << "\n";
       cout << "satellite number" << m_satellite_number << "\n";
+      cout << "launch year" << m_satellite_number << "\n";
+      cout << "launch number of year" << m_satellite_number << "\n";
+      cout << "epoch year" << m_satellite_number << "\n";
+      cout << "satellite number" << m_satellite_number << "\n";
+      cout << "satellite number" << m_satellite_number_2;
+      cout << "satellite inclination" <<    m_satellite_inclination;
+      cout << "satellite ascension node" <<    m_satellite_ascension_node;
+      cout << "satellite eccentricity coefficient" <<    m_satellite_eccentricity_coefficient;
+      cout<< "satellite perigree"  <<    m_argument_perigree;
 }
 
 // destructor
