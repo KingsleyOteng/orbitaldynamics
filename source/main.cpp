@@ -35,6 +35,7 @@
 #include <string>
 #include <iostream>
 
+
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
 #include <cppconn/prepared_statement.h>
@@ -109,11 +110,12 @@ int main()
     std::cout << "BSTAR drag term (Leading decimal point assumed) : " << orb->getDRAGRADIATIONcoefficient() << "\n";
     std::cout << "Ephemeris type : " << orb->getEPHEMERIStype() << "\n";
     std::cout << "Checksum (Modulo 10) (Letters, blanks, periods, plus signs = 0; minus signs = 1) : " << orb->getELEMENTnumber() << "\n";
-    
     std::cout  << "line two: " << "\n";
+    
     orb -> getTLEsummary();
     util -> SetEpochJulianDate(orb->getJULIANdatefraction());
     util -> SetSimpleDateFormatLong();
+    
     std::cout << util -> GetSimpleDateFormatLong() << "\n";
     
     coordinate_transforms *ct = new coordinate_transforms();
@@ -235,6 +237,7 @@ int main()
     {
         (yearg = D - 4715);
     }
+    
     std::cout << std::fixed;
     frac_days = modf(dayg,&days_gg);
     days_gg = int(days_gg);
@@ -272,8 +275,6 @@ int main()
     hours_final = frac_hours * 24;
     min_final = 60 * (hours_final - (int)(hours_final));
     hours_final = (int) hours_final;
-    
-    
     seconds_final = ((min_final - (int)(min_final)))*60;
     min_final = (int) (min_final);
     
@@ -334,5 +335,6 @@ int main()
     
     // let's introduce sgp4
     // exit
+    sgp4 *sgp_model = new sgp4();
     return 61;
 }

@@ -57,12 +57,17 @@ class sgp4
         int         m_linetwo_checksum;
         std::string query_field;
         std::string query_output;
+        std::string space_vehicle;
+        
     
     public:
     
+
+    
      // constructors  and destructors
-        sgp4();
-       ~sgp4();
+                    sgp4();
+                   ~sgp4();
+        void        set_model(orbital *model);
     
     //void    sgp4::builds();
 };
