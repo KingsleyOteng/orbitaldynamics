@@ -17,8 +17,8 @@ void sgp4::set_model                       (orbital *model)
     strcpy(m_classification,model->getClassifierID());
     m_designator_launch_year = model->getLAUNCHERyearfield();
     m_designator_launch_number_of_year = model->getLAUNCHERnumberfield();
-    m_epoch_year;
-    m_julian_date_fraction;
+    m_epoch_year = model -> getEPOCHyear();
+    m_julian_date_fraction = model -> getJULIANdatefraction();
     m_ballistic_coefficient;
     m_second_derivative_of_motion;
     m_drag_term_or_radition_coefficient;
