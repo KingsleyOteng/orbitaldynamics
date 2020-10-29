@@ -22,9 +22,9 @@ void sgp4::set_model                       (orbital *model)
     m_ballistic_coefficient = model -> getBALLISTICcoefficient();
     strcpy(m_second_derivative_of_motion,model->getSECONDderivativemotion());
     m_drag_term_or_radiation_coefficient = model-> getDRAGRADIATIONcoefficient();
-    m_ephemeris_type;
-    m_element_number;
-    m_check_sum; //????
+    m_ephemeris_type = model-> getEPHEMERIStype();
+    m_element_number = model -> getELEMENTnumber();
+   // strcpy(m_check_sum, model -> getCHECKsum());
     m_satellite_number_2;
     m_satellite_inclination;
     m_satellite_ascension_node;
