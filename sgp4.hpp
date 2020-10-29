@@ -41,7 +41,7 @@ class sgp4
         double      m_julian_date_fraction;
         double      m_ballistic_coefficient;
         char        m_second_derivative_of_motion       [ARRAY_SIZE];
-        char        m_drag_term_or_radition_coefficient [ARRAY_SIZE];
+        int        m_drag_term_or_radiation_coefficient;
         int         m_ephemeris_type;
         int         m_element_number;
         int         m_check_sum; //????
