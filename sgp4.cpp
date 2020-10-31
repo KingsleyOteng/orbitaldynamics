@@ -33,8 +33,8 @@ void sgp4::set_model                       (orbital *model)
     m_mean_anomaly = model -> getMEANanomlay();
     m_mean_motion = model -> getMEANmotion();
     m_epoch_checksum; //???
-    m_lineone_checksum;
-    m_linetwo_checksum;
+    m_lineone_checksum = model -> getCheckSumLineOne();
+    m_linetwo_checksum = model -> getCheckSumLineTwo();
     query_field;
     query_output;
     space_vehicle;
