@@ -25,13 +25,13 @@ void sgp4::set_model                       (orbital *model)
     m_ephemeris_type = model-> getEPHEMERIStype();
     m_element_number = model -> getELEMENTnumber();
    // strcpy(m_check_sum, model -> getCHECKsum());
-    m_satellite_number_2;
-    m_satellite_inclination;
+    m_satellite_number_2 = model -> getSATNUMBERline2();
+    m_satellite_inclination = model -> getINCLINATIONfield();
     m_satellite_ascension_node;
     m_satellite_eccentricity_coefficient;
-    m_argument_perigree;
-    m_mean_anomaly;
-    m_mean_motion;
+    m_argument_perigree = model -> getARGUMENTperigree();
+    m_mean_anomaly = model -> getMEANanomlay();
+    m_mean_motion = model -> getMEANmotion();
     m_epoch_checksum; //???
     m_lineone_checksum;
     m_linetwo_checksum;
