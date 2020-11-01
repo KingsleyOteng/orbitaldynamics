@@ -18,6 +18,18 @@
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
 #include <vector>
+#include <iostream>
+#include <vector>       // c-11 vector
+#include <algorithm>    // c-11 algoithm
+#include <time.h>
+#include <fstream>
+#include <stdio.h>
+#include <array>
+#include <iterator>
+#include <stdlib.h>
+#include <string>
+#include <cmath>
+
 #include "orbital.hpp"
 #include "utilities.hpp"
 
@@ -31,7 +43,7 @@ class sgp4
     private:
     
         orbital     *orb;
-        utilities   *util;
+        utilities   *util = new utilities();
         int         m_satellite_number;
         char        m_classification            [ARRAY_SIZE_ONE];
         int         m_designator_launch_year; // ??
@@ -41,7 +53,7 @@ class sgp4
         double      m_julian_date_fraction;
         double      m_ballistic_coefficient;
         char        m_second_derivative_of_motion       [ARRAY_SIZE];
-        char        m_drag_term_or_radition_coefficient [ARRAY_SIZE];
+        int         m_drag_term_or_radiation_coefficient;
         int         m_ephemeris_type;
         int         m_element_number;
         int         m_check_sum; //????
@@ -55,15 +67,14 @@ class sgp4
         double      m_epoch_checksum; //???
         int         m_lineone_checksum;
         int         m_linetwo_checksum;
-        std::string query_field;
-        std::string query_output;
         std::string space_vehicle;
-        
+        std::string query_field;
+
     
     public:
     
 
-    
+
      // constructors  and destructors
                     sgp4();
                    ~sgp4();
