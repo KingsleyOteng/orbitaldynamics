@@ -11,29 +11,29 @@
 #include <iostream>
 #include <vector>                      // c-11 vector
 #include <algorithm>                   // c-11 algoithm
+#include <time.h>
+#include <fstream>
+#include <stdio.h>
+#include <array>
+#include <iterator>
+#include <stdlib.h>
+#include <string>
+#include <cmath>
 #include "orbital.hpp"                 // header files
 #include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
 #include "sgp4.hpp"
 #include "sdp4.hpp"
 #include <mysql.h>
-#include <time.h>
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <stdio.h>
-#include <array>
-#include <iterator>
-#include <stdlib.h>
+
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 #include "utilities.hpp"               // my own routines for processing data
 #include <boost/any.hpp>               // boost standard library
 #include <boost/asio.hpp>              // io streaming headers
 #include <boost/lambda/lambda.hpp>
 #include <boost/xpressive/xpressive.hpp>
-#include <cmath>
-#include <string>
-#include <iostream>
+
+
 
 
 #include <cppconn/driver.h>
@@ -336,5 +336,6 @@ int main()
     // let's introduce sgp4
     // exit
     sgp4 *sgp_model = new sgp4();
+    sgp_model -> set_model(orb = new orbital(12,13,14));
     return 61;
 }

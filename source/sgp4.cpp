@@ -19,25 +19,24 @@ void sgp4::set_model                       (orbital *model)
     m_designator_launch_number_of_year = model->getLAUNCHERnumberfield();
     m_epoch_year = model -> getEPOCHyear();
     m_julian_date_fraction = model -> getJULIANdatefraction();
-    m_ballistic_coefficient;
-    m_second_derivative_of_motion;
-    m_drag_term_or_radition_coefficient;
-    m_ephemeris_type;
-    m_element_number;
-    m_check_sum; //????
-    m_satellite_number_2;
-    m_satellite_inclination;
-    m_satellite_ascension_node;
-    m_satellite_eccentricity_coefficient;
-    m_argument_perigree;
-    m_mean_anomaly;
-    m_mean_motion;
-    m_epoch_checksum; //???
-    m_lineone_checksum;
-    m_linetwo_checksum;
-    query_field;
-    query_output;
-    space_vehicle;
+    m_ballistic_coefficient = model -> getBALLISTICcoefficient();
+    strcpy(m_second_derivative_of_motion,model->getSECONDderivativemotion());
+    m_drag_term_or_radiation_coefficient = model-> getDRAGRADIATIONcoefficient();
+    m_ephemeris_type = model-> getEPHEMERIStype();
+    m_element_number = model -> getELEMENTnumber();
+    m_check_sum = model -> getCHECKsum();
+    m_satellite_number_2 = model -> getSATNUMBERline2();
+    m_satellite_inclination = model -> getINCLINATIONfield();
+    m_satellite_ascension_node = model -> getRIGHTASCENTIONnode();
+    m_satellite_eccentricity_coefficient = model -> getECCENTRICITYcoefficient();
+    m_argument_perigree = model -> getARGUMENTperigree();
+    m_mean_anomaly = model -> getMEANanomlay();
+    m_mean_motion = model -> getMEANmotion();
+    m_epoch_checksum = model -> getREVOLUTIONepochchecksum();
+    m_lineone_checksum = model -> getCheckSumLineOne();
+    m_linetwo_checksum = model -> getCheckSumLineTwo();
+    space_vehicle = util -> SatelliteNORADRecord("43108", query_field = "Name");
+    std::cout << space_vehicle << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>space vehicle";
     
 }
 
