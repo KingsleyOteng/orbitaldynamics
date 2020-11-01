@@ -69,7 +69,7 @@ class sgp4
         int         m_linetwo_checksum;
         std::string space_vehicle;
         std::string query_field;
-
+        std::string operator_of_vehicle;
     
     public:
     

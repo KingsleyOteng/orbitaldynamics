@@ -36,7 +36,7 @@ void sgp4::set_model                       (orbital *model)
     m_lineone_checksum = model -> getCheckSumLineOne();
     m_linetwo_checksum = model -> getCheckSumLineTwo();
     space_vehicle = util -> SatelliteNORADRecord("43108", query_field = "Name");
-    std::cout << space_vehicle << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>space vehicle";
+    operator_of_vehicle = util -> SatelliteNORADRecord("43108", query_field = "Operator");
     
 }
 
