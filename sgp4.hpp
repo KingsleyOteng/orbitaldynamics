@@ -67,9 +67,10 @@ class sgp4
         double      m_epoch_checksum; //???
         int         m_lineone_checksum;
         int         m_linetwo_checksum;
-        std::string        m_space_vehicle             ;
-        std::string        m_query_field               ;
-        std::string        m_operator_of_vehicle       ;
+        std::string m_query_field               ;
+        std::string m_space_vehicle             ;
+        std::string m_operator_of_vehicle       ;
+        std::string m_space_object_use          ;
     
     public:
     
