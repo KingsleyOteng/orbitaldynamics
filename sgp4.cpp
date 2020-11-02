@@ -37,6 +37,7 @@ void sgp4::set_model                       (orbital *model)
     m_linetwo_checksum = model -> getCheckSumLineTwo();
     m_space_vehicle = util -> SatelliteNORADRecord("43108", m_query_field = "Name");
     m_operator_of_vehicle = util -> SatelliteNORADRecord("43108", m_query_field = "Operator");
+    m_space_object_use = util ->  SatelliteNORADRecord("43108", m_query_field = "Operator");
     
 }
 
