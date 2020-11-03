@@ -80,7 +80,8 @@ class sgp4
      // constructors  and destructors
                     sgp4();
                    ~sgp4();
-        void        set_model(orbital *model);
+        void        set_parameters(orbital *model);
+        void        set_model();
     
     //void    sgp4::builds();
 };

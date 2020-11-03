@@ -336,6 +336,6 @@ int main()
     // let's introduce sgp4
     // exit
     sgp4 *sgp_model = new sgp4();
-    sgp_model -> set_model(orb = new orbital(12,13,14));
+    sgp_model -> set_parameters(orb = new orbital(12,13,14));
     return 61;
 }
