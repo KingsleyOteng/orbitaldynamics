@@ -11,7 +11,7 @@
 
 //std::vector<int> v{1,2,3};
 // constructor
-void sgp4::set_model                       (orbital *model)
+void sgp4::set_parameters                       (orbital *model)
 {
     m_satellite_number = model->getSATnumber();
     strcpy(m_classification,model->getClassifierID());
@@ -35,10 +35,17 @@ void sgp4::set_model                       (orbital *model)
     m_epoch_checksum = model -> getREVOLUTIONepochchecksum();
     m_lineone_checksum = model -> getCheckSumLineOne();
     m_linetwo_checksum = model -> getCheckSumLineTwo();
+    
+    // scrape the accompanying text file
     m_space_vehicle = util -> SatelliteNORADRecord("43108", m_query_field = "Name");
     m_operator_of_vehicle = util -> SatelliteNORADRecord("43108", m_query_field = "Operator");
     m_space_object_use = util ->  SatelliteNORADRecord("43108", m_query_field = "purpose");
     m_space_users = util ->  SatelliteNORADRecord("43108", m_query_field = "users");
+}
+
+void sgp4::set_model                            ()
+{
+    
 }
 
 sgp4::sgp4                            ()
