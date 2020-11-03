@@ -71,6 +71,7 @@ class sgp4
         std::string m_space_vehicle             ;
         std::string m_operator_of_vehicle       ;
         std::string m_space_object_use          ;
+        std::string m_space_users   ;
     
     public:
     
