@@ -162,7 +162,6 @@ public:
     double      getREVOLUTIONepochchecksum      () { return m_epoch_checksum; }
     int         getCheckSumLineOne              () { return m_lineone_checksum; }
     int         getCheckSumLineTwo              () { return m_linetwo_checksum; }
-    
     double      getCheckLaunchDate              ()  { return m_linetwo_checksum; }
     double      getNumberOfRevolutionsSinceLaunch
                                                 ()  { return m_linetwo_checksum; }
