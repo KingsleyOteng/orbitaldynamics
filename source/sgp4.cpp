@@ -51,9 +51,7 @@ void sgp4::set_model                            ()
 sgp4::sgp4                            ()
 {
     orbital *orb = new orbital();
-
     orb -> SetSATnumber (3);
-    
     cout << "satellite number: " << orb -> getSATnumber() << "\n";
     // declare the variables
 }
