@@ -329,13 +329,13 @@ int main()
     // Let's grab a record using the NORAD ID and query the record for launch details
     // -----> The goal of this code was to check the launchdate
     // Psalm 19:12
-    std::string query_field = "apogee";
-    std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
-    cout << "record> " << query_field <<  " " << query_output << "\n";
+    //std::string query_field = "apogee";
+    //std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
+    //cout << "record> " << query_field <<  " " << query_output << "\n";
     
     // let's introduce sgp4
     // exit
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14));
-    return 61;
+    return 00;
 }
