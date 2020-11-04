@@ -41,6 +41,7 @@ void sgp4::set_parameters                       (orbital *model)
     m_operator_of_vehicle = util -> SatelliteNORADRecord("43108", m_query_field = "Operator");
     m_space_object_use = util ->  SatelliteNORADRecord("43108", m_query_field = "purpose");
     m_space_users = util ->  SatelliteNORADRecord("43108", m_query_field = "users");
+    m_date_of_launch = util -> SatelliteNORADRecord("43108", m_query_field = "date-launch");
 }
 
 void sgp4::set_model                            ()
