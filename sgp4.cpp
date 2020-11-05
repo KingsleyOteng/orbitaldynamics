@@ -52,9 +52,14 @@ void sgp4::set_model                            ()
 sgp4::sgp4                            ()
 {
     orbital *orb = new orbital();
-    orb -> SetSATnumber (3);
-    cout << "satellite number: " << orb -> getSATnumber() << "\n";
-    // declare the variables
+    orb -> SetSATnumber (m_satellite_number);
+    
+    //  % /* ------------------ set mathematical constants --------------- */
+    m_pi    = 3.14159267;
+    m_twopi = 2.0 * m_pi;
+    m_x2o3  = 2.0 / 3.0;
+    m_temp4 =   1.5e-12;
+ 
 }
 
 // destructor
