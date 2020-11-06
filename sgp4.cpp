@@ -55,6 +55,16 @@ sgp4::sgp4                            ()
     orb -> SetSATnumber (m_satellite_number);
     
     //  % /* ------------------ set mathematical constants --------------- */
+    //  %  outputs       :
+    //  %    tumin       - minutes in one time unit
+    //  %    mu          - earth gravitational parameter
+    //  %    radiusearthkm - radius of the earth in km
+    //  %    xke         - reciprocal of tumin
+    //  %    j2, j3, j4  - un-normalized zonal harmonic values
+    //  %    j3oj2       - j3 divided by j2
+    
+    
+    
     m_pi            = 3.14159267;
     m_twopi         = 2.0 * m_pi;
     m_x2o3          = 2.0 / 3.0;
