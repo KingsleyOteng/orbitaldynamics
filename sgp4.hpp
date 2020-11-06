@@ -29,7 +29,6 @@
 #include <stdlib.h>
 #include <string>
 #include <cmath>
-
 #include "orbital.hpp"
 #include "utilities.hpp"
 
@@ -42,8 +41,14 @@ class sgp4
     
     private:
     
-        double      const_radiusearthkm =
-        double      const_xke  =
+        double      const_radiusearthkm;
+        double      const_xke;
+        double      const_tumin;
+        double      const_j2;
+        double      const_j3;
+        double      const_j4;
+        double      const_j3oj2;
+        double      const_mu;
     
         orbital     *orb;
         utilities   *util = new utilities();
@@ -101,7 +106,7 @@ class sgp4
                    ~sgp4();
         void        set_parameters(orbital *model);
         void        set_model();
-    
+        void        set_wgs(orbital *model);
     //void    sgp4::builds();
 };
 

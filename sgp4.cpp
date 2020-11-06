@@ -9,6 +9,7 @@
 #include "sgp4.hpp"
 #include <string>
 
+
 //std::vector<int> v{1,2,3};
 // constructor
 void sgp4::set_parameters                       (orbital *model)
@@ -42,10 +43,53 @@ void sgp4::set_parameters                       (orbital *model)
     m_space_object_use = util ->  SatelliteNORADRecord("43108", m_query_field = "purpose");
     m_space_users = util ->  SatelliteNORADRecord("43108", m_query_field = "users");
     m_date_of_launch = util -> SatelliteNORADRecord("43108", m_query_field = "date-launch");
+    
+    
 }
 
 void sgp4::set_model                            ()
 {
+    
+}
+
+void sgp4::set_wgs                              (orbital *model)
+{
+    std::string wgs = model->getWGS();
+    
+    if (wgs == "wgs-72-low")
+    {
+            const_mu     = 398600.79964;        
+            const_radiusearthkm = 6378.135;
+            const_xke    = 0.0743669161;
+            const_tumin  = 1.0 / const_xke;
+            const_j2     =   0.001082616;
+            const_j3     =  -0.00000253881;
+            const_j4     =  -0.00000165597;
+            const_j3oj2  =  const_j3 / const_j2;
+    }
+    else if (wgs == "wgs-72")
+    {
+            const_mu     = 398600.8;
+            const_radiusearthkm = 6378.135;
+            const_xke    = 60.0 / (sqrt(const_radiusearthkm * const_radiusearthkm * const_radiusearthkm  / const_mu));
+            const_tumin  = 1.0 / const_xke;
+            const_j2     =   0.001082616;
+            const_j3     =  -0.00000253881;
+            const_j4     =  -0.00000165597;
+            const_j3oj2  =  const_j3 / const_j2;
+    }
+    else if (wgs == "wgs-84")
+    {
+            const_mu     = 398600.5;
+            const_radiusearthkm = 6378.137;
+            const_xke    = 60.0 / (sqrt(const_radiusearthkm*const_radiusearthkm*const_radiusearthkm/const_mu));
+            const_tumin  = 1.0 / const_xke;
+            const_j2     =   0.00108262998905;
+            const_j3     =  -0.00000253215306;
+            const_j4     =  -0.00000161098761;
+            const_j3oj2  =  const_j3 / const_j2;
+    };
+        
     
 }
 
@@ -69,7 +113,7 @@ sgp4::sgp4                            ()
     m_twopi         = 2.0 * m_pi;
     m_x2o3          = 2.0 / 3.0;
     m_temp4         = 1.5e-12;
-    m_vkmpersec     = const_radiusearthkm * const_xke/60.0;
+   // m_vkmpersec     = const_radiusearthkm * const_xke/60.0;
 }
 
 // destructor

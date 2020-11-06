@@ -74,6 +74,7 @@ private:
     double      m_launch_date_jd;
     double      m_number_of_revoltions_elapsed;
     double      m_deg_solar_per_day;
+    std::string m_wgs;                          //supports wgs-72, wgs-72-low-precision, wgs-84
     
     int         m_year;
     int         m_month;
@@ -129,6 +130,7 @@ public:
     void        SetCheckSumLineTwo              (int checksum);
     void        SetObserverCoordinates          (double x_observer, double y_observer, double z_observer);
     void        SetSatelliteData                ();
+    void        SetWGS                          (std::string wgs_model);
     
     // getter
     void        getDataFile                     ();
@@ -170,6 +172,7 @@ public:
     int         getMonth                        () { return m_month; }
     int         getDay                          () { return m_day; }
     double      getCheckSum                     ();
+    std::string getWGS                          ();
 };
 
 
