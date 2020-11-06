@@ -55,11 +55,11 @@ sgp4::sgp4                            ()
     orb -> SetSATnumber (m_satellite_number);
     
     //  % /* ------------------ set mathematical constants --------------- */
-    m_pi    = 3.14159267;
-    m_twopi = 2.0 * m_pi;
-    m_x2o3  = 2.0 / 3.0;
-    m_temp4 =   1.5e-12;
- 
+    m_pi            = 3.14159267;
+    m_twopi         = 2.0 * m_pi;
+    m_x2o3          = 2.0 / 3.0;
+    m_temp4         = 1.5e-12;
+    m_vkmpersec     = const_radiusearthkm * const_xke/60.0;
 }
 
 // destructor

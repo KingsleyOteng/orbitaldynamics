@@ -42,6 +42,9 @@ class sgp4
     
     private:
     
+        double      const_radiusearthkm =
+        double      const_xke  =
+    
         orbital     *orb;
         utilities   *util = new utilities();
         int         m_satellite_number;
@@ -73,6 +76,8 @@ class sgp4
         std::string m_space_object_use          ;
         std::string m_space_users   ;
         std::string m_date_of_launch ;
+    
+        // %% SGP4 constants
         double      m_pi;
         double      m_twopi;
         double      m_x2o3;
@@ -85,6 +90,7 @@ class sgp4
         double      m_j3 ;
         double      m_j4 ;
         double      m_j3oj2;
+        
         
     public:
     
