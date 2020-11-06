@@ -39,6 +39,13 @@ orbital::orbital(double x_observer, double y_observer, double z_observer)
     SetObserverCoordinates(x_observer, y_observer, z_observer);
 }
 
+// Set wgs
+void
+    orbital::SetWGS(std::string wgs_model)
+{
+    m_wgs = wgs_model;
+}
+
 // Set data from web
 void
     orbital::SetSatelliteData()
@@ -620,4 +627,9 @@ double
     boost::hash<std::string> string_hash;
 
     return string_hash(getClassifierID());
+}
+
+std::string orbital::getWGS()
+{
+    return m_wgs;
 }
