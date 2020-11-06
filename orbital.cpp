@@ -36,8 +36,34 @@ orbital::orbital(int year, int month, int day)
 
 orbital::orbital(double x_observer, double y_observer, double z_observer)
 {
+     // set the observers coordinates
     SetObserverCoordinates(x_observer, y_observer, z_observer);
+    
+    // default to wgs-84
+    // The CDB standard is based on a surface geodetic coordinate system, i.e., points on the
+    // earth surface are specified as geographic latitude -longitude and elevation coordinates.
+    // More specifically, geodetic coordinates (sometimes called geographic coordinates) are
+    // angular coordinates (longitude and latitude), closely related to spherical polar
+    // coordinates, and are defined relative to a particular Earth geodetic datum. For the CDB,
+    // this is the WGS 84 datum.
+    
+    // Note: The WGS 84 datum surface is an oblate spheroid (ellipsoid) with major (equatorial) radius
+    // a = 6378137 m at the equator and flattening f = 1/298.257223563.[6] The polar semi-minor axis
+    // then equals a times (1−f), or 6356752.3142 m.
+    
+    SetWGS("wgs-84");
 }
+
+orbital::orbital(double x_observer, double y_observer, double z_observer, std::string wgs_model)
+{
+    // set the observers coordinates
+    SetObserverCoordinates(x_observer, y_observer, z_observer);
+    
+    // set WGS model;
+    // https://portal.opengeospatial.org/files/16-011r4
+    SetWGS(wgs_model);
+}
+
 
 // Set wgs
 void

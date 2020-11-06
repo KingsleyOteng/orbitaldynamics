@@ -44,7 +44,8 @@ void sgp4::set_parameters                       (orbital *model)
     m_space_users = util ->  SatelliteNORADRecord("43108", m_query_field = "users");
     m_date_of_launch = util -> SatelliteNORADRecord("43108", m_query_field = "date-launch");
     
-    
+    // set the wgs model
+    set_wgs(model);
 }
 
 void sgp4::set_model                            ()
