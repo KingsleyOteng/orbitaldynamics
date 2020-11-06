@@ -77,7 +77,14 @@ class sgp4
         double      m_twopi;
         double      m_x2o3;
         double      m_temp4;
-    double tumin; double mu; double radiusearthkm; double xke; double j2; double  j3 ; double j4 ; double j3oj2;
+        double      m_tumin;
+        double      m_mu;
+        double      m_radiusearthkm;
+        double      m_xke;
+        double      m_j2;
+        double      m_j3 ;
+        double      m_j4 ;
+        double      m_j3oj2;
         
     public:
     
