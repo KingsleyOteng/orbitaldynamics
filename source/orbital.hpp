@@ -88,6 +88,7 @@ public:
     orbital();
     orbital(int year, int month, int day);
     orbital(double x_observer, double y_observer, double z_observer);
+    orbital(double x_observer, double y_observer, double z_observer, std::string wgs_model);
    ~orbital();
     
     

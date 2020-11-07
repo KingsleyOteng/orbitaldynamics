@@ -41,14 +41,14 @@ class sgp4
     
     private:
     
-        double      const_radiusearthkm;
-        double      const_xke;
-        double      const_tumin;
-        double      const_j2;
-        double      const_j3;
-        double      const_j4;
-        double      const_j3oj2;
-        double      const_mu;
+        double      model_const_radiusearthkm;
+        double      model_const_xke;
+        double      model_const_tumin;
+        double      model_const_j2;
+        double      model_const_j3;
+        double      model_const_j4;
+        double      model_const_j3oj2;
+        double      model_const_mu;
     
         orbital     *orb;
         utilities   *util = new utilities();
