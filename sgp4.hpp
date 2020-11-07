@@ -96,7 +96,12 @@ class sgp4
         double      m_j4 ;
         double      m_j3oj2;
         
-        
+        // i have introduced these variables
+        //  they may be best placed elsewhere
+        double m_vkmpersec;
+    double m_satrec_t;
+    double m_satrec_error;
+    double m_mrt;
     public:
     
 

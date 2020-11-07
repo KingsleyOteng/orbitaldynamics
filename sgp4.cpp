@@ -55,6 +55,10 @@ void sgp4::set_model                            ()
 
 void sgp4::set_wgs                              (orbital *model)
 {
+    
+    //    we implement here a method which supplies constants for the propagator.
+    //    note that mu is identified to facilitiate comparisons with newer models
+    
     std::string wgs = model->getWGS();
     
     if (wgs == "wgs-72-low")
@@ -108,13 +112,19 @@ sgp4::sgp4                            ()
     //  %    j2, j3, j4  - un-normalized zonal harmonic values
     //  %    j3oj2       - j3 divided by j2
     
-    
+   
     
     m_pi            = 3.14159267;
     m_twopi         = 2.0 * m_pi;
     m_x2o3          = 2.0 / 3.0;
     m_temp4         = 1.5e-12;
-   // m_vkmpersec     = const_radiusearthkm * const_xke/60.0;
+    m_vkmpersec     = model_const_radiusearthkm * m_xke/60.0;
+   
+    m_satrec_t     = 0;
+        // what is the 'tsince' variable
+        //m_satrec_t=tsince;
+    m_satrec_error = 0;
+    m_mrt = 0.0;
 }
 
 // destructor
