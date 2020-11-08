@@ -142,8 +142,8 @@ sgp4::sgp4                            ()
     if (m_satrec_isimp != 1)
     {
         m_delomg = m_satrec_omgcof * m_satrec_t;
-        m_delm   = m_satrec_xmcof * pow(((1.0 + m_satrec_eta * cos(m_xmdf)),3) - m_satrec_delmo);
-       // m_delm   = m_satrec_xmcof * ((1.0 + m_satrec_eta * cos(m_xmdf))^3 - m_satrec_delmo);
+        double expr = ((1.0 + m_satrec_eta * cos(m_xmdf)));
+        m_delm   = m_satrec_xmcof * (expr * expr * expr - m_satrec_delmo);
         m_temp   = m_delomg + m_delm;
         m_mm     = m_xmdf + m_temp;
         m_argpm  = m_argpdf - m_temp;
@@ -153,6 +153,10 @@ sgp4::sgp4                            ()
         m_tempe  = m_tempe + m_satrec_bstar * m_satrec_cc5 * (sin(m_mm) - m_satrec_sinmao);
         m_templ  = m_templ + m_satrec_t3cof * m_t3 + m_t4 * (m_satrec_t4cof + m_satrec_t * m_satrec_t5cof);
     };
+    
+    m_nm    = m_satrec_no;
+    m_em    = m_satrec_ecco;
+    m_inclm = m_satrec_inclo;
     
 }
 
