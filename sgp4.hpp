@@ -75,14 +75,16 @@ class sgp4
         double      m_epoch_checksum; //???
         int         m_lineone_checksum;
         int         m_linetwo_checksum;
-        std::string m_query_field               ;
-        std::string m_space_vehicle             ;
-        std::string m_operator_of_vehicle       ;
-        std::string m_space_object_use          ;
-        std::string m_space_users   ;
-        std::string m_date_of_launch ;
+        std::string m_query_field;
+        std::string m_space_vehicle;
+        std::string m_operator_of_vehicle;
+        std::string m_space_object_use;
+        std::string m_space_users;
+        std::string m_date_of_launch;
     
         // %% SGP4 constants
+        // i have introduced these variables
+        //  they may be best placed elsewhere
         double m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3, m_j4,
             m_j3oj2, m_vkmpersec, m_satrec_t, m_satrec_error, m_mrt, m_xmdf, m_argpdf, m_nodedf,
             m_argpm, m_mm, m_t2,  m_nodem, m_tempa,  m_tempe,  m_templ, m_satrec_mdot, m_satrec_mo,
