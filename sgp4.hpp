@@ -86,7 +86,7 @@ class sgp4
         // i have introduced these variables
         //  they may be best placed elsewhere
         double
-            m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3,           m_j4, m_j3oj2, m_vkmpersec, m_satrec_t, m_satrec_error, m_mrt, m_xmdf, m_argpdf,             m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa,  m_tempe,  m_templ, m_satrec_mdot,         m_satrec_mo, m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot,             m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_bstar, m_satrec_c,                     m_satrec_t2cof, m_satrec_isimp;
+            m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3,           m_j4, m_j3oj2, m_vkmpersec, m_satrec_t, m_satrec_error, m_mrt, m_xmdf, m_argpdf,             m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa,  m_tempe,  m_templ, m_satrec_mdot,         m_satrec_mo, m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot,             m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_bstar, m_satrec_c,                     m_satrec_t2cof, m_satrec_isimp, m_delm, m_temp, m_satrec_omgcof,                           m_delomg;
     
     public:
 
