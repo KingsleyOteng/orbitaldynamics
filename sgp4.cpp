@@ -154,6 +154,10 @@ sgp4::sgp4                            ()
         m_templ  = m_templ + m_satrec_t3cof * m_t3 + m_t4 * (m_satrec_t4cof + m_satrec_t * m_satrec_t5cof);
     };
     
+    m_nm    = m_satrec_no;
+    m_em    = m_satrec_ecco;
+    m_inclm = m_satrec_inclo;
+    
 }
 
 // destructor
