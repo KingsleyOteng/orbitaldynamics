@@ -113,16 +113,17 @@ class sgp4
         double m_tempe ;
         double m_templ;
         double m_satrec_mdot;
-    double m_satrec_mo;
-    double m_satrec_argpo;
-    double m_satrec_argpdot;
-    double m_satrec_nodeo;
-    double m_satrec_nodedot;
-    double m_satrec_nodecf;
-    double m_satrec_cc1;
-    double m_satrec_bstar;
-    double m_satrec_cc4;
-   double m_satrec_t2cof;
+        double m_satrec_mo;
+        double m_satrec_argpo;
+        double m_satrec_argpdot;
+        double m_satrec_nodeo;
+        double m_satrec_nodedot;
+        double m_satrec_nodecf;
+        double m_satrec_cc1;
+        double m_satrec_bstar;
+        double m_satrec_cc4;
+        double m_satrec_t2cof;
+    
     public:
     
 
