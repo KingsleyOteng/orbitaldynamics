@@ -7,6 +7,8 @@
 //
 
 #include "sgp4.hpp"
+#include <cmath>
+#include <math.h> //Not sure about including math.h
 #include <string>
 
 
@@ -125,6 +127,37 @@ sgp4::sgp4                            ()
         //m_satrec_t=tsince;
     m_satrec_error = 0;
     m_mrt = 0.0;
+    
+    m_xmdf    = m_satrec_mo + m_satrec_mdot * m_satrec_t;
+    m_argpdf  = m_satrec_argpo + m_satrec_argpdot * m_satrec_t;
+    m_nodedf  = m_satrec_nodeo + m_satrec_nodedot * m_satrec_t;
+    m_argpm   = m_argpdf;
+    m_mm      = m_xmdf;
+    m_t2      = m_satrec_t * m_satrec_t;
+    m_nodem   = m_nodedf + m_satrec_nodecf * m_t2;
+    m_tempa   = 1.0 - m_satrec_cc1 * m_satrec_t;
+    m_tempe   = m_satrec_bstar * m_satrec_cc4 * m_satrec_t;
+    m_templ   = m_satrec_t2cof * m_t2;
+    
+    if (m_satrec_isimp != 1)
+    {
+        m_delomg = m_satrec_omgcof * m_satrec_t;
+        double expr = ((1.0 + m_satrec_eta * cos(m_xmdf)));
+        m_delm   = m_satrec_xmcof * (expr * expr * expr - m_satrec_delmo);
+        m_temp   = m_delomg + m_delm;
+        m_mm     = m_xmdf + m_temp;
+        m_argpm  = m_argpdf - m_temp;
+        m_t3     = m_t2 * m_satrec_t;
+        m_t4     = m_t3 * m_satrec_t;
+        m_tempa  = m_tempa - m_satrec_d2 * m_t2 - m_satrec_d3 * m_t3 - m_satrec_d4 * m_t4;
+        m_tempe  = m_tempe + m_satrec_bstar * m_satrec_cc5 * (sin(m_mm) - m_satrec_sinmao);
+        m_templ  = m_templ + m_satrec_t3cof * m_t3 + m_t4 * (m_satrec_t4cof + m_satrec_t * m_satrec_t5cof);
+    };
+    
+    m_nm    = m_satrec_no;
+    m_em    = m_satrec_ecco;
+    m_inclm = m_satrec_inclo;
+    
 }
 
 // destructor
