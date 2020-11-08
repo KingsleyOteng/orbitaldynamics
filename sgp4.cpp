@@ -140,7 +140,7 @@ sgp4::sgp4                            ()
     if (m_satrec_isimp != 1)
     {
         m_delomg = m_satrec_omgcof * m_satrec_t;
-        m_delm   = m_satrec_xmcof * ((1.0 + m_satrec_eta * cos(m_xmdf))^ - m_satrec_delmo);
+        m_delm   = m_satrec_xmcof * ((1.0 + m_satrec_eta * (m_xmdf)) - m_satrec_delmo);
        // m_delm   = m_satrec_xmcof * ((1.0 + m_satrec_eta * cos(m_xmdf))^3 - m_satrec_delmo);
         m_temp   = m_delomg + m_delm;
         m_mm     = m_xmdf + m_temp;
