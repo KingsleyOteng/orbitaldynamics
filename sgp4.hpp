@@ -98,31 +98,7 @@ class sgp4
         
         // i have introduced these variables
         //  they may be best placed elsewhere
-        double m_vkmpersec;
-        double m_satrec_t;
-        double m_satrec_error;
-        double m_mrt;
-        double m_xmdf;
-        double m_argpdf;
-        double m_nodedf;
-        double m_argpm;
-        double m_mm;
-        double m_t2;
-        double m_nodem;
-        double m_tempa;
-        double m_tempe;
-        double m_templ;
-        double m_satrec_mdot;
-        double m_satrec_mo;
-        double m_satrec_argpo;
-        double m_satrec_argpdot;
-        double m_satrec_nodeo;
-        double m_satrec_nodedot;
-        double m_satrec_nodecf;
-        double m_satrec_cc1;
-        double m_satrec_bstar;
-        double m_satrec_cc4;
-        double m_satrec_t2cof;
+        double m_vkmpersec, m_satrec_t, m_satrec_error, m_mrt, m_xmdf, m_argpdf, m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa,  m_tempe,  m_templ, m_satrec_mdot, m_satrec_mo,  m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot,  m_satrec_nodecf, m_satrec_cc1, m_satrec_bstar, m_satrec_c, m_satrec_t2cof;
     
     public:
     
