@@ -136,6 +136,22 @@ sgp4::sgp4                            ()
     m_tempa   = 1.0 - m_satrec_cc1 * m_satrec_t;
     m_tempe   = m_satrec_bstar * m_satrec_cc4 * m_satrec_t;
     m_templ   = m_satrec_t2cof * m_t2;
+    
+    if (m_satrec_isimp != 1)
+        m_delomg = m_satrec_omgcof * m_satrec_t;
+        m_delm   = m_satrec_xmcof * ((1.0 + m_satrec_eta * cos(m_xmdf))^3 - m_satrec_delmo);
+        m_temp   = m_delomg + m_delm;
+        m_mm     = m_xmdf + m_temp;
+        m_argpm  = argpdf - temp;
+        t3     = t2 * satrec.t;
+        t4     = t3 * satrec.t;
+        tempa  = tempa - satrec.d2 * t2 - satrec.d3 * t3 -...
+            satrec.d4 * t4;
+        tempe  = tempe + satrec.bstar * satrec.cc5 * (sin(mm) -...
+            satrec.sinmao);
+        templ  = templ + satrec.t3cof * t3 + t4 * (satrec.t4cof +...
+            satrec.t * satrec.t5cof);
+    end
 }
 
 // destructor
