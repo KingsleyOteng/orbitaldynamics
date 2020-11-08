@@ -86,8 +86,8 @@ class sgp4
         // i have introduced these variables
         //  they may be best placed elsewhere
         double
-    m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3,           m_j4, m_j3oj2, m_vkmpersec, m_satrec_error, m_mrt, m_xmdf, m_argpdf,             m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa,  m_tempe,  m_templ, m_satrec_mdot,         m_satrec_mo, m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot, m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_cc5, m_satrec_bstar, m_satrec_c,                     m_satrec_t2cof, m_satrec_isimp, m_delm, m_temp, m_satrec_omgcof,                           m_delomg, m_satrec_xmcof, m_satrec_t, m_t4, m_t3, m_satrec_eta, m_satrec_delmo, m_satrec_d3, m_satrec_d2, m_satrec_d4, m_satrec_t3cof, m_satrec_sinmao, m_satrec_t4cof, m_satrec_t5cof,
-        m_nm, m_satrec_no, m_em, m_satrec_ecco, m_inclm, m_satrec_inclo;
+    m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3,           m_j4, m_j3oj2, m_vkmpersec, m_satrec_error, m_mrt, m_xmdf, m_argpdf,             m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa,  m_tempe,  m_templ, m_satrec_mdot,         m_satrec_mo, m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot,             m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_cc5, m_satrec_bstar, m_satrec_c,                     m_satrec_t2cof, m_satrec_isimp, m_delm, m_temp, m_satrec_omgcof,                           m_delomg, m_satrec_xmcof, m_satrec_t, m_t4, m_t3, m_satrec_eta, m_satrec_delmo, m_satrec_d3, m_satrec_d2, m_satrec_d4, m_satrec_t3cof, m_satrec_sinmao, m_satrec_t4cof, m_satrec_t5cof;
+    
     public:
 
      // constructors  and destructors
