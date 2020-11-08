@@ -138,8 +138,10 @@ sgp4::sgp4                            ()
     m_templ   = m_satrec_t2cof * m_t2;
     
     if (m_satrec_isimp != 1)
+    {
         m_delomg = m_satrec_omgcof * m_satrec_t;
-        m_delm   = m_satrec_xmcof * ((1.0 + m_satrec_eta * cos(m_xmdf))^3 - m_satrec_delmo);
+        m_delm   = m_satrec_xmcof * ((1.0 + m_satrec_eta * cos(m_xmdf))^ - m_satrec_delmo);
+       // m_delm   = m_satrec_xmcof * ((1.0 + m_satrec_eta * cos(m_xmdf))^3 - m_satrec_delmo);
         m_temp   = m_delomg + m_delm;
         m_mm     = m_xmdf + m_temp;
         m_argpm  = m_argpdf - m_temp;
@@ -148,7 +150,8 @@ sgp4::sgp4                            ()
         m_tempa  = m_tempa - m_satrec_d2 * m_t2 - m_satrec_d3 * m_t3 - m_satrec_d4 * m_t4;
         m_tempe  = m_tempe + m_satrec_bstar * m_satrec_cc5 * (sin(m_mm) - m_satrec_sinmao);
         m_templ  = m_templ + m_satrec_t3cof * m_t3 + m_t4 * (m_satrec_t4cof + m_satrec_t * m_satrec_t5cof);
-    end
+    };
+    
 }
 
 // destructor
