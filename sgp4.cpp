@@ -125,6 +125,17 @@ sgp4::sgp4                            ()
         //m_satrec_t=tsince;
     m_satrec_error = 0;
     m_mrt = 0.0;
+    
+    m_xmdf    = m_satrec_mo + m_satrec_mdot * m_satrec_t;
+    m_argpdf  = m_satrec_argpo + m_satrec_argpdot * m_satrec_t;
+    m_nodedf  = m_satrec_nodeo + m_satrec_nodedot * m_satrec_t;
+    m_argpm   = m_argpdf;
+    m_mm      = m_xmdf;
+    m_t2      = m_satrec_t * m_satrec_t;
+    m_nodem   = m_nodedf + m_satrec_nodecf * m_t2;
+    m_tempa   = 1.0 - m_satrec_cc1 * m_satrec_t;
+    m_tempe   = m_satrec_bstar * m_satrec_cc4 * m_satrec_t;
+    m_templ   = m_satrec_t2cof * m_t2;
 }
 
 // destructor
