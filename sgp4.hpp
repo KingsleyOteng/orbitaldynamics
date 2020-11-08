@@ -83,10 +83,11 @@ class sgp4
         std::string m_date_of_launch ;
     
         // %% SGP4 constants
-        double m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3, m_j4, m_j3oj2;
-        
-        
-        double m_vkmpersec, m_satrec_t, m_satrec_error, m_mrt, m_xmdf, m_argpdf, m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa,  m_tempe,  m_templ, m_satrec_mdot, m_satrec_mo,  m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot,  m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_bstar, m_satrec_c, m_satrec_t2cof;
+        double m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3, m_j4,
+            m_j3oj2, m_vkmpersec, m_satrec_t, m_satrec_error, m_mrt, m_xmdf, m_argpdf, m_nodedf,
+            m_argpm, m_mm, m_t2,  m_nodem, m_tempa,  m_tempe,  m_templ, m_satrec_mdot, m_satrec_mo,
+            m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot,  m_satrec_nodecf,
+            m_satrec_cc1, m_satrec_cc4, m_satrec_bstar, m_satrec_c, m_satrec_t2cof;
     
     public:
     
