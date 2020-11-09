@@ -98,7 +98,7 @@ class sgp4
         void        set_parameters(orbital *model);
         void        set_model();
         void        set_wgs(orbital *model);
-    double      dspace();
+        double      dspace();
     //void    sgp4::builds();
 };
 

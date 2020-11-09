@@ -51,7 +51,7 @@ void sgp4::set_parameters                       (orbital *model)
 }
 
  double      sgp4::dspace()
-{return 0;}
+  {return 0;}
 
 void sgp4::set_model                            ()
 {
@@ -163,7 +163,8 @@ sgp4::sgp4                            ()
     m_inclm = m_satrec_inclo;
     if (satrec_method != 'd')
         {
-            double x = dspace();
+            double y = 0;
+            double x = dspace(double y);
             
         };
     
