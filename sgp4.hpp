@@ -98,7 +98,7 @@ class sgp4
         void        set_parameters(orbital *model);
         void        set_model();
         void        set_wgs(orbital *model);
-         double      sgp4::dspace
+        double      dspace
          (
          double satrec_d2201,double satrec_d2211,double satrec_d3210,
          double satrec_d3222, double satrec_d4410, double satrec_d4422,
