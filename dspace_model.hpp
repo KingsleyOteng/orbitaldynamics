@@ -72,6 +72,9 @@ private:
     double nodem;
     double nm;
     
+    // get the model output parameters
+    double dndt;
+    
     
 public:
         dspace_model(double satrec_d2201,double satrec_d2211,double satrec_d3210,
@@ -86,7 +89,7 @@ public:
         double satrec_xni,double nodem,double nm);
         dspace_model();
         ~dspace_model();
-        void getParameters                        ();
+        void getModelParameters                        ();
     
     
 };
