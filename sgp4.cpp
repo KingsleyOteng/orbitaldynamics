@@ -175,7 +175,6 @@ sgp4::sgp4                            ()
     m_inclm = m_satrec_inclo;
     if (satrec_method != 'd')
         {
-            double y = 0;
             double x = dspace(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             
         };
