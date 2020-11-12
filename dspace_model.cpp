@@ -8,54 +8,53 @@
 
 #include "dspace_model.hpp"
 
- dspace_model::dspace_model(double d2201,double d2211,double d3210,
-double d3222, double d4410, double d4422,
-double d5220,double d5232,double d5421,
-double d5433,double dedt,double del1,
-double el2,double del3,double idt,
-double dmdt,double dnodt,double domdt,
-double irez,double argpo,double argpdot,double t,
-double tc, double gsto,double xfact,double xlamo, double _no,
-double atime, double em, double argpm, double inclm, double xli, double mm,
-double xni,double nodem,double nm)
+ dspace_model::dspace_model(double _d2201,double _d2211, double _d3210,
+double _d3222, double _d4410, double _d4422,
+double _d5220,double _d5232,double _d5421,
+double _d5433,double _dedt,double _del1,
+double _del2,double _del3,double _didt,
+double _dmdt,double _dnodt,double _domdt,
+double _irez,double _argpo,double _argpdot, double _t,
+double _tc, double _gsto,double _xfact,double _xlamo, double _no,
+double _atime, double _em, double _argpm, double _inclm, double _xli, double _mm,
+double _xni,double _nodem,double _nm)
 {
-    d2201 = d2201;
-    d2211 = d2211;
-    d3210 = d3210;
-    d3222 = d3222;
-    d4410 = d4410;
-    d4422 = d4422;
-    d5220 = d5220;
-    d5232 = d5232;
-    d5421 = d5421;
-    d5433 = d5433;
-    dedt = dedt;
-    dedt = dedt;
-    del2 = del2;
-    del3 = del3;
-    didt = didt;
-    dmdt = dmdt;
-    dnodt = dnodt;
-    domdt = domdt;
-    irez = irez;
-    argpo = argpo;
-    argpdot= argpdot;
-    t = t;
-    t = t;
-    tc =tc;
-    gsto = gsto;
-    xfact = xfact;
-    xlamo = xlamo;
-    no = no;
-    atime = atime;
-    em = em;
-    argpm = argpm;
-    inclm = inclm;
-    xli = xli;
-    mm = mm;
-    xni = xni;
-    nodem = nodem;
-    nm = nm;
+    d2201 = _d2201;
+    d2211 = _d2211;
+    d3210 = _d3210;
+    d3222 = _d3222;
+    d4410 = _d4410;
+    d4422 = _d4422;
+    d5220 = _d5220;
+    d5232 = _d5232;
+    d5421 = _d5421;
+    d5433 = _d5433;
+    dedt = _dedt;
+    dedt = _dedt;
+    del2 = _del2;
+    del3 = _del3;
+    didt = _didt;
+    dmdt = _dmdt;
+    dnodt = _dnodt;
+    domdt = _domdt;
+    irez = _irez;
+    argpo = _argpo;
+    argpdot= _argpdot;
+    t = _t;
+    tc = _tc;
+    gsto = _gsto;
+    xfact = _xfact;
+    xlamo = _xlamo;
+    no = _no;
+    atime = _atime;
+    em = _em;
+    argpm = _argpm;
+    inclm = _inclm;
+    xli = _xli;
+    mm = _mm;
+    xni = _xni;
+    nodem = _nodem;
+    nm = _nm;
     
     
 };
@@ -91,7 +90,15 @@ void dspace_model::getModelParameters()
       ft    = 0.0;
     
     if (irez != 0)
+        
     {
+        // sgp4fix streamline check
+        if ((atime == 0.0) || (t * atime <= 0.0) || (abs(t) < abs(atime)) )
+        {
+            atime  = 0.0;
+            xni    = no;
+            xli    = xlamo;
+        }
         
     };
 

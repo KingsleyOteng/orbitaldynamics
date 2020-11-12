@@ -66,9 +66,9 @@ private:
     double em;
     double argpm;
     double inclm;
-    double satrec_xli;
+    double xli;
     double mm;
-    double satrec_xni;
+    double xni;
     double nodem;
     double nm;
     
