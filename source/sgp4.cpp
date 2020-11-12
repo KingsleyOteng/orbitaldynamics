@@ -50,7 +50,19 @@ void sgp4::set_parameters                       (orbital *model)
     set_wgs(model);
 }
 
- double      sgp4::dspace(double y)
+ double      sgp4::dspace
+         (
+         double satrec_d2201,double satrec_d2211,double satrec_d3210,
+         double satrec_d3222, double satrec_d4410, double satrec_d4422,
+         double satrec_d5220,double satrec_d5232,double satrec_d5421,
+         double satrec_d5433,double satrec_dedt,double satrec_del1,
+         double satrec_del2,double satrec_del3,double satrec_didt,
+         double satrec_dmdt,double satrec_dnodt,double satrec_domdt,
+         double satrec_irez,double satrec_argpo,double satrec_argpdot,double satrec_t,
+         double tc, double satrec_gsto,double satrec_xfact,double satrec_xlamo, double satrec_no,
+         double satrec_atime, double em, double argpm, double inclm, double satrec_xli, double mm,
+         double satrec_xni,double nodem,double nm
+          )
   {return 0;}
 
 void sgp4::set_model                            ()
@@ -163,8 +175,7 @@ sgp4::sgp4                            ()
     m_inclm = m_satrec_inclo;
     if (satrec_method != 'd')
         {
-            double y = 0;
-            double x = dspace(y);
+            double x = dspace(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             
         };
     

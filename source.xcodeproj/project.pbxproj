@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D8221FFC23CE10B600AFBC4F /* orbital.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8221FFA23CE10B600AFBC4F /* orbital.cpp */; };
 		D83DE10323DF55F9007E83D0 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = D83DE10223DF55F9007E83D0 /* Makefile */; };
+		D8887E1B255C125E006B1AAA /* dspace_model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8887E19255C125E006B1AAA /* dspace_model.cpp */; };
 		D897C3B724164B2900389B89 /* sun_model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D897C3B524164B2900389B89 /* sun_model.cpp */; };
 		D897C3BA24164B3800389B89 /* geomagnetic_field_model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D897C3B824164B3800389B89 /* geomagnetic_field_model.cpp */; };
 		D897C3C02416873300389B89 /* coordinate_transforms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D897C3BE2416873300389B89 /* coordinate_transforms.cpp */; };
@@ -47,6 +48,8 @@
 		D83DE10223DF55F9007E83D0 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		D85733052529116800D9AE9A /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = example.txt; path = "../../../../../Library/Developer/Xcode/DerivedData/read_from_file-gqjygbrscrfksbelepsqfpumajdo/Build/Products/Debug/example.txt"; sourceTree = "<group>"; };
 		D8747E3524BCB56A00B1FD28 /* jni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jni.h; path = ../../../../jni.h; sourceTree = "<group>"; };
+		D8887E19255C125E006B1AAA /* dspace_model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dspace_model.cpp; sourceTree = "<group>"; };
+		D8887E1A255C125E006B1AAA /* dspace_model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dspace_model.hpp; sourceTree = "<group>"; };
 		D897C3B524164B2900389B89 /* sun_model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sun_model.cpp; sourceTree = "<group>"; };
 		D897C3B624164B2900389B89 /* sun_model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sun_model.hpp; sourceTree = "<group>"; };
 		D897C3B824164B3800389B89 /* geomagnetic_field_model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = geomagnetic_field_model.cpp; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				D8FB528E25323E3B00DC48B8 /* sgp4.hpp */,
 				D8FB529025323E6900DC48B8 /* sdp4.cpp */,
 				D8FB529125323E6900DC48B8 /* sdp4.hpp */,
+				D8887E19255C125E006B1AAA /* dspace_model.cpp */,
+				D8887E1A255C125E006B1AAA /* dspace_model.hpp */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				D897C3C02416873300389B89 /* coordinate_transforms.cpp in Sources */,
 				D8EDB7EE23D84FC300DC1818 /* utilities.cpp in Sources */,
 				D8E5C161242CA875000B2C67 /* BenchMarking.cpp in Sources */,
+				D8887E1B255C125E006B1AAA /* dspace_model.cpp in Sources */,
 				D8BEF51E23CE0C3500C746DF /* main.cpp in Sources */,
 				D83DE10323DF55F9007E83D0 /* Makefile in Sources */,
 				D8221FFC23CE10B600AFBC4F /* orbital.cpp in Sources */,
