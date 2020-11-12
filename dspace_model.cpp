@@ -89,5 +89,10 @@ void dspace_model::getModelParameters()
     
     // sgp4fix take out atime = 0.0 and fix for faster operation
       ft    = 0.0;
+    
+    if (irez != 0)
+    {
+        
+    };
 
 }
