@@ -76,6 +76,7 @@ private:
     // get the model output parameters
     double dndt;
     double ft;
+    double delt;
     
     
 public:

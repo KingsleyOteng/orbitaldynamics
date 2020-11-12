@@ -100,6 +100,16 @@ void dspace_model::getModelParameters()
             xli    = xlamo;
         }
         
+        // sgp4fix move check outside loop
+        if (t >= 0.0)
+        {
+            delt = stepp;
+        }
+        else
+        {
+            delt = stepn;
+        }
+        
     };
 
 }
