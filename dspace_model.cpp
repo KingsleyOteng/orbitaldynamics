@@ -75,8 +75,14 @@ void dspace_model::getModelParameters()
     const   double stepn =   -720.0;
     const   double step2 = 259200.0;
     
+
     /* ----------- calculate deep space resonance effects ----------- */
       dndt   = 0.0;
      // theta  = rem(gsto + tc * rptim, twopi);
-  
+      em     = em + dedt * t;
+
+      inclm  = inclm + didt * t;
+      argpm  = argpm + domdt * t;
+      nodem  = nodem + dnodt * t;
+      mm     = mm + dmdt * t;
 }
