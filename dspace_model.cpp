@@ -57,6 +57,7 @@ double xni,double nodem,double nm)
     nodem = nodem;
     nm = nm;
     
+    
 };
 
 void dspace_model::getModelParameters()
@@ -85,4 +86,8 @@ void dspace_model::getModelParameters()
       argpm  = argpm + domdt * t;
       nodem  = nodem + dnodt * t;
       mm     = mm + dmdt * t;
+    
+    // sgp4fix take out atime = 0.0 and fix for faster operation
+      ft    = 0.0;
+
 }

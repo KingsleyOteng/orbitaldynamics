@@ -72,8 +72,10 @@ private:
     double nodem;
     double nm;
     
+    
     // get the model output parameters
     double dndt;
+    double ft;
     
     
 public:
