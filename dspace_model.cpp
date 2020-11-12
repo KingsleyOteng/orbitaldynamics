@@ -113,11 +113,6 @@ void dspace_model::getModelParameters()
         iretn = 381; // added for do loop
         iret  =   0; // added for loop
         
-        while (iretn == 381)
-        {
-            
-        };
-        
     };
 
 }
