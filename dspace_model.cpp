@@ -110,6 +110,14 @@ void dspace_model::getModelParameters()
             delt = stepn;
         }
         
+        iretn = 381; // added for do loop
+        iret  =   0; // added for loop
+        
+        while (iretn == 381)
+        {
+            
+        };
+        
     };
 
 }

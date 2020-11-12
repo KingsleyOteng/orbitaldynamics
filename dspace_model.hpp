@@ -77,6 +77,8 @@ private:
     double dndt;
     double ft;
     double delt;
+    double iretn;
+    double iret;
     
     
 public:
