@@ -8,52 +8,52 @@
 
 #include "dspace_model.hpp"
 
- dspace_model::dspace_model(double satrec_d2201,double satrec_d2211,double satrec_d3210,
-double satrec_d3222, double satrec_d4410, double satrec_d4422,
-double satrec_d5220,double satrec_d5232,double satrec_d5421,
-double satrec_d5433,double satrec_dedt,double satrec_del1,
-double satrec_del2,double satrec_del3,double satrec_didt,
-double satrec_dmdt,double satrec_dnodt,double satrec_domdt,
-double satrec_irez,double satrec_argpo,double satrec_argpdot,double satrec_t,
-double tc, double satrec_gsto,double satrec_xfact,double satrec_xlamo, double satrec_no,
-double satrec_atime, double em, double argpm, double inclm, double satrec_xli, double mm,
-double satrec_xni,double nodem,double nm)
+ dspace_model::dspace_model(double d2201,double d2211,double d3210,
+double d3222, double d4410, double d4422,
+double d5220,double d5232,double d5421,
+double d5433,double dedt,double del1,
+double el2,double del3,double idt,
+double dmdt,double dnodt,double domdt,
+double irez,double argpo,double argpdot,double t,
+double tc, double gsto,double xfact,double xlamo, double _no,
+double atime, double em, double argpm, double inclm, double xli, double mm,
+double xni,double nodem,double nm)
 {
-    satrec_d2201 = satrec_d2201;
-    satrec_d2211 = satrec_d2211;
-    satrec_d3210 = satrec_d3210;
-    satrec_d3222 = satrec_d3222;
-    satrec_d4410 = satrec_d4410;
-    satrec_d4422 = satrec_d4422;
-    satrec_d5220 = satrec_d5220;
-    satrec_d5232 = satrec_d5232;
-    satrec_d5421 = satrec_d5421;
-    satrec_d5433 = satrec_d5433;
-    satrec_dedt = satrec_dedt;
-    satrec_dedt = satrec_dedt;
-    satrec_del2 = satrec_del2;
-    satrec_del3 = satrec_del3;
-    satrec_didt = satrec_didt;
-    satrec_dmdt = satrec_dmdt;
-    satrec_dnodt = satrec_dnodt;
-    satrec_domdt = satrec_domdt;
-    satrec_irez =satrec_irez;
-    satrec_argpo = satrec_argpo;
-    satrec_argpdot= satrec_argpdot;
-    satrec_t = satrec_t;
+    d2201 = d2201;
+    d2211 = d2211;
+    d3210 = d3210;
+    d3222 = d3222;
+    d4410 = d4410;
+    d4422 = d4422;
+    d5220 = d5220;
+    d5232 = d5232;
+    d5421 = d5421;
+    d5433 = d5433;
+    dedt = dedt;
+    dedt = dedt;
+    del2 = del2;
+    del3 = del3;
+    didt = didt;
+    dmdt = dmdt;
+    dnodt = dnodt;
+    domdt = domdt;
+    irez = irez;
+    argpo = argpo;
+    argpdot= argpdot;
+    t = t;
     t = t;
     tc =tc;
-    satrec_gsto = satrec_gsto;
-    satrec_xfact = satrec_xfact;
-    satrec_xlamo = satrec_xlamo;
-    satrec_no = satrec_no;
-    satrec_atime = satrec_atime;
+    gsto = gsto;
+    xfact = xfact;
+    xlamo = xlamo;
+    no = no;
+    atime = atime;
     em = em;
     argpm = argpm;
     inclm = inclm;
-    satrec_xli = satrec_xli;
+    xli = xli;
     mm = mm;
-    satrec_xni = satrec_xni;
+    xni = xni;
     nodem = nodem;
     nm = nm;
     
