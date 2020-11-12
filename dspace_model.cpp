@@ -78,9 +78,5 @@ void dspace_model::getModelParameters()
     /* ----------- calculate deep space resonance effects ----------- */
       dndt   = 0.0;
      // theta  = rem(gsto + tc * rptim, twopi);
-      em     = em + satrec_dedt * satrec_t;
-      inclm  = inclm + satrec_didt * satrec_t;
-      argpm  = argpm + satrec_domdt * satrec_t;
-      nodem  = nodem + satrec_dnodt * satrec_t;
-      mm     = mm + satrec_dmdt * satrec_t;
+  
 }
