@@ -167,6 +167,9 @@ void dspace_model::getModelParameters()
             }
         };
         
+        nm = xni + xndt * ft + xnddt * ft * ft * 0.5;
+        xl = xli + xldot * ft + xndt * ft * ft * 0.5;
+        
     };
 
 }
