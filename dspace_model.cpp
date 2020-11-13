@@ -116,6 +116,8 @@ void dspace_model::getModelParameters()
         while (iretn == 381)
         {
             
+            
+            // none of this has been tested.
             //* ------------------- dot terms calculated ------------- */
             //* ----------- near - synchronous resonance terms ------- */
             if (irez != 2)
