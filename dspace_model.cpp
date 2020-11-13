@@ -159,7 +159,16 @@ void dspace_model::getModelParameters()
                  iretn = 0;
             }
             
+            if (iretn == 381)
+            {
+                xli   = xli + xldot * delt + xndt * step2;
+                xni   = xni + xndt * delt + xnddt * step2;
+                atime = atime + delt;
+            }
         };
+        
+        nm = xni + xndt * ft + xnddt * ft * ft * 0.5;
+        xl = xli + xldot * ft + xndt * ft * ft * 0.5;
         
     };
 
