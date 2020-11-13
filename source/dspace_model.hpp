@@ -35,57 +35,67 @@ class dspace_model
    
     
 private:
-    double satrec_d2201;
-    double satrec_d2211;
-    double satrec_d3210;
-    double satrec_d3222;
-    double satrec_d4410;
-    double satrec_d4422;
-    double satrec_d5220;
-    double satrec_d5232;
-    double satrec_d5421;
-    double satrec_d5433;
-    double satrec_dedt;
-    double satrec_del1;
-    double satrec_del2;
-    double satrec_del3;
-    double satrec_didt;
-    double satrec_dmdt;
-    double satrec_dnodt;
-    double satrec_domdt;
-    double satrec_irez;
-    double satrec_argpo;
-    double satrec_argpdot;
-    double satrec_t;
+    double d2201;
+    double d2211;
+    double d3210;
+    double d3222;
+    double d4410;
+    double d4422;
+    double d5220;
+    double d5232;
+    double d5421;
+    double d5433;
+    double dedt;
+    double del1;
+    double del2;
+    double del3;
+    double didt;
+    double dmdt;
+    double dnodt;
+    double domdt;
+    double irez;
+    double argpo;
+    double argpdot;
+    double t;
     double tc;
-    double satrec_gsto;
-    double satrec_xfact;
-    double satrec_xlamo;
-    double satrec_no;
-    double satrec_atime;
+    double gsto;
+    double xfact;
+    double xlamo;
+    double no;
+    double atime;
     double em;
     double argpm;
     double inclm;
-    double satrec_xli;
+    double xli;
     double mm;
-    double satrec_xni;
+    double xni;
     double nodem;
     double nm;
     
+    
     // get the model output parameters
     double dndt;
-    
+    double ft;
+    double delt;
+    double iretn;
+    double iret;
+    double xldot;
+    double xndt;
+    double xnddt;
+    double xomi;
+    double x2omi;
+    double x2li;
     
 public:
-        dspace_model(double satrec_d2201,double satrec_d2211,double satrec_d3210,
-        double satrec_d3222, double satrec_d4410, double satrec_d4422,
-        double satrec_d5220,double satrec_d5232,double satrec_d5421,
-        double satrec_d5433,double satrec_dedt,double satrec_del1,
-        double satrec_del2,double satrec_del3,double satrec_didt,
-        double satrec_dmdt,double satrec_dnodt,double satrec_domdt,
-        double satrec_irez,double satrec_argpo,double satrec_argpdot,double satrec_t,
-        double tc, double satrec_gsto,double satrec_xfact,double satrec_xlamo, double satrec_no,
-        double satrec_atime, double em, double argpm, double inclm, double satrec_xli, double mm,
+        dspace_model(double d2201,double d2211,double d3210,
+        double d3222, double d4410, double d4422,
+        double d5220,double d5232,double d5421,
+        double d5433,double dedt,double del1,
+        double del2,double del3,double didt,
+        double dmdt,double dnodt,double domdt,
+        double irez,double argpo,double rgpdot,double t,
+        double tc, double sto,double xfact,double xlamo, double no,
+        double satrec_atime, double em, double argpm, double inclm, double xli, double mm,
         double satrec_xni,double nodem,double nm);
         dspace_model();
         ~dspace_model();
