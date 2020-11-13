@@ -146,6 +146,19 @@ void dspace_model::getModelParameters()
                 xnddt = xnddt * xldot;
             };
             
+            //% /* ----------------------- integrator ------------------- */
+            //% sgp4fix move end checks to end of routine
+            if (abs(t - atime) >= stepp)
+            {
+                 iret  = 0;
+                 iretn = 381;
+            }
+            else
+            {
+                 ft    = t - atime;
+                 iretn = 0;
+            }
+            
         };
         
     };
