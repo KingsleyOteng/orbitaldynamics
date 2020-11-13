@@ -85,7 +85,6 @@ private:
     double xomi;
     double x2omi;
     double x2li;
-    double xl;
     
 public:
         dspace_model(double d2201,double d2211,double d3210,

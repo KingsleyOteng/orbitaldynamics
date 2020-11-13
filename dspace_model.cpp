@@ -146,8 +146,8 @@ void dspace_model::getModelParameters()
                 xnddt = xnddt * xldot;
             };
             
-            //% /* ----------------------- integrator ------------------- */
-            //% sgp4fix move end checks to end of routine
+            // % /* ----------------------- integrator ------------------- */
+            // % sgp4fix move end checks to end of routine
             if (abs(t - atime) >= stepp)
             {
                  iret  = 0;
@@ -157,18 +157,19 @@ void dspace_model::getModelParameters()
             {
                  ft    = t - atime;
                  iretn = 0;
-            }
-            
+            };
+
             if (iretn == 381)
             {
                 xli   = xli + xldot * delt + xndt * step2;
                 xni   = xni + xndt * delt + xnddt * step2;
                 atime = atime + delt;
-            }
+            };
+            
+            nm = xni + xndt * ft + xnddt * ft * ft * 0.5;
+            xl = xli + xldot * ft + xndt * ft * ft * 0.5;
+            
         };
-        
-        nm = xni + xndt * ft + xnddt * ft * ft * 0.5;
-        xl = xli + xldot * ft + xndt * ft * ft * 0.5;
         
     };
 
