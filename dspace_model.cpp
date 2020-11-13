@@ -75,7 +75,7 @@ void dspace_model::getModelParameters()
     const   double stepn =   -720.0;
     const   double step2 = 259200.0;
     
-
+    // none of this has been tested.
     // -- calculate deep space resonance effects -- //
       dndt   = 0.0;
       theta  = remainder(gsto + tc * rptim, twopi);         //<----this command presumably behaves the same as the matlab command rem. Please check
