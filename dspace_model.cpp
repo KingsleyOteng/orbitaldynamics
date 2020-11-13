@@ -180,6 +180,8 @@ void dspace_model::getModelParameters()
                 dndt = nm - no;
             };
             
+            nm = no + dndt;
+            
         };
         
     };
