@@ -78,7 +78,7 @@ void dspace_model::getModelParameters()
 
     // -- calculate deep space resonance effects -- //
       dndt   = 0.0;
-     // theta  = rem(gsto + tc * rptim, twopi);
+      theta  = remainder(gsto + tc * rptim, twopi);         //<----this command presumably behaves the same as the matlab command rem. Please check
       em     = em + dedt * t;
 
       inclm  = inclm + didt * t;
