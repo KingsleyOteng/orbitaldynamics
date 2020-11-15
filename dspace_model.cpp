@@ -8,6 +8,12 @@
 
 #include "dspace_model.hpp"
 
+dspace_model::dspace_model()
+{};
+
+dspace_model::~dspace_model()
+{};
+
  dspace_model::dspace_model(double _d2201,double _d2211, double _d3210,
 double _d3222, double _d4410, double _d4422,
 double _d5220,double _d5232,double _d5421,

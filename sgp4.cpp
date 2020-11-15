@@ -118,6 +118,7 @@ void sgp4::set_wgs                              (orbital *model)
 sgp4::sgp4                            ()
 {
     orbital *orb = new orbital();
+    dspace_model *models = new dspace_model();
     orb -> SetSATnumber (m_satellite_number);
     
     //  % /* ------------------ set mathematical constants --------------- */
@@ -173,9 +174,11 @@ sgp4::sgp4                            ()
     m_nm    = m_satrec_no;
     m_em    = m_satrec_ecco;
     m_inclm = m_satrec_inclo;
+    
     if (satrec_method != 'd')
         {
-            dspace_model = new dspace_model(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+            
+            dspace_model(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             
         };
     
