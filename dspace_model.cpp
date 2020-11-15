@@ -148,6 +148,7 @@ void dspace_model::getModelParameters()
                 xnddt = xnddt * xldot;
             };
             
+             // none of this has been tested.
             // % /* ----------------------- integrator ------------------- */
             // % sgp4fix move end checks to end of routine
             if (abs(t - atime) >= stepp)
