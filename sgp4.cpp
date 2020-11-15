@@ -10,7 +10,7 @@
 #include <cmath>
 #include <math.h> //Not sure about including math.h
 #include <string>
-
+#include "dspace_model.hpp"
 
 //std::vector<int> v{1,2,3};
 // constructor
@@ -175,7 +175,7 @@ sgp4::sgp4                            ()
     m_inclm = m_satrec_inclo;
     if (satrec_method != 'd')
         {
-            double x = dspace(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+            dspace_model = new dspace_model(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             
         };
     
