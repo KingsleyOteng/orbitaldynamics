@@ -99,6 +99,8 @@ public:
         double tc, double sto,double xfact,double xlamo, double no,
         double satrec_atime, double em, double argpm, double inclm, double xli, double mm,
         double satrec_xni,double nodem,double nm);
+        void setD2201();
+        void setD2211();
         dspace_model();
         ~dspace_model();
         void getModelParameters                        ();

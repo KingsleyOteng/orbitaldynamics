@@ -180,16 +180,8 @@ sgp4::sgp4                            ()
             
             dspace_model(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             
-            dspace_model( m_satrec_d2201,m_satrec_d2211,m_satrec_d3210,
-            m_satrec_d3222,m_satrec_d4410,m_satrec_d4422,
-            m_satrec_d5220,m_satrec_d5232,m_satrec_d5421,
-            m_satrec_d5433,m_satrec_dedt,m_satrec_del1,
-            m_satrec_del2,m_satrec_del3,m_satrec_didt,
-            m_satrec_dmdt,m_satrec_dnodt,m_satrec_domdt,
-            m_satrec_irez,m_satrec_argpo,m_satrec_argpdot,sm_atrec_t,
-            m_tc,satrec_gsto,m_satrec_xfact,m_satrec_xlamo,m_satrec_no,
-            m_satrec_atime,m_em,m_argpm,m_inclm,m_satrec_xli,mm,
-            m_satrec_xni,m_nodem,m_nm)
+           //  dspace_model( m_satrec_d2201,m_satrec_d2211,m_satrec_d3210, //m_satrec_d3222,m_satrec_d4410,m_satrec_d4422, //m_satrec_d5220,m_satrec_d5232,m_satrec_d5421, //m_satrec_d5433,m_satrec_dedt,m_satrec_del1, //m_satrec_del2,m_satrec_del3,m_satrec_didt, //m_satrec_dmdt,m_satrec_dnodt,m_satrec_domdt, //m_satrec_irez,m_satrec_argpo,m_satrec_argpdot,sm_atrec_t, //m_tc,satrec_gsto,m_satrec_xfact,m_satrec_xlamo,m_satrec_no, //m_satrec_atime,m_em,m_argpm,m_inclm,m_satrec_xli,mm, //m_satrec_xni,m_nodem,m_nm);
+           
             
         };
     
