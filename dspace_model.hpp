@@ -99,8 +99,43 @@ public:
         double tc, double sto,double xfact,double xlamo, double no,
         double satrec_atime, double em, double argpm, double inclm, double xli, double mm,
         double satrec_xni,double nodem,double nm);
-        void setD2201();
-        void setD2211();
+
+    void setd2201();
+    void setd2211();
+    void setd3210();
+    void setd3222();
+    void setd4410();
+    void setd4422();
+    void setd5220();
+    void setd5232();
+    void setd5421();
+    void setd5433();
+    void setdedt();
+    void setdel2();
+    void setdel3();
+    void setdidt ();
+    void setdmdt ();
+    void setdnodt ();
+    void setdomdt ();;
+    void setirez ();
+    void setargpo ();
+    void setargpdot();
+    void sett();
+    void settc ();
+    void setgsto ();
+    void setxfact ();
+    void setxlamo ();
+    void setno ();
+    void setatime();
+    void setem();
+    void setargpm();
+    void setinclm();
+    void setxli();
+    void setmm();
+    void setxni();
+    void setnodem();
+    void setnm();
+    
         dspace_model();
         ~dspace_model();
         void getModelParameters                        ();
