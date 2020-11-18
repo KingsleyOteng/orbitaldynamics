@@ -65,15 +65,7 @@ double _xni,double _nodem,double _nm)
     
 };
 
-void dspace_model::setD2201()
-{
-    
-};
 
-void dspace_model::setD2211()
-{
-    
-};
 
 void dspace_model::getModelParameters()
 {
