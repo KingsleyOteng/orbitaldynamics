@@ -178,8 +178,6 @@ sgp4::sgp4                            ()
     if (satrec_method != 'd')
         {
             
-            
-        // set the parameters
         dspace_model_line1(m_satrec_d2201,m_satrec_d2211,m_satrec_d3210, m_satrec_d3222,m_satrec_d4410,m_satrec_d4422, m_satrec_d5220,m_satrec_d5232,m_satrec_d5421);
             
         dspace_model_line2(m_satrec_d5433,m_satrec_dedt,m_satrec_del1, m_satrec_del2,m_satrec_del3,m_satrec_didt, m_satrec_dmdt,m_satrec_dnodt,m_satrec_domdt);
