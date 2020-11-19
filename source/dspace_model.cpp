@@ -8,6 +8,12 @@
 
 #include "dspace_model.hpp"
 
+dspace_model::dspace_model()
+{};
+
+dspace_model::~dspace_model()
+{};
+
  dspace_model::dspace_model(double _d2201,double _d2211, double _d3210,
 double _d3222, double _d4410, double _d4422,
 double _d5220,double _d5232,double _d5421,
@@ -59,6 +65,8 @@ double _xni,double _nodem,double _nm)
     
 };
 
+
+
 void dspace_model::getModelParameters()
 {
     const   double twopi = 2.0 * 3.14159265359;
@@ -75,10 +83,10 @@ void dspace_model::getModelParameters()
     const   double stepn =   -720.0;
     const   double step2 = 259200.0;
     
-
+    // none of this has been tested.
     // -- calculate deep space resonance effects -- //
       dndt   = 0.0;
-     // theta  = rem(gsto + tc * rptim, twopi);
+      theta  = remainder(gsto + tc * rptim, twopi);         //<----this command presumably behaves the same as the matlab command rem. Please check
       em     = em + dedt * t;
 
       inclm  = inclm + didt * t;
@@ -116,6 +124,8 @@ void dspace_model::getModelParameters()
         while (iretn == 381)
         {
             
+            
+            // none of this has been tested.
             //* ------------------- dot terms calculated ------------- */
             //* ----------- near - synchronous resonance terms ------- */
             if (irez != 2)
@@ -145,6 +155,43 @@ void dspace_model::getModelParameters()
                     d5433 * cos(-xomi + x2li - g54));
                 xnddt = xnddt * xldot;
             };
+            
+             // none of this has been tested.
+            // % /* ----------------------- integrator ------------------- */
+            // % sgp4fix move end checks to end of routine
+            if (abs(t - atime) >= stepp)
+            {
+                 iret  = 0;
+                 iretn = 381;
+            }
+            else
+            {
+                 ft    = t - atime;
+                 iretn = 0;
+            };
+
+            if (iretn == 381)
+            {
+                xli   = xli + xldot * delt + xndt * step2;
+                xni   = xni + xndt * delt + xnddt * step2;
+                atime = atime + delt;
+            };
+            
+            nm = xni + xndt * ft + xnddt * ft * ft * 0.5;
+            xl = xli + xldot * ft + xndt * ft * ft * 0.5;
+            
+            if (irez != 1)
+            {
+                mm   = xl - 2.0 * nodem + 2.0 * theta;
+                dndt = nm - no;
+            }
+            else
+            {
+                mm   = xl - nodem - argpm+ theta;
+                dndt = nm - no;
+            };
+            
+            nm = no + dndt;
             
         };
         
