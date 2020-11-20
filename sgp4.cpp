@@ -189,13 +189,11 @@ sgp4::sgp4                            ()
         dspace_model_line4(m_satrec_atime,m_em,m_argpm,m_inclm,m_satrec_xli,mm, m_satrec_xni,m_nodem,m_nm);
             
         getModelParameters();
-           
         };
-    
 }
 
 // destructor
-sgp4::~sgp4                           ()
+sgp4::~sgp4()
 {}
 
 void builds()
