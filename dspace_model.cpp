@@ -67,6 +67,7 @@ double _xni,double _nodem,double _nm)
 
 void dspace_model::getModelParameters()
 {
+    // get model parameters.
     const   double twopi = 2.0 * 3.14159265359;
     const   double fasx2 = 0.13130908;
     const   double fasx4 = 2.8843198;
