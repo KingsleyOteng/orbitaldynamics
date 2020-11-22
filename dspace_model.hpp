@@ -88,7 +88,9 @@ private:
     double xl;
     double theta;
     
+    // public and pribvate methods
 public:
+    
         dspace_model(double d2201,double d2211,double d3210,
         double d3222, double d4410, double d4422,
         double d5220,double d5232,double d5421,
