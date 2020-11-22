@@ -16,6 +16,7 @@
 // constructor
 void sgp4::set_parameters                       (orbital *model)
 {
+    // set the parameters
     m_satellite_number = model->getSATnumber();
     strcpy(m_classification,model->getClassifierID());
     m_designator_launch_year = model->getLAUNCHERyearfield();
