@@ -37,6 +37,11 @@ private:
   double e1;
   double ktr;
     double pi;
+    double sinv;
+    double cosv;
+    double nu;
+    double s;
+    double w;
 
     
 void setNewtonU
