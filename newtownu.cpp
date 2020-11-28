@@ -90,12 +90,12 @@ void newtownu::setNewtonU
                 e1= e0 + ( ( m - ecc*sinh(e0) + e0 ) / ( ecc*cosh(e0) - 1.0  ) );
                 ktr = ktr + 1;
               end
-            % ----------------  find true anomaly  --------------------
+           // % ----------------  find true anomaly  --------------------
             sinv= -( sqrt( ecc*ecc-1.0  ) * sinh(e1) ) / ( 1.0  - ecc*cosh(e1) );
             cosv= ( cosh(e1) - ecc ) / ( 1.0  - ecc*cosh(e1) );
             nu  = atan2( sinv,cosv );
           else
-            % --------------------- parabolic -------------------------
+              //  % --------------------- parabolic -------------------------
             if ( abs( ecc-1.0  ) < small )
 %                c = [ 1.0/3.0; 0.0; 1.0; -m];
 %                [r1r] = roots (c);
@@ -106,9 +106,9 @@ void newtownu::setNewtonU
                 ktr= 1;
                 nu = 2.0  * atan(e0);
               else
-                % -------------------- elliptical ----------------------
+           //     % -------------------- elliptical ----------------------
                 if ( ecc > small )
-                    % -----------  initial guess -------------
+            //        % -----------  initial guess -------------
                     if ( ((m < 0.0 ) & (m > -pi)) | (m > pi) )
                         e0= m - ecc;
                       else
@@ -121,12 +121,12 @@ void newtownu::setNewtonU
                         e0= e1;
                         e1= e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
                       end
-                    % -------------  find true anomaly  ---------------
+            //        % -------------  find true anomaly  ---------------
                     sinv= ( sqrt( 1.0 -ecc*ecc ) * sin(e1) ) / ( 1.0 -ecc*cos(e1) );
                     cosv= ( cos(e1)-ecc ) / ( 1.0  - ecc*cos(e1) );
                     nu  = atan2( sinv,cosv );
                   else
-                    % -------------------- circular -------------------
+           //         % -------------------- circular -------------------
                     ktr= 0;
                     nu= m;
                     e0= m;
