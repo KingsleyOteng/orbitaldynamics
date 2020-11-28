@@ -111,8 +111,8 @@ void newtownu::setNewtonU
             if ( abs( ecc-1.0  ) < small )
             {
                  s = 0.5  * (halfpi - atan( 1.5 *m ) );
-                 w = atan( tan( s )^(1.0 /3.0 ) );
-                 e0= 2.0 *cot(2.0 *w);
+                 w = atan( tan(s)^(1.0 /3.0 ) );
+                 e0= 2.0 * (1 / tan(2.0 *w));
                 ktr= 1;
                 nu = 2.0  * atan(e0);
             }
