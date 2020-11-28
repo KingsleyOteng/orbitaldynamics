@@ -53,30 +53,36 @@
 
 void newtownu::setNewtonU
 (double ecc, double m)
-
+{
 
 
         //% -------------------------  implementation   -----------------
-        numiter =    50;
-        small   =     0.00000001;
         halfpi  = pi * 0.5;
         
-        % -------------------------- hyperbolic  ----------------------
+       // % -------------------------- hyperbolic  ----------------------
         if ( (ecc-1.0 ) > small )
-           % -------------------  initial guess -----------------------
+        {
+        //% -------------------  initial guess -----------------------
             if ( ecc < 1.6  )
                 if ( ((m<0.0 ) & (m>-pi)) | (m>pi) )
+                {
                     e0= m - ecc;
-                  else
+                }
+                else
+                {
                     e0= m + ecc;
-                  end
+                }
               else
+              {
                 if ( (ecc < 3.6 ) & (abs(m) > pi) )
+                {
                     e0= m - sign(m)*ecc;
+                }
                   else
+                  {
                     e0= m/(ecc-1.0 );
-                  end
-              end
+                  }
+              }
             ktr= 1;
             e1 = e0 + ( (m-ecc*sinh(e0)+e0) / (ecc*cosh(e0) - 1.0 ) );
             while ((abs(e1-e0)>small ) & ( ktr<=numiter ))
@@ -125,5 +131,5 @@ void newtownu::setNewtonU
                     nu= m;
                     e0= m;
                   end
-              end
-          end
+        }
+        }

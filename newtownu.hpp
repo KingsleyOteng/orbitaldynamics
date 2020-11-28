@@ -11,10 +11,12 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string>
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
 #include <vector>
+#include <cmath>
 
 
 class newtownu
@@ -34,6 +36,7 @@ private:
   double e0;
   double e1;
   double ktr;
+    double pi;
 
     
 void setNewtonU
