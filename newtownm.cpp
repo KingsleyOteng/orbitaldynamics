@@ -13,11 +13,13 @@
 //
 //                           function newtonm
 //
-//  this function performs the newton rhapson iteration to find the
-//    eccentric anomaly given the mean anomaly.  the true anomaly is also
-//   calculated.
+// this function solves keplers equation when the true anomaly is known.
+// the mean and eccentric, parabolic, or hyperbolic anomaly is also found.
+// the parabolic limit at 168 is arbitrary. the hyperbolic anomaly is also
+// limited. the hyperbolic sine is used because it's not double valued.
 //
-//  orignal author : david vallado                  
+//  orignal author : david vallado
+//  c++: kingsley oteng-amoako
 //
 //  revisions
 //                -
@@ -99,13 +101,16 @@ void newtownm::setNewtonM
         
         ktr= 1;
         e1 = e0 + ( (m-ecc*sinh(e0)+e0) / (ecc*cosh(e0) - 1.0 ) );
+        
         while ((abs(e1-e0)>small ) & ( ktr<=numiter ))
         {
             e0= e1;
             e1= e0 + ( ( m - ecc*sinh(e0) + e0 ) / ( ecc*cosh(e0) - 1.0  ) );
             ktr = ktr + 1;
         }
+        
         // ----------------  find true anomaly  --------------------
+        
         sinv= -( sqrt( ecc*ecc-1.0  ) * sinh(e1) ) / ( 1.0  - ecc*cosh(e1) );
         cosv= ( cosh(e1) - ecc ) / ( 1.0  - ecc*cosh(e1) );
         nu  = atan2( sinv,cosv );
@@ -113,6 +118,7 @@ void newtownm::setNewtonM
     else
     {
         // --------------------- parabolic -------------------------
+        
         if ( abs( ecc-1.0  ) < small )
         {
             //%                c = [ 1.0/3.0; 0.0; 1.0; -m];
@@ -127,9 +133,11 @@ void newtownm::setNewtonM
         else
         {
             // -------------------- elliptical ----------------------
+            
             if ( ecc > small )
             {
                 // -----------  initial guess -------------
+                
                 if ( ((m < 0.0 ) & (m > -pi)) | (m > pi) )
                 {
                     e0= m - ecc;
@@ -138,22 +146,28 @@ void newtownm::setNewtonM
                 {
                     e0= m + ecc;
                 }
+                
                 ktr= 1;
                 e1 = e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
+                
                 while (( abs(e1-e0) > small ) & ( ktr <= numiter ))
                 {
                     ktr = ktr + 1;
                     e0= e1;
                     e1= e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
                 }
+                
                 //-------------  find true anomaly  ---------------
+                
                 sinv= ( sqrt( 1.0 -ecc*ecc ) * sin(e1) ) / ( 1.0 -ecc*cos(e1) );
                 cosv= ( cos(e1)-ecc ) / ( 1.0  - ecc*cos(e1) );
                 nu  = atan2( sinv,cosv );
             }
             else
             {
+                
                 // -------------------- circular -------------------
+                
                 ktr= 0;
                 nu= m;
                 e0= m;

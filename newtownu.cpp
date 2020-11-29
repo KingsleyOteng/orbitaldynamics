@@ -13,10 +13,11 @@
 //                           function newtonm
 //
 //  this function performs the newton rhapson iteration to find the
-//    eccentric anomaly given the mean anomaly.  the true anomaly is also
-//    calculated.
+//  eccentric anomaly given the mean anomaly.  the true anomaly is also
+//  calculated.
 //
 //  original author : david vallado                  
+//  c++: kingsley oteng-amoako
 //
 //  revisions
 //                -
@@ -63,6 +64,7 @@ void newtownu::setNewtonU
     // -------------------------- hyperbolic  ----------------------
     if ( (ecc-1.0 ) > small )
     {
+        
         // -------------------  initial guess -----------------------
         if ( ecc < 1.6  )
         {
@@ -121,10 +123,13 @@ void newtownu::setNewtonU
         }
         else
         {
+            
             // -------------------- elliptical ----------------------
             if ( ecc > small )
             {
+                
                 // -----------  initial guess -------------
+                
                 if ( ((m < 0.0 ) & (m > -pi)) | (m > pi) )
                 {
                     e0= m - ecc;
@@ -143,6 +148,7 @@ void newtownu::setNewtonU
                     e0= e1;
                     e1= e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
                 }
+                
                 // -------------  find true anomaly  ---------------
                 
                 sinv= ( sqrt( 1.0 -ecc*ecc ) * sin(e1) ) / ( 1.0 -ecc*cos(e1) );
