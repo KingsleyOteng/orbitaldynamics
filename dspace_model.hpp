@@ -88,7 +88,9 @@ private:
     double xl;
     double theta;
     
+    // public and pribvate methods
 public:
+    
         dspace_model(double d2201,double d2211,double d3210,
         double d3222, double d4410, double d4422,
         double d5220,double d5232,double d5421,
@@ -99,48 +101,27 @@ public:
         double tc, double sto,double xfact,double xlamo, double no,
         double satrec_atime, double em, double argpm, double inclm, double xli, double mm,
         double satrec_xni,double nodem,double nm);
-        void setD2201();
-        void setD2211();
+
+    // set the deep space model parameters.
     
-    d2201();
-    d2211();
-    d3210();
-    d3222();
-    d4410 = _d4410;
-    d4422 = _d4422;
-    d5220 = _d5220;
-    d5232 = _d5232;
-    d5421 = _d5421;
-    d5433 = _d5433;
-    dedt = _dedt;
-    dedt = _dedt;
-    del2 = _del2;
-    del3 = _del3;
-    didt = _didt;
-    dmdt = _dmdt;
-    dnodt = _dnodt;
-    domdt = _domdt;
-    irez = _irez;
-    argpo = _argpo;
-    argpdot= _argpdot;
-    t = _t;
-    tc = _tc;
-    gsto = _gsto;
-    xfact = _xfact;
-    xlamo = _xlamo;
-    no = _no;
-    atime = _atime;
-    em = _em;
-    argpm = _argpm;
-    inclm = _inclm;
-    xli = _xli;
-    mm = _mm;
-    xni = _xni;
-    nodem = _nodem;
-    nm = _nm;
+    void set_dspace_line1(double satrec_d2201, double satrec_d2211,double satrec_d3210, double satrec_d3222, double satrec_d4410, double satrec_d4422, double satrec_d5220, double satrec_d5232, double satrec_d5421);
+    
+    void set_dspace_line2(double satrec_d5433, double satrec_dedt, double satrec_del1,
+    double satrec_del2, double satrec_del3, double satrec_didt,
+    double satrec_dmdt, double satrec_dnodt, double satrec_domdt);
+    
+    void set_dspace_line3(double satrec_irez,double satrec_argpo, double satrec_argpdot, double satrec_t, double tc, double satrec_gsto, double satrec_xfact, double satrec_xlamo, double satrec_no);
+    
+    void set_dspace_line4(double satrec_atime, double em, double argpm, double inclm, double satrec_xli, double mm, double satrec_xni,double nodem, double nm);
+    
+    // generate model parameters
+    
+    void getModelParameters();
+    
         dspace_model();
         ~dspace_model();
-        void getModelParameters                        ();
+    
+   
     
     
 };
