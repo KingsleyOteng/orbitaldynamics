@@ -16,7 +16,7 @@
 //    eccentric anomaly given the mean anomaly.  the true anomaly is also
 //    calculated.
 //
-//  author        : david vallado                  719-573-2600    9 jun 2002
+//  original author : david vallado                  719-573-2600    9 jun 2002
 //
 //  revisions
 //                -
@@ -93,8 +93,10 @@ void newtownu::setNewtonU
                 e0= m/(ecc-1.0 );
             }
         }
+        
         ktr= 1;
         e1 = e0 + ( (m-ecc*sinh(e0)+e0) / (ecc*cosh(e0) - 1.0 ) );
+        
         while ((abs(e1-e0)>small ) & ( ktr<=numiter ))
         {
             e0= e1;
@@ -131,8 +133,10 @@ void newtownu::setNewtonU
                 {
                     e0= m + ecc;
                 }
+                
                 ktr= 1;
                 e1 = e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
+                
                 while (( abs(e1-e0) > small ) & ( ktr <= numiter ))
                 {
                     ktr = ktr + 1;
@@ -140,9 +144,11 @@ void newtownu::setNewtonU
                     e1= e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
                 }
                 // -------------  find true anomaly  ---------------
+                
                 sinv= ( sqrt( 1.0 -ecc*ecc ) * sin(e1) ) / ( 1.0 -ecc*cos(e1) );
                 cosv= ( cos(e1)-ecc ) / ( 1.0  - ecc*cos(e1) );
                 nu  = atan2( sinv,cosv );
+                
             }
             else
             {

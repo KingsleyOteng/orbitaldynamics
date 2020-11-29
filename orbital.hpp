@@ -23,7 +23,7 @@ private:
     // macro defining array size
     #define ARRAY_SIZE_DOUBLE 100
     #define ARRAY_SIZE 50
-    #define ARRAY_SIZE_ONE 5
+    #define ARRAY_SIZE_ONE 1
     
     
     // observer and satellite coordinates
@@ -74,7 +74,6 @@ private:
     double      m_launch_date_jd;
     double      m_number_of_revoltions_elapsed;
     double      m_deg_solar_per_day;
-    std::string m_wgs;                          //supports wgs-72, wgs-72-low-precision, wgs-84
     
     int         m_year;
     int         m_month;
@@ -88,7 +87,6 @@ public:
     orbital();
     orbital(int year, int month, int day);
     orbital(double x_observer, double y_observer, double z_observer);
-    orbital(double x_observer, double y_observer, double z_observer, std::string wgs_model);
    ~orbital();
     
     
@@ -124,14 +122,13 @@ public:
     void        SetREVOLUTIONepochchecksum      (double checksum);
     void        SetTLEparameters                (std::string spacecraft, std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_two);
     void        SetDataFile                     (std::string TLE);
-    void        setURLData                      (std::string URL);
+    void        SetURLData                      (std::string URL);
     void        SetTLEparameters                ();
     void        SetClassifierID                 (std::string ClassifierID);
     void        SetCheckSumLineOne              (int checksum);
     void        SetCheckSumLineTwo              (int checksum);
     void        SetObserverCoordinates          (double x_observer, double y_observer, double z_observer);
     void        SetSatelliteData                ();
-    void        SetWGS                          (std::string wgs_model);
     
     // getter
     void        getDataFile                     ();
@@ -150,7 +147,6 @@ public:
     double      getJULIANdatefraction           () { return m_julian_date_fraction; }
     double      getBALLISTICcoefficient         () { return m_ballistic_coefficient; }
     char*       getSECONDderivativemotion       () { return m_second_derivative_of_motion; }
-    char*       getDESIGNATORpiece              () { return m_designator_piece_of_launch;  }
     int         getDRAGRADIATIONcoefficient     () { return m_designator_launch_number_of_year; }
     int         getEPHEMERIStype                () { return m_ephemeris_type; }
     int         getELEMENTnumber                () { return m_element_number; }
@@ -166,14 +162,13 @@ public:
     int         getCheckSumLineOne              () { return m_lineone_checksum; }
     int         getCheckSumLineTwo              () { return m_linetwo_checksum; }
     double      getCheckLaunchDate              ()  { return m_linetwo_checksum; }
-    double      getNumberOfRevolutionsSinceLaunch
-                                                ()  { return m_linetwo_checksum; }
+    double      getNumberOfRevolutionsSinceLaunch ()    { return m_linetwo_checksum; }
     char*       getClassifierID                 ();
+
     int         getYear                         () { return m_year; }
     int         getMonth                        () { return m_month; }
     int         getDay                          () { return m_day; }
     double      getCheckSum                     ();
-    std::string getWGS                          ();
 };
 
 
