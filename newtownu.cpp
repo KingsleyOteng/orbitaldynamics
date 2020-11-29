@@ -56,15 +56,15 @@ void newtownu::setNewtonU
 {
 
 
-        //% -------------------------  implementation   -----------------
-        halfpi  = pi * 0.5;
+//% -------------------------  implementation   -----------------
+halfpi  = pi * 0.5;
         
        // % -------------------------- hyperbolic  ----------------------
-        if ( (ecc-1.0 ) > small )
-        {
-        //% -------------------  initial guess -----------------------
-            if ( ecc < 1.6  )
-            {
+if ( (ecc-1.0 ) > small )
+{
+//% -------------------  initial guess -----------------------
+   if ( ecc < 1.6  )
+    {
                 if ( ((m<0.0 ) & (m>-pi)) | (m>pi) )
                 {
                     e0= m - ecc;
@@ -73,9 +73,9 @@ void newtownu::setNewtonU
                 {
                     e0= m + ecc;
                 }
-            }\
-              else
-              {
+            }
+            else
+            {
                 if ( (ecc < 3.6 ) & (abs(m) > pi) )
                 {
                     if (m > 0)
@@ -91,7 +91,7 @@ void newtownu::setNewtonU
                   {
                     e0= m/(ecc-1.0 );
                   }
-              }
+            }
             ktr= 1;
             e1 = e0 + ( (m-ecc*sinh(e0)+e0) / (ecc*cosh(e0) - 1.0 ) );
             while ((abs(e1-e0)>small ) & ( ktr<=numiter ))
@@ -111,7 +111,7 @@ void newtownu::setNewtonU
             if ( abs( ecc-1.0  ) < small )
             {
                  s = 0.5  * (halfpi - atan( 1.5 *m ) );
-                 w = atan( tan(s)^(1.0 /3.0 ) );
+                 w = atan( pow(tan(s),(1/3)) );
                  e0= 2.0 * (1 / tan(2.0 *w));
                 ktr= 1;
                 nu = 2.0  * atan(e0);
@@ -120,6 +120,7 @@ void newtownu::setNewtonU
               {
            //     % -------------------- elliptical ----------------------
                 if ( ecc > small )
+                {
             //        % -----------  initial guess -------------
                     if ( ((m < 0.0 ) & (m > -pi)) | (m > pi) )
                     {
@@ -141,6 +142,7 @@ void newtownu::setNewtonU
                     sinv= ( sqrt( 1.0 -ecc*ecc ) * sin(e1) ) / ( 1.0 -ecc*cos(e1) );
                     cosv= ( cos(e1)-ecc ) / ( 1.0  - ecc*cos(e1) );
                     nu  = atan2( sinv,cosv );
+                }
                   else
                   {
            //         % -------------------- circular -------------------
@@ -150,5 +152,5 @@ void newtownu::setNewtonU
                   }
                 }
             
-        }
-        }
+  }
+}
