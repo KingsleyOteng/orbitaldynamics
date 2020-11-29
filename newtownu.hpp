@@ -1,3 +1,4 @@
+
 //
 //  newtownu.hpp
 //  source
@@ -30,12 +31,12 @@ private:
 
     
   // members
-  double halfpi;
-  double ecc;
-  double m;
-  double e0;
-  double e1;
-  double ktr;
+    double halfpi;
+    double ecc;
+    double m;
+    double e0;
+    double e1;
+    double ktr;
     double pi;
     double sinv;
     double cosv;
