@@ -16,7 +16,7 @@
 //    eccentric anomaly given the mean anomaly.  the true anomaly is also
 //    calculated.
 //
-//  original author : david vallado                  719-573-2600    9 jun 2002
+//  original author : david vallado                  
 //
 //  revisions
 //                -

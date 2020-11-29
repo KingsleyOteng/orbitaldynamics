@@ -9,49 +9,49 @@
 #include "newtownm.hpp"
 
 
-% ------------------------------------------------------------------------------
-%
-%                           function newtonm
-%
-%  this function performs the newton rhapson iteration to find the
-%    eccentric anomaly given the mean anomaly.  the true anomaly is also
-%    calculated.
-%
-%  author        : david vallado                  719-573-2600    9 jun 2002
-%
-%  revisions
-%                -
-%
-%  inputs          description                    range / units
-%    ecc         - eccentricity                   0.0  to
-%    m           - mean anomaly                   -2pi to 2pi rad
-%
-%  outputs       :
-%    e0          - eccentric anomaly              0.0  to 2pi rad
-%    nu          - true anomaly                   0.0  to 2pi rad
-%
-%  locals        :
-%    e1          - eccentric anomaly, next value  rad
-%    sinv        - sine of nu
-%    cosv        - cosine of nu
-%    ktr         - index
-%    r1r         - cubic roots - 1 to 3
-%    r1i         - imaginary component
-%    r2r         -
-%    r2i         -
-%    r3r         -
-%    r3i         -
-%    s           - variables for parabolic solution
-%    w           - variables for parabolic solution
-%
-%  coupling      :
-%    cubic       - solves a cubic polynomial
-%
-%  references    :
-%    vallado       2001, 72-75, alg 2, ex 2-1
-%
-% [e0,nu] = newtonm ( ecc,m );
-% ------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+//
+//                           function newtonm
+//
+//  this function performs the newton rhapson iteration to find the
+//    eccentric anomaly given the mean anomaly.  the true anomaly is also
+//   calculated.
+//
+//  orignal author : david vallado                  
+//
+//  revisions
+//                -
+//
+// inputs          description                    range / units
+//   ecc         - eccentricity                   0.0  to
+//   m           - mean anomaly                   -2pi to 2pi rad
+//
+//  outputs       :
+//    e0          - eccentric anomaly              0.0  to 2pi rad
+//   nu          - true anomaly                   0.0  to 2pi rad
+//
+//  locals        :
+//    e1          - eccentric anomaly, next value  rad
+//   sinv        - sine of nu
+//   cosv        - cosine of nu
+//   ktr         - index
+//    r1r         - cubic roots - 1 to 3
+//    r1i         - imaginary component
+//   r2r         -
+//   r2i         -
+//   r3r         -
+//    r3i         -
+//   s           - variables for parabolic solution
+//   w           - variables for parabolic solution
+//
+//  coupling      :
+//  cubic       - solves a cubic polynomial
+//
+// references    :
+//    vallado       2001, 72-75, alg 2, ex 2-1
+//
+// [e0,nu] = newtonm ( ecc,m );
+// ------------------------------------------------------------------------------
 
 function [e0,nu] = newtonm ( ecc,m );
 
