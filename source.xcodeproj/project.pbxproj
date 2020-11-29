@@ -183,7 +183,7 @@
 		D8BEF51223CE0C3500C746DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Kwadwo Oteng-Amoko";
 				TargetAttributes = {
 					D8BEF51923CE0C3500C746DF = {
@@ -345,6 +345,7 @@
 		D8BEF52223CE0C3500C746DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/include/",
@@ -384,6 +385,7 @@
 		D8BEF52323CE0C3500C746DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					"/Users/kwadwooteng-amoko/Documents/Libraries/boost_1_72_0/path/to/installation/prefix/include/",
