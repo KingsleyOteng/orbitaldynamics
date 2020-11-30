@@ -24,8 +24,8 @@ class newtownm
 private:
     
    // macro defining array size
-   #define         numiter                              50
-   #define         small                      256
+    #define         numiter                    50
+    #define         small                      256
 
     
   // members
