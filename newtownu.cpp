@@ -59,13 +59,16 @@ void newtownu::setNewtonU
     
     
     // -------------------------  implementation   -----------------
+    
     halfpi  = pi * 0.5;
     
     // -------------------------- hyperbolic  ----------------------
+    
     if ( (ecc-1.0 ) > small )
     {
         
         // -------------------  initial guess -----------------------
+        
         if ( ecc < 1.6  )
         {
             if ( ((m<0.0 ) & (m>-pi)) | (m>pi) )
@@ -105,7 +108,9 @@ void newtownu::setNewtonU
             e1= e0 + ( ( m - ecc*sinh(e0) + e0 ) / ( ecc*cosh(e0) - 1.0  ) );
             ktr = ktr + 1;
         }
+        
         // ----------------  find true anomaly  --------------------
+        
         sinv = -( sqrt( ecc*ecc-1.0  ) * sinh(e1) ) / ( 1.0  - ecc*cosh(e1) );
         cosv = ( cosh(e1) - ecc ) / ( 1.0  - ecc*cosh(e1) );
         nu   = atan2( sinv,cosv );
@@ -113,6 +118,7 @@ void newtownu::setNewtonU
     else
     {
         // --------------------- parabolic -------------------------
+        
         if ( abs( ecc-1.0  ) < small )
         {
             s = 0.5  * (halfpi - atan( 1.5 *m ) );
@@ -125,6 +131,7 @@ void newtownu::setNewtonU
         {
             
             // -------------------- elliptical ----------------------
+            
             if ( ecc > small )
             {
                 
@@ -159,6 +166,7 @@ void newtownu::setNewtonU
             else
             {
                 // -------------------- circular -------------------
+                
                 ktr= 0;
                 nu= m;
                 e0= m;
