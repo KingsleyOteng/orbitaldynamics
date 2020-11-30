@@ -24,11 +24,13 @@ class newtownm
 private:
     
    // macro defining array size
+    
     #define         numiter                    50
     #define         small                      256
 
     
   // members
+    
     double halfpi;
     double ecc;
     double m;
