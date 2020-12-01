@@ -120,57 +120,60 @@ void newtownu::setNewtonU
         // --------------------- parabolic -------------------------
         
         if ( abs( ecc-1.0  ) < small )
-        {
-            s = 0.5  * (halfpi - atan( 1.5 *m ) );
-            w = atan( pow(tan(s),(1/3)) );
-            e0= 2.0 * (1 / tan(2.0 *w));
-            ktr= 1;
-            nu = 2.0  * atan(e0);
-        }
+            {
+               //               c = [ 1.0/3.0; 0.0; 1.0; -m];
+               //               [r1r] = roots (c);
+               //                e0= r1r;
+                s = 0.5  * (halfpi - atan( 1.5 *m ) );
+                w = atan( pow(tan(s),(1/3)) );
+                e0= 2.0 * (1 / tan(2.0 *w));
+                ktr= 1;
+                nu = 2.0  * atan(e0);
+            }
         else
-        {
-            
-            // -------------------- elliptical ----------------------
-            
-            if ( ecc > small )
             {
                 
-                // -----------  initial guess -------------
+                // -------------------- elliptical ----------------------
                 
-                if ( ((m < 0.0 ) & (m > -pi)) | (m > pi) )
+                if ( ecc > small )
                 {
-                    e0= m - ecc;
+                    
+                    // -----------  initial guess -------------
+                    
+                        if ( ((m < 0.0 ) & (m > -pi)) | (m > pi) )
+                        {
+                            e0= m - ecc;
+                        }
+                        else
+                        {
+                            e0= m + ecc;
+                        }
+                    
+                    ktr= 1;
+                    e1 = e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
+                    
+                    while (( abs(e1-e0) > small ) & ( ktr <= numiter ))
+                    {
+                        ktr = ktr + 1;
+                        e0= e1;
+                        e1= e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
+                    }
+                    
+                    // -------------  find true anomaly  ---------------
+                    
+                    sinv= ( sqrt( 1.0 -ecc*ecc ) * sin(e1) ) / ( 1.0 -ecc*cos(e1) );
+                    cosv= ( cos(e1)-ecc ) / ( 1.0  - ecc*cos(e1) );
+                    nu  = atan2( sinv,cosv );
+                    
                 }
                 else
                 {
-                    e0= m + ecc;
+                    // -------------------- circular -------------------
+                    
+                    ktr= 0;
+                    nu= m;
+                    e0= m;
                 }
-                
-                ktr= 1;
-                e1 = e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
-                
-                while (( abs(e1-e0) > small ) & ( ktr <= numiter ))
-                {
-                    ktr = ktr + 1;
-                    e0= e1;
-                    e1= e0 + ( m - e0 + ecc*sin(e0) ) / ( 1.0  - ecc*cos(e0) );
-                }
-                
-                // -------------  find true anomaly  ---------------
-                
-                sinv= ( sqrt( 1.0 -ecc*ecc ) * sin(e1) ) / ( 1.0 -ecc*cos(e1) );
-                cosv= ( cos(e1)-ecc ) / ( 1.0  - ecc*cos(e1) );
-                nu  = atan2( sinv,cosv );
-                
             }
-            else
-            {
-                // -------------------- circular -------------------
-                
-                ktr= 0;
-                nu= m;
-                e0= m;
-            }
-        }
     }
 }
