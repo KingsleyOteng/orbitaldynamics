@@ -141,7 +141,7 @@ sgp4::sgp4                            ()
    
     m_satrec_t     = 0;
         // what is the 'tsince' variable
-    m_satrec_t=tsince;
+    //m_satrec_t = tsince;
     m_satrec_error = 0;
     m_mrt = 0.0;
     
