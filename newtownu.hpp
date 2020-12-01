@@ -46,6 +46,7 @@ private:
     double s;
     double w;
 
+    
     //  this function performs the newton rhapson iteration to find the
     //  eccentric anomaly given the mean anomaly.  the true anomaly is also
     //  calculated.
