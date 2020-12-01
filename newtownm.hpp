@@ -45,7 +45,12 @@ private:
     double w;
 
     
-void setNewtonM
+
+    // this function solves keplers equation when the true anomaly is known.
+    // the mean and eccentric, parabolic, or hyperbolic anomaly is also found.
+    // the parabolic limit at 168 is arbitrary
+    
+    void setNewtonM
     (double ecc, double m);
   
 };

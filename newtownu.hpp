@@ -26,11 +26,13 @@ class newtownu
 private:
     
    // macro defining array size
+    
    #define         numiter                              50
    #define         small                      256
 
     
-  // members
+    // members
+    
     double halfpi;
     double ecc;
     double m;
@@ -44,8 +46,11 @@ private:
     double s;
     double w;
 
+    //  this function performs the newton rhapson iteration to find the
+    //  eccentric anomaly given the mean anomaly.  the true anomaly is also
+    //  calculated.
     
-void setNewtonU
+    void setNewtonU
     (double ecc, double m);
   
 };
