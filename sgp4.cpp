@@ -141,7 +141,7 @@ sgp4::sgp4                            ()
    
     m_satrec_t     = 0;
         // what is the 'tsince' variable
-        //m_satrec_t=tsince;
+    m_satrec_t=tsince;
     m_satrec_error = 0;
     m_mrt = 0.0;
     
@@ -159,7 +159,7 @@ sgp4::sgp4                            ()
     if (m_satrec_isimp != 1)
     {
         m_delomg = m_satrec_omgcof * m_satrec_t;
-        double expr = ((1.0 + m_satrec_eta * cos(m_xmdf)));
+        expr = ((1.0 + m_satrec_eta * cos(m_xmdf)));
         m_delm   = m_satrec_xmcof * (expr * expr * expr - m_satrec_delmo);
         m_temp   = m_delomg + m_delm;
         m_mm     = m_xmdf + m_temp;
