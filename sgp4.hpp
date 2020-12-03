@@ -85,8 +85,19 @@ class sgp4
         // %% SGP4 constants
  
         double
-    m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3,           m_j4, m_j3oj2, m_vkmpersec, m_satrec_error, m_mrt, m_xmdf, m_argpdf,             m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa,  m_tempe,  m_templ, m_satrec_mdot,         m_satrec_mo, m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot, m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_cc5, m_satrec_bstar, m_satrec_c,                     m_satrec_t2cof, m_satrec_isimp, m_delm, m_temp, m_satrec_omgcof,                           m_delomg, m_satrec_xmcof, m_satrec_t, m_t4, m_t3, m_satrec_eta, m_satrec_delmo, m_satrec_d3, m_satrec_d2, m_satrec_d4, m_satrec_t3cof, m_satrec_sinmao, m_satrec_t4cof, m_satrec_t5cof,
+            m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3,           m_j4, m_j3oj2, m_vkmpersec, m_satrec_error, m_mrt, m_xmdf, m_argpdf,             m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa, m_tempe,  m_templ, m_satrec_mdot,         m_satrec_mo, m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot, m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_cc5, m_satrec_bstar, m_satrec_c,            m_satrec_t2cof, m_satrec_isimp, m_delm, m_temp, m_satrec_omgcof,                  m_delomg, m_satrec_xmcof, m_satrec_t, m_t4, m_t3, m_satrec_eta, m_satrec_delmo, m_satrec_d3, m_satrec_d2, m_satrec_d4, m_satrec_t3cof, m_satrec_sinmao, m_satrec_t4cof, m_satrec_t5cof,
         m_nm, m_satrec_no, m_em, m_satrec_ecco, m_inclm, m_satrec_inclo;
+    
+    double satrec_d2201, satrec_d2211, satrec_d3210,
+     satrec_d3222,  satrec_d4410,  satrec_d4422,
+     satrec_d5220, satrec_d5232, satrec_d5421,
+     satrec_d5433, satrec_dedt, satrec_del1,
+     satrec_del2, satrec_del3, satrec_didt,
+     satrec_dmdt, satrec_dnodt, satrec_domdt,
+     satrec_irez, satrec_argpo, satrec_argpdot, satrec_t,
+     tc,  satrec_gsto, satrec_xfact, satrec_xlamo, satrec_no,
+     satrec_atime,  em,  argpm,  inclm,  satrec_xli,  mm,
+     satrec_xni, nodem, nm;
     
     double expr;
     
