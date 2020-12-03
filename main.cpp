@@ -20,7 +20,7 @@
 #include <string>
 #include <cmath>
 #include "orbital.hpp"                 // header files
-#include "Benchmarking.hpp"            // benchmarking routines
+#include "BenchMarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
 #include "sgp4.hpp"
 #include "sdp4.hpp"

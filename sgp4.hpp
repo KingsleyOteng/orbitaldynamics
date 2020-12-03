@@ -116,5 +116,3 @@ class sgp4
 };
 
 #endif /* sgp4_hpp */
-
-

@@ -14,7 +14,7 @@ getBenchMarking                         ()
     
     std::string         i,j;
     std::string         test_type;
-    double              start,stop,dt;
+    double              start,stop;
     //clock_t             time1,time2;
     tm                  *time_stamp1, *time_stamp2;
      double a = 1;
@@ -65,7 +65,7 @@ getBenchMarkingChrono                         ()
     std::time_t         t;
     std::string         i,j;
     std::string         test_type;
-    double              start,stop,dt;
+    double              start,stop;
     double              a = 1;
     //clock_t             time1,time2;
     tm                  *time_stamp1, *time_stamp2;
