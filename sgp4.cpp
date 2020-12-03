@@ -16,7 +16,6 @@
 // constructor
 void sgp4::set_parameters                       (orbital *model)
 {
-    // set the parameters
     m_satellite_number = model->getSATnumber();
     strcpy(m_classification,model->getClassifierID());
     m_designator_launch_year = model->getLAUNCHERyearfield();
@@ -141,7 +140,7 @@ sgp4::sgp4                            ()
    
     m_satrec_t     = 0;
         // what is the 'tsince' variable
-    //m_satrec_t = tsince;
+        //m_satrec_t=tsince;
     m_satrec_error = 0;
     m_mrt = 0.0;
     
@@ -159,7 +158,7 @@ sgp4::sgp4                            ()
     if (m_satrec_isimp != 1)
     {
         m_delomg = m_satrec_omgcof * m_satrec_t;
-        expr = ((1.0 + m_satrec_eta * cos(m_xmdf)));
+        double expr = ((1.0 + m_satrec_eta * cos(m_xmdf)));
         m_delm   = m_satrec_xmcof * (expr * expr * expr - m_satrec_delmo);
         m_temp   = m_delomg + m_delm;
         m_mm     = m_xmdf + m_temp;
@@ -179,20 +178,22 @@ sgp4::sgp4                            ()
     if (satrec_method != 'd')
         {
             
-            // set the parameters
-               models->set_dspace_line1(satrec_d2201,satrec_d2211,satrec_d3210, satrec_d3222,satrec_d4410,satrec_d4422, satrec_d5220,satrec_d5232,satrec_d5421);
-            
-               models->set_dspace_line2 (satrec_d5433,satrec_dedt,satrec_del1, satrec_del2,satrec_del3,satrec_didt, satrec_dmdt,satrec_dnodt,satrec_domdt);
-                       
-               models->set_dspace_line3 (satrec_irez,satrec_argpo,satrec_argpdot,m_satrec_t, tc,satrec_gsto,satrec_xfact,satrec_xlamo,satrec_no);
-                       
-               models->set_dspace_line3(satrec_atime,em,argpm,inclm,satrec_xli,mm, satrec_xni,nodem,nm);
+     // set the parameters
+        models->set_dspace_line1(satrec_d2201,satrec_d2211,satrec_d3210, satrec_d3222,satrec_d4410,satrec_d4422, satrec_d5220,satrec_d5232,satrec_d5421);
+     
+        models->set_dspace_line2 (satrec_d5433,satrec_dedt,satrec_del1, satrec_del2,satrec_del3,satrec_didt, satrec_dmdt,satrec_dnodt,satrec_domdt);
+                
+        models->set_dspace_line3 (satrec_irez,satrec_argpo,satrec_argpdot,m_satrec_t, tc,satrec_gsto,satrec_xfact,satrec_xlamo,satrec_no);
+                
+        models->set_dspace_line3(satrec_atime,em,argpm,inclm,satrec_xli,mm, satrec_xni,nodem,nm);
+           
             
         };
+    
 }
 
 // destructor
-sgp4::~sgp4()
+sgp4::~sgp4                           ()
 {}
 
 void builds()
