@@ -80,7 +80,7 @@ void sgp4::set_wgs                              (orbital *model)
     
     if (wgs == "wgs-72-low")
     {
-            model_const_mu     = 398600.79964;
+            model_const_mu     = 398600.79964;        
             model_const_radiusearthkm = 6378.135;
             model_const_xke    = 0.0743669161;
             model_const_tumin  = 1.0 / model_const_xke;
@@ -115,10 +115,11 @@ void sgp4::set_wgs                              (orbital *model)
     
 }
 
-sgp4::sgp4                            ()
+sgp4::sgp4  ()
 {
     orbital *orb = new orbital();
     dspace_model *models = new dspace_model();
+    
     orb -> SetSATnumber (m_satellite_number);
     
     //  % /* ------------------ set mathematical constants --------------- */
@@ -178,7 +179,10 @@ sgp4::sgp4                            ()
     if (satrec_method != 'd')
         {
             
-     // set the parameters
+        tc = m_satrec_t;
+            
+        // set the parameters
+            
         models->set_dspace_line1(satrec_d2201,satrec_d2211,satrec_d3210, satrec_d3222,satrec_d4410,satrec_d4422, satrec_d5220,satrec_d5232,satrec_d5421);
      
         models->set_dspace_line2 (satrec_d5433,satrec_dedt,satrec_del1, satrec_del2,satrec_del3,satrec_didt, satrec_dmdt,satrec_dnodt,satrec_domdt);
@@ -186,15 +190,59 @@ sgp4::sgp4                            ()
         models->set_dspace_line3 (satrec_irez,satrec_argpo,satrec_argpdot,m_satrec_t, tc,satrec_gsto,satrec_xfact,satrec_xlamo,satrec_no);
                 
         models->set_dspace_line3(satrec_atime,em,argpm,inclm,satrec_xli,mm, satrec_xni,nodem,nm);
-           
-            
+        
         };
     
+    if (m_nm <= 0.0)
+    {
+    //      cout << (1,'# error nm %f\n', nm);
+    m_satrec_error = 2;
+    }
+       
+    ///check the following expression
+       m_am = pow((m_xke / nm),m_x2o3) * m_tempa * m_tempa;
+       m_nm = pow(m_xke / m_am,1.5);
+       m_em = m_em - m_tempe;
+    
+     // fix tolerance for error recognition
+       if ((m_em >= 1.0) || (m_em < -0.001) || (m_am < 0.95))
+       {
+    //     fprintf(1,'# error em %f\n', em);
+           m_satrec_error = 1;
+       }
+
+    if (m_em < 1.0e-6)
+    {
+        m_em  = 1.0e-6;
+    };
+    
+    m_mm     = m_mm + m_satrec_no * m_templ;
+    m_xlm    = m_mm + m_argpm + nodem;
+    m_emsq   = m_em * m_em;
+    m_temp   = 1.0 - m_emsq;
+    m_nodem  = remainder(m_nodem, m_twopi);
+    m_argpm  = remainder(m_argpm, m_twopi);
+    m_xlm    = remainder(m_xlm, m_twopi);
+    m_mm     = remainder(m_xlm - m_argpm - m_nodem, m_twopi);
+    
+    ///* ----------------- compute extra mean quantities ------------- */
+    m_sinim = sin(inclm);
+    m_cosim = cos(inclm);
+    
+    // /* -------------------- add lunar-solar periodics -------------- */
+    m_ep     = m_em;
+    m_xincp  = m_inclm;
+    m_argpp  = m_argpm;
+    m_nodep  = m_nodem;
+    m_mp     = m_mm;
+    m_sinip  = m_sinim;
+    m_cosip  = m_cosim;
+
 }
 
 // destructor
-sgp4::~sgp4                           ()
+sgp4::~sgp4 ()
 {}
 
-void builds()
+void builds ()
 {}
