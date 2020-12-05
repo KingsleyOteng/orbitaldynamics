@@ -80,7 +80,7 @@ void sgp4::set_wgs                              (orbital *model)
     
     if (wgs == "wgs-72-low")
     {
-            model_const_mu     = 398600.79964;        
+            model_const_mu     = 398600.79964;
             model_const_radiusearthkm = 6378.135;
             model_const_xke    = 0.0743669161;
             model_const_tumin  = 1.0 / model_const_xke;
@@ -115,11 +115,10 @@ void sgp4::set_wgs                              (orbital *model)
     
 }
 
-sgp4::sgp4  ()
+sgp4::sgp4                            ()
 {
     orbital *orb = new orbital();
     dspace_model *models = new dspace_model();
-    
     orb -> SetSATnumber (m_satellite_number);
     
     //  % /* ------------------ set mathematical constants --------------- */
@@ -238,11 +237,12 @@ sgp4::sgp4  ()
     m_sinip  = m_sinim;
     m_cosip  = m_cosim;
 
+    
 }
 
 // destructor
-sgp4::~sgp4 ()
+sgp4::~sgp4                           ()
 {}
 
-void builds ()
+void builds()
 {}
