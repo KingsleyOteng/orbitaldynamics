@@ -236,6 +236,23 @@ sgp4::sgp4                            ()
     m_mp     = m_mm;
     m_sinip  = m_sinim;
     m_cosip  = m_cosim;
+    
+    if (satrec_method == 'd')
+    {
+           
+    
+           if (m_xincp < 0.0)
+           {
+               m_xincp  = -m_xincp;
+               m_nodep = m_nodep + m_pi;
+               m_argpp  = m_argpp - m_pi;
+           }
+           if ((m_ep < 0.0 ) || ( m_ep > 1.0))
+           {
+               //% fprintf(1,'# error ep %f\n', ep);
+               m_satrec_error = 3;
+           }
+    }
 
     
 }
