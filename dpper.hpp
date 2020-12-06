@@ -43,7 +43,8 @@ private:
     xh3,    xi2,    xi3,    xl2,    xl3,    xl4,    zmol,
     zmos,   inclo,  init,   ep,     inclp,  nodep, argpp,  mp;
     
-    double m_twopi, m_pi, m_zns, m_zm, m_zmos, m_t, m_zes, m_znl, m_zel, m_zf, m_sinzf, m_f2, m_f3, m_ses, m_sis, m_sls, m_sghs, m_shs, m_se2, m_si2, m_se3, m_si3, f3, m_sl2, m_sgh2, m_sh2, m_zmol, m_sl3, m_sgh3, m_sgh4, m_sl4, m_sh3;
+    double m_twopi, m_pi, m_zns, m_zm, m_zmos, m_t, m_zes, m_znl, m_zel, m_zf, m_sinzf, m_f2, m_f3, m_ses, m_sis, m_sls, m_sghs, m_shs, m_se2, m_si2, m_se3, m_si3, f3, m_sl2, m_sgh2, m_sh2, m_zmol, m_sl3, m_sgh3, m_sgh4, m_sl4, m_sh3, m_e3, m_ee2, m_sil, m_xi2, m_sel, m_xi3, m_sli, m_sghl, m_shll, m_sll, m_xl4, m_xl2, m_xl3, m_xgh2, m_xgh3, m_xgh4,
+    m_xh2, m_xh3, m_pe, m_pinc, m_pl, m_pgh, m_ph;
     
     
 public:

@@ -118,6 +118,19 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
        m_zm = m_zmol;
    };
     
-   
+   m_zf    =  m_zm + 2.0 * m_zel * sin( m_zm);
+    m_sinzf = sin( m_zf);
+    m_f2    =  0.5 *  m_sinzf *  m_sinzf - 0.25;
+    m_f3    = -0.5 *  m_sinzf * cos( m_zf);
+    m_sel   =  m_ee2 *  m_f2 +  m_e3 *  m_f3;
+    m_sil   =  m_xi2 *  m_f2 +  m_xi3 *  m_f3;
+    m_sll   =  m_xl2 *  m_f2 +  m_xl3 *  m_f3 +  m_xl4 *  m_sinzf;
+    m_sghl  =  m_xgh2 *  m_f2 +  m_xgh3 *  m_f3 +  m_xgh4 *  m_sinzf;
+    m_shll  =  m_xh2 *  m_f2 +  m_xh3 *  m_f3;
+    m_pe    =  m_ses +  m_sel;
+    m_pinc  =  m_sis +  m_sil;
+    m_pl    =  m_sls +  m_sll;
+    m_pgh   =  m_sghs +  m_sghl;
+    m_ph    =  m_shs +  m_shll;
 
 }
