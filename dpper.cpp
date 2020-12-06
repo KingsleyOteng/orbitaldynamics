@@ -85,21 +85,23 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
 {
  
 
-    // /* --------------------- local variables ------------------------ */
-   m_twopi = 2.0 * pi;
+    // --------------------- local variables ------------------------
+   m_pi  = 3.14159267;
+   m_twopi = 2.0 * m_pi;
 
-    // /* ---------------------- constants ----------------------------- */
-   zns   = 1.19459e-5;
-   zes   = 0.01675;
-   znl   = 1.5835218e-4;
-   zel   = 0.05490;
+    // ---------------------- constants -----------------------------
+   m_zns   = 1.19459e-5;
+   m_zes   = 0.01675;
+   m_znl   = 1.5835218e-4;
+   m_zel   = 0.05490;
 
-   % /* --------------- calculate time varying periodics ----------- */
-   zm    = zmos + zns * t;
-   % // be sure that the initial call has time set to zero
+   // --------------- calculate time varying periodics ----------- */
+   m_zm    = m_zmos + m_zns * m_t;
+   // be sure that the initial call has time set to zero
    if (init == 'y')
-       zm = zmos;
-   end
+   {
+       m_zm = m_zmos;
+   };
    zf    = zm + 2.0 * zes * sin(zm);
    sinzf = sin(zf);
    f2    =  0.5 * sinzf * sinzf - 0.25;

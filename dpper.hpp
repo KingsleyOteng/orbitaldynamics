@@ -43,6 +43,11 @@ private:
     xh3,    xi2,    xi3,    xl2,    xl3,    xl4,    zmol,
     zmos,   inclo,  init,   ep,     inclp,  nodep, argpp,  mp;
     
+    double m_twopi, m_pi, m_zns,   m_zm, m_zmos, m_zns, m_t;
+    m_zes,
+    m_znl,
+    m_zel;
+    
     
 public:
     
