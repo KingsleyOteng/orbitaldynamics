@@ -85,10 +85,10 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
 {
  
 
-   % /* --------------------- local variables ------------------------ */
-   twopi = 2.0 * pi;
+    // /* --------------------- local variables ------------------------ */
+   m_twopi = 2.0 * pi;
 
-   % /* ---------------------- constants ----------------------------- */
+    // /* ---------------------- constants ----------------------------- */
    zns   = 1.19459e-5;
    zes   = 0.01675;
    znl   = 1.5835218e-4;
@@ -192,10 +192,4 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
        end
    end % // if init == 'n'
 
-   global idebug dbgfile
-   if idebug
-       debug1;
-   end
-
-   return;
 }
