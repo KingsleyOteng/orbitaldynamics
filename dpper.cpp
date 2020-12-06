@@ -80,18 +80,10 @@
 //     vallado, crawford, hujsak, kelso  2006
 //  ----------------------------------------------------------------------------*/
 
-void sgp4::dpper (double m_ep, double m_inclp, double m_nodep, double m_argpp,  double m_mp)
-{};
-
-function [  ep,     inclp,  nodep, argpp,  mp]...
-          = dpper(...
-            e3,     ee2,    peo,    pgho,   pho,    pinco,  plo,    se2,...
-            se3,    sgh2,   sgh3,   sgh4,   sh2,    sh3,    si2,    si3,...
-            sl2,    sl3,    sl4,    t,      xgh2,   xgh3,   xgh4,   xh2,...
-            xh3,    xi2,    xi3,    xl2,    xl3,    xl4,    zmol,...
-            zmos,   inclo,  init,   ep,     inclp,  nodep, argpp,  mp)
-
-   global opsmode
+void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double pho,double    pinco,double  plo,    double se2,double se3, double   sgh2, double  sgh3,  double sgh4, double  sh2, double   sh3,  double  si2,    double si3, double sl2, double   sl3,  double  sl4,  double  t, double     xgh2, double  xgh3, double  xgh4,   double xh2, double xh3,    double xi2,  double  xi3, double   xl2, double   xl3,   double xl4, double   zmol,
+   double zmos, double  inclo,  double init,  double  ep,  double   inclp,  double nodep, double argpp,  double mp)
+{
+ 
 
    % /* --------------------- local variables ------------------------ */
    twopi = 2.0 * pi;
@@ -206,3 +198,4 @@ function [  ep,     inclp,  nodep, argpp,  mp]...
    end
 
    return;
+}
