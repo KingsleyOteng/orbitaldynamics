@@ -132,5 +132,81 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     m_pl    =  m_sls +  m_sll;
     m_pgh   =  m_sghs +  m_sghl;
     m_ph    =  m_shs +  m_shll;
+    
+    if (init == 'n')
+    {
+        //  //  0.2 rad = 11.45916 deg
+        m_pe    = m_pe - m_peo;
+        m_pinc  = m_pinc - m_pinco;
+        m_pl    = m_pl - m_plo;
+        m_pgh   = m_pgh - m_pgho;
+        m_ph    = m_ph - m_pho;
+        m_inclp = m_inclp + pinc;
+        m_ep    = m_ep + m_pe;
+        m_sinip = sin(m_inclp);
+        m_cosip = cos(m_inclp);
+
+        //* ----------------- apply periodics directly ------------ */
+           //  sgp4fix for lyddane choice
+          //  strn3 used original inclination - this is technically feasible
+          //  gsfc used perturbed inclination - also technically feasible
+           //  probably best to readjust the 0.2 limit value and limit discontinuity
+          //  use next line for original strn3 approach and original inclination
+          //  if (inclo >= 0.2)
+           //  use next line for gsfc version and perturbed inclination
+        if (inclp >= 0.2)
+        {
+            m_ph     = ph / sinip;
+            m_pgh    = pgh - cosip * ph;
+            m_argpp  = argpp + pgh;
+            m_nodep  = nodep + ph;
+            m_mp     = mp + pl;
+        }
+        else
+        {
+            //* ---- apply periodics with lyddane modification ---- */
+            sinop  = sin(nodep);
+            cosop  = cos(nodep);
+            alfdp  = sinip * sinop;
+            betdp  = sinip * cosop;
+            dalf   =  ph * cosop + pinc * cosip * sinop;
+            dbet   = -ph * sinop + pinc * cosip * cosop;
+            alfdp  = alfdp + dalf;
+            betdp  = betdp + dbet;
+            nodep  = rem(nodep, twopi);
+            // sgp4fix for afspc written intrinsic functions
+            // nodep used without a trigonometric function ahead
+            if ((nodep < 0.0) & (opsmode == 'a'))
+            {
+                nodep = nodep + twopi;
+            }
+            xls    = mp + argpp + cosip * nodep;
+            dls    = pl + pgh - pinc * nodep * sinip;
+            xls    = xls + dls;
+            xnoh   = nodep;
+            nodep  = atan2(alfdp, betdp);
+            // sgp4fix for afspc written intrinsic functions
+            // nodep used without a trigonometric function ahead
+                
+            if ((nodep < 0.0) & (opsmode == 'a'))
+            {
+                nodep = nodep + twopi;
+            }
+            
+            if (abs(xnoh - nodep) > pi)
+            {
+                if (nodep < xnoh)
+                {
+                    nodep = nodep + twopi;
+                }
+                else
+                {
+                    nodep = nodep - twopi;
+                }
+            }
+            mp    = mp + pl;
+            argpp = xls - mp - cosip * nodep;
+        }
+    }
 
 }
