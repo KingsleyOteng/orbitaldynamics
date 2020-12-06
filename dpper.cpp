@@ -80,6 +80,9 @@
 //     vallado, crawford, hujsak, kelso  2006
 //  ----------------------------------------------------------------------------*/
 
+void sgp4::dpper (double m_ep, double m_inclp, double m_nodep, double m_argpp,  double m_mp)
+{};
+
 function [  ep,     inclp,  nodep, argpp,  mp]...
           = dpper(...
             e3,     ee2,    peo,    pgho,   pho,    pinco,  plo,    se2,...
