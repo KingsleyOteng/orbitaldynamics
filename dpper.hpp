@@ -31,27 +31,28 @@ using namespace std;
 
 #ifndef dpper_hpp
 #define dpper_hpp
-class sgp4
+class dpper
 {
     
-    private:
+private:
     
-        double
+    double
     e3,     ee2,    peo,    pgho,   pho,    pinco,  plo,    se2,
     se3,    sgh2,   sgh3,   sgh4,   sh2,    sh3,    si2,    si3,
     sl2,    sl3,    sl4,    t,      xgh2,   xgh3,   xgh4,   xh2,
     xh3,    xi2,    xi3,    xl2,    xl3,    xl4,    zmol,
     zmos,   inclo,  init,   ep,     inclp,  nodep, argpp,  mp;
     
-       
-    public:
-
-     // constructors  and destructors
-                    dpper();
-                   ~dpper();
-        void        set_parameters(orbital *model);
-        void        set_model();
-
+    
+public:
+    
+    // constructors  and destructors
+    dpper();
+    ~dpper();
+    
+    void        set_parameters(orbital *model);
+    void        set_model();
+    
 };
 
 #endif /* dpper_hpp */

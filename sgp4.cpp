@@ -50,20 +50,20 @@ void sgp4::set_parameters                       (orbital *model)
     set_wgs(model);
 }
 
- double      sgp4::dspace
-         (
-         double satrec_d2201,double satrec_d2211,double satrec_d3210,
-         double satrec_d3222, double satrec_d4410, double satrec_d4422,
-         double satrec_d5220,double satrec_d5232,double satrec_d5421,
-         double satrec_d5433,double satrec_dedt,double satrec_del1,
-         double satrec_del2,double satrec_del3,double satrec_didt,
-         double satrec_dmdt,double satrec_dnodt,double satrec_domdt,
-         double satrec_irez,double satrec_argpo,double satrec_argpdot,double satrec_t,
-         double tc, double satrec_gsto,double satrec_xfact,double satrec_xlamo, double satrec_no,
-         double satrec_atime, double em, double argpm, double inclm, double satrec_xli, double mm,
-         double satrec_xni,double nodem,double nm
-          )
-  {return 0;}
+double      sgp4::dspace
+(
+ double satrec_d2201,double satrec_d2211,double satrec_d3210,
+ double satrec_d3222, double satrec_d4410, double satrec_d4422,
+ double satrec_d5220,double satrec_d5232,double satrec_d5421,
+ double satrec_d5433,double satrec_dedt,double satrec_del1,
+ double satrec_del2,double satrec_del3,double satrec_didt,
+ double satrec_dmdt,double satrec_dnodt,double satrec_domdt,
+ double satrec_irez,double satrec_argpo,double satrec_argpdot,double satrec_t,
+ double tc, double satrec_gsto,double satrec_xfact,double satrec_xlamo, double satrec_no,
+ double satrec_atime, double em, double argpm, double inclm, double satrec_xli, double mm,
+ double satrec_xni,double nodem,double nm
+ )
+{return 0;}
 
 void sgp4::set_model                            ()
 {
@@ -80,38 +80,38 @@ void sgp4::set_wgs                              (orbital *model)
     
     if (wgs == "wgs-72-low")
     {
-            model_const_mu     = 398600.79964;
-            model_const_radiusearthkm = 6378.135;
-            model_const_xke    = 0.0743669161;
-            model_const_tumin  = 1.0 / model_const_xke;
-            model_const_j2     =   0.001082616;
-            model_const_j3     =  -0.00000253881;
-            model_const_j4     =  -0.00000165597;
-            model_const_j3oj2  =  model_const_j3 / model_const_j2;
+        model_const_mu     = 398600.79964;
+        model_const_radiusearthkm = 6378.135;
+        model_const_xke    = 0.0743669161;
+        model_const_tumin  = 1.0 / model_const_xke;
+        model_const_j2     =   0.001082616;
+        model_const_j3     =  -0.00000253881;
+        model_const_j4     =  -0.00000165597;
+        model_const_j3oj2  =  model_const_j3 / model_const_j2;
     }
     else if (wgs == "wgs-72")
     {
-            model_const_mu     = 398600.8;
-            model_const_radiusearthkm = 6378.135;
-            model_const_xke    = 60.0 / (sqrt(model_const_radiusearthkm * model_const_radiusearthkm * model_const_radiusearthkm  / model_const_mu));
-            model_const_tumin  = 1.0 / model_const_xke;
-            model_const_j2     =   0.001082616;
-            model_const_j3     =  -0.00000253881;
-            model_const_j4     =  -0.00000165597;
-            model_const_j3oj2  =  model_const_j3 / model_const_j2;
+        model_const_mu     = 398600.8;
+        model_const_radiusearthkm = 6378.135;
+        model_const_xke    = 60.0 / (sqrt(model_const_radiusearthkm * model_const_radiusearthkm * model_const_radiusearthkm  / model_const_mu));
+        model_const_tumin  = 1.0 / model_const_xke;
+        model_const_j2     =   0.001082616;
+        model_const_j3     =  -0.00000253881;
+        model_const_j4     =  -0.00000165597;
+        model_const_j3oj2  =  model_const_j3 / model_const_j2;
     }
     else if (wgs == "wgs-84")
     {
-            model_const_mu     = 398600.5;
-            model_const_radiusearthkm = 6378.137;
-            model_const_xke    = 60.0 / (sqrt(model_const_radiusearthkm*model_const_radiusearthkm*model_const_radiusearthkm/model_const_mu));
-            model_const_tumin  = 1.0 / model_const_xke;
-            model_const_j2     =   0.00108262998905;
-            model_const_j3     =  -0.00000253215306;
-            model_const_j4     =  -0.00000161098761;
-            model_const_j3oj2  =  model_const_j3 / model_const_j2;
+        model_const_mu     = 398600.5;
+        model_const_radiusearthkm = 6378.137;
+        model_const_xke    = 60.0 / (sqrt(model_const_radiusearthkm*model_const_radiusearthkm*model_const_radiusearthkm/model_const_mu));
+        model_const_tumin  = 1.0 / model_const_xke;
+        model_const_j2     =   0.00108262998905;
+        model_const_j3     =  -0.00000253215306;
+        model_const_j4     =  -0.00000161098761;
+        model_const_j3oj2  =  model_const_j3 / model_const_j2;
     };
-        
+    
     
 }
 
@@ -130,17 +130,17 @@ sgp4::sgp4                            ()
     //  %    j2, j3, j4  - un-normalized zonal harmonic values
     //  %    j3oj2       - j3 divided by j2
     
-   
+    
     
     m_pi            = 3.14159267;
     m_twopi         = 2.0 * m_pi;
     m_x2o3          = 2.0 / 3.0;
     m_temp4         = 1.5e-12;
     m_vkmpersec     = model_const_radiusearthkm * m_xke/60.0;
-   
+    
     m_satrec_t     = 0;
-        // what is the 'tsince' variable
-        //m_satrec_t=tsince;
+    // what is the 'tsince' variable
+    //m_satrec_t=tsince;
     m_satrec_error = 0;
     m_mrt = 0.0;
     
@@ -176,40 +176,40 @@ sgp4::sgp4                            ()
     m_inclm = m_satrec_inclo;
     
     if (satrec_method != 'd')
-        {
-            
+    {
+        
         tc = m_satrec_t;
-            
+        
         // set the parameters
-            
+        
         models->set_dspace_line1(satrec_d2201,satrec_d2211,satrec_d3210, satrec_d3222,satrec_d4410,satrec_d4422, satrec_d5220,satrec_d5232,satrec_d5421);
-     
+        
         models->set_dspace_line2 (satrec_d5433,satrec_dedt,satrec_del1, satrec_del2,satrec_del3,satrec_didt, satrec_dmdt,satrec_dnodt,satrec_domdt);
-                
+        
         models->set_dspace_line3 (satrec_irez,satrec_argpo,satrec_argpdot,m_satrec_t, tc,satrec_gsto,satrec_xfact,satrec_xlamo,satrec_no);
-                
+        
         models->set_dspace_line3(satrec_atime,em,argpm,inclm,satrec_xli,mm, satrec_xni,nodem,nm);
         
-        };
+    };
     
     if (m_nm <= 0.0)
     {
-    //      cout << (1,'# error nm %f\n', nm);
-    m_satrec_error = 2;
+        //      cout << (1,'# error nm %f\n', nm);
+        m_satrec_error = 2;
     }
-       
-    ///check the following expression
-       m_am = pow((m_xke / nm),m_x2o3) * m_tempa * m_tempa;
-       m_nm = pow(m_xke / m_am,1.5);
-       m_em = m_em - m_tempe;
     
-     // fix tolerance for error recognition
-       if ((m_em >= 1.0) || (m_em < -0.001) || (m_am < 0.95))
-       {
-    //     fprintf(1,'# error em %f\n', em);
-           m_satrec_error = 1;
-       }
-
+    ///check the following expression
+    m_am = pow((m_xke / nm),m_x2o3) * m_tempa * m_tempa;
+    m_nm = pow(m_xke / m_am,1.5);
+    m_em = m_em - m_tempe;
+    
+    // fix tolerance for error recognition
+    if ((m_em >= 1.0) || (m_em < -0.001) || (m_am < 0.95))
+    {
+        //     fprintf(1,'# error em %f\n', em);
+        m_satrec_error = 1;
+    }
+    
     if (m_em < 1.0e-6)
     {
         m_em  = 1.0e-6;
@@ -239,21 +239,21 @@ sgp4::sgp4                            ()
     
     if (satrec_method == 'd')
     {
-           
-    
-           if (m_xincp < 0.0)
-           {
-               m_xincp  = -m_xincp;
-               m_nodep = m_nodep + m_pi;
-               m_argpp  = m_argpp - m_pi;
-           }
-           if ((m_ep < 0.0 ) || ( m_ep > 1.0))
-           {
-               //% fprintf(1,'# error ep %f\n', ep);
-               m_satrec_error = 3;
-           }
+        
+        
+        if (m_xincp < 0.0)
+        {
+            m_xincp  = -m_xincp;
+            m_nodep = m_nodep + m_pi;
+            m_argpp  = m_argpp - m_pi;
+        }
+        if ((m_ep < 0.0 ) || ( m_ep > 1.0))
+        {
+            //% fprintf(1,'# error ep %f\n', ep);
+            m_satrec_error = 3;
+        }
     }
-
+    
     
 }
 
