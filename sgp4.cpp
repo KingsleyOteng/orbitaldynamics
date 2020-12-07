@@ -268,6 +268,50 @@ sgp4::sgp4                            ()
         }
     }
     
+    ///* -------------------- long period periodics ------------------ */
+    if (m_satrec_method == 'd')
+    {
+        m_sinip =  sin(m_xincp);
+        m_cosip =  cos(m_xincp);
+        m_satrec_aycof = -0.5*m_j3oj2*m_sinip;
+        //// sgp4fix for divide by zero with xinco = 180 deg
+        if (abs(m_cosip+1.0) > 1.5e-12)
+        {
+            m_satrec_xlcof = -0.25 * m_j3oj2 * m_sinip * (3.0 + 5.0 * m_cosip) / (1.0+m_cosip);
+        }
+        else
+        {
+            m_satrec_xlcof = -0.25 * m_j3oj2 * m_sinip * (3.0 + 5.0 * m_cosip) / m_temp4;
+        }
+    }
+    axnl = ep * cos(argpp);
+    temp = 1.0 / (am * (1.0 - ep * ep));
+    aynl = ep* sin(argpp) + temp * satrec.aycof;
+    xl   = mp + argpp + nodep + temp * satrec.xlcof * axnl;
+
+    ///* --------------------- solve kepler's equation --------------- */
+    u    = rem(xl - nodep, twopi);
+    eo1  = u;
+    tem5 = 9999.9;
+    ktr = 1;
+    % //   sgp4fix for kepler iteration
+    % //   the following iteration needs better limits on corrections
+    while (( abs(tem5) >= 1.0e-12) && (ktr <= 10) )
+        sineo1 = sin(eo1);
+        coseo1 = cos(eo1);
+        tem5   = 1.0 - coseo1 * axnl - sineo1 * aynl;
+        tem5   = (u - aynl * coseo1 + axnl * sineo1 - eo1) / tem5;
+        if(abs(tem5) >= 0.95)
+            if tem5 > 0.0
+                tem5 = 0.95;
+            else
+                tem5 = -0.95;
+            end
+        end
+        eo1    = eo1 + tem5;
+        ktr = ktr + 1;
+    end
+    
     
 }
 

@@ -112,7 +112,7 @@ private:
            m_satrec_xh3,m_satrec_xi2,m_satrec_xi3,
            m_satrec_xl2,m_satrec_xl3,m_satrec_xl4,
            m_satrec_zmol,m_satrec_zmos,
-    m_satrec_init;
+    m_satrec_init, m_satrec_aycof, m_satrec_xlcof, m_satrec_method;
     
     double expr;
     
