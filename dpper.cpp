@@ -8,6 +8,7 @@
 
 #include "dpper.hpp"
 
+
 //  -----------------------------------------------------------------------------
 //
 //                           procedure dpper
@@ -79,7 +80,8 @@
 //    hoots, schumacher and glover 2004
 //     vallado, crawford, hujsak, kelso  2006
 //  ----------------------------------------------------------------------------*/
-
+ dpper::dpper()
+{};
 void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double pho,double    pinco,double  plo,    double se2,double se3, double   sgh2, double  sgh3,  double sgh4, double  sh2, double   sh3,  double  si2,    double si3, double sl2, double   sl3,  double  sl4,  double  t, double     xgh2, double  xgh3, double  xgh4,   double xh2, double xh3,    double xi2,  double  xi3, double   xl2, double   xl3,   double xl4, double   zmol,
    double zmos, double  inclo,  double init,  double  ep,  double   inclp,  double nodep, double argpp,  double mp)
 {
@@ -141,12 +143,12 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         m_pl    = m_pl - m_plo;
         m_pgh   = m_pgh - m_pgho;
         m_ph    = m_ph - m_pho;
-        m_inclp = m_inclp + pinc;
+        m_inclp = m_inclp + m_pinc;
         m_ep    = m_ep + m_pe;
         m_sinip = sin(m_inclp);
         m_cosip = cos(m_inclp);
 
-        //* ----------------- apply periodics directly ------------ */
+        // ----------------- apply periodics directly ------------ */
            //  sgp4fix for lyddane choice
           //  strn3 used original inclination - this is technically feasible
           //  gsfc used perturbed inclination - also technically feasible
@@ -156,56 +158,56 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
            //  use next line for gsfc version and perturbed inclination
         if (inclp >= 0.2)
         {
-            m_ph     = ph / sinip;
-            m_pgh    = pgh - cosip * ph;
-            m_argpp  = argpp + pgh;
-            m_nodep  = nodep + ph;
-            m_mp     = mp + pl;
+            m_ph     = m_ph / m_sinip;
+            m_pgh    = m_pgh - m_cosip * m_ph;
+            m_argpp  = m_argpp + m_pgh;
+            m_nodep  = m_nodep + m_ph;
+            m_mp     = m_mp + m_pl;
         }
         else
         {
-            //* ---- apply periodics with lyddane modification ---- */
-            sinop  = sin(nodep);
-            cosop  = cos(nodep);
-            alfdp  = sinip * sinop;
-            betdp  = sinip * cosop;
-            dalf   =  ph * cosop + pinc * cosip * sinop;
-            dbet   = -ph * sinop + pinc * cosip * cosop;
-            alfdp  = alfdp + dalf;
-            betdp  = betdp + dbet;
-            nodep  = rem(nodep, twopi);
+            // ---- apply periodics with lyddane modification ---- */
+            m_sinop  = sin(m_nodep);
+            m_cosop  = cos(m_nodep);
+            m_alfdp  = m_sinip * m_sinop;
+            m_betdp  = m_sinip * m_cosop;
+            m_dalf   =  m_ph * m_cosop + m_pinc * m_cosip * m_sinop;
+            m_dbet   = -m_ph * m_sinop + m_pinc * m_cosip * m_cosop;
+            m_alfdp  = m_alfdp + m_dalf;
+            m_betdp  = m_betdp + m_dbet;
+            m_nodep  = remainder(m_nodep, m_twopi);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
-            if ((nodep < 0.0) & (opsmode == 'a'))
+            if ((m_nodep < 0.0) & (m_opsmode == 'a'))
             {
-                nodep = nodep + twopi;
+                m_nodep = m_nodep + m_twopi;
             }
-            xls    = mp + argpp + cosip * nodep;
-            dls    = pl + pgh - pinc * nodep * sinip;
-            xls    = xls + dls;
-            xnoh   = nodep;
-            nodep  = atan2(alfdp, betdp);
+            m_xls    = m_mp + m_argpp + m_cosip * m_nodep;
+            m_dls    = m_pl + m_pgh - m_pinc * m_nodep * m_sinip;
+            m_xls    = m_xls + m_dls;
+            m_xnoh   = m_nodep;
+            m_nodep  = atan2(m_alfdp, m_betdp);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
                 
-            if ((nodep < 0.0) & (opsmode == 'a'))
+            if ((m_nodep < 0.0) & (m_opsmode == 'a'))
             {
-                nodep = nodep + twopi;
+                m_nodep = m_nodep + m_twopi;
             }
             
-            if (abs(xnoh - nodep) > pi)
+            if (abs(m_xnoh - m_nodep) > m_pi)
             {
-                if (nodep < xnoh)
+                if (m_nodep < m_xnoh)
                 {
-                    nodep = nodep + twopi;
+                    m_nodep = m_nodep + m_twopi;
                 }
                 else
                 {
-                    nodep = nodep - twopi;
+                    m_nodep = m_nodep - m_twopi;
                 }
             }
-            mp    = mp + pl;
-            argpp = xls - mp - cosip * nodep;
+            m_mp    = m_mp + m_pl;
+            m_argpp = m_xls - m_mp - m_cosip * m_nodep;
         }
     }
 

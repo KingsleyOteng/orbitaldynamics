@@ -260,6 +260,7 @@ sgp4::sgp4                            ()
             m_nodep = m_nodep + m_pi;
             m_argpp  = m_argpp - m_pi;
         }
+        
         if ((m_ep < 0.0 ) || ( m_ep > 1.0))
         {
             //% fprintf(1,'# error ep %f\n', ep);
