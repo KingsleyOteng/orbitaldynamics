@@ -284,13 +284,13 @@ sgp4::sgp4                            ()
             m_satrec_xlcof = -0.25 * m_j3oj2 * m_sinip * (3.0 + 5.0 * m_cosip) / m_temp4;
         }
     }
-    axnl = ep * cos(argpp);
-    temp = 1.0 / (am * (1.0 - ep * ep));
-    aynl = ep* sin(argpp) + temp * satrec.aycof;
-    xl   = mp + argpp + nodep + temp * satrec.xlcof * axnl;
+    m_axnl = m_ep * cos(m_argpp);
+    m_temp = 1.0 / (m_am_m * (1.0 - m_ep * m_ep));
+    m_aynl = m_ep* sin(m_argpp) + m_temp * m_satrec_aycof;
+    m_xl   = m_mp + m_argpp + m_nodep + m_temp * m_satrec_xlcof * m_axnl;
 
     ///* --------------------- solve kepler's equation --------------- */
-    u    = rem(xl - nodep, twopi);
+    m_u    = remainder(m_xl - m_nodep, m_twopi);
     eo1  = u;
     tem5 = 9999.9;
     ktr = 1;
