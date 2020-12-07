@@ -119,6 +119,7 @@ void sgp4::set_wgs                              (orbital *model)
 sgp4::sgp4                            ()
 {
     orbital *orb = new orbital();
+    dpper *dp = new dpper();
     dspace_model *models = new dspace_model();
     orb -> SetSATnumber (m_satellite_number);
     
@@ -130,8 +131,6 @@ sgp4::sgp4                            ()
     //  %    xke         - reciprocal of tumin
     //  %    j2, j3, j4  - un-normalized zonal harmonic values
     //  %    j3oj2       - j3 divided by j2
-    
-    
     
     m_pi            = 3.14159267;
     m_twopi         = 2.0 * m_pi;
@@ -241,19 +240,19 @@ sgp4::sgp4                            ()
     if (satrec_method == 'd')
     {
         
-        dpper(...
-        satrec.e3,satrec.ee2,satrec.peo,...
-        satrec.pgho,satrec.pho,satrec.pinco,...
-        satrec.plo,satrec.se2,satrec.se3,...
-        satrec.sgh2,satrec.sgh3,satrec.sgh4,...
-        satrec.sh2,satrec.sh3,satrec.si2,...
-        satrec.si3,satrec.sl2,satrec.sl3,...
-        satrec.sl4,satrec.t,satrec.xgh2,...
-        satrec.xgh3,satrec.xgh4,satrec.xh2,...
-        satrec.xh3,satrec.xi2,satrec.xi3,...
-        satrec.xl2,satrec.xl3,satrec.xl4,...
-        satrec.zmol,satrec.zmos,satrec.inclo,...
-        satrec.init,ep,xincp,nodep,argpp,mp);
+        dp->dpper(
+        m_satrec_e3,m_satrec_ee2,m_satrec_peo,
+        m_satrec_pgho,m_satrec_pho,sm_atrec_pinco,
+        m_satrec_plo,m_satrec_se2,m_satrec_se3,
+        m_satrec_sgh2,m_satrec_sgh3,m_satrec_sgh4,
+        m_satrec_sh2,m_satrec_sh3,m_satrec_si2,
+        m_satrec_si3,m_satrec_sl2,m_satrec_sl3,
+        m_satrec_sl4,m_satrec_t,m_satrec_xgh2,
+        m_satrec_xgh3,m_satrec_xgh4,m_satrec_xh2,
+        m_satrec_xh3,m_satrec_xi2,m_satrec_xi3,
+        m_satrec_xl2,m_satrec_xl3,m_satrec_xl4,
+        m_satrec_zmol,m_satrec_zmos,m_satrec_inclo,
+        m_satrec_init,m_ep,m_xincp,m_nodep,m_argpp,m_mp);
         
         if (m_xincp < 0.0)
         {
