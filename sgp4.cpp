@@ -7,6 +7,7 @@
 //
 
 #include "sgp4.hpp"
+#include "dpper.hpp"
 #include <cmath>
 #include <math.h> //Not sure about including math.h
 #include <string>
@@ -118,6 +119,7 @@ void sgp4::set_wgs                              (orbital *model)
 sgp4::sgp4                            ()
 {
     orbital *orb = new orbital();
+    dpper *dp = new dpper();
     dspace_model *models = new dspace_model();
     orb -> SetSATnumber (m_satellite_number);
     
@@ -129,8 +131,6 @@ sgp4::sgp4                            ()
     //  %    xke         - reciprocal of tumin
     //  %    j2, j3, j4  - un-normalized zonal harmonic values
     //  %    j3oj2       - j3 divided by j2
-    
-    
     
     m_pi            = 3.14159267;
     m_twopi         = 2.0 * m_pi;
@@ -240,6 +240,19 @@ sgp4::sgp4                            ()
     if (satrec_method == 'd')
     {
         
+        dp->dpper(
+        satrec_e3,satrec_ee2,satrec_peo,
+        satrec_pgho,satrec_pho,satrec_pinco,
+        satrec_plo,satrec_se2,satrec_se3,
+        satrec_sgh2,satrec_sgh3,satrec_sgh4,
+        satrec_sh2,satrec_sh3,satrec_si2,
+        satrec_si3,satrec_sl2,satrec_sl3,
+        satrec_sl4,satrec_t,satrec_xgh2,
+        satrec_xgh3,satrec_xgh4,satrec_xh2,
+        satrec_xh3,satrec_xi2,satrec_xi3,
+        satrec_xl2,satrec_xl3,satrec_xl4,
+        satrec_zmol,satrec_zmos,satrec_inclo,
+        satrec_init,ep,xincp,nodep,argpp,mp);
         
         if (m_xincp < 0.0)
         {
