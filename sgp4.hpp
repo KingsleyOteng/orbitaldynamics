@@ -110,9 +110,9 @@ private:
            m_satrec_sl4,m_satrec_xgh2,
            m_satrec_xgh3,m_satrec_xgh4,m_satrec_xh2,
            m_satrec_xh3,m_satrec_xi2,m_satrec_xi3,
-           m_satrec_xl2,m_satrec_xl3,m_satrec_xl4, m_aynl, m_xl, m_satrec_aycof, m_satrec_method,
-    m_satrec_zmol,m_satrec_zmos, m_axnl, m_am_m;
-    m_satrec_xlcof, ;
+           m_satrec_xl2,m_satrec_xl3,m_satrec_xl4, m_aynl, m_xl, m_satrec_aycof, m_satrec_method, m_u,
+    m_satrec_zmol,m_satrec_zmos, m_axnl, m_am_m,m_tem5,m_ktr,
+    m_satrec_xlcof, m_eo1, m_sineo1, m_coseo1, m_satrec_init;
     
     double expr;
     

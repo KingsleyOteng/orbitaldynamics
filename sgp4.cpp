@@ -289,28 +289,33 @@ sgp4::sgp4                            ()
     m_aynl = m_ep* sin(m_argpp) + m_temp * m_satrec_aycof;
     m_xl   = m_mp + m_argpp + m_nodep + m_temp * m_satrec_xlcof * m_axnl;
 
-    ///* --------------------- solve kepler's equation --------------- */
+    /// --------------------- solve kepler's equation --------------- */
     m_u    = remainder(m_xl - m_nodep, m_twopi);
-    eo1  = u;
-    tem5 = 9999.9;
-    ktr = 1;
-    % //   sgp4fix for kepler iteration
-    % //   the following iteration needs better limits on corrections
-    while (( abs(tem5) >= 1.0e-12) && (ktr <= 10) )
-        sineo1 = sin(eo1);
-        coseo1 = cos(eo1);
-        tem5   = 1.0 - coseo1 * axnl - sineo1 * aynl;
-        tem5   = (u - aynl * coseo1 + axnl * sineo1 - eo1) / tem5;
-        if(abs(tem5) >= 0.95)
-            if tem5 > 0.0
-                tem5 = 0.95;
+    m_eo1  = m_u;
+    m_tem5 = 9999.9;
+   m_ktr = 1;
+    ///   sgp4fix for kepler iteration
+    ///   the following iteration needs better limits on corrections
+    while (( abs(m_tem5) >= 1.0e-12) && (m_ktr <= 10) )
+    {
+        m_sineo1 = sin(m_eo1);
+        m_coseo1 = cos(m_eo1);
+        m_tem5   = 1.0 - m_coseo1 * m_axnl - m_sineo1 * m_aynl;
+        m_tem5   = (m_u - m_aynl * m_coseo1 + m_axnl * m_sineo1 - m_eo1) / m_tem5;
+        if(abs(m_tem5) >= 0.95)
+        {
+            if (m_tem5 > 0.0)
+            {
+                m_tem5 = 0.95;
+            }
             else
-                tem5 = -0.95;
-            end
-        end
-        eo1    = eo1 + tem5;
-        ktr = ktr + 1;
-    end
+            {
+                m_tem5 = -0.95;
+            }
+        }
+        m_eo1   = m_eo1 + m_tem5;
+        m_ktr = m_ktr + 1;
+    }
     
     
 }
