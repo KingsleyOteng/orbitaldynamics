@@ -240,7 +240,7 @@ sgp4::sgp4                            ()
     if (satrec_method == 'd')
     {
         
-        dp->dpper(
+        dp->set_parameters(
         m_satrec_e3,m_satrec_ee2,m_satrec_peo,
         m_satrec_pgho,m_satrec_pho,sm_atrec_pinco,
         m_satrec_plo,m_satrec_se2,m_satrec_se3,

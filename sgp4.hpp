@@ -88,6 +88,8 @@ private:
     m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3, m_j4, m_j3oj2, m_vkmpersec, m_satrec_error, m_mrt, m_xmdf, m_argpdf, m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa, m_tempe,  m_templ, m_satrec_mdot, m_satrec_mo, m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot, m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_cc5, m_satrec_bstar, m_satrec_c, m_satrec_t2cof, m_satrec_isimp, m_delm, m_temp, m_satrec_omgcof, m_delomg, m_satrec_xmcof, m_satrec_t, m_t4, m_t3, m_satrec_eta, m_satrec_delmo, m_satrec_d3, m_satrec_d2, m_satrec_d4, m_satrec_t3cof, m_satrec_sinmao, m_satrec_t4cof, m_satrec_t5cof,
     m_nm, m_satrec_no, m_em, m_satrec_ecco, m_inclm, m_satrec_inclo;
     
+     double m_ep, m_xincp, m_argpp, m_nodep, m_mp, m_sinip, m_cosip, m_sinim, m_cosim, m_am, m_xlm, m_emsq;
+    
     double satrec_d2201, satrec_d2211, satrec_d3210,
     satrec_d3222,  satrec_d4410,  satrec_d4422,
     satrec_d5220, satrec_d5232, satrec_d5421,
@@ -99,9 +101,22 @@ private:
     satrec_atime,  em,  argpm,  inclm,  satrec_xli,  mm,
     satrec_xni, nodem, nm;
     
+    double m_satrec_e3,m_satrec_ee2,m_satrec_peo,
+           m_satrec_pgho,m_satrec_pho,sm_atrec_pinco,
+           m_satrec_plo,m_satrec_se2,m_satrec_se3,
+           m_satrec_sgh2,m_satrec_sgh3,m_satrec_sgh4,
+           m_satrec_sh2,m_satrec_sh3,m_satrec_si2,
+           m_satrec_si3,m_satrec_sl2,m_satrec_sl3,
+           m_satrec_sl4,m_satrec_xgh2,
+           m_satrec_xgh3,m_satrec_xgh4,m_satrec_xh2,
+           m_satrec_xh3,m_satrec_xi2,m_satrec_xi3,
+           m_satrec_xl2,m_satrec_xl3,m_satrec_xl4,
+           m_satrec_zmol,m_satrec_zmos,
+    m_satrec_init;
+    
     double expr;
     
-    double m_ep, m_xincp, m_argpp, m_nodep, m_mp, m_sinip, m_cosip, m_sinim, m_cosim, m_am, m_xlm, m_emsq;
+   
     
     
     
