@@ -196,11 +196,11 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
                 }
                 else
                 {
-                    m_nodep = m_nodep - rec->const_twopi;
+                    rec->satrec_nodep = rec->satrec_nodep - rec->const_twopi;
                 }
             }
-            m_mp    = m_mp + m_pl;
-            m_argpp = m_xls - m_mp - m_cosip * m_nodep;
+            rec->satrec_mp   = rec->satrec_mp    + m_pl;
+            rec->satrec_argpp  = m_xls - m_mp - m_cosip * rec->satrec_nodep;
         }
     }
 
