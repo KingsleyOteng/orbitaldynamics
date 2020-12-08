@@ -176,7 +176,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
                 rec->satrec_nodep = rec->satrec_nodep  + rec->const_twopi;
             }
             rec->varXls    = rec->varMp + rec->satrec_argpp + rec->varCosip * rec->satrec_nodep;
-            rec->varDls    = rec->varPl + rec->varPgh - rec->varPinc * rec->satrec_nodep*  m_sinip;
+            rec->varDls    = rec->varPl + rec->varPgh - rec->varPinc * rec->satrec_nodep * rec->varSinip ;
             rec->varXls    = rec->varXls + rec->varDls;
             rec->varXnoh   = rec->satrec_nodep;
             rec->satrec_nodep  = atan2(rec->varAlfdp  , rec->varBetdp);
