@@ -13,7 +13,7 @@
 
 
 
-class satrec
+struct satrec
 {
     
 public:

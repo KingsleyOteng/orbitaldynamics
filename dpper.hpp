@@ -26,6 +26,7 @@
 #include <cmath>
 #include "orbital.hpp"
 #include "utilities.hpp"
+#include "satrec.hpp"
 
 using namespace std;
 

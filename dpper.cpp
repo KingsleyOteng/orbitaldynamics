@@ -86,7 +86,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
    double zmos, double  inclo,  double init,  double  ep,  double   inclp,  double nodep, double argpp,  double mp)
 {
  
-
+    satrec *rec = new satrec();
     // --------------------- local variables ------------------------
    m_pi  = 3.14159267;
    m_twopi = 2.0 * m_pi;
