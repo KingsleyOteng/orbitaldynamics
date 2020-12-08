@@ -153,8 +153,8 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         {
             rec->varPh          = rec->varMp  / rec->varSinip ;
             rec->varPgh         = rec->varPh - m_cosip * rec->varPh;
-            rec->varArgpp       = m_argpp + rec->varPgh;
-            rec->varNodep       = m_nodep + rec->varPh;
+            rec->varArgpp       = rec->varArgpp + rec->varPgh;
+            rec->varNodep       = rec->varArgpp  + rec->varPh;
             rec->varMp          = rec->varMp  + rec->varPl;
         }
         else
