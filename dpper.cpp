@@ -166,14 +166,14 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
             rec->varBetdp  = rec->varSinop * rec->varCosop;
             rec->varDalf   =  rec->varPh * rec->varCosop  + rec->varPinc  * rec->varCosip * rec->varSinop;
             rec->varDbet   = -rec->varPh * rec->varSinop  + rec->varPinc  * rec->varCosip  * rec->varCosop ;
-            m_alfdp  = m_alfdp + m_dalf;
-            m_betdp  = m_betdp + m_dbet;
-            m_nodep  = remainder(m_nodep, rec->const_twopi);
+            rec->varAlfdp   = rec->varAlfdp  + rec->varDalf;
+            rec->varBetdp   = rec->varBetdp  + rec->varDbet ;
+            rec->varNodep   = remainder(rec->varNodep, rec->const_twopi);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
-            if ((m_nodep < 0.0) & (m_opsmode == 'a'))
+            if ((rec->varNodep < 0.0) & (rec->varOpsmode == 'a'))
             {
-                m_nodep = m_nodep + rec->const_twopi;
+                rec->varNodep  = rec->varNodep  + rec->const_twopi;
             }
             m_xls    = m_mp + m_argpp + m_cosip * m_nodep;
             m_dls    = m_pl + m_pgh - m_pinc * m_nodep * m_sinip;
