@@ -160,15 +160,15 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         else
         {
             // ---- apply periodics with lyddane modification ---- */
-            rec->varSinop = sin(m_nodep);
-            rec->varCosop = cos(m_nodep);
+            rec->varSinop = sin(rec->satrec_nodep;);
+            rec->varCosop = cos(rec->satrec_nodep;);
             rec->varAlfdp  = rec->varSinop * rec->varSinop;
             rec->varBetdp  = rec->varSinop * rec->varCosop;
             rec->varDalf   =  rec->varPh * rec->varCosop  + rec->varPinc  * rec->varCosip * rec->varSinop;
             rec->varDbet   = -rec->varPh * rec->varSinop  + rec->varPinc  * rec->varCosip  * rec->varCosop ;
             rec->varAlfdp   = rec->varAlfdp  + rec->varDalf;
             rec->varBetdp   = rec->varBetdp  + rec->varDbet ;
-            rec->varNodep   = remainder(rec->varNodep, rec->const_twopi);
+            rec->satrec_nodep  = remainder(rec->satrec_nodep, rec->const_twopi);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
             if ((rec->satrec_nodep< 0.0) & (rec->global_opsmode == 'a'))
