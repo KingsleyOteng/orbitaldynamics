@@ -175,11 +175,11 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
             {
                 rec->varNodep  = rec->varNodep  + rec->const_twopi;
             }
-            m_xls    = m_mp + m_argpp + m_cosip * m_nodep;
-            m_dls    = m_pl + m_pgh - m_pinc * m_nodep * m_sinip;
-            m_xls    = m_xls + m_dls;
-            m_xnoh   = m_nodep;
-            m_nodep  = atan2(m_alfdp, m_betdp);
+            rec->varXls    = m_mp + m_argpp + m_cosip * m_nodep;
+            rec->varDls    = m_pl + m_pgh - m_pinc * m_nodep * m_sinip;
+            rec->varXls    = m_xls + m_dls;
+            rec->varXnoh   = m_nodep;
+            rec->varNodep  = atan2(m_alfdp, m_betdp);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
                 
