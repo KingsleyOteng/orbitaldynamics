@@ -116,11 +116,12 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     rec->varSinzf   =  sin(rec->varZf);
     rec->varF2      =  0.5 *  rec->varSinzf  *  rec->varSinzf  - 0.25;
     rec->varF3      = -0.5 *  rec->varSinzf  * cos( m_zf);
-    rec->varSes     =  rec->satrec_ee2 *  rec->varF2 +  m_e3 *  rec->varF3;
-    rec->varSil     =  rec->satrec_xi2 *  rec->varF2  +  m_xi3 *  rec->varF3;
-    rec->varSll     =  rec->satrec_xl2 *  rec->varF2 +  rec->satrec_xl3 *  rec->varF3 + rec->satrec_xl4 *  rec->varSinzf ;
-    rec->varSghl    =  rec->satrec_xgh2 * rec->varF3 +  rec->satrec_xgh3 *  rec->varF3 +  rec->satrec_xgh4 *  rec->varSinzf;
-    rec->varShll    =  m_xh2 *  m_f2 +  m_xh3 *  m_f3;
+    rec->varSel     =  rec->satrec_ee2 *  rec->varF2    +  m_e3 *  rec->varF3;
+    rec->varSil     =  rec->satrec_xi2 *  rec->varF2    +  m_xi3 *  rec->varF3;
+    rec->varSll     =  rec->satrec_xl2 *  rec->varF2    +  rec->satrec_xl3 *  rec->varF3 + rec->satrec_xl4 *  rec->varSinzf ;
+    rec->varSghl    =  rec->satrec_xgh2 * rec->varF3    +  rec->satrec_xgh3 *  rec->varF3 +  rec->satrec_xgh4 *  rec->varSinzf;
+    rec->varShll    =  rec->satrec_xh2  *  rec->varF2   +  rec->satrec_xh3 *  rec->varF3;
+
     rec->varPe      =  rec->varSes  + rec->varSel;
     rec->varPinc    =  rec->varSis +  rec->varSil;
     rec->varPl      =  rec->varSls +  rec->varSll;
