@@ -131,15 +131,15 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     if (init == 'n')
     {
         //  //  0.2 rad = 11.45916 deg
-        m_pe    = m_pe - m_peo;
-        m_pinc  = m_pinc - m_pinco;
-        m_pl    = m_pl - m_plo;
-        m_pgh   = m_pgh - m_pgho;
-        m_ph    = m_ph - m_pho;
-        m_inclp = m_inclp + m_pinc;
-        m_ep    = m_ep + m_pe;
-        m_sinip = sin(m_inclp);
-        m_cosip = cos(m_inclp);
+        rec->varPe      = m_pe - m_peo;
+        rec->varPinc    = m_pinc - m_pinco;
+        rec->varPl      = m_pl - m_plo;
+        rec->varPgh     = m_pgh - m_pgho;
+        rec->varPh      = m_ph - m_pho;
+        rec->varInclp   = m_inclp + m_pinc;
+        rec->satrec_ep  = rec->satrec_ep + m_pe;
+        rec->varSinip   = sin(rec->satrec_inclp);
+        rec->varCosip   = cos(rec->satrec_inclp);
 
         // ----------------- apply periodics directly ------------ */
            //  sgp4fix for lyddane choice
@@ -151,11 +151,11 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
            //  use next line for gsfc version and perturbed inclination
         if (inclp >= 0.2)
         {
-            m_ph     = m_ph / m_sinip;
-            m_pgh    = m_pgh - m_cosip * m_ph;
-            m_argpp  = m_argpp + m_pgh;
-            m_nodep  = m_nodep + m_ph;
-            m_mp     = m_mp + m_pl;
+            rec->varPh          = rec->varMp  / rec->varSinip ;
+            rec->varPgh         = rec->varPh - m_cosip * rec->varPh;
+            rec->varArgpp       = m_argpp + rec->varPgh;
+            rec->varNodep       = m_nodep + rec->varPh;
+            rec->varMp          = rec->varMp  + rec->varPl;
         }
         else
         {
