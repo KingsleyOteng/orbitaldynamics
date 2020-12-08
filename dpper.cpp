@@ -94,38 +94,38 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
    // be sure that the initial call has time set to zero
    if (init == 'y')
    {
-       rec->varZm   = rec->satrec_zmos ;
+    rec->varZm   = rec->satrec_zmos;
    };
-   rec->varZf  = rec->varZm  + 2.0 * rec->const_zes * sin(rec->varZm);
+   rec->varZf    = rec->varZm  + 2.0 * rec->const_zes * sin(rec->varZm);
    rec->varSinzf = sin(rec->varZf);
    rec->varF2    =  0.5 * rec->varSinzf * rec->varSinzf - 0.25;
    rec->varF3    = -0.5 * rec->varSinzf * cos(rec->varZf);
    rec->varSes   = rec->satrec_se2 * rec->varF2  + rec->satrec_se3 * rec->varF3;
    rec->varSis   = rec->satrec_si2 * rec->varF2 + rec->satrec_si3 * rec->varF3;
-   rec->varSls   = rec->satrec_sl2 * rec->varF2 + rec->satrec_sl3 * m_f3 + rec->satrec_sl4 * rec->varSinzf ;
+   rec->varSls   = rec->satrec_sl2 * rec->varF2 + rec->satrec_sl3 * m_f3 + rec->satrec_sl4 * rec->varSinzf;
    rec->varSghs  = rec->satrec_sgh2 * rec->varF2 + rec->satrec_sgh3 * rec->varF3 + rec->satrec_sgh4 * rec->varSinzf;
-   rec->varShs   = rec->satrec_sh2 * rec->varF2 + rec->satrec_sh3 * rec->varF3  ;
+   rec->varShs   = rec->satrec_sh2 * rec->varF2 + rec->satrec_sh3 * rec->varF3;
    rec->varZm    = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
     
    if (init == 'y')
    {
-        rec->varZm = rec->satrec_zmol;
+       rec->varZm = rec->satrec_zmol;
    };
     
-   rec->varZf   =  m_zm + 2.0 * rec->const_zel * sin( m_zm);
-   rec->varSinzf = sin( m_zf);
-    m_f2    =  0.5 *  m_sinzf *  m_sinzf - 0.25;
-    m_f3    = -0.5 *  m_sinzf * cos( m_zf);
-    m_sel   =  m_ee2 *  m_f2 +  m_e3 *  m_f3;
-    m_sil   =  m_xi2 *  m_f2 +  m_xi3 *  m_f3;
-    m_sll   =  m_xl2 *  m_f2 +  m_xl3 *  m_f3 +  m_xl4 *  m_sinzf;
-    m_sghl  =  m_xgh2 *  m_f2 +  m_xgh3 *  m_f3 +  m_xgh4 *  m_sinzf;
-    m_shll  =  m_xh2 *  m_f2 +  m_xh3 *  m_f3;
-    m_pe    =  m_ses +  m_sel;
-    m_pinc  =  m_sis +  m_sil;
-    m_pl    =  m_sls +  m_sll;
-    m_pgh   =  m_sghs +  m_sghl;
-    m_ph    =  m_shs +  m_shll;
+    rec->varZf      =  rec->varZm+ 2.0 * rec->const_zel * sin(rec->varZm);
+    rec->varSinzf   =  sin(rec->varZf);
+    rec->varF2      =  0.5 *  m_sinzf *  m_sinzf - 0.25;
+    rec->varF3      = -0.5 *  m_sinzf * cos( m_zf);
+    rec->varSes     =  m_ee2 *  m_f2 +  m_e3 *  m_f3;
+    rec->varSil     =  m_xi2 *  m_f2 +  m_xi3 *  m_f3;
+    rec->varSll     =  m_xl2 *  m_f2 +  m_xl3 *  m_f3 +  m_xl4 *  m_sinzf;
+    rec->varSghl    =  m_xgh2 *  m_f2 +  m_xgh3 *  m_f3 +  m_xgh4 *  m_sinzf;
+    rec->varShll    =  m_xh2 *  m_f2 +  m_xh3 *  m_f3;
+    rec->varPe      =  rec->varSes  + rec->varSel;
+    rec->varPinc    =  rec->varSis +  rec->varSil;
+    rec->varPl      =  rec->varSls +  rec->varSll;
+    rec->varPgh     =  rec->varSghs +  rec->varSghl;
+    rec->varPh      =  rec->varShs +  rec->varShll;
     
     if (init == 'n')
     {
