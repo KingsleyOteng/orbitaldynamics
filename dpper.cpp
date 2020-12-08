@@ -87,40 +87,32 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
 {
  
     satrec *rec = new satrec();
-    // --------------------- local variables ------------------------
-   m_pi  = 3.14159267;
-   m_twopi = 2.0 * m_pi;
-
-    // ---------------------- constants -----------------------------
-   m_zns   = 1.19459e-5;
-   m_zes   = 0.01675;
-   m_znl   = 1.5835218e-4;
-   m_zel   = 0.05490;
 
    // --------------- calculate time varying periodics ----------- */
-   m_zm    = m_zmos + m_zns * m_t;
+   rec->varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
+    
    // be sure that the initial call has time set to zero
    if (init == 'y')
    {
-       m_zm = m_zmos;
+       rec->varZm   = rec->satrec_zmos ;
    };
-   m_zf    = m_zm + 2.0 * m_zes * sin(m_zm);
-   m_sinzf = sin(m_zf);
-   m_f2    =  0.5 * m_sinzf * m_sinzf - 0.25;
-   m_f3    = -0.5 * m_sinzf * cos(m_zf);
-   m_ses   = m_se2 * m_f2 + m_se3 * m_f3;
-   m_sis   = m_si2 * m_f2 + m_si3 * m_f3;
-   m_sls   = m_sl2 * m_f2 + m_sl3 * m_f3 + m_sl4 * m_sinzf;
-   m_sghs  = m_sgh2 * m_f2 + m_sgh3 * m_f3 + m_sgh4 * m_sinzf;
-   m_shs   = m_sh2 * m_f2 + m_sh3 * m_f3;
-   m_zm    = m_zmol + m_znl * m_t;
+   rec->varZf  = rec->varZm  + 2.0 * rec->const_zes * sin(rec->varZm);
+   rec->varSinzf = sin(rec->varZf);
+   rec->varF2    =  0.5 * rec->varSinzf * rec->varSinzf - 0.25;
+   rec->varF3    = -0.5 * m_sinzf * cos(m_zf);
+   rec->varSes   = m_se2 * m_f2 + m_se3 * m_f3;
+   rec->varSis   = m_si2 * m_f2 + m_si3 * m_f3;
+   rec->varSls   = m_sl2 * m_f2 + m_sl3 * m_f3 + m_sl4 * m_sinzf;
+   rec->varSghs  = m_sgh2 * m_f2 + m_sgh3 * m_f3 + m_sgh4 * m_sinzf;
+   rec->varShs   = m_sh2 * m_f2 + m_sh3 * m_f3;
+   rec->varZm    = m_zmol + rec->const_znl * m_t;
     
    if (init == 'y')
    {
        m_zm = m_zmol;
    };
     
-   m_zf    =  m_zm + 2.0 * m_zel * sin( m_zm);
+   m_zf    =  m_zm + 2.0 * rec->const_zel * sin( m_zm);
     m_sinzf = sin( m_zf);
     m_f2    =  0.5 *  m_sinzf *  m_sinzf - 0.25;
     m_f3    = -0.5 *  m_sinzf * cos( m_zf);
@@ -175,12 +167,12 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
             m_dbet   = -m_ph * m_sinop + m_pinc * m_cosip * m_cosop;
             m_alfdp  = m_alfdp + m_dalf;
             m_betdp  = m_betdp + m_dbet;
-            m_nodep  = remainder(m_nodep, m_twopi);
+            m_nodep  = remainder(m_nodep, rec->const_twopi);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
             if ((m_nodep < 0.0) & (m_opsmode == 'a'))
             {
-                m_nodep = m_nodep + m_twopi;
+                m_nodep = m_nodep + rec->const_twopi;
             }
             m_xls    = m_mp + m_argpp + m_cosip * m_nodep;
             m_dls    = m_pl + m_pgh - m_pinc * m_nodep * m_sinip;
@@ -192,18 +184,18 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
                 
             if ((m_nodep < 0.0) & (m_opsmode == 'a'))
             {
-                m_nodep = m_nodep + m_twopi;
+                m_nodep = m_nodep + rec->const_twopi;
             }
             
-            if (abs(m_xnoh - m_nodep) > m_pi)
+            if (abs(m_xnoh - m_nodep) > rec->const_pi)
             {
                 if (m_nodep < m_xnoh)
                 {
-                    m_nodep = m_nodep + m_twopi;
+                    m_nodep = m_nodep + rec->const_twopi;
                 }
                 else
                 {
-                    m_nodep = m_nodep - m_twopi;
+                    m_nodep = m_nodep - rec->const_twopi;
                 }
             }
             m_mp    = m_mp + m_pl;
