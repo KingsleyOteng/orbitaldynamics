@@ -200,7 +200,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
                 }
             }
             rec->satrec_mp   = rec->satrec_mp    + m_pl;
-            rec->satrec_argpp  = m_xls - m_mp - m_cosip * rec->satrec_nodep;
+            rec->satrec_argpp  = m_xls - rec->satrec_mp  - rec->varCosip * rec->satrec_nodep;
         }
     }
 
