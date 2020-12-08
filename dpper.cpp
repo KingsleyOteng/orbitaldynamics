@@ -177,9 +177,9 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
             }
             rec->varXls    = rec->varMp + rec->satrec_argpp  + m_cosip * rec->satrec_nodep;
             rec->varDls    = m_pl + m_pgh - m_pinc * rec->satrec_nodep* m_sinip;
-            rec->varXls    = rec->varXls   + rec->varDls ;
+            rec->varXls    = rec->varXls   + rec->varDls;
             rec->varXnoh   = rec->satrec_nodep;
-            rec->satrec_nodep  = atan2(m_alfdp, m_betdp);
+            rec->satrec_nodep  = atan2(rec->varAlfdp  , rec->varBetdp);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
                 
@@ -188,9 +188,9 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
                 rec->satrec_nodep = rec->satrec_nodep + rec->const_twopi;
             }
             
-            if (abs(m_xnoh - m_nodep) > rec->const_pi)
+            if (abs(rec->varXnoh - rec->satrec_nodep) > rec->const_pi)
             {
-                if (rec->satrec_nodep < m_xnoh)
+                if (rec->satrec_nodep < rec->varXnoh)
                 {
                     rec->satrec_nodep = rec->satrec_nodep + rec->const_twopi;
                 }
@@ -199,8 +199,8 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
                     rec->satrec_nodep = rec->satrec_nodep - rec->const_twopi;
                 }
             }
-            rec->satrec_mp   = rec->satrec_mp    + m_pl;
-            rec->satrec_argpp  = m_xls - rec->satrec_mp  - rec->varCosip * rec->satrec_nodep;
+            rec->satrec_mp   = rec->satrec_mp + rec->varPl  ;
+            rec->satrec_argpp  = rec->varXls  - rec->satrec_mp - rec->varCosip * rec->satrec_nodep;
         }
     }
 
