@@ -160,8 +160,8 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         else
         {
             // ---- apply periodics with lyddane modification ---- */
-            m_sinop  = sin(m_nodep);
-            m_cosop  = cos(m_nodep);
+            rec->varSinop = sin(m_nodep);
+            rec->varCosop = cos(m_nodep);
             m_alfdp  = m_sinip * m_sinop;
             m_betdp  = m_sinip * m_cosop;
             m_dalf   =  m_ph * m_cosop + m_pinc * m_cosip * m_sinop;
