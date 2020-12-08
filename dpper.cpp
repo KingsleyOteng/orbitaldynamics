@@ -89,22 +89,23 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     satrec *rec = new satrec();
 
    // --------------- calculate time varying periodics ----------- */
-   m_zm    = m_zmos + rec->const_zns * m_t;
+   rec->varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
+    
    // be sure that the initial call has time set to zero
    if (init == 'y')
    {
-       m_zm = m_zmos;
+       rec->varZm   = rec->satrec_zmos ;
    };
-   m_zf    = m_zm + 2.0 * rec->const_zes * sin(m_zm);
-   m_sinzf = sin(m_zf);
-   m_f2    =  0.5 * m_sinzf * m_sinzf - 0.25;
-   m_f3    = -0.5 * m_sinzf * cos(m_zf);
-   m_ses   = m_se2 * m_f2 + m_se3 * m_f3;
-   m_sis   = m_si2 * m_f2 + m_si3 * m_f3;
-   m_sls   = m_sl2 * m_f2 + m_sl3 * m_f3 + m_sl4 * m_sinzf;
-   m_sghs  = m_sgh2 * m_f2 + m_sgh3 * m_f3 + m_sgh4 * m_sinzf;
-   m_shs   = m_sh2 * m_f2 + m_sh3 * m_f3;
-   m_zm    = m_zmol + rec->const_znl * m_t;
+   rec->varZf  = rec->varZm  + 2.0 * rec->const_zes * sin(rec->varZm);
+   rec->varSinzf = sin(rec->varZf);
+   rec->varF2    =  0.5 * rec->varSinzf * rec->varSinzf - 0.25;
+   rec->varF3    = -0.5 * rec->varSinzf * cos(rec->varZf);
+   rec->varSes   = rec->satrec_se2 * rec->varF2  + rec->satrec_se3 * rec->varF3;
+   rec->varSis   = rec->satrec_si2 * rec->varF2 + rec->satrec_si3 * rec->varF3;
+   rec->varSls   = rec->satrec_sl2 * rec->varF2 + rec->satrec_sl3 * m_f3 + rec->satrec_sl4 * rec->varSinzf ;
+   rec->varSghs  = rec->satrec_sgh2 * rec->varF2 + rec->satrec_sgh3 * rec->varF3 + rec->satrec_sgh4 * rec->varSinzf;
+   rec->varShs   = rec->satrec_sh2 * rec->varF2 + rec->satrec_sh3 * rec->varF3  ;
+   rec->varZm    = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
     
    if (init == 'y')
    {
