@@ -109,11 +109,11 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     
    if (init == 'y')
    {
-       m_zm = m_zmol;
+        rec->varZm = rec->satrec_zmol;
    };
     
-   m_zf    =  m_zm + 2.0 * rec->const_zel * sin( m_zm);
-    m_sinzf = sin( m_zf);
+   rec->varZf   =  m_zm + 2.0 * rec->const_zel * sin( m_zm);
+   rec->varSinzf = sin( m_zf);
     m_f2    =  0.5 *  m_sinzf *  m_sinzf - 0.25;
     m_f3    = -0.5 *  m_sinzf * cos( m_zf);
     m_sel   =  m_ee2 *  m_f2 +  m_e3 *  m_f3;
