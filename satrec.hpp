@@ -26,7 +26,7 @@ public:
     double const_zes   = 0.01675;
     double const_znl   = 1.5835218e-4;
     double const_zel   = 0.05490;
-    
+    char   global_opsmode;
     
     // outputs
     double

@@ -153,9 +153,9 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         {
             rec->varPh          = rec->varMp  / rec->varSinip ;
             rec->varPgh         = rec->varPh - m_cosip * rec->varPh;
-            rec->varArgpp       = rec->varArgpp + rec->varPgh;
-            rec->varNodep       = rec->varArgpp  + rec->varPh;
-            rec->varMp          = rec->varMp  + rec->varPl;
+            rec->satrec_argpp   = rec->satrec_argpp + rec->varPgh;
+            rec->satrec_nodep   = rec->satrec_argpp   + rec->varPh;
+            rec->satrec_mp      = rec->satrec_mp  + rec->varPl;
         }
         else
         {
@@ -171,11 +171,11 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
             rec->varNodep   = remainder(rec->varNodep, rec->const_twopi);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
-            if ((rec->varNodep < 0.0) & (rec->varOpsmode == 'a'))
+            if ((rec->satrec_nodep< 0.0) & (rec->global_opsmode == 'a'))
             {
-                rec->varNodep  = rec->varNodep  + rec->const_twopi;
+                rec->satrec_nodep = rec->satrec_nodep  + rec->const_twopi;
             }
-            rec->varXls    = m_mp + m_argpp + m_cosip * m_nodep;
+            rec->varXls    = rec->varMp + rec->satrec_argpp  + m_cosip * m_nodep;
             rec->varDls    = m_pl + m_pgh - m_pinc * m_nodep * m_sinip;
             rec->varXls    = m_xls + m_dls;
             rec->varXnoh   = m_nodep;
@@ -183,9 +183,9 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
                 
-            if ((m_nodep < 0.0) & (m_opsmode == 'a'))
+            if ((rec->satrec_nodep < 0.0) & (rec->global_opsmode == 'a'))
             {
-                m_nodep = m_nodep + rec->const_twopi;
+                rec->satrec_nodep = rec->satrec_nodep + rec->const_twopi;
             }
             
             if (abs(m_xnoh - m_nodep) > rec->const_pi)
