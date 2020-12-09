@@ -65,7 +65,6 @@ public:
     void        set_parameters (satrec * rec);
     void        set_model();
     
-    // variables
     double
         varZm,
         varZmos,
