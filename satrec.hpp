@@ -80,7 +80,7 @@ public:
     satrec_argpp,
     satrec_mp;
     
-    // varIables
+    // variables
     double
     varZm,
     varZmos,
@@ -155,4 +155,5 @@ public:
    
 };
 
-#endif /* satrec_hpp */
+#endif
+/* satrec_hpp */
