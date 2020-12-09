@@ -123,14 +123,14 @@ sgp4::sgp4                            ()
     dspace_model *models = new dspace_model();
     orb -> SetSATnumber (m_satellite_number);
     
-    //  % /* ------------------ set mathematical constants --------------- */
-    //  %  outputs       :
-    //  %    tumin       - minutes in one time unit
-    //  %    mu          - earth gravitational parameter
-    //  %    radiusearthkm - radius of the earth in km
-    //  %    xke         - reciprocal of tumin
-    //  %    j2, j3, j4  - un-normalized zonal harmonic values
-    //  %    j3oj2       - j3 divided by j2
+    //   ------------------ set mathematical constants --------------- 
+    //    outputs       :
+    //      tumin       - minutes in one time unit
+    //      mu          - earth gravitational parameter
+    //      radiusearthkm - radius of the earth in km
+    //      xke         - reciprocal of tumin
+    //     j2, j3, j4  - un-normalized zonal harmonic values
+    //      j3oj2       - j3 divided by j2
     
     m_pi            = 3.14159267;
     m_twopi         = 2.0 * m_pi;
@@ -140,7 +140,7 @@ sgp4::sgp4                            ()
     
     m_satrec_t     = 0;
     // what is the 'tsince' variable
-    //m_satrec_t=tsince;
+    // m_satrec_t=tsince;
     m_satrec_error = 0;
     m_mrt = 0.0;
     
@@ -194,11 +194,12 @@ sgp4::sgp4                            ()
     
     if (m_nm <= 0.0)
     {
-        //      cout << (1,'# error nm %f\n', nm);
+        cout << (1,'# error nm %f\n', m_nm);
         m_satrec_error = 2;
     }
     
-    ///check the following expression
+    //check the following expression
+    
     m_am = pow((m_xke / nm),m_x2o3) * m_tempa * m_tempa;
     m_nm = pow(m_xke / m_am,1.5);
     m_em = m_em - m_tempe;
@@ -224,11 +225,11 @@ sgp4::sgp4                            ()
     m_xlm    = remainder(m_xlm, m_twopi);
     m_mm     = remainder(m_xlm - m_argpm - m_nodem, m_twopi);
     
-    ///* ----------------- compute extra mean quantities ------------- */
+    // ---------------- compute extra mean quantities -------------
     m_sinim = sin(inclm);
     m_cosim = cos(inclm);
     
-    // /* -------------------- add lunar-solar periodics -------------- */
+    // -------------------- add lunar-solar periodics --------------
     m_ep     = m_em;
     m_xincp  = m_inclm;
     m_argpp  = m_argpm;
@@ -268,7 +269,7 @@ sgp4::sgp4                            ()
         }
     }
     
-    ///* -------------------- long period periodics ------------------ */
+    // -------------------- long period periodics ------------------
     if (m_satrec_method == 'd')
     {
         m_sinip =  sin(m_xincp);
@@ -289,7 +290,7 @@ sgp4::sgp4                            ()
     m_aynl = m_ep* sin(m_argpp) + m_temp * m_satrec_aycof;
     m_xl   = m_mp + m_argpp + m_nodep + m_temp * m_satrec_xlcof * m_axnl;
 
-    /// --------------------- solve kepler's equation --------------- */
+    //--------------------- solve kepler's equation ---------------
     m_u    = remainder(m_xl - m_nodep, m_twopi);
     m_eo1  = m_u;
     m_tem5 = 9999.9;
