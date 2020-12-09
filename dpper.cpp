@@ -90,57 +90,57 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     
     // --------------- calculate time varying periodics -----------
     
-    rec->varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
+    varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
     
     // be sure that the initial call has time set to zero
     if (rec->satrec_init == 'y')
     {
-        rec->varZm   = rec->satrec_zmos;
+        varZm   = rec->satrec_zmos;
     };
-    rec->varZf    = rec->varZm  + 2.0 * rec->const_zes * sin(rec->varZm);
-    rec->varSinzf = sin(rec->varZf);
-    rec->varF2    =  0.5 * rec->varSinzf * rec->varSinzf - 0.25;
-    rec->varF3    = -0.5 * rec->varSinzf * cos(rec->varZf);
-    rec->varSes   = rec->satrec_se2 * rec->varF2  + rec->satrec_se3 * rec->varF3;
-    rec->varSis   = rec->satrec_si2 * rec->varF2 + rec->satrec_si3 * rec->varF3;
-    rec->varSls   = rec->satrec_sl2 * rec->varF2 + rec->satrec_sl3 * m_f3 + rec->satrec_sl4 * rec->varSinzf;
-    rec->varSghs  = rec->satrec_sgh2 * rec->varF2 + rec->satrec_sgh3 * rec->varF3 + rec->satrec_sgh4 * rec->varSinzf;
-    rec->varShs   = rec->satrec_sh2 * rec->varF2 + rec->satrec_sh3 * rec->varF3;
-    rec->varZm    = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
+    varZf    = varZm  + 2.0 * rec->const_zes * sin(varZm);
+    varSinzf = sin(varZf);
+    varF2    =  0.5 * varSinzf * varSinzf - 0.25;
+    varF3    = -0.5 * varSinzf * cos(varZf);
+    varSes   = rec->satrec_se2 * varF2  + rec->satrec_se3 * varF3;
+    varSis   = rec->satrec_si2 * varF2 + rec->satrec_si3 * varF3;
+    varSls   = rec->satrec_sl2 * varF2 + rec->satrec_sl3 * m_f3 + rec->satrec_sl4 * varSinzf;
+    varSghs  = rec->satrec_sgh2 * varF2 + rec->satrec_sgh3 * varF3 + rec->satrec_sgh4 * varSinzf;
+    varShs   = rec->satrec_sh2 * varF2 + rec->satrec_sh3 * varF3;
+    varZm    = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
     
     if (rec->satrec_init == 'y')
     {
-        rec->varZm = rec->satrec_zmol;
+        varZm = rec->satrec_zmol;
     };
     
-    rec->varZf      =  rec->varZm+ 2.0 * rec->const_zel * sin(rec->varZm);
-    rec->varSinzf   =  sin(rec->varZf);
-    rec->varF2      =  0.5 *  rec->varSinzf  *  rec->varSinzf  - 0.25;
-    rec->varF3      = -0.5 *  rec->varSinzf  * cos( m_zf);
-    rec->varSel     =  rec->satrec_ee2 *  rec->varF2    +  rec->satrec_e3 *  rec->varF3;
-    rec->varSil     =  rec->satrec_xi2 *  rec->varF2    +  m_xi3 *  rec->varF3;
-    rec->varSll     =  rec->satrec_xl2 *  rec->varF2    +  rec->satrec_xl3 *  rec->varF3 + rec->satrec_xl4 *  rec->varSinzf ;
-    rec->varSghl    =  rec->satrec_xgh2 * rec->varF3    +  rec->satrec_xgh3 *  rec->varF3 +  rec->satrec_xgh4 *  rec->varSinzf;
-    rec->varShll    =  rec->satrec_xh2  *  rec->varF2   +  rec->satrec_xh3 *  rec->varF3;
+    varZf      =  varZm+ 2.0 * rec->const_zel * sin(varZm);
+    varSinzf   =  sin(varZf);
+    varF2      =  0.5 *  varSinzf  *  varSinzf  - 0.25;
+    varF3      = -0.5 *  varSinzf  * cos( m_zf);
+    varSel     =  rec->satrec_ee2 *  varF2    +  rec->satrec_e3 *  varF3;
+    varSil     =  rec->satrec_xi2 *  varF2    +  m_xi3 *  varF3;
+    varSll     =  rec->satrec_xl2 *  varF2    +  rec->satrec_xl3 *  varF3 + rec->satrec_xl4 *  varSinzf ;
+    varSghl    =  rec->satrec_xgh2 * varF3    +  rec->satrec_xgh3 *  varF3 +  rec->satrec_xgh4 *  varSinzf;
+    varShll    =  rec->satrec_xh2  *  varF2   +  rec->satrec_xh3 *  varF3;
     
-    rec->varPe      =  rec->varSes  + rec->varSel;
-    rec->varPinc    =  rec->varSis +  rec->varSil;
-    rec->varPl      =  rec->varSls +  rec->varSll;
-    rec->varPgh     =  rec->varSghs +  rec->varSghl;
-    rec->varPh      =  rec->varShs +  rec->varShll;
+    varPe      =  varSes  + varSel;
+    varPinc    =  varSis +  varSil;
+    varPl      =  varSls +  varSll;
+    varPgh     =  varSghs +  varSghl;
+    varPh      =  varShs +  varShll;
     
     if (rec->satrec_init == 'n')
     {
         //  //  0.2 rad = 11.45916 deg
-        rec->varPe      = rec->varPe  -  rec->satrec_peo;
-        rec->varPinc    = rec->varPinc - rec->satrec_pinco;
-        rec->varPl      = rec->varPl - rec->satrec_plo;
-        rec->varPgh     = rec->varPgh  - rec->satrec_pgho;
-        rec->varPh      = rec->varPh  - rec->satrec_pho;
-        rec->satrec_inclp   = rec->satrec_inclp  + rec->varPinc;
-        rec->satrec_ep  = rec->satrec_ep + rec->varPe;
-        rec->varSinip   = sin(rec->satrec_inclp);
-        rec->varCosip   = cos(rec->satrec_inclp);
+        varPe      = varPe  -  rec->satrec_peo;
+        varPinc    = varPinc - rec->satrec_pinco;
+        varPl      = varPl - rec->satrec_plo;
+        varPgh     = varPgh  - rec->satrec_pgho;
+        varPh      = varPh  - rec->satrec_pho;
+        rec->satrec_inclp   = rec->satrec_inclp  + varPinc;
+        rec->satrec_ep  = rec->satrec_ep + varPe;
+        varSinip   = sin(rec->satrec_inclp);
+        varCosip   = cos(rec->satrec_inclp);
         
         // ----------------- apply periodics directly ------------
         //  sgp4fix for lyddane choice
@@ -153,23 +153,23 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         
         if (inclp >= 0.2)
         {
-            rec->varPh          = rec->satrec_mp  / rec->varSinip;
-            rec->varPgh         = rec->varPh - m_cosip * rec->varPh;
-            rec->satrec_argpp   = rec->satrec_argpp     + rec->varPgh;
-            rec->satrec_nodep   = rec->satrec_argpp     + rec->varPh;
-            rec->satrec_mp      = rec->satrec_mp        + rec->varPl;
+            varPh          = rec->satrec_mp  / varSinip;
+            varPgh         = varPh - m_cosip * varPh;
+            rec->satrec_argpp   = rec->satrec_argpp     + varPgh;
+            rec->satrec_nodep   = rec->satrec_argpp     + varPh;
+            rec->satrec_mp      = rec->satrec_mp        + varPl;
         }
         else
         {
             // ---- apply periodics with lyddane modification ----
-            rec->varSinop = sin(rec->satrec_nodep);
-            rec->varCosop = cos(rec->satrec_nodep);
-            rec->varAlfdp  = rec->varSinop * rec->varSinop;
-            rec->varBetdp  = rec->varSinop * rec->varCosop;
-            rec->varDalf   =  rec->varPh * rec->varCosop  + rec->varPinc  * rec->varCosip * rec->varSinop;
-            rec->varDbet   = -rec->varPh * rec->varSinop  + rec->varPinc  * rec->varCosip  * rec->varCosop ;
-            rec->varAlfdp  = rec->varAlfdp  + rec->varDalf;
-            rec->varBetdp  = rec->varBetdp  + rec->varDbet ;
+            varSinop = sin(rec->satrec_nodep);
+            varCosop = cos(rec->satrec_nodep);
+            varAlfdp  = varSinop * varSinop;
+            varBetdp  = varSinop * varCosop;
+            varDalf   =  varPh * varCosop  + varPinc  * varCosip * varSinop;
+            varDbet   = -varPh * varSinop  + varPinc  * varCosip  * varCosop ;
+            varAlfdp  = varAlfdp  + varDalf;
+            varBetdp  = varBetdp  + varDbet ;
             rec->satrec_nodep  = remainder(rec->satrec_nodep, rec->const_twopi);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
@@ -177,11 +177,11 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
             {
                 rec->satrec_nodep = rec->satrec_nodep  + rec->const_twopi;
             }
-            rec->varXls    = rec->satrec_mp + rec->satrec_argpp + rec->varCosip * rec->satrec_nodep;
-            rec->varDls    = rec->varPl + rec->varPgh - rec->varPinc * rec->satrec_nodep * rec->varSinip ;
-            rec->varXls    = rec->varXls + rec->varDls;
-            rec->varXnoh   = rec->satrec_nodep;
-            rec->satrec_nodep  = atan2(rec->varAlfdp  , rec->varBetdp);
+            varXls    = rec->satrec_mp + rec->satrec_argpp + varCosip * rec->satrec_nodep;
+            varDls    = varPl + varPgh - varPinc * rec->satrec_nodep * varSinip ;
+            varXls    = varXls + varDls;
+            varXnoh   = rec->satrec_nodep;
+            rec->satrec_nodep  = atan2(varAlfdp  , varBetdp);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
             
@@ -190,9 +190,9 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
                 rec->satrec_nodep = rec->satrec_nodep + rec->const_twopi;
             }
             
-            if (abs(rec->varXnoh - rec->satrec_nodep) > rec->const_pi)
+            if (abs(varXnoh - rec->satrec_nodep) > rec->const_pi)
             {
-                if (rec->satrec_nodep < rec->varXnoh)
+                if (rec->satrec_nodep < varXnoh)
                 {
                     rec->satrec_nodep = rec->satrec_nodep + rec->const_twopi;
                 }
@@ -201,8 +201,8 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
                     rec->satrec_nodep = rec->satrec_nodep - rec->const_twopi;
                 }
             }
-            rec->satrec_mp   = rec->satrec_mp + rec->varPl;
-            rec->satrec_argpp  = rec->varXls - rec->satrec_mp - rec->varCosip * rec->satrec_nodep;
+            rec->satrec_mp   = rec->satrec_mp + varPl;
+            rec->satrec_argpp  = varXls - rec->satrec_mp - varCosip * rec->satrec_nodep;
         }
     }
     
@@ -213,57 +213,57 @@ void dpper::set_parameters (satrec * rec)
     
     // --------------- calculate time varying periodics -----------
     
-    rec->varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
+        varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
     
     // be sure that the initial call has time set to zero
     if (rec->satrec_init == 'y')
     {
-        rec->varZm   = rec->satrec_zmos;
+        varZm   = rec->satrec_zmos;
     };
-    rec->varZf    = rec->varZm  + 2.0 * rec->const_zes * sin(rec->varZm);
-    rec->varSinzf = sin(rec->varZf);
-    rec->varF2    =  0.5 * rec->varSinzf * rec->varSinzf - 0.25;
-    rec->varF3    = -0.5 * rec->varSinzf * cos(rec->varZf);
-    rec->varSes   = rec->satrec_se2 * rec->varF2  + rec->satrec_se3 * rec->varF3;
-    rec->varSis   = rec->satrec_si2 * rec->varF2 + rec->satrec_si3 * rec->varF3;
-    rec->varSls   = rec->satrec_sl2 * rec->varF2 + rec->satrec_sl3 * m_f3 + rec->satrec_sl4 * rec->varSinzf;
-    rec->varSghs  = rec->satrec_sgh2 * rec->varF2 + rec->satrec_sgh3 * rec->varF3 + rec->satrec_sgh4 * rec->varSinzf;
-    rec->varShs   = rec->satrec_sh2 * rec->varF2 + rec->satrec_sh3 * rec->varF3;
-    rec->varZm    = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
+    varZf    = varZm  + 2.0 * rec->const_zes * sin(varZm);
+    varSinzf = sin(varZf);
+    varF2    =  0.5 * varSinzf * varSinzf - 0.25;
+    varF3    = -0.5 * varSinzf * cos(varZf);
+    varSes   = rec->satrec_se2 * varF2  + rec->satrec_se3 * varF3;
+    varSis   = rec->satrec_si2 * varF2 + rec->satrec_si3 * varF3;
+    varSls   = rec->satrec_sl2 * varF2 + rec->satrec_sl3 * m_f3 + rec->satrec_sl4 * varSinzf;
+    varSghs  = rec->satrec_sgh2 * varF2 + rec->satrec_sgh3 * varF3 + rec->satrec_sgh4 * varSinzf;
+    varShs   = rec->satrec_sh2 * varF2 + rec->satrec_sh3 * varF3;
+    varZm    = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
     
     if (rec->satrec_init == 'y')
     {
-        rec->varZm = rec->satrec_zmol;
+        varZm = rec->satrec_zmol;
     };
     
-    rec->varZf      =  rec->varZm+ 2.0 * rec->const_zel * sin(rec->varZm);
-    rec->varSinzf   =  sin(rec->varZf);
-    rec->varF2      =  0.5 *  rec->varSinzf  *  rec->varSinzf  - 0.25;
-    rec->varF3      = -0.5 *  rec->varSinzf  * cos( m_zf);
-    rec->varSel     =  rec->satrec_ee2 *  rec->varF2    +  rec->satrec_e3 *  rec->varF3;
-    rec->varSil     =  rec->satrec_xi2 *  rec->varF2    +  m_xi3 *  rec->varF3;
-    rec->varSll     =  rec->satrec_xl2 *  rec->varF2    +  rec->satrec_xl3 *  rec->varF3 + rec->satrec_xl4 *  rec->varSinzf ;
-    rec->varSghl    =  rec->satrec_xgh2 * rec->varF3    +  rec->satrec_xgh3 *  rec->varF3 +  rec->satrec_xgh4 *  rec->varSinzf;
-    rec->varShll    =  rec->satrec_xh2  *  rec->varF2   +  rec->satrec_xh3 *  rec->varF3;
+    varZf      =  varZm+ 2.0 * rec->const_zel * sin(varZm);
+    varSinzf   =  sin(varZf);
+    varF2      =  0.5 *  varSinzf  *  varSinzf  - 0.25;
+    varF3      = -0.5 *  varSinzf  * cos(m_zf);
+    varSel     =  rec->satrec_ee2 *  varF2    +  rec->satrec_e3 * varF3;
+    varSil     =  rec->satrec_xi2 *  varF2    +  m_xi3 * varF3;
+    varSll     =  rec->satrec_xl2 *  varF2    +  rec->satrec_xl3 *  varF3 + rec->satrec_xl4 *  varSinzf ;
+    varSghl    =  rec->satrec_xgh2 * varF3    +  rec->satrec_xgh3 *  varF3 +  rec->satrec_xgh4 *  varSinzf;
+    varShll    =  rec->satrec_xh2  * varF2   +  rec->satrec_xh3 *  varF3;
     
-    rec->varPe      =  rec->varSes  + rec->varSel;
-    rec->varPinc    =  rec->varSis +  rec->varSil;
-    rec->varPl      =  rec->varSls +  rec->varSll;
-    rec->varPgh     =  rec->varSghs +  rec->varSghl;
-    rec->varPh      =  rec->varShs +  rec->varShll;
+    varPe      =  varSes  + varSel;
+    varPinc    =  varSis +  varSil;
+    varPl      =  varSls +  varSll;
+    varPgh     =  varSghs +  varSghl;
+    varPh      =  varShs +  varShll;
     
     if (rec->satrec_init == 'n')
     {
         //  //  0.2 rad = 11.45916 deg
-        rec->varPe      = rec->varPe  -  rec->satrec_peo;
-        rec->varPinc    = rec->varPinc - rec->satrec_pinco;
-        rec->varPl      = rec->varPl - rec->satrec_plo;
-        rec->varPgh     = rec->varPgh  - rec->satrec_pgho;
-        rec->varPh      = rec->varPh  - rec->satrec_pho;
-        rec->satrec_inclp   = rec->satrec_inclp  + rec->varPinc;
-        rec->satrec_ep  = rec->satrec_ep + rec->varPe;
-        rec->varSinip   = sin(rec->satrec_inclp);
-        rec->varCosip   = cos(rec->satrec_inclp);
+        varPe      = varPe  -  rec->satrec_peo;
+        varPinc    = varPinc - rec->satrec_pinco;
+        varPl      = varPl - rec->satrec_plo;
+        varPgh     = varPgh  - rec->satrec_pgho;
+        varPh      = varPh  - rec->satrec_pho;
+        rec->satrec_inclp   = rec->satrec_inclp  + varPinc;
+        rec->satrec_ep  = rec->satrec_ep + varPe;
+        varSinip   = sin(rec->satrec_inclp);
+        varCosip   = cos(rec->satrec_inclp);
         
         // ----------------- apply periodics directly ------------
         //  sgp4fix for lyddane choice
@@ -276,25 +276,25 @@ void dpper::set_parameters (satrec * rec)
         
         if (rec->satrec_inclp >= 0.2)
         {
-            rec->varPh          = rec->satrec_mp  / rec->varSinip;
-            rec->varPgh         = rec->varPh - m_cosip * rec->varPh;
-            rec->satrec_argpp   = rec->satrec_argpp     + rec->varPgh;
-            rec->satrec_nodep   = rec->satrec_argpp     + rec->varPh;
-            rec->satrec_mp      = rec->satrec_mp        + rec->varPl;
+            varPh          = rec->satrec_mp  / varSinip;
+            varPgh         = varPh - m_cosip * varPh;
+            rec->satrec_argpp   = rec->satrec_argpp     + varPgh;
+            rec->satrec_nodep   = rec->satrec_argpp     + varPh;
+            rec->satrec_mp      = rec->satrec_mp        + varPl;
         }
         else
         {
             
             // ---- apply periodics with lyddane modification ----
             
-            rec->varSinop = sin(rec->satrec_nodep);
-            rec->varCosop = cos(rec->satrec_nodep);
-            rec->varAlfdp  = rec->varSinop * rec->varSinop;
-            rec->varBetdp  = rec->varSinop * rec->varCosop;
-            rec->varDalf   =  rec->varPh * rec->varCosop  + rec->varPinc  * rec->varCosip * rec->varSinop;
-            rec->varDbet   = -rec->varPh * rec->varSinop  + rec->varPinc  * rec->varCosip  * rec->varCosop ;
-            rec->varAlfdp  = rec->varAlfdp  + rec->varDalf;
-            rec->varBetdp  = rec->varBetdp  + rec->varDbet ;
+            varSinop = sin(rec->satrec_nodep);
+            varCosop = cos(rec->satrec_nodep);
+            varAlfdp  = varSinop * varSinop;
+            varBetdp  = varSinop * varCosop;
+            varDalf   =  varPh * varCosop  + varPinc  * varCosip * varSinop;
+            varDbet   = -varPh * varSinop  + varPinc  * varCosip  * varCosop ;
+            varAlfdp  = varAlfdp  + varDalf;
+            varBetdp  = varBetdp  + varDbet ;
             rec->satrec_nodep  = remainder(rec->satrec_nodep, rec->const_twopi);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
@@ -302,11 +302,11 @@ void dpper::set_parameters (satrec * rec)
             {
                 rec->satrec_nodep = rec->satrec_nodep  + rec->const_twopi;
             }
-            rec->varXls    = rec->satrec_mp + rec->satrec_argpp + rec->varCosip * rec->satrec_nodep;
-            rec->varDls    = rec->varPl + rec->varPgh - rec->varPinc * rec->satrec_nodep * rec->varSinip ;
-            rec->varXls    = rec->varXls + rec->varDls;
-            rec->varXnoh   = rec->satrec_nodep;
-            rec->satrec_nodep  = atan2(rec->varAlfdp  , rec->varBetdp);
+            varXls    = rec->satrec_mp + rec->satrec_argpp + varCosip * rec->satrec_nodep;
+            varDls    = varPl + varPgh - varPinc * rec->satrec_nodep * varSinip ;
+            varXls    = varXls + varDls;
+            varXnoh   = rec->satrec_nodep;
+            rec->satrec_nodep  = atan2(varAlfdp  , varBetdp);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
             
@@ -315,9 +315,9 @@ void dpper::set_parameters (satrec * rec)
                 rec->satrec_nodep = rec->satrec_nodep + rec->const_twopi;
             }
             
-            if (abs(rec->varXnoh - rec->satrec_nodep) > rec->const_pi)
+            if (abs(varXnoh - rec->satrec_nodep) > rec->const_pi)
             {
-                if (rec->satrec_nodep < rec->varXnoh)
+                if (rec->satrec_nodep < varXnoh)
                 {
                     rec->satrec_nodep = rec->satrec_nodep + rec->const_twopi;
                 }
@@ -326,8 +326,8 @@ void dpper::set_parameters (satrec * rec)
                     rec->satrec_nodep = rec->satrec_nodep - rec->const_twopi;
                 }
             }
-            rec->satrec_mp   = rec->satrec_mp + rec->varPl;
-            rec->satrec_argpp  = rec->varXls - rec->satrec_mp - rec->varCosip * rec->satrec_nodep;
+            rec->satrec_mp   = rec->satrec_mp + varPl;
+            rec->satrec_argpp  = varXls - rec->satrec_mp - varCosip * rec->satrec_nodep;
         }
     }
     
