@@ -73,12 +73,14 @@ public:
     satrec_zmol,
     satrec_zmos,
     satrec_inclo,
-    satrec_init,
     satrec_ep,
-    satrec_inclp,
     satrec_nodep,
     satrec_argpp,
     satrec_mp;
+    
+    char
+    satrec_init,
+    satrec_inclp;
     
     // varIables
     double

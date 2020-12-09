@@ -92,7 +92,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     rec->varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
     
     // be sure that the initial call has time set to zero
-    if (init == 'y')
+    if (rec->satrec_init == 'y')
     {
         rec->varZm   = rec->satrec_zmos;
     };
@@ -107,7 +107,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     rec->varShs   = rec->satrec_sh2 * rec->varF2 + rec->satrec_sh3 * rec->varF3;
     rec->varZm    = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
     
-    if (init == 'y')
+    if (rec->satrec_init == 'y')
     {
         rec->varZm = rec->satrec_zmol;
     };
@@ -128,7 +128,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     rec->varPgh     =  rec->varSghs +  rec->varSghl;
     rec->varPh      =  rec->varShs +  rec->varShll;
     
-    if (init == 'n')
+    if (rec->satrec_init == 'n')
     {
         //  //  0.2 rad = 11.45916 deg
         rec->varPe      = rec->varPe  -  rec->satrec_peo;
@@ -209,13 +209,11 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
 void dpper::set_parameters (satrec * rec)
 {
     
-
-    
     // --------------- calculate time varying periodics ----------- */
     rec->varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
     
     // be sure that the initial call has time set to zero
-    if (init == 'y')
+    if (rec->satrec_init == 'y')
     {
         rec->varZm   = rec->satrec_zmos;
     };
@@ -230,7 +228,7 @@ void dpper::set_parameters (satrec * rec)
     rec->varShs   = rec->satrec_sh2 * rec->varF2 + rec->satrec_sh3 * rec->varF3;
     rec->varZm    = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
     
-    if (init == 'y')
+    if (rec->satrec_init == 'y')
     {
         rec->varZm = rec->satrec_zmol;
     };
@@ -251,7 +249,7 @@ void dpper::set_parameters (satrec * rec)
     rec->varPgh     =  rec->varSghs +  rec->varSghl;
     rec->varPh      =  rec->varShs +  rec->varShll;
     
-    if (init == 'n')
+    if (rec->satrec_init == 'n')
     {
         //  //  0.2 rad = 11.45916 deg
         rec->varPe      = rec->varPe  -  rec->satrec_peo;
@@ -272,7 +270,7 @@ void dpper::set_parameters (satrec * rec)
         //  use next line for original strn3 approach and original inclination
         //  if (inclo >= 0.2)
         //  use next line for gsfc version and perturbed inclination
-        if (inclp >= 0.2)
+        if (rec->satrec_inclp >= 0.2)
         {
             rec->varPh          = rec->satrec_mp  / rec->varSinip;
             rec->varPgh         = rec->varPh - m_cosip * rec->varPh;
