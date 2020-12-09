@@ -28,6 +28,8 @@ public:
     double const_zel   = 0.05490;
     char   global_opsmode;
     
+    char    satrec_init,    satrec_inclp;
+    
     // outputs
     double
     
@@ -77,10 +79,6 @@ public:
     satrec_nodep,
     satrec_argpp,
     satrec_mp;
-    
-    char
-    satrec_init,
-    satrec_inclp;
     
     // varIables
     double

@@ -11,7 +11,7 @@
 
 //  -----------------------------------------------------------------------------
 //
-//                           procedure dpper
+//                           class dpper
 //
 //   this procedure provides deep space long period periodic contributions
 //     to the mean elements.  by design, these periodics are zero at epoch.
@@ -79,7 +79,7 @@
 //    hoots, norad spacetrack report #6 1986
 //    hoots, schumacher and glover 2004
 //     vallado, crawford, hujsak, kelso  2006
-//  ----------------------------------------------------------------------------*/
+//  ----------------------------------------------------------------------------
 dpper::dpper()
 {};
 
@@ -88,7 +88,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     
     satrec *rec = new satrec();
     
-    // --------------- calculate time varying periodics ----------- */
+    // --------------- calculate time varying periodics -----------
     rec->varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
     
     // be sure that the initial call has time set to zero
@@ -141,7 +141,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         rec->varSinip   = sin(rec->satrec_inclp);
         rec->varCosip   = cos(rec->satrec_inclp);
         
-        // ----------------- apply periodics directly ------------ */
+        // ----------------- apply periodics directly ------------
         //  sgp4fix for lyddane choice
         //  strn3 used original inclination - this is technically feasible
         //  gsfc used perturbed inclination - also technically feasible
@@ -159,7 +159,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         }
         else
         {
-            // ---- apply periodics with lyddane modification ---- */
+            // ---- apply periodics with lyddane modification ----
             rec->varSinop = sin(rec->satrec_nodep);
             rec->varCosop = cos(rec->satrec_nodep);
             rec->varAlfdp  = rec->varSinop * rec->varSinop;
@@ -209,7 +209,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
 void dpper::set_parameters (satrec * rec)
 {
     
-    // --------------- calculate time varying periodics ----------- */
+    // --------------- calculate time varying periodics -----------
     rec->varZm    = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
     
     // be sure that the initial call has time set to zero
@@ -262,7 +262,7 @@ void dpper::set_parameters (satrec * rec)
         rec->varSinip   = sin(rec->satrec_inclp);
         rec->varCosip   = cos(rec->satrec_inclp);
         
-        // ----------------- apply periodics directly ------------ */
+        // ----------------- apply periodics directly ------------
         //  sgp4fix for lyddane choice
         //  strn3 used original inclination - this is technically feasible
         //  gsfc used perturbed inclination - also technically feasible
@@ -270,6 +270,7 @@ void dpper::set_parameters (satrec * rec)
         //  use next line for original strn3 approach and original inclination
         //  if (inclo >= 0.2)
         //  use next line for gsfc version and perturbed inclination
+        
         if (rec->satrec_inclp >= 0.2)
         {
             rec->varPh          = rec->satrec_mp  / rec->varSinip;
