@@ -28,8 +28,6 @@ public:
     double const_zel   = 0.05490;
     char   global_opsmode;
     
-    char    satrec_init,    satrec_inclp;
-    
     // outputs
     double
     output_satrec_eep,
@@ -78,78 +76,9 @@ public:
     satrec_argpp,
     satrec_mp;
     
-    // variables
- //     double 
- //     varZm,
- //     varZmos,
- //     varT,
- //     varZf,
- //     varSinzf,
- //    varF2,
- //     varF3,
- //     varSes,
- //     varSis,
- //     varSls,
- //     varSghs,
- //     varShs,
- //     varSe2,
- //     varSi2,
- //     varSe3,
- //     varSi3,
- //     varSl2,
- //     varSgh2,
- //     varSh2,
- //     varZmol,
- //     varSl3,
- //     varSgh3,
- //     varSgh4,
- //    varSl4,
- //   varSh3,
- //   varE3,
- //     varEe2,
- //     varSil,
- //     varXi2,
- //     varSel,
- //     varXi3,
- //     varSli,
- //     varSghl,
- //     varShll,
- //     varSll,
- //     varXl4,
- //     varXl2,
- //     varXl3,
- //    varXgh2,
- //     varXgh3,
- //     varXgh4,
- //     varXh2,
- //     varXh3,
- //     varPe,
- //     varPinc,
- //     varPl,
- //     varPgh,
- //     varPh,
- //    varPeo,
- //     varPinco,
- //    varPlo,
- //     varPgho,
- //     varEp,
- //     varPho,
- //     varInclp,
- //    varSinip,
- //     varCosip,
- //    varArgpp,
- //    varNodep,
- //    varMp,
- //    varSinop,
- //   varCosop,
- //    varAlfdp,
- //   varBetdp,
- //    varDalf,
- //    varDbet,
- //    varOpsmode,
- //    varXls,
- //    varDls,
- //    varXnoh;
+    char
+    satrec_init,
+    satrec_inclp;
    
 };
 
