@@ -4,15 +4,15 @@
 //
 //  Created by Kwadwo Oteng-Amoako on 06/12/2020.
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
-//
+/
 #include <stdio.h>
 #include <string>
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
 #include <vector>
 #include <iostream>
-#include <vector>       // c-11 vector
-#include <algorithm>    // c-11 algoithm
+#include <vector>      
+#include <algorithm>
 #include <time.h>
 #include <fstream>
 #include <stdio.h>
