@@ -94,7 +94,8 @@ void sgp4::set_wgs                              (orbital *model)
     {
         model_const_mu     = 398600.8;
         model_const_radiusearthkm = 6378.135;
-        model_const_xke    = 60.0 / (sqrt(model_const_radiusearthkm * model_const_radiusearthkm * model_const_radiusearthkm  / model_const_mu));
+        model_const_xke    = 60.0 /
+            (sqrt(model_const_radiusearthkm * model_const_radiusearthkm * model_const_radiusearthkm  / model_const_mu));
         model_const_tumin  = 1.0 / model_const_xke;
         model_const_j2     =   0.001082616;
         model_const_j3     =  -0.00000253881;
@@ -169,15 +170,13 @@ sgp4::sgp4                            ()
         m_tempe  = m_tempe + m_satrec_bstar * m_satrec_cc5 * (sin(m_mm) - m_satrec_sinmao);
         m_templ  = m_templ + m_satrec_t3cof * m_t3 + m_t4 * (m_satrec_t4cof + m_satrec_t * m_satrec_t5cof);
     };
-    
-    
+
     m_nm    = m_satrec_no;
     m_em    = m_satrec_ecco;
     m_inclm = m_satrec_inclo;
     
     if (satrec_method != 'd')
     {
-        
         tc = m_satrec_t;
         
         // set the parameters

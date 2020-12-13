@@ -308,6 +308,7 @@ void dpper::set_parameters (satrec * rec)
             varDls = varPl + varPgh - varPinc * rec->satrec_nodep * varSinip ;
             varXls = varXls + varDls;
             varXnoh = rec->satrec_nodep;
+            
             rec->satrec_nodep  = atan2(varAlfdp , varBetdp);
             
             // sgp4fix for afspc written intrinsic functions
