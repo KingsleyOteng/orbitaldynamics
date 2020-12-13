@@ -4,14 +4,14 @@
 //
 //  Created by Kwadwo Oteng-Amoako on 06/12/2020.
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
-/
+//
 #include <stdio.h>
 #include <string>
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
 #include <vector>
 #include <iostream>
-#include <vector>      
+#include <vector>
 #include <algorithm>
 #include <time.h>
 #include <fstream>
@@ -127,7 +127,6 @@ public:
         (double e3, double ee2, double peo,double pgho,double pho, double pinco, double  plo, double se2,double se3, double sgh2, double sgh3, double sgh4, double  sh2, double sh3, double si2, double si3, double sl2, double sl3, double sl4, double t, double xgh2, double xgh3, double xgh4, double xh2, double xh3, double xi2, double xi3, double xl2, double xl3, double xl4, double zmol, double zmos, double inclo, double init, double ep, double inclp, double nodep, double argpp, double mp);
     void        set_parameters (satrec * rec);
     void        set_model();
-    
 };
 
 #endif /* dpper_hpp */
