@@ -9,7 +9,7 @@
 #include "sgp4.hpp"
 #include "dpper.hpp"
 #include <cmath>
-#include <math.h> //Not sure about including math.h
+#include <math.h> 
 #include <string>
 #include "dspace_model.hpp"
 
