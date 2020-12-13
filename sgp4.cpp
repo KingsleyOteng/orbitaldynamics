@@ -67,9 +67,7 @@ double      sgp4::dspace
 {return 0;}
 
 void sgp4::set_model                            ()
-{
-    
-}
+{}
 
 void sgp4::set_wgs                              (orbital *model)
 {
