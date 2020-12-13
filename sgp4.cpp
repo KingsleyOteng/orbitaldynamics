@@ -207,7 +207,7 @@ sgp4::sgp4                            ()
     // fix tolerance for error recognition
     if ((m_em >= 1.0) || (m_em < -0.001) || (m_am < 0.95))
     {
-        //     fprintf(1,'# error em %f\n', em);
+        // fprintf(1,'# error em %f\n', em);
         m_satrec_error = 1;
     }
     
@@ -317,8 +317,6 @@ sgp4::sgp4                            ()
         m_eo1   = m_eo1 + m_tem5;
         m_ktr = m_ktr + 1;
     }
-    
-    
 }
 
 // destructor
