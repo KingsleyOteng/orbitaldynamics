@@ -214,13 +214,14 @@ void dpper::set_parameters (satrec * rec)
     
     // --------------- calculate time varying periodics -----------
     
-        varZm = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
+    varZm = rec->satrec_zmos + rec->const_zns * rec->satrec_zmos;
     
     // be sure that the initial call has time set to zero
     if (rec->satrec_init == 'y')
     {
         varZm = rec->satrec_zmos;
     };
+    
     varZf = varZm  + 2.0 * rec->const_zes * sin(varZm);
     varSinzf = sin(varZf);
     varF2 =  0.5 * varSinzf * varSinzf - 0.25;
@@ -287,7 +288,6 @@ void dpper::set_parameters (satrec * rec)
         {
             
             // ---- apply periodics with lyddane modification ----
-            
             varSinop = sin(rec->satrec_nodep);
             varCosop = cos(rec->satrec_nodep);
             varAlfdp  = varSinop * varSinop;
@@ -297,6 +297,7 @@ void dpper::set_parameters (satrec * rec)
             varAlfdp  = varAlfdp + varDalf;
             varBetdp  = varBetdp + varDbet ;
             rec->satrec_nodep  = remainder(rec->satrec_nodep, rec->const_twopi);
+            
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
             if ((rec->satrec_nodep< 0.0) & (rec->global_opsmode == 'a'))
@@ -307,7 +308,9 @@ void dpper::set_parameters (satrec * rec)
             varDls = varPl + varPgh - varPinc * rec->satrec_nodep * varSinip ;
             varXls = varXls + varDls;
             varXnoh = rec->satrec_nodep;
+            
             rec->satrec_nodep  = atan2(varAlfdp , varBetdp);
+            
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
             
