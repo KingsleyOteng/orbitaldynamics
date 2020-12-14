@@ -103,7 +103,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     varF3 = -0.5 * varSinzf * cos(varZf);
     varSes = rec->satrec_se2 * varF2  + rec->satrec_se3 * varF3;
     varSis = rec->satrec_si2 * varF2 + rec->satrec_si3 * varF3;
-    varSls = rec->satrec_sl2 * varF2 + rec->satrec_sl3 * m_f3 + rec->satrec_sl4 * varSinzf;
+    varSls = rec->satrec_sl2 * varF2 + rec->satrec_sl3 * varF3 + rec->satrec_sl4 * varSinzf;
     varSghs = rec->satrec_sgh2 * varF2 + rec->satrec_sgh3 * varF3 + rec->satrec_sgh4 * varSinzf;
     varShs = rec->satrec_sh2 * varF2 + rec->satrec_sh3 * varF3;
     varZm = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
@@ -116,9 +116,9 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     varZf = varZm+ 2.0 * rec->const_zel * sin(varZm);
     varSinzf = sin(varZf);
     varF2 = 0.5 *  varSinzf * varSinzf  - 0.25;
-    varF3 = -0.5 *  varSinzf * cos( m_zf);
+    varF3 = -0.5 *  varSinzf * cos(varZf);
     varSel = rec->satrec_ee2 * varF2 + rec->satrec_e3 * varF3;
-    varSil = rec->satrec_xi2 * varF2 + m_xi3 * varF3;
+    varSil = rec->satrec_xi2 * varF2 + rec->satrec_xi3 * varF3;
     varSll = rec->satrec_xl2 * varF2 + rec->satrec_xl3 * varF3 + rec->satrec_xl4 * varSinzf ;
     varSghl = rec->satrec_xgh2 * varF3 + rec->satrec_xgh3 *  varF3 +  rec->satrec_xgh4 * varSinzf;
     varShll = rec->satrec_xh2  * varF2 + rec->satrec_xh3 *  varF3;
@@ -154,7 +154,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         if (inclp >= 0.2)
         {
             varPh = rec->satrec_mp  / varSinip;
-            varPgh = varPh - m_cosip * varPh;
+            varPgh = varPh - varCosip * varPh;
             
             rec->satrec_argpp = rec->satrec_argpp  + varPgh;
             rec->satrec_nodep = rec->satrec_argpp + varPh;
@@ -228,7 +228,7 @@ void dpper::set_parameters (satrec * rec)
     varF3 = -0.5 * varSinzf * cos(varZf);
     varSes = rec->satrec_se2 * varF2 + rec->satrec_se3 * varF3;
     varSis = rec->satrec_si2 * varF2 + rec->satrec_si3 * varF3;
-    varSls = rec->satrec_sl2 * varF2 + rec->satrec_sl3 * m_f3 + rec->satrec_sl4 * varSinzf;
+    varSls = rec->satrec_sl2 * varF2 + rec->satrec_sl3 * varF3 + rec->satrec_sl4 * varSinzf;
     varSghs = rec->satrec_sgh2 * varF2 + rec->satrec_sgh3 * varF3 + rec->satrec_sgh4 * varSinzf;
     varShs = rec->satrec_sh2 * varF2 + rec->satrec_sh3 * varF3;
     varZm = rec->satrec_zmol + rec->const_znl * rec->satrec_t;
@@ -241,9 +241,9 @@ void dpper::set_parameters (satrec * rec)
     varZf      =  varZm+ 2.0 * rec->const_zel * sin(varZm);
     varSinzf   =  sin(varZf);
     varF2      =  0.5 * varSinzf * varSinzf - 0.25;
-    varF3      = -0.5 * varSinzf * cos(m_zf);
+    varF3      = -0.5 * varSinzf * cos(varZf);
     varSel     =  rec->satrec_ee2 *  varF2 + rec->satrec_e3 * varF3;
-    varSil     =  rec->satrec_xi2 *  varF2 + m_xi3 * varF3;
+    varSil     =  rec->satrec_xi2 *  varF2 + rec->satrec_xi3  * varF3;
     varSll     =  rec->satrec_xl2 *  varF2 + rec->satrec_xl3 * varF3 + rec->satrec_xl4 * varSinzf ;
     varSghl    =  rec->satrec_xgh2 * varF3 + rec->satrec_xgh3 * varF3 +  rec->satrec_xgh4 * varSinzf;
     varShll    =  rec->satrec_xh2  * varF2 + rec->satrec_xh3 * varF3;
@@ -278,11 +278,11 @@ void dpper::set_parameters (satrec * rec)
         
         if (rec->satrec_inclp >= 0.2)
         {
-            varPh = rec->satrec_mp / varSinip;
-            varPgh = varPh - m_cosip * varPh;
-            rec->satrec_argpp = rec->satrec_argpp + varPgh;
-            rec->satrec_nodep = rec->satrec_argpp + varPh;
-            rec->satrec_mp = rec->satrec_mp + varPl;
+            varPh               = rec->satrec_mp / varSinip;
+            varPgh              = varPh - varCosip * varPh;
+            rec->satrec_argpp   = rec->satrec_argpp + varPgh;
+            rec->satrec_nodep   = rec->satrec_argpp + varPh;
+            rec->satrec_mp      = rec->satrec_mp + varPl;
         }
         else
         {
@@ -293,7 +293,7 @@ void dpper::set_parameters (satrec * rec)
             varAlfdp  = varSinop * varSinop;
             varBetdp  = varSinop * varCosop;
             varDalf   =  varPh * varCosop + varPinc * varCosip * varSinop;
-            varDbet   = -varPh * varSinop + varPinc * varCosip  * varCosop ;
+            varDbet   = -varPh * varSinop + varPinc * varCosip  * varCosop;
             varAlfdp  = varAlfdp + varDalf;
             varBetdp  = varBetdp + varDbet ;
             rec->satrec_nodep  = remainder(rec->satrec_nodep, rec->const_twopi);
@@ -330,6 +330,7 @@ void dpper::set_parameters (satrec * rec)
                     rec->satrec_nodep = rec->satrec_nodep - rec->const_twopi;
                 }
             }
+            
             rec->satrec_mp = rec->satrec_mp + varPl;
             rec->satrec_argpp = varXls - rec->satrec_mp - varCosip * rec->satrec_nodep;
         }
