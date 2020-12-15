@@ -115,7 +115,8 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         varZm = rec->satrec_zmol;
     };
     
-    varZf = varZm+ 2.0 * rec->const_zel * sin(varZm);
+    varSinzm = sin(varZm);
+    varZf = varZm+ 2.0 * rec->const_zel * varSinzm;
     varSinzf = sin(varZf);
     varF2 = 0.5 *  varSinzf * varSinzf  - 0.25;
     varF3 = -0.5 *  varSinzf * cos(varZf);
