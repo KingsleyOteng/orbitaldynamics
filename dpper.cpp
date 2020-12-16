@@ -246,7 +246,8 @@ void dpper::set_parameters (satrec * rec)
     varZf      =  varZm+ 2.0 * rec->const_zel * sin(varZm);
     varSinzf   =  sin(varZf);
     varF2      =  0.5 * varSinzf * varSinzf - 0.25;
-    varF3      = -0.5 * varSinzf * cos(varZf);
+    varCoszf   = cos(varZf);
+    varF3      = -0.5 * varSinzf * varCoszf;
     varSel     =  rec->satrec_ee2 *  varF2 + rec->satrec_e3 * varF3;
     varSil     =  rec->satrec_xi2 *  varF2 + rec->satrec_xi3  * varF3;
     varSll     =  rec->satrec_xl2 *  varF2 + rec->satrec_xl3 * varF3 + rec->satrec_xl4 * varSinzf ;
