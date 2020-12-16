@@ -54,6 +54,7 @@ public:
     varZf,
     varSinzf,
     varSinzm,
+    varCoszf,
     varF2,
     varF3,
     varSes,

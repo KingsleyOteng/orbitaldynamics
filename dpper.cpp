@@ -102,7 +102,8 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
     varZf = varZm +2.0 * rec->const_zes * varSinzm;
     varSinzf = sin(varZf);
     varF2 =  0.5 * varSinzf * varSinzf - 0.25;
-    varF3 = -0.5 * varSinzf * cos(varZf);
+    varCoszf = cos(varZf);
+    varF3 = -0.5 * varSinzf * varCoszf;
     varSes = rec->satrec_se2 * varF2  + rec->satrec_se3 * varF3;
     varSis = rec->satrec_si2 * varF2 + rec->satrec_si3 * varF3;
     varSls = rec->satrec_sl2 * varF2 + rec->satrec_sl3 * varF3 + rec->satrec_sl4 * varSinzf;
