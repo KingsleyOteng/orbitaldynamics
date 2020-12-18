@@ -263,8 +263,6 @@ time_files::time_tTOjd      (char* input)
     
     if( regex_match( phrase, what, rex ) )
     {
-    
-        
         // determine the current month in digits
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
         
@@ -485,9 +483,9 @@ time_files::getTimeDiff  (char*  Time1, char*  Time2)
 double
 time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
 {
-    int one = 1.0;
+    //int one = 1.0;
     
-    double fraction = 0.0;
+    //double fraction = 0.0;
     
     std::string phrase = dateStringTLE;
     
@@ -496,10 +494,10 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
     // returns index for the month
 
 
-    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3})(.\\d+)" );
+    boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})" );
     boost::xpressive::smatch what;
     
-    int temp;
+
     
     std::tm tm = {0};
     //= time_t
@@ -507,7 +505,7 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
     if( regex_match( phrase, what, rex ) )
     {
             // convert days elapsed to months
-            int days_elapsed = stoi(what[2].str());
+            //int days_elapsed = stoi(what[2].str());
        
             size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
         
@@ -592,8 +590,8 @@ char* time_files::month_generator_classification_number(double days_elapsed) {
     return   month_classifier;
 }
 
-char* time_files::time_elapsed_since_epoch() {
-
+char* time_files::time_elapsed_since_epoch()
+{
     boost::asio::ip::tcp::iostream stream("www.martinbroadhurst.com", "http");
        stream << "GET / HTTP/1.1\r\n";
        stream << "Host: www.martinbroadhurst.com\r\n";
@@ -606,15 +604,12 @@ char* time_files::time_elapsed_since_epoch() {
 
 double time_files::getCheckLaunchDate()
 {
-
     return 0;
 }
 
 void time_files::getCheckLaunchDateV()
 {
 
-
-   
 }
 
 void                        connectToDatabase()
