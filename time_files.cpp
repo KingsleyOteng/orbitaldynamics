@@ -592,14 +592,14 @@ char* time_files::month_generator_classification_number(double days_elapsed) {
 
 char* time_files::time_elapsed_since_epoch()
 {
-    boost::asio::ip::tcp::iostream stream("www.martinbroadhurst.com", "http");
+       boost::asio::ip::tcp::iostream stream("www.martinbroadhurst.com", "http");
        stream << "GET / HTTP/1.1\r\n";
        stream << "Host: www.martinbroadhurst.com\r\n";
        stream << "Accept: */*\r\n";
        stream << "Connection: close\r\n\r\n";
        stream.flush();
        std::cout << stream.rdbuf();
-    return "0";
+       return "0";
 }
 
 double time_files::getCheckLaunchDate()

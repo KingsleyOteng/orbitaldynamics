@@ -33,12 +33,9 @@ private:
     
 public:
     
-
      // constructors  and destructors
      time_files();
    ~time_files();
-
-          
 
      // getters and setters
      void                      setJDtime    (double jd);
@@ -57,10 +54,8 @@ public:
      void                       setTimeElapsed  (double time_now, double epoch);
      double                     getTimeElapsed  ();
 
-    
      // time conversion strings
      std::tm*                    jdTOtm          (double jd);
-
      time_t                      jdTOtime_t      (double jd);
      char*                       jdTOctime       (double jd);
      double                      time_tTOjd      (char* input);
@@ -80,9 +75,6 @@ public:
      double                      getCheckLaunchDate();
      void                        getCheckLaunchDateV();
      void                        connectToDatabase();
-    void                        disconnectToDatabase();
-    
+     void                        disconnectToDatabase();
 };
-
-
 #endif /* coordinate_transforms_hpp */
