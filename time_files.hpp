@@ -35,7 +35,7 @@ public:
     
      // constructors  and destructors
      time_files();
-   ~time_files();
+    ~time_files();
 
      // getters and setters
      void                      setJDtime    (double jd);

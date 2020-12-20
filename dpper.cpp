@@ -292,7 +292,6 @@ void dpper::set_parameters (satrec * rec)
         }
         else
         {
-            
             // ---- apply periodics with lyddane modification ----
             varSinop = sin(rec->satrec_nodep);
             varCosop = cos(rec->satrec_nodep);

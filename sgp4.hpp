@@ -142,7 +142,7 @@ public:
      double satrec_atime, double em, double argpm, double inclm, double satrec_xli, double mm,
      double satrec_xni,double nodem,double nm
      );
-    //void    sgp4::builds();
+ 
 };
 
 #endif /* sgp4_hpp */
