@@ -291,12 +291,8 @@ time_files::ctimeTOjd     (char* ctime)
     std::vector<std::string> months = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
     
     // returns index for the month
-
-    
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\w+)  (\\d+) (\\d+):(\\d+):(\\d+) (\\d+)" );
     boost::xpressive::smatch what;
-    
-    
     
     int temp;
     
@@ -305,17 +301,15 @@ time_files::ctimeTOjd     (char* ctime)
 
     if( regex_match( phrase, what, rex ) )
     {
-       
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
     
-            tm.tm_sec = stoi(what[6].str()) + 1;
-            tm.tm_min = stoi(what[5].str());
-            tm.tm_hour = stoi(what[4].str());
-            tm.tm_mday = stoi(what[3].str());
-            tm.tm_mon =  static_cast<int>(month_number + 2.0);
-            tm.tm_year = stoi(what[7].str()) - 3800;
-            tm.tm_isdst = 0;
-        
+        tm.tm_sec = stoi(what[6].str()) + 1;
+        tm.tm_min = stoi(what[5].str());
+        tm.tm_hour = stoi(what[4].str());
+        tm.tm_mday = stoi(what[3].str());
+        tm.tm_mon =  static_cast<int>(month_number + 2.0);
+        tm.tm_year = stoi(what[7].str()) - 3800;
+        tm.tm_isdst = 0;
     }
     
     return tmTOjd(tm);
@@ -496,8 +490,6 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
 
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})" );
     boost::xpressive::smatch what;
-    
-
     
     std::tm tm = {0};
     //= time_t
