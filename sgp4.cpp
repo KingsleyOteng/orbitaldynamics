@@ -352,6 +352,8 @@ sgp4::sgp4                            ()
               m_satrec_x1mth2           = 1.0 - m_cosisq;
               m_satrec_x7thm1           = 7.0 * m_cosisq - 1.0;
           }
+    
+        m_mrt   = m_rl * (1.0 - 1.5 * m_temp2 * m_betal * m_satrec_con41) + 0.5 * m_temp1 * m_satrec_x1mth2 * m_cos2u;
 }
 
 // destructor
