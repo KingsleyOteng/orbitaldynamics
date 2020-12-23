@@ -320,6 +320,29 @@ sgp4::sgp4                            ()
        m_esine = m_axnl * m_sineo1 - m_aynl * m_coseo1;
        m_el2   = m_axnl * m_axnl + m_aynl*m_aynl;
        m_pl    = m_am * (1.0-m_el2);
+       if (m_pl < 0.0)
+       {
+    //      fprintf(1,'# error pl %f\n', pl);
+           m_satrec_error = 4;
+       //    m_r = [0;0;0];
+        //   m_v = [0;0;0];
+       }
+       else
+       {
+           m_rl     = m_am * (1.0 - m_ecose);
+           m_rdotl  = sqrt(m_am) * m_esine/m_rl;
+           m_rvdotl = sqrt(m_pl) / m_rl;
+           m_betal  = sqrt(1.0 - m_el2);
+           m_temp   = m_esine / (1.0 + m_betal);
+           m_sinu   = m_am / m_rl * (m_sineo1 - m_aynl - m_axnl * m_temp);
+           m_cosu   = m_am / m_rl * (m_coseo1 - m_axnl + m_aynl * m_temp);
+           m_su     = atan2(m_sinu, m_cosu);
+           m_sin2u  = (m_cosu + m_cosu) * m_sinu;
+           m_cos2u  = 1.0 - 2.0 * m_sinu * m_sinu;
+           m_temp   = 1.0 / m_pl;
+           m_temp1  = 0.5 * m_j2 * m_temp;
+           m_temp2  = m_temp1 * m_temp;
+       }
 }
 
 // destructor
