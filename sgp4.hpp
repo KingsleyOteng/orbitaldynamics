@@ -113,7 +113,7 @@ private:
     m_satrec_zmol,m_satrec_zmos, m_axnl, m_am_m,m_tem5,m_ktr,
     m_satrec_xlcof, m_eo1, m_sineo1, m_coseo1, m_satrec_init;
     
-    double m_rl, m_rdotl, m_rvdotl,m_betal,  m_sinu, m_cosu, m_su, m_sin2u, m_cos2u, m_temp1, m_temp2, m_temp1;
+    double m_rl, m_rdotl, m_rvdotl,m_betal,  m_sinu, m_cosu, m_su, m_sin2u, m_cos2u, m_temp1, m_temp2;
     
     double expr;
     
