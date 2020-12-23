@@ -343,6 +343,15 @@ sgp4::sgp4                            ()
            m_temp1  = 0.5 * m_j2 * m_temp;
            m_temp2  = m_temp1 * m_temp;
        }
+    
+        //* -------------- update for short period periodics ------------ */
+          if (m_satrec_method == 'd')
+          {
+              m_cosisq                  = m_cosip * m_cosip;
+              m_satrec_con41            = 3.0 * m_cosisq - 1.0;
+              m_satrec_x1mth2           = 1.0 - m_cosisq;
+              m_satrec_x7thm1           = 7.0 * m_cosisq - 1.0;
+          }
 }
 
 // destructor
