@@ -316,10 +316,10 @@ sgp4::sgp4                            ()
     }
     
     /* ------------- short period preliminary quantities ----------- */
-       m_ecose = m_axnl* m_coseo1 + m_aynl*s m_ineo1;
-       m_esine = m_axnl* m_sineo1 - m_aynl* m_coseo1;
-       m_el2   = m_axnl*m_axnl + m_aynl*m_aynl;
-       m_pl    = m_am*(1.0-m_el2);
+       m_ecose = m_axnl * m_coseo1 + m_aynl * m_sineo1;
+       m_esine = m_axnl * m_sineo1 - m_aynl * m_coseo1;
+       m_el2   = m_axnl * m_axnl + m_aynl*m_aynl;
+       m_pl    = m_am * (1.0-m_el2);
 }
 
 // destructor

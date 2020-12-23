@@ -85,10 +85,9 @@ private:
     // %% SGP4 constants
     
     double
-    m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3, m_j4, m_j3oj2, m_vkmpersec, m_satrec_error, m_mrt, m_xmdf, m_argpdf, m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa, m_tempe,  m_templ, m_satrec_mdot, m_satrec_mo, m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot, m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_cc5, m_satrec_bstar, m_satrec_c, m_satrec_t2cof, m_satrec_isimp, m_delm, m_temp, m_satrec_omgcof, m_delomg, m_satrec_xmcof, m_satrec_t, m_t4, m_t3, m_satrec_eta, m_satrec_delmo, m_satrec_d3, m_satrec_d2, m_satrec_d4, m_satrec_t3cof, m_satrec_sinmao, m_satrec_t4cof, m_satrec_t5cof,
-    m_nm, m_satrec_no, m_em, m_satrec_ecco, m_inclm, m_satrec_inclo, m_ecose, m_axnl, m_ecose, m_coseo1, m_aynl, m, m_ecose,m_axnl,m_coseo1,m_sineo1,m_esine,m_el2,m_pl ,m_am ,m_el2;
+    m_pi, m_twopi, m_x2o3, m_temp4, m_tumin, m_mu, m_radiusearthkm, m_xke, m_j2, m_j3, m_j4, m_j3oj2, m_vkmpersec, m_satrec_error, m_mrt, m_xmdf, m_argpdf, m_nodedf, m_argpm, m_mm, m_t2,  m_nodem, m_tempa, m_tempe,  m_templ, m_satrec_mdot, m_satrec_mo, m_satrec_argpo, m_satrec_argpdot, m_satrec_nodeo, m_satrec_nodedot, m_satrec_nodecf, m_satrec_cc1, m_satrec_cc4, m_satrec_cc5, m_satrec_bstar, m_satrec_c, m_satrec_t2cof, m_satrec_isimp, m_delm, m_temp, m_satrec_omgcof, m_delomg, m_satrec_xmcof, m_satrec_t, m_t4, m_t3, m_satrec_eta, m_satrec_delmo, m_satrec_d3, m_satrec_d2, m_satrec_d4, m_satrec_t3cof, m_satrec_sinmao, m_satrec_t4cof, m_satrec_t5cof, m_nm, m_satrec_no, m_em, m_satrec_ecco, m_inclm, m_satrec_inclo, m_ecose,  m,m_esine,m_el2,m_pl ,m_am;
     
-     double m_ep, m_xincp, m_argpp, m_nodep, m_mp, m_sinip, m_cosip, m_sinim, m_cosim, m_am, m_xlm, m_emsq;
+     double m_ep, m_xincp, m_argpp, m_nodep, m_mp, m_sinip, m_cosip, m_sinim, m_cosim,m_xlm, m_emsq;
     
     double satrec_d2201, satrec_d2211, satrec_d3210,
     satrec_d3222,  satrec_d4410,  satrec_d4422,
