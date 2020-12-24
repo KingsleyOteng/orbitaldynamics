@@ -354,6 +354,9 @@ sgp4::sgp4                            ()
           }
     
         m_mrt   = m_rl * (1.0 - 1.5 * m_temp2 * m_betal * m_satrec_con41) + 0.5 * m_temp1 * m_satrec_x1mth2 * m_cos2u;
+    
+    m_su    = m_su - 0.25 * m_temp2 * m_satrec_x7thm1 * m_sin2u;
+
 }
 
 // destructor
