@@ -358,7 +358,8 @@ sgp4::sgp4                            ()
         m_su    = m_su - 0.25 * m_temp2 * m_satrec_x7thm1 * m_sin2u;
         m_xnode =  m_nodep + 1.5 *  m_temp2 *  m_cosip *  m_sin2u;
         m_xinc  =  m_xincp + 1.5 *  m_temp2 *  m_cosip *  m_sinip *  m_cos2u;
-
+        m_mvt   = m_rdotl - m_nm * m_temp1 * m_satrec_x1mth2 * m_sin2u / m_xke;
+         
 }
 
 // destructor
