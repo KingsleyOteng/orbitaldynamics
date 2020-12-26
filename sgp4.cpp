@@ -365,6 +365,10 @@ sgp4::sgp4                            ()
         m_sinsu =  sin(m_su);
         m_cossu =  cos(m_su);
         m_snod  =  sin(m_xnode);
+        m_cnod  =  cos(xnode);
+        m_sini  =  m_sin(m_xinc);
+        m_cosi  =  m_cos(m_xinc);
+        m_xmx   = -m_snod * m_cosi;
          
 }
 
