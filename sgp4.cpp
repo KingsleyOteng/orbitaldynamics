@@ -361,10 +361,10 @@ sgp4::sgp4                            ()
         m_mvt   = m_rdotl - m_nm * m_temp1 * m_satrec_x1mth2 * m_sin2u / m_xke;
         m_rvdot = m_rvdotl + m_nm * m_temp1 * (m_satrec_x1mth2 * m_cos2u + 1.5 * m_satrec_con41) / m_xke;
     
-        % /* --------------------- orientation vectors ------------------- */
+        ///* --------------------- orientation vectors ------------------- */
         m_sinsu =  sin(m_su);
-        m_cossu =  cos(su);
-        m_snod  =  sin(xnode);
+        m_cossu =  cos(m_su);
+        m_snod  =  sin(m_xnode);
          
 }
 
