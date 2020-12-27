@@ -371,6 +371,10 @@ sgp4::sgp4                            ()
         m_xmx   = -m_snod * m_cosi;
         m_xmy   =  m_cnod * m_cosi;
         m_ux    =  m_xmx * m_sinsu + m_cnod * m_cossu;
+        m_uz    =  m_sini * m_sinsu;
+        m_vx    =  m_xmx * m_cossu - m_cnod * m_sinsu;
+        m_vy    =  m_xmy * m_cossu - m_snod * m_sinsu;
+        m_vz    =  m_sini * m_cossu;
 
     
     
