@@ -361,7 +361,7 @@ sgp4::sgp4                            ()
         m_mvt   = m_rdotl - m_nm * m_temp1 * m_satrec_x1mth2 * m_sin2u / m_xke;
         m_rvdot = m_rvdotl + m_nm * m_temp1 * (m_satrec_x1mth2 * m_cos2u + 1.5 * m_satrec_con41) / m_xke;
     
-        ///* --------------------- orientation vectors ------------------- */
+        /// --------------------- orientation vectors -------------------  /
         m_sinsu =  sin(m_su);
         m_cossu =  cos(m_su);
         m_snod  =  sin(m_xnode);
@@ -375,6 +375,13 @@ sgp4::sgp4                            ()
         m_vx    =  m_xmx * m_cossu - m_cnod * m_sinsu;
         m_vy    =  m_xmy * m_cossu - m_snod * m_sinsu;
         m_vz    =  m_sini * m_cossu;
+    
+        // --------- position and velocity (in km and km/sec) ----------  /
+    
+        m_r_1 = (m_mrt * m_ux)* model_const_radiusearthkm;
+        m_r_2 = (m_mrt * m_uy)* model_const_radiusearthkm;
+        m_r_3 = (m_mrt * m_uz)* model_const_radiusearthkm;
+
 
     
     
