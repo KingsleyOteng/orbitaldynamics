@@ -381,6 +381,9 @@ sgp4::sgp4                            ()
         m_r_1 = (m_mrt * m_ux)* model_const_radiusearthkm;
         m_r_2 = (m_mrt * m_uy)* model_const_radiusearthkm;
         m_r_3 = (m_mrt * m_uz)* model_const_radiusearthkm;
+        m_v_1 = (m_mvt * m_ux + m_rvdot * m_vx) * m_vkmpersec;
+        m_v_2 = (m_mvt * m_uy + m_rvdot * m_vy) * m_vkmpersec;
+        m_v_3 = (m_mvt * m_uz + m_rvdot * m_vz) * m_vkmpersec;
 
 
     
