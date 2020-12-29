@@ -352,7 +352,8 @@ sgp4::sgp4                            ()
               m_satrec_x1mth2           = 1.0 - m_cosisq;
               m_satrec_x7thm1           = 7.0 * m_cosisq - 1.0;
           }
-    
+        else
+        {
         m_mrt   = m_rl * (1.0 - 1.5 * m_temp2 * m_betal * m_satrec_con41) + 0.5 * m_temp1 * m_satrec_x1mth2 * m_cos2u;
     
         m_su    = m_su - 0.25 * m_temp2 * m_satrec_x7thm1 * m_sin2u;
@@ -384,7 +385,7 @@ sgp4::sgp4                            ()
         m_v_1 = (m_mvt * m_ux + m_rvdot * m_vx) * m_vkmpersec;
         m_v_2 = (m_mvt * m_uy + m_rvdot * m_vy) * m_vkmpersec;
         m_v_3 = (m_mvt * m_uz + m_rvdot * m_vz) * m_vkmpersec;
-
+        }
 
     
     
