@@ -111,9 +111,10 @@ private:
            m_satrec_xh3,m_satrec_xi2,m_satrec_xi3,
            m_satrec_xl2,m_satrec_xl3,m_satrec_xl4, m_aynl, m_xl, m_satrec_aycof, m_satrec_method, m_u,
            m_satrec_zmol,m_satrec_zmos, m_axnl, m_am_m,m_tem5,m_ktr,
-           m_satrec_xlcof, m_eo1, m_sineo1, m_coseo1, m_satrec_init, m_xnode, m_xinc, m_mvt, m_ux, m_xmy, m_uz, m_vx, m_vy, m_vz;
+           m_satrec_xlcof, m_eo1, m_sineo1, m_coseo1, m_satrec_init, m_xnode, m_xinc, m_mvt, m_ux, m_xmy, m_uz, m_vx, m_vy, m_vz,
+           m_r_1, m_r_2, m_r_3, m_v_1, m_v_2, m_v_3;
     
-    double m_r[5], m_v[5];
+    double m_r[10];
     
     double m_rl, m_rdotl, m_rvdotl,m_betal,  m_sinu, m_cosu, m_su, m_sin2u, m_cos2u, m_temp1, m_temp2, m_cosisq, m_satrec_con41,          m_satrec_x1mth2, m_satrec_x7thm1, m_rvdot, m_sinsu, m_cossu, m_snod, m_cnod, m_sini, m_cosi, m_xmx, m_uy;
     
