@@ -288,7 +288,7 @@ sgp4::sgp4                            ()
     m_aynl = m_ep* sin(m_argpp) + m_temp * m_satrec_aycof;
     m_xl   = m_mp + m_argpp + m_nodep + m_temp * m_satrec_xlcof * m_axnl;
 
-    //--------------------- solve kepler's equation ---------------
+    ///--------------------- solve kepler's equation ---------------
     m_u    = remainder(m_xl - m_nodep, m_twopi);
     m_eo1  = m_u;
     m_tem5 = 9999.9;
@@ -296,6 +296,7 @@ sgp4::sgp4                            ()
     
     ///   sgp4fix for kepler iteration
     ///   the following iteration needs better limits on corrections
+    
     while (( abs(m_tem5) >= 1.0e-12) && (m_ktr <= 10) )
     {
         m_sineo1 = sin(m_eo1);
@@ -317,11 +318,12 @@ sgp4::sgp4                            ()
         m_ktr = m_ktr + 1;
     }
     
-    /* ------------- short period preliminary quantities ----------- */
+        ///* ------------- short period preliminary quantities ----------- */
        m_ecose = m_axnl * m_coseo1 + m_aynl * m_sineo1;
        m_esine = m_axnl * m_sineo1 - m_aynl * m_coseo1;
        m_el2   = m_axnl * m_axnl + m_aynl*m_aynl;
        m_pl    = m_am * (1.0-m_el2);
+    
        if (m_pl < 0.0)
        {
     //      fprintf(1,'# error pl %f\n', pl);
