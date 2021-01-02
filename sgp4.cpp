@@ -195,13 +195,13 @@ sgp4::sgp4                            ()
         m_satrec_error = 2;
     }
     
-    //check the following expression
+    ///check the following expression
     
     m_am = pow((m_xke / nm),m_x2o3) * m_tempa * m_tempa;
     m_nm = pow(m_xke / m_am,1.5);
     m_em = m_em - m_tempe;
     
-    // fix tolerance for error recognition
+    /// fix tolerance for error recognition
     if ((m_em >= 1.0) || (m_em < -0.001) || (m_am < 0.95))
     {
         // fprintf(1,'# error em %f\n', em);
@@ -222,11 +222,11 @@ sgp4::sgp4                            ()
     m_xlm    = remainder(m_xlm, m_twopi);
     m_mm     = remainder(m_xlm - m_argpm - m_nodem, m_twopi);
     
-    // ---------------- compute extra mean quantities -------------
+    /// ---------------- compute extra mean quantities -------------
     m_sinim = sin(inclm);
     m_cosim = cos(inclm);
     
-    // -------------------- add lunar-solar periodics --------------
+    /// -------------------- add lunar-solar periodics --------------
     m_ep     = m_em;
     m_xincp  = m_inclm;
     m_argpp  = m_argpm;
@@ -266,7 +266,7 @@ sgp4::sgp4                            ()
         }
     }
     
-    // -------------------- long period periodics ------------------
+    /// -------------------- long period periodics ------------------
     if (m_satrec_method == 'd')
     {
         m_sinip =  sin(m_xincp);
@@ -324,8 +324,13 @@ sgp4::sgp4                            ()
        {
     //      fprintf(1,'# error pl %f\n', pl);
            m_satrec_error = 4;
-       //    m_r = [0;0;0];
-        //   m_v = [0;0;0];
+           m_r[1] = 0;
+           m_r[2] = 0;
+           m_r[3] = 0;
+           
+           m_v[1] = 0;
+           m_v[2] = 0;
+           m_v[3] = 0;
        }
        else
        {
@@ -380,10 +385,11 @@ sgp4::sgp4                            ()
         // --------- position and velocity (in km and km/sec) ----------  /
         m_r[1] = (m_mrt * m_ux)* model_const_radiusearthkm;
         m_r[2] = (m_mrt * m_uy)* model_const_radiusearthkm;
-        m_r_3 = (m_mrt * m_uz)* model_const_radiusearthkm;
-        m_v_1 = (m_mvt * m_ux + m_rvdot * m_vx) * m_vkmpersec;
-        m_v_2 = (m_mvt * m_uy + m_rvdot * m_vy) * m_vkmpersec;
-        m_v_3 = (m_mvt * m_uz + m_rvdot * m_vz) * m_vkmpersec;
+        m_r[3] = (m_mrt * m_uz)* model_const_radiusearthkm;
+            
+        m_v[1] = (m_mvt * m_ux + m_rvdot * m_vx) * m_vkmpersec;
+        m_v[2] = (m_mvt * m_uy + m_rvdot * m_vy) * m_vkmpersec;
+        m_v[3] = (m_mvt * m_uz + m_rvdot * m_vz) * m_vkmpersec;
             
         }
 
@@ -394,9 +400,6 @@ sgp4::sgp4                            ()
              m_satrec_error = 6;
          }
          
-    
-    
-
          
 }
 
