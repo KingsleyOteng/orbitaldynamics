@@ -72,21 +72,21 @@ void sgp4::set_model                            ()
 void sgp4::set_wgs                              (orbital *model)
 {
     
-    //    we implement here a method which supplies constants for the propagator.
-    //    note that mu is identified to facilitiate comparisons with newer models
+    ///    we implement here a method which supplies constants for the propagator.
+    ///    note that mu is identified to facilitiate comparisons with newer models
     
     std::string wgs = model->getWGS();
     
     if (wgs == "wgs-72-low")
     {
-        model_const_mu     = 398600.79964;
-        model_const_radiusearthkm = 6378.135;
-        model_const_xke    = 0.0743669161;
-        model_const_tumin  = 1.0 / model_const_xke;
-        model_const_j2     =   0.001082616;
-        model_const_j3     =  -0.00000253881;
-        model_const_j4     =  -0.00000165597;
-        model_const_j3oj2  =  model_const_j3 / model_const_j2;
+        model_const_mu              = 398600.79964;
+        model_const_radiusearthkm   = 6378.135;
+        model_const_xke    =        0.0743669161;
+        model_const_tumin  =        1.0 / model_const_xke;
+        model_const_j2     =        0.001082616;
+        model_const_j3     =        -0.00000253881;
+        model_const_j4     =        -0.00000165597;
+        model_const_j3oj2  =        model_const_j3 / model_const_j2;
     }
     else if (wgs == "wgs-72")
     {
@@ -272,6 +272,7 @@ sgp4::sgp4                            ()
         m_sinip =  sin(m_xincp);
         m_cosip =  cos(m_xincp);
         m_satrec_aycof = -0.5*m_j3oj2*m_sinip;
+        
         //// sgp4fix for divide by zero with xinco = 180 deg
         if (abs(m_cosip+1.0) > 1.5e-12)
         {
@@ -292,6 +293,7 @@ sgp4::sgp4                            ()
     m_eo1  = m_u;
     m_tem5 = 9999.9;
     m_ktr = 1;
+    
     ///   sgp4fix for kepler iteration
     ///   the following iteration needs better limits on corrections
     while (( abs(m_tem5) >= 1.0e-12) && (m_ktr <= 10) )
