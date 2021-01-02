@@ -324,7 +324,7 @@ sgp4::sgp4                            ()
        m_el2   = m_axnl * m_axnl + m_aynl*m_aynl;
        m_pl    = m_am * (1.0-m_el2);
     
-       if (m_pl < 0.0)
+        if (m_pl < 0.0)
        {
     //      fprintf(1,'# error pl %f\n', pl);
            m_satrec_error = 4;
@@ -336,7 +336,7 @@ sgp4::sgp4                            ()
            m_v[2] = 0;
            m_v[3] = 0;
        }
-       else
+        else
        {
            m_rl     = m_am * (1.0 - m_ecose);
            m_rdotl  = sqrt(m_am) * m_esine/m_rl;
@@ -355,16 +355,15 @@ sgp4::sgp4                            ()
     
         //* -------------- update for short period periodics ------------ */
           if (m_satrec_method == 'd')
-          {
+        {
               m_cosisq                  = m_cosip * m_cosip;
               m_satrec_con41            = 3.0 * m_cosisq - 1.0;
               m_satrec_x1mth2           = 1.0 - m_cosisq;
               m_satrec_x7thm1           = 7.0 * m_cosisq - 1.0;
-          }
-        else
+        }
+          else
         {
         m_mrt   = m_rl * (1.0 - 1.5 * m_temp2 * m_betal * m_satrec_con41) + 0.5 * m_temp1 * m_satrec_x1mth2 * m_cos2u;
-    
         m_su    = m_su - 0.25 * m_temp2 * m_satrec_x7thm1 * m_sin2u;
         m_xnode =  m_nodep + 1.5 *  m_temp2 *  m_cosip *  m_sin2u;
         m_xinc  =  m_xincp + 1.5 *  m_temp2 *  m_cosip *  m_sinip *  m_cos2u;
@@ -394,7 +393,6 @@ sgp4::sgp4                            ()
         m_v[1] = (m_mvt * m_ux + m_rvdot * m_vx) * m_vkmpersec;
         m_v[2] = (m_mvt * m_uy + m_rvdot * m_vy) * m_vkmpersec;
         m_v[3] = (m_mvt * m_uz + m_rvdot * m_vz) * m_vkmpersec;
-            
         }
 
     /// sgp4fix for decaying satellites
