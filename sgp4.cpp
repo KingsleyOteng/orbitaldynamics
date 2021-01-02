@@ -274,11 +274,11 @@ sgp4::sgp4                            ()
         m_satrec_aycof = -0.5*m_j3oj2*m_sinip;
         
         //// sgp4fix for divide by zero with xinco = 180 deg
-        if (abs(m_cosip+1.0) > 1.5e-12)
+            if (abs(m_cosip+1.0) > 1.5e-12)
         {
             m_satrec_xlcof = -0.25 * m_j3oj2 * m_sinip * (3.0 + 5.0 * m_cosip) / (1.0+m_cosip);
         }
-        else
+            else
         {
             m_satrec_xlcof = -0.25 * m_j3oj2 * m_sinip * (3.0 + 5.0 * m_cosip) / m_temp4;
         }
@@ -305,11 +305,11 @@ sgp4::sgp4                            ()
         m_tem5   = (m_u - m_aynl * m_coseo1 + m_axnl * m_sineo1 - m_eo1) / m_tem5;
         if(abs(m_tem5) >= 0.95)
         {
-            if (m_tem5 > 0.0)
+                if (m_tem5 > 0.0)
             {
                 m_tem5 = 0.95;
             }
-            else
+                else
             {
                 m_tem5 = -0.95;
             }
