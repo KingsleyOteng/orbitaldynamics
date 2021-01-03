@@ -266,23 +266,23 @@ sgp4::sgp4                            ()
         }
     }
     
-    /// -------------------- long period periodics ------------------
-    if (m_satrec_method == 'd')
-    {
-        m_sinip =  sin(m_xincp);
-        m_cosip =  cos(m_xincp);
-        m_satrec_aycof = -0.5*m_j3oj2*m_sinip;
-        
-        //// sgp4fix for divide by zero with xinco = 180 deg
-            if (abs(m_cosip+1.0) > 1.5e-12)
+        /// -------------------- long period periodics ------------------
+            if (m_satrec_method == 'd')
         {
-            m_satrec_xlcof = -0.25 * m_j3oj2 * m_sinip * (3.0 + 5.0 * m_cosip) / (1.0+m_cosip);
+            m_sinip =  sin(m_xincp);
+            m_cosip =  cos(m_xincp);
+            m_satrec_aycof = -0.5*m_j3oj2*m_sinip;
+            
+            //// sgp4fix for divide by zero with xinco = 180 deg
+                if (abs(m_cosip+1.0) > 1.5e-12)
+            {
+                m_satrec_xlcof = -0.25 * m_j3oj2 * m_sinip * (3.0 + 5.0 * m_cosip) / (1.0+m_cosip);
+            }
+                else
+            {
+                m_satrec_xlcof = -0.25 * m_j3oj2 * m_sinip * (3.0 + 5.0 * m_cosip) / m_temp4;
+            }
         }
-            else
-        {
-            m_satrec_xlcof = -0.25 * m_j3oj2 * m_sinip * (3.0 + 5.0 * m_cosip) / m_temp4;
-        }
-    }
     m_axnl = m_ep * cos(m_argpp);
     m_temp = 1.0 / (m_am_m * (1.0 - m_ep * m_ep));
     m_aynl = m_ep* sin(m_argpp) + m_temp * m_satrec_aycof;
@@ -325,42 +325,42 @@ sgp4::sgp4                            ()
        m_pl    = m_am * (1.0-m_el2);
     
         if (m_pl < 0.0)
-       {
-    //      fprintf(1,'# error pl %f\n', pl);
-           m_satrec_error = 4;
-           m_r[1] = 0;
-           m_r[2] = 0;
-           m_r[3] = 0;
-           
-           m_v[1] = 0;
-           m_v[2] = 0;
-           m_v[3] = 0;
-       }
+           {
+        //      fprintf(1,'# error pl %f\n', pl);
+               m_satrec_error = 4;
+               m_r[1] = 0;
+               m_r[2] = 0;
+               m_r[3] = 0;
+               
+               m_v[1] = 0;
+               m_v[2] = 0;
+               m_v[3] = 0;
+           }
         else
-       {
-           m_rl     = m_am * (1.0 - m_ecose);
-           m_rdotl  = sqrt(m_am) * m_esine/m_rl;
-           m_rvdotl = sqrt(m_pl) / m_rl;
-           m_betal  = sqrt(1.0 - m_el2);
-           m_temp   = m_esine / (1.0 + m_betal);
-           m_sinu   = m_am / m_rl * (m_sineo1 - m_aynl - m_axnl * m_temp);
-           m_cosu   = m_am / m_rl * (m_coseo1 - m_axnl + m_aynl * m_temp);
-           m_su     = atan2(m_sinu, m_cosu);
-           m_sin2u  = (m_cosu + m_cosu) * m_sinu;
-           m_cos2u  = 1.0 - 2.0 * m_sinu * m_sinu;
-           m_temp   = 1.0 / m_pl;
-           m_temp1  = 0.5 * m_j2 * m_temp;
-           m_temp2  = m_temp1 * m_temp;
-       }
-    
+           {
+               m_rl     = m_am * (1.0 - m_ecose);
+               m_rdotl  = sqrt(m_am) * m_esine/m_rl;
+               m_rvdotl = sqrt(m_pl) / m_rl;
+               m_betal  = sqrt(1.0 - m_el2);
+               m_temp   = m_esine / (1.0 + m_betal);
+               m_sinu   = m_am / m_rl * (m_sineo1 - m_aynl - m_axnl * m_temp);
+               m_cosu   = m_am / m_rl * (m_coseo1 - m_axnl + m_aynl * m_temp);
+               m_su     = atan2(m_sinu, m_cosu);
+               m_sin2u  = (m_cosu + m_cosu) * m_sinu;
+               m_cos2u  = 1.0 - 2.0 * m_sinu * m_sinu;
+               m_temp   = 1.0 / m_pl;
+               m_temp1  = 0.5 * m_j2 * m_temp;
+               m_temp2  = m_temp1 * m_temp;
+           }
+        
         //* -------------- update for short period periodics ------------ */
           if (m_satrec_method == 'd')
-        {
-              m_cosisq                  = m_cosip * m_cosip;
-              m_satrec_con41            = 3.0 * m_cosisq - 1.0;
-              m_satrec_x1mth2           = 1.0 - m_cosisq;
-              m_satrec_x7thm1           = 7.0 * m_cosisq - 1.0;
-        }
+            {
+                  m_cosisq                  = m_cosip * m_cosip;
+                  m_satrec_con41            = 3.0 * m_cosisq - 1.0;
+                  m_satrec_x1mth2           = 1.0 - m_cosisq;
+                  m_satrec_x7thm1           = 7.0 * m_cosisq - 1.0;
+            }
           else
         {
         m_mrt   = m_rl * (1.0 - 1.5 * m_temp2 * m_betal * m_satrec_con41) + 0.5 * m_temp1 * m_satrec_x1mth2 * m_cos2u;
