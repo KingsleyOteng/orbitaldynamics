@@ -331,7 +331,6 @@ sgp4::sgp4                            ()
                m_r[1] = 0;
                m_r[2] = 0;
                m_r[3] = 0;
-               
                m_v[1] = 0;
                m_v[2] = 0;
                m_v[3] = 0;
@@ -363,6 +362,7 @@ sgp4::sgp4                            ()
             }
           else
         {
+            
         m_mrt   = m_rl * (1.0 - 1.5 * m_temp2 * m_betal * m_satrec_con41) + 0.5 * m_temp1 * m_satrec_x1mth2 * m_cos2u;
         m_su    = m_su - 0.25 * m_temp2 * m_satrec_x7thm1 * m_sin2u;
         m_xnode =  m_nodep + 1.5 *  m_temp2 *  m_cosip *  m_sin2u;
