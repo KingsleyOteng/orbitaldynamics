@@ -31,14 +31,18 @@ using namespace std;
 
 
 
-class SDP4
+class sdp4
 {
     
     public:
+    sdp4();
+    ~sdp4();
+    double      m_vkmpersec, m_pi, m_twopi, m_x2o3, m_temp4, m_xke, m_pixpi, m_radiusearthkm;
+    double m_satrec_t, m_tsince,
+    m_satrec_error,
+    m_mrt;
+    void        set_model();
     
-    double m_pi, m_twopi, m_x2o3, m_temp4, m_pixpi;
-    
-private:
     
 };
 
