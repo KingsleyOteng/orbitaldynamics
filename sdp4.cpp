@@ -28,5 +28,9 @@ m_vkmpersec     = m_radiusearthkm * m_xke/60.0;
 m_satrec_t        = m_tsince;
 m_satrec_error    = 0;
 m_mrt             = 0.0;
+    
+    xmdf    = satrec.mo + satrec.mdot * satrec.t;
+    argpdf  = satrec.argpo + satrec.argpdot * satrec.t;
+    nodedf  = satrec.nodeo + satrec.nodedot * satrec.t;
 
 }
