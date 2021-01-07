@@ -29,8 +29,8 @@ m_satrec_t        = m_tsince;
 m_satrec_error    = 0;
 m_mrt             = 0.0;
     
-    xmdf    = satrec.mo + satrec.mdot * satrec.t;
-    argpdf  = satrec.argpo + satrec.argpdot * satrec.t;
-    nodedf  = satrec.nodeo + satrec.nodedot * satrec.t;
+m_xmdf    = m_satrec_mo + m_satrec_mdot * m_satrec_t;
+m_argpdf  = m_satrec_argpo + m_satrec_argpdot * m_satrec_t;
+m_nodedf  = m_satrec_nodeo + m_satrec_nodedot * m_satrec_t;
 
 }

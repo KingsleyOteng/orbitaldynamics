@@ -39,6 +39,9 @@ class sdp4
     ~sdp4();
     double      m_vkmpersec, m_pi, m_twopi, m_x2o3, m_temp4, m_xke, m_pixpi, m_radiusearthkm;
     double      m_satrec_t, m_tsince, m_satrec_error, m_mrt;
+    double      m_xmdf, m_satrec_mo, m_satrec_mdot;
+    double      m_argpdf, m_satrec_argpo, m_satrec_argpdot;
+    double      m_nodedf, m_satrec_nodeo, m_satrec_nodedot;
     void        set_model();
     
     
