@@ -38,6 +38,8 @@ class SDP4
     
     double twoxpi, x2o3, temp4, pixpi;
     
+private:
+    
 };
 
 #endif /* sdp4_hpp */
