@@ -7,9 +7,40 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+#include <stdio.h>
+#include <string>
+#include <sstream>      // std::istringstream
+#include <iostream>     // std::cout
+#include <vector>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <time.h>
+#include <fstream>
+#include <stdio.h>
+#include <array>
+#include <iterator>
+#include <stdlib.h>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
 #ifndef sdp4_hpp
 #define sdp4_hpp
 
-#include <stdio.h>
+
+
+class SDP4
+{
+    
+    public:
+    
+    double twoxpi, x2o3, temp4, pixpi;
+    
+};
 
 #endif /* sdp4_hpp */
+
+
+
