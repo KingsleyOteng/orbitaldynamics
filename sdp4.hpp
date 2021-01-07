@@ -36,7 +36,7 @@ class SDP4
     
     public:
     
-    double twoxpi, x2o3, temp4, pixpi;
+    double m_pi, m_twopi, m_x2o3, m_temp4, m_pixpi;
     
 private:
     
