@@ -36,12 +36,13 @@ class mag
 {
     
     private:
-    double m_mag;
-    double temp;
+        double m_mag;
+        double temp;
+        double m_vec_1, m_vec_2, m_vec_3;
     public:
         mag();
         ~mag();
-    double              m_vec_1, m_vec_2, m_vec_3;
+   
     
     
 };
