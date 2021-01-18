@@ -8,6 +8,9 @@
 
 #include "mag.hpp"
 
+mag::mag(double vec[])
+{};
+
 mag::mag()
 {
   
