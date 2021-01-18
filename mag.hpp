@@ -35,10 +35,13 @@ using namespace std;
 class mag
 {
     
+    private:
+    double m_mag;
+    double temp;
     public:
-    mag();
-    ~mag();
-    double              m_vec_1, m_vec_2, m_vec_3, temp, m_mag;
+        mag();
+        ~mag();
+    double              m_vec_1, m_vec_2, m_vec_3;
     
     
 };

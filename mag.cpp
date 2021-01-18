@@ -18,7 +18,7 @@ mag::mag()
     }
     else
     {
-        m_xmag= 0.0;
+        m_mag= 0.0;
     }
     
     
