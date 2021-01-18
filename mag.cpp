@@ -10,8 +10,9 @@
 
 mag::mag()
 {
-    temp= m_vec_1*m_vec_1 + m_vec_2*m_vec_2 + m_vec_3*m_vec_3;
-
+  
+    temp= m_vec[1]*m_vec[1] + m_vec[2]*m_vec[2] + m_vec[3]*m_vec[3];
+    
     if (abs(temp) >= 1.0e-16)
     {
         m_mag=sqrt( temp );
