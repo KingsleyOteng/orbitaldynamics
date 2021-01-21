@@ -37,9 +37,12 @@ class angl
     
     private:
         double m_angl;
+        double small;
+        double undefined;
 
     
     public:
+        angl(double m_vec_1, double m_vec_2);
         angl();
         ~angl();
 

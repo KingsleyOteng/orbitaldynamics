@@ -39,6 +39,7 @@ class mag
         double m_mag;
         double temp;
         double m_vec[4];
+     
     
     public:
         mag();

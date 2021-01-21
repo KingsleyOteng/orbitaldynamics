@@ -8,9 +8,16 @@
 
 #include "angl.hpp"
 
+angl::angl(double m_vec_1, double m_vec_2)
+{
+  
+    
+
+};
 angl::angl()
 {
   
+    
 
 };
 
