@@ -43,9 +43,7 @@ class mag
     public:
         mag();
         ~mag();
-    mag(double vec[]);
-   
-    
+        mag(double vec[]);
     
 };
 
