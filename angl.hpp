@@ -24,6 +24,7 @@
 #include <stdlib.h>
 #include <string>
 #include <cmath>
+#include "mag.cpp"
 
 using namespace std;
 
@@ -41,6 +42,7 @@ class angl
         double undefined;
         double magv1;
         double magv2;
+        double temp;
 
     
     public:
