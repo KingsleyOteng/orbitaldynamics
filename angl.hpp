@@ -39,6 +39,8 @@ class angl
         double m_angl;
         double small;
         double undefined;
+        double magv1;
+        double magv2;
 
     
     public:
