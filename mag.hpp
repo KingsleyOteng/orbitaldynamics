@@ -45,6 +45,7 @@ class mag
         mag();
         ~mag();
         mag(double vec[]);
+        mag(double vec1, double vec2);  
     
 };
 
