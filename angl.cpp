@@ -14,6 +14,7 @@ angl::angl(double m_vec_1, double m_vec_2)
     small     = 0.00000001;
     undefined = 999999.1;
 
+    
     magv1 = mag(m_vec_1);
     magv2 = mag(m_vec_2);
 

@@ -11,6 +11,10 @@
 mag::mag(double vec[])
 {};
 
+double mag::mag(double vec)
+{return 0.0};
+
+
 mag::mag()
 {
   
