@@ -8,13 +8,6 @@
 
 #include "mag.hpp"
 
-mag::mag(double vec[])
-{};
-
-double mag::mag(double vec)
-{return 0.0};
-
-
 mag::mag()
 {
   
@@ -31,6 +24,19 @@ mag::mag()
     
     
 };
+
+mag::mag(double vec[])
+{};
+
+mag::mag(double vec)
+{};
+
+
+double mag::setMag(double vec)
+{return 0.0;};
+
+
+
 
 mag::~mag()
 {};

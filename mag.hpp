@@ -41,14 +41,15 @@ class mag
         double magv2;
         double temp;
         double m_vec[4];
-     
+    double m_vec_2;
     
     public:
         mag();
         ~mag();
         mag(double vec[]);
         mag(double vec);
-        mag(double vec1, double vec2);  
+        mag(double vec1, double vec2);
+        double setMag(double vec);
     
 };
 

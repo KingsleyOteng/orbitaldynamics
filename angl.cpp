@@ -15,8 +15,8 @@ angl::angl(double m_vec_1, double m_vec_2)
     undefined = 999999.1;
 
     
-    magv1 = mag(m_vec_1);
-    magv2 = mag(m_vec_2);
+    magv1 = setMag(m_vec_1);
+    magv2 = setMag(m_vec_2);
 
            if (magv1*magv2 > small^2)
            {
