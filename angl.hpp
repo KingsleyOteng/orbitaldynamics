@@ -50,6 +50,7 @@ class angl
         angl(double m_vec_1, double m_vec_2);
         angl();
         ~angl();
+   double setMag(double m_vec_1);
 
     
 };
