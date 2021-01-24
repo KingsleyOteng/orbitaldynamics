@@ -17,17 +17,17 @@
 #include <string>
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
-#include <vector>
-#include <iostream>
+
+
 #include <vector>       // c-11 vector
 #include <algorithm>    // c-11 algoithm
 #include <time.h>
 #include <fstream>
-#include <stdio.h>
+
 #include <array>
 #include <iterator>
 #include <stdlib.h>
-#include <string>
+
 #include <cmath>
 #include "orbital.hpp"
 #include "utilities.hpp"

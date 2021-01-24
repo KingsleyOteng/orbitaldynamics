@@ -13,16 +13,11 @@
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
 #include <vector>
-#include <iostream>
-#include <vector>
 #include <algorithm>
 #include <time.h>
 #include <fstream>
-#include <stdio.h>
 #include <array>
 #include <iterator>
-#include <stdlib.h>
-#include <string>
 #include <cmath>
 #include "mag.cpp"
 
@@ -47,11 +42,12 @@ class angl
 
     
     public:
-        angl(double m_vec_1, double m_vec_2);
+        angl(double m_vec_1[], double m_vec_2[]);
         angl();
         ~angl();
-        double setMag(double m_vec_1[]);
-        double dot(double vec1[], double vec2[]);
+        //double setMag(double m_vec_1[]);
+        //double setAngl();
+        //double dot(double vec1[], double vec2[]);
 
     
 };

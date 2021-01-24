@@ -13,16 +13,11 @@
 #include <sstream>      // std::istringstream
 #include <iostream>     // std::cout
 #include <vector>
-#include <iostream>
-#include <vector>
 #include <algorithm>
 #include <time.h>
 #include <fstream>
-#include <stdio.h>
 #include <array>
 #include <iterator>
-#include <stdlib.h>
-#include <string>
 #include <cmath>
 
 using namespace std;

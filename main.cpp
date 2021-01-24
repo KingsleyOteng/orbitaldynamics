@@ -25,7 +25,6 @@
 #include "sgp4.hpp"
 #include "sdp4.hpp"
 #include <mysql.h>
-
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 #include "utilities.hpp"               // my own routines for processing data
 #include <boost/any.hpp>               // boost standard library

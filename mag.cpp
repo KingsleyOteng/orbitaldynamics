@@ -11,7 +11,7 @@
 mag::mag()
 {
   
-    temp= m_vec[1]*m_vec[1] + m_vec[2]*m_vec[2] + m_vec[3]*m_vec[3];
+  temp= m_vec[1]*m_vec[1] + m_vec[2]*m_vec[2] + m_vec[3]*m_vec[3];
     
     if (abs(temp) >= 1.0e-16)
     {
