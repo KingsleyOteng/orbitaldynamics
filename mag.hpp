@@ -36,6 +36,7 @@ class mag
 {
     
     private:
+        
         double m_mag;
         double magv1;
         double magv2;
@@ -44,6 +45,7 @@ class mag
     double m_vec_2;
     
     public:
+    double theta;
         mag();
         ~mag();
         mag(double vec[]);

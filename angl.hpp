@@ -37,6 +37,7 @@ class angl
 {
     
     private:
+        double theta;
         double m_angl;
         double small;
         double undefined;

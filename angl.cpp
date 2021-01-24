@@ -23,7 +23,14 @@ angl::angl(double m_vec_1, double m_vec_2)
                temp= dot(m_vec_1,m_vec_2) / (magv1*magv2);
                if (abs( temp ) > 1.0)
                {
-                   temp= sign(temp) * 1.0;
+                if (temp < 0)
+                    {
+                        temp= -1 * 1.0;
+                    }
+                  else
+                    {
+                        temp= 1 * 1.0;
+                    }
                }
                theta= acos( temp );
            }
