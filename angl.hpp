@@ -47,11 +47,11 @@ class angl
 
     
     public:
-        angl(double m_vec_1, double m_vec_2);
+        angl(double m_vec_1[], double m_vec_2[]);
         angl();
         ~angl();
-        double setMag(double m_vec_1);
-    double dot(double vec1[], double vec2[]);
+        double setMag(double m_vec_1[]);
+        double dot(double vec1[], double vec2[]);
 
     
 };
