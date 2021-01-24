@@ -8,7 +8,7 @@
 
 #include "angl.hpp"
 
-angl::angl(double m_vec_1[], double m_vec_2[])
+angl::angl(double m_vec_1, double m_vec_2)
 {
   
     small     = 0.00000001;
