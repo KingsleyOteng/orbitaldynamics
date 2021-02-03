@@ -51,6 +51,7 @@ void sgp4::set_parameters                       (orbital *model)
     set_wgs(model);
 }
 
+
 double      sgp4::dspace
 (
  double satrec_d2201,double satrec_d2211,double satrec_d3210,
