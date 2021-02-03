@@ -122,7 +122,7 @@ sgp4::sgp4                            ()
     dspace_model *models = new dspace_model();
     orb -> SetSATnumber (m_satellite_number);
     
-    //   ------------------ set mathematical constants --------------- 
+    ///   ------------------ set mathematical constants --------------- 
     //    outputs       :
     //      tumin       - minutes in one time unit
     //      mu          - earth gravitational parameter
@@ -138,8 +138,8 @@ sgp4::sgp4                            ()
     m_vkmpersec     = model_const_radiusearthkm * m_xke/60.0;
     
     m_satrec_t     = 0;
-    // what is the 'tsince' variable
-    // m_satrec_t=tsince;
+    /// what is the 'tsince' variable
+    /// m_satrec_t=tsince;
     m_satrec_error = 0;
     m_mrt = 0.0;
     
