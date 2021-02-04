@@ -253,7 +253,6 @@ void dpper::set_parameters (satrec * rec)
     varSll     =  rec->satrec_xl2 *  varF2 + rec->satrec_xl3 * varF3 + rec->satrec_xl4 * varSinzf ;
     varSghl    =  rec->satrec_xgh2 * varF3 + rec->satrec_xgh3 * varF3 +  rec->satrec_xgh4 * varSinzf;
     varShll    =  rec->satrec_xh2  * varF2 + rec->satrec_xh3 * varF3;
-    
     varPe      =  varSes  + varSel;
     varPinc    =  varSis +  varSil;
     varPl      =  varSls +  varSll;
