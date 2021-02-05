@@ -159,7 +159,7 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
         {
             varPh = rec->satrec_mp  / varSinip;
             varPgh = varPh - varCosip * varPh;
-            
+           
             rec->satrec_argpp = rec->satrec_argpp  + varPgh;
             rec->satrec_nodep = rec->satrec_argpp + varPh;
             rec->satrec_mp = rec->satrec_mp + varPl;
@@ -178,15 +178,18 @@ void dpper::set_parameters (double e3, double ee2, double peo,double pgho,double
             rec->satrec_nodep  = remainder(rec->satrec_nodep, rec->const_twopi);
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
+            
             if ((rec->satrec_nodep< 0.0) & (rec->global_opsmode == 'a'))
             {
                 rec->satrec_nodep = rec->satrec_nodep + rec->const_twopi;
             }
+            
             varXls = rec->satrec_mp + rec->satrec_argpp + varCosip * rec->satrec_nodep;
             varDls = varPl + varPgh - varPinc * rec->satrec_nodep * varSinip ;
             varXls = varXls + varDls;
             varXnoh = rec->satrec_nodep;
             rec->satrec_nodep  = atan2(varAlfdp  , varBetdp);
+            
             // sgp4fix for afspc written intrinsic functions
             // nodep used without a trigonometric function ahead
             
