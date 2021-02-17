@@ -75,6 +75,7 @@ private:
     double      m_number_of_revoltions_elapsed;
     double      m_deg_solar_per_day;
     
+    int         m_wgs;
     int         m_year;
     int         m_month;
     int         m_day;
@@ -129,8 +130,10 @@ public:
     void        SetCheckSumLineTwo              (int checksum);
     void        SetObserverCoordinates          (double x_observer, double y_observer, double z_observer);
     void        SetSatelliteData                ();
+    void        SetWGS                          (std::string wgs_model);
     
     // getter
+    std::string getWGS();
     void        getDataFile                     ();
     void        getURLData                      ();
     void        getTLEsummary                   ();

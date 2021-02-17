@@ -20,12 +20,12 @@ public:
 
     
      // ---------------------- constants -----------------------------
-    double const_pi         = 3.14159267;
-    double const_twopi      = 2.0 * const_pi;
-    double const_zns        = 1.19459e-5;
-    double const_zes        = 0.01675;
-    double const_znl        = 1.5835218e-4;
-    double const_zel        = 0.05490;
+    double const_pi  = 3.14159267;
+    double const_twopi = 2.0 * const_pi;
+    double const_zns   = 1.19459e-5;
+    double const_zes   = 0.01675;
+    double const_znl   = 1.5835218e-4;
+    double const_zel   = 0.05490;
     char   global_opsmode;
     
     // outputs

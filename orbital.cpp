@@ -23,6 +23,10 @@ using namespace std;
 // methods
 // store the data
  // constructors  and destructors
+
+//orbital::orbital(double x_observer, double y_observer, double z_observer, std::string wgs_model)
+//{};
+
 orbital::orbital    ()
 {};
 
@@ -54,22 +58,22 @@ orbital::orbital(double x_observer, double y_observer, double z_observer)
     SetWGS("wgs-84");
 }
 
-orbital::orbital(double x_observer, double y_observer, double z_observer, std::string wgs_model)
-{
-    // set the observers coordinates
-    SetObserverCoordinates(x_observer, y_observer, z_observer);
+//orbital::orbital(double x_observer, double y_observer, double z_observer, std::string wgs_model)
+//{
+//    // set the observers coordinates
+//    SetObserverCoordinates(x_observer, y_observer, z_observer);
     
-    // set WGS model;
-    // https://portal.opengeospatial.org/files/16-011r4
-    SetWGS(wgs_model);
-}
+//    // set WGS model;
+//    // https://portal.opengeospatial.org/files/16-011r4
+//    SetWGS(wgs_model);
+//}
 
 
 // Set wgs
 void
     orbital::SetWGS(std::string wgs_model)
 {
-    m_wgs = wgs_model;
+    //m_wgs = wgs_model;
 }
 
 // Set data from web
@@ -573,7 +577,7 @@ void
 // set the checksum
 // store the data
 void
-    orbital::setURLData(std::string TLE)
+    orbital::SetURLData(std::string TLE)
 {
  
         strcpy(m_tle_url,TLE.c_str());
@@ -657,5 +661,6 @@ double
 
 std::string orbital::getWGS()
 {
-    return m_wgs;
+    return "";
+  //  return m_wgs;
 }
