@@ -18,8 +18,6 @@ using namespace std;
 
 #define ARRAY_SIZE_ONE  1
 #define Re              6378.1370
-
-
 // methods
 // store the data
  // constructors  and destructors
