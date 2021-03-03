@@ -20,11 +20,12 @@
 #include <string>
 #include <cmath>
 #include "orbital.hpp"                 // header files
-#include "BenchMarking.hpp"            // benchmarking routines
+#include "Benchmarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
 #include "sgp4.hpp"
 #include "sdp4.hpp"
 #include <mysql.h>
+
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 #include "utilities.hpp"               // my own routines for processing data
 #include <boost/any.hpp>               // boost standard library
@@ -43,9 +44,9 @@ using namespace std;
 //using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
 double frac_hours, hours_example, hours_final, min_final, seconds_final;
-//const string server = "156.67.222.64";
-//const string username = "u311839917_koteng";
-//const string password = "Mypass1234!";
+const string server = "156.67.222.64";
+const string username = "u311839917_koteng";
+const string password = "Mypass1234!";
 time_files* nf = new time_files();
 double ctime_example;
 
@@ -194,6 +195,7 @@ int main()
     
 //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
+    
     
     jd_out = jd + 0.5;
     F = modf(jd_out, &I);
