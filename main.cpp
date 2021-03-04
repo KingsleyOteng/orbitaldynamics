@@ -5,7 +5,6 @@
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
-
 // preprocessor instructions
 //#include "jni.h"
 #include <iostream>
@@ -20,7 +19,7 @@
 #include <string>
 #include <cmath>
 #include "orbital.hpp"                 // header files
-#include "Benchmarking.hpp"            // benchmarking routines
+#include "BenchMarking.hpp"            // benchmarking routines
 #include "time_files.hpp"
 #include "sgp4.hpp"
 #include "sdp4.hpp"
@@ -32,14 +31,9 @@
 #include <boost/asio.hpp>              // io streaming headers
 #include <boost/lambda/lambda.hpp>
 #include <boost/xpressive/xpressive.hpp>
-
-
-
-
 //#include <cppconn/driver.h>
 //#include <cppconn/exception.h>
 //#include <cppconn/prepared_statement.h>
-
 using namespace std;
 //using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
@@ -49,7 +43,6 @@ const string username = "u311839917_koteng";
 const string password = "Mypass1234!";
 time_files* nf = new time_files();
 double ctime_example;
-
 int main()
 {
     orbital *orb = new orbital(12,13,14);
@@ -134,7 +127,6 @@ int main()
     auto start = std::chrono::system_clock::now();
     std::time_t end_time = std::chrono::system_clock::to_time_t(start);
     cout << "current time" << std::ctime(&end_time) << "\n";
-
        tm.tm_sec = 45.57;
        tm.tm_min = 0;
        tm.tm_hour = 6;
@@ -153,7 +145,6 @@ int main()
     //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
     
-
     
     if ((month == 1) or (month == 2))
     {
@@ -195,7 +186,6 @@ int main()
     
 //Algorithm from 'Practical Astronomy with your Calculator or Spreadsheet',
     //       4th ed., Duffet-Smith and Zwart, 2011.
-    
     
     jd_out = jd + 0.5;
     F = modf(jd_out, &I);
