@@ -2,7 +2,6 @@
 #include <ctime>
 #include <random>
 
-// local
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
@@ -43,7 +42,7 @@ MainWindow::MainWindow(QWidget* parent)
 
     // set widget
     setCentralWidget(ui->widget);
-    setWindowTitle("Flight Plot");
+    setWindowTitle("Satellites Observations");
 }
 
 MainWindow::~MainWindow()
@@ -92,7 +91,7 @@ void MainWindow::setPlotAppearance()
 
     // set axis labels
     ui->customplot->xAxis->setLabel("Time");
-    ui->customplot->yAxis->setLabel("Flights");
+    ui->customplot->yAxis->setLabel("Space-Objects");
 }
 
 void MainWindow::updateCustomPlot()
