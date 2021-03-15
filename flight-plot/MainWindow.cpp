@@ -2,6 +2,7 @@
 #include <ctime>
 #include <random>
 
+// local
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
@@ -34,15 +35,18 @@ MainWindow::MainWindow(QWidget* parent)
     // update plot with data
     updateCustomPlot();
 
+    // rescale y-axis to fit all the content
+    ui->customplot->yAxis->rescale();
+
     // set zooming and dragging functionality
     // although zooming will be lost when the plot updates itself
     ui->customplot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
-    ui->customplot->axisRect()->setRangeZoomAxes(ui->customplot->xAxis, ui->customplot->yAxis);
-    ui->customplot->axisRect()->setRangeDragAxes(ui->customplot->xAxis, ui->customplot->yAxis);
+    ui->customplot->axisRect()->setRangeZoomAxes(ui->customplot->xAxis2, ui->customplot->yAxis);
+    ui->customplot->axisRect()->setRangeDragAxes(ui->customplot->xAxis2, ui->customplot->yAxis);
 
     // set widget
     setCentralWidget(ui->widget);
-    setWindowTitle("Satellites Observations");
+    setWindowTitle("Space Object Observations");
 }
 
 MainWindow::~MainWindow()
@@ -64,12 +68,12 @@ void MainWindow::setPlotAppearance()
 
     // design x-axis appearance
     // try changing colors and see how it looks
-    ui->customplot->xAxis->setBasePen(QPen(Qt::white));
-    ui->customplot->xAxis->setTickPen(QPen(Qt::white));
-    ui->customplot->xAxis->grid()->setVisible(true);
-    ui->customplot->xAxis->grid()->setPen(QPen(QColor(130, 130, 130), 0, Qt::DotLine));
-    ui->customplot->xAxis->setTickLabelColor(Qt::white);
-    ui->customplot->xAxis->setLabelColor(Qt::white);
+    ui->customplot->xAxis2->setBasePen(QPen(Qt::white));
+    ui->customplot->xAxis2->setTickPen(QPen(Qt::white));
+    ui->customplot->xAxis2->grid()->setVisible(true);
+    ui->customplot->xAxis2->grid()->setPen(QPen(QColor(130, 130, 130), 0, Qt::DotLine));
+    ui->customplot->xAxis2->setTickLabelColor(Qt::white);
+    ui->customplot->xAxis2->setLabelColor(Qt::white);
 
     // design y axis appearance
     ui->customplot->yAxis->setBasePen(QPen(Qt::white));
@@ -81,17 +85,17 @@ void MainWindow::setPlotAppearance()
     ui->customplot->yAxis->grid()->setPen(QPen(QColor(130, 130, 130), 0, Qt::SolidLine));
     ui->customplot->yAxis->grid()->setSubGridPen(QPen(QColor(130, 130, 130), 0, Qt::DotLine));
 
-    // hide top and right axis
-    ui->customplot->xAxis2->setVisible(false);
+    // hide bottom and right axis
+    ui->customplot->xAxis->setVisible(false);
     ui->customplot->yAxis2->setVisible(false);
 
     // set axis fonts
-    ui->customplot->xAxis->setTickLabelFont(QFont(QFont().family(), 10));
+    ui->customplot->xAxis2->setTickLabelFont(QFont(QFont().family(), 10));
     ui->customplot->yAxis->setTickLabelFont(QFont(QFont().family(), 10));
 
     // set axis labels
-    ui->customplot->xAxis->setLabel("Time");
-    ui->customplot->yAxis->setLabel("Space-Objects");
+    ui->customplot->xAxis2->setLabel("Observation Horizon");
+    ui->customplot->yAxis->setLabel("Space Objects");
 }
 
 void MainWindow::updateCustomPlot()
@@ -107,8 +111,8 @@ void MainWindow::updateCustomPlot()
     // every time before the replot
     // the range for the x-axis (time axis) is set to spread over 2 days
     // feel free to change and see how the plot and bars behave
-    ui->customplot->xAxis->setRange(QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime()),
-                                    QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime().addSecs(720)));
+    ui->customplot->xAxis2->setRange(QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime()),
+                                     QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime().addSecs(36000)));
 
     // repaint the whole plot
     ui->customplot->replot();
@@ -124,12 +128,12 @@ void MainWindow::createBars()
     std::default_random_engine randomGenerator(std::time(0));
     std::uniform_int_distribution<int> value(0, 255);
 
-    // iterate through all the flights in the vector
-    // create as many bars as there are flights in the vector
+    // iterate through all the Satellites in the vector
+    // create as many bars as there are Satellites in the vector
     for(int i = 0; i < flight_names.size(); i++)
     {
         // initialize a bar and set all the properties
-        Bar* bar = new Bar(ui->customplot->yAxis, ui->customplot->xAxis);
+        Bar* bar = new Bar(ui->customplot->yAxis, ui->customplot->xAxis2);
         bar->setBarName(flight_names[i]);
         bar->setArrivalTime(flight_arrival_times[i]);
         bar->setDepartureTime(flight_departure_times[i]);
@@ -229,13 +233,14 @@ void MainWindow::prepareData()
 
 void MainWindow::initAxesAndTickers()
 {
-    // initialize x-    axis
+    // initialize x-axis
     // time tickers
     m_datetimeTicker.reset(new QCPAxisTickerDateTime);
     m_datetimeTicker->setDateTimeFormat("d. MMM\nhh:mm:ss");
     m_datetimeTicker->setTickCount(10);
-    ui->customplot->xAxis->setTicker(m_datetimeTicker);
-    ui->customplot->xAxis->grid()->setSubGridVisible(true);
+    ui->customplot->xAxis2->setTicker(m_datetimeTicker);
+    ui->customplot->xAxis2->setVisible(true);
+    ui->customplot->xAxis2->grid()->setSubGridVisible(true);
 
     // initialize y-axis
     // flight names tickers
