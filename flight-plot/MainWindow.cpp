@@ -56,9 +56,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::setPlotAppearance()
 {
-    // here design the appearance of the plot
-    // as desired
-    // try playing with r,g,b values to see
+
     // how the plot looks
     QLinearGradient gradient(0, 0, 0, 400);
     gradient.setColorAt(0, QColor(90, 90, 90));
@@ -66,7 +64,6 @@ void MainWindow::setPlotAppearance()
     gradient.setColorAt(1, QColor(70, 70, 70));
     ui->customplot->setBackground(QBrush(gradient));
 
-    // design x-axis appearance
     // try changing colors and see how it looks
     ui->customplot->xAxis2->setBasePen(QPen(Qt::white));
     ui->customplot->xAxis2->setTickPen(QPen(Qt::white));
@@ -100,19 +97,15 @@ void MainWindow::setPlotAppearance()
 
 void MainWindow::updateCustomPlot()
 {
-    // to give a sense of movement of the bars to the left
-    // we can either redraw the bars with new data or we can just set the new axes range
-    // setting the new x-axis range gives us the illusion of bars moving to the left with time
+
     // but it is actually the x-axis updating
 
     // the origin(0,0) of the plot holds the current time always
     m_datetimeTicker->setTickOrigin(QDateTime::currentDateTime());
 
-    // every time before the replot
-    // the range for the x-axis (time axis) is set to spread over 2 days
     // feel free to change and see how the plot and bars behave
     ui->customplot->xAxis2->setRange(QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime()),
-                                     QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime().addSecs(36000)));
+                                     QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime().addSecs(72000)));
 
     // repaint the whole plot
     ui->customplot->replot();
@@ -230,6 +223,7 @@ void MainWindow::prepareData()
         m_timingDataArrival[i] = QCPAxisTickerDateTime::dateTimeToKey(dateTimeFinal) - m_timingDataDeparture[i];
     }
 }
+
 
 void MainWindow::initAxesAndTickers()
 {
