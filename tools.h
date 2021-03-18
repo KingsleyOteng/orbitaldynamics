@@ -5,7 +5,8 @@
 class tools
 {
 public:
-    readFile();
+    tools();
+    void readFiles();
 };
 
 #endif // TOOLS_H
