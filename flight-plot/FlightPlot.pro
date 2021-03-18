@@ -12,12 +12,14 @@ SOURCES += \
     Bar.cpp \
     main.cpp \
     MainWindow.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    tools.cpp
 
 HEADERS += \
     Bar.h \
     MainWindow.h \
-    qcustomplot.h
+    qcustomplot.h \
+    tools.h
 
 FORMS += \
     MainWindow.ui
