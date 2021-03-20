@@ -315,7 +315,7 @@ int main()
     cout << "\n" << "satellite id " << orb->getClassifierID();
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
-    cout << "\n" << "revolutions hello " << orb->getREVOLUTIONepochchecksum() << "\n";
+    cout << "\n" << "revolutions hello " << orb->getREVOLUTIONepochchecksum();
     
     // Let's grab a record using the NORAD ID and query the record for launch details
     // -----> The goal of this code was to check the launchdate
