@@ -300,22 +300,22 @@ int main()
        tm.tm_year = 120;
        tm.tm_isdst = 1;
     
-    cout << "\n" << "julian date: " << nf->tmTOjd(tm) << "\n";
+    cout << "\n" << "julian date: " << nf->tmTOjd(tm);
     
     ///TESTING  FOR MODIFIED JULIAN DATE CALCULATOR (COMPLETED)
-    cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
+    cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm);
     
     ///TESTING  FOR J2000 DATE CALCULATOR (COMPLETED)
-    cout << "\n" << "j2000 date " << nf->tmTOj2000(tm) << "\n";
+    cout << "\n" << "j2000 date " << nf->tmTOj2000(tm);
     
     ///TESTING GET SATELLITE NUMBER LINE 1 (COMPLETED)
-    cout << "\n" << "satellite number " << orb->getSATnumber() << "\n";
+    cout << "\n" << "satellite number " << orb->getSATnumber();
     
     ///TESTING GET SATELLIT INTERNATIONAL DESIGNATOR (COMPLETED)
-    cout << "\n" << "satellite id " << orb->getClassifierID() << "\n";
+    cout << "\n" << "satellite id " << orb->getClassifierID();
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
-    cout << "\n" << "revolutions hello " << orb->getREVOLUTIONepochchecksum() << "\n";
+    cout << "\n" << "revolutions hello " << orb->getREVOLUTIONepochchecksum();
     
     // Let's grab a record using the NORAD ID and query the record for launch details
     // -----> The goal of this code was to check the launchdate
