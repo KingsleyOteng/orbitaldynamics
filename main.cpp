@@ -280,11 +280,11 @@ int main()
     cout << "minutes from julian date" << min_final << "\n";
     cout << "seconds from julian date" << round(seconds_final) << "\n";
     
-    cout << "local: " << put_time(&tm, "%c %Z") << '\n';
-    cout << "time_t: "  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
-    cout << "conversion from ctime: " << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005") << "\n";
-    ctime_example = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005");
-    cout << "ctime: " << nf->jdTOctime(ctime_example) << "\n";
+    cout << "local: " << put_time(&tm, "%c %Z")<< "\n";
+    cout << "time_t: "  << nf->time_tTOjd ("2005-07-24 17:48:11")<< "\n";
+    cout << "conversion from ctime: " << nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005")<< "\n";
+    ctime_example = nf->ctimeTOjd  ("Sun Jul  24 17:48:11 2005")<< "\n";
+    cout << "ctime: " << nf->jdTOctime(ctime_example)<< "\n";
     cout << "delta ctime: " << nf->getDeltaCtimeFromTLE("20040.41532895") << "\n";
     nf->getCheckLaunchDateV();
   
