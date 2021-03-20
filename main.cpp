@@ -315,7 +315,7 @@ int main()
     cout << "\n" << "satellite id " << orb->getClassifierID() << "\n";
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
-    cout << "\n" << "revolutions " << orb->getREVOLUTIONepochchecksum() << "\n";
+    cout << "\n" << "revolutions hello " << orb->getREVOLUTIONepochchecksum() << "\n";
     
     // Let's grab a record using the NORAD ID and query the record for launch details
     // -----> The goal of this code was to check the launchdate
@@ -323,7 +323,6 @@ int main()
     //std::string query_field = "apogee";
     //std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
     //cout << "record> " << query_field <<  " " << query_output << "\n";
-    
     // let's introduce sgp4
     // exit
     sgp4 *sgp_model = new sgp4();
