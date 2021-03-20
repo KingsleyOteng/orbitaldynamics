@@ -641,7 +641,7 @@ void
     
     std::string query_field = "apogee";
     std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
-    cout << "   apogee (introduced):     "       << query_output;
+    cout << "   apogee (introduced):     " << query_output;
     cout << "     }" << "\n";
 };
 
