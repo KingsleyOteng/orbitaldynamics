@@ -68,12 +68,12 @@ class MainWindow : public QMainWindow
     private slots:
 
         /**
-         * @brief Updates plot when timer timeout signal is emitted
+         * @brief so this updates the plot when timer timeout signal is emitted
          */
         void updateCustomPlot();
 
         /**
-         * @brief Loads CSV file
+         * @brief so this loads CSV file
          */
         void on_pushButton_clicked();
 
@@ -83,7 +83,7 @@ class MainWindow : public QMainWindow
         Ui::MainWindow* ui;
 
         /**
-         * @brief Designs how the plot looks
+         * @brief designs how the plot looks
          */
         void setPlotAppearance();
 
