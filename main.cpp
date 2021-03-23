@@ -235,13 +235,9 @@ int main()
     frac_days = dayg - days_gg;
     
     C = BB + 1524;
-    
     D = trunc((C - 122.1) / 365.25);
-    
     E = trunc(365.25 * D);
-    
     G = trunc((C - E) / 30.6001);
-    
     day_final = C - E + F - trunc(30.6001 * G);
     
     if (G < 13.5)
@@ -289,7 +285,7 @@ int main()
     nf->getCheckLaunchDateV();
   
     // https://www.satellite-calculations.com/TLETracker/SatTracker.htm
-    cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
+       cout << "Day to Month: " << nf->month_generator_classification_phrase(80);
     
     ///TESTING  FOR JULIAND DATE CALCULATOR (COMPLETED)
        tm.tm_sec = 0;
