@@ -48,6 +48,8 @@ namespace
     const QVector<QString> flight_types = { "A220", "A380-800", "B777", "A320", "B747", "A380-800", "A310-300F", "E767-300", "C137" };
 }
 
+
+
 class MainWindow : public QMainWindow
 {
         Q_OBJECT
