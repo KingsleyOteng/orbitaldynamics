@@ -5,6 +5,7 @@
 // local
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
+#include "pushButton.h"
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -145,6 +146,10 @@ void MainWindow::initAxesAndTickers()
 void MainWindow::on_pushButton_clicked()
 {
     // write code here to load csv files and then parse the data
+
+    pushButton addressBook;
+        addressBook.show();
+
 }
 
 
