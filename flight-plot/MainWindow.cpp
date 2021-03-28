@@ -1,13 +1,13 @@
-// std
+// standard c++ files
 #include <ctime>
 #include <random>
 
-// qt
+// qt ready files
 #include <QTextStream>
 #include <QFileDialog>
 #include <QDebug>
 
-// local
+// local ready files
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget* parent)
     ui->setupUi(this);
     m_timer = new QTimer(this);
     QObject::connect(m_timer, &QTimer::timeout, this, &MainWindow::updateCustomPlot);
-    m_timer->start(UPDATE_FREQUENCY_MS); //time specified in ms
+    m_timer->start(UPDATE_FREQUENCY_MS); //set time count to ms
     setPlotAppearance();
     prepareData();
     initAxesAndTickers();
