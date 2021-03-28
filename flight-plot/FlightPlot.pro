@@ -10,20 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     Bar.cpp \
-    finddialog.cpp \
     main.cpp \
     MainWindow.cpp \
-    pushButton.cpp \
-    qcustomplot.cpp \
-    tools.cpp
+    qcustomplot.cpp
 
 HEADERS += \
     Bar.h \
     MainWindow.h \
-    finddialog.h \
-    pushButton.h \
-    qcustomplot.h \
-    tools.h
+    qcustomplot.h
 
 FORMS += \
     MainWindow.ui

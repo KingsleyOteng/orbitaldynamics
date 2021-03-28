@@ -14,19 +14,7 @@ namespace Ui
     class MainWindow;
 }
 QT_END_NAMESPACE
-
-// frequency value should always be in milliseconds
-// 10000 milliseconds = 10 seconds
-// modify this value to update
-// your GUI plot as desired
 #define UPDATE_FREQUENCY_MS 10000
-
-// these are the hardcoded properties for all the flights
-// number of bars on the plot depends on how many flights are in flight_names vector
-// all the vectors must have equal sizes at all times
-// adding or removing details must be done for all the vectors
-// for e.g. adding a new flight must also have flight name, flight_origins and so on..
-// VECTOR SIZES MUST REMAIN THE SAME ALL THE TIME
 namespace
 {
     const QVector<QString> flight_numbers = { "AA123", "KA456", "GA789", "AZ1011", "MA1213", "LX205", "IA147", "EK056", "LU1988"};
@@ -48,8 +36,6 @@ namespace
     const QVector<QString> flight_types = { "A220", "A380-800", "B777", "A320", "B747", "A380-800", "A310-300F", "E767-300", "C137" };
 }
 
-
-
 class MainWindow : public QMainWindow
 {
         Q_OBJECT
@@ -70,12 +56,12 @@ class MainWindow : public QMainWindow
     private slots:
 
         /**
-         * @brief so this updates the plot when timer timeout signal is emitted
+         * @brief Updates plot when timer timeout signal is emitted
          */
         void updateCustomPlot();
 
         /**
-         * @brief so this loads CSV file
+         * @brief Loads CSV file
          */
         void on_pushButton_clicked();
 
@@ -85,7 +71,7 @@ class MainWindow : public QMainWindow
         Ui::MainWindow* ui;
 
         /**
-         * @brief designs how the plot looks
+         * @brief Designs how the plot looks
          */
         void setPlotAppearance();
 

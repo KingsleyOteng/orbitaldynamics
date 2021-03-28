@@ -45,7 +45,7 @@
        <item>
         <widget class="QPushButton" name="pushButton">
          <property name="text">
-          <string>Load CSV...</string>
+          <string>Update by CSV</string>
          </property>
         </widget>
        </item>

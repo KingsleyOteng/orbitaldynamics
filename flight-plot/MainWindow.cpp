@@ -2,19 +2,26 @@
 #include <ctime>
 #include <random>
 
+// qt
+#include <QTextStream>
+#include <QFileDialog>
+#include <QDebug>
+
 // local
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
-#include "pushButton.h"
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // for e.g. if the update frequency is set to be 10000 milliseconds
+    // updateCustomPlot() is called every 10 secs
     m_timer = new QTimer(this);
     QObject::connect(m_timer, &QTimer::timeout, this, &MainWindow::updateCustomPlot);
-    m_timer->start(UPDATE_FREQUENCY_MS);
+    m_timer->start(UPDATE_FREQUENCY_MS); //time specified in ms
     setPlotAppearance();
     prepareData();
     initAxesAndTickers();
@@ -25,7 +32,7 @@ MainWindow::MainWindow(QWidget* parent)
     ui->customplot->axisRect()->setRangeZoomAxes(ui->customplot->xAxis2, ui->customplot->yAxis);
     ui->customplot->axisRect()->setRangeDragAxes(ui->customplot->xAxis2, ui->customplot->yAxis);
     setCentralWidget(ui->widget);
-    setWindowTitle("Space Object Observations");
+    setWindowTitle("Flight Plot");
 }
 
 MainWindow::~MainWindow()
@@ -35,8 +42,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::setPlotAppearance()
 {
-
-    // how the plot looks
     QLinearGradient gradient(0, 0, 0, 400);
     gradient.setColorAt(0, QColor(90, 90, 90));
     gradient.setColorAt(0.38, QColor(105, 105, 105));
@@ -60,17 +65,15 @@ void MainWindow::setPlotAppearance()
     ui->customplot->yAxis2->setVisible(false);
     ui->customplot->xAxis2->setTickLabelFont(QFont(QFont().family(), 10));
     ui->customplot->yAxis->setTickLabelFont(QFont(QFont().family(), 10));
-    ui->customplot->xAxis2->setLabel("Observation Horizon");
-    ui->customplot->yAxis->setLabel("Space Objects");
+    ui->customplot->xAxis2->setLabel("Schedule");
+    ui->customplot->yAxis->setLabel("Spacecraft");
 }
 
 void MainWindow::updateCustomPlot()
 {
-
-
     m_datetimeTicker->setTickOrigin(QDateTime::currentDateTime());
     ui->customplot->xAxis2->setRange(QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime()),
-                                     QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime().addSecs(72000)));
+                                     QCPAxisTickerDateTime::dateTimeToKey(QDateTime::currentDateTime().addSecs(86400)));
     ui->customplot->replot();
 }
 
@@ -80,7 +83,6 @@ void MainWindow::createBars()
     std::uniform_int_distribution<int> value(0, 255);
     for(int i = 0; i < flight_names.size(); i++)
     {
-        // initialize a bar and set all the properties
         Bar* bar = new Bar(ui->customplot->yAxis, ui->customplot->xAxis2);
         bar->setBarName(flight_names[i]);
         bar->setArrivalTime(flight_arrival_times[i]);
@@ -115,7 +117,6 @@ void MainWindow::prepareData()
         int arrival_mins = flight_arrival_times[i].midRef(2, 2).toInt();
         QDateTime dateTimebase(QDateTime::currentDateTime().date(), QTime(departure_hrs, departure_mins));
         m_timingDataDeparture[i] = QCPAxisTickerDateTime::dateTimeToKey(dateTimebase);
-
         QDateTime dateTimeFinal;
         if(flight_overnight[i] == "Yes")
         {
@@ -128,7 +129,6 @@ void MainWindow::prepareData()
         m_timingDataArrival[i] = QCPAxisTickerDateTime::dateTimeToKey(dateTimeFinal) - m_timingDataDeparture[i];
     }
 }
-
 
 void MainWindow::initAxesAndTickers()
 {
@@ -145,11 +145,31 @@ void MainWindow::initAxesAndTickers()
 
 void MainWindow::on_pushButton_clicked()
 {
-    // write code here to load csv files and then parse the data
+    QString filepath = QFileDialog::getOpenFileName(nullptr, "Choose a csv file", QString(),
+                       QString("csv files(*.csv)"));
 
-    pushButton addressBook;
-        addressBook.show();
+    if(filepath.isNull())
+    {
+        return;
+    }
 
+    QFile file(filepath);
+    if ( !file.open(QFile::ReadOnly | QFile::Text) )
+    {
+        qDebug() << "File could not be opened";
+    }
+    else
+    {
+        QTextStream in(&file);
+        while (!in.atEnd())
+        {
+            QString line = in.readLine();
+                for (QString item : line.split(","))
+                {
+                    qDebug() << item;
+                }
+        }
+
+        file.close();
+    }
 }
-
-

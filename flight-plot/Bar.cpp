@@ -1,7 +1,4 @@
-// qt
 #include <QToolTip>
-
-// local
 #include "Bar.h"
 
 
@@ -23,11 +20,8 @@ void Bar::setOrigin(const QString& origin)
 
 void Bar::mousePressEvent(QMouseEvent* event, const QVariant& details)
 {
-    // call base class function
-    QCPBars::mousePressEvent(event, details);
 
-    // show tool tip on mouse press event
-    // modify your custom message here
+    QCPBars::mousePressEvent(event, details);
     QString text = m_flightNumber + "\n" +
                    m_barName + "\n" +
                    "Origin: " + m_origin + "\n" +
