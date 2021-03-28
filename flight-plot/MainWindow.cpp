@@ -16,9 +16,6 @@ MainWindow::MainWindow(QWidget* parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    // for e.g. if the update frequency is set to be 10000 milliseconds
-    // updateCustomPlot() is called every 10 secs
     m_timer = new QTimer(this);
     QObject::connect(m_timer, &QTimer::timeout, this, &MainWindow::updateCustomPlot);
     m_timer->start(UPDATE_FREQUENCY_MS); //time specified in ms
