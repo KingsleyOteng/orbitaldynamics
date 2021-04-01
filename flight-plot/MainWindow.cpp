@@ -2,6 +2,7 @@
 #include <ctime>
 #include <random>
 #include <regex>
+#include <iostream>
 
 // qt ready files
 #include <QTextStream>
@@ -144,6 +145,14 @@ void MainWindow::initAxesAndTickers()
 
 void MainWindow::on_pushButton_clicked()
 {
+    //std::regex r ("\"//w++\"");
+    std::regex r ("software");
+    std::string str ("software");
+    if (regex_match (str,r))
+         qDebug() << "----------------------->string:xxxxobject => matched\n";
+
+
+
     QString filepath = QFileDialog::getOpenFileName(nullptr, "Choose a csv file", QString(),
                        QString("csv files(*.csv)"));
 
@@ -159,13 +168,16 @@ void MainWindow::on_pushButton_clicked()
     }
     else
     {
+
         QTextStream in(&file);
         while (!in.atEnd())
         {
+
             QString line = in.readLine();
                 for (QString item : line.split(","))
                 {
                     qDebug() << item;
+
                 }
         }
 
