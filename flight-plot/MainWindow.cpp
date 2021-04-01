@@ -1,6 +1,7 @@
 // standard c++ files
 #include <ctime>
 #include <random>
+#include <regex>
 
 // qt ready files
 #include <QTextStream>
@@ -10,6 +11,7 @@
 // local ready files
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
+
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
