@@ -65,6 +65,8 @@ class MainWindow : public QMainWindow
          */
         void on_pushButton_clicked();
 
+        void parseFiles(std::string phrase);
+
     private:
 
         // UI

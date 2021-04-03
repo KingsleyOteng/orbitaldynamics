@@ -145,13 +145,6 @@ void MainWindow::initAxesAndTickers()
 
 void MainWindow::on_pushButton_clicked()
 {
-    //std::regex r ("\"//w++\"");
-    std::regex r ("software");
-    std::string str ("software");
-    if (regex_match (str,r))
-         qDebug() << "----------------------->string:xxxxobject => matched\n";
-
-
 
     QString filepath = QFileDialog::getOpenFileName(nullptr, "Choose a csv file", QString(),
                        QString("csv files(*.csv)"));
@@ -174,13 +167,20 @@ void MainWindow::on_pushButton_clicked()
         {
 
             QString line = in.readLine();
+
+
                 for (QString item : line.split(","))
                 {
                     qDebug() << item;
-
+                    parseFiles("hello");
                 }
         }
 
         file.close();
     }
 }
+
+void MainWindow::parseFiles(std::string phrase)
+{
+
+};
