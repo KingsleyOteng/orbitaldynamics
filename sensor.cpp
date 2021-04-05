@@ -6,13 +6,10 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// object header files
 #include "sensor.hpp"
 #include "orbital.hpp"
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <stdio.h>
-#include <stdlib.h>
+
 
 //susing namespace std;
 

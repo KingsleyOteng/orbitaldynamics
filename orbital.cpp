@@ -5,14 +5,10 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// object header files
 #include "orbital.hpp"
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <stdio.h>
-#include <stdlib.h>
-#include "utilities.hpp"               // my own routines for processing data
-#include <boost/functional/hash.hpp>
+#include "utilities.hpp"    
+
 
 using namespace std;
 

@@ -263,6 +263,8 @@ time_files::time_tTOjd      (char* input)
     
     if( regex_match( phrase, what, rex ) )
     {
+    
+        
         // determine the current month in digits
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
         
@@ -291,8 +293,12 @@ time_files::ctimeTOjd     (char* ctime)
     std::vector<std::string> months = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
     
     // returns index for the month
+
+    
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\w+)  (\\d+) (\\d+):(\\d+):(\\d+) (\\d+)" );
     boost::xpressive::smatch what;
+    
+    
     
     int temp;
     
@@ -301,15 +307,17 @@ time_files::ctimeTOjd     (char* ctime)
 
     if( regex_match( phrase, what, rex ) )
     {
+       
         size_t month_number = std::distance(months.begin(),std::find(months.begin(), months.end(), what[2].str()));
     
-        tm.tm_sec = stoi(what[6].str()) + 1;
-        tm.tm_min = stoi(what[5].str());
-        tm.tm_hour = stoi(what[4].str());
-        tm.tm_mday = stoi(what[3].str());
-        tm.tm_mon =  static_cast<int>(month_number + 2.0);
-        tm.tm_year = stoi(what[7].str()) - 3800;
-        tm.tm_isdst = 0;
+            tm.tm_sec = stoi(what[6].str()) + 1;
+            tm.tm_min = stoi(what[5].str());
+            tm.tm_hour = stoi(what[4].str());
+            tm.tm_mday = stoi(what[3].str());
+            tm.tm_mon =  static_cast<int>(month_number + 2.0);
+            tm.tm_year = stoi(what[7].str()) - 3800;
+            tm.tm_isdst = 0;
+        
     }
     
     return tmTOjd(tm);
@@ -491,6 +499,8 @@ time_files::getDeltaCtimeFromTLE (std::string dateStringTLE)
     boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})(.\\d+)(\\d{2})(\\d{3})" );
     boost::xpressive::smatch what;
     
+
+    
     std::tm tm = {0};
     //= time_t
 
@@ -582,26 +592,29 @@ char* time_files::month_generator_classification_number(double days_elapsed) {
     return   month_classifier;
 }
 
-char* time_files::time_elapsed_since_epoch()
-{
-       boost::asio::ip::tcp::iostream stream("www.martinbroadhurst.com", "http");
+char* time_files::time_elapsed_since_epoch() {
+
+    boost::asio::ip::tcp::iostream stream("www.martinbroadhurst.com", "http");
        stream << "GET / HTTP/1.1\r\n";
        stream << "Host: www.martinbroadhurst.com\r\n";
        stream << "Accept: */*\r\n";
        stream << "Connection: close\r\n\r\n";
        stream.flush();
        std::cout << stream.rdbuf();
-       return "0";
+    return "0";
 }
 
 double time_files::getCheckLaunchDate()
 {
+
     return 0;
 }
 
 void time_files::getCheckLaunchDateV()
 {
 
+
+   
 }
 
 void                        connectToDatabase()
