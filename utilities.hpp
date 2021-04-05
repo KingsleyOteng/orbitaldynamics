@@ -8,11 +8,8 @@
 #ifndef utilities_hpp
 #define utilities_hpp
 
-#include <stdio.h>
-#include <string>
-#include <sstream>      // std::istringstream
-#include <iostream>     // std::cout
-#include <vector>
+
+// api header files
 #include <boost/regex.hpp>
 #include <boost/xpressive/xpressive.hpp>
 #include <boost/algorithm/string/replace.hpp>
