@@ -9,12 +9,7 @@
 #ifndef newtownm_hpp
 #define newtownm_hpp
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string>
-#include <sstream>      // std::istringstream
-#include <iostream>     // std::cout
-#include <vector>
+// system header files
 #include <cmath>
 
 
