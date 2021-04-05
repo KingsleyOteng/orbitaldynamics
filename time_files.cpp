@@ -8,14 +8,6 @@
 
 // tell the preprocessor
 #include "time_files.hpp"
-#include <time.h>
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <stdio.h>
-#include <array>
-#include <iterator>
-#include <stdlib.h>
 #include <boost/asio.hpp>
 
 
