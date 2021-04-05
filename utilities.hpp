@@ -74,5 +74,6 @@ public:
   std::string               GetSatelliteLog                  (std::string phrasalmatching);
   std::string               SatelliteNORADRecord             (std::string noradId, std::string indx);
   void                      RungeKuttaMethod                 ();
+  void                      ParseDateFile                    ();
 };
 #endif /* utilities_hpp */
