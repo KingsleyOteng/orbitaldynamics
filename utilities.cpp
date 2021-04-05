@@ -5,11 +5,11 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-// defined classes
+
 #include "utilities.hpp"
 #include "orbital.hpp"
-
-
+#include <stdio.h>
+#include <boost/algorithm/string/replace.hpp>
 
 using namespace std;
 
