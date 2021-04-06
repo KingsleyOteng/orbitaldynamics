@@ -11,7 +11,6 @@
 
 
 #include <time.h>
-#include <math.h>
 #include <ctime>
 #include <chrono>
 #include "coordinate_transforms.hpp"   // coordinate transforms library
