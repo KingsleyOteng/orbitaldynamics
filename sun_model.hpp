@@ -9,6 +9,4 @@
 #ifndef sun_model_hpp
 #define sun_model_hpp
 
-#include <stdio.h>
-
 #endif /* sun_model_hpp */
