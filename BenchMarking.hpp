@@ -9,11 +9,10 @@
 #ifndef BenchMarking_hpp
 #define BenchMarking_hpp
 
-#include <stdio.h>
+
 #include <time.h>
 #include <math.h>
 #include <ctime>
-#include <string>
 #include <iostream>
 #include <chrono>
 #include "coordinate_transforms.hpp"   // coordinate transforms library
