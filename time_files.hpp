@@ -3,10 +3,8 @@
 
 
 // system header files
-#include <stdio.h>
 #include <time.h>
 #include <math.h>
-#include <string>
 #include <iostream>
 
 // api header files
