@@ -1,10 +1,12 @@
-#include "coordinate_transforms.hpp"
+// system files
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <stdio.h>
 #include <stdlib.h>
 
+// user defined header files
+#include "coordinate_transforms.hpp"
 using namespace std;
 
 #define Re              6378.1370               // the earths radius; from Kelso
