@@ -4,7 +4,6 @@
 
 // system header files
 #include <time.h>
-#include <math.h>
 #include <iostream>
 
 // api header files
