@@ -9,11 +9,9 @@
 #ifndef coordinate_transforms_hpp
 #define coordinate_transforms_hpp
 
-#include <stdio.h>
 #include <time.h>
 #include <math.h>
 #include <ctime>
-#include <string>
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 
