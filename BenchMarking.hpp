@@ -13,7 +13,6 @@
 #include <time.h>
 #include <math.h>
 #include <ctime>
-#include <iostream>
 #include <chrono>
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 
