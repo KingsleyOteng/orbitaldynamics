@@ -9,6 +9,4 @@
 #ifndef geomagnetic_field_model_hpp
 #define geomagnetic_field_model_hpp
 
-#include <stdio.h>
-
 #endif /* geomagnetic_field_model_hpp */
