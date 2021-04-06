@@ -10,7 +10,6 @@
 #define coordinate_transforms_hpp
 
 #include <time.h>
-#include <math.h>
 #include <ctime>
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
