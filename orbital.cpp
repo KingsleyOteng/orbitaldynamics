@@ -290,56 +290,56 @@ void orbital::
 
 // set the ballistic coefficient
 // store the data
-void
-    orbital::SetBALLISTICcoefficient(double coefficient)
+void orbital::
+    SetBALLISTICcoefficient(double coefficient)
 {
     m_ballistic_coefficient = coefficient;
 };
 
 // extract and store the second derivative
 // store the data
-void
-    orbital::SetSECONDderivativemotion(std::string motion)
+void orbital::
+    SetSECONDderivativemotion(std::string motion)
 {
     strcpy(m_second_derivative_of_motion,motion.c_str());
 };
 
 // extract and store the degradation coefficient
 // store the data
-void
-    orbital::SetDRAGRADIATIONcoefficient(std::string coefficient)
+void orbital::
+    SetDRAGRADIATIONcoefficient(std::string coefficient)
 {
     strcpy(m_drag_term_or_radition_coefficient,coefficient.c_str());
 };
 
 // set the ephemeris details
 // store the data
-void
-    orbital::SetEPHEMERIStype(int type)
+void orbital::
+    SetEPHEMERIStype(int type)
 {
     m_ephemeris_type = type;
 };
 
 // set the element number
 // store the data
-void
-    orbital::SetELEMENTnumber(int number)
+void orbital::
+    SetELEMENTnumber(int number)
 {
     m_element_number = number;
 };
 
 // set the checksum
 // store the data
-void
-    orbital::SetCHECKsum(int sum)
+void orbital::
+    SetCHECKsum(int sum)
 {
     m_check_sum = sum;
 };
 
 // set the satellite number obtained from line 2
 // store the data
-void
-    orbital::SetSATNUMBERline2(int number)
+void orbital::
+    SetSATNUMBERline2(int number)
 {
     m_satellite_number_2 = number;
 };
