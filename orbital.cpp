@@ -394,16 +394,16 @@ void orbital::
 
 // set the epoch and the corresponding checksum
 // store the data
-void
-    orbital::SetREVOLUTIONepochchecksum(double checksum)
+void orbital::
+    SetREVOLUTIONepochchecksum(double checksum)
 {
     m_epoch_checksum = checksum;
 };
 
 // set the data from the first line of the tle
 // store the data
-void
-    orbital::SetTLElineone(std::string phrase)
+void orbital::
+    SetTLElineone(std::string phrase)
 {
     
     strcpy(m_tle_line_one,phrase.c_str());
