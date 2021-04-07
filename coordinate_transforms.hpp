@@ -26,7 +26,6 @@ using namespace std;
 class coordinate_transforms
 {
    
-    
 private:
     
     #define twopi                       6.28318530718
@@ -117,8 +116,7 @@ public:
     double  fMod                                  (double a, double b);
     double  FunctionThetaGJD                      (double jd);
     void    FunctionThetaGJDM                     (double jd);
-    
-    
+        
     // toggle eci coordinates
     void    get_eci_z_coordinate                  ();
     void    get_eci_x_coordinate                  ();
@@ -127,7 +125,6 @@ public:
     void    set_eci_x_coordinate                  ();
     void    set_eci_y_coordinate                  ();
     
-
     tm* setTimeConversionM                      (std::string date, std::string year);
     void setUserPositionModel                   (double lat, double lon, double elev, double timet);
     void getObserverRange                       ();

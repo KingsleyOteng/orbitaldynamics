@@ -13,16 +13,19 @@ using namespace std;
 #define we              0.0000729211510        // Earth's rotation rate in radians/second; from Kelso
 
 // constructor
-coordinate_transforms::coordinate_transforms()
+coordinate_transforms::c
+    oordinate_transforms()
 {}
 
 // destructor
-coordinate_transforms::~coordinate_transforms()
+coordinate_transforms::
+    ~coordinate_transforms()
 {}
 
 // methods
 // perform coordinate transforms
-void coordinate_transforms::setCartesianCoordinates
+void coordinate_transforms::
+    setCartesianCoordinates
     (double latitude_box1, double longitude_box1, double elevation)
 {
         double R;
@@ -37,7 +40,8 @@ void coordinate_transforms::setCartesianCoordinates
 }
 
 // perform coordinate side real transforms
-void coordinate_transforms::setCoordinates
+void coordinate_transforms::
+    setCoordinates
     (double latitude_box1, double longitude_box1, double elevation)
 {
         double R;
@@ -330,7 +334,7 @@ getTropocentricCoordinates                      ()
 }
 
 void coordinate_transforms::
-getObserverRange                       ()
+    getObserverRange                       ()
 {
     // Note that the range vector generated here will be in ECI
     // A conversion from ECI to look-angles is required
