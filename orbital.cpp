@@ -17,18 +17,22 @@ using namespace std;
 // methods
 // store the data
  // constructors  and destructors
-orbital::orbital    ()
+orbital::
+    orbital    ()
 {};
 
-orbital::~orbital   ()
+orbital::
+    ~orbital   ()
 {};
 
-orbital::orbital(int year, int month, int day)
+orbital::
+    orbital(int year, int month, int day)
 {
     SetDate(year, month, day);
 }
 
-orbital::orbital(double x_observer, double y_observer, double z_observer)
+orbital::
+    orbital(double x_observer, double y_observer, double z_observer)
 {
      // set the observers coordinates
     SetObserverCoordinates(x_observer, y_observer, z_observer);
@@ -60,30 +64,30 @@ orbital::orbital(double x_observer, double y_observer, double z_observer, std::s
 
 
 // Set wgs
-void
-    orbital::SetWGS(std::string wgs_model)
+void orbital::
+    SetWGS(std::string wgs_model)
 {
     m_wgs = wgs_model;
 }
 
 // Set data from web
-void
-    orbital::SetSatelliteData()
+void orbital::
+    SetSatelliteData()
 {
     
 }
 
 // Set the current epoch
-void
-    orbital::SetCurrentEpoch(int year, int month, int day)
+void orbital::
+    SetCurrentEpoch(int year, int month, int day)
 {
     SetDate(year, month, day);
 }
  
 // Date member function
 // store the data
-void
-    orbital::SetDate(int year, int month, int day)
+void orbital::
+    SetDate(int year, int month, int day)
 {
     m_month = month;
     m_day = day;
@@ -93,24 +97,24 @@ void
 
 // Date member function
 // store the data
-void
-    orbital::getURLData(std::string resource_locator)
+void orbital::
+    getURLData(std::string resource_locator)
 {
     
 };
 
 // Date member function
 // store the data
-char*
-    orbital::getClassifierID()
+char* orbital::
+    getClassifierID()
 {
     return m_id;
 };
 
 // Date member function
 // store the data
-void
-    orbital::getDataFile()
+void orbital::
+    getDataFile()
 {
     std::string filename = "/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/TLE_File.txt";
     std::ifstream in(filename, std::ios::out);
@@ -148,8 +152,8 @@ void
 
 // set the checksum
 // store the data
-void
-    orbital::getURLData()
+void orbital::
+    getURLData()
 {
     // variables declarationm
     std::string FILENAME;
@@ -216,8 +220,8 @@ void
 
 // Date member function
 // store the data
-void
-    orbital::SetTLEname(string name)
+void orbital::
+    SetTLEname(string name)
 {
     std::string phrase;
     phrase = name.substr(0, 11);
@@ -229,8 +233,7 @@ void
 
 // sets the statellite number
 // store the data
-void
-    orbital::SetSATnumber(int number)
+void orbital::SetSATnumber(int number)
 {
     m_satellite_number = number;
 };
