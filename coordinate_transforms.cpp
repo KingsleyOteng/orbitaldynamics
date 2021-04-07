@@ -13,11 +13,13 @@ using namespace std;
 #define we              0.0000729211510        // Earth's rotation rate in radians/second; from Kelso
 
 // constructor
-coordinate_transforms::coordinate_transforms()
+coordinate_transforms::c
+    oordinate_transforms()
 {}
 
 // destructor
-coordinate_transforms::~coordinate_transforms()
+coordinate_transforms::
+    ~coordinate_transforms()
 {}
 
 // methods
@@ -332,7 +334,7 @@ getTropocentricCoordinates                      ()
 }
 
 void coordinate_transforms::
-getObserverRange                       ()
+    getObserverRange                       ()
 {
     // Note that the range vector generated here will be in ECI
     // A conversion from ECI to look-angles is required
@@ -342,26 +344,26 @@ getObserverRange                       ()
 }
 
 int coordinate_transforms::
-getJulianDateFractionOfDay              ()
+    getJulianDateFractionOfDay              ()
 {
     return m_fraction_of_day;
 }
 
 double coordinate_transforms::
-getPolarRadius              ()
+    getPolarRadius              ()
 {
     //using an oblate spheroid near the polls
     return 6356.751;
 }
 
 double coordinate_transforms::
-getGeocentricLatitude       (double geodeticLatitude, double a, double b)
+    getGeocentricLatitude       (double geodeticLatitude, double a, double b)
 {
     return 0;
 }
 
 double coordinate_transforms::
-getElapsedTime              (double jd_epoch, double jd_now)
+    getElapsedTime              (double jd_epoch, double jd_now)
 {
     double time_elapsed = jd_epoch - jd_now;
     return 0;
