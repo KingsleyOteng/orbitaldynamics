@@ -233,31 +233,32 @@ void orbital::
 
 // sets the statellite number
 // store the data
-void orbital::SetSATnumber(int number)
+void orbital::
+    SetSATnumber(int number)
 {
     m_satellite_number = number;
 };
 
 // sets the classifier field (1 digits)
 // store the data
-void
-    orbital::SetCLASSIFIERfield(std::string ClassifierID)
+void orbital::
+    SetCLASSIFIERfield(std::string ClassifierID)
 {
     strcpy(m_classification, ClassifierID.c_str());
 };
 
 // sets the laumncher year field
 // store the data
-void
-    orbital::SetLAUNCHERyearfield(int field)
+void orbital::
+     SetLAUNCHERyearfield(int field)
 {
     m_designator_launch_year = field;
 };
 
 // sets the launcher number field
 // store the data
-void
-    orbital::SetLAUNCHERnumberfield(int field)
+void orbital::
+    SetLAUNCHERnumberfield(int field)
 {
     m_designator_launch_number_of_year = field;
 };
@@ -265,24 +266,24 @@ void
 
 // sets the piece designator
 // store the data
-void
-    orbital::SetLAUNCHpiecedesignator(char designator[ARRAY_SIZE_ONE])
+void orbital::
+    SetLAUNCHpiecedesignator(char designator[ARRAY_SIZE_ONE])
 {
     strcpy(m_designator_piece_of_launch,designator);
 };
 
 // set the epoch year
 // store the data
-void
-    orbital::SetEPOCHyear(int year)
+void orbital::
+    SetEPOCHyear(int year)
 {
     m_epoch_year = year;
 };
 
 // set the julian date fraction
 // store the data
-void
-    orbital::SetJULIANdatefraction(double fraction)
+void orbital::
+    SetJULIANdatefraction(double fraction)
 {
     m_julian_date_fraction = fraction;
 };
