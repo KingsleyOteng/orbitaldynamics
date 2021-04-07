@@ -412,8 +412,8 @@ void orbital::
 
 // set the data from the second line of the tle
 // store the data
-void
-    orbital::SetTLElinetwo(std::string phrase)
+void orbital::
+    SetTLElinetwo(std::string phrase)
 {
     strcpy(m_tle_line_two,phrase.c_str());
 };
@@ -421,8 +421,8 @@ void
 
 
 // set all TLE parameters
-void
-    orbital::SetTLEparameters(std::string spacecraft, std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_two)
+void orbital::
+    SetTLEparameters(std::string spacecraft, std::vector<std::string> parsed_line_one, std::vector<std::string> parsed_line_two)
     {
         std::string phrase;
         char        phrase_c[1];
@@ -554,8 +554,8 @@ void
 
 // set the checksum
 // store the data
-void
-    orbital::SetCHECKsumtwo(int sum)
+void orbital::
+    SetCHECKsumtwo(int sum)
 {
     m_check_sum = sum;
 };
