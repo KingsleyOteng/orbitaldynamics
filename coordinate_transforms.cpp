@@ -371,7 +371,7 @@ double coordinate_transforms::
 };
 
 double coordinate_transforms::
-getTLEDateTimeFormat              ()
+    getTLEDateTimeFormat              ()
 {
     //double time_elapsed = jd_epoch - jd_now;
     return 0;
