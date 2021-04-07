@@ -346,48 +346,48 @@ void orbital::
 
 // set the inclination of the field
 // store the data
-void
-    orbital::SetINCLINATIONfield(double field)
+void orbital::
+    SetINCLINATIONfield(double field)
 {
     m_satellite_inclination = field;
 };
 
 // set the ascension node
 // store the data
-void
-    orbital::SetRIGHTASCENTIONnode(double node)
+void orbital::
+    SetRIGHTASCENTIONnode(double node)
 {
     m_satellite_ascension_node = node;
 };
 
 // set the eccentricity coefficient
 // store the data
-void
-    orbital::SetECCENTRICITYcoefficient(double coefficient)
+void orbital::
+    SetECCENTRICITYcoefficient(double coefficient)
 {
     m_satellite_eccentricity_coefficient = coefficient;
 };
 
 // set the argument perigree
 // store the data
-void
-    orbital::SetARGUMENTperigree(double perigree)
+void orbital::
+    SetARGUMENTperigree(double perigree)
 {
     m_argument_perigree = perigree;
 };
 
 // set the mean anomaly
 // store the data
-void
-    orbital::SetMEANanomlay(double anomaly)
+void orbital::
+    SetMEANanomlay(double anomaly)
 {
     m_mean_anomaly = anomaly;
 };
 
 // set the mean motion
 // store the data
-void
-    orbital::SetMEANmotion(double motion)
+void orbital::
+    SetMEANmotion(double motion)
 {
     m_mean_motion = motion;
 };
