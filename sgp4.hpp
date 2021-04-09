@@ -19,6 +19,7 @@
 
 using namespace std;
 
+// preprocessor instructions
 #ifndef sgp4_hpp
 #define sgp4_hpp
 class sgp4
