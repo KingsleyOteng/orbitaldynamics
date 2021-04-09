@@ -5,6 +5,7 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// preprocessor instructions
 #ifndef utilities_hpp
 #define utilities_hpp
 

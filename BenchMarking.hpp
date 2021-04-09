@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// preprocessor instructions
 #ifndef BenchMarking_hpp
 #define BenchMarking_hpp
 
