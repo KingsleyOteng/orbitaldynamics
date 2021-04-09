@@ -12,11 +12,12 @@
 
 using namespace std;
 
+// preprocessor instructions
 #define ARRAY_SIZE_ONE  1
 #define Re              6378.1370
-// methods
-// store the data
- // constructors  and destructors
+
+// methods to store the data
+// constructors  and destructors
 orbital::
     orbital    ()
 {};

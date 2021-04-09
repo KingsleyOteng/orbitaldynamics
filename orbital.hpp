@@ -4,8 +4,7 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-//
-
+// preprocessor instructions
 #ifndef orbital_hpp
 #define orbital_hpp
 
