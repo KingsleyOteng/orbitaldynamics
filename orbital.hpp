@@ -8,8 +8,10 @@
 #ifndef orbital_hpp
 #define orbital_hpp
 
+// api references
 #include <boost/functional/hash.hpp>
 
+// class method declarations
 class orbital
 {
    

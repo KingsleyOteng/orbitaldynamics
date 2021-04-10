@@ -5,12 +5,11 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-// defined classes
+// header references
 #include "utilities.hpp"
 #include "orbital.hpp"
 
-
-
+// namespace declaration
 using namespace std;
 
 // constructor
