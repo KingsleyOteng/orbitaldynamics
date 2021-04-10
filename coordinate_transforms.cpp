@@ -1,4 +1,4 @@
-// system files
+// preprocessor instructions
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -7,6 +7,8 @@
 
 // user defined header files
 #include "coordinate_transforms.hpp"
+
+// name space
 using namespace std;
 
 #define Re              6378.1370               // the earths radius; from Kelso

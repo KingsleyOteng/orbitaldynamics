@@ -6,10 +6,14 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// header guards
 #ifndef coordinate_transforms_hpp
 #define coordinate_transforms_hpp
 
+// preprocessor instructions
 #include <iostream>
+
+// api instructions
 #include <boost/xpressive/xpressive.hpp>
 
 using namespace std;
