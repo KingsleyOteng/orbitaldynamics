@@ -6,7 +6,7 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-// object header files
+// preprocessor instructions
 #include "sensor.hpp"
 #include "orbital.hpp"
 
