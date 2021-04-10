@@ -7,11 +7,12 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// header guards
 #ifndef newtownu_hpp
 #define newtownu_hpp
 
 
-// system header files
+// preprocessor instructions
 #include <cmath>
 
 

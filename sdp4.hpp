@@ -6,7 +6,7 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-// preprocessor instructions
+// header guards
 #ifndef sdp4_hpp
 #define sdp4_hpp
 

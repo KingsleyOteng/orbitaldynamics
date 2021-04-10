@@ -6,7 +6,7 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-// system objects
+// header guards
 #include <math.h> //Not sure about including math.h
 #include <string>
 #include <cmath>

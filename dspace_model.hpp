@@ -6,13 +6,15 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// header guards
 #ifndef dspace_model_hpp
 #define dspace_model_hpp
 
-// object header files
+// preprocessor instructions
 #include "orbital.hpp"
 #include "utilities.hpp"
 
+//namespace library
 using namespace std;
 
 class dspace_model

@@ -6,10 +6,11 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// header guards
 #ifndef newtownm_hpp
 #define newtownm_hpp
 
-// system header files
+// preprocessor instructions
 #include <cmath>
 
 

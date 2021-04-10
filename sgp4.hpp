@@ -13,15 +13,18 @@
 //  https://core.ac.uk/download/pdf/55536475.pdf
 //  http://www.spaceacademy.net.au/watch/track/TLEdecod.txt
 
-// object header files
+// header guards
+#ifndef sgp4_hpp
+#define sgp4_hpp
+
+// preprocessor instructions
 #include "orbital.hpp"
 #include "utilities.hpp"
 
+// namespace
 using namespace std;
 
-// preprocessor instructions
-#ifndef sgp4_hpp
-#define sgp4_hpp
+
 class sgp4
 {
     

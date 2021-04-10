@@ -1,4 +1,3 @@
-
 //
 //  newtownu.cpp
 //  source
@@ -6,7 +5,7 @@
 //  Created by Kwadwo Oteng-Amoako on 28/11/2020.
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 
-
+// preprocessor instructions
 #include "newtownu.hpp"
 // ------------------------------------------------------------------------------
 //
@@ -16,7 +15,7 @@
 //  eccentric anomaly given the mean anomaly.  the true anomaly is also
 //  calculated.
 //
-//  original author : david vallado                  
+//  original author : david vallado
 //  c++: kingsley oteng-amoako
 //
 //  revisions

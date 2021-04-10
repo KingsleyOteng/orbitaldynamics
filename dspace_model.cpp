@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// preprocessor instructions
 #include "dspace_model.hpp"
 
 dspace_model::dspace_model()
@@ -98,6 +99,7 @@ void dspace_model::getModelParameters()
       ft    = 0.0;
     
     if (irez != 0)
+        
     {
         // sgp4fix streamline check
         if ((atime == 0.0) || (t * atime <= 0.0) || (abs(t) < abs(atime)) )
@@ -195,18 +197,18 @@ void dspace_model::getModelParameters()
 }
 
 void dspace_model::set_dspace_line1(double satrec_d2201, double satrec_d2211,double satrec_d3210, double satrec_d3222, double satrec_d4410, double satrec_d4422, double satrec_d5220, double satrec_d5232, double satrec_d5421)
-    {
-       //single section of parameters for the dspace model
-       d2201 = satrec_d2201;
-       d2211 = satrec_d2211;
-       d3210 = satrec_d3210;
-       d3222 = satrec_d3222;
-       d4410 = satrec_d4410;
-       d4422 = satrec_d4422;
-       d5220 = satrec_d5220;
-       d5232 = satrec_d5232;
-       d5421 = satrec_d5421;
-    };
+   {
+        // single section of parameters for the dspace model
+    //   d2201 = satrec_d2201;
+    //   d2211 = satrec_d2211;
+    //   d3210 = satrec_d3210;
+    //   d3222 = satrec_d3222;
+     //  d4410 = satrec_d4410;
+      // d4422 = satrec_d4422;
+      // d5220 = satrec_d5220;
+       //d5232 = satrec_d5232;
+       //d5421 = satrec_d5421;
+   };
 
    void dspace_model::set_dspace_line2(double satrec_d5433, double satrec_dedt, double satrec_del1,
       double satrec_del2, double satrec_del3, double satrec_didt,
@@ -236,6 +238,8 @@ void dspace_model::set_dspace_line1(double satrec_d2201, double satrec_d2211,dou
        xfact = satrec_xfact;
        xlamo = satrec_xlamo;
        no = satrec_no;
+       
+       
    };
       
    void dspace_model::set_dspace_line4(double satrec_atime, double satrec_em, double satrec_argpm, double satrec_inclm, double satrec_xli, double satrec_mm, double satrec_xni,double satrec_nodem, double satrec_nm)
@@ -250,4 +254,5 @@ void dspace_model::set_dspace_line1(double satrec_d2201, double satrec_d2211,dou
        xni = satrec_xni;
        nodem = satrec_nodem;
        nm = satrec_nm;
+       
    };
