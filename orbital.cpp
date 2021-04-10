@@ -5,11 +5,11 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-// object header files
+// preprocessor instructions
 #include "orbital.hpp"
 #include "utilities.hpp"    
 
-
+// namespace
 using namespace std;
 
 // preprocessor instructions

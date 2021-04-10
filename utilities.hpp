@@ -5,11 +5,11 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-// preprocessor instructions
+// header guards
 #ifndef utilities_hpp
 #define utilities_hpp
 
-// system header files
+// preprocessor instructions
 #include <regex>
 #include <iostream>     // std::cout
 #include <fstream>      // std::ifstream
