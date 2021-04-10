@@ -13,7 +13,7 @@
 // preprocessor instructions
 #include <cmath>
 
-
+// class method defintions
 class newtownm
 {
     

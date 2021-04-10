@@ -17,7 +17,7 @@
 #ifndef sgp4_hpp
 #define sgp4_hpp
 
-// preprocessor instructions
+// header references
 #include "orbital.hpp"
 #include "utilities.hpp"
 

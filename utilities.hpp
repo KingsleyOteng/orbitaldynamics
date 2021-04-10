@@ -21,7 +21,7 @@
 #include <boost/regex.hpp>
 
 
-
+// class method declarations
 class utilities
 {
     

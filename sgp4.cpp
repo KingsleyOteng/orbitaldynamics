@@ -11,7 +11,7 @@
 #include <string>
 #include <cmath>
 
-// user defined classes
+// header references
 #include "sgp4.hpp"
 #include "dspace_model.hpp"
 

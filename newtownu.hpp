@@ -15,7 +15,7 @@
 // preprocessor instructions
 #include <cmath>
 
-
+// class defintions
 class newtownu
 {
     

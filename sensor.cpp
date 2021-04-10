@@ -10,9 +10,6 @@
 #include "sensor.hpp"
 #include "orbital.hpp"
 
-
-//susing namespace std;
-
 // constructor
 sensor::sensor()
     {};

@@ -6,11 +6,11 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-// tell the preprocessor
+// header references
 #include "time_files.hpp"
 #include <boost/asio.hpp>
 
-
+// namespace directory
 using namespace std;
 
 // constructor

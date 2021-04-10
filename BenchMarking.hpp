@@ -16,9 +16,10 @@
 // user defined files
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 
+// namespace directory
 using namespace std;
-//
 
+// class definitions
 class benchmarking
 {
    

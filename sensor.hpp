@@ -6,9 +6,11 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// header guards
 #ifndef sensor_hpp
 #define sensor_hpp
 
+// class definitions
 class sensor{
     
    

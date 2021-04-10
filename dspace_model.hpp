@@ -10,13 +10,14 @@
 #ifndef dspace_model_hpp
 #define dspace_model_hpp
 
-// preprocessor instructions
+// header files
 #include "orbital.hpp"
 #include "utilities.hpp"
 
 //namespace library
 using namespace std;
 
+// class method defintions
 class dspace_model
 {
    
