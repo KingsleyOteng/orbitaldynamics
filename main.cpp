@@ -9,7 +9,7 @@
 // preprocessor instructions
 //#include "jni.h"
 
-// system files
+// system files and preprocessor instructions
 #include <iostream>
 #include <vector>                      // c-11 vector
 #include <algorithm>                   // c-11 algoithm

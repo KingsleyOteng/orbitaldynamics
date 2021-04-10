@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// header guards
 #ifndef sun_model_hpp
 #define sun_model_hpp
 

@@ -6,4 +6,5 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+
 #include "geomagnetic_field_model.hpp"

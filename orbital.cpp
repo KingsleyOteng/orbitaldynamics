@@ -12,7 +12,7 @@
 // namespace
 using namespace std;
 
-// preprocessor instructions
+// constants
 #define ARRAY_SIZE_ONE  1
 #define Re              6378.1370
 

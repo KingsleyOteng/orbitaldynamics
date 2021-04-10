@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
+// header guards
 #ifndef geomagnetic_field_model_hpp
 #define geomagnetic_field_model_hpp
 
