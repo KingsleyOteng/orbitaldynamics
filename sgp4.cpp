@@ -17,7 +17,10 @@
 
 //std::vector<int> v{1,2,3};
 // constructor
-void sgp4::set_parameters                       (orbital *model)
+void sgp4::set_parameters
+    (
+     orbital *model
+     )
 {
     m_satellite_number = model->getSATnumber();
     strcpy(m_classification,model->getClassifierID());
