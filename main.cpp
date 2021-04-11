@@ -7,7 +7,6 @@
 //
 
 // preprocessor instructions
-//#include "jni.h"
 
 // system files and preprocessor instructions
 #include <iostream>
