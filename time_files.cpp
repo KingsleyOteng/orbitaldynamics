@@ -17,7 +17,6 @@ using namespace std;
 time_files::time_files()
 {}
 
-
 tm*
 time_files::jdTOtm      (double jd)
 {

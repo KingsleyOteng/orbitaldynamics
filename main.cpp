@@ -6,8 +6,6 @@
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
-// preprocessor instructions
-
 // system files and preprocessor instructions
 #include <iostream>
 #include <vector>                      // c-11 vector

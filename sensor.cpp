@@ -18,12 +18,6 @@ sensor::sensor()
 sensor::~sensor()
     {};
 
-
-
-
-// get methods
-
-
 // sensor methods
 void
     sensor::SetJulianEpochDate(double epoch)
