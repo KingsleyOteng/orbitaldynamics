@@ -5,7 +5,8 @@
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
 //      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
 //
-
+#define Re                      6378.1370               // the earths radius; from Kelso
+#define we                      0.0000729211510        // Earth's rotation rate in radians/second; from Kelso
 // system files and preprocessor instructions
 #include <algorithm>                  // c-11 algoithm
 #include <array>
@@ -34,10 +35,12 @@
 #include "coordinate_transforms.hpp"   // coordinate transforms library
 #include "utilities.hpp"               // my own routines for processing data
 
-//#include <cppconn/driver.h>
-//#include <cppconn/exception.h>
-//#include <cppconn/prepared_statement.h>
+//#include <cppconn/driver.h> //#include <cppconn/exception.h> //#include <cppconn/prepared_statement.h>
+
+// declare the namespace
 using namespace std;
+
+
 //using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
 double frac_hours, hours_example, hours_final, min_final, seconds_final;
@@ -46,6 +49,7 @@ const string username = "u311839917_koteng";
 const string password = "Mypass1234!";
 time_files* nf = new time_files();
 double ctime_example;
+
 int main()
 {
     orbital *orb = new orbital(12,13,14);
