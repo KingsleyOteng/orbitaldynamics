@@ -7,17 +7,17 @@
 //
 
 // system files and preprocessor instructions
-#include <iostream>
-#include <vector>                      // c-11 vector
-#include <algorithm>                   // c-11 algoithm
-#include <time.h>
-#include <fstream>
-#include <stdio.h>
+#include <algorithm>                  // c-11 algoithm
 #include <array>
+#include <cmath>
+#include <fstream>
 #include <iterator>
+#include <iostream>
 #include <stdlib.h>
 #include <string>
-#include <cmath>
+#include <stdio.h>
+#include <time.h>
+#include <vector>                      // c-11 vector
 
 // third party apis
 #include <boost/any.hpp>               // boost standard library

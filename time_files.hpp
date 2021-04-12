@@ -4,8 +4,9 @@
 
 
 // preprocessor instructions
-#include <time.h>
 #include <iostream>
+#include <time.h>
+
 
 // api header files
 #include <boost/xpressive/xpressive.hpp>

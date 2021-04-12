@@ -10,9 +10,9 @@
 #define utilities_hpp
 
 // preprocessor instructions
-#include <regex>
-#include <iostream>     // std::cout
 #include <fstream>      // std::ifstream
+#include <iostream>     // std::cout
+#include <regex>
 
 // api header files
 #include <boost/regex.hpp>

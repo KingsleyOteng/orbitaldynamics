@@ -7,9 +7,10 @@
 //
 
 // header guards
+#include <cmath>
 #include <math.h> //Not sure about including math.h
 #include <string>
-#include <cmath>
+
 
 // header references
 #include "sgp4.hpp"
