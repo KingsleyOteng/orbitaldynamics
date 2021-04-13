@@ -7,8 +7,9 @@
 //
 #define Re                      6378.1370               // the earths radius; from Kelso
 #define we                      0.0000729211510        // Earth's rotation rate in radians/second; from Kelso
+
 // system files and preprocessor instructions
-#include <algorithm>                  // c-11 algoithm
+#include <algorithm>                  // c-11 algoithm, vector libraries are used
 #include <array>
 #include <cmath>
 #include <fstream>
@@ -18,7 +19,7 @@
 #include <string>
 #include <stdio.h>
 #include <time.h>
-#include <vector>                      // c-11 vector
+#include <vector>                    
 
 // third party apis
 #include <boost/any.hpp>               // boost standard library

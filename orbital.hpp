@@ -14,6 +14,7 @@
 // class method declarations
 class orbital
 {
+    
    
     
 private:
@@ -82,6 +83,9 @@ private:
     
 public:
     
+    // constants
+    #define ARRAY_SIZE_ONE  1
+    #define Re              6378.1370
     
     // constructor and destructors
     orbital();
