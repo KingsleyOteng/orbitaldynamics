@@ -12,8 +12,7 @@
 // name space
 using namespace std;
 
-#define Re                      6378.1370               // the earths radius; from Kelso
-#define we                      0.0000729211510        // Earth's rotation rate in radians/second; from Kelso
+
 
 // constructor
 coordinate_transforms::coordinate_transforms()
