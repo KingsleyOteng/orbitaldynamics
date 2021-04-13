@@ -12,8 +12,6 @@
 // namespace
 using namespace std;
 
-
-
 // methods to store the data
 // constructors  and destructors
 orbital::
