@@ -277,13 +277,13 @@ int main()
     cout << "time from " << std::chrono::system_clock::to_time_t(tp) << "\n";
     cout << "time year " << 1990 + tm.tm_year << "\n";
     cout << "time year " << trunc(365.25 * (1990 + year - 1)) + trunc(30.600001 * 14) + 1720994.5 + BB << "\n";
-    cout << "julian date" << jd << "\n";
-    cout << "year from julian date" << year_final << "\n";
-    cout << "month from julian date" << month_final << "\n";
-    cout << "day from julian date" << day_final << "\n";
-    cout << "hours from julian date" << hours_final << "\n";
-    cout << "minutes from julian date" << min_final << "\n";
-    cout << "seconds from julian date" << round(seconds_final) << "\n";
+    cout << "julian date " << jd << "\n";
+    cout << "year from julian date " << year_final << "\n";
+    cout << "month from julian date " << month_final << "\n";
+    cout << "day from julian date " << day_final << "\n";
+    cout << "hours from julian date " << hours_final << "\n";
+    cout << "minutes from julian date " << min_final << "\n";
+    cout << "seconds from julian date " << round(seconds_final) << "\n";
     
     cout << "local: " << put_time(&tm, "%c %Z") << '\n';
     cout << "time_t: "  << nf->time_tTOjd ("2005-07-24 17:48:11") << "\n";
