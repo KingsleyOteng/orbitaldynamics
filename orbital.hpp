@@ -179,7 +179,9 @@ public:
     std::string getWGS                          ();
     
     std::string getOrbit                        ();
-    double         getHeight                       ();
+    double      getHeight                       ();
+    std::string getObjectName                   ();
+    std::string getObjectType                   ();
     
 };
 
