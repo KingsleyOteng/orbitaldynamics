@@ -177,6 +177,10 @@ public:
     int         getDay                          () { return m_day; }
     double      getCheckSum                     ();
     std::string getWGS                          ();
+    
+    std::string getOrbit                        ();
+    double         getHeight                       ();
+    
 };
 
 
