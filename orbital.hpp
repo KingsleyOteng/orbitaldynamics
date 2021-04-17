@@ -178,10 +178,12 @@ public:
     double      getCheckSum                     ();
     std::string getWGS                          ();
     
+    // tie these methods to the gui development
     std::string getOrbit                        ();
     double      getElevation                    ();
     std::string getObjectName                   ();
     std::string getObjectType                   ();
+    std::string getDate                         ();
     
 };
 
