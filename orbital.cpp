@@ -655,8 +655,8 @@ std::string orbital::getWGS()
     return m_wgs;
 }
 
-std::string orbital::getOrbit                        (){};
-double      orbital::getElevation                    (){};
-std::string orbital::getObjectName                   (){};
-std::string orbital::getObjectType                   (){};
-std::string orbital::getDate                         (){};
+std::string orbital::getOrbit                        (){return ""; };
+double      orbital::getElevation                    (){return 0;};
+std::string orbital::getObjectName                   (){return "";};
+std::string orbital::getObjectType                   (){return "";};
+std::string orbital::getDate                         (){return "";};
