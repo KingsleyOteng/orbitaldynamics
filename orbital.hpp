@@ -181,9 +181,9 @@ public:
     // tie these methods to the gui development
     std::string getOrbit                        ();
     double      getElevation                    ();
-    std::string getObjectName                   ();
+    std::string getObjectName                   () { return m_tle_name; }
     std::string getObjectType                   ();
-    std::string getDate                         ();
+    std::string getDate                         () { return m_designator_launch_number_of_year; }
     
 };
 
