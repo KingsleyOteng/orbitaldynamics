@@ -168,7 +168,7 @@ public:
     double      getREVOLUTIONepochchecksum      () { return m_epoch_checksum; }
     int         getCheckSumLineOne              () { return m_lineone_checksum; }
     int         getCheckSumLineTwo              () { return m_linetwo_checksum; }
-    double      getCheckLaunchDate              ()  { return m_linetwo_checksum; }
+    double      getCheckLaunchDate              () { return m_linetwo_checksum; }
     double      getNumberOfRevolutionsSinceLaunch
                                                 ()  { return m_linetwo_checksum; }
     char*       getClassifierID                 ();
@@ -179,7 +179,7 @@ public:
     std::string getWGS                          ();
     
     std::string getOrbit                        ();
-    double      getHeight                       ();
+    double      getElevation                    ();
     std::string getObjectName                   ();
     std::string getObjectType                   ();
     
