@@ -658,6 +658,6 @@ std::string orbital::getWGS()
 // methods for QT gui development
 std::string orbital::getOrbit                        (){return ""; };
 double      orbital::getElevation                    (){return 0;};
-std::string orbital::getObjectName                   (){return "";};
+//std::string orbital::getObjectName                   (){return "";};
 std::string orbital::getObjectType                   (){return "";};
-std::string orbital::getDate                         (){return "";};
+//std::string orbital::getDate                         (){return "";};
