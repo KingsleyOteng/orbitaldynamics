@@ -37,6 +37,7 @@ private:
     // members
     double      m_sensor_epoch;
     std::string m_file_name;
+    std::string x;
     char        m_tle_name                          [ARRAY_SIZE];
     char        m_tle_url                           [ARRAY_SIZE];
     char        m_tle_line_one                      [ARRAY_SIZE_DOUBLE];
@@ -183,7 +184,7 @@ public:
     double      getElevation                    ();
     std::string getObjectName                   () { return m_tle_name; }
     std::string getObjectType                   ();
-    std::string getDate                         () { return m_designator_launch_number_of_year; }
+    std::string getDate                         () { return x; }
     
 };
 
