@@ -50,6 +50,7 @@ const string username = "u311839917_koteng";
 const string password = "Mypass1234!";
 time_files* nf = new time_files();
 double ctime_example;
+std::string input_tle_number;
 
 int main()
 {
@@ -332,5 +333,7 @@ int main()
     // exit
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
+    cout << "Please provide me the TLE number" << input_tle_number << "\n";
+    
     return 00;
 }
