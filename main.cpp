@@ -333,7 +333,8 @@ int main()
     // exit
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
-    cout << "Please provide me the TLE number" << input_tle_number << "\n";
+    cout << "Please provide me the TLE number " << input_tle_number << "\n";
+    cout << "Please confirm you input " << input_tle_number << "?\n";
     
     return 00;
 }
