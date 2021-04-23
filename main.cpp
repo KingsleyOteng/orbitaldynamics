@@ -309,19 +309,19 @@ int main()
     cout << "\n" << "julian date: " << nf->tmTOjd(tm);
     
     ///TESTING  FOR MODIFIED JULIAN DATE CALCULATOR (COMPLETED)
-    cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm);
+    cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
     
     ///TESTING  FOR J2000 DATE CALCULATOR (COMPLETED)
-    cout << "\n" << "j2000 date " << nf->tmTOj2000(tm);
+    cout << "\n" << "j2000 date " << nf->tmTOj2000(tm) << "\n";
     
     ///TESTING GET SATELLITE NUMBER LINE 1 (COMPLETED)
-    cout << "\n" << "satellite number " << orb->getSATnumber();
+    cout << "\n" << "satellite number " << orb->getSATnumber() << "\n";
     
     ///TESTING GET SATELLIT INTERNATIONAL DESIGNATOR (COMPLETED)
-    cout << "\n" << "satellite id " << orb->getClassifierID();
+    cout << "\n" << "satellite id " << orb->getClassifierID() << "\n";
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
-    cout << "\n" << "revolutions hello " << orb->getREVOLUTIONepochchecksum();
+    cout << "\n" << "revolutions hello " << orb->getREVOLUTIONepochchecksum() << "\n";
     
     // Let's grab a record using the NORAD ID and query the record for launch details
     // -----> The goal of this code was to check the launchdate
@@ -333,8 +333,10 @@ int main()
     // exit
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
-    cout << "Please provide me the TLE number " << input_tle_number << "\n";
-    cout << "Please confirm you input " << input_tle_number << "?\n";
-    
+    cout << "\n" <<" Please provide me the TLE number " << input_tle_number << "\n";
+    cout << "\n" <<" Please confirm you input " << input_tle_number << "?\n";
+    // check against the database if the number is correct
+    // outproceed to next step some details about the TLE
+    //
     return 00;
 }
