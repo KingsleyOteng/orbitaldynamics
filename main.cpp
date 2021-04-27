@@ -335,13 +335,11 @@ int main()
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
     cout << "\n" <<" Please provide me the TLE number " << input_tle_number << "\n";
     cout << "\n" <<" Please confirm you input? " << input_tle_number << "\n";
-    
-    sgp4 *sgp_model = new sgp4();
-    sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
-    cout << "\n" <<" Please provide me the TLE number " << input_tle_number << "\n";
-    cout << "\n" <<" Please confirm you input? " << input_tle_number << "\n";
     // check against the database if the number is correct
     // outproceed to next step some details about the TLE
+    cout << "\n" <<" Please provide me the TLE number " << input_tle_number << "\n";
+    cout << "\n" <<" Please confirm you input? " << input_tle_number << "\n";
+ 
     //
     return 00;
 }
