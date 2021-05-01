@@ -339,7 +339,11 @@ int main()
     // outproceed to next step some details about the TLE
     cout << "\n" <<" Please provide me the TLE number " << input_tle_number << "\n";
     cout << "\n" <<" Please confirm you input? " << input_tle_number << "\n";
- 
+    
+    std::string hello;
+    cin>>hello;
+    
+    cout << "Your age is: " << hello << endl;
     //
     return 00;
 }
