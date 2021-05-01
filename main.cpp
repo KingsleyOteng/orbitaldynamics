@@ -343,7 +343,7 @@ int main()
     std::string hello;
     cin>>hello;
     
-    cout << "Your age is: " << hello << endl;
+    
     //
     return 00;
 }
