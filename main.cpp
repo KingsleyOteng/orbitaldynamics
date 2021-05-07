@@ -335,13 +335,14 @@ int main()
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
     
+    user_input = "n";
     if (user_input != "y")
-    {
-    cout << "\n" <<" Please provide me the TLE number " << "\n";
-    getline (cin, input_tle_number);
-    cout << "\n" <<" Please confirm you input? " <<  "\n";
-    getline (cin, user_input);
-    }
+        {
+            cout << "\n" <<" Please provide me the TLE number " << "\n";
+            getline (cin, input_tle_number);
+            cout << "\n" <<" Please confirm you input? " <<  "\n";
+            getline (cin, user_input);
+        }
     
     // check against the database if the number is correct
     // outproceed to next step some details about the TLE
