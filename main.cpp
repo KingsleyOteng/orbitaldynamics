@@ -330,13 +330,15 @@ int main()
     //std::string query_field = "apogee";
     //std::string query_output = util -> SatelliteNORADRecord("43108", query_field);
     //cout << "record> " << query_field <<  " " << query_output << "\n";
+    
     // let's introduce sgp4
     // exit
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
     
     user_input = "n";
-    if (user_input != "y")
+    if
+        (user_input != "y")
         {
             cout << "\n" <<" Please provide me the TLE number " << "\n";
             getline (cin, input_tle_number);
