@@ -313,7 +313,7 @@ int main()
     cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
     
     ///TESTING  FOR J2000 DATE CALCULATOR (COMPLETED)
-    //cout << "\n" << "j2000 date " << nf->tmTOj2000(tm) << "\n";
+    cout << "\n" << "j2000 date " << nf->tmTOj2000(tm) << "\n";
     
     ///TESTING GET SATELLITE NUMBER LINE 1 (COMPLETED)
 //    cout << "\n" << "satellite number " << orb->getSATnumber() << "\n";
