@@ -162,9 +162,6 @@ time_files::tmTOctime   (tm *input)
 double
 time_files::tmTOjd      (tm input)
 {
-    
-
-    
      unsigned long one = 1.0;
      double year = 1900 + input.tm_year;
      double month = input.tm_mon;
