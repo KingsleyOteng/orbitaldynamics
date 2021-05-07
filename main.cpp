@@ -51,6 +51,7 @@ const string password = "Mypass1234!";
 time_files* nf = new time_files();
 double ctime_example;
 std::string input_tle_number;
+std::string user_input;
 
 int main()
 {
@@ -333,15 +334,13 @@ int main()
     // exit
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
-    cout << "\n" <<" Please provide me the TLE number " << input_tle_number << "\n";
-    cout << "\n" <<" Please confirm you input? " << input_tle_number << "\n";
+    cout << "\n" <<" Please provide me the TLE number " << "\n";
+    getline (cin, input_tle_number);
+    cout << "\n" <<" Please confirm you input? " <<  "\n";
+    getline (cin, user_input);
     // check against the database if the number is correct
     // outproceed to next step some details about the TLE
-    cout << "\n" <<" Please provide me the TLE number " << input_tle_number << "\n";
-    cout << "\n" <<" Please confirm you input? " << input_tle_number << "\n";
     
-    std::string hello;
-    getline (cin, hello);
     
     
     //
