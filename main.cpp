@@ -313,16 +313,16 @@ int main()
     cout << "\n" << "modified julian " << nf->tmTOmodifiedjd(tm) << "\n";
     
     ///TESTING  FOR J2000 DATE CALCULATOR (COMPLETED)
-    cout << "\n" << "j2000 date " << nf->tmTOj2000(tm) << "\n";
+    //cout << "\n" << "j2000 date " << nf->tmTOj2000(tm) << "\n";
     
     ///TESTING GET SATELLITE NUMBER LINE 1 (COMPLETED)
-    cout << "\n" << "satellite number " << orb->getSATnumber() << "\n";
+//    cout << "\n" << "satellite number " << orb->getSATnumber() << "\n";
     
     ///TESTING GET SATELLIT INTERNATIONAL DESIGNATOR (COMPLETED)
-    cout << "\n" << "satellite id " << orb->getClassifierID() << "\n";
+ //   cout << "\n" << "satellite id " << orb->getClassifierID() << "\n";
     
     ///TESTING GET NUMBER OF ORBITS AT EPOCH (COMPLETED)
-    cout << "\n" << "revolutions hello " << orb->getREVOLUTIONepochchecksum() << "\n";
+ //   cout << "\n" << "revolutions hello " << orb->getREVOLUTIONepochchecksum() << "\n";
     
     // Let's grab a record using the NORAD ID and query the record for launch details
     // -----> The goal of this code was to check the launchdate
