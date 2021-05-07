@@ -341,7 +341,7 @@ int main()
     cout << "\n" <<" Please confirm you input? " << input_tle_number << "\n";
     
     std::string hello;
-    cin>>hello;
+    getline (cin, hello);
     
     
     //
