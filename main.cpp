@@ -347,7 +347,8 @@ int main()
         }
     
     // check against the database if the number is correct
-    // outproceed to next step some details about the TLE
+    // proceed to next step some details about the TLE
+    // run the predefined routines
     
     
     
