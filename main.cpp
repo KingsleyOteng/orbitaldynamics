@@ -340,9 +340,9 @@ int main()
     if
         (user_input != "y")
         {
-            cout << "\n" <<" Please provide me the TLE number " << "\n";
+            cout << "\n" <<"Please provide me the TLE number?ß " << "\n";
             getline (cin, input_tle_number);
-            cout << "\n" <<" Please confirm you input? " <<  "\n";
+            cout << "\n" <<"Please confirm you input? " <<  "\n";
             getline (cin, user_input);
         }
     
