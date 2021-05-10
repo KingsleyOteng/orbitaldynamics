@@ -9,8 +9,12 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    int temp;
-    getline (cin, temp);
+    QString yourText;
+    QFile file;
+    file.open(stdin, QIODevice::ReadOnly);
+    QTextStream qtin(&file);
+    qtin >> yourText;
+
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
     MainWindow w;
