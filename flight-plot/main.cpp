@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <QApplication>
-#include <fstream>
+#include <istream>
 
 // declare the namespace
 using namespace std;
