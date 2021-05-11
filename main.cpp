@@ -338,6 +338,7 @@ int main()
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
     
     user_input = "n";
+    
     if
         (user_input != "y")
         {
@@ -348,14 +349,15 @@ int main()
         }
     
     user_input = "n";
+    
     if
-    (user_input != "y")
-    {
-        cout << "\n" <<"Please provide a reference date in MMDDYYYY format? " << "\n";
-        getline (cin, date_value);
-        cout << "\n" <<"Please confirm your input is "<<date_value<< " ?" <<  "\n";
-        getline (cin, user_input);
-    }
+        (user_input != "y")
+        {
+            cout << "\n" <<"Please provide a reference date in MMDDYYYY format? " << "\n";
+            getline (cin, date_value);
+            cout << "\n" <<"Please confirm your input is "<<date_value<< " ?" <<  "\n";
+            getline (cin, user_input);
+        }
     // check against the database if the number is correct
     // proceed to next step some details about the TLE
     // run the predefined routines
