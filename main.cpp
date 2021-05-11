@@ -19,7 +19,10 @@
 #include <string>
 #include <stdio.h>
 #include <time.h>
-#include <vector>                    
+#include <vector>
+#include <limits>
+#include <cctype>
+#include <iomanip>
 
 // third party apis
 #include <boost/any.hpp>               // boost standard library
@@ -358,6 +361,8 @@ int main()
             cout << "\n" <<"Please confirm your input is "<<date_value<< " ?" <<  "\n";
             getline (cin, user_input);
         }
+    
+    // https://www.cplusplus.com/forum/beginner/247972/
     // check against the database if the number is correct
     // proceed to next step some details about the TLE
     // run the predefined routines
