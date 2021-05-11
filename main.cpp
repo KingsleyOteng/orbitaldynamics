@@ -51,6 +51,7 @@ const string password = "Mypass1234!";
 time_files* nf = new time_files();
 double ctime_example;
 std::string input_tle_number;
+std::string date_value;
 std::string user_input;
 
 int main()
@@ -340,12 +341,21 @@ int main()
     if
         (user_input != "y")
         {
-            cout << "\n" <<"Please provide me the TLE number?ß " << "\n";
+            cout << "\n" <<"Please provide me the TLE number? " << "\n";
             getline (cin, input_tle_number);
-            cout << "\n" <<"Please confirm you input? " <<  "\n";
+            cout << "\n" <<"Please confirm your input is "<<input_tle_number<< " ?" <<  "\n";
             getline (cin, user_input);
         }
     
+    user_input = "n";
+    if
+    (user_input != "y")
+    {
+        cout << "\n" <<"Please provide a reference date in MMDDYYYY format? " << "\n";
+        getline (cin, date_value);
+        cout << "\n" <<"Please confirm your input is "<<date_value<< " ?" <<  "\n";
+        getline (cin, user_input);
+    }
     // check against the database if the number is correct
     // proceed to next step some details about the TLE
     // run the predefined routines
