@@ -108,7 +108,9 @@ void newtownu::setNewtonU
             ktr = ktr + 1;
         }
         
+        
         // ----------------  find true anomaly  --------------------
+        
         
         sinv = -( sqrt( ecc*ecc-1.0  ) * sinh(e1) ) / ( 1.0  - ecc*cosh(e1) );
         cosv = ( cosh(e1) - ecc ) / ( 1.0  - ecc*cosh(e1) );
@@ -123,6 +125,7 @@ void newtownu::setNewtonU
                //               c = [ 1.0/3.0; 0.0; 1.0; -m];
                //               [r1r] = roots (c);
                //                e0= r1r;
+                
                 s = 0.5  * (halfpi - atan( 1.5 *m ) );
                 w = atan( pow(tan(s),(1/3)) );
                 e0= 2.0 * (1 / tan(2.0 *w));
