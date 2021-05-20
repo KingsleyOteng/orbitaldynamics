@@ -3,7 +3,7 @@
 //      We then propogage using SGP4 and also higher
 //
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
-//      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
+//      Copyright © 2020,2021 Kwadwo Oteng-Amoko. All rights reserved.
 //
 #define Re                      6378.1370               // the earths radius; from Kelso
 #define we                      0.0000729211510        // Earth's rotation rate in radians/second; from Kelso
@@ -342,25 +342,23 @@ int main()
     
     // set 'n'
     user_input = "n";
-    
     if
         (user_input != "y")
         {
             cout << "\n" <<"Please provide me the TLE number? " << "\n";
             getline (cin, input_tle_number);
-            cout << "\n" <<"Please confirm your input is "<<input_tle_number<< " ?" <<  "\n";
+            cout << "\n" <<"Please confirm your input is " << input_tle_number << " ?" << "\n";
             getline (cin, user_input);
         }
     
     // set 'n'
     user_input = "n";
-    
     if
         (user_input != "y")
         {
             cout << "\n" <<"Please provide a reference date in MMDDYYYY format? " << "\n";
             getline (cin, date_value);
-            cout << "\n" <<"Please confirm your input is "<<date_value<< " ?" <<  "\n";
+            cout << "\n" <<"Please confirm your input is " << date_value << " ?" <<  "\n";
             getline (cin, user_input);
         }
     
