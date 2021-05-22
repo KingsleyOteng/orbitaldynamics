@@ -27,7 +27,7 @@
 // third party apis
 #include <boost/any.hpp>               // boost standard library
 #include <boost/asio.hpp>              // io streaming headers
-#include <boost/date_time.hpp>              // io streaming headers
+#include <boost/date_time/gregorian/gregorian.hpp>
 #include <boost/lambda/lambda.hpp>
 #include <boost/xpressive/xpressive.hpp>
 
@@ -44,7 +44,7 @@
 
 // declare the namespace
 using namespace std;
-
+using namespace boost::gregorian;
 
 //using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
@@ -359,8 +359,10 @@ int main()
         {
             cout << "\n" <<"Please provide a reference date (dd/mm/yyyy) ? " << "\n";
             getline (cin, date_value);
+            string inp("10/10/2010");
+            string format("%d/%m/%Y");
             date d;
-            d = parser.parse_date(inp, format, svp);
+          //  d = parser.parse_date(inp, format, svp);
             cout << "\n" <<"Please confirm your input is " << date_value << " ?" <<  "\n";
             getline (cin, user_input);
         }
