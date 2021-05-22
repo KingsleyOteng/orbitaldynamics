@@ -341,6 +341,8 @@ int main()
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
     
+    // check all the inputs here for formatting
+    // maybe load a config file
     // set 'n'
     user_input = "n";
     if
