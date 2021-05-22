@@ -27,6 +27,7 @@
 // third party apis
 #include <boost/any.hpp>               // boost standard library
 #include <boost/asio.hpp>              // io streaming headers
+#include <boost/date_time.hpp>              // io streaming headers
 #include <boost/lambda/lambda.hpp>
 #include <boost/xpressive/xpressive.hpp>
 
