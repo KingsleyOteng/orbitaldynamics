@@ -174,7 +174,7 @@ void orbital::
     cout << std::system(cmd.c_str());
     
     // open the file - we are using c here, it's about 5 times faster
-    FILE* fp = fopen("/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/resource.html", "r");
+    FILE* fp = fopen("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/resource.html", "r");
     
     if (fp == NULL)
         cout<<"failed to open";

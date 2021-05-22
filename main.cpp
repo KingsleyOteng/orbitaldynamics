@@ -359,7 +359,7 @@ int main()
         {
             cout << "\n" <<"Please provide a reference date (yyyymmdd) ? " << "\n";
             getline (cin, date_value);
-            string inp("20100221");
+            string inp = date_value;
             date d1 = date_from_iso_string(inp);
             //d = parser.parse_date(inp, format, svp);
             cout << "\n" <<"Please confirm your input is " << date_value << " ?" <<  "\n";
