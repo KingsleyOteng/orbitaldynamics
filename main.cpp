@@ -357,12 +357,11 @@ int main()
     if
         (user_input != "y")
         {
-            cout << "\n" <<"Please provide a reference date (dd/mm/yyyy) ? " << "\n";
+            cout << "\n" <<"Please provide a reference date (yyyymmdd) ? " << "\n";
             getline (cin, date_value);
-            string inp("10/10/2010");
-            string format("%d/%m/%Y");
-            date d;
-          //  d = parser.parse_date(inp, format, svp);
+           // string inp("20100221");
+            //date d1 = date_from_iso_string(inp);
+            //d = parser.parse_date(inp, format, svp);
             cout << "\n" <<"Please confirm your input is " << date_value << " ?" <<  "\n";
             getline (cin, user_input);
         }

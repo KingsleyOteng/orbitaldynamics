@@ -2,7 +2,7 @@
 //      Overview: Extraction of object tracking data from NORAD TLE
 //
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
-//      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
+//      Copyright © 2020,2021 Kwadwo Oteng-Amoko. All rights reserved.
 //
 
 // preprocessor instructions
@@ -174,7 +174,7 @@ void orbital::
     cout << std::system(cmd.c_str());
     
     // open the file - we are using c here, it's about 5 times faster
-    FILE* fp = fopen("/Users/kwadwooteng-amoko/Desktop/CPP/HelloWorld/source/resource.html", "r");
+    FILE* fp = fopen("/Users/kwadwooteng-amoko/Desktop/Clean/CPP/HelloWorld/source/resource.html", "r");
     
     if (fp == NULL)
         cout<<"failed to open";
