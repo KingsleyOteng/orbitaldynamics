@@ -110,7 +110,7 @@ void newtownu::setNewtonU
         
         
         // ----------------  find true anomaly  --------------------
-        
+            
         
         sinv = -( sqrt( ecc*ecc-1.0  ) * sinh(e1) ) / ( 1.0  - ecc*cosh(e1) );
         cosv = ( cosh(e1) - ecc ) / ( 1.0  - ecc*cosh(e1) );

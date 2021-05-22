@@ -356,8 +356,10 @@ int main()
     if
         (user_input != "y")
         {
-            cout << "\n" <<"Please provide a reference date in MMDDYYYY format? " << "\n";
+            cout << "\n" <<"Please provide a reference date (dd/mm/yyyy) ? " << "\n";
             getline (cin, date_value);
+            date d;
+            d = parser.parse_date(inp, format, svp);
             cout << "\n" <<"Please confirm your input is " << date_value << " ?" <<  "\n";
             getline (cin, user_input);
         }
