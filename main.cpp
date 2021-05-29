@@ -375,6 +375,7 @@ int main()
                 // load a configuration file for the sensor
                 if (configuration_file == "Y" || configuration_file == "YES")
                     {
+                        //load config
                         configuration_system *configuration = new configuration_system();
                     };
             
