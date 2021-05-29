@@ -38,7 +38,7 @@
 #include "sgp4.hpp"
 #include "sdp4.hpp"
 #include "coordinate_transforms.hpp"   // coordinate transforms library
-#include "configuratio"
+#include "configuration_system.hpp"
 #include "utilities.hpp"               // my own routines for processing data
 
 //#include <cppconn/driver.h> //#include <cppconn/exception.h> //#include <cppconn/prepared_statement.h>
@@ -375,7 +375,7 @@ int main()
                 // load a configuration file for the sensor
                 if (configuration_file == "Y" || configuration_file == "YES")
                     {
-                
+                        configuration_system *configuration = new configuration_system();
                     };
             
         }

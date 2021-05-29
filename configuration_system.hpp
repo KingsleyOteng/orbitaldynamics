@@ -8,8 +8,8 @@
 //
 
 // header guards
-#ifndef newtownm_hpp
-#define newtownm_hpp
+//#ifndef newtownm_hpp
+//#define newtownm_hpp
 
 // preprocessor instructions
 #include <cmath>
@@ -18,4 +18,4 @@
 class configuration_system
 {
 
-}
+};
