@@ -370,10 +370,12 @@ int main()
             getline (cin, user_input);
             cout << "\n" << "Should we load configuration file? (Y/N) " << "\n";
             getline (cin, configuration_file);
-                if (configuration_file == "Y")
+            
+                if (configuration_file == "Y" || configuration_file == "YES")
                     {
                 
                     };
+            
         }
     
     // full checking here
