@@ -57,6 +57,7 @@ double ctime_example;
 std::string input_tle_number;
 std::string date_value;
 std::string user_input;
+std::string configuration_file;
 
 int main()
 {
@@ -352,6 +353,7 @@ int main()
             getline (cin, input_tle_number);
             cout << "\n" <<"Please confirm your input is " << input_tle_number << " ?" << "\n";
             getline (cin, user_input);
+            
         }
     
     // set 'n'
@@ -366,6 +368,12 @@ int main()
             //d = parser.parse_date(inp, format, svp);
             cout << "\n" <<"Please confirm your input is " << date_value << " ?" <<  "\n";
             getline (cin, user_input);
+            cout << "\n" << "Should we load configuration file? (Y/N) " << "\n";
+            getline (cin, configuration_file);
+            if (configuration_file == "Y")
+            {
+                
+            };
         }
     
     // full checking here
