@@ -1,14 +1,21 @@
 //
-//  configuration_system.hpp
+//  configuration_systems.hpp
 //  source
 //
 //  Created by Kwadwo Oteng-Amoako on 29/05/2021.
 //  Copyright © 2021 Kwadwo Oteng-Amoko. All rights reserved.
 //
+//
 
-#ifndef configuration_system_hpp
-#define configuration_system_hpp
+// header guards
+#ifndef newtownm_hpp
+#define newtownm_hpp
 
-#include <stdio.h>
+// preprocessor instructions
+#include <cmath>
 
-#endif /* configuration_system_hpp */
+// class method defintions
+class configuration_system
+{
+
+}
