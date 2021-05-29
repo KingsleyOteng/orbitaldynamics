@@ -371,6 +371,7 @@ int main()
             cout << "\n" << "Should we load configuration file? (Y/N) " << "\n";
             getline (cin, configuration_file);
             
+                // load a configuration file for the sensor
                 if (configuration_file == "Y" || configuration_file == "YES")
                     {
                 
