@@ -8,7 +8,6 @@
 
 #include "configuration_templates.hpp"
 
-#endif /* configuration_templates_hpp */
 
 //
 //      Overview: Sets the codes defaults
