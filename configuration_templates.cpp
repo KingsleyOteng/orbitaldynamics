@@ -50,10 +50,3 @@ using namespace boost::gregorian;
 // namespace declaration
 using namespace std;
 
-// constructor
-configuration_templates::configuration_templates                            ()
-{}
-
-// destructor
-configuration_templates::~configuration_templates                           ()
-{}
