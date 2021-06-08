@@ -8,6 +8,13 @@
 
 #ifndef configuration_templates_hpp
 #define configuration_templates_hpp
+
+// api references
+#include <boost/functional/hash.hpp>
+
+// namespace directory
+using namespace std;
+
 class configuration_templates
 {
     
