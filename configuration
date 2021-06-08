@@ -1,0 +1,9 @@
+#defult sensor details
+azimuth
+location_longitude
+location_latitude
+sensor_start_time
+sensor_end_time
+time_zone
+sensor_type
+city
