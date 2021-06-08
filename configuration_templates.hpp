@@ -26,6 +26,8 @@ private:
    #define         ARRAY_EXTRA_LARGE_BUFFER                4096
    #define         JULIAN_AHEAD_OF_UTC                     68.184
    #define         JULIAN_DAY_OFFSET                       0.5
+    bool load_flag;
+    
     
   // members
  
@@ -34,6 +36,10 @@ public:
   // constructors  and destructors
   configuration_templates();
   ~configuration_templates();
+    
+    void load();
+    void set_load_flag(bool var);
+    bool get_load_flag();
        
 };
 #endif /* coordinate_transforms_hpp */

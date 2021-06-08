@@ -53,3 +53,22 @@ using namespace std;
 // constructor
 configuration_templates::configuration_templates()
 {}
+
+// deconstructor
+configuration_templates::~configuration_templates()
+{}
+
+// deconstructor
+void configuration_templates::load()
+{}
+
+void configuration_templates::set_load_flag(bool var)
+{
+    load_flag = var;
+}
+
+bool configuration_templates::get_load_flag()
+{
+    return load_flag;
+}
+
