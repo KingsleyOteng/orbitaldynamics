@@ -73,6 +73,6 @@ bool configuration_templates::get_load_flag()
 
 void configuration_templates::load()
     {
-        std::string text("azimuth","location_longitude","location_latitude");
-        
+        std::vector<std::string> phrasal_search = {"azimuth","location_longitude","location_latitude","sensor_start_time","sensor_end_time","time_zone","sensor_type","city"};
+    
     }
