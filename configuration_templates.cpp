@@ -73,27 +73,20 @@ bool configuration_templates::get_load_flag()
 
 void configuration_templates::load()
     {
-        int temp;
         std::string phrase;
         
         std::vector<std::string> phrasal_search = {"azimuth","location_longitude","location_latitude","sensor_start_time","sensor_end_time","time_zone","sensor_type","city"};
         
         // returns index for the month
-        boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+) (\\w+)  (\\d+) (\\d+):(\\d+):(\\d+) (\\d+)" );
+        boost::xpressive::sregex rex = boost::xpressive::sregex::compile( "(\\w+):(\\w+)" );
         boost::xpressive::smatch what;
-        
-        
-        
-   
         
         std::tm tm = {0};
         //= time_t
 
         if( regex_match( phrase, what, rex ) )
         {
-           
-            size_t month_number = std::distance(phrasal_search.begin(),std::find(phrasal_search.begin(), phrasal_search.end(), what[2].str()));
-        
+                size_t month_number = std::distance(phrasal_search.begin(),std::find(phrasal_search.begin(), phrasal_search.end(), what[2].str()));
                 tm.tm_sec = stoi(what[6].str()) + 1;
                 tm.tm_min = stoi(what[5].str());
                 tm.tm_hour = stoi(what[4].str());
