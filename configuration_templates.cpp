@@ -73,5 +73,6 @@ bool configuration_templates::get_load_flag()
 
 void configuration_templates::load()
     {
-        std::string text( "one", "two" );
+        std::string text("azimuth","location_longitude","location_latitude");
+        
     }
