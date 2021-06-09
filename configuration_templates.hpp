@@ -34,8 +34,8 @@ private:
 public:
 
   // constructors  and destructors
-  configuration_templates();
-  ~configuration_templates();
+    configuration_templates();
+    ~configuration_templates();
     
     void    load();
     void    set_load_flag(bool var);

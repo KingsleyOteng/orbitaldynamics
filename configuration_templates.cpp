@@ -72,3 +72,8 @@ bool configuration_templates::get_load_flag()
     return load_flag;
 }
 
+
+void configuration_templates::load()
+{
+    
+}
