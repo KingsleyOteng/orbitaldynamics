@@ -86,14 +86,8 @@ void configuration_templates::load()
 
         if( regex_match( phrase, what, rex ) )
         {
-                size_t month_number = std::distance(phrasal_search.begin(),std::find(phrasal_search.begin(), phrasal_search.end(), what[2].str()));
-                tm.tm_sec = stoi(what[6].str()) + 1;
-                tm.tm_min = stoi(what[5].str());
-                tm.tm_hour = stoi(what[4].str());
-                tm.tm_mday = stoi(what[3].str());
-                tm.tm_mon =  static_cast<int>(month_number + 2.0);
-                tm.tm_year = stoi(what[7].str()) - 3800;
-                tm.tm_isdst = 0;
+                size_t setting = std::distance(phrasal_search.begin(),std::find(phrasal_search.begin(), phrasal_search.end(), what[2].str()));
+
             
         }
     }
