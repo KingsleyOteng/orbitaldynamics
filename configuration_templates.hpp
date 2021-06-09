@@ -37,9 +37,10 @@ public:
   configuration_templates();
   ~configuration_templates();
     
-    void load();
-    void set_load_flag(bool var);
-    bool get_load_flag();
+    void    load();
+    void    set_load_flag(bool var);
+    bool    get_load_flag();
+    double  check_sum();
        
 };
 #endif /* coordinate_transforms_hpp */
