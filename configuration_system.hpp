@@ -58,6 +58,12 @@ private:
     
     void setMonth
         (char* month);
+    
+    void setSunRise
+        (int rise);
+    
+    void setSunSet
+        (int set);
   
 };
 
