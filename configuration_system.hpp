@@ -54,7 +54,7 @@ private:
         (char* type);
     
     void setLocationHeight
-        (double ecc, double m);
+        (double ecc);
   
 };
 
