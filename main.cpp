@@ -351,6 +351,7 @@ int main()
         (user_input != "y")
         {
             cout << "\n" <<"Please provide me the TLE number? " << "\n";
+            // check the tle format here
             getline (cin, input_tle_number);
             cout << "\n" <<"Please confirm your input is " << input_tle_number << " ?" << "\n";
             getline (cin, user_input);
@@ -364,6 +365,10 @@ int main()
         {
             cout << "\n" <<"Please provide a reference date (yyyymmdd) ? " << "\n";
             getline (cin, date_value);
+            
+            //
+            // check the date format here
+            //
             string inp = date_value;
             date d1 = date_from_iso_string("1111111111");
             
