@@ -50,9 +50,9 @@ using namespace boost::gregorian;
 //using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
 double frac_hours, hours_example, hours_final, min_final, seconds_final;
-const string server = "156.67.222.64";
-const string username = "u311839917_koteng";
-const string password = "Mypass1234!";
+const string server     = "156.67.222.64";
+const string username   = "u311839917_koteng";
+const string password   = "Mypass1234!";
 time_files* nf = new time_files();
 double ctime_example;
 std::string input_tle_number;
@@ -366,6 +366,7 @@ int main()
             getline (cin, date_value);
             string inp = date_value;
             date d1 = date_from_iso_string("1111111111");
+            
             //d = parser.parse_date(inp, format, svp);
             cout << "\n" <<"Please confirm your input is " << date_value << " ?" <<  "\n";
             getline (cin, user_input);
