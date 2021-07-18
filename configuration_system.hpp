@@ -40,7 +40,13 @@ private:
     // the mean and eccentric, parabolic, or hyperbolic anomaly is also found.
     // the parabolic limit at 168 is arbitrary
     
-    void setNewtonM
+    void setLocationLatitude
+        (double ecc);
+    
+    void setLocationLongitude
+        (double ecc);
+    
+    void setLocationHeight
     (double ecc, double m);
   
 };
