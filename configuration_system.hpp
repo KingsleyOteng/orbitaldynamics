@@ -55,6 +55,9 @@ private:
     
     void setLocationHeight
         (double ecc);
+    
+    void setMonth
+        (char* month);
   
 };
 
