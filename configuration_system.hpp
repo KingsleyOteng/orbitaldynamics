@@ -7,6 +7,9 @@
 //
 //
 
+#ifndef configuration_system_hpp
+#define configuration_system_hpp
+
 // header guards
 //#ifndef newtownm_hpp
 //#define newtownm_hpp
@@ -32,6 +35,7 @@ private:
     double sensor_location_longitude;
     double sensor_height;
     double sensor_type;
+    double sensor_month;
     double sunrise_time;
     double sunset_time;
     
@@ -46,8 +50,11 @@ private:
     void setLocationLongitude
         (double ecc);
     
+    void setSensor
+        (char* type);
+    
     void setLocationHeight
-    (double ecc, double m);
+        (double ecc, double m);
   
 };
 
