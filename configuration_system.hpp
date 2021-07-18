@@ -10,6 +10,7 @@
 // header guards
 //#ifndef newtownm_hpp
 //#define newtownm_hpp
+// these file will assign all the presets (July / 2021)
 
 // preprocessor instructions
 #include <cmath>

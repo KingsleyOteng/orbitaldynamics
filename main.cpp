@@ -343,9 +343,18 @@ int main()
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
     
+    /////////////////////////////////
     // check all the inputs here for formatting
     // maybe load a config file
     // set 'n'
+    // full checking here
+    // check these findings
+    // https://www.cplusplus.com/forum/beginner/247972/
+    // check against the database if the number is correct
+    // proceed to next step some details about the TLE
+    // run the predefined routines
+    
+    
     user_input = "n";
     if
         (user_input != "y")
@@ -387,13 +396,7 @@ int main()
             
         }
     
-    // full checking here
-    
-    // check these findings
-    // https://www.cplusplus.com/forum/beginner/247972/
-    // check against the database if the number is correct
-    // proceed to next step some details about the TLE
-    // run the predefined routines
+
     
     return 00;
 }
