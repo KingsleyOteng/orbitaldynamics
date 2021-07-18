@@ -3,7 +3,7 @@
 //      We then propogage using SGP4 and also higher
 //
 //      Created by Kwadwo Oteng-Amoko on 14/01/2020.
-//      Copyright © 2020 Kwadwo Oteng-Amoko. All rights reserved.
+//      Copyright © 2020,2021 Kwadwo Oteng-Amoko. All rights reserved.
 //
 #define Re                      6378.1370               // the earths radius; from Kelso
 #define we                      0.0000729211510        // Earth's rotation rate in radians/second; from Kelso
@@ -19,11 +19,15 @@
 #include <string>
 #include <stdio.h>
 #include <time.h>
-#include <vector>                    
+#include <vector>
+#include <limits>
+#include <cctype>
+#include <iomanip>
 
 // third party apis
 #include <boost/any.hpp>               // boost standard library
 #include <boost/asio.hpp>              // io streaming headers
+#include <boost/date_time/gregorian/gregorian.hpp>
 #include <boost/lambda/lambda.hpp>
 #include <boost/xpressive/xpressive.hpp>
 
@@ -34,25 +38,27 @@
 #include "sgp4.hpp"
 #include "sdp4.hpp"
 #include "coordinate_transforms.hpp"   // coordinate transforms library
+#include "configuration_system.hpp"
 #include "utilities.hpp"               // my own routines for processing data
 
 //#include <cppconn/driver.h> //#include <cppconn/exception.h> //#include <cppconn/prepared_statement.h>
 
 // declare the namespace
 using namespace std;
-
+using namespace boost::gregorian;
 
 //using namespace soci;
 // https://medium.com/@dane.bulat/working-with-databases-in-c-an-introduction-7d6a6a78ae66
 double frac_hours, hours_example, hours_final, min_final, seconds_final;
-const string server = "156.67.222.64";
-const string username = "u311839917_koteng";
-const string password = "Mypass1234!";
+const string server     = "156.67.222.64";
+const string username   = "u311839917_koteng";
+const string password   = "Mypass1234!";
 time_files* nf = new time_files();
 double ctime_example;
 std::string input_tle_number;
 std::string date_value;
 std::string user_input;
+std::string configuration_file;
 
 int main()
 {
@@ -337,30 +343,51 @@ int main()
     sgp4 *sgp_model = new sgp4();
     sgp_model -> set_parameters(orb = new orbital(12,13,14,"wgs-84"));
     
+    // check all the inputs here for formatting
+    // maybe load a config file
+    // set 'n'
     user_input = "n";
     if
         (user_input != "y")
         {
             cout << "\n" <<"Please provide me the TLE number? " << "\n";
             getline (cin, input_tle_number);
-            cout << "\n" <<"Please confirm your input is "<<input_tle_number<< " ?" <<  "\n";
+            cout << "\n" <<"Please confirm your input is " << input_tle_number << " ?" << "\n";
             getline (cin, user_input);
+            
         }
     
+    // set 'n'
+    user_input = "n";
     if
-    (user_input != "y")
-    {
-        cout << "\n" <<"Please provide a reference date in MMDDYYYY format? " << "\n";
-        getline (cin, date_value);
-        cout << "\n" <<"Please confirm your input is "<<date_value<< " ?" <<  "\n";
-        getline (cin, user_input);
-    }
+        (user_input != "y")
+        {
+            cout << "\n" <<"Please provide a reference date (yyyymmdd) ? " << "\n";
+            getline (cin, date_value);
+            string inp = date_value;
+            date d1 = date_from_iso_string("1111111111");
+            //d = parser.parse_date(inp, format, svp);
+            cout << "\n" <<"Please confirm your input is " << date_value << " ?" <<  "\n";
+            getline (cin, user_input);
+            cout << "\n" << "Should we load configuration file? (Y/N) " << "\n";
+            getline (cin, configuration_file);
+            
+                // load a configuration file for the sensor
+                if (configuration_file == "Y" || configuration_file == "YES")
+                    {
+                        //load config
+                        configuration_system *configuration = new configuration_system();
+                    };
+            
+        }
+    
+    // full checking here
+    
+    // check these findings
+    // https://www.cplusplus.com/forum/beginner/247972/
     // check against the database if the number is correct
     // proceed to next step some details about the TLE
     // run the predefined routines
     
-    
-    
-    //
     return 00;
 }
