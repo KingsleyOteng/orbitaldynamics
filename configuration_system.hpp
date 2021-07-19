@@ -66,16 +66,16 @@ private:
         (int set);
     
     void getLocationLongitude
-        (double ecc);
+        ();
     
     void getSensor
-        (char* type);
+        ();
     
     void getLocationHeight
-        (double ecc);
+        ();
     
     void getMonth
-        (char* month);
+        ();
     
     void getSunRise
         ();
