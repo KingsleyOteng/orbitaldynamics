@@ -65,10 +65,10 @@ private:
     void setSunSet
         (int set);
     
-    void setLocationLongitude
+    void getLocationLongitude
         (double ecc);
     
-    void setSensor
+    void getSensor
         (char* type);
     
     void setLocationHeight
