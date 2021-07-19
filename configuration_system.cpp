@@ -21,11 +21,11 @@ void getSensor
 void getLocationHeight
 () {};
 
-int getMonth
-() { return 0;};
+void getMonth
+() {};
 
-int getSunRise
-() { return 0;};
+void getSunRise
+(){};
 
-int getSunSet
-() { return 0;};
+void getSunSet
+() {};
