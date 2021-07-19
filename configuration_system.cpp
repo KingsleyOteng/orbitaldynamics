@@ -12,3 +12,20 @@
 
 #include "configuration_system.hpp"
 
+void getLocationLongitude
+    ();
+
+void getSensor
+    ();
+
+void getLocationHeight
+    ();
+
+void getMonth
+    ();
+
+void getSunRise
+    ();
+
+void getSunSet
+    ();
