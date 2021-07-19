@@ -22,10 +22,10 @@ void getLocationHeight
 () {};
 
 int getMonth
-() { return 0};
+() { return 0;};
 
 int getSunRise
-() { return 0};
+() { return 0;};
 
 int getSunSet
-() { return 0};
+() { return 0;};
