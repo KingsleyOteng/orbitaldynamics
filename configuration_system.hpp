@@ -65,22 +65,22 @@ private:
     void setSunSet
         (int set);
     
-    void getLocationLongitude
+    double getLocationLongitude
         ();
     
     void getSensor
         ();
     
-    void getLocationHeight
+    double getLocationHeight
         ();
     
-    void getMonth
+    int getMonth
         ();
     
-    void getSunRise
+    int getSunRise
         ();
     
-    void getSunSet
+    int getSunSet
         ();
   
 };
