@@ -77,11 +77,11 @@ private:
     void getMonth
         (char* month);
     
-    void setSunRise
-        (int rise);
+    void getSunRise
+        ();
     
-    void setSunSet
-        (int set);
+    void getSunSet
+        ();
   
 };
 
