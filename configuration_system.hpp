@@ -71,10 +71,10 @@ private:
     void getSensor
         (char* type);
     
-    void setLocationHeight
+    void getLocationHeight
         (double ecc);
     
-    void setMonth
+    void getMonth
         (char* month);
     
     void setSunRise
