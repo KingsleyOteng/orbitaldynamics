@@ -64,6 +64,24 @@ private:
     
     void setSunSet
         (int set);
+    
+    void setLocationLongitude
+        (double ecc);
+    
+    void setSensor
+        (char* type);
+    
+    void setLocationHeight
+        (double ecc);
+    
+    void setMonth
+        (char* month);
+    
+    void setSunRise
+        (int rise);
+    
+    void setSunSet
+        (int set);
   
 };
 
