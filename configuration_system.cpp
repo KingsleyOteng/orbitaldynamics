@@ -12,20 +12,20 @@
 
 #include "configuration_system.hpp"
 
-void getLocationLongitude
-() {};
+double  getLocationLongitude
+() {return 0;};
 
 void getSensor
 () {};
 
-void getLocationHeight
-() {};
+double getLocationHeight
+() {return 0.0;};
 
-void getMonth
-() {};
+int getMonth
+() { return 0;};
 
-void getSunRise
-(){};
+int getSunRise
+() { return 0;};
 
-void getSunSet
-() {};
+int getSunSet
+() { return 0;};
