@@ -29,6 +29,10 @@ private:
     #define         small                      256
 
     
+    // constructors  and destructors
+    configuration_system();
+    ~configuration_system();
+    
   // members
     
     double sensor_location_latitude;
