@@ -12,6 +12,21 @@
 
 #include "configuration_system.hpp"
 
+class configuration_system_impl
+{
+    public:
+        configuration_system_impl();
+        double  getLocationLongitude();
+        double  getLocationHeight();
+        int     getMonth();
+        void    getSensor();
+        int     getSunSet();
+        int     getSunRise();
+
+    private:
+        // whatever members you actually need
+}
+
 double  getLocationLongitude
 () {return 0;};
 
@@ -19,7 +34,7 @@ void getSensor
 () {};
 
 double getLocationHeight
-() {return 0.0;};
+() {return configuration_system.sensor_location_longitude;};
 
 int getMonth
 () { return 0;};
