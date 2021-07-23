@@ -19,8 +19,7 @@ configuration_system::~configuration_system()
 {}
 
 double  configuration_system::getLocationLongitude
-() {
-    
+() {sensor_height=0;
     return 0;};
 
 void configuration_system::getSensor
