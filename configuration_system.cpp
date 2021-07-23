@@ -14,22 +14,22 @@
 
 
 
-double  getLocationLongitude
+double  configuration_system::getLocationLongitude
 () {return 0;};
 
 void getSensor
 () {};
 
-double getLocationHeight
+double configuration_system::getLocationHeight
 () {
     sensor_location_longitude = 0;
     return 0;};
 
-int getMonth
+int configuration_system::getMonth
 () { return 0;};
 
-int getSunRise
+int configuration_system::getSunRise
 () { return 0;};
 
-int getSunSet
+int configuration_system::getSunSet
 () { return 0;};
