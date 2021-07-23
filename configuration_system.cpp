@@ -12,7 +12,11 @@
 
 #include "configuration_system.hpp"
 
+configuration_system::configuration_system()
+{}
 
+configuration_system::~configuration_system()
+{}
 
 double  configuration_system::getLocationLongitude
 () {return 0;};
